@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <title>Lounge</title>
+  <desc>White-label cigar-lounge social platform. Transparent background with gold cigar-band ring and italic serif L monogram.</desc>
+
+  <!-- Subtle outer ornamental ring -->
+  <circle cx="16" cy="16" r="13.2" fill="none" stroke="#D4AF37" stroke-width="0.3" opacity="0.45"/>
+
+  <!-- Primary gold cigar-band ring -->
+  <circle cx="16" cy="16" r="11.5" fill="none" stroke="#D4AF37" stroke-width="1.2"/>
+
+  <!-- Italic serif L monogram -->
+  <text x="16" y="22.5"
+        font-family="'Cormorant Garamond', 'Playfair Display', Georgia, 'Times New Roman', serif"
+        font-size="18" font-weight="700" font-style="italic"
+        fill="#D4AF37" text-anchor="middle">L</text>
+</svg>
