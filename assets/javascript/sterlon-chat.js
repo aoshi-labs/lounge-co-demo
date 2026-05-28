@@ -1400,6 +1400,7 @@
     (SA && SA.setPinned ? SA.setPinned(true) : null);
     appendUserBubble(text);
     composer.value = '';
+    autosizeComposer(composer);
     conversationHistory.push({ role: 'user', content: PP.repairMojibake(text) });
     saveChatState();
 
@@ -1439,6 +1440,7 @@
     const composer = document.getElementById('composer');
     if (!composer) return;
     composer.value = (btn.textContent || '').trim();
+    autosizeComposer(composer);
     send();
   }
 
@@ -1481,21 +1483,36 @@
     }
     if (action === 'wildcard' || action === 'research' || action === 'recommend') {
       const composer = document.getElementById('composer');
-      if (composer) composer.value = buildRandomCigarActionPrompt(action);
+      if (composer) {
+        composer.value = buildRandomCigarActionPrompt(action);
+        autosizeComposer(composer);
+      }
       send();
       return;
     }
     const composer = document.getElementById('composer');
-    if (composer) composer.value = (btn.textContent || '').trim();
+    if (composer) {
+      composer.value = (btn.textContent || '').trim();
+      autosizeComposer(composer);
+    }
     send();
   }
 
   // ── DOM event wiring ────────────────────────────────────────────────
 
+  function autosizeComposer(composer) {
+    if (!composer) return;
+    composer.style.height = 'auto';
+    composer.style.height = Math.min(composer.scrollHeight, 156) + 'px';
+    composer.style.overflowY = composer.scrollHeight > 156 ? 'auto' : 'hidden';
+  }
+
   function attachListeners() {
     initScrollAnchoring();
     const composer = document.getElementById('composer');
     if (composer) {
+      autosizeComposer(composer);
+      composer.addEventListener('input', () => autosizeComposer(composer));
       composer.addEventListener('keydown', e => {
         if (e.key === 'Enter' && !e.shiftKey) {
           e.preventDefault();

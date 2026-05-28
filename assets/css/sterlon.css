@@ -764,7 +764,7 @@ body:has(.sterlon-chat-col) {
 .sterlon-composer-input-wrap .input-action:active { transform: scale(.95); }
 
 .sterlon-composer-row { width:100%; max-width:620px; display:flex; gap:10px; align-items:flex-end; }
-.sterlon-composer-input-wrap { flex:1; background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:14px; padding:8px 8px 8px 10px; display:flex; align-items:center; gap:6px; }
+.sterlon-composer-input-wrap { flex:1; background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:14px; padding:8px 8px 8px 10px; display:flex; align-items:flex-end; gap:6px; }
 .sterlon-composer-input-wrap--tools { position: relative; }
 .sterlon-composer-tools-menu {
   position: absolute;
@@ -800,7 +800,7 @@ body:has(.sterlon-chat-col) {
   background: var(--gold-subtle);
   color: var(--gold);
 }
-.sterlon-composer-textarea { flex:1; background:none; border:none; font-family:var(--font-ui); font-size:14px; color:var(--text-primary); outline:none; resize:none; line-height:1.5; max-height:120px; }
+.sterlon-composer-textarea { flex:1; min-height:21px; background:none; border:none; font-family:var(--font-ui); font-size:14px; color:var(--text-primary); outline:none; resize:none; line-height:1.5; max-height:156px; overflow-y:hidden; }
 .sterlon-send-btn { background:var(--burg); color:var(--cream); border:none; border-radius:8px; width:34px; height:34px; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0; }
 
 /* ─── Defensive: flex items along the textarea + chat chain need min-width:0.

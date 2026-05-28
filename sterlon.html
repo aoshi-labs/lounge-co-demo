@@ -446,7 +446,11 @@
     const userMsgs = chat.querySelectorAll('.user-bubble');
     if (!userMsgs.length) { if (window.toast) toast('Nothing to replay yet'); return; }
     const last = userMsgs[userMsgs.length - 1].textContent;
-    document.getElementById('composer').value = last;
+    const composer = document.getElementById('composer');
+    if (composer) {
+      composer.value = last;
+      composer.dispatchEvent(new Event('input', { bubbles: true }));
+    }
     if (window.toast) toast('↻ Replayed your last message');
   }
 
