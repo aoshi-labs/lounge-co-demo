@@ -2,6 +2,14 @@
  * RecommendationProductIdPolicyFilters - policy filters and slot repairs layered on id authority.
  *
  * Depends on: RecommendationProductIds, LoungeProducts, OntologyPolicy, CigarSublineBody.
+ *
+ * Load order: ontology-policy-scoring.js must load before this file.
+ * It extends OntologyPolicyCore with isHighProofBourbonContext via Object.assign,
+ * which reconcileHighProofMaduroSlotGuardIds calls through global.OntologyPolicyCore.
+ *
+ * Extension pattern: this module calls Object.assign(pid, {...}) to attach policy
+ * filter and slot-repair functions directly onto RecommendationProductIds. These
+ * functions are not defined in product-ids.js — they live here.
  */
 (function (global) {
   'use strict';
@@ -42,6 +50,7 @@
       }
       return true;
     });
+    // Soft degradation: if nothing survives the body filter, return the full original set.
     return filtered.length ? filtered : cigarIds || [];
   }
 
@@ -65,6 +74,7 @@
       ].filter(Boolean).join(' ').toLowerCase();
       return /\b(maduro|broadleaf|san andr(?:es)?)\b/.test(blob);
     });
+    // Soft degradation: fewer than 3 maduro matches means the ask is ambiguous; return the full set.
     return filtered.length >= 3 ? filtered : cigarIds || [];
   }
 
@@ -85,6 +95,8 @@
     return strict.length ? strict : cigarIds;
   }
 
+  // Soft filter + ranking via OntologyPolicy. Despite the name, this does not hard-exclude candidates —
+  // it applies avoidIf suppression and context scoring. Hard eligibility runs upstream before this.
   function policyFilterCigarIds(cigarIds, o) {
     var OP = global.OntologyPolicy;
     if (!OP || !cigarIds || !cigarIds.length) return cigarIds || [];
@@ -163,7 +175,13 @@
   function reconcileHighProofMaduroSlotGuardIds(slotIds, candidateIds, o) {
     var C = global.OntologyPolicyCore;
     var OP = global.OntologyPolicy;
-    if (!C || !slotIds || typeof C.isBlockedForHighProofAnchorSlot !== 'function') return slotIds;
+    // Both functions required: isHighProofBourbonContext is injected by ontology-policy-scoring.js,
+    // not present in ontology-policy-core.js alone.
+    if (
+      !C || !slotIds ||
+      typeof C.isBlockedForHighProofAnchorSlot !== 'function' ||
+      typeof C.isHighProofBourbonContext !== 'function'
+    ) return slotIds;
     var ctx =
       OP && typeof OP.buildRecoContext === 'function'
         ? OP.buildRecoContext({
@@ -278,7 +296,7 @@
     };
   }
 
-  /** Spirit-only flights â€” three distinct pours scored against a stable cigar anchor. */
+  /** Spirit-only flights — three distinct pours scored against a stable cigar anchor. */
   function pickSpiritOnlySlotIds(spiritIds, peOpts) {
     var ids = (spiritIds || []).slice();
     if (!ids.length) return { best: null, safe: null, wildcard: null };

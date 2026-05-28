@@ -13,10 +13,31 @@
   };
 
   function parseSmokeMinutesFromSpec(smokeTime) {
-    var m = String(smokeTime || '').match(/(\d+)\s*(?:–|-|to)\s*(\d+)/i);
-    if (m) return (parseInt(m[1], 10) + parseInt(m[2], 10)) / 2;
-    var single = String(smokeTime || '').match(/(\d+)/);
-    return single ? parseInt(single[1], 10) : null;
+    var s = String(smokeTime || '');
+
+    // Range: "45-60 min", "45–60 min", "60 to 90" → midpoint
+    var rangeM = s.match(/(\d+(?:\.\d+)?)\s*(?:–|-|to)\s*(\d+(?:\.\d+)?)/i);
+    if (rangeM) {
+      var mid = (parseFloat(rangeM[1]) + parseFloat(rangeM[2])) / 2;
+      return (Number.isFinite(mid) && mid > 0 && mid < 200) ? mid : null;
+    }
+
+    // Hours: "2 hr+", "2 hrs", "2 hours", "1.5 hr", "1 hour"
+    // "2 hr+" → 130 (open-ended 2h adds 10 min buffer)
+    var hourM = s.match(/(\d+(?:\.\d+)?)\s*(?:hours?|hr[s]?)\s*(\+)?/i);
+    if (hourM) {
+      var mins = parseFloat(hourM[1]) * 60 + (hourM[2] ? 10 : 0);
+      return (Number.isFinite(mins) && mins > 0 && mins < 200) ? mins : null;
+    }
+
+    // Plain minutes value: "90 min", "45", "30"
+    var single = s.match(/(\d+(?:\.\d+)?)/);
+    if (single) {
+      var val = parseFloat(single[1]);
+      return (Number.isFinite(val) && val > 0 && val < 200) ? val : null;
+    }
+
+    return null;
   }
 
   function parseLengthToken(tok) {
@@ -98,6 +119,7 @@
       .trim();
   }
 
+  // Soft pacing target only. Explicit numeric duration constraints are enforced upstream by RecommendationEligibilityConstraints.
   function resolveTargetSmokeMinutes(ctx) {
     if (!ctx) return null;
     if (ctx.targetSmokeMinutes != null) return ctx.targetSmokeMinutes;
@@ -131,6 +153,7 @@
     return pen > 0 ? -pen : 0;
   }
 
+  // Presentation copy helper only. Must not influence eligibility.
   function formatSmokeTimeLine(minutes, ctx) {
     if (minutes == null) return '';
     var rounded = Math.round(minutes / 5) * 5;

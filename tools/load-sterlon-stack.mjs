@@ -100,6 +100,7 @@ export function loadSterlonStack(ctx) {
     'assets/javascript/recommendation-runtime/flight-philosophy-policy.js',
     'assets/javascript/recommendation-runtime/flight-philosophy-diversify.js',
     'assets/javascript/recommendation-runtime/flight-philosophy-metadata.js',
+    'assets/javascript/recommendation-runtime/eligibility-constraints.js',
     'assets/javascript/recommendation-runtime/generate.js',
     'assets/knowledge/spirit-deck-key.js',
     'assets/knowledge/menu-flavor-catalog.js',

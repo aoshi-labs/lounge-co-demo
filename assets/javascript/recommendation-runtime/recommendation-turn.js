@@ -138,6 +138,8 @@
       }
     }
 
+    // Callers must pass o.degraded=true for semantic degradation (e.g. hard-eligibility fallback).
+    // This helper only forces degraded mode for structural/runtime-authority failures it detects locally.
     var degraded = !!o.degraded || forcedDegraded;
     if (forcedDegraded && forcedReason) {
       warnOnceDegraded(
@@ -147,6 +149,8 @@
     }
 
     // Id-first allowlist: legacy display name without resolved catalog id is a violation.
+    // This is seal-time status recording only. Enforcement and early degraded returns
+    // happen before turn creation in build-set.js.
     var allowlistViolations =
       PIDs && typeof PIDs.idAuthorityViolations === 'function'
         ? PIDs.idAuthorityViolations(cards)
@@ -272,28 +276,6 @@
     return !!(turn && turn.degraded);
   }
 
-  /**
-   * Structural + optional governance (runtime authority vs explicit degraded).
-   * @param {object} [opts]
-   * @param {boolean} [opts.governance]  When true, enforce normal vs degraded invariants.
-   * @returns {{ ok: boolean, errors: string[], governance?: { ok: boolean, errors: string[] } }}
-   */
-
-  /**
-   * Adopt a plain deserialized RecommendationTurn back into the governed runtime.
-   *
-   * Called when restoring a persisted turn from localStorage or a thread archive.
-   * Validates structural + governance invariants, version-compatibility (when the
-   * current runtime version is available), and then deep-freezes the plain object
-   * so the restored turn satisfies Law 2 (Turn Immutability).
-   *
-   * Returns the frozen turn on success; returns null on any validation or
-   * version-incompatibility failure (never throws).
-   *
-   * @param {object} plain  Deserialized JSON object (from JSON.parse).
-   * @returns {object|null} Deep-frozen RecommendationTurn, or null on rejection.
-   */
-
   var api = {
     SLOT_ORDER: SLOT_ORDER,
     RECOMMENDATION_TURN_CONTRACT_VERSION: RECOMMENDATION_TURN_CONTRACT_VERSION,
@@ -312,7 +294,7 @@
   if (RR) {
     RR.createRecommendationTurn = createRecommendationTurn;
     RR.buildDegradedTurn = buildDegradedTurn;
-        RR.getPrimaryRecommendation = getPrimaryRecommendation;
+    RR.getPrimaryRecommendation = getPrimaryRecommendation;
     RR.getSlotContext = getSlotContext;
     RR.getSlotRationale = getSlotRationale;
     RR.isDegradedTurn = isDegradedTurn;

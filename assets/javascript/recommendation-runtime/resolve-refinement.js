@@ -209,7 +209,7 @@
           'Medium-Light': ['Full', 'Medium-Full', 'Medium'],
           Mild: ['Full', 'Medium-Full', 'Medium']
         };
-        var allCigarIds = (pid && pid.listMenuCigarIds()) || [];
+        var allCigarIds = menus.cigarIds || [];
         var currentBody = pid ? pid.cigarBodyTierForId(next.cigarId) : '';
         var preferredBodies = CONTRAST_BODIES[currentBody] || [];
         var contrastCigarId = null;
@@ -322,6 +322,141 @@
     return { card: next, refinementTail: refinementTail };
   }
 
+  function parentHardEligibility(parentTurn) {
+    var prov = parentTurn && parentTurn.provenance;
+    var he = prov && prov.hardEligibility;
+    if (!he || !he.hardConstraints || !he.hardConstraints.constraints || !he.hardConstraints.constraints.length) {
+      return null;
+    }
+    return he;
+  }
+
+  function applyParentHardEligibilityToMenu(cigarIds, parentTurn, opts) {
+    var EC = global.RecommendationEligibilityConstraints;
+    var hard = parentHardEligibility(parentTurn);
+    if (!EC || !hard || typeof EC.applyInheritedHardConstraints !== 'function') {
+      return { cigarIds: cigarIds, hardEligibility: null };
+    }
+    var result = EC.applyInheritedHardConstraints(cigarIds, {
+      hardConstraints: hard.hardConstraints,
+      productIds: (opts && opts.productIds) || null
+    });
+    return { cigarIds: result.cigarIds, hardEligibility: result };
+  }
+
+  function inheritedHardEligibilityActive(parentTurn, refinementEligibility) {
+    if (parentHardEligibility(parentTurn)) return true;
+    var he = refinementEligibility && refinementEligibility.hardEligibility;
+    return !!(
+      he &&
+      he.constraintsApplied &&
+      he.constraintsApplied.length
+    );
+  }
+
+  function buildRepairRankedCigars(parentProv, eligibleCigarIds, appliedCards, opts) {
+    var o = opts || {};
+    var pid = o.productIds;
+    var eligibleSet = {};
+    (eligibleCigarIds || []).forEach(function (id) {
+      eligibleSet[id] = true;
+    });
+
+    var parentRanked = parentProv && parentProv.rankedCigars;
+    if (parentRanked && parentRanked.length) {
+      var filtered = parentRanked.filter(function (r) {
+        return r && r.id && eligibleSet[r.id];
+      });
+      if (filtered.length) return filtered;
+    }
+
+    if (!eligibleCigarIds || !eligibleCigarIds.length || !pid) return null;
+
+    var anchorSpiritId = appliedCards[0] && appliedCards[0].spiritId;
+    if (anchorSpiritId && typeof pid.rankCandidateIds === 'function') {
+      return pid.rankCandidateIds('spirit', anchorSpiritId, eligibleCigarIds, {
+        promptText: o.promptText || '',
+        journeyLevel: o.journeyLevel,
+        sessionRuntime: o.sessionRuntime
+      });
+    }
+
+    return eligibleCigarIds.map(function (id) {
+      return {
+        id: id,
+        name: pid.displayNameForId ? pid.displayNameForId('cigar', id) : id,
+        score: 0
+      };
+    });
+  }
+
+  function snapshotCards(cards) {
+    return (cards || []).map(function (c) {
+      return Object.assign({}, c);
+    });
+  }
+
+  function enforceRepairEligibleCigars(cards, preRepairCards, eligibleCigarIds, eligibleCigarSet, pid) {
+    var out = snapshotCards(cards);
+    var pre = preRepairCards || [];
+    var repairViolated = false;
+    var i;
+    var cid;
+    var prev;
+    var fallbackId;
+
+    for (i = 0; i < out.length; i++) {
+      cid = out[i] && out[i].cigarId;
+      if (!cid || eligibleCigarSet[cid]) continue;
+
+      repairViolated = true;
+      prev = pre[i];
+      if (prev && prev.cigarId && eligibleCigarSet[prev.cigarId]) {
+        out[i] = Object.assign({}, out[i], {
+          cigarId: prev.cigarId,
+          cigar:
+            prev.cigar ||
+            (pid && pid.displayNameForId ? pid.displayNameForId('cigar', prev.cigarId) : prev.cigarId)
+        });
+        continue;
+      }
+
+      if (eligibleCigarIds.length) {
+        fallbackId = eligibleCigarIds[Math.min(i, eligibleCigarIds.length - 1)];
+        out[i] = Object.assign({}, out[i], {
+          cigarId: fallbackId,
+          cigar: pid && pid.displayNameForId ? pid.displayNameForId('cigar', fallbackId) : fallbackId
+        });
+      }
+    }
+
+    for (i = 0; i < out.length; i++) {
+      cid = out[i] && out[i].cigarId;
+      if (cid && !eligibleCigarSet[cid]) repairViolated = true;
+    }
+
+    return { cards: out, repairViolated: repairViolated };
+  }
+
+  function markRefinementHardEligibilityDegraded(refinementEligibility, cause) {
+    var he = refinementEligibility.hardEligibility;
+    var causeValue = cause || 'hard-eligibility-repair-violation';
+    if (he) {
+      refinementEligibility.hardEligibility = Object.assign({}, he, {
+        degraded: true,
+        degradedCause: causeValue
+      });
+      return;
+    }
+    refinementEligibility.hardEligibility = {
+      degraded: true,
+      degradedCause: causeValue,
+      hardConstraints: null,
+      constraintsApplied: [],
+      inherited: true
+    };
+  }
+
   function slotIndexesForTarget(target) {
     var targetKey = target === 'set' ? 'set' : target || 'best';
     if (targetKey === 'set') return [0, 1, 2];
@@ -385,19 +520,32 @@
       SEL && typeof SEL.buildCatalogIntensityLadderIds === 'function'
         ? SEL.buildCatalogIntensityLadderIds()
         : { spirits: [], cigars: [] };
+    var baseCigarIds = PIDsMod ? PIDsMod.listMenuCigarIds() : [];
+    var refinementEligibility = applyParentHardEligibilityToMenu(baseCigarIds, parent, {
+      productIds: PIDsMod
+    });
+    var eligibleCigarIds = refinementEligibility.cigarIds;
+
     var menus = {
       spiritIds: PIDsMod ? PIDsMod.listMenuSpiritIds() : [],
-      cigarIds: PIDsMod ? PIDsMod.listMenuCigarIds() : [],
+      cigarIds: eligibleCigarIds,
       foodIds: [],
       adjacentTable: {},
       peatedPattern: o.peatedPourPattern || /\b(islay|peated|peat|smoky)\b/i
     };
 
+    // Filter intensity ladder to eligible cigars so lighter/bolder stays inside constraints.
+    var eligibleCigarSet = {};
+    eligibleCigarIds.forEach(function (id) { eligibleCigarSet[id] = true; });
+    var filteredCigarLadderIds = eligibleCigarIds.length
+      ? (catalogLadderIds.cigars || []).filter(function (id) { return eligibleCigarSet[id]; })
+      : catalogLadderIds.cigars || [];
+
     var applied = applyRefinementToCards(parent.cards, axis, o.refinementTarget, {
       budgetCeiling: o.budgetCeiling,
       journeyLevel: journeyLevel,
       spiritLadderIds: catalogLadderIds.spirits,
-      cigarLadderIds: catalogLadderIds.cigars,
+      cigarLadderIds: filteredCigarLadderIds,
       catalogLadderIds: catalogLadderIds,
       menus: menus,
       sessionRuntime: o.sessionRuntime,
@@ -415,12 +563,26 @@
       }
     }
 
+    var enforceInheritedPool = inheritedHardEligibilityActive(parent, refinementEligibility);
+    var preRepairCards = snapshotCards(applied.cards);
+
     var FPP = global.FlightPhilosophyPolicy;
     if (FPP && typeof FPP.repairCollapsedFlightCards === 'function') {
       var parentLocked =
         parentProv.lockedBestCigarId ||
         (parent.cards[0] && parent.cards[0].cigarId) ||
         null;
+      var repairRankedCigars = buildRepairRankedCigars(
+        parentProv,
+        eligibleCigarIds,
+        applied.cards,
+        {
+          productIds: PIDsMod,
+          promptText: sourcePrompt,
+          journeyLevel: journeyLevel,
+          sessionRuntime: o.sessionRuntime
+        }
+      );
       var repairOut = FPP.repairCollapsedFlightCards(applied.cards, {
         categoryFocus: o.categoryFocus || null,
         anchorSpiritId: applied.cards[0] && applied.cards[0].spiritId,
@@ -431,13 +593,43 @@
         namedSpiritLocked:
           parentProv.signals &&
           parentProv.signals.indexOf('named-spirit') !== -1,
-        rankedCigars: parentProv.rankedCigars || null,
+        rankedCigars: repairRankedCigars,
         rankedSpirits: parentProv.rankedSpirits || null
       });
       applied.cards = repairOut.cards;
+
+      if (enforceInheritedPool) {
+        var guard = enforceRepairEligibleCigars(
+          applied.cards,
+          preRepairCards,
+          eligibleCigarIds,
+          eligibleCigarSet,
+          PIDsMod
+        );
+        applied.cards = guard.cards;
+        if (guard.repairViolated) {
+          markRefinementHardEligibilityDegraded(
+            refinementEligibility,
+            'hard-eligibility-repair-violation'
+          );
+        }
+      }
     }
 
+    var hardEligibilityDegraded =
+      !!(refinementEligibility.hardEligibility && refinementEligibility.hardEligibility.degraded);
+    var inheritedParentDegraded =
+      !!(parent.provenance && parent.provenance.hardEligibility && parent.provenance.hardEligibility.degraded);
+    var semanticDegraded = hardEligibilityDegraded || inheritedParentDegraded;
+
     var signals = ['refinement-policy', 'context-runtime', 'refinement-' + axis, 'ontology-refinement', 'flight-philosophy'];
+    if (refinementEligibility.hardEligibility &&
+        refinementEligibility.hardEligibility.constraintsApplied &&
+        refinementEligibility.hardEligibility.constraintsApplied.length) {
+      signals.push('hard-eligibility-preserved');
+    }
+    if (hardEligibilityDegraded) signals.push('hard-eligibility-degraded');
+
     var prov = {
       source: 'recommendation-runtime',
       module: 'resolve-refinement',
@@ -448,13 +640,25 @@
       parentTurnId: parentTurnId,
       refinementType: axis,
       refinementReason: 'chat-refinement-' + axis,
-      refinementSource: o.refinementSource || 'chat-refinement-chip'
+      refinementSource: o.refinementSource || 'chat-refinement-chip',
+      hardEligibility: refinementEligibility.hardEligibility ||
+        (parent.provenance && parent.provenance.hardEligibility) || null,
+      refinementPreservedHardEligibility: !!(refinementEligibility.hardEligibility &&
+        refinementEligibility.hardEligibility.constraintsApplied &&
+        refinementEligibility.hardEligibility.constraintsApplied.length)
     };
+
+    var degradedCauseValue = semanticDegraded
+      ? ((refinementEligibility.hardEligibility && refinementEligibility.hardEligibility.degradedCause) ||
+         (parent.provenance && parent.provenance.hardEligibility && parent.provenance.hardEligibility.degradedCause) ||
+         'hard-eligibility-refinement-degraded')
+      : null;
 
     var turn = TH.createRecommendationTurn({
       cards: applied.cards,
       journeyLevel: journeyLevel,
-      degraded: false,
+      degraded: semanticDegraded,
+      degradedCause: degradedCauseValue,
       provenance: prov
     });
 

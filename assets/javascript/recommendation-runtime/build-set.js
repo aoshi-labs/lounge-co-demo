@@ -38,6 +38,73 @@
     return null;
   }
 
+  function collectAllowlistViolations(cards, categoryFocus, PIDsMod) {
+    var allowlistViols =
+      PIDsMod && typeof PIDsMod.idAuthorityViolations === 'function'
+        ? PIDsMod.idAuthorityViolations(cards)
+        : [];
+    if (!allowlistViols.length && cards && cards.length) {
+      var slotNames3 = ['best', 'safe', 'wildcard'];
+      for (var pci = 0; pci < cards.length; pci++) {
+        var pcCard = cards[pci];
+        var pcSlot = slotNames3[pci] || ('slot-' + pci);
+        var needsCigar = categoryFocus !== 'spirit';
+        var needsSpirit = categoryFocus !== 'cigar';
+        if (needsCigar && !pcCard.cigarId) {
+          allowlistViols.push({
+            slot: pcSlot,
+            field: 'cigar',
+            name: pcCard.cigar || null
+          });
+        }
+        if (needsSpirit && !pcCard.spiritId) {
+          allowlistViols.push({
+            slot: pcSlot,
+            field: 'spirit',
+            name: pcCard.spirit || null
+          });
+        }
+        if (pcCard.food && !pcCard.foodId) {
+          allowlistViols.push({ slot: pcSlot, field: 'food', name: pcCard.food });
+        }
+      }
+    }
+    return allowlistViols;
+  }
+
+  function returnOffCatalogDegradedTurn(TH, journeyLevel, allowlistViols, degradedCause) {
+    var tel = global.SterlonTelemetry;
+    if (tel && typeof tel.emit === 'function') {
+      tel.emit('recommendation_allowlist_violation', {
+        violations: allowlistViols,
+        module: 'build-set',
+        degradedCause: degradedCause
+      });
+    }
+    if (typeof console !== 'undefined' && console.warn) {
+      console.warn(
+        '[Sterlon][build-set] Off-catalog products — returning degraded turn.',
+        degradedCause,
+        allowlistViols
+      );
+    }
+    return TH.createRecommendationTurn({
+      cards: [],
+      journeyLevel: journeyLevel,
+      degraded: true,
+      degradedCause: degradedCause,
+      provenance: {
+        source: 'degraded',
+        reason: degradedCause,
+        degradedCause: degradedCause,
+        module: 'build-set',
+        scoringVersion: SCORING_VERSION,
+        runtimeVersion: (global.RecommendationRuntime && global.RecommendationRuntime.version) || 1,
+        allowlistViolations: allowlistViols
+      }
+    });
+  }
+
   function shouldForceBeginnerCigarFirst(promptText, journeyLevel) {
     var text = String(promptText || '').toLowerCase();
     if (!text) return false;
@@ -289,6 +356,7 @@
     var rankedCigars = null;
     var rankedSpirits = null;
     var generatePipelineOrder = null;
+    var hardEligibility = null;
     if (GEN && typeof GEN.generateRecommendations === 'function') {
       cards = GEN.generateRecommendations({
         anchorSpiritId: anchorSpiritId,
@@ -310,6 +378,7 @@
       if (cards && cards.rankedCigars) rankedCigars = cards.rankedCigars;
       if (cards && cards.rankedSpirits) rankedSpirits = cards.rankedSpirits;
       if (cards && cards.generatePipelineOrder) generatePipelineOrder = cards.generatePipelineOrder.slice();
+      hardEligibility = (cards && cards.hardEligibility) ? cards.hardEligibility : null;
       session.journeyRoutedSpirit =
         cards[0] && cards[0].spirit
           ? cards[0].spirit
@@ -361,62 +430,13 @@
     var bestSlotReranked = rerankResult.reranked;
     var rerankSkippedForPhilosophy = rerankResult.skipped;
 
-    // Pre-creation allowlist enforcement.
+    // Pre-transform allowlist enforcement.
     // Strict null (=== null, not undefined) means generate.js resolved the name against
     // LoungeProducts and found nothing. Cards from fallback paths have undefined IDs and
     // are intentionally skipped here (they run under an already-degraded mode signal).
-    var allowlistViols =
-      PIDsMod && typeof PIDsMod.idAuthorityViolations === 'function'
-        ? PIDsMod.idAuthorityViolations(cards)
-        : [];
-    if (!allowlistViols.length) {
-      var slotNames3 = ['best', 'safe', 'wildcard'];
-      for (var pci = 0; pci < cards.length; pci++) {
-        var pcCard = cards[pci];
-        var pcSlot = slotNames3[pci] || ('slot-' + pci);
-        var needsCigar = categoryFocus !== 'spirit';
-        var needsSpirit = categoryFocus !== 'cigar';
-        if (needsCigar && !pcCard.cigarId) {
-          allowlistViols.push({
-            slot: pcSlot,
-            field: 'cigar',
-            name: pcCard.cigar || null
-          });
-        }
-        if (needsSpirit && !pcCard.spiritId) {
-          allowlistViols.push({
-            slot: pcSlot,
-            field: 'spirit',
-            name: pcCard.spirit || null
-          });
-        }
-        if (pcCard.food && !pcCard.foodId) {
-          allowlistViols.push({ slot: pcSlot, field: 'food', name: pcCard.food });
-        }
-      }
-    }
+    var allowlistViols = collectAllowlistViolations(cards, categoryFocus, PIDsMod);
     if (allowlistViols.length > 0) {
-      var tel = global.SterlonTelemetry;
-      if (tel && typeof tel.emit === 'function') {
-        tel.emit('recommendation_allowlist_violation', { violations: allowlistViols, module: 'build-set' });
-      }
-      if (typeof console !== 'undefined' && console.warn) {
-        console.warn('[Sterlon][build-set] Off-catalog products — returning degraded turn.', allowlistViols);
-      }
-      return TH.createRecommendationTurn({
-        cards: [],
-        journeyLevel: journeyLevel,
-        degraded: true,
-        provenance: {
-          source: 'degraded',
-          reason: 'off-catalog-products',
-          degradedCause: 'off-catalog-products',
-          module: 'build-set',
-          scoringVersion: SCORING_VERSION,
-          runtimeVersion: (global.RecommendationRuntime && global.RecommendationRuntime.version) || 1,
-          allowlistViolations: allowlistViols
-        }
-      });
+      return returnOffCatalogDegradedTurn(TH, journeyLevel, allowlistViols, 'off-catalog-products');
     }
 
     if (WJ && journeyLevel === 'novice' && WJ.enforceNoviceCap) {
@@ -456,6 +476,16 @@
       });
     }
 
+    var postTransformViols = collectAllowlistViolations(cards, categoryFocus, PIDsMod);
+    if (postTransformViols.length > 0) {
+      return returnOffCatalogDegradedTurn(
+        TH,
+        journeyLevel,
+        postTransformViols,
+        'post-transform-off-catalog-products'
+      );
+    }
+
     var prov = BSH.assembleProvenance({
       opts: o, categoryFocus: categoryFocus, cards: cards,
       usedFlavorRoute: usedFlavorRoute, usedNamedSpirit: usedNamedSpirit,
@@ -466,13 +496,21 @@
       deckKey: deckKey, lockedBestCigarId: lockedBestCigarId, rankedPoolSize: rankedPoolSize,
       rankedCigars: rankedCigars, rankedSpirits: rankedSpirits,
       generatePipelineOrder: generatePipelineOrder, anchorCigarId: anchorCigarId,
+      hardEligibility: hardEligibility,
       SCORING_VERSION: SCORING_VERSION, promptText: promptText
     });
+
+    var hardEligibilityDegraded =
+      !!(hardEligibility && hardEligibility.degraded === true);
+    var hardEligibilityCause = hardEligibilityDegraded
+      ? (hardEligibility.degradedCause || 'hard-eligibility-degraded')
+      : null;
 
     var turn = TH.createRecommendationTurn({
       cards: cards,
       journeyLevel: journeyLevel,
-      degraded: false,
+      degraded: hardEligibilityDegraded,
+      degradedCause: hardEligibilityCause,
       provenance: prov
     });
     var E = global.RecommendationEntropy;

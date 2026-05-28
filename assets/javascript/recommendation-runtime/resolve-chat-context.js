@@ -27,6 +27,9 @@
     }
   }
 
+  // Last-resort legacy fallback only when RecommendationTurnHelpers is unavailable.
+  // This is not a normal authority path — it produces an unfrozen, unvalidated turn-shaped object.
+  // All recoverable paths should prefer createRecommendationTurn() / buildDegradedTurn().
   function buildLegacyInlineDegradedTurn(promptText, journeyLevel, reason) {
     var DT = global.DeckTemplate;
     var cards =
@@ -112,6 +115,9 @@
       brandHint = o.brandHint;
     }
 
+    // Transitional chat-level body intent extraction. Do not add new hard constraint parsing here.
+    // Smoke time, origin/country, and future hard constraints belong in RecommendationEligibilityConstraints
+    // or a shared structured constraint parser — not in the chat facade.
     var bodyConstraint = null;
     var t = promptText.toLowerCase();
     if (/\bfull[\s-]?body\b|\bfull[\s-]?strength\b|\bfull\s+cigar\b|\bfull\s+smoke\b/.test(t)) {
@@ -129,6 +135,8 @@
           ? RR.buildRecommendationSet
           : null;
 
+    // Chat facade delegates authoritative selection to the runtime.
+    // Hard eligibility (smoke time, origin, etc.) is enforced downstream by the canonical runtime path.
     if (resolveTurn) {
       return resolveTurn({
         promptText: promptText,

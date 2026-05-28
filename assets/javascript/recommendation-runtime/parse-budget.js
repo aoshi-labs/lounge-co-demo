@@ -8,6 +8,11 @@
  *   range   — between $A and $B (inclusive)
  *
  * Pure: no DOM, no session mutation. Session ceiling is an optional fallback input.
+ *
+ * Boundary rules:
+ *   - Returns structured intent only. Callers decide whether to use it as a hard filter.
+ *   - Non-numeric language ("cheap", "luxury") is not modeled here; treat as soft signals upstream.
+ *   - This module must not rank, select, or mutate recommendation cards.
  */
 (function (global) {
   'use strict';
@@ -127,6 +132,15 @@
   }
 
   /**
+   * Budget application matrix (current product decision):
+   *   categoryFocus='cigar'    → cigars only
+   *   categoryFocus='pairing'  → cigars only (pair-total budgeting not implemented)
+   *   categoryFocus='spirit'   → spirits only
+   *   categoryFocus=null       → spirits only (spirit-first default)
+   *
+   * If a member says "pairing under $30", the $30 cap applies to cigar selection.
+   * Spirit filtering requires spirit or null focus, or a future pair-total mode.
+   *
    * @param {string|null|undefined} categoryFocus  'spirit' | 'cigar' | 'pairing'
    * @returns {boolean}
    */

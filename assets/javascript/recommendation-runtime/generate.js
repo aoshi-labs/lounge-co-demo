@@ -17,6 +17,10 @@
     return global.RecommendationProductIds || null;
   }
 
+  function EligibilityConstraints() {
+    return global.RecommendationEligibilityConstraints || null;
+  }
+
   function explorationOpts(o) {
     var E = global.RecommendationEntropy;
     var CP = global.ContrastPairing;
@@ -163,6 +167,46 @@
       cigarIds = pid.filterCigarIdsByBrand(cigarIds, cigarBrandLock);
     }
 
+    /*
+     * Hard eligibility gate — runs after all explicit catalog narrowing (budget,
+     * body, wrapper, policy, brand lock) and before scoring/ranking/slot picking.
+     *
+     * Explicit member constraints (smoke time, origin) must remove ineligible
+     * candidates here so that every downstream picker and reconciler operates
+     * only on the eligible pool. Fallback is allowed only when degraded metadata
+     * is explicit. No silent constraint relaxation in this file.
+     *
+     * TODO: apply hard spirit/cigar eligibility to the cigar-anchored branch
+     * once constraints are formalized for that path.
+     */
+    var hardEligibility = null;
+    var EC = EligibilityConstraints();
+    if (EC && typeof EC.applyHardEligibilityConstraints === 'function') {
+      hardEligibility = EC.applyHardEligibilityConstraints(cigarIds, {
+        promptText: o.promptText,
+        journeyLevel: o.journeyLevel,
+        sessionRuntime: o.sessionRuntime,
+        bodyConstraint: o.bodyConstraint,
+        budgetFilter: budgetFilter,
+        anchorSpiritId: anchorSpiritIdResolved,
+        productIds: pid,
+        toleranceMinutes: 10
+      });
+      if (hardEligibility && Array.isArray(hardEligibility.cigarIds)) {
+        cigarIds = hardEligibility.cigarIds;
+      }
+      /* Use explicit fallback only when degraded — never silently. */
+      if (
+        hardEligibility &&
+        hardEligibility.degraded === true &&
+        (!cigarIds || !cigarIds.length) &&
+        Array.isArray(hardEligibility.fallbackCigarIds) &&
+        hardEligibility.fallbackCigarIds.length
+      ) {
+        cigarIds = hardEligibility.fallbackCigarIds;
+      }
+    }
+
     var ex1 = explorationOpts(o);
     ex1.candidateCategory = 'cigar';
     var hasCigarBudget = budgetFilter && budgetFilter.mode && budgetFilter.mode !== 'none';
@@ -258,6 +302,7 @@
     if (CEP && typeof CEP.differentiateFlightWhy === 'function' && recoContext && CEP.isActive(recoContext)) {
       cardsOut = CEP.differentiateFlightWhy(cardsOut, recoContext);
     }
+    cardsOut.hardEligibility = hardEligibility;
     cardsOut.lockedBestCigarId = lockedBestCigarId;
     cardsOut.progressionIntent = progressionIntent;
     cardsOut.rankedPoolSize = rankedCigars.length;

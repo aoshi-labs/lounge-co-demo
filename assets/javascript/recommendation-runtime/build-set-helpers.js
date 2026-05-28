@@ -239,6 +239,10 @@
     }
     if (p.session.pairingStrategy) signals.push('pairing-strategy-' + p.session.pairingStrategy);
     if (p.progressionIntent) signals.push('progression-intent');
+    if (p.hardEligibility && p.hardEligibility.constraintsApplied && p.hardEligibility.constraintsApplied.length) {
+      signals.push('hard-eligibility-gate');
+      if (p.hardEligibility.degraded) signals.push('hard-eligibility-degraded');
+    }
     signals.push('flight-philosophy');
     if (p.rerankSkippedForPhilosophy) signals.push('flight-philosophy-rerank-skipped');
     (p.repairSignals || []).forEach(function (sig) {
@@ -275,6 +279,7 @@
       rankedSpirits: p.rankedSpirits,
       generatePipelineOrder: p.generatePipelineOrder,
       progressionIntent: p.progressionIntent,
+      hardEligibility: p.hardEligibility || null,
       spiritRelativesSkipped:
         p.usedNamedSpirit &&
         (p.repairSignals || []).indexOf('flight-philosophy-pool-thin') !== -1

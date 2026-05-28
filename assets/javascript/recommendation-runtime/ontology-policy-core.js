@@ -131,7 +131,8 @@
     var text = normalizeText(o.promptText || '');
     var session = o.sessionRuntime || {};
     var CSE = global.CigarSmokeEstimate;
-    var quickSmoke = /\b(quick|short|lunch|under an hour|45 min|30 min|patio)\b/.test(text);
+    // Soft scoring hint only. Explicit numeric durations ("30 min", "45 min") are hard constraints handled by RecommendationEligibilityConstraints.
+    var quickSmoke = /\b(quick|short|lunch|under an hour|patio)\b/.test(text);
     var longSession = /\b(long|evening|session|hours|slow)\b/.test(text);
     var ctx = {
       promptText: o.promptText || '',
@@ -184,6 +185,7 @@
       sessionOccasion: sessionOccasion(session),
       sessionRhythm: sessionRhythm(session),
       sessionAtmosphere: sessionAtmosphere(session),
+      // Soft scoring ceiling only; not a hard eligibility cap. Hard duration filtering is upstream in RecommendationEligibilityConstraints.
       maxSmokeMinutes: (function () {
         if (quickSmoke) return 50;
         if (longSession) return 120;
@@ -327,6 +329,7 @@
     return 0;
   }
 
+  // Soft scoring penalty only. Hard smoke-duration filtering happens upstream before ranking.
   function smokeTimePenalty(product, ctx) {
     var CSE = global.CigarSmokeEstimate;
     var mins =

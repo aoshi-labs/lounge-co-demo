@@ -11,6 +11,8 @@
     "catalog:health": "python assets/knowledge/cigar_catalog_cli.py health",
     "catalog:enrich-spirits": "python assets/knowledge/enrich-spirit-suggest.py",
     "test:reco-freeze": "node tools/sterlon-reco-freeze/run.mjs",
+    "test:eligibility-constraints": "node assets/javascript/recommendation-runtime/eligibility-constraints.test.js",
+    "test:build-set-seal": "node assets/javascript/recommendation-runtime/build-set-seal.test.mjs",
     "probe:regression": "node tools/probe-regression-suite.mjs",
     "test:spirit-ontology": "node tools/spirit-ontology-audit.mjs",
     "test:sterlon-shrink": "npm run test:spirit-ontology && npm run test:reco-freeze && node tools/sterlon-live-prompt-smoke.mjs",
