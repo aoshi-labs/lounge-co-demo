@@ -1,11 +1,14 @@
 ﻿/**
- * Sterlon â†’ Groq dev gateway (OpenAI-compatible chat completions).
+ * Sterlon AI gateway (OpenAI-compatible chat completions).
  * POST /api/sterlon/chat â€” same JSON body the visionboard sends today.
  *
- * Env vars (all optional except GROQ_API_KEY):
- *   GROQ_API_KEY          â€” required (unless GROQ_MOCK=true)
+ * Env vars:
+ *   AI_PROVIDER           â€” groq or xai (default groq)
+ *   GROQ_API_KEY          â€” required when AI_PROVIDER=groq
+ *   XAI_API_KEY           â€” required when AI_PROVIDER=xai
  *   PORT                  â€” default 8787
  *   GROQ_MODEL            â€” default llama-3.3-70b-versatile
+ *   XAI_MODEL             â€” default grok-4.3
  *   GROQ_MAX_RETRIES      â€” retry attempts on 429/502/503 (default 3, max 5)
  *   GROQ_REQUEST_INTERVAL_MS â€” minimum ms between outgoing Groq calls (default 0)
  *   GROQ_MOCK             â€” if "true", skip Groq entirely; return synthetic response
@@ -52,15 +55,20 @@ loadDotEnv();
 const PORT = parseInt(process.env.PORT || '8787', 10) || 8787;
 const HOST = process.env.HOST || '127.0.0.1';
 const STATIC_ROOT = path.resolve(process.env.STATIC_ROOT || path.join(__dirname, '..', '..'));
+const AI_PROVIDER = (process.env.AI_PROVIDER || 'groq').trim().toLowerCase();
 const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
+const XAI_URL = 'https://api.x.ai/v1/chat/completions';
 const DEFAULT_GROQ_MODEL = process.env.GROQ_MODEL || 'llama-3.3-70b-versatile';
+const DEFAULT_XAI_MODEL = process.env.XAI_MODEL || 'grok-4.3';
 const GROQ_MAX_RETRIES = Math.min(5, Math.max(0, parseInt(process.env.GROQ_MAX_RETRIES || '3', 10) || 3));
 const GROQ_REQUEST_INTERVAL_MS = Math.max(0, parseInt(process.env.GROQ_REQUEST_INTERVAL_MS || '0', 10) || 0);
 const GROQ_MOCK = process.env.GROQ_MOCK === 'true';
-const LLM_BACKEND = GROQ_MOCK ? 'mock' : 'groq';
+const ACTIVE_PROVIDER = AI_PROVIDER === 'xai' ? 'xai' : 'groq';
+const DEFAULT_MODEL = ACTIVE_PROVIDER === 'xai' ? DEFAULT_XAI_MODEL : DEFAULT_GROQ_MODEL;
+const LLM_BACKEND = GROQ_MOCK ? 'mock' : ACTIVE_PROVIDER;
 
-// Timestamp of the last outgoing Groq call â€” used for GROQ_REQUEST_INTERVAL_MS throttle.
-let lastGroqCallAt = 0;
+// Timestamp of the last outgoing provider call â€” used for GROQ_REQUEST_INTERVAL_MS throttle.
+let lastProviderCallAt = 0;
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -81,22 +89,23 @@ function buildMockResponse(groqBody) {
   });
 }
 
-// Call Groq with retry+backoff for 429, 502, 503 responses.
+// Call the active OpenAI-compatible provider with retry+backoff for 429, 502, 503 responses.
 // Respects retry-after header when present. Falls back to exponential backoff with jitter.
-async function callGroqWithRetry(groqBody, apiKey) {
+async function callProviderWithRetry(groqBody, apiKey) {
   const headers = { 'Content-Type': 'application/json', Authorization: 'Bearer ' + apiKey };
+  const providerUrl = ACTIVE_PROVIDER === 'xai' ? XAI_URL : GROQ_URL;
   let attempt = 0;
   while (true) {
     // Enforce minimum inter-request interval before every outgoing call.
     if (GROQ_REQUEST_INTERVAL_MS > 0) {
-      const sinceLastCall = Date.now() - lastGroqCallAt;
+      const sinceLastCall = Date.now() - lastProviderCallAt;
       if (sinceLastCall < GROQ_REQUEST_INTERVAL_MS) {
         await sleep(GROQ_REQUEST_INTERVAL_MS - sinceLastCall);
       }
     }
-    lastGroqCallAt = Date.now();
+    lastProviderCallAt = Date.now();
 
-    const groqRes = await fetch(GROQ_URL, { method: 'POST', headers, body: JSON.stringify(groqBody) });
+    const groqRes = await fetch(providerUrl, { method: 'POST', headers, body: JSON.stringify(groqBody) });
 
     if (groqRes.ok) return groqRes;
 
@@ -117,7 +126,7 @@ async function callGroqWithRetry(groqBody, apiKey) {
 
     attempt++;
     console.warn(
-      'Groq ' + groqRes.status + ' on attempt ' + attempt + '/' + (GROQ_MAX_RETRIES + 1) +
+      ACTIVE_PROVIDER + ' ' + groqRes.status + ' on attempt ' + attempt + '/' + (GROQ_MAX_RETRIES + 1) +
       ' â€” retrying in ' + waitMs + ' ms'
     );
     await sleep(waitMs);
@@ -126,9 +135,9 @@ async function callGroqWithRetry(groqBody, apiKey) {
   }
 }
 
-function resolveGroqModel(requested) {
+function resolveProviderModel(requested) {
   const r = (requested || '').trim();
-  if (!r || r === 'sterlon-default' || r === 'sterlon-demo') return DEFAULT_GROQ_MODEL;
+  if (!r || r === 'sterlon-default' || r === 'sterlon-demo') return DEFAULT_MODEL;
   return r;
 }
 
@@ -238,11 +247,15 @@ const server = http.createServer(async (req, res) => {
     res.end(
       JSON.stringify({
         ok: true,
-        service: 'sterlon-groq-gateway',
+        service: 'sterlon-ai-gateway',
         post: '/api/sterlon/chat',
         backend: LLM_BACKEND,
+        provider: ACTIVE_PROVIDER,
+        modelDefault: DEFAULT_MODEL,
         groqModelDefault: DEFAULT_GROQ_MODEL,
+        xaiModelDefault: DEFAULT_XAI_MODEL,
         groqKeyConfigured: Boolean(process.env.GROQ_API_KEY),
+        xaiKeyConfigured: Boolean(process.env.XAI_API_KEY),
         mock: GROQ_MOCK
       })
     );
@@ -257,10 +270,10 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  const apiKey = process.env.GROQ_API_KEY || '';
+  const apiKey = ACTIVE_PROVIDER === 'xai' ? (process.env.XAI_API_KEY || '') : (process.env.GROQ_API_KEY || '');
   if (!apiKey && !GROQ_MOCK) {
     res.writeHead(500, { ...base, 'Content-Type': 'application/json; charset=utf-8' });
-    res.end(JSON.stringify({ error: 'GROQ_API_KEY is not set in server environment' }));
+    res.end(JSON.stringify({ error: (ACTIVE_PROVIDER === 'xai' ? 'XAI_API_KEY' : 'GROQ_API_KEY') + ' is not set in server environment' }));
     return;
   }
 
@@ -275,7 +288,7 @@ const server = http.createServer(async (req, res) => {
 
   const stream = payload.stream === true;
   const groqBody = {
-    model: resolveGroqModel(payload.model),
+    model: resolveProviderModel(payload.model),
     messages: Array.isArray(payload.messages) ? payload.messages : [],
     stream,
     max_tokens: typeof payload.max_tokens === 'number' ? payload.max_tokens : 1024,
@@ -305,10 +318,10 @@ const server = http.createServer(async (req, res) => {
 
   let groqRes;
   try {
-    groqRes = await callGroqWithRetry(groqBody, apiKey);
+    groqRes = await callProviderWithRetry(groqBody, apiKey);
   } catch (err) {
     res.writeHead(502, { ...base, 'Content-Type': 'application/json; charset=utf-8' });
-    res.end(JSON.stringify({ error: 'Groq fetch failed', message: String(err && err.message ? err.message : err) }));
+    res.end(JSON.stringify({ error: ACTIVE_PROVIDER + ' fetch failed', message: String(err && err.message ? err.message : err) }));
     return;
   }
 
@@ -359,7 +372,7 @@ server.listen(PORT, HOST, () => {
   console.log('  Static root:', STATIC_ROOT);
   console.log('  POST /api/sterlon/chat');
   console.log('  LLM backend:', LLM_BACKEND);
-  console.log('  Default model:', DEFAULT_GROQ_MODEL);
+  console.log('  Default model:', DEFAULT_MODEL);
   console.log('  Max retries on 429/5xx:', GROQ_MAX_RETRIES);
   if (GROQ_REQUEST_INTERVAL_MS > 0) console.log('  Request interval throttle:', GROQ_REQUEST_INTERVAL_MS + ' ms');
   if (GROQ_MOCK) console.log('  *** MOCK MODE â€” Groq will not be called ***');
