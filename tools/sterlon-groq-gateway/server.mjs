@@ -1,17 +1,17 @@
-﻿/**
+/**
  * Sterlon AI gateway (OpenAI-compatible chat completions).
- * POST /api/sterlon/chat â€” same JSON body the visionboard sends today.
+ * POST /api/sterlon/chat - same JSON body the visionboard sends today.
  *
  * Env vars:
- *   AI_PROVIDER           â€” groq or xai (default groq)
- *   GROQ_API_KEY          â€” required when AI_PROVIDER=groq
- *   XAI_API_KEY           â€” required when AI_PROVIDER=xai
- *   PORT                  â€” default 8787
- *   GROQ_MODEL            â€” default llama-3.3-70b-versatile
- *   XAI_MODEL             â€” default grok-4.3
- *   GROQ_MAX_RETRIES      â€” retry attempts on 429/502/503 (default 3, max 5)
- *   GROQ_REQUEST_INTERVAL_MS â€” minimum ms between outgoing Groq calls (default 0)
- *   GROQ_MOCK             â€” if "true", skip Groq entirely; return synthetic response
+ *   AI_PROVIDER           - groq or xai (default groq)
+ *   GROQ_API_KEY          - required when AI_PROVIDER=groq
+ *   XAI_API_KEY           - required when AI_PROVIDER=xai
+ *   PORT                  - default 8787
+ *   GROQ_MODEL            - default llama-3.3-70b-versatile
+ *   XAI_MODEL             - default grok-4.3
+ *   GROQ_MAX_RETRIES      - retry attempts on 429/502/503 (default 3, max 5)
+ *   GROQ_REQUEST_INTERVAL_MS - minimum ms between outgoing Groq calls (default 0)
+ *   GROQ_MOCK             - if "true", skip Groq entirely; return synthetic response
  *
  * Optional .env in this directory (simple KEY=value lines), e.g.:
  *   GROQ_MAX_RETRIES=3
@@ -67,7 +67,7 @@ const ACTIVE_PROVIDER = AI_PROVIDER === 'xai' ? 'xai' : 'groq';
 const DEFAULT_MODEL = ACTIVE_PROVIDER === 'xai' ? DEFAULT_XAI_MODEL : DEFAULT_GROQ_MODEL;
 const LLM_BACKEND = GROQ_MOCK ? 'mock' : ACTIVE_PROVIDER;
 
-// Timestamp of the last outgoing provider call â€” used for GROQ_REQUEST_INTERVAL_MS throttle.
+// Timestamp of the last outgoing provider call - used for GROQ_REQUEST_INTERVAL_MS throttle.
 let lastProviderCallAt = 0;
 
 function sleep(ms) {
@@ -127,7 +127,7 @@ async function callProviderWithRetry(groqBody, apiKey) {
     attempt++;
     console.warn(
       ACTIVE_PROVIDER + ' ' + groqRes.status + ' on attempt ' + attempt + '/' + (GROQ_MAX_RETRIES + 1) +
-      ' â€” retrying in ' + waitMs + ' ms'
+      ' - retrying in ' + waitMs + ' ms'
     );
     await sleep(waitMs);
     // Drain the response body to avoid connection leaks before retrying.
@@ -299,7 +299,7 @@ const server = http.createServer(async (req, res) => {
   if (GROQ_MOCK) {
     if (stream) {
       // For streaming, emit a single data chunk then done.
-      const mockText = '[MOCK] Sterlon gateway mock mode â€” model: ' + groqBody.model;
+      const mockText = '[MOCK] Sterlon gateway mock mode - model: ' + groqBody.model;
       const chunk = JSON.stringify({
         id: 'mock-' + Date.now(),
         object: 'chat.completion.chunk',
@@ -375,6 +375,5 @@ server.listen(PORT, HOST, () => {
   console.log('  Default model:', DEFAULT_MODEL);
   console.log('  Max retries on 429/5xx:', GROQ_MAX_RETRIES);
   if (GROQ_REQUEST_INTERVAL_MS > 0) console.log('  Request interval throttle:', GROQ_REQUEST_INTERVAL_MS + ' ms');
-  if (GROQ_MOCK) console.log('  *** MOCK MODE â€” Groq will not be called ***');
+  if (GROQ_MOCK) console.log('  *** MOCK MODE - Groq will not be called ***');
 });
-
