@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Settings — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Account, privacy, notification, and display settings." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Settings — Lounge & Co." />
+  <meta property="og:description" content="Account, privacy, notification, and display settings." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Settings — Lounge & Co." />
+  <meta name="twitter:description" content="Account, privacy, notification, and display settings." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/settings.css"/>
+</head>
+<body>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Thomas H.</div><div class="sidebar-user-tier">Elite · 1,744 pts · #4</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area">
+  <h1 class="visually-hidden">Settings</h1>
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu"><i data-lucide="menu" class="ic-16"></i></button>
+    <div class="topbar-actions">
+    </div>
+  </header>
+
+  <div class="settings-page-frame">
+
+    <!-- Settings sub-nav -->
+    <div class="settings-nav settings-section-nav">
+      <a href="#profile" class="settings-nav-item active" onclick="scrollSection(event,'profile',this)"><i data-lucide="user" class="ic-15"></i>Profile</a>
+      <a href="#background" class="settings-nav-item" onclick="scrollSection(event,'background',this)"><i data-lucide="image" class="ic-15"></i>Background</a>
+      <a href="#account" class="settings-nav-item" onclick="scrollSection(event,'account',this)"><i data-lucide="lock" class="ic-15"></i>Account</a>
+      <a href="#notifications" class="settings-nav-item" onclick="scrollSection(event,'notifications',this)"><i data-lucide="bell" class="ic-15"></i>Notifications</a>
+      <a href="#privacy" class="settings-nav-item" onclick="scrollSection(event,'privacy',this)"><i data-lucide="shield" class="ic-15"></i>Privacy</a>
+      <a href="#preferences" class="settings-nav-item" onclick="scrollSection(event,'preferences',this)"><i data-lucide="moon" class="ic-15"></i>Preferences</a>
+      <div class="nav-divider"></div>
+      <a href="login.html" class="settings-nav-item is-danger"><i data-lucide="log-out" class="ic-15"></i>Sign Out</a>
+    </div>
+
+    <!-- Sections -->
+    <div class="settings-page-stack">
+
+      <!-- Profile -->
+      <section id="profile" class="section">
+        <h3>Profile</h3>
+        <div class="settings-avatar-row">
+          <div class="avatar settings-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+          <div class="settings-media-actions">
+            <button class="settings-btn-primary">Upload Photo</button>
+            <button class="settings-btn-ghost">Remove</button>
+          </div>
+        </div>
+
+        <div class="settings-two-col-grid">
+          <div><label class="field-label">Display Name<input class="input" value="Thomas Harrington"/></label></div>
+          <div><label class="field-label">Username<input class="input" value="thomas_h"/></label></div>
+        </div>
+        <div class="settings-field-row"><label class="field-label">Bio<textarea class="input settings-bio-textarea" rows="3">Aficionado of full-bodied smokes and single malts. Usually found with a Padron Anniversary and a dram of Lagavulin.</textarea></label></div>
+        <div class="settings-field-row-wide"><label class="field-label">Location<input class="input" value="Atlanta, GA"/></label></div>
+
+        <button class="settings-save-btn">Save Changes</button>
+      </section>
+
+      <!-- Background -->
+      <section id="background" class="section">
+        <h3>Background</h3>
+        <div class="settings-bg-preview-row">
+          <img class="settings-bg-preview-img" src="assets/images/profile-banner-sample.png" alt="Current profile background" />
+          <div class="settings-media-actions">
+            <button class="settings-btn-primary">Upload Picture</button>
+            <button class="settings-btn-ghost">Remove</button>
+          </div>
+        </div>
+        <div class="row">
+          <div><div class="setting-name">Application backdrop</div><div class="setting-sub">Use this image as a subtle backdrop across the rest of the app</div></div>
+          <label class="toggle"><input type="checkbox" id="app-backdrop-toggle" aria-label="Application backdrop"><span class="slider"></span></label>
+        </div>
+      </section>
+
+      <!-- Account -->
+      <section id="account" class="section">
+        <h3>Account</h3>
+        <div class="settings-stack-flush">
+          <div class="settings-two-col-grid-bordered">
+            <div><label class="field-label">Email<input class="input" value="thomas.h@example.com"/></label></div>
+            <div><label class="field-label">Phone<input class="input" value="+1 (404) 555-0142"/></label></div>
+          </div>
+          <div class="row">
+            <div><div class="setting-name">Password</div><div class="setting-sub">Last changed 3 months ago</div></div>
+            <button class="setting-action-btn">Change</button>
+          </div>
+          <div class="row">
+            <div><div class="setting-name">Two-Factor Authentication</div><div class="setting-sub">Recommended for additional security</div></div>
+            <label class="toggle"><input type="checkbox" aria-label="Two-Factor Authentication"><span class="slider"></span></label>
+          </div>
+          <div class="row">
+            <div><div class="setting-name">Membership Tier</div><div class="setting-sub-gold">Elite Member · since March 2023</div></div>
+            <button class="setting-action-btn-ghost">Manage</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="notifications" class="section">
+        <h3>Notifications</h3>
+        <div class="row">
+          <div><div class="setting-name">New comments &amp; mentions</div><div class="setting-sub">When someone @-mentions or replies to you</div></div>
+          <label class="toggle"><input type="checkbox" checked aria-label="New comments &amp; mentions"><span class="slider"></span></label>
+        </div>
+        <div class="row">
+          <div><div class="setting-name">Likes on your posts</div><div class="setting-sub">Grouped daily when 3+ people react</div></div>
+          <label class="toggle"><input type="checkbox" checked aria-label="Likes on your posts"><span class="slider"></span></label>
+        </div>
+        <div class="row">
+          <div><div class="setting-name">Event reminders</div><div class="setting-sub">24 hours before any RSVP'd event</div></div>
+          <label class="toggle"><input type="checkbox" checked aria-label="Event reminders"><span class="slider"></span></label>
+        </div>
+        <div class="row">
+          <div><div class="setting-name">Tab status updates</div><div class="setting-sub">Acknowledged, ready, and served</div></div>
+          <label class="toggle"><input type="checkbox" checked aria-label="Tab status updates"><span class="slider"></span></label>
+        </div>
+        <div class="row">
+          <div><div class="setting-name">Leaderboard milestones</div><div class="setting-sub">Tier changes and rank movement</div></div>
+          <label class="toggle"><input type="checkbox" checked aria-label="Leaderboard milestones"><span class="slider"></span></label>
+        </div>
+        <div class="row">
+          <div><div class="setting-name">Weekly digest email</div><div class="setting-sub">Sundays at 9 AM — top reviews &amp; upcoming events</div></div>
+          <label class="toggle"><input type="checkbox" aria-label="Weekly digest email"><span class="slider"></span></label>
+        </div>
+      </section>
+
+      <!-- Privacy -->
+      <section id="privacy" class="section">
+        <h3>Privacy</h3>
+        <div class="row">
+          <div><div class="setting-name">Public profile</div><div class="setting-sub">Visible to all Lounge & Co. members</div></div>
+          <label class="toggle"><input type="checkbox" checked aria-label="Public profile"><span class="slider"></span></label>
+        </div>
+        <div class="row">
+          <div><div class="setting-name">Show check-ins on feed</div><div class="setting-sub">Others can see when you're at the lounge</div></div>
+          <label class="toggle"><input type="checkbox" checked aria-label="Show check-ins on feed"><span class="slider"></span></label>
+        </div>
+        <div class="row">
+          <div><div class="setting-name">Show me as 'currently here'</div><div class="setting-sub">Other members see you on the "Here Right Now" list while you're checked in</div></div>
+          <label class="toggle"><input type="checkbox" id="presence-visible-toggle" checked aria-label="Show me as 'currently here'"><span class="slider"></span></label>
+        </div>
+        <div class="row">
+          <div><div class="setting-name">Allow direct messages</div><div class="setting-sub">Other members can message you</div></div>
+          <label class="toggle"><input type="checkbox" checked aria-label="Allow direct messages"><span class="slider"></span></label>
+        </div>
+        <div class="row">
+          <div><div class="setting-name">Include in AI training</div><div class="setting-sub">Your reviews help improve Sterlon for everyone</div></div>
+          <label class="toggle"><input type="checkbox" checked aria-label="Include in AI training"><span class="slider"></span></label>
+        </div>
+      </section>
+
+      <!-- Preferences -->
+      <section id="preferences" class="section">
+        <h3>Preferences</h3>
+        <div class="settings-two-col-grid">
+          <div>
+            <label class="field-label" for="theme-pref">Default Theme</label>
+            <select class="input" id="theme-pref" aria-label="Theme preference">
+              <option value="dark">Cedar (default)</option>
+              <option value="light">Parchment</option>
+              <option value="system">System</option>
+            </select>
+          </div>
+          <div>
+            <label class="field-label">Default Feed Sort</label>
+            <select class="input" aria-label="Default feed sort"><option>Latest</option><option>Top this week</option><option>Friends only</option></select>
+          </div>
+        </div>
+        <div class="settings-field-row">
+          <label class="field-label">Sterlon Personality</label>
+          <select class="input" aria-label="Sterlon voice style"><option>Knowledgeable Sommelier (default)</option><option>Casual &amp; Friendly</option><option>Brief &amp; Direct</option></select>
+        </div>
+        <div class="row settings-row-top-border">
+          <div><div class="setting-name">Show prices in feed posts</div><div class="setting-sub">Display product prices on tagged reviews</div></div>
+          <label class="toggle"><input type="checkbox" checked aria-label="Show prices in feed posts"><span class="slider"></span></label>
+        </div>
+      </section>
+
+      <!-- Danger zone -->
+      <section class="section settings-section-danger">
+        <h3 class="is-danger">Danger Zone</h3>
+        <div class="row">
+          <div><div class="setting-name">Export your data</div><div class="setting-sub">All posts, reviews, and account info as JSON</div></div>
+          <button class="setting-action-btn">Download</button>
+        </div>
+        <div class="row">
+          <div><div class="setting-name">Delete account</div><div class="setting-sub">Permanent. Cannot be undone.</div></div>
+          <button class="settings-btn-danger">Delete</button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+<nav class="bottom-nav">
+  <a href="feed.html" class="bottom-nav-item"><i data-lucide="newspaper" class="ic-20"></i>Feed</a>
+  <a href="explore.html" class="bottom-nav-item"><i data-lucide="search" class="ic-20"></i>Explore</a>
+  <a href="create-post.html" class="bottom-nav-item"><div class="bottom-nav-create-btn"><i data-lucide="plus" class="ic-20"></i></div></a>
+  <a href="events.html" class="bottom-nav-item"><i data-lucide="calendar" class="ic-20"></i>Events</a>
+  <a href="profile.html" class="bottom-nav-item"><i data-lucide="user" class="ic-20"></i>Profile</a>
+</nav>
+
+<script>
+  function scrollSection(e,id,btn){e.preventDefault();document.querySelectorAll('.settings-nav-item').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});}
+
+  // Application backdrop — toggle only fires a confirmation toast for now.
+  (function(){
+    const t = document.getElementById('app-backdrop-toggle');
+    if(!t) return;
+    t.addEventListener('change', () => {
+      if (window.Lounge && Lounge.toast) {
+        Lounge.toast(t.checked ? 'Backdrop on' : 'Backdrop off',
+                     { variant: t.checked ? 'success' : 'burg' });
+      }
+    });
+  })();
+
+  // Presence visibility persists across pages (used by checkin.html and feed.html "who's here" widgets)
+  (function(){
+    const t = document.getElementById('presence-visible-toggle');
+    if(!t) return;
+    const stored = localStorage.getItem('lounge-presence-visible');
+    if(stored !== null) t.checked = stored === 'true';
+    t.addEventListener('change', () => {
+      localStorage.setItem('lounge-presence-visible', t.checked);
+      if(window.Lounge && Lounge.toast){
+        Lounge.toast(t.checked ? "You're visible on 'Here Right Now'" : "You'll be hidden from 'Here Right Now'", { variant: t.checked ? 'success' : 'burg' });
+      }
+    });
+  })();
+
+  // Theme preference — wires the Preferences select to the same storage key as the top-bar toggle
+  (function(){
+    const sel = document.getElementById('theme-pref');
+    if(!sel) return;
+
+    const systemMql = window.matchMedia('(prefers-color-scheme: light)');
+    const applyTheme = (v) => {
+      if (v === 'system') {
+        document.documentElement.setAttribute('data-theme', systemMql.matches ? 'light' : 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', v);
+      }
+    };
+
+    // Initialize select from storage (or 'system' if no preference saved)
+    const stored = localStorage.getItem('lounge-theme');
+    sel.value = stored === 'light' || stored === 'dark' ? stored : 'system';
+
+    sel.addEventListener('change', () => {
+      const v = sel.value;
+      if (v === 'system') {
+        try { localStorage.removeItem('lounge-theme'); } catch(e){}
+      } else {
+        try { localStorage.setItem('lounge-theme', v); } catch(e){}
+      }
+      applyTheme(v);
+      if (window.Lounge && Lounge.toast) {
+        const labels = {
+          dark:   { msg: 'Switched to Cedar',           variant: undefined,  icon: 'moon'    },
+          light:  { msg: 'Switched to Parchment',       variant: 'burg',     icon: 'sun'     },
+          system: { msg: 'Following your system theme', variant: 'success',  icon: 'monitor' },
+        };
+        const { msg, variant, icon } = labels[v];
+        const opts = { icon };
+        if (variant) opts.variant = variant;
+        Lounge.toast(msg, opts);
+      }
+    });
+
+    // Live-follow OS theme while in 'system' mode
+    systemMql.addEventListener('change', () => {
+      if (sel.value === 'system') applyTheme('system');
+    });
+  })();
+</script>
+</body>
+</html>

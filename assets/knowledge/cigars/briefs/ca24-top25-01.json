@@ -1,0 +1,214 @@
+{
+  "version": 1,
+  "shard": "ca24-top25-01",
+  "category": "cigar",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 9,
+  "products": [
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/my-father-the-judge-grand-robusto-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Coffee",
+        "occasion": "Collector",
+        "pairingAffinity": "Cognac",
+        "wrapperRole": "Nicaragua wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Nicaragua binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/my-father-the-judge-grand-robusto-2024.",
+        "avoidIf": "Beginner nicotine-sensitive, very short time window, or user wants opposite body/wrapper style.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, The Judge, or a full cognac-friendly smoke at this size."
+      },
+      "menuLine": "My Father The Judge Grand Robusto · 6 × 60 · Grand Robusto · Full · Nicaragua · $18 · Notes: cocoa, coffee, earth, dark sweetness",
+      "stickSize": "6 × 60 · Grand Robusto",
+      "id": "ca24-01-mf-judge"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/montecristo-1935-anniversary-nicaragua-espeso-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "After dinner",
+        "pairingAffinity": "Rum",
+        "wrapperRole": "Nicaragua wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Nicaragua binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/montecristo-1935-anniversary-nicaragua-espeso-2024.",
+        "avoidIf": "Beginner nicotine-sensitive, very short time window, or user wants opposite body/wrapper style.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, 1935 Anniversary Nicaragua, or a medium-full rum-friendly smoke at this size.",
+        "memberBlurb": "Montecristo’s Nicaraguan anniversary line — polished spice and cedar over modern Nicaraguan body. Espeso format smokes richer than a standard toro."
+      },
+      "menuLine": "Montecristo 1935 Anniversary Nicaragua Espeso · 6 × 52 · Toro · Medium-Full · Nicaragua · $16 · Notes: cedar, baking spice, sweet tobacco, toast",
+      "stickSize": "6 × 52 · Toro",
+      "id": "ca24-02-monte-1935"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/e-p-carrillo-encore-celestial-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "Celebration",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Nicaragua wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Nicaragua binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/e-p-carrillo-encore-celestial-2024.",
+        "avoidIf": "Beginner nicotine-sensitive, very short time window, or user wants opposite body/wrapper style.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, Encore, or a medium-full bourbon-friendly smoke at this size.",
+        "memberBlurb": "E.P. Carrillo’s encore act — woody sweetness and baking spice in a long Celestial format. Celebration cigar with boutique pedigree."
+      },
+      "menuLine": "E.P. Carrillo Encore Celestial · 6¼ × 54 · Toro · Medium-Full · Nicaragua · $15 · Notes: cedar, wood, earth, leather",
+      "stickSize": "6¼ × 54 · Toro",
+      "id": "ca24-03-epc-encore"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/padron-serie-1926-no-6-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Coffee",
+        "occasion": "Collector",
+        "pairingAffinity": "Cognac",
+        "wrapperRole": "Nicaragua wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Nicaragua binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/padron-serie-1926-no-6-2024.",
+        "avoidIf": "Beginner nicotine-sensitive, very short time window, or user wants opposite body/wrapper style.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, Serie 1926, or a full cognac-friendly smoke at this size.",
+        "memberBlurb": "Short 1926 format with full Padron cocoa-coffee DNA — dense flavor in under an hour. Collector 1926 without committing to a double corona."
+      },
+      "menuLine": "Padron Serie 1926 No. 6 · 4¾ × 50 · Robusto · Full · Nicaragua · $22 · Notes: cocoa, coffee, earth, dark sweetness",
+      "stickSize": "4¾ × 50 · Robusto",
+      "id": "ca24-04-padron-1926"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/partagas-linea-maestra-maestro-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "Collector",
+        "pairingAffinity": "Scotch",
+        "wrapperRole": "Cuba wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Cuba binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Cuba filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/partagas-linea-maestra-maestro-2024.",
+        "avoidIf": "Beginner seeking ultra-mild Connecticut only, or user needs guaranteed U.S. retail when cigar is island Cuban.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, Línea Maestra, or a full scotch-friendly smoke at this size."
+      },
+      "menuLine": "Partagás Línea Maestra Maestro · 5⅛ × 52 · Robusto · Full · Cuban · — · Notes: cedar, wood, earth, leather",
+      "stickSize": "5⅛ × 52 · Robusto",
+      "id": "ca24-05-partagas-maestra"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/oliva-serie-v-melanio-maduro-torpedo-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Dark & Heavy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Mexico wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Nicaragua binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/oliva-serie-v-melanio-maduro-torpedo-2024.",
+        "avoidIf": "Beginner nicotine-sensitive, very short time window, or user wants opposite body/wrapper style.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, Serie V Melanio Maduro, or a medium-full bourbon-friendly smoke at this size."
+      },
+      "menuLine": "Oliva Serie V Melanio Maduro · 6½ × 52 · Torpedo · Medium-Full · Nicaragua · $12 · Notes: cocoa, earth, pepper, espresso",
+      "stickSize": "6½ × 52 · Torpedo",
+      "id": "ca24-06-oliva-mel-torp"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/rocky-patel-conviction-toro-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Savory",
+        "occasion": "Special occasion",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Nicaragua wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Nicaragua binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/rocky-patel-conviction-toro-2024.",
+        "avoidIf": "Beginner nicotine-sensitive, very short time window, or user wants opposite body/wrapper style.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, Conviction, or a medium-full bourbon-friendly smoke at this size.",
+        "memberBlurb": "Rocky Patel’s conviction line — savory Nicaraguan spice and cedar in a classic toro. Modern RP without the heaviest broadleaf bomb."
+      },
+      "menuLine": "Rocky Patel Conviction · 6 × 52 · Toro · Medium-Full · Nicaragua · $14 · Notes: earth, savory spice, cedar, cocoa",
+      "stickSize": "6 × 52 · Toro",
+      "id": "ca24-07-rp-conviction"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/cohiba-maduro-5-magicos-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Dark & Heavy",
+        "occasion": "Collector",
+        "pairingAffinity": "Rum",
+        "wrapperRole": "Cuba wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Cuba binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Cuba filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/cohiba-maduro-5-magicos-2024.",
+        "avoidIf": "Beginner seeking ultra-mild Connecticut only, or user needs guaranteed U.S. retail when cigar is island Cuban.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, Maduro 5, or a medium-full rum-friendly smoke at this size.",
+        "memberBlurb": "Cuban Cohiba maduro in a short magico — dark sweetness and luxury aroma in a 4½-inch format. Island-only prestige."
+      },
+      "menuLine": "Cohiba Maduro 5 Mágicos · 4½ × 52 · Petit Robusto · Medium-Full · Cuban · — · Notes: cocoa, earth, pepper, espresso",
+      "stickSize": "4½ × 52 · Petit Robusto",
+      "id": "ca24-08-cohiba-mad5"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/arturo-fuente-don-carlos-eye-of-the-bull-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "Celebration",
+        "pairingAffinity": "Cognac",
+        "wrapperRole": "Cameroon wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Dominican Republic binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Dominican Republic filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/arturo-fuente-don-carlos-eye-of-the-bull-2024.",
+        "avoidIf": "Beginner nicotine-sensitive, very short time window, or user wants opposite body/wrapper style.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, Don Carlos, or a medium-full cognac-friendly smoke at this size."
+      },
+      "menuLine": "Arturo Fuente Don Carlos Eye of the Bull · 6¼ × 54 · Toro · Medium-Full · Dominican · $16 · Notes: cedar, baking spice, sweet tobacco, toast",
+      "stickSize": "6¼ × 54 · Toro",
+      "id": "ca24-09-af-eyebull"
+    }
+  ]
+}

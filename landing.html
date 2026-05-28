@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lounge & Co. — The Network for Cigar & Spirits Connoisseurs (21+)</title>
+
+  <!-- ════════════════════════════════════════
+       SEO + social meta
+       : Lounge & Co. is a consumer network — one
+       member identity travels across every participating venue. This page
+       is the platform-branded landing surface (not per-venue).
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Lounge & Co. is the network for 21+ premium cigar and spirits enthusiasts. One member identity across every participating venue — your palate, your visits, and Sterlon, the AI concierge that travels with you." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://loungeco.lounge.app/" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Lounge & Co. — The Network for Cigar & Spirits Connoisseurs (21+)" />
+  <meta property="og:description" content="Carry the night with you. Every cigar. Every bottle. Every venue you've belonged to. Walk into a new lounge in a new city. The room already knows." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <meta property="og:url" content="https://loungeco.lounge.app/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lounge & Co. — Carry the night with you" />
+  <meta name="twitter:description" content="The network for 21+ premium cigar and spirits enthusiasts." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- PWA / app icons -->
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Structured data — SoftwareApplication for the platform itself.
+       Lounge & Co. is a consumer network (one app,
+       one PWA, infinite participating venues inside). The legacy
+       BarOrPub block was retired because the platform is not a single bar. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Lounge & Co.",
+    "applicationCategory": "SocialNetworkingApplication",
+    "operatingSystem": "Web, iOS, Android",
+    "description": "Consumer network for premium cigar and spirits connoisseurs. One member identity across every participating venue; reviews, Visits, events, and Sterlon AI concierge that travels with you.",
+    "url": "https://lounge.app/",
+    "offers": [
+      {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free member tier."
+      },
+      {
+        "@type": "Offer",
+        "price": "9",
+        "priceCurrency": "USD",
+        "description": "Connoisseur tier — $9/month."
+      },
+      {
+        "@type": "Offer",
+        "price": "19",
+        "priceCurrency": "USD",
+        "description": "Cellar Club tier — $19/month."
+      }
+    ],
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "21+ cigar and spirits enthusiasts"
+    }
+  }
+  </script>
+
+  <!-- Fonts: Cormorant Garamond (display) · Lora (body serif) · Inter (UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+
+  <link rel="stylesheet" href="assets/css/landing.css"/>
+</head>
+
+<body>
+
+<!-- ════════════════════════════════════════════════════════
+     ⚙  PLATFORM CONFIG — Lounge & Co. consumer-brand constants.
+     this landing surface is platform-branded
+     (Lounge & Co. owns the chrome). Per-venue branding only happens
+     inside a venue workspace, never on this surface. The `LOUNGE`
+     name is preserved here because lounge.js still aliases it to
+     VENUE for backward compat with legacy mockup pages.
+════════════════════════════════════════════════════════ -->
+<script>
+window.LOUNGE = {
+  name:        "Lounge & Co.",
+  shortName:   "Lounge & Co.",
+  initials:    "L&C",
+  tagline:     "Carry the night with you.",
+  description: "The network for 21+ cigar and spirits connoisseurs. One identity across every participating venue — your palate, your Visits, and Sterlon, the AI concierge that knows your taste.",
+  logoUrl:     null,           /* Set to image URL to replace initials mark */
+
+  stats: {
+    members:  "12,400+",
+    reviews:  "48,000+",
+    events:   "1,200+",
+    founded:  "12",
+  },
+
+  nav: [
+    { label: "Discover", href: "discover-venues.html" },
+    { label: "Sterlon",  href: "sterlon.html" },
+    { label: "Pricing",  href: "member-billing.html" },
+  ],
+};
+
+/* Populate dynamic text — Lounge & Co. design tokens live in lounge.css :root */
+(function applyConfig() {
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-lounge-name]').forEach(el => el.textContent = LOUNGE.name);
+    document.querySelectorAll('[data-lounge-initials]').forEach(el => el.textContent = LOUNGE.initials);
+    document.querySelectorAll('[data-lounge-tagline]').forEach(el => el.textContent = LOUNGE.tagline);
+    document.querySelectorAll('[data-lounge-desc]').forEach(el => el.textContent = LOUNGE.description);
+    document.querySelectorAll('[data-stat-members]').forEach(el => el.textContent = LOUNGE.stats.members);
+    document.querySelectorAll('[data-stat-reviews]').forEach(el => el.textContent = LOUNGE.stats.reviews);
+    document.querySelectorAll('[data-stat-events]').forEach(el => el.textContent = LOUNGE.stats.events);
+    document.querySelectorAll('[data-stat-founded]').forEach(el => el.textContent = LOUNGE.stats.founded);
+    /* Build nav */
+    const navLinks = document.querySelectorAll('.dynamic-nav-links');
+    navLinks.forEach(container => {
+      LOUNGE.nav.forEach(link => {
+        const a = document.createElement('a');
+        a.href = link.href; a.textContent = link.label; a.className = 'nav-link';
+        if (container.classList.contains('mobile-nav')) a.style.fontSize = '16px';
+        container.appendChild(a);
+      });
+    });
+  });
+})();
+</script>
+
+<!-- ════════════════════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════════════════ -->
+<nav class="nav">
+  <div class="nav-inner">
+
+    <!-- Logo -->
+    <a href="landing.html" class="landing-nav-logo">
+      <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+      <div>
+        <div class="logo-text-name" data-lounge-name>Lounge & Co.</div>
+        <div class="logo-text-sub">Connoisseur Network</div>
+      </div>
+    </a>
+
+    <!-- Desktop links (hidden on mobile) -->
+    <div id="desktop-links" class="landing-nav-desktop">
+      <div class="dynamic-nav-links gap-row landing-nav-links"></div>
+      <div class="divider-h landing-nav-divider"></div>
+      <a href="login.html" class="nav-link landing-nav-signin">Sign In</a>
+      <a href="age-verify.html" class="btn btn-burg btn-sm">Join Now</a>
+    </div>
+
+    <!-- Right group: hamburger (mobile only). Theme is set in settings.html. -->
+    <div class="landing-nav-actions">
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <i data-lucide="menu" class="ic-22"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="mobile-menu landing-nav-mobile">
+    <div class="dynamic-nav-links mobile-nav landing-nav-mobile-links"></div>
+    <div class="landing-nav-mobile-divider"></div>
+    <a href="login.html" class="nav-link landing-nav-mobile-signin">Sign In</a>
+    <a href="age-verify.html" class="btn btn-burg btn-md landing-nav-mobile-join">Join Now</a>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-content landing-hero-inner">
+
+    <!-- 21+ badge -->
+    <div class="landing-hero-badge-wrap">
+      <div class="pill pill-gold landing-hero-badge">
+        <span class="pill-dot"></span>
+        Members 21 &amp; Over Only
+      </div>
+    </div>
+
+    <!-- Ornamental rule — cigar band reference -->
+    <div class="band-rule landing-hero-band-rule" role="presentation">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="var(--gold-dim)" aria-hidden="true" focusable="false">
+        <polygon points="6,0 7.5,4.5 12,4.5 8.25,7.5 9.75,12 6,9 2.25,12 3.75,7.5 0,4.5 4.5,4.5"/>
+      </svg>
+      <span class="landing-hero-band-label">Est. Members Community</span>
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="var(--gold-dim)" aria-hidden="true" focusable="false">
+        <polygon points="6,0 7.5,4.5 12,4.5 8.25,7.5 9.75,12 6,9 2.25,12 3.75,7.5 0,4.5 4.5,4.5"/>
+      </svg>
+    </div>
+
+    <!-- Heading — single H1 for SEO (Google reads one primary H1 per page).
+         The two-line visual layout is preserved via two spans that the
+         existing .landing-hero-heading / .landing-hero-heading-accent styles already target. -->
+    <h1 class="display display-xl landing-hero-heading">
+      <span class="landing-hero-heading-line1">THE</span>
+      <span class="landing-hero-heading-accent text-gold-grad" data-lounge-name>Lounge & Co.</span>
+    </h1>
+
+    <!-- Tagline in italic Lora — editorial feel -->
+    <p data-lounge-tagline class="landing-hero-tagline">
+      Carry the night with you.
+    </p>
+
+    <!-- Member pitch — anaphora setup + payoff beneath the tagline. -->
+    <p class="landing-hero-network-sub">
+      Every cigar. Every bottle. Every venue you've belonged to.<br/>
+      Walk into a new lounge in a new city. The room already knows.
+    </p>
+
+    <!-- CTAs -->
+    <div class="landing-hero-ctas">
+      <a href="age-verify.html" class="btn btn-burg btn-lg">Join Lounge &amp; Co.</a>
+      <a href="login.html"      class="btn btn-outline btn-lg">Sign In</a>
+    </div>
+
+    <!-- Stats row -->
+    <div class="landing-stats-row">
+      <div class="landing-stat">
+        <div class="stat-val" data-stat-members>247</div>
+        <div class="stat-label">Members</div>
+      </div>
+      <div class="divider-h landing-stat-divider"></div>
+      <div class="landing-stat">
+        <div class="stat-val" data-stat-reviews>1,200+</div>
+        <div class="stat-label">Reviews</div>
+      </div>
+      <div class="divider-h landing-stat-divider"></div>
+      <div class="landing-stat">
+        <div class="stat-val" data-stat-events>48</div>
+        <div class="stat-label">Events</div>
+      </div>
+      <div class="divider-h landing-stat-divider"></div>
+      <div class="landing-stat">
+        <div class="stat-val" data-stat-founded>12</div>
+        <div class="stat-label">Venues</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scroll cue -->
+  <div class="scroll-cue landing-scroll-cue">
+    <i data-lucide="chevron-down" class="ic-22"></i>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     FEATURES
+════════════════════════════════════════════════════════ -->
+<section class="section landing-section-base">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="label landing-section-label">What's inside</div>
+      <h2 class="display display-lg">One network. Every<br>venue you belong to.</h2>
+    </div>
+
+    <div class="feat-grid">
+
+      <div class="feat-card">
+        <div class="feat-icon" aria-hidden="true"><i data-icon="wood-log" class="ic-32"></i></div>
+        <div class="feat-title">Activity Feed</div>
+        <p class="feat-body">Your lifetime journal across every venue you've joined. Visits, reviews, and conversations from the connoisseurs you follow — public venues feed the network, private ones stay private.</p>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon" aria-hidden="true">⭐</div>
+        <div class="feat-title">Reviews & Pairings</div>
+        <p class="feat-body">Rate cigars and spirits with tasting notes once, and your palate travels with you. Every new venue inherits everything Sterlon already knows about your taste.</p>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon" aria-hidden="true"><i data-icon="whiskey-glass" class="ic-32"></i></div>
+        <div class="feat-title">Events & Tastings</div>
+        <p class="feat-body">Cigar nights, whiskey verticals, members-only flights. Be first to know across every venue you've joined, RSVP instantly, and never miss an evening worth attending.</p>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon landing-feat-icon-sterlon" aria-hidden="true">✦</div>
+        <div class="feat-title">Sterlon</div>
+        <p class="feat-body">Ask what to smoke tonight, anywhere. Sterlon learns from every Visit across the network and surfaces pairings tuned to your palate — content-neutral, never paid placement.</p>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon" aria-hidden="true">📋</div>
+        <div class="feat-title">Discover Venues</div>
+        <p class="feat-body">Browse every participating cigar lounge and spirits bar on the network. Public venues join with one tap; private members' clubs accept requests on their terms.</p>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon" aria-hidden="true">🔐</div>
+        <div class="feat-title">Private Venues</div>
+        <p class="feat-body">Members-only clubs run on the same platform. Inside a private workspace, Activity stays venue-scoped by default — and your member identity carries clean across the boundary.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     APP PREVIEW — 2-column post grid
+════════════════════════════════════════════════════════ -->
+<section class="section preview-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="label landing-section-label">A glimpse inside</div>
+      <h2 class="display display-lg">What your community<br>looks like</h2>
+    </div>
+
+    <div class="fade-mask">
+      <div class="preview-grid">
+
+        <!-- Post 1: Cigar review -->
+        <div class="post-card">
+          <div class="landing-post-header">
+            <div class="avatar landing-post-avatar-gold"><img src="assets/images/marcus-r.jpg" alt=""/></div>
+            <div class="landing-post-author">
+              <div class="landing-post-name">Marcus R.</div>
+              <div class="landing-post-meta">30 min ago · Checked in ✓</div>
+            </div>
+            <span class="landing-post-tag-gold">Ashton VSG</span>
+          </div>
+          <p class="landing-post-body">
+            "VSG Torpedo with Glenfarclas 17 — cedar on the draw paired with sherry sweetness. Best pairing I've had all year."
+          </p>
+          <div class="landing-post-ratings">
+            <span class="rating-chip">Draw 9/10</span>
+            <span class="rating-chip">Burn 8/10</span>
+            <span class="rating-chip">Medium</span>
+          </div>
+          <div class="landing-post-actions">
+            <button class="post-action"><i data-lucide="heart" class="ic-14"></i>24</button>
+            <button class="post-action"><i data-lucide="message-square" class="ic-14"></i>7</button>
+            <span class="landing-post-score">★ 4.8</span>
+          </div>
+        </div>
+
+        <!-- Post 2: Event -->
+        <div class="post-card">
+          <div class="landing-post-header">
+            <div class="avatar landing-post-avatar-burg"><img src="assets/images/david-t.jpg" alt=""/></div>
+            <div>
+              <div class="landing-post-name">David T.</div>
+              <div class="landing-post-meta">2 hours ago</div>
+            </div>
+          </div>
+          <div class="event-embed">
+            <div class="label landing-event-label">Upcoming Event</div>
+            <div class="landing-event-title">Scotch &amp; Smoke Night</div>
+            <div class="landing-event-meta">Sat, May 18 · 7:00 PM · 14 attending</div>
+            <button class="btn btn-burg btn-sm">RSVP Now</button>
+          </div>
+          <p class="landing-event-body">
+            "Macallan 18 and Ardbeg 10 on deck. Last one sold out in 4 hours — don't sleep."
+          </p>
+        </div>
+
+        <!-- Post 3: Spirit review -->
+        <div class="post-card">
+          <div class="landing-post-header">
+            <div class="avatar landing-post-avatar-elite"><img src="assets/images/james-w.jpg" alt=""/></div>
+            <div class="landing-post-author">
+              <div class="landing-post-name">James W.</div>
+              <div class="landing-post-meta">Yesterday · 42 reviews</div>
+            </div>
+            <span class="landing-post-tag-bronze">Pappy 23</span>
+          </div>
+          <p class="landing-post-body">
+            "Worth every penny of the wait. Vanilla, caramel, toasted oak — long and impossibly smooth. Paired with a Liga Privada No. 9 for a full hour."
+          </p>
+          <div class="landing-post-ratings">
+            <span class="rating-chip">Nose 10/10</span>
+            <span class="rating-chip">Finish 10/10</span>
+            <span class="rating-chip">Neat</span>
+          </div>
+          <div class="landing-post-actions">
+            <button class="post-action"><i data-lucide="heart" class="ic-14"></i>61</button>
+            <button class="post-action"><i data-lucide="message-square" class="ic-14"></i>18</button>
+            <span class="landing-post-score">★ 5.0</span>
+          </div>
+        </div>
+
+        <!-- Post 4: AI recommendation share -->
+        <div class="post-card">
+          <div class="landing-post-header">
+            <div class="avatar landing-post-avatar-muted"><img src="assets/images/robert-b.jpg" alt=""/></div>
+            <div class="landing-post-author">
+              <div class="landing-post-name">Robert B.</div>
+              <div class="landing-post-meta">3 hours ago</div>
+            </div>
+          </div>
+          <!-- AI suggestion card -->
+          <div class="landing-sterlon-card">
+            <div class="landing-sterlon-header">
+              <span class="landing-sterlon-icon">✦</span>
+              <span class="landing-sterlon-label">Sterlon Pick</span>
+            </div>
+            <div class="landing-sterlon-pick">Padron 1964 Anniversary · Maduro</div>
+            <div class="landing-sterlon-pairing">Paired with: Buffalo Trace Single Oak Project</div>
+          </div>
+          <p class="landing-event-body">
+            "Asked Sterlon what to smoke with my Buffalo Trace tonight. Nailed it — the cocoa and espresso notes locked in perfectly."
+          </p>
+          <div class="landing-sterlon-actions">
+            <button class="post-action"><i data-lucide="heart" class="ic-14"></i>38</button>
+            <button class="post-action"><i data-lucide="message-square" class="ic-14"></i>12</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="landing-preview-footer">
+      <a href="age-verify.html" class="landing-preview-join-link">
+        Join to see more →
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     COMMUNITY LEADERS — Tiered leaderboard
+════════════════════════════════════════════════════════ -->
+<section class="section landing-section-base">
+  <div class="section-inner">
+
+    <div class="section-header">
+      <div class="label landing-section-label">Community Leaders</div>
+      <h2 class="display display-lg">May's Top Members</h2>
+      <p class="landing-leaders-subtitle">Earned through check-ins, reviews, event attendance, and referrals.</p>
+    </div>
+
+    <!-- ── TOP 3 PODIUM ── -->
+    <div class="podium-wrap">
+
+      <!-- #2 Silver -->
+      <div class="podium-card podium-silver">
+        <div class="landing-podium-silver-label">Runner-Up</div>
+        <div class="avatar landing-podium-silver-avatar"><img src="assets/images/james-w.jpg" alt=""/></div>
+        <div class="landing-podium-name">James W.</div>
+        <div class="landing-podium-points">2,415 pts</div>
+        <div class="landing-podium-stats">
+          <span class="landing-podium-stat-silver">87 Reviews</span>
+          <span class="landing-podium-stat-silver">24 Events</span>
+        </div>
+        <!-- Silver rank indicator -->
+        <div class="landing-podium-rank-silver">2</div>
+      </div>
+
+      <!-- #1 Champion — Gold, Crown, taller -->
+      <div class="podium-card podium-champion">
+        <!-- Crown above card -->
+        <div class="landing-podium-crown">
+          <svg class="crown-glow" width="40" height="32" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" focusable="false">
+            <title>Champion crown</title>
+            <path d="M2 28L6 10L14 20L20 4L26 20L34 10L38 28H2Z" fill="var(--gold)" opacity=".9"/>
+            <path d="M2 28H38" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="6" cy="10" r="2.5" fill="var(--gold)"/>
+            <circle cx="20" cy="4"  r="2.5" fill="var(--gold)"/>
+            <circle cx="34" cy="10" r="2.5" fill="var(--gold)"/>
+          </svg>
+        </div>
+        <div class="landing-podium-champion-label">Champion</div>
+        <div class="avatar landing-podium-champion-avatar"><img src="assets/images/marcus-r.jpg" alt=""/></div>
+        <div class="landing-podium-champion-name">Marcus R.</div>
+        <div class="landing-podium-champion-points">2,840 pts</div>
+        <div class="landing-podium-champion-stats">
+          <span class="landing-podium-stat-champion">112 Reviews</span>
+          <span class="landing-podium-stat-champion">31 Events</span>
+          <span class="landing-podium-stat-champion">18-day streak</span>
+        </div>
+        <!-- Rank 1 badge -->
+        <div class="landing-podium-rank-champion">1</div>
+      </div>
+
+      <!-- #3 Bronze -->
+      <div class="podium-card podium-bronze">
+        <div class="landing-podium-bronze-label">Third Place</div>
+        <div class="avatar landing-podium-bronze-avatar"><img src="assets/images/robert-b.jpg" alt=""/></div>
+        <div class="landing-podium-name">Robert B.</div>
+        <div class="landing-podium-points">1,980 pts</div>
+        <div class="landing-podium-stats">
+          <span class="landing-podium-stat-bronze">64 Reviews</span>
+          <span class="landing-podium-stat-bronze">19 Events</span>
+        </div>
+        <div class="landing-podium-rank-bronze">3</div>
+      </div>
+
+    </div>
+
+    <!-- ── MEMBERS #4-10 LIST ── -->
+    <div class="landing-leaders-list-wrap">
+
+      <!-- Tier legend -->
+      <div class="landing-tier-legend">
+        <span class="landing-tier-legend-label">TIER KEY</span>
+        <div class="landing-tier-legend-item"><div class="tier-dot landing-tier-dot-champion" role="img" aria-label="Champion tier"></div><span class="landing-tier-legend-text">Champion</span></div>
+        <div class="landing-tier-legend-item"><div class="tier-dot landing-tier-dot-silver" role="img" aria-label="Silver tier"></div><span class="landing-tier-legend-text">Silver</span></div>
+        <div class="landing-tier-legend-item"><div class="tier-dot landing-tier-dot-bronze" role="img" aria-label="Bronze tier"></div><span class="landing-tier-legend-text">Bronze</span></div>
+        <div class="landing-tier-legend-item"><div class="tier-dot landing-tier-dot-elite" role="img" aria-label="Elite tier"></div><span class="landing-tier-legend-text">Elite</span></div>
+        <div class="landing-tier-legend-item"><div class="tier-dot landing-tier-dot-member" role="img" aria-label="Member tier"></div><span class="landing-tier-legend-text">Member</span></div>
+      </div>
+
+      <div class="leader-list">
+
+        <!-- #4 Elite -->
+        <div class="leader-row">
+          <div class="rank-badge landing-rank-badge-elite">4</div>
+          <div class="avatar landing-leader-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+          <div class="landing-post-author">
+            <div class="landing-leader-name-elite">Thomas H.</div>
+            <div class="landing-leader-meta">Elite · 53 reviews</div>
+          </div>
+          <div class="tier-dot landing-tier-dot-elite" role="img" aria-label="Elite tier"></div>
+          <div class="landing-leader-points-elite">1,744 pts</div>
+        </div>
+
+        <!-- #5 Elite -->
+        <div class="leader-row">
+          <div class="rank-badge landing-rank-badge-elite">5</div>
+          <div class="avatar landing-leader-avatar-elite">CK</div>
+          <div class="landing-post-author">
+            <div class="landing-leader-name-elite">Charles K.</div>
+            <div class="landing-leader-meta">Elite · 48 reviews</div>
+          </div>
+          <div class="tier-dot landing-tier-dot-elite" role="img" aria-label="Elite tier"></div>
+          <div class="landing-leader-points-elite">1,612 pts</div>
+        </div>
+
+        <!-- Divider -->
+        <div class="landing-leader-divider"></div>
+
+        <!-- #6-10 Member tier -->
+        <div class="leader-row">
+          <div class="rank-badge landing-rank-badge-member">6</div>
+          <div class="avatar landing-leader-avatar-member">WM</div>
+          <div class="landing-post-author">
+            <div class="landing-leader-name-member">William M.</div>
+            <div class="landing-leader-meta">Member · 39 reviews</div>
+          </div>
+          <div class="tier-dot landing-tier-dot-member" role="img" aria-label="Member tier"></div>
+          <div class="landing-leader-points-member">1,380 pts</div>
+        </div>
+
+        <div class="leader-row">
+          <div class="rank-badge landing-rank-badge-member">7</div>
+          <div class="avatar landing-leader-avatar-member">GS</div>
+          <div class="landing-post-author">
+            <div class="landing-leader-name-member">George S.</div>
+            <div class="landing-leader-meta">Member · 31 reviews</div>
+          </div>
+          <div class="tier-dot landing-tier-dot-member" role="img" aria-label="Member tier"></div>
+          <div class="landing-leader-points-member">1,205 pts</div>
+        </div>
+
+        <div class="leader-row">
+          <div class="rank-badge landing-rank-badge-member">8</div>
+          <div class="avatar landing-leader-avatar-member">AL</div>
+          <div class="landing-post-author">
+            <div class="landing-leader-name-member">Arthur L.</div>
+            <div class="landing-leader-meta">Member · 28 reviews</div>
+          </div>
+          <div class="tier-dot landing-tier-dot-member" role="img" aria-label="Member tier"></div>
+          <div class="landing-leader-points-member">1,088 pts</div>
+        </div>
+
+        <div class="leader-row">
+          <div class="rank-badge landing-rank-badge-member">9</div>
+          <div class="avatar landing-leader-avatar-member">FN</div>
+          <div class="landing-post-author">
+            <div class="landing-leader-name-member">Franklin N.</div>
+            <div class="landing-leader-meta">Member · 22 reviews</div>
+          </div>
+          <div class="tier-dot landing-tier-dot-member" role="img" aria-label="Member tier"></div>
+          <div class="landing-leader-points-member">940 pts</div>
+        </div>
+
+        <div class="leader-row">
+          <div class="rank-badge landing-rank-badge-member">10</div>
+          <div class="avatar landing-leader-avatar-member">DP</div>
+          <div class="landing-post-author">
+            <div class="landing-leader-name-member">Douglas P.</div>
+            <div class="landing-leader-meta">Member · 19 reviews</div>
+          </div>
+          <div class="tier-dot landing-tier-dot-member" role="img" aria-label="Member tier"></div>
+          <div class="landing-leader-points-member">811 pts</div>
+        </div>
+
+      </div>
+
+      <div class="landing-leaders-footer">
+        <a href="age-verify.html" class="landing-leaders-join-link">
+          Join and claim your spot →
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     JOIN CTA
+════════════════════════════════════════════════════════ -->
+<section class="section cta-section landing-section-base">
+  <div class="landing-cta-inner">
+
+    <div class="pill pill-gold landing-cta-badge">21+ Verified Members</div>
+
+    <h2 class="display display-lg landing-cta-heading">
+      Ready to join your<br>community?
+    </h2>
+    <p class="landing-cta-description">
+      Enter your email to request membership. A lounge staff member will verify and approve your account.
+    </p>
+
+    <form onsubmit="handleJoin(event)" class="landing-cta-form">
+
+      <!-- Row 1: Name -->
+      <div class="input-row">
+        <input class="lounge-input" type="text" placeholder="First name" aria-label="First name" required />
+        <input class="lounge-input" type="text" placeholder="Last name"  aria-label="Last name" required />
+      </div>
+
+      <!-- Row 2: Email -->
+      <input class="lounge-input" type="email" placeholder="your@email.com" aria-label="Email address" required />
+
+      <!-- Row 3: Submit -->
+      <button type="submit" class="btn btn-burg btn-md landing-cta-submit">
+        Request Membership Access
+      </button>
+
+    </form>
+
+    <p class="landing-cta-legal">
+      You must be 21 or older. By requesting access you agree to our
+      <a href="#" class="landing-cta-legal-link">Terms</a> and
+      <a href="#" class="landing-cta-legal-link">Age Policy</a>.<br>
+      Already a member? <a href="login.html" class="landing-cta-signin-link">Sign in</a>
+    </p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <a href="landing.html" class="landing-footer-logo">
+      <div class="logo-mark landing-footer-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+      <span data-lounge-name class="landing-footer-name">Lounge & Co.</span>
+    </a>
+    <div class="landing-footer-links">
+      <a href="#" class="footer-link">Privacy</a>
+      <a href="#" class="footer-link">Terms</a>
+      <a href="#" class="footer-link">Age Policy</a>
+    </div>
+    <div class="powered-by">Powered by <span>Lounge</span></div>
+  </div>
+</footer>
+
+<!-- ════════════════════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════════════════════ -->
+<script>
+  function toggleMenu() {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  }
+
+  function handleJoin(e) {
+    e.preventDefault();
+    const email = e.target.querySelector('input[type="email"]').value;
+    window.location.href = 'age-verify.html?email=' + encodeURIComponent(email);
+  }
+</script>
+
+</body>
+</html>

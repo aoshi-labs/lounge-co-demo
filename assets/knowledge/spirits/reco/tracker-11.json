@@ -1,0 +1,439 @@
+{
+  "version": 1,
+  "shard": "tracker-11",
+  "category": "spirit",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 8,
+  "products": [
+    {
+      "deckKey": "peated",
+      "journeyLevel": "advanced",
+      "id": "spi-trk-talisker-10",
+      "sensory": {
+        "body": 5,
+        "sweetness": 6,
+        "pepper": 7,
+        "cocoa": 4,
+        "earthiness": 8
+      },
+      "tracker": {
+        "sku": "SPI-TRK-TALISKER-10",
+        "article": "https://www.malts.com/en-us/products/talisker-10-year-old-single-malt-scotch-whisky-750ml",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 42,
+      "spec": {
+        "proof": 91.6,
+        "abvPercent": 45.8,
+        "mash": "100% malted barley",
+        "style": "Single malt Scotch",
+        "origin": "Isle of Skye, Scotland",
+        "msrp": 60
+      },
+      "name": "Talisker 10 Year",
+      "tags": [
+        {
+          "id": "peat",
+          "weight": 1.0
+        },
+        {
+          "id": "smoke",
+          "weight": 0.95
+        },
+        {
+          "id": "maritime",
+          "weight": 0.85
+        },
+        {
+          "id": "citrus",
+          "weight": 0.75
+        },
+        {
+          "id": "dried_fruit",
+          "weight": 0.7
+        },
+        {
+          "id": "malt",
+          "weight": 0.65
+        },
+        {
+          "id": "pepper",
+          "weight": 0.6
+        },
+        {
+          "id": "honey",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "vodka",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-tanqueray-10",
+      "sensory": {
+        "body": 5,
+        "sweetness": 6,
+        "pepper": 3,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-TANQUERAY-10",
+        "article": "https://www.tanqueray.com/our-gins/tanqueray-no-ten",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 80,
+      "spec": {
+        "proof": 94.6,
+        "abvPercent": 47.3,
+        "mash": "Botanical gin (citrus forward)",
+        "style": "London dry gin",
+        "origin": "England",
+        "msrp": 38
+      },
+      "name": "Tanqueray No. Ten",
+      "tags": [
+        {
+          "id": "citrus",
+          "weight": 1.0
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "vodka",
+      "journeyLevel": "novice",
+      "id": "spi-trk-titos",
+      "sensory": {
+        "body": 2,
+        "sweetness": 4,
+        "pepper": 6,
+        "cocoa": 2,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-TITOS",
+        "article": "https://www.royalbatch.com/blog-detail/best-selling-alcohol-in-the-usa-in-2025-what-americans-actually-chose",
+        "source": "Industry reference (US retail sales 2025)"
+      },
+      "journeyRank": 83,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "100% corn",
+        "style": "Corn vodka (gluten-free)",
+        "origin": "Texas",
+        "msrp": 28
+      },
+      "name": "Tito's Handmade Vodka",
+      "tags": [
+        {
+          "id": "pepper",
+          "weight": 1.0
+        },
+        {
+          "id": "citrus",
+          "weight": 0.95
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-weller-sr",
+      "sensory": {
+        "body": 5,
+        "sweetness": 7,
+        "pepper": 3,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-WELLER-SR",
+        "article": "https://www.buffalotracedistillery.com/our-brands/w-l-weller/w-l-weller-special-reserve/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 21,
+      "spec": {
+        "proof": 90.0,
+        "abvPercent": 45.0,
+        "mash": "Wheated mash (Buffalo Trace)",
+        "style": "Kentucky Straight Bourbon",
+        "origin": "Kentucky",
+        "msrp": 28
+      },
+      "name": "Weller Special Reserve",
+      "tags": [
+        {
+          "id": "caramel",
+          "weight": 1.0
+        },
+        {
+          "id": "toffee",
+          "weight": 0.95
+        },
+        {
+          "id": "honey",
+          "weight": 0.85
+        },
+        {
+          "id": "wood",
+          "weight": 0.75
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-woodford",
+      "sensory": {
+        "body": 5,
+        "sweetness": 6,
+        "pepper": 3,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-WOODFORD",
+        "article": "https://www.woodfordreserve.com/whiskey/straight-bourbon-whiskey/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 5,
+      "spec": {
+        "proof": 90.4,
+        "abvPercent": 45.2,
+        "mash": "Corn, rye, malted barley (high rye accent)",
+        "style": "Kentucky Straight Bourbon",
+        "origin": "Kentucky",
+        "msrp": 38
+      },
+      "name": "Woodford Reserve",
+      "tags": [
+        {
+          "id": "dried_fruit",
+          "weight": 1.0
+        },
+        {
+          "id": "mint",
+          "weight": 0.95
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.85
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.75
+        },
+        {
+          "id": "tobacco",
+          "weight": 0.7
+        },
+        {
+          "id": "spice",
+          "weight": 0.65
+        },
+        {
+          "id": "citrus",
+          "weight": 0.6
+        },
+        {
+          "id": "cinnamon",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-woodford-do",
+      "sensory": {
+        "body": 5,
+        "sweetness": 6,
+        "pepper": 3,
+        "cocoa": 7,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-WOODFORD-DO",
+        "article": "https://www.woodfordreserve.com/whiskey/double-oaked/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 30,
+      "spec": {
+        "proof": 90.4,
+        "abvPercent": 45.2,
+        "mash": "Corn, rye, malt; second toasted barrel",
+        "style": "Double-barrel bourbon",
+        "origin": "Kentucky",
+        "msrp": 65
+      },
+      "name": "Woodford Reserve Double Oaked",
+      "tags": [
+        {
+          "id": "dark_fruit",
+          "weight": 1.0
+        },
+        {
+          "id": "caramel",
+          "weight": 0.95
+        },
+        {
+          "id": "honey",
+          "weight": 0.85
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.75
+        },
+        {
+          "id": "oak",
+          "weight": 0.7
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.65
+        },
+        {
+          "id": "hazelnut",
+          "weight": 0.6
+        },
+        {
+          "id": "apple",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "rye",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-wp-10",
+      "sensory": {
+        "body": 6,
+        "sweetness": 6,
+        "pepper": 6,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-WP-10",
+        "article": "https://www.whistlepigwhiskey.com/whiskeys/10-year",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 7,
+      "spec": {
+        "proof": 100.0,
+        "abvPercent": 50.0,
+        "mash": "High-rye whiskey (Canadian distillate; bottled in Vermont)",
+        "style": "Straight rye whiskey",
+        "origin": "Shoreham, Vermont",
+        "msrp": 85
+      },
+      "name": "WhistlePig 10yr",
+      "tags": [
+        {
+          "id": "spice",
+          "weight": 1.0
+        },
+        {
+          "id": "citrus",
+          "weight": 0.95
+        },
+        {
+          "id": "orange_peel",
+          "weight": 0.85
+        },
+        {
+          "id": "anise",
+          "weight": 0.75
+        },
+        {
+          "id": "oak",
+          "weight": 0.7
+        },
+        {
+          "id": "caramel",
+          "weight": 0.65
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.6
+        },
+        {
+          "id": "pepper",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "novice",
+      "id": "spi-trk-wt-101",
+      "sensory": {
+        "body": 5,
+        "sweetness": 7,
+        "pepper": 4,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-WT-101",
+        "article": "https://www.wildturkeybourbon.com/en-us/products/wild-turkey-101/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 24,
+      "spec": {
+        "proof": 101.0,
+        "abvPercent": 50.5,
+        "mash": "Corn, rye, malted barley (Wild Turkey mash)",
+        "style": "Kentucky Straight Bourbon",
+        "origin": "Kentucky",
+        "msrp": 28
+      },
+      "name": "Wild Turkey 101",
+      "tags": [
+        {
+          "id": "vanilla",
+          "weight": 1.0
+        },
+        {
+          "id": "cinnamon",
+          "weight": 0.95
+        },
+        {
+          "id": "oak",
+          "weight": 0.85
+        },
+        {
+          "id": "caramel",
+          "weight": 0.75
+        },
+        {
+          "id": "spice",
+          "weight": 0.7
+        },
+        {
+          "id": "citrus",
+          "weight": 0.65
+        },
+        {
+          "id": "orange_peel",
+          "weight": 0.6
+        },
+        {
+          "id": "pepper",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    }
+  ]
+}

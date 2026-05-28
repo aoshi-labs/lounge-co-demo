@@ -1,0 +1,435 @@
+{
+  "version": 1,
+  "shard": "tracker-10",
+  "category": "spirit",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 8,
+  "products": [
+    {
+      "deckKey": "rye",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-pikesville",
+      "sensory": {
+        "body": 6,
+        "sweetness": 6,
+        "pepper": 7,
+        "cocoa": 7,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-PIKESVILLE",
+        "article": "https://heavenhilldistillery.com/pikesville-straight-rye.php",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 39,
+      "spec": {
+        "proof": 110.0,
+        "abvPercent": 55.0,
+        "mash": "Rye-forward Heaven Hill mash",
+        "style": "Kentucky Straight Rye",
+        "origin": "Kentucky",
+        "msrp": 45
+      },
+      "name": "Pikesville Straight Rye",
+      "tags": [
+        {
+          "id": "chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.95
+        },
+        {
+          "id": "oak",
+          "weight": 0.85
+        },
+        {
+          "id": "smoke",
+          "weight": 0.75
+        },
+        {
+          "id": "honey",
+          "weight": 0.7
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.65
+        },
+        {
+          "id": "spice",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "rum",
+      "journeyLevel": "advanced",
+      "id": "spi-trk-plant-oftd",
+      "sensory": {
+        "body": 6,
+        "sweetness": 7,
+        "pepper": 7,
+        "cocoa": 7,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-PLANT-OFTD",
+        "article": "https://planterayrum.com/product/oftd/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 64,
+      "spec": {
+        "proof": 138.0,
+        "abvPercent": 69.0,
+        "mash": "Blend of pot & column Caribbean rums",
+        "style": "Overproof dark rum blend",
+        "origin": "Caribbean blend",
+        "msrp": 35
+      },
+      "name": "Plantation O.F.T.D. Overproof Rum",
+      "tags": [
+        {
+          "id": "molasses",
+          "weight": 1.0
+        },
+        {
+          "id": "dark_chocolate",
+          "weight": 0.95
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.85
+        },
+        {
+          "id": "banana",
+          "weight": 0.75
+        },
+        {
+          "id": "spice",
+          "weight": 0.7
+        },
+        {
+          "id": "coffee",
+          "weight": 0.65
+        },
+        {
+          "id": "oak",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "irish",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-redbreast-12",
+      "sensory": {
+        "body": 5,
+        "sweetness": 6,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-REDBREAST-12",
+        "article": "https://www.redbreastwhiskey.com/en/whiskey-collections/redbreast-12-year-old-whiskey/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 57,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Malted & unmalted barley (pot still)",
+        "style": "Single pot still Irish whiskey",
+        "origin": "Ireland",
+        "msrp": 65
+      },
+      "name": "Redbreast 12 Year",
+      "tags": [
+        {
+          "id": "spice",
+          "weight": 1.0
+        },
+        {
+          "id": "wood",
+          "weight": 0.95
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "cognac",
+      "journeyLevel": "advanced",
+      "id": "spi-trk-remy-xo",
+      "sensory": {
+        "body": 6,
+        "sweetness": 7,
+        "pepper": 2,
+        "cocoa": 7,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-REMY-XO",
+        "article": "https://www.remymartin.com/en-us/collection/xo/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 18,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Grande Champagne & Petite Champagne eaux-de-vie",
+        "style": "Cognac XO (Grande Champagne)",
+        "origin": "Cognac, France",
+        "msrp": 190
+      },
+      "name": "Rémy Martin XO",
+      "tags": [
+        {
+          "id": "floral",
+          "weight": 1.0
+        },
+        {
+          "id": "plum",
+          "weight": 0.95
+        },
+        {
+          "id": "citrus",
+          "weight": 0.85
+        },
+        {
+          "id": "nutmeg",
+          "weight": 0.75
+        },
+        {
+          "id": "hazelnut",
+          "weight": 0.7
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.65
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.6
+        },
+        {
+          "id": "honey",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "rye",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-ritt-bib",
+      "sensory": {
+        "body": 6,
+        "sweetness": 6,
+        "pepper": 6,
+        "cocoa": 7,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-RITT-BIB",
+        "article": "https://heavenhilldistillery.com/rittenhouse-rye.php",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 25,
+      "spec": {
+        "proof": 100.0,
+        "abvPercent": 50.0,
+        "mash": "Rye-forward BIB mash",
+        "style": "Kentucky Straight Rye",
+        "origin": "Kentucky",
+        "msrp": 28
+      },
+      "name": "Rittenhouse Straight Rye Bottled-in-Bond",
+      "tags": [
+        {
+          "id": "dried_fruit",
+          "weight": 1.0
+        },
+        {
+          "id": "toffee",
+          "weight": 0.95
+        },
+        {
+          "id": "pepper",
+          "weight": 0.85
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.75
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.7
+        },
+        {
+          "id": "citrus",
+          "weight": 0.65
+        },
+        {
+          "id": "cinnamon",
+          "weight": 0.6
+        },
+        {
+          "id": "nutmeg",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-russell-10",
+      "sensory": {
+        "body": 5,
+        "sweetness": 7,
+        "pepper": 3,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-RUSSELL-10",
+        "article": "https://www.russellsreserve.com/whiskeys/10-year-old-bourbon",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 34,
+      "spec": {
+        "proof": 90.0,
+        "abvPercent": 45.0,
+        "mash": "Jim Beam family mash",
+        "style": "Kentucky Straight Bourbon",
+        "origin": "Kentucky",
+        "msrp": 45
+      },
+      "name": "Russell's Reserve 10 Year",
+      "tags": [
+        {
+          "id": "orange_peel",
+          "weight": 1.0
+        },
+        {
+          "id": "citrus",
+          "weight": 0.95
+        },
+        {
+          "id": "toffee",
+          "weight": 0.85
+        },
+        {
+          "id": "maple",
+          "weight": 0.75
+        },
+        {
+          "id": "oak",
+          "weight": 0.7
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.65
+        },
+        {
+          "id": "caramel",
+          "weight": 0.6
+        },
+        {
+          "id": "spice",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "rye",
+      "journeyLevel": "novice",
+      "id": "spi-trk-sazerac-rye",
+      "sensory": {
+        "body": 4,
+        "sweetness": 6,
+        "pepper": 6,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-SAZERAC-RYE",
+        "article": "http://www.sazerac.com/our-brands/sazerac-rye-whiskey.html",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 3,
+      "spec": {
+        "proof": 90.0,
+        "abvPercent": 45.0,
+        "mash": "Rye-forward (Sazerac mash)",
+        "style": "Kentucky Straight Rye",
+        "origin": "Kentucky",
+        "msrp": 32
+      },
+      "name": "Sazerac Rye",
+      "tags": [
+        {
+          "id": "vanilla",
+          "weight": 1.0
+        },
+        {
+          "id": "pepper",
+          "weight": 0.95
+        },
+        {
+          "id": "spice",
+          "weight": 0.85
+        },
+        {
+          "id": "citrus",
+          "weight": 0.75
+        },
+        {
+          "id": "anise",
+          "weight": 0.7
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "vodka",
+      "journeyLevel": "novice",
+      "id": "spi-trk-smirnoff-21",
+      "sensory": {
+        "body": 2,
+        "sweetness": 4,
+        "pepper": 2,
+        "cocoa": 2,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-SMIRNOFF-21",
+        "article": "https://www.royalbatch.com/blog-detail/best-selling-alcohol-in-the-usa-in-2025-what-americans-actually-chose",
+        "source": "Industry reference (US retail sales 2025)"
+      },
+      "journeyRank": 84,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Grain spirit",
+        "style": "Triple-distilled vodka",
+        "origin": "USA (multi-origin)",
+        "msrp": 16
+      },
+      "name": "Smirnoff No. 21 Vodka",
+      "tags": [
+        {
+          "id": "citrus",
+          "weight": 1.0
+        }
+      ],
+      "category": "spirit"
+    }
+  ]
+}

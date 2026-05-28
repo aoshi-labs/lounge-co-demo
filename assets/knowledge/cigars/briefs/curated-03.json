@@ -1,0 +1,211 @@
+{
+  "version": 1,
+  "shard": "curated-03",
+  "category": "cigar",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 9,
+  "products": [
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/ratings/25726/name/padron-serie-1926-no-35"
+      },
+      "guidance": {
+        "flavorFamily": "Coffee",
+        "occasion": "Celebration",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Nicaragua wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/25726/name/padron-serie-1926-no-35.",
+        "avoidIf": "Beginner nicotine-sensitive, opposite wrapper style, or very short time window.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, 1926 Series, or asks for a full coffee reference."
+      },
+      "menuLine": "Padron 1926 Series · 4 × 55 · Figurado · Full · Nicaragua · $42 · Notes: nuts, spice, cedar, black tea, sweetness",
+      "stickSize": "4 × 55 · Figurado",
+      "id": "cur-19-pad-1926-35"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/ratings/14125/name/ashton-virgin-sun-grown-torpedo-figurado"
+      },
+      "parentCompany": "Ashton",
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Ecuador Sumatra wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Honduras binder supports structure and integration with the filler.",
+        "fillerRole": "Dominican Republic / Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/14125/name/ashton-virgin-sun-grown-torpedo-figurado.",
+        "avoidIf": "Beginner nicotine-sensitive, opposite wrapper style, or very short time window.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, VSG, or asks for a medium-full woodsy reference."
+      },
+      "menuLine": "Ashton VSG · 6⅛ × 52 · Torpedo · Medium-Full · Honduras · $28 · Notes: roasted coffee, tobacco, earthy, cedar",
+      "stickSize": "6⅛ × 52 · Torpedo",
+      "id": "cur-20-ashton-vsg-torp"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Habanos official",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.habanos.com/en/news/cohiba-siglo-vi-tubos-en/"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Celebration",
+        "pairingAffinity": "Champagne",
+        "wrapperRole": "Cuba wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Cuba binder supports structure and integration with the filler.",
+        "fillerRole": "Cuba filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.habanos.com/en/news/cohiba-siglo-vi-tubos-en/.",
+        "avoidIf": "Beginner seeking ultra-mild only, or user needs U.S. retail when cigar is island Cuban.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, Siglo, or asks for a medium creamy reference."
+      },
+      "menuLine": "Cohiba Siglo · 5.875 × 52 · Toro · Medium · Cuba · — · Notes: medium, aromatic, complex, creamy",
+      "stickSize": "5.875 × 52 · Toro",
+      "id": "cur-21-coh-siglo-vi"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/ratings/25885/name/montecristo-no-2"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Scotch",
+        "wrapperRole": "Cuba wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Cuba binder supports structure and integration with the filler.",
+        "fillerRole": "Cuba filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/25885/name/montecristo-no-2.",
+        "avoidIf": "Beginner seeking ultra-mild only, or user needs U.S. retail when cigar is island Cuban.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, Línea Clásica, or asks for a medium-full woodsy reference."
+      },
+      "menuLine": "Montecristo Línea Clásica · 6⅛ × 52 · Torpedo · Medium-Full · Cuba · — · Notes: leather, cinnamon, nutmeg, tangy wood",
+      "stickSize": "6⅛ × 52 · Torpedo",
+      "id": "cur-22-monte-no2"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/ratings/25581/name/liga-privada-h99-corona-doble-churchill"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Connecticut Corojo hybrid wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Brazil binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua / Honduras filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Bourbon or coffee pairing, experienced smoker wanting Liga complexity without broadleaf heaviness.",
+        "avoidIf": "User wants full body, maximum strength, or Liga Privada No. 9–class broadleaf power — H99 is the Connecticut-hybrid sub-line, not the maduro flagship.",
+        "whyRecommend": "Recommend when the user wants Drew Estate complexity with Connecticut sweetness — not No. 9 strength."
+      },
+      "menuLine": "Drew Estate Liga Privada H99 · 5 × 52 · Robusto · Medium · Nicaragua · $18 · Notes: earth, dark chocolate, espresso, apple pie, raisin",
+      "stickSize": "5 × 52 · Robusto",
+      "id": "cur-23-liga-h99-rob"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/ratings/16969/name/arturo-fuente-don-carlos-no-2"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "Celebration",
+        "pairingAffinity": "Cognac",
+        "wrapperRole": "Cameroon wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Dominican Republic binder supports structure and integration with the filler.",
+        "fillerRole": "Dominican Republic filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/16969/name/arturo-fuente-don-carlos-no-2.",
+        "avoidIf": "Beginner nicotine-sensitive, opposite wrapper style, or very short time window.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, Don Carlos Personal Reserve, or asks for a medium sweet spice reference."
+      },
+      "menuLine": "Arturo Fuente Don Carlos Personal Reserve · 5½ × 50 · Robusto · Medium · Dominican Republic · $17 · Notes: caramel, cocoa, nuts, spice, cedar",
+      "stickSize": "5½ × 50 · Robusto",
+      "id": "cur-24-af-dcpr-rob"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/ratings/14062/name/my-father-no-1"
+      },
+      "guidance": {
+        "flavorFamily": "Savory",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Nicaragua Habano wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/14062/name/my-father-no-1.",
+        "avoidIf": "Beginner nicotine-sensitive, opposite wrapper style, or very short time window.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, Original, or asks for a medium-full savory reference."
+      },
+      "menuLine": "My Father Original · 6 × 52 · Toro · Medium-Full · Nicaragua · $9 · Notes: earth, pepper, cedar, cocoa, leather",
+      "stickSize": "6 × 52 · Toro",
+      "id": "cur-25-mf-orig-toro"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/ratings/22176/name/perdomo-reserve-10th-anniversary-champagne-connecticut-torpedo-figurado"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Morning coffee",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuador Connecticut wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/22176/name/perdomo-reserve-10th-anniversary-champagne-connecticut-torpedo-figurado.",
+        "avoidIf": "Beginner nicotine-sensitive, opposite wrapper style, or very short time window.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, 10th Anniversary Champagne, or asks for a medium creamy reference."
+      },
+      "menuLine": "Perdomo 10th Anniversary Champagne · 6 × 54 · Toro · Medium · Nicaragua · $9 · Notes: cream, floral, oak, graham cracker, red pepper",
+      "stickSize": "6 × 54 · Toro",
+      "id": "cur-26-perdomo-10-champ"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/ratings/26486/name/san-cristobal-elegancia-churchill-churchill"
+      },
+      "parentCompany": "Ashton",
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Morning coffee",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuador Connecticut wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/26486/name/san-cristobal-elegancia-churchill-churchill.",
+        "avoidIf": "Beginner nicotine-sensitive, opposite wrapper style, or very short time window.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, Elegancia, or asks for a medium creamy reference."
+      },
+      "menuLine": "San Cristobal Elegancia · 5 × 50 · Robusto · Medium · Nicaragua · $8 · Notes: sweet corn, caramel, nutmeg, minerals, oak, vanilla",
+      "stickSize": "5 × 50 · Robusto",
+      "id": "cur-27-sc-eleg-rob"
+    }
+  ]
+}

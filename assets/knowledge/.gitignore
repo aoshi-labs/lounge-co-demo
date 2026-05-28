@@ -1,0 +1,36 @@
+# Generated / one-off sheet push artifacts — do not commit
+*.b64
+*.b64.txt
+*.zlib.b64.txt
+__pycache__/
+_composio-*
+_batch-*
+bb24-*
+bb25-*
+cigar-push-chunk-*
+cigar-push-all.*
+ashton-merged.b64.txt
+_pending_extract.txt
+_url_*
+b64a.txt
+b64b.txt
+
+# Ephemeral sheet-push scratch (manual paste or build-*-sheet.py payloads)
+wb-*.py
+_wb_*
+_gen_wb_*
+gen-wb-*.py
+mcp-args-*.json
+mcp-batch-*.json
+workbench-*.txt
+composio-*.json
+
+# Large append payloads (source of truth is sheet + *-rows.json)
+*-append*.json
+*-append-args-*.json
+*-lr.json
+*-remaining*.json
+*-pipe*.b64
+audit-masters.b64
+
+# Keep: *-rows.json, *-corrections.json, *-sheet-push.json, build-*.py, cigar_catalog_cli.py

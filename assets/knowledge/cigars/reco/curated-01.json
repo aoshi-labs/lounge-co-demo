@@ -1,0 +1,404 @@
+{
+  "version": 1,
+  "shard": "curated-01",
+  "category": "cigar",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 9,
+  "products": [
+    {
+      "tracker": {
+        "sku": "CUR-01-HOYO-SANJUAN"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "wood",
+          "weight": 0.95
+        },
+        {
+          "id": "earth",
+          "weight": 0.85
+        },
+        {
+          "id": "leather",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "tier": 6,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "60 min",
+        "wrapper": "Cuba",
+        "binder": "Cuba",
+        "filler": "Cuba"
+      },
+      "id": "cur-01-hoyo-sanjuan",
+      "sensory": {
+        "body": 6,
+        "sweetness": 5,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Hoyo de Monterrey Le Hoyo de San Juan",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-02-EPC-MAJESTIC"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "wood",
+          "weight": 0.95
+        },
+        {
+          "id": "earth",
+          "weight": 0.85
+        },
+        {
+          "id": "leather",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 16,
+        "tier": 6,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "90 min",
+        "wrapper": "Nicaragua",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "cur-02-epc-majestic",
+      "sensory": {
+        "body": 7,
+        "sweetness": 5,
+        "pepper": 6,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "E.P. Carrillo Encore Majestic",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-03-AF-ROSADO-52"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "spice",
+          "weight": 0.95
+        },
+        {
+          "id": "tobacco",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 14,
+        "tier": 5,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "90 min",
+        "wrapper": "Ecuador",
+        "binder": "Dominican Republic",
+        "filler": "Dominican Republic"
+      },
+      "id": "cur-03-af-rosado-52",
+      "sensory": {
+        "body": 7,
+        "sweetness": 6,
+        "pepper": 6,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Arturo Fuente Rosado Sungrown Fifty-Two",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-04-COHIBA-PIR-E"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "caramel",
+          "weight": 1.0
+        },
+        {
+          "id": "cream",
+          "weight": 0.95
+        },
+        {
+          "id": "oak",
+          "weight": 0.85
+        },
+        {
+          "id": "nut",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "tier": 7,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "90 min",
+        "wrapper": "Cuba",
+        "binder": "Cuba",
+        "filler": "Cuba"
+      },
+      "id": "cur-04-cohiba-pir-e",
+      "sensory": {
+        "body": 7,
+        "sweetness": 6,
+        "pepper": 6,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "Cohiba Pirámides Extra",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-05-OPUSX-RDC"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "spice",
+          "weight": 0.95
+        },
+        {
+          "id": "tobacco",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 32,
+        "tier": 7,
+        "strength": 5,
+        "body": "Full",
+        "smokeTime": "90 min",
+        "wrapper": "Dominican Republic",
+        "binder": "Dominican Republic",
+        "filler": "Dominican Republic"
+      },
+      "id": "cur-05-opusx-rdc",
+      "sensory": {
+        "body": 9,
+        "sweetness": 6,
+        "pepper": 7,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Arturo Fuente Fuente Fuente OpusX Reserva d'Chateau",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-06-AF-DCHATEAU"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cream",
+          "weight": 1.0
+        },
+        {
+          "id": "cedar",
+          "weight": 0.95
+        },
+        {
+          "id": "nut",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 9,
+        "tier": 4,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "90 min",
+        "wrapper": "Connecticut Shade",
+        "binder": "Dominican Republic",
+        "filler": "Dominican Republic"
+      },
+      "id": "cur-06-af-dchateau",
+      "sensory": {
+        "body": 6,
+        "sweetness": 6,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Arturo Fuente Chateau Fuente Double",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-07-FDLA-TG"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "spice",
+          "weight": 0.95
+        },
+        {
+          "id": "tobacco",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 11,
+        "tier": 5,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "90 min",
+        "wrapper": "Nicaragua",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "cur-07-fdla-tg",
+      "sensory": {
+        "body": 7,
+        "sweetness": 6,
+        "pepper": 6,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Flor de las Antillas Flor de las Antillas Toro Gordo",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-08-HOYO-EPICURE"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cream",
+          "weight": 1.0
+        },
+        {
+          "id": "cedar",
+          "weight": 0.95
+        },
+        {
+          "id": "nut",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "tier": 6,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "45 min",
+        "wrapper": "Cuba",
+        "binder": "Cuba",
+        "filler": "Cuba"
+      },
+      "id": "cur-08-hoyo-epicure",
+      "sensory": {
+        "body": 6,
+        "sweetness": 6,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Hoyo de Monterrey Epicure Epicure No. 2",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-09-ZINO-CHUBBY"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cream",
+          "weight": 1.0
+        },
+        {
+          "id": "cedar",
+          "weight": 0.95
+        },
+        {
+          "id": "nut",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 18,
+        "tier": 5,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "60 min",
+        "wrapper": "Ecuador",
+        "binder": "Dominican Republic",
+        "filler": "Dominican Republic / Peru / Nicaragua"
+      },
+      "id": "cur-09-zino-chubby",
+      "sensory": {
+        "body": 6,
+        "sweetness": 6,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Davidoff Zino Platinum Crown Series Chubby Especial",
+      "category": "cigar"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "nullReturnsNull": true,
+  "undefinedReturnsNull": true,
+  "emptyObjectReturnsNull": true,
+  "stringReturnsNull": true,
+  "noCardsReturnsNull": true,
+  "badCardsArrayReturnsNull": true
+}

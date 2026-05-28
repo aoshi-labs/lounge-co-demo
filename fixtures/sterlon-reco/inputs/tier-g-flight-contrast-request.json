@@ -1,0 +1,6 @@
+{
+  "op": "flightPhilosophyTurn",
+  "promptText": "Surprise me with something unexpected — pick a pairing flight with real contrast, not three versions of the same safe choice.",
+  "includePairingEval": true,
+  "session": {}
+}

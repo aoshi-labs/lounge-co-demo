@@ -1,0 +1,20 @@
+{
+  "cases": [
+    {
+      "id": "realigns-wrong-best-pick",
+      "ok": true,
+      "bestLine": "Bolivar Cofradia Robusto with Elijah Craig Small Batch"
+    },
+    {
+      "id": "preserves-aligned-gateway-body",
+      "ok": true,
+      "bestLine": "Bolivar Cofradia Robusto with Elijah Craig Small Batch"
+    },
+    {
+      "id": "strips-duplicate-with-spirit",
+      "ok": true,
+      "bestLine": "Bolivar Cofradia Robusto with Elijah Craig Small Batch"
+    }
+  ],
+  "ok": true
+}

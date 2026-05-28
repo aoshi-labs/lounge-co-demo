@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Post — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Compose a review, check-in, or general post for the community." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="New Post — Lounge & Co." />
+  <meta property="og:description" content="Compose a review, check-in, or general post for the community." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="New Post — Lounge & Co." />
+  <meta name="twitter:description" content="Compose a review, check-in, or general post for the community." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/create-post.css"/>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     LEFT SIDEBAR
+═══════════════════════════════════════ -->
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info">
+        <div class="sidebar-user-name">Thomas H.</div>
+        <div class="sidebar-user-tier">Elite · 1,744 pts · #4</div>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     MAIN AREA
+═══════════════════════════════════════ -->
+<main class="main-area">
+  <h1 class="visually-hidden">New Post</h1>
+
+  <!-- Top bar — `+` page-identity logo is auto-injected by lounge.js
+       (setupTopBarLogo, isCreatePost branch). -->
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+      <i data-lucide="menu" class="ic-16"></i>
+    </button>
+    <div class="topbar-actions">
+    </div>
+  </header>
+
+  <!-- Content: centered compose form -->
+  <div class="compose-page-frame">
+    <div class="compose-page-stack">
+
+      <!-- Composer header -->
+      <div class="compose-header">
+        <div class="avatar compose-author-avatar"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+        <div>
+          <div class="compose-author-name">Thomas H.</div>
+          <div class="compose-audience-row">
+            <select class="audience-select compose-audience-select-sm" aria-label="Post visibility">
+              <option>🌐 Members Only</option>
+              <option>🔓 Everyone</option>
+              <option>🔒 Private Room</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post type selector -->
+      <div class="compose-card">
+        <div class="post-type-tabs">
+          <button class="post-type-tab is-active" onclick="setPostType(this,'review')">🚬 Review</button>
+          <button class="post-type-tab" onclick="setPostType(this,'checkin')">📍 Check-in</button>
+          <button class="post-type-tab" onclick="setPostType(this,'general')">💬 General</button>
+          <button class="post-type-tab" onclick="setPostType(this,'event')">📅 Event</button>
+        </div>
+
+        <div class="compose-form-body">
+
+          <!-- Media upload -->
+          <div>
+            <div class="field-label">Photo / Media</div>
+            <div class="upload-zone" id="upload-zone"
+              onclick="document.getElementById('file-input').click()"
+              ondragover="event.preventDefault();this.classList.add('drag')"
+              ondragleave="this.classList.remove('drag')"
+              ondrop="handleDrop(event)">
+              <i data-lucide="image" class="ic-28"></i>
+              <div class="upload-placeholder">
+                <strong class="compose-upload-strong">Drag &amp; drop or click to upload</strong><br>
+                JPG, PNG, HEIC up to 20MB
+              </div>
+            </div>
+            <input type="file" id="file-input" accept="image/*" onchange="handleFileSelect(this)" hidden>
+          </div>
+
+          <!-- Post text -->
+          <div>
+            <label class="field-label" for="post-text">What are you smoking tonight?</label>
+            <textarea class="lounge-input" id="post-text" placeholder="Share your experience, tasting notes, or what's on your mind…" oninput="updateCharCount(this)" maxlength="800"></textarea>
+            <div class="compose-char-count-row">
+              <span id="char-count" class="compose-meta-muted">0 / 800</span>
+            </div>
+          </div>
+
+          <!-- Product tag (Review-specific, shown/hidden) -->
+          <div id="section-product">
+            <label class="field-label" for="product-search">Tag a Product</label>
+            <div class="tag-search-wrap">
+              <input class="lounge-input" type="text" id="product-search" placeholder="Search cigars, spirits, accessories…" aria-label="Search products to tag in this post" oninput="searchProducts(this.value)" autocomplete="off">
+              <div class="tag-search-results" id="product-results">
+                <div class="tag-result-item" onclick="selectProduct('Padron 1926 No. 35','cigar','🚬')">
+                  <span class="compose-product-emoji">🚬</span>
+                  <div>
+                    <div class="compose-product-name">Padron 1926 No. 35</div>
+                    <div class="compose-meta-muted">Cigar · Full body · Nicaraguan</div>
+                  </div>
+                </div>
+                <div class="tag-result-item" onclick="selectProduct('Arturo Fuente Opus X','cigar','🚬')">
+                  <span class="compose-product-emoji">🚬</span>
+                  <div>
+                    <div class="compose-product-name">Arturo Fuente Opus X</div>
+                    <div class="compose-meta-muted">Cigar · Full body · Dominican</div>
+                  </div>
+                </div>
+                <div class="tag-result-item" onclick="selectProduct('Lagavulin 16yr','spirit','🥃')">
+                  <span class="compose-product-emoji">🥃</span>
+                  <div>
+                    <div class="compose-product-name">Lagavulin 16yr</div>
+                    <div class="compose-meta-muted">Scotch Whisky · Peaty</div>
+                  </div>
+                </div>
+                <div class="tag-result-item" onclick="selectProduct('Pappy Van Winkle 23yr','spirit','🥃')">
+                  <span class="compose-product-emoji">🥃</span>
+                  <div>
+                    <div class="compose-product-name">Pappy Van Winkle 23yr</div>
+                    <div class="compose-meta-muted">Bourbon · Neat</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="tagged-product-display" hidden></div>
+          </div>
+
+          <!-- Pairing tag (Review-specific) -->
+          <div id="section-pairing">
+            <label class="field-label">Add a Pairing <span class="compose-label-hint">(optional)</span><input class="lounge-input" type="text" placeholder="e.g. Lagavulin 16, Macallan 18, Black coffee…"></label>
+          </div>
+
+          <!-- Rating sliders (Review-specific) -->
+          <div id="section-ratings">
+            <div class="field-label">Ratings</div>
+            <div class="compose-ratings-group">
+              <div>
+                <div class="compose-rating-row">
+                  <span class="compose-rating-label">Draw</span>
+                  <span id="draw-val" class="compose-rating-value">8</span>
+                </div>
+                <input type="range" min="1" max="10" value="8" aria-label="Draw rating from 1 to 10" oninput="document.getElementById('draw-val').textContent=this.value">
+              </div>
+              <div>
+                <div class="compose-rating-row">
+                  <span class="compose-rating-label">Burn</span>
+                  <span id="burn-val" class="compose-rating-value">7</span>
+                </div>
+                <input type="range" min="1" max="10" value="7" aria-label="Burn rating from 1 to 10" oninput="document.getElementById('burn-val').textContent=this.value">
+              </div>
+              <div>
+                <div class="compose-rating-row">
+                  <span class="compose-rating-label">Flavor</span>
+                  <span id="flavor-val" class="compose-rating-value">8</span>
+                </div>
+                <input type="range" min="1" max="10" value="8" aria-label="Flavor rating from 1 to 10" oninput="document.getElementById('flavor-val').textContent=this.value">
+              </div>
+              <div>
+                <div class="compose-rating-row">
+                  <span class="compose-rating-label">Overall</span>
+                  <span id="overall-val" class="compose-rating-value-strong">8</span>
+                </div>
+                <input type="range" min="1" max="10" value="8" aria-label="Overall rating from 1 to 10" oninput="document.getElementById('overall-val').textContent=this.value">
+              </div>
+            </div>
+          </div>
+
+          <!-- Strength selector (Review-specific) -->
+          <div id="section-strength">
+            <div class="field-label">Strength</div>
+            <div class="rating-set">
+              <button class="rating-chip" onclick="selectStrength(this)">Mild</button>
+              <button class="rating-chip selected" onclick="selectStrength(this)">Medium</button>
+              <button class="rating-chip" onclick="selectStrength(this)">Medium-Full</button>
+              <button class="rating-chip" onclick="selectStrength(this)">Full</button>
+            </div>
+          </div>
+
+          <!-- Flavor notes (Review-specific) -->
+          <div id="section-flavors">
+            <div class="field-label">Flavor Notes <span class="compose-label-hint">(select all that apply)</span></div>
+            <div class="rating-set">
+              <button class="rating-chip" onclick="this.classList.toggle('selected')">Cedar</button>
+              <button class="rating-chip" onclick="this.classList.toggle('selected')">Leather</button>
+              <button class="rating-chip" onclick="this.classList.toggle('selected')">Espresso</button>
+              <button class="rating-chip selected" onclick="this.classList.toggle('selected')">Dark Chocolate</button>
+              <button class="rating-chip" onclick="this.classList.toggle('selected')">Cream</button>
+              <button class="rating-chip selected" onclick="this.classList.toggle('selected')">Woody</button>
+              <button class="rating-chip" onclick="this.classList.toggle('selected')">Spice</button>
+              <button class="rating-chip" onclick="this.classList.toggle('selected')">Nuts</button>
+              <button class="rating-chip" onclick="this.classList.toggle('selected')">Pepper</button>
+              <button class="rating-chip" onclick="this.classList.toggle('selected')">Sweet</button>
+              <button class="rating-chip" onclick="this.classList.toggle('selected')">Fruit</button>
+              <button class="rating-chip" onclick="this.classList.toggle('selected')">Earth</button>
+            </div>
+          </div>
+
+          <!-- Toggles -->
+          <div>
+            <div class="toggle-row">
+              <div class="toggle-info">
+                <div class="toggle-label">📍 Check In</div>
+                <div class="toggle-sub">Tag your location at Lounge & Co.</div>
+              </div>
+              <button type="button" class="toggle-switch on" id="checkin-toggle" aria-label="Check In: tag your location" aria-pressed="true" onclick="this.classList.toggle('on'); this.setAttribute('aria-pressed', this.classList.contains('on'))"></button>
+            </div>
+            <div class="toggle-row">
+              <div class="toggle-info">
+                <div class="toggle-label">🏆 Add to Leaderboard</div>
+                <div class="toggle-sub">This post earns points toward your rank</div>
+              </div>
+              <button type="button" class="toggle-switch on" id="leaderboard-toggle" aria-label="Add to Leaderboard: earn points" aria-pressed="true" onclick="this.classList.toggle('on'); this.setAttribute('aria-pressed', this.classList.contains('on'))"></button>
+            </div>
+          </div>
+
+          <!-- Points preview -->
+          <div class="compose-points-preview">
+            <i data-lucide="star" class="ic-16"></i>
+            <span class="compose-points-text">This post will earn <strong class="compose-points-emphasis">+35 points</strong> — bringing you to <strong class="compose-points-emphasis">1,779 pts</strong> and within 201 pts of #3.</span>
+          </div>
+
+          <!-- Hashtags -->
+          <div>
+            <label class="field-label">Hashtags<input class="lounge-input" type="text" placeholder="#Padron1926 #FullBody #LoungeCoVibes" value="#DarkChocolate #Woody #FullBody"></label>
+          </div>
+
+          <!-- Submit row -->
+          <div class="compose-submit-row">
+            <a href="feed.html" onmouseover="this.style.borderColor='var(--text-muted)'" onmouseout="this.style.borderColor='var(--bg-border)'" class="compose-discard-btn">
+              Discard
+            </a>
+            <button onclick="submitPost()" onmouseover="this.style.background='var(--burg-hover)';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='var(--burg)';this.style.transform='translateY(0)'" class="compose-submit-btn">
+              <i data-lucide="send" class="ic-16"></i>
+              Post to Lounge & Co.
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tips card -->
+      <div class="compose-tips-card">
+        <div class="compose-tips-title">✦ Sterlon Tips</div>
+        <ul class="compose-tips-list">
+          <li>Detailed reviews with photo earn 35 pts vs 10 pts for text-only</li>
+          <li>Pairings that get 5+ likes earn a bonus +10 pts</li>
+          <li>Reviews posted during events earn 2× points</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- Mobile overlay -->
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+
+<!-- Bottom nav (mobile) -->
+<nav class="bottom-nav">
+  <a href="feed.html"        class="bottom-nav-item"><i data-lucide="newspaper" class="ic-20"></i>Feed</a>
+  <a href="explore.html"     class="bottom-nav-item"><i data-lucide="search" class="ic-20"></i>Explore</a>
+  <a href="create-post.html" class="bottom-nav-item active"><div class="bottom-nav-create-btn"><i data-lucide="plus" class="ic-20"></i></div></a>
+  <a href="events.html"      class="bottom-nav-item"><i data-lucide="calendar" class="ic-20"></i>Events</a>
+  <a href="profile.html"     class="bottom-nav-item"><i data-lucide="user" class="ic-20"></i>Profile</a>
+</nav>
+
+<script>
+  function updateCharCount(el){
+    document.getElementById('char-count').textContent=el.value.length+' / 800';
+  }
+
+  /* Post type switching — shows/hides review-specific sections */
+  const reviewSections=['section-product','section-pairing','section-ratings','section-strength','section-flavors'];
+  function setPostType(btn,type){
+    document.querySelectorAll('.post-type-tab').forEach(b=>b.classList.remove('is-active'));
+    btn.classList.add('is-active');
+    const isReview=type==='review';
+    reviewSections.forEach(id=>{
+      const el=document.getElementById(id);
+      if(el)el.style.display=isReview?'block':'none';
+    });
+    const textarea=document.getElementById('post-text');
+    const placeholders={
+      review:'Share tasting notes, draw, burn, flavor profile…',
+      checkin:'What are you smoking at the lounge today?',
+      general:'What\'s on your mind?',
+      event:'Share your thoughts about an upcoming event…'
+    };
+    textarea.placeholder=placeholders[type]||placeholders.general;
+    const labelMap={review:'Tag a Product',checkin:'Tag a Cigar',general:'',event:'Tag an Event'};
+  }
+
+  /* Strength select — single-select chip group */
+  function selectStrength(btn){
+    btn.closest('.rating-set').querySelectorAll('.rating-chip').forEach(b=>b.classList.remove('selected'));
+    btn.classList.add('selected');
+  }
+
+  /* Product search */
+  let searchTimeout;
+  function searchProducts(val){
+    clearTimeout(searchTimeout);
+    const results=document.getElementById('product-results');
+    if(val.length>0){
+      searchTimeout=setTimeout(()=>{results.classList.add('open');},200);
+    } else {
+      results.classList.remove('open');
+    }
+  }
+  document.getElementById('product-search').addEventListener('blur',()=>{
+    setTimeout(()=>document.getElementById('product-results').classList.remove('open'),200);
+  });
+
+  function selectProduct(name,type,emoji){
+    document.getElementById('product-search').value=name;
+    document.getElementById('product-results').classList.remove('open');
+    const display=document.getElementById('tagged-product-display');
+    display.style.display='flex';
+    // Escape — name/emoji come from search-result click handlers today (hardcoded)
+    // but selectProduct is the entry point for backend-fed search results in v2.
+    const esc = (window.Lounge && Lounge.escapeHtml) ? Lounge.escapeHtml : (s => s);
+    display.innerHTML=`<div class="compose-tagged-product">
+      <span class="compose-tagged-product-emoji">${esc(emoji)}</span>
+      <span class="compose-tagged-product-name">${esc(name)}</span>
+      <button onclick="clearProduct()" class="compose-tagged-product-close" aria-label="Close"><i data-lucide="x" class="ic-13"></i></button>
+    </div>`;
+  }
+  function clearProduct(){
+    document.getElementById('product-search').value='';
+    document.getElementById('tagged-product-display').style.display='none';
+  }
+
+  /* Image upload */
+  function handleFileSelect(input){
+    if(input.files&&input.files[0]) showPreview(input.files[0]);
+  }
+  function handleDrop(e){
+    e.preventDefault();
+    const zone=document.getElementById('upload-zone');
+    zone.classList.remove('drag');
+    if(e.dataTransfer.files[0]) showPreview(e.dataTransfer.files[0]);
+  }
+  function showPreview(file){
+    const zone=document.getElementById('upload-zone');
+    const reader=new FileReader();
+    reader.onload=ev=>{
+      zone.innerHTML=`<img src="${ev.target.result}" class="upload-preview"><button onclick="clearImage(event)" class="compose-upload-clear-btn" aria-label="Close"><i data-lucide="x" class="ic-12"></i></button>`;
+      zone.style.position='relative';
+      zone.style.padding='0';
+      zone.classList.add('has-image');
+    };
+    reader.readAsDataURL(file);
+  }
+  function clearImage(e){
+    e.stopPropagation();
+    const zone=document.getElementById('upload-zone');
+    zone.style.position='';
+    zone.style.padding='28px';
+    zone.classList.remove('has-image');
+    zone.innerHTML=`<i data-lucide="image" class="ic-28"></i><div class="upload-placeholder"><strong class="compose-upload-strong">Drag &amp; drop or click to upload</strong><br>JPG, PNG, HEIC up to 20MB</div>`;
+  }
+
+  function submitPost(){
+    if (window.Lounge && Lounge.toast) Lounge.toast('Post submitted', { variant: 'success' });
+    setTimeout(() => { window.location.href = 'feed.html'; }, 800);
+  }
+</script>
+</body>
+</html>

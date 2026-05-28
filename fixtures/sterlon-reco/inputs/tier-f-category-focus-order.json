@@ -1,0 +1,25 @@
+{
+  "op": "categoryFocusOrder",
+  "cases": [
+    {
+      "id": "morning-espresso-pair-cigar",
+      "text": "Pair a cigar with a morning espresso. I want something elegant, smooth, and not too heavy for an early smoke.",
+      "expectFocus": "pairing"
+    },
+    {
+      "id": "spirit-only-explicit",
+      "text": "Recommend me a whiskey for tonight. I want something smooth, slightly sweet, and easy to sip slowly.",
+      "expectFocus": "spirit"
+    },
+    {
+      "id": "spirit-anchor-old-forester-maduro",
+      "text": "I'm drinking Old Forester 1920 and want a maduro cigar",
+      "expectFocus": "pairing"
+    },
+    {
+      "id": "cigar-only-under-10",
+      "text": "recommend a cigar under $10",
+      "expectFocus": "cigar"
+    }
+  ]
+}

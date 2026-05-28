@@ -1,0 +1,212 @@
+{
+  "version": 1,
+  "shard": "curated-02",
+  "category": "cigar",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 9,
+  "products": [
+    {
+      "provenance": {
+        "sourceConfidence": "Habanos official",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.habanos.com/en/news/habanos-s-a-presenta-magnum-50-de-h-upmann-en/"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Scotch",
+        "wrapperRole": "Cuba wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Cuba binder supports structure and integration with the filler.",
+        "fillerRole": "Cuba filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.habanos.com/en/news/habanos-s-a-presenta-magnum-50-de-h-upmann-en/.",
+        "avoidIf": "Beginner seeking ultra-mild only, or user needs U.S. retail when cigar is island Cuban.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, Magnum, or asks for a medium woodsy reference.",
+        "memberBlurb": "H. Upmann magnum format - toasted nuts, cedar, and classic medium Cuban character in a 50-ring robusto length."
+      },
+      "menuLine": "H. Upmann Magnum · 6.1 × 50 · Robusto · Medium · Cuban · — · Notes: cedar, wood, earth, leather",
+      "stickSize": "6.1 × 50 · Robusto",
+      "id": "cur-10-upmann-m50"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Habanos official",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.habanos.com/en/the-habanos-brands-academia/vegas-robaina-brand/"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Rum",
+        "wrapperRole": "Cuba wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Cuba binder supports structure and integration with the filler.",
+        "fillerRole": "Cuba filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.habanos.com/en/the-habanos-brands-academia/vegas-robaina-brand/.",
+        "avoidIf": "Beginner seeking ultra-mild only, or user needs U.S. retail when cigar is island Cuban.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, Vegas Robaina, or asks for a medium-full woodsy reference."
+      },
+      "menuLine": "Vegas Robaina Unicos · 6⅛ × 52 · Toro · Medium-Full · Cuban · — · Notes: cedar, wood, earth, leather",
+      "stickSize": "6⅛ × 52 · Toro",
+      "id": "cur-11-vr-unico"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Habanos official",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.habanos.com/en/the-habanos-brands-academia/partagas-brand/"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "Collector",
+        "pairingAffinity": "Scotch",
+        "wrapperRole": "Cuba wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Cuba binder supports structure and integration with the filler.",
+        "fillerRole": "Cuba filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.habanos.com/en/the-habanos-brands-academia/partagas-brand/.",
+        "avoidIf": "Beginner seeking ultra-mild only, or user needs U.S. retail when cigar is island Cuban.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, Lusitania, or asks for a full woodsy reference."
+      },
+      "menuLine": "Partagás Lusitania · 7.625 × 49 · Churchill · Full · Cuban · — · Notes: cedar, wood, earth, leather",
+      "stickSize": "7.625 × 49 · Churchill",
+      "id": "cur-12-part-lusi"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/padron-1964-anniversary-series-exclusivo-maduro-2011"
+      },
+      "guidance": {
+        "flavorFamily": "Coffee",
+        "occasion": "Collector",
+        "pairingAffinity": "Cognac",
+        "wrapperRole": "Nicaragua wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/padron-1964-anniversary-series-exclusivo-maduro-2011.",
+        "avoidIf": "Beginner nicotine-sensitive, opposite wrapper style, or very short time window.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, 1964 Anniversary Series, or asks for a full coffee reference.",
+        "memberBlurb": "Padron 1964 exclusivo - cocoa, coffee, and box-pressed Nicaraguan luxury in a 5½ x 50. Daily-driver anniversary line vs 1926 collector."
+      },
+      "menuLine": "Padron 1964 Anniversary Series · 5½ × 50 · Robusto · Full · Nicaragua · $19 · Notes: cocoa, coffee, earth, dark sweetness",
+      "stickSize": "5½ × 50 · Robusto",
+      "id": "cur-13-pad-1964-ex"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/ratings/7738/name/cohiba-robusto-robusto"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Scotch",
+        "wrapperRole": "Cameroon wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Indonesian Jember binder supports structure and integration with the filler.",
+        "fillerRole": "Dominican Piloto Cubano filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/7738/name/cohiba-robusto-robusto.",
+        "avoidIf": "Beginner nicotine-sensitive, opposite wrapper style, or very short time window.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, Dominican / Red Dot, or asks for a medium woodsy reference.",
+        "memberBlurb": "The recognizable U.S. Cohiba robusto - Cameroon wrapper, cream, cedar, and black pepper in a 5x50. Heritage name without island Cuban sourcing."
+      },
+      "menuLine": "Cohiba Dominican / Red Dot · 5 × 50 · Robusto · Medium · Dominican · $14 · Notes: cedar, wood, earth, leather",
+      "stickSize": "5 × 50 · Robusto",
+      "id": "cur-14-cohiba-rob"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/ratings/8964/name/romeo-y-julieta-reserva-real-churchill-churchill"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Scotch",
+        "wrapperRole": "Ecuador Connecticut wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Dominican Republic / Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/8964/name/romeo-y-julieta-reserva-real-churchill-churchill.",
+        "avoidIf": "Beginner nicotine-sensitive, opposite wrapper style, or very short time window.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, Reserva Real, or asks for a medium creamy reference."
+      },
+      "menuLine": "Romeo y Julieta Reserva Real · 7 × 48 · Churchill · Medium · Dominican · $10 · Notes: cream, cedar, nuts, toast",
+      "stickSize": "7 × 48 · Churchill",
+      "id": "cur-15-ryj-rr-ch"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/ratings/20372/name/my-father-the-judge-toro-fino-toro"
+      },
+      "guidance": {
+        "flavorFamily": "Coffee",
+        "occasion": "Collector",
+        "pairingAffinity": "Cognac",
+        "wrapperRole": "Nicaragua wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaraguan filler provides full-bodied Pepin Garcia depth, cocoa, coffee, earth, and dark sweetness.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/20372/name/my-father-the-judge-toro-fino-toro.",
+        "avoidIf": "Beginner nicotine-sensitive, opposite wrapper style, or very short time window.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, The Judge, or asks for a full coffee reference."
+      },
+      "menuLine": "My Father The Judge · 6 × 52 · Toro · Full · Nicaragua · $16 · Notes: cocoa, coffee, earth, dark sweetness",
+      "stickSize": "6 × 52 · Toro",
+      "id": "cur-16-mf-judge-toro"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/ratings/21447/name/davidoff-signature-petit-corona-petit-corona"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Celebration",
+        "pairingAffinity": "Champagne",
+        "wrapperRole": "Ecuador Connecticut wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Dominican Republic binder supports structure and integration with the filler.",
+        "fillerRole": "Dominican Republic filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/21447/name/davidoff-signature-petit-corona-petit-corona.",
+        "avoidIf": "Beginner nicotine-sensitive, opposite wrapper style, or very short time window.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, No. 2, or asks for a medium creamy reference."
+      },
+      "menuLine": "Davidoff No. 2 · 5⅛ × 42 · Petit Corona · Medium · Dominican Republic · $19 · Notes: cream, cedar, nuts, floral, light spice",
+      "stickSize": "5⅛ × 42 · Petit Corona",
+      "id": "cur-17-dav-no2"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/ratings/24199/name/ferio-tego-timeless-prestige-churchill-churchill"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Rum",
+        "wrapperRole": "Nicaragua wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/24199/name/ferio-tego-timeless-prestige-churchill-churchill.",
+        "avoidIf": "Beginner nicotine-sensitive, opposite wrapper style, or very short time window.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, Timeless Prestige, or asks for a medium-full woodsy reference."
+      },
+      "menuLine": "Ferio Tego Timeless Prestige · 6 × 52 · Toro · Medium-Full · Nicaragua · $14 · Notes: nuts, wood, cedar, almond, molasses, vanilla",
+      "stickSize": "6 × 52 · Toro",
+      "id": "cur-18-ferio-prestige"
+    }
+  ]
+}

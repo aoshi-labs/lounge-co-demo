@@ -1,0 +1,25 @@
+{
+  "op": "proseBrandDriftAnchor",
+  "sealedCards": [
+    { "cigar": "Ashton Cabinet Selection Toro", "spirit": "Woodford Reserve" },
+    { "cigar": "Ashton Classic", "spirit": "Buffalo Trace" },
+    { "cigar": "Ashton VSG Torpedo", "spirit": "Maker's Mark" }
+  ],
+  "cases": [
+    {
+      "id": "foreign-brand-prepends",
+      "prose": "To match this espresso, I highly recommend a bold Padron Nicaraguan wrapper.",
+      "expectAnchored": true
+    },
+    {
+      "id": "aligned-brand-no-prepend",
+      "prose": "The Ashton Cabinet brings a milder Dominican profile with cream and cedar.",
+      "expectAnchored": false
+    },
+    {
+      "id": "generic-wrapper-no-prepend",
+      "prose": "A milder Dominican wrapper with cream and cedar should pair well here.",
+      "expectAnchored": false
+    }
+  ]
+}

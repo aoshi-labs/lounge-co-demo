@@ -1,0 +1,89 @@
+{
+  "comfortAskDetected": false,
+  "targetSmokeMinutes": 60,
+  "connecticutWrapperCount": 0,
+  "minTierInFlight": 2,
+  "maxStrengthInFlight": 4,
+  "cardsProductIds": [
+    {
+      "slot": "best",
+      "cigarId": "bb25-12-dpg-demi",
+      "spiritId": "spi-trk-casamigos-rep"
+    },
+    {
+      "slot": "safe",
+      "cigarId": "bb24-04-oliva-sg-sg",
+      "spiritId": "spi-trk-casamigos-rep"
+    },
+    {
+      "slot": "wildcard",
+      "cigarId": "vid-16-esteban-mofo-rob",
+      "spiritId": "spi-trk-casamigos-rep"
+    }
+  ],
+  "cigarIdsDistinct": true,
+  "spiritIdsDistinct": false,
+  "spiritBestIsAnchor": true,
+  "spiritRelativesDistinctWhenPoolAllows": false,
+  "bestPreservesLockedId": true,
+  "slotRoleMetadata": [
+    {
+      "manufacturerKey": "don",
+      "lineKey": "don pepin garcia original",
+      "tier": 2,
+      "strength": 4,
+      "pepper": 6,
+      "wrapper": "nicaragua",
+      "contrastVsBest": 0
+    },
+    {
+      "manufacturerKey": "oliva",
+      "lineKey": "oliva serie g maduro",
+      "tier": 3,
+      "strength": 3,
+      "pepper": 5,
+      "wrapper": "nicaragua",
+      "contrastVsBest": 0
+    },
+    {
+      "manufacturerKey": "esteban",
+      "lineKey": "esteban carreras maduro mofo",
+      "tier": 4,
+      "strength": 4,
+      "pepper": 6,
+      "wrapper": "san andrés maduro",
+      "contrastVsBest": 0
+    }
+  ],
+  "wildcardContrastMeaningful": true,
+  "refinedElevatedVsBest": true,
+  "repairFired": [],
+  "progressionIntent": true,
+  "provenanceSignals": [
+    "catalog-shell",
+    "context-runtime",
+    "named-spirit",
+    "pairing-strategy-balanced",
+    "progression-intent",
+    "flight-philosophy",
+    "flight-philosophy-rerank-skipped",
+    "ontology-suppressed"
+  ],
+  "generatePipelineOrder": [
+    "pickSlotIds",
+    "applyFlightSlotDiversityIds",
+    "reconcileBestPickBodyIntentIds",
+    "reconcileWildcardBodyIntentIds",
+    "applyCigarFlightPhilosophy",
+    "applySpiritFlightPhilosophy"
+  ],
+  "rankedPoolSize": 181,
+  "governanceOk": true,
+  "pairingEvalGrades": [
+    0.558,
+    0.587,
+    0.54
+  ],
+  "bestPairingGradeGteRefinedMinusOne": true,
+  "wildcardHospitalityContrast": false
+}

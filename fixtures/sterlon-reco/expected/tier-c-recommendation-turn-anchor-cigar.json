@@ -1,0 +1,65 @@
+{
+  "contractVersion": 1,
+  "productIdAuthority": 2,
+  "cardsProductIds": [
+    {
+      "slot": "best",
+      "cigarId": "ca25-05-trinidad-esp3",
+      "spiritId": null,
+      "foodId": null
+    },
+    {
+      "slot": "safe",
+      "cigarId": "ca25-13-lfd-30years",
+      "spiritId": null,
+      "foodId": null
+    },
+    {
+      "slot": "wildcard",
+      "cigarId": "l3-mac-cafe",
+      "spiritId": null,
+      "foodId": null
+    }
+  ],
+  "runtimeMode": "normal",
+  "degraded": false,
+  "journeyLevel": "advanced",
+  "provenance": {
+    "source": "recommendation-runtime",
+    "module": "build-set",
+    "signals": [
+      "catalog-shell",
+      "context-runtime",
+      "category-cigar",
+      "pairing-strategy-balanced",
+      "flight-philosophy"
+    ],
+    "hasTurnId": true,
+    "scoringVersion": 1,
+    "runtimeVersion": 1
+  },
+  "degradedCause": null,
+  "cardsLen": 3,
+  "slotKeys": [
+    "best",
+    "safe",
+    "wildcard"
+  ],
+  "bestContextPresent": true,
+  "safeContextPresent": true,
+  "wildcardContextPresent": true,
+  "bestRationaleLen": 0,
+  "safeRationaleLen": 0,
+  "wildcardRationaleLen": 0,
+  "bestCompatibilityPresent": true,
+  "safeCompatibilityPresent": true,
+  "wildcardCompatibilityPresent": true,
+  "bestConfidence": "low",
+  "safeConfidence": "low",
+  "wildcardConfidence": "low",
+  "allowlistVerified": true,
+  "allowlistViolationCount": 0,
+  "validateOk": true,
+  "governanceOk": true,
+  "governanceAuthorityOk": true
+}

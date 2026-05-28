@@ -1,0 +1,7 @@
+{
+  "op": "refinementProvenanceChain",
+  "parentPromptText": "recommend a pairing",
+  "parentJourneyLevel": "advanced",
+  "refinementAxis": "lighter",
+  "description": "P0.6: refined turn provenance must carry parentTurnId, refinementType, refinementReason, refinementSource"
+}

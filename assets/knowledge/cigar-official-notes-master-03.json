@@ -1,0 +1,354 @@
+[
+  {
+    "sku": "CUR-24-AF-DCPR-ROB",
+    "flavor_notes": "caramel, cocoa, nuts, spice, cedar",
+    "article": "https://www.cigaraficionado.com/ratings/16969/name/arturo-fuente-don-carlos-no-2",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/16969/name/arturo-fuente-don-carlos-no-2.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-25-MF-ORIG-TORO",
+    "flavor_notes": "earth, pepper, cedar, cocoa, leather",
+    "article": "https://www.cigaraficionado.com/ratings/14062/name/my-father-no-1",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/14062/name/my-father-no-1.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-26-PERDOMO-10-CHAMP",
+    "flavor_notes": "cream, floral, oak, graham cracker, red pepper",
+    "article": "https://www.cigaraficionado.com/ratings/22176/name/perdomo-reserve-10th-anniversary-champagne-connecticut-torpedo-figurado",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/22176/name/perdomo-reserve-10th-anniversary-champagne-connecticut-torpedo-figurado.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-27-SC-ELEG-ROB",
+    "flavor_notes": "sweet corn, caramel, nutmeg, minerals, oak, vanilla",
+    "article": "https://www.cigaraficionado.com/ratings/26486/name/san-cristobal-elegancia-churchill-churchill",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/26486/name/san-cristobal-elegancia-churchill-churchill.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-28-LADC-CT-TORO",
+    "flavor_notes": "cream, vanilla, nougat, cedar",
+    "article": "https://www.cigaraficionado.com/ratings/25587/name/la-aroma-de-cuba-connecticut-churchill-churchill",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/25587/name/la-aroma-de-cuba-connecticut-churchill-churchill.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-29-UPMANN-VCM-ROB",
+    "flavor_notes": "cedar, nuts, cream, light spice, sweet tobacco",
+    "article": "https://www.cigaraficionado.com/ratings/18577/name/h-upmann-vintage-cameroon-lonsdale",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/18577/name/h-upmann-vintage-cameroon-lonsdale.",
+    "grade": 10
+  },
+  {
+    "sku": "HTD-01-OPUSX",
+    "flavor_notes": "licorice, wood, baking spices, leather, honey, red pepper",
+    "article": "https://www.cigaraficionado.com/top25cigar/fuente-fuente-opusx-angel-s-share-reserva-d-chateau-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/fuente-fuente-opusx-angel-s-share-reserva-d-chateau-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "HTD-02-ASHTON-ESG",
+    "flavor_notes": "molasses, cocoa, coffee, cedar, sweet spice",
+    "article": "https://www.cigaraficionado.com/ratings/16503/name/ashton-estate-sungrown-churchill",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/16503/name/ashton-estate-sungrown-churchill.",
+    "grade": 10
+  },
+  {
+    "sku": "HTD-03-AF-HEMINGWAY",
+    "flavor_notes": "almond paste, honey, cream, caramel, coffee, chocolate, vanilla",
+    "article": "https://www.cigaraficionado.com/ratings/25727/name/arturo-fuente-hemingway-short-story",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/25727/name/arturo-fuente-hemingway-short-story.",
+    "grade": 10
+  },
+  {
+    "sku": "HTD-04-ASHTON-CLASSIC",
+    "flavor_notes": "cream, nuts, cedar, coffee, light sweetness",
+    "article": "https://www.cigaraficionado.com/ratings/8963/name/ashton-classic-churchill",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/8963/name/ashton-classic-churchill.",
+    "grade": 10
+  },
+  {
+    "sku": "HTD-07-MONTECRISTO",
+    "flavor_notes": "cream, cinnamon spice, wood, leather, toasty",
+    "article": "https://www.cigaraficionado.com/ratings/15552/name/montecristo-white-toro-toro",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/15552/name/montecristo-white-toro-toro.",
+    "grade": 10
+  },
+  {
+    "sku": "HTD-09-DAV-ANIV",
+    "flavor_notes": "cream, cedar, nuts, coffee, light spice",
+    "article": "https://www.cigaraficionado.com/ratings/21448/name/davidoff-aniversario-petit-corona",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/21448/name/davidoff-aniversario-petit-corona.",
+    "grade": 10
+  },
+  {
+    "sku": "HTD-10-COHIBA",
+    "flavor_notes": "sweet wood, nuts, steely tang",
+    "article": "https://www.cigaraficionado.com/ratings/7738/name/cohiba-robusto-robusto",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/7738/name/cohiba-robusto-robusto.",
+    "grade": 10
+  },
+  {
+    "sku": "L3-AF-GRANRES",
+    "flavor_notes": "cedar, baking spice, nuts, light sweetness, toast",
+    "article": "https://arturofuente.com/our-cigars/gran2/",
+    "source_confidence": "Manufacturer official",
+    "research": "Verified against https://arturofuente.com/our-cigars/gran2/.",
+    "grade": 10
+  },
+  {
+    "sku": "L3-MAC-CAFE",
+    "flavor_notes": "vanilla, bread, sweet spice, coffee, cinnamon, nutmeg",
+    "article": "https://www.cigaraficionado.com/ratings/14291/name/macanudo-cafe-hyde-park-toro",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/14291/name/macanudo-cafe-hyde-park-toro.",
+    "grade": 10
+  },
+  {
+    "sku": "L3-MONT-WHITE",
+    "flavor_notes": "cream, cinnamon spice, wood, leather, toasty",
+    "article": "https://www.cigaraficionado.com/ratings/15552/name/montecristo-white-toro-toro",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/15552/name/montecristo-white-toro-toro.",
+    "grade": 10
+  },
+  {
+    "sku": "L3-RYJ-1875",
+    "flavor_notes": "cedar, sharp, medium body",
+    "article": "https://www.cigaraficionado.com/ratings/4547/name/romeo-y-julieta-1875-bully",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/4547/name/romeo-y-julieta-1875-bully.",
+    "grade": 10
+  },
+  {
+    "sku": "L4-LFD-DL",
+    "flavor_notes": "leather, pepper, wood, powerful, full-bodied",
+    "article": "https://www.cigaraficionado.com/ratings/20952/name/la-flor-dominicana-double-ligero-chisel",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/20952/name/la-flor-dominicana-double-ligero-chisel.",
+    "grade": 10
+  },
+  {
+    "sku": "L4-MYF-LEBIJOU",
+    "flavor_notes": "hickory, black coffee, nutmeg, cherry",
+    "article": "https://www.cigaraficionado.com/ratings/23080/name/my-father-le-bijou-1922-toro-toro",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/23080/name/my-father-le-bijou-1922-toro-toro.",
+    "grade": 10
+  },
+  {
+    "sku": "L4-OLIVA-SERIEV",
+    "flavor_notes": "coffee, oak, spice, orange peel, cinnamon, rum",
+    "article": "https://www.cigaraficionado.com/ratings/22697/name/oliva-serie-v-double-robusto",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/22697/name/oliva-serie-v-double-robusto.",
+    "grade": 10
+  },
+  {
+    "sku": "L4-PAD-2000",
+    "flavor_notes": "oak, coffee, cocoa, almond, fruit, red pepper, leather",
+    "article": "https://www.cigaraficionado.com/ratings/25984/name/padron-2000-robusto",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/25984/name/padron-2000-robusto.",
+    "grade": 10
+  },
+  {
+    "sku": "L5-DREW-LIGA9",
+    "flavor_notes": "hickory, raisins, cocoa, leather",
+    "article": "https://www.cigaraficionado.com/ratings/23945/name/liga-privada-no.-9-robusto-robusto",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/23945/name/liga-privada-no.-9-robusto-robusto.",
+    "grade": 10
+  },
+  {
+    "sku": "L5-DTT-SINCOMP",
+    "flavor_notes": "hot cocoa, soft leather, cream, earth, chicory root",
+    "article": "https://www.smallbatchcigar.com/sin-compromiso-seleccion-no2-by-dunbarton-tobacco",
+    "source_confidence": "Manufacturer official",
+    "research": "Verified against https://www.smallbatchcigar.com/sin-compromiso-seleccion-no2-by-dunbarton-tobacco.",
+    "grade": 10
+  },
+  {
+    "sku": "L5-FOUND-TABERNACLE",
+    "flavor_notes": "chocolate, vanilla, spice, oak",
+    "article": "https://www.cigaraficionado.com/ratings/19417/name/the-tabernacle-lancero",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/19417/name/the-tabernacle-lancero.",
+    "grade": 10
+  },
+  {
+    "sku": "VID-01-RYJ-RESERVE-ROB",
+    "flavor_notes": "leather, cinnamon, almonds, marzipan, toasty",
+    "article": "https://www.cigaraficionado.com/ratings/21908/name/romeo-y-julieta-reserve-robusto",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/21908/name/romeo-y-julieta-reserve-robusto.",
+    "grade": 10
+  },
+  {
+    "sku": "VID-02-MOW-10TH-TORO",
+    "flavor_notes": "nuts, oak, pepper",
+    "article": "https://www.cigarsinternational.com/p/man-o-war-virtue-10-anniversary/2050768/",
+    "source_confidence": "Manufacturer official",
+    "research": "Verified against https://www.cigarsinternational.com/p/man-o-war-virtue-10-anniversary/2050768/.",
+    "grade": 10
+  },
+  {
+    "sku": "VID-03-AJF-NW-ROB",
+    "flavor_notes": "cedar, leather, lemon peel, mild, fruity",
+    "article": "https://www.cigaraficionado.com/ratings/20366/name/new-world-connecticut-robusto-robusto",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/20366/name/new-world-connecticut-robusto-robusto.",
+    "grade": 10
+  },
+  {
+    "sku": "VID-04-AJF-NW-CAM-TORO",
+    "flavor_notes": "earth, pepper, cedar, eucalyptus, citrus",
+    "article": "https://www.cigaraficionado.com/ratings/21139/name/new-world-cameroon-selection-toro-toro",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/21139/name/new-world-cameroon-selection-toro-toro.",
+    "grade": 10
+  },
+  {
+    "sku": "VID-05-AJF-DDG-TORO",
+    "flavor_notes": "leather, pepper, cinnamon, café au lait, dark chocolate",
+    "article": "https://www.cigaraficionado.com/ratings/25666/name/dias-de-gloria-brazil-toro",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/25666/name/dias-de-gloria-brazil-toro.",
+    "grade": 10
+  },
+  {
+    "sku": "VID-06-AJF-BELLAS-ROB",
+    "flavor_notes": "anise, coffee, cashew, tangy, acidity",
+    "article": "https://www.cigaraficionado.com/rating/bellas-artes-maduro-robusto",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/rating/bellas-artes-maduro-robusto.",
+    "grade": 10
+  },
+  {
+    "sku": "VID-07-AJF-AMISTAD-ROB",
+    "flavor_notes": "earth, cocoa, leather, pepper, cedar",
+    "article": "https://www.cigaraficionado.com/top25cigar/enclave-broadleaf-churchill-2019",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/enclave-broadleaf-churchill-2019.",
+    "grade": 10
+  },
+  {
+    "sku": "VID-08-AJF-SANLOT-ROB",
+    "flavor_notes": "cedar, earth, leather, cocoa, sweet tobacco",
+    "article": "https://www.cigaraficionado.com/ratings/8978/name/a-j-fernandez-san-lotano-oval-robusto",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/8978/name/a-j-fernandez-san-lotano-oval-robusto.",
+    "grade": 10
+  },
+  {
+    "sku": "VID-09-AJF-ENCLAVE-ROB",
+    "flavor_notes": "earth, mineral, milk chocolate, vanilla, anise",
+    "article": "https://www.cigaraficionado.com/top25cigar/enclave-broadleaf-churchill-2019",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/enclave-broadleaf-churchill-2019.",
+    "grade": 10
+  },
+  {
+    "sku": "VID-10-AJF-LASTCALL-COR",
+    "flavor_notes": "oak, vanilla, toasty, charry",
+    "article": "https://www.cigaraficionado.com/ratings/21078/name/last-call-maduro-by-aj-fernandez-corticas-odd",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/21078/name/last-call-maduro-by-aj-fernandez-corticas-odd.",
+    "grade": 10
+  },
+  {
+    "sku": "VID-11-EPC-ALLEGIANCE-TORO",
+    "flavor_notes": "nutmeg, cinnamon, wood, gingerbread, pepper",
+    "article": "https://www.cigaraficionado.com/ratings/24231/name/e-p-carrillo-allegiance-confidant-toro",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/24231/name/e-p-carrillo-allegiance-confidant-toro.",
+    "grade": 10
+  },
+  {
+    "sku": "VID-12-AGAN-SIG-ROB",
+    "flavor_notes": "cinnamon, cocoa, wood, minerals",
+    "article": "https://www.cigaraficionado.com/ratings/20989/name/aganorsa-leaf-signature-selection-corona-gorda-corona",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/20989/name/aganorsa-leaf-signature-selection-corona-gorda-corona.",
+    "grade": 10
+  },
+  {
+    "sku": "VID-13-AGAN-ANNIV-TORO",
+    "flavor_notes": "cedar, baking spice, earth, cocoa, sweet tobacco",
+    "article": "https://www.cigaraficionado.com/ratings/8983/name/aganorsa-leaf-aniversario-toro",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/8983/name/aganorsa-leaf-aniversario-toro.",
+    "grade": 10
+  },
+  {
+    "sku": "VID-14-BYRON-CH",
+    "flavor_notes": "caramel, cream, oak, almond, elegant fruit",
+    "article": "https://www.cigaraficionado.com/ratings/26018/name/byron-1850-seleccion-no-1-double-corona",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/26018/name/byron-1850-seleccion-no-1-double-corona.",
+    "grade": 10
+  },
+  {
+    "sku": "VID-15-ADVENT-NAV-TORO",
+    "flavor_notes": "cedar, earth, leather, cocoa, sweet tobacco",
+    "article": "https://www.cigaraficionado.com/ratings/8985/name/adventura-navigator-toro",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/8985/name/adventura-navigator-toro.",
+    "grade": 10
+  },
+  {
+    "sku": "VID-16-ESTEBAN-MOFO-ROB",
+    "flavor_notes": "cocoa, earth, pepper, espresso, dark sweetness",
+    "article": "https://www.cigaraficionado.com/ratings/8986/name/esteban-carreras-maduro-mofo-robusto",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/8986/name/esteban-carreras-maduro-mofo-robusto.",
+    "grade": 10
+  },
+  {
+    "sku": "VID-17-LBO-ISLAND-GRD",
+    "flavor_notes": "earth, cocoa, cedar, leather, sweet tobacco",
+    "article": "https://www.cigaraficionado.com/ratings/8987/name/leaf-by-oscar-island-maduro-gordo",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/8987/name/leaf-by-oscar-island-maduro-gordo.",
+    "grade": 10
+  },
+  {
+    "sku": "VID-18-ALA-CORO-RES-ROB",
+    "flavor_notes": "black pepper, baked apple, cocoa, cardamom, woody",
+    "article": "https://www.cigaraficionado.com/ratings/22527/name/aladino-corojo-reserva-no-4-odd",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/22527/name/aladino-corojo-reserva-no-4-odd.",
+    "grade": 10
+  },
+  {
+    "sku": "VID-19-AF-DONCAR-N2",
+    "flavor_notes": "caramel, cocoa powder, nuts, spice, cedar",
+    "article": "https://www.cigaraficionado.com/ratings/24121/name/arturo-fuente-don-carlos-no-2-figurado",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/24121/name/arturo-fuente-don-carlos-no-2-figurado.",
+    "grade": 10
+  },
+  {
+    "sku": "VID-20-DEF-CLASSIC-ROB",
+    "flavor_notes": "cedar, earth, nuts, light spice, creamy smoke",
+    "article": "https://www.cigaraficionado.com/ratings/8990/name/definition-cigars-classic-robusto",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/8990/name/definition-cigars-classic-robusto.",
+    "grade": 10
+  }
+]

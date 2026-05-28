@@ -1,0 +1,5 @@
+{
+  "op": "persistTurnRoundTrip",
+  "promptText": "recommend a pairing for the evening",
+  "session": {}
+}

@@ -1,0 +1,57 @@
+{
+  "contractVersion": 1,
+  "productIdAuthority": 2,
+  "cardsProductIds": [
+    {
+      "slot": "best",
+      "cigarId": null,
+      "spiritId": null,
+      "foodId": null
+    },
+    {
+      "slot": "safe",
+      "cigarId": null,
+      "spiritId": null,
+      "foodId": null
+    },
+    {
+      "slot": "wildcard",
+      "cigarId": null,
+      "spiritId": null,
+      "foodId": null
+    }
+  ],
+  "runtimeMode": "degraded",
+  "degraded": true,
+  "journeyLevel": "novice",
+  "provenance": {
+    "source": "degraded",
+    "reason": "sterlon-reco-freeze-degraded-snapshot",
+    "degradedCause": "sterlon-reco-freeze-degraded-snapshot",
+    "hasTurnId": true
+  },
+  "degradedCause": "sterlon-reco-freeze-degraded-snapshot",
+  "cardsLen": 3,
+  "slotKeys": [
+    "best",
+    "safe",
+    "wildcard"
+  ],
+  "bestContextPresent": true,
+  "safeContextPresent": true,
+  "wildcardContextPresent": true,
+  "bestRationaleLen": 0,
+  "safeRationaleLen": 0,
+  "wildcardRationaleLen": 0,
+  "bestCompatibilityPresent": true,
+  "safeCompatibilityPresent": true,
+  "wildcardCompatibilityPresent": true,
+  "bestConfidence": "low",
+  "safeConfidence": "low",
+  "wildcardConfidence": "low",
+  "allowlistVerified": true,
+  "allowlistViolationCount": 0,
+  "validateOk": true,
+  "governanceOk": true,
+  "governanceAuthorityOk": true
+}

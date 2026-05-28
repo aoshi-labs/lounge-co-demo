@@ -1,0 +1,203 @@
+{
+  "version": 1,
+  "shard": "transcript-03",
+  "category": "cigar",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 9,
+  "products": [
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/ratings/20989/name/aganorsa-leaf-signature-selection-corona-gorda-corona"
+      },
+      "guidance": {
+        "flavorFamily": "Savory",
+        "occasion": "After dinner",
+        "pairingAffinity": "Rum",
+        "wrapperRole": "Nicaragua Corojo wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/20989/name/aganorsa-leaf-signature-selection-corona-gorda-corona.",
+        "avoidIf": "Beginner seeking ultra-mild only when strength is medium-full or full.",
+        "whyRecommend": "Recommend when teaching Signature Selection identity, AJ/Aganorsa progression, or transcript-priority catalog coverage."
+      },
+      "menuLine": "Aganorsa Leaf Signature Selection · 5 × 54 · Robusto · Medium-Full · Nicaragua · $12 · Notes: cinnamon, cocoa, wood, minerals",
+      "stickSize": "5 × 54 · Robusto",
+      "id": "vid-12-agan-sig-rob"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/ratings/8983/name/aganorsa-leaf-aniversario-toro"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "Celebration",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Nicaragua Corojo wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/8983/name/aganorsa-leaf-aniversario-toro.",
+        "avoidIf": "Beginner seeking ultra-mild only when strength is medium-full or full.",
+        "whyRecommend": "Recommend when teaching Aniversario identity, AJ/Aganorsa progression, or transcript-priority catalog coverage."
+      },
+      "menuLine": "Aganorsa Leaf Aniversario · 6 × 54 · Toro · Medium-Full · Nicaragua · $13 · Notes: cedar, baking spice, earth, cocoa, sweet tobacco",
+      "stickSize": "6 × 54 · Toro",
+      "id": "vid-13-agan-anniv-toro"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/ratings/26018/name/byron-1850-seleccion-no-1-double-corona"
+      },
+      "guidance": {
+        "flavorFamily": "Dessert",
+        "occasion": "Celebration",
+        "pairingAffinity": "Champagne",
+        "wrapperRole": "Ecuador wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Costa Rica binder supports structure and integration with the filler.",
+        "fillerRole": "Peru / Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/26018/name/byron-1850-seleccion-no-1-double-corona.",
+        "avoidIf": "Opposite wrapper lesson needed, or user wants island Cuban only.",
+        "whyRecommend": "Recommend when teaching 19th Century identity, AJ/Aganorsa progression, or transcript-priority catalog coverage."
+      },
+      "menuLine": "Byron 19th Century · 7 × 47 · Churchill · Medium · Costa Rica · $28 · Notes: caramel, cream, oak, almond, elegant fruit",
+      "stickSize": "7 × 47 · Churchill",
+      "id": "vid-14-byron-ch"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/ratings/8985/name/adventura-navigator-toro"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Rum"
+      },
+      "menuLine": "Adventura Navigator · 6 × 52 · Toro · Medium · Dominican Republic · $12 · Notes: cedar, earth, leather, cocoa, sweet tobacco",
+      "stickSize": "6 × 52 · Toro",
+      "id": "vid-15-advent-nav-toro"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/ratings/8986/name/esteban-carreras-maduro-mofo-robusto"
+      },
+      "guidance": {
+        "flavorFamily": "Dark & Heavy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "San Andrés Maduro wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/8986/name/esteban-carreras-maduro-mofo-robusto.",
+        "avoidIf": "Beginner seeking ultra-mild only when strength is medium-full or full.",
+        "whyRecommend": "Recommend when teaching Maduro Mofo identity, AJ/Aganorsa progression, or transcript-priority catalog coverage."
+      },
+      "menuLine": "Esteban Carreras Maduro Mofo · 5 × 52 · Robusto · Medium-Full · Nicaragua · $9 · Notes: cocoa, earth, pepper, espresso, dark sweetness",
+      "stickSize": "5 × 52 · Robusto",
+      "id": "vid-16-esteban-mofo-rob"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/ratings/8987/name/leaf-by-oscar-island-maduro-gordo"
+      },
+      "guidance": {
+        "flavorFamily": "Savory",
+        "occasion": "After dinner",
+        "pairingAffinity": "Rum",
+        "wrapperRole": "Mexican San Andrés wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Honduras binder supports structure and integration with the filler.",
+        "fillerRole": "Honduras / Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/8987/name/leaf-by-oscar-island-maduro-gordo.",
+        "avoidIf": "Beginner seeking ultra-mild only when strength is medium-full or full.",
+        "whyRecommend": "Recommend when teaching Island Maduro identity, AJ/Aganorsa progression, or transcript-priority catalog coverage."
+      },
+      "menuLine": "Leaf by Oscar Island Maduro · 6 × 60 · Gordo · Medium-Full · Honduras · $10 · Notes: earth, cocoa, cedar, leather, sweet tobacco",
+      "stickSize": "6 × 60 · Gordo",
+      "id": "vid-17-lbo-island-grd"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/ratings/22527/name/aladino-corojo-reserva-no-4-odd"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Honduras Corojo wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Honduras binder supports structure and integration with the filler.",
+        "fillerRole": "Honduras / Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/22527/name/aladino-corojo-reserva-no-4-odd.",
+        "avoidIf": "Beginner seeking ultra-mild only when strength is medium-full or full.",
+        "whyRecommend": "Recommend when teaching Corojo Reserva identity, AJ/Aganorsa progression, or transcript-priority catalog coverage."
+      },
+      "menuLine": "Aladino Corojo Reserva · 5 × 52 · Robusto · Medium-Full · Honduras · $9 · Notes: black pepper, baked apple, cocoa, cardamom, woody",
+      "stickSize": "5 × 52 · Robusto",
+      "id": "vid-18-ala-coro-res-rob"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/ratings/24121/name/arturo-fuente-don-carlos-no-2-figurado"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "After dinner",
+        "pairingAffinity": "Cognac",
+        "wrapperRole": "Cameroon wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Dominican Republic binder supports structure and integration with the filler.",
+        "fillerRole": "Dominican Republic filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/24121/name/arturo-fuente-don-carlos-no-2-figurado.",
+        "avoidIf": "Opposite wrapper lesson needed, or user wants island Cuban only.",
+        "whyRecommend": "Recommend when teaching Don Carlos identity, AJ/Aganorsa progression, or transcript-priority catalog coverage."
+      },
+      "menuLine": "Arturo Fuente Don Carlos · 5¼ × 52 · Robusto · Medium · Dominican Republic · $14 · Notes: caramel, cocoa powder, nuts, spice, cedar",
+      "stickSize": "5¼ × 52 · Robusto",
+      "id": "vid-19-af-doncar-n2"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/ratings/8990/name/definition-cigars-classic-robusto"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Nicaragua Habano wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/8990/name/definition-cigars-classic-robusto.",
+        "avoidIf": "Opposite wrapper lesson needed, or user wants island Cuban only.",
+        "whyRecommend": "Recommend when teaching Classic identity, AJ/Aganorsa progression, or transcript-priority catalog coverage."
+      },
+      "menuLine": "Definition Cigars Classic · 5 × 50 · Robusto · Medium · Nicaragua · $8 · Notes: cedar, earth, nuts, light spice, creamy smoke",
+      "stickSize": "5 × 50 · Robusto",
+      "id": "vid-20-def-classic-rob"
+    }
+  ]
+}

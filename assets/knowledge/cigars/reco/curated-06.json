@@ -1,0 +1,383 @@
+{
+  "version": 1,
+  "shard": "curated-06",
+  "category": "cigar",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 8,
+  "products": [
+    {
+      "tracker": {
+        "sku": "CUR-46-PAD-1964-TOR-MAD"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.95
+        },
+        {
+          "id": "coffee",
+          "weight": 0.85
+        },
+        {
+          "id": "earth",
+          "weight": 0.75
+        },
+        {
+          "id": "cedar",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 19,
+        "tier": 6,
+        "strength": 5,
+        "body": "Full",
+        "smokeTime": "90 min",
+        "wrapper": "Nicaraguan Maduro",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "cur-46-pad-1964-tor-mad",
+      "sensory": {
+        "body": 9,
+        "sweetness": 5,
+        "pepper": 7,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "Padron 1964 Anniversary Series Torpedo Maduro",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-47-PAD-1926-N2-NAT"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "pepper",
+          "weight": 1.0
+        },
+        {
+          "id": "dark_chocolate",
+          "weight": 0.95
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.85
+        },
+        {
+          "id": "leather",
+          "weight": 0.75
+        },
+        {
+          "id": "cedar",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 24,
+        "tier": 7,
+        "strength": 5,
+        "body": "Full",
+        "smokeTime": "90 min",
+        "wrapper": "Nicaraguan Natural",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "cur-47-pad-1926-n2-nat",
+      "sensory": {
+        "body": 9,
+        "sweetness": 5,
+        "pepper": 7,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "Padron 1926 Series No. 2 Natural",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-48-PAD-1926-N2-MAD"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.95
+        },
+        {
+          "id": "pepper",
+          "weight": 0.85
+        },
+        {
+          "id": "leather",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 26,
+        "tier": 7,
+        "strength": 5,
+        "body": "Full",
+        "smokeTime": "90 min",
+        "wrapper": "Nicaraguan Maduro",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "cur-48-pad-1926-n2-mad",
+      "sensory": {
+        "body": 9,
+        "sweetness": 5,
+        "pepper": 7,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "Padron 1926 Series No. 2 Maduro",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-49-PAD-1926-N9-NAT"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "pepper",
+          "weight": 1.0
+        },
+        {
+          "id": "dark_chocolate",
+          "weight": 0.95
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.85
+        },
+        {
+          "id": "leather",
+          "weight": 0.75
+        },
+        {
+          "id": "cedar",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 28,
+        "tier": 7,
+        "strength": 5,
+        "body": "Full",
+        "smokeTime": "90 min",
+        "wrapper": "Nicaraguan Natural",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "cur-49-pad-1926-n9-nat",
+      "sensory": {
+        "body": 9,
+        "sweetness": 5,
+        "pepper": 7,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "Padron 1926 Series No. 9 Natural",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-50-PAD-1926-N9-MAD"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.95
+        },
+        {
+          "id": "pepper",
+          "weight": 0.85
+        },
+        {
+          "id": "leather",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 30,
+        "tier": 7,
+        "strength": 5,
+        "body": "Full",
+        "smokeTime": "90 min",
+        "wrapper": "Nicaraguan Maduro",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "cur-50-pad-1926-n9-mad",
+      "sensory": {
+        "body": 9,
+        "sweetness": 5,
+        "pepper": 7,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "Padron 1926 Series No. 9 Maduro",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-51-PAD-FR-44"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "earth",
+          "weight": 1.0
+        },
+        {
+          "id": "dark_fruit",
+          "weight": 0.95
+        },
+        {
+          "id": "fruit",
+          "weight": 0.85
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.75
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.7
+        },
+        {
+          "id": "cream",
+          "weight": 0.65
+        }
+      ],
+      "spec": {
+        "msrp": 38,
+        "tier": 9,
+        "strength": 5,
+        "body": "Full",
+        "smokeTime": "120 min",
+        "wrapper": "Nicaraguan",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "cur-51-pad-fr-44",
+      "sensory": {
+        "body": 9,
+        "sweetness": 5,
+        "pepper": 7,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Padron Family Reserve No. 44",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-52-PAD-FR-50"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "earth",
+          "weight": 1.0
+        },
+        {
+          "id": "fruit",
+          "weight": 0.95
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.85
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.75
+        },
+        {
+          "id": "cream",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 42,
+        "tier": 9,
+        "strength": 5,
+        "body": "Full",
+        "smokeTime": "120 min",
+        "wrapper": "Nicaraguan",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "cur-52-pad-fr-50",
+      "sensory": {
+        "body": 9,
+        "sweetness": 5,
+        "pepper": 7,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Padron Family Reserve No. 50",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-53-PAD-DAMASO-ROB"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cream",
+          "weight": 1.0
+        },
+        {
+          "id": "cedar",
+          "weight": 0.95
+        },
+        {
+          "id": "pepper",
+          "weight": 0.85
+        }
+      ],
+      "spec": {
+        "msrp": 14,
+        "tier": 4,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "60 min",
+        "wrapper": "Connecticut Shade",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "cur-53-pad-damaso-rob",
+      "sensory": {
+        "body": 6,
+        "sweetness": 6,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Padron Damaso Robusto",
+      "category": "cigar"
+    }
+  ]
+}

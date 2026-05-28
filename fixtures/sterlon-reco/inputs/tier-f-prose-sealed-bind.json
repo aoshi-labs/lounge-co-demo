@@ -1,0 +1,41 @@
+{
+  "op": "proseSealedSlotBind",
+  "sealedCards": [
+    {
+      "cigar": "Bolivar Cofradia Robusto",
+      "spirit": "Elijah Craig Small Batch",
+      "why": ["Rich cocoa and cedar for after-dinner", "Balanced medium-full body"]
+    },
+    {
+      "cigar": "Cohiba Maduro 5 Mágicos",
+      "spirit": "Elijah Craig Small Batch",
+      "why": ["Refined Maduro sweetness", "Petit robusto pacing"]
+    },
+    {
+      "cigar": "E.P. Carrillo Encore Majestic",
+      "spirit": "Elijah Craig Small Batch",
+      "why": ["Contrast wildcard tier", "Different wrapper rhythm"]
+    }
+  ],
+  "cases": [
+    {
+      "id": "realigns-wrong-best-pick",
+      "prose": "**BEST PICK:** Cohiba Maduro 5 Mágicos Cohiba's Cuban pride shines in this Petit Robusto.",
+      "expectBestProduct": "Bolivar Cofradia Robusto",
+      "expectWildcardContrast": true
+    },
+    {
+      "id": "preserves-aligned-gateway-body",
+      "prose": "**BEST PICK:** Bolivar Cofradia Robusto Earthy cocoa and cedar echo a steak dinner finish.",
+      "expectBestProduct": "Bolivar Cofradia Robusto",
+      "expectBodyContains": "Earthy cocoa"
+    },
+    {
+      "id": "strips-duplicate-with-spirit",
+      "prose": "**BEST PICK:** Bolivar Cofradia Robusto with Elijah Craig Small Batch with Elijah Craig Small Batch The drier pour keeps the smoke from turning one-note on the finish.",
+      "expectBestProduct": "Bolivar Cofradia Robusto",
+      "expectBodyContains": "drier pour",
+      "expectNoDuplicateWith": true
+    }
+  ]
+}

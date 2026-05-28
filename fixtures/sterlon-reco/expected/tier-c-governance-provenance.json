@@ -1,0 +1,14 @@
+{
+  "hasTurnId": true,
+  "hasScoringVersion": true,
+  "hasRuntimeVersion": true,
+  "hasGeneratedAt": true,
+  "hasJourneyLevel": true,
+  "hasModule": true,
+  "hasSignals": true,
+  "hasSource": true,
+  "hasPromptText": true,
+  "allowlistVerified": true,
+  "runtimeModeNormal": true,
+  "degradedFalse": true
+}

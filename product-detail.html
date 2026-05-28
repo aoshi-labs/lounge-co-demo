@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Ashton VSG Torpedo — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Tasting notes, member reviews, and pairings for this cigar or spirit." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Ashton VSG Torpedo — Lounge & Co." />
+  <meta property="og:description" content="Tasting notes, member reviews, and pairings for this cigar or spirit." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ashton VSG Torpedo — Lounge & Co." />
+  <meta name="twitter:description" content="Tasting notes, member reviews, and pairings for this cigar or spirit." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/product-detail.css"/>
+</head>
+<body>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Thomas H.</div><div class="sidebar-user-tier">Elite · 1,744 pts · #4</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area">
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+      <i data-lucide="menu" class="ic-16"></i>
+    </button>
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="catalog.html" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'" class="breadcrumb-link">Catalog</a>
+      <i data-lucide="chevron-right" class="ic-12"></i>
+      <span class="breadcrumb-segment">Cigars</span>
+      <i data-lucide="chevron-right" class="ic-12"></i>
+      <span class="breadcrumb-current">Ashton VSG Torpedo</span>
+    </div>
+    <div class="topbar-actions">
+    </div>
+  </header>
+
+  <div class="page-content">
+
+    <!-- CENTER -->
+    <div class="product-detail-page-stack">
+
+      <!-- Product hero -->
+      <div class="product-hero-card">
+
+        <!-- Image -->
+        <div class="product-hero-image"><img src="assets/images/ashton_vsg_torpedo.jpg" alt="Ashton VSG Torpedo" /></div>
+
+        <!-- Details -->
+        <div class="product-hero-details">
+          <div>
+            <div class="product-hero-eyebrow">Cigar · Honduras</div>
+            <h1 class="product-hero-name">Ashton VSG Torpedo</h1>
+            <div class="product-hero-maker">by Ashton Cigars · Davidoff of Geneva</div>
+          </div>
+          <!-- B2 — Wishlist bookmark in product header -->
+          <button class="pro-wish-btn" onclick="toggleProductWishlist(this)" title="Add to Want to try" aria-label="Toggle wishlist"><i data-lucide="bookmark" class="ic-15"></i></button>
+
+          <!-- Rating row -->
+          <div class="product-rating-row">
+            <div class="product-rating-score-block">
+              <div class="product-rating-score">4.8</div>
+              <div class="product-rating-stars">★★★★★</div>
+            </div>
+            <div class="product-rating-divider"></div>
+            <div class="product-rating-meta">
+              <div class="product-rating-meta-line">38 member reviews</div>
+              <div class="product-rating-meta-line">Mentioned in 14 posts</div>
+            </div>
+          </div>
+
+          <!-- Tasting notes -->
+          <div>
+            <div class="product-section-label">Tasting Notes</div>
+            <div class="product-tasting-notes">
+              <span class="rating-chip">Cedar</span><span class="rating-chip">Hay</span><span class="rating-chip">Floral</span><span class="rating-chip">Leather</span><span class="rating-chip">Cream</span>
+            </div>
+          </div>
+
+          <!-- Strength chips -->
+          <div>
+            <div class="product-section-label">Strength</div>
+            <div class="product-strength-chips">
+              <span class="product-strength-chip">Mild</span>
+              <span class="product-strength-chip">Medium</span>
+              <span class="product-strength-chip-active">Med-Full ✓</span>
+              <span class="product-strength-chip">Full</span>
+            </div>
+          </div>
+
+          <!-- Price + add -->
+          <div class="product-purchase-row">
+            <div class="product-price">$28</div>
+            <div class="product-qty-stepper">
+              <button onclick="changeQty(-1)" onmouseover="this.style.background='var(--bg-border)'" onmouseout="this.style.background='none'" class="product-qty-btn">−</button>
+              <span id="qty" class="product-qty-value">1</span>
+              <button onclick="changeQty(1)" onmouseover="this.style.background='var(--bg-border)'" onmouseout="this.style.background='none'" class="product-qty-btn">+</button>
+            </div>
+            <button onclick="addToVisit()" id="add-btn" onmouseover="this.style.background='var(--burg-hover)'" onmouseout="this.style.background='var(--burg)'" class="product-add-cta">Add to my visit</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="product-tab-bar">
+        <button class="tab-btn active" onclick="switchTab(this,'details')">Details</button>
+        <button class="tab-btn" onclick="switchTab(this,'reviews')">Reviews <span class="product-tab-count">38</span></button>
+        <button class="tab-btn" onclick="switchTab(this,'pairings')">Pairings</button>
+        <button class="tab-btn" onclick="switchTab(this,'similar')">Similar</button>
+      </div>
+
+      <!-- Tab content -->
+      <!-- Details -->
+      <div id="tab-details" class="product-tab-panel">
+        <div class="product-details-grid">
+          <div>
+            <div class="product-details-heading">Product Details</div>
+            <div class="product-details-list">
+              <div class="product-details-row"><span class="product-details-label">Wrapper</span><span class="product-details-value">Ecuador Sun-Grown</span></div>
+              <div class="product-details-row"><span class="product-details-label">Binder</span><span class="product-details-value">Honduras</span></div>
+              <div class="product-details-row"><span class="product-details-label">Filler</span><span class="product-details-value">Dominican, Honduras</span></div>
+              <div class="product-details-row"><span class="product-details-label">Length</span><span class="product-details-value">6.125"</span></div>
+              <div class="product-details-row"><span class="product-details-label">Ring Gauge</span><span class="product-details-value">52</span></div>
+              <div class="product-details-row-last"><span class="product-details-label">Shape</span><span class="product-details-value">Torpedo (Belicoso)</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="product-details-heading">Description</div>
+            <p class="product-description">The VSG (Virgin Sun Grown) Torpedo is one of Ashton's most celebrated lines. The distinctive wrapper imparts rich, complex flavors — cedar, hay, and floral notes with a creamy finish that develops beautifully over the course of the smoke.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reviews (hidden) -->
+      <div id="tab-reviews" class="product-tab-panel-hidden">
+
+        <div class="product-reviews-list">
+          <!-- Review 1 -->
+          <div class="product-review-item">
+            <div class="product-review-header">
+              <a href="profile.html"><div class="avatar product-review-avatar-champion"><img src="assets/images/marcus-r.jpg" alt=""/></div></a>
+              <div class="product-review-author"><div class="product-review-name">Marcus R. <span class="product-review-rating">★ 4.8</span></div><div class="product-review-time">2 hours ago</div></div>
+              <div class="product-review-chips"><span class="rating-chip">Draw 9/10</span><span class="rating-chip">Burn 8/10</span></div>
+            </div>
+            <p class="product-review-body">Cedar on the draw paired with sherry sweetness. Construction was perfect — not a single touch-up for the full 90 minutes.</p>
+            <div class="product-review-footer">
+              <button class="post-action product-review-like-btn" onclick="toggleLike(this)"><i data-lucide="heart" class="ic-13"></i><span>24</span></button>
+              <a href="post-detail.html" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'" class="product-review-read-more">Read full review →</a>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="product-review-item">
+            <div class="product-review-header">
+              <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+              <div class="product-review-author"><div class="product-review-name">Thomas H. <span class="product-review-rating">★ 4.6</span></div><div class="product-review-time">3 days ago</div></div>
+              <div class="product-review-chips"><span class="rating-chip">Draw 8/10</span><span class="rating-chip">Medium-Full</span></div>
+            </div>
+            <p class="product-review-body">Had it with a Glenfarclas 17 on a quiet Tuesday. The hay and floral notes come through on the retrohale — very unexpected for a box-pressed torpedo. Highly recommend.</p>
+            <div class="product-review-footer">
+              <button class="post-action product-review-like-btn" onclick="toggleLike(this)"><i data-lucide="heart" class="ic-13"></i><span>11</span></button>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="product-review-item-last">
+            <div class="product-review-header">
+              <div class="avatar product-review-avatar-bronze"><img src="assets/images/robert-b.jpg" alt=""/></div>
+              <div class="product-review-author"><div class="product-review-name">Robert B. <span class="product-review-rating">★ 4.9</span></div><div class="product-review-time">1 week ago</div></div>
+              <div class="product-review-chips"><span class="rating-chip">Construction 10/10</span></div>
+            </div>
+            <p class="product-review-body">Probably the best construction I've seen in a premium cigar under $30. The torpedo shape focuses the flavors beautifully and the burn is absolutely effortless. A new regular for me.</p>
+            <div class="product-review-footer">
+              <button class="post-action product-review-like-btn" onclick="toggleLike(this)"><i data-lucide="heart" class="ic-13"></i><span>17</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-reviews-footer">
+          <button onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--bg-border)';this.style.color='var(--text-secondary)'" class="product-reviews-load-more">Load 35 more reviews</button>
+        </div>
+      </div>
+
+      <!-- B4 — Pairings tab: member-verified pairing graph -->
+      <div id="tab-pairings" class="product-pairings-panel">
+        <div class="pair-head">
+          <div>
+            <div class="product-pairings-heading">Pairs Well With</div>
+            <p class="pair-sub">Member-verified pairings, ranked by frequency × rating. <strong>247 members</strong> have logged a pairing alongside this cigar.</p>
+          </div>
+          <div class="pair-score-overall">
+            <div class="pair-score-num">9.1</div>
+            <div class="pair-score-lbl">Avg pair score</div>
+          </div>
+        </div>
+
+        <div class="pair-grid">
+          <a href="product-detail.html" class="pair-card">
+            <div class="pair-thumb pair-thumb-gold">🥃</div>
+            <div class="pair-body">
+              <div class="pair-name">Glenfarclas 17yr</div>
+              <div class="pair-meta">Scotch · Sherried · Speyside</div>
+              <span class="pair-yours"><i data-lucide="bookmark-check" class="ic-12"></i>In your library</span>
+            </div>
+            <div class="pair-stats">
+              <div class="pair-stat-score">9.4</div>
+              <div class="pair-stat-lbl">12 members · ★ 4.9</div>
+            </div>
+          </a>
+
+          <a href="product-detail.html" class="pair-card">
+            <div class="pair-thumb pair-thumb-gold">🥃</div>
+            <div class="pair-body">
+              <div class="pair-name">Aberfeldy 12yr</div>
+              <div class="pair-meta">Scotch · Honeyed · Highland</div>
+            </div>
+            <div class="pair-stats">
+              <div class="pair-stat-score">8.7</div>
+              <div class="pair-stat-lbl">7 members · ★ 4.6</div>
+            </div>
+          </a>
+
+          <a href="product-detail.html" class="pair-card">
+            <div class="pair-thumb pair-thumb-bronze">☕</div>
+            <div class="pair-body">
+              <div class="pair-name">Single Origin Espresso</div>
+              <div class="pair-meta">Coffee · Ethiopia Yirgacheffe</div>
+              <span class="pair-staff"><i data-lucide="award" class="ic-12"></i>Maya's pick</span>
+            </div>
+            <div class="pair-stats">
+              <div class="pair-stat-score">8.3</div>
+              <div class="pair-stat-lbl">5 members · ★ 4.5</div>
+            </div>
+          </a>
+
+          <a href="product-detail.html" class="pair-card">
+            <div class="pair-thumb pair-thumb-gold">🥃</div>
+            <div class="pair-body">
+              <div class="pair-name">Macallan 18 Sherry Oak</div>
+              <div class="pair-meta">Scotch · Sherried · Speyside</div>
+            </div>
+            <div class="pair-stats">
+              <div class="pair-stat-score">8.1</div>
+              <div class="pair-stat-lbl">4 members · ★ 4.7</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Cluster insight — the bidirectional, structured-data play -->
+        <div class="pair-inverse">
+          <i data-lucide="repeat" class="ic-14"></i>
+          <span>Members who pair this with <strong>Glenfarclas 17yr</strong> also tend to reach for <a href="product-detail.html">Macallan 18</a> and <a href="product-detail.html">Aberdour 16</a> — <strong>sherried Speyside cluster</strong>.</span>
+        </div>
+
+        <!-- Suggest-a-pairing CTA — primes the member-contribution loop -->
+        <button class="pair-suggest" onclick="openPairSuggest()">
+          <i data-lucide="plus" class="ic-14"></i>
+          Suggest a pairing from your library
+        </button>
+
+        <div class="product-sterlon-card">
+          <div class="product-sterlon-label">✦ Sterlon Says</div>
+          <p class="product-sterlon-quote">"The cedar and floral profile of the VSG Torpedo bridges beautifully with the sherry sweetness of Glenfarclas. For bourbon lovers, try the Aberfeldy 12yr — its honeyed warmth complements the creamy finish."</p>
+        </div>
+      </div>
+
+      <!-- Similar (hidden by default) — moved out of the right-rail widget
+           so it lives next to the other product-detail content. -->
+      <div id="tab-similar" class="product-tab-panel-hidden">
+        <div class="product-details-list">
+          <a href="product-detail.html" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background='transparent'" class="product-similar-row">
+            <div class="product-similar-emoji">🚬</div>
+            <div class="product-review-author"><div class="product-similar-name">Arturo Fuente Opus X</div><div class="product-similar-meta">$38 · Full body</div></div>
+            <div class="product-rating-stars">★ 4.7</div>
+          </a>
+          <a href="product-detail.html" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background='transparent'" class="product-similar-row">
+            <div class="product-similar-emoji">🚬</div>
+            <div class="product-review-author"><div class="product-similar-name">Cohiba Siglo VI</div><div class="product-similar-meta">$55 · Medium-Full</div></div>
+            <div class="product-rating-stars">★ 4.9</div>
+          </a>
+          <a href="product-detail.html" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background='transparent'" class="product-similar-row">
+            <div class="product-similar-emoji">🚬</div>
+            <div class="product-review-author"><div class="product-similar-name">Liga Privada No. 9</div><div class="product-similar-meta">$22 · Medium-Full</div></div>
+            <div class="product-rating-stars">★ 4.6</div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RAIL -->
+    <aside class="rail-col product-rail">
+
+      <!-- AI pairing -->
+      <div class="widget">
+        <div class="widget-title">✦ AI Pairing</div>
+        <div class="product-rail-pairing-quote">"This VSG pairs best with a sherried Speyside — Glenfarclas 17 is the community favourite. The cedar notes bridge perfectly."</div>
+        <a href="sterlon.html" class="product-rail-pairing-link">Get custom pairing →</a>
+      </div>
+
+    </aside>
+  </div>
+</main>
+
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+<nav class="bottom-nav">
+  <a href="feed.html" class="bottom-nav-item"><i data-lucide="newspaper" class="ic-20"></i>Feed</a>
+  <a href="explore.html" class="bottom-nav-item"><i data-lucide="search" class="ic-20"></i>Explore</a>
+  <a href="create-post.html" class="bottom-nav-item"><div class="bottom-nav-create-btn"><i data-lucide="plus" class="ic-20"></i></div></a>
+  <a href="events.html" class="bottom-nav-item"><i data-lucide="calendar" class="ic-20"></i>Events</a>
+  <a href="profile.html" class="bottom-nav-item"><i data-lucide="user" class="ic-20"></i>Profile</a>
+</nav>
+
+<script>
+  let qty=1;
+  function changeQty(d){qty=Math.max(1,qty+d);document.getElementById('qty').textContent=qty;if(document.getElementById('qty2'))document.getElementById('qty2').textContent=qty;}
+  function addToVisit(){
+    if(window.Lounge) Lounge.visit.bump(qty);
+    const btn=document.getElementById('add-btn');
+    btn.textContent='Added ✓';btn.style.background='#4A7C59';
+    if(window.Lounge) Lounge.toast('Added '+qty+' to my tab', {variant:'success'});
+    setTimeout(()=>{btn.textContent='Add to my visit';btn.style.background='var(--burg)';},1500);
+  }
+  /* B4 — Suggest a pairing from your library. In v2 this opens an
+     autocomplete sheet pulling from the member's library; for the mockup
+     it toasts a placeholder. */
+  function openPairSuggest(){
+    if (window.toast) toast('🍷 Pick something from your library to pair with Ashton VSG — coming soon');
+  }
+
+  /* B2 — Wishlist toggle in product-detail header */
+  function toggleProductWishlist(btn){
+    const wasActive = btn.classList.contains('active');
+    btn.classList.toggle('active');
+    btn.title = wasActive ? 'Add to Want to try' : 'Remove from wishlist';
+    if (window.toast) {
+      toast(wasActive
+        ? '↺ Removed Ashton VSG Torpedo from your wishlist'
+        : '🔖 Added Ashton VSG Torpedo to Want to try', { variant: wasActive ? '' : 'success', duration: 2800 });
+    }
+  }
+  function switchTab(btn,name){
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+    ['details','reviews','pairings','similar'].forEach(t=>{const el=document.getElementById('tab-'+t);if(el)el.style.display=t===name?'block':'none';});
+  }
+</script>
+</body>
+</html>

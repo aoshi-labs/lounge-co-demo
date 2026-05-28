@@ -1,0 +1,7 @@
+{
+  "op": "budgetTurn",
+  "promptText": "recommend a pairing around $15 cigar",
+  "categoryFocus": "pairing",
+  "journeyLevel": "intermediate",
+  "session": {}
+}

@@ -1,0 +1,9 @@
+{
+  "roundTripOk": true,
+  "loadedIsFrozen": true,
+  "refinedTurnIdDiffersFromParent": true,
+  "parentTurnIdInProvenance": true,
+  "refinementTypePreserved": true,
+  "moduleIsResolveRefinement": true,
+  "turnIdPreserved": true
+}

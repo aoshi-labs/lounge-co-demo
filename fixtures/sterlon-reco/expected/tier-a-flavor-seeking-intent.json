@@ -1,0 +1,20 @@
+[
+  {
+    "text": "That pour had dark chocolate and cedar notes",
+    "hasFlavorSeekingIntent": false,
+    "shouldAttemptFlavorRoute": false,
+    "ok": true
+  },
+  {
+    "text": "show me something with caramel and chocolate",
+    "hasFlavorSeekingIntent": true,
+    "shouldAttemptFlavorRoute": true,
+    "ok": true
+  },
+  {
+    "text": "I noticed dark chocolate and cedar on the palate",
+    "hasFlavorSeekingIntent": false,
+    "shouldAttemptFlavorRoute": false,
+    "ok": true
+  }
+]

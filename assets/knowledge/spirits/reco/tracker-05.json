@@ -1,0 +1,411 @@
+{
+  "version": 1,
+  "shard": "tracker-05",
+  "category": "spirit",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 8,
+  "products": [
+    {
+      "deckKey": "vodka",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-hendricks",
+      "sensory": {
+        "body": 5,
+        "sweetness": 6,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-HENDRICKS",
+        "article": "https://www.hendricksgin.com/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 79,
+      "spec": {
+        "proof": 88.0,
+        "abvPercent": 44.0,
+        "mash": "Botanical gin (cucumber & rose)",
+        "style": "Scottish gin",
+        "origin": "Scotland",
+        "msrp": 35
+      },
+      "name": "Hendrick's Gin",
+      "tags": [
+        {
+          "id": "rose",
+          "weight": 1.0
+        },
+        {
+          "id": "citrus",
+          "weight": 0.95
+        },
+        {
+          "id": "floral",
+          "weight": 0.85
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "cognac",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-hennessy-vs",
+      "sensory": {
+        "body": 5,
+        "sweetness": 7,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-HENNESSY-VS",
+        "article": "https://www.royalbatch.com/blog-detail/best-selling-alcohol-in-the-usa-in-2025-what-americans-actually-chose",
+        "source": "Industry reference (US retail sales 2025)"
+      },
+      "journeyRank": 92,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Ugni Blanc distillate",
+        "style": "Cognac VS",
+        "origin": "Cognac, France",
+        "msrp": 42
+      },
+      "name": "Hennessy VS",
+      "tags": [
+        {
+          "id": "oak",
+          "weight": 1.0
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.95
+        },
+        {
+          "id": "spice",
+          "weight": 0.85
+        },
+        {
+          "id": "dried_fruit",
+          "weight": 0.75
+        },
+        {
+          "id": "honey",
+          "weight": 0.7
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "cognac",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-hennessy-vsop",
+      "sensory": {
+        "body": 5,
+        "sweetness": 7,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-HENNESSY-VSOP",
+        "article": "https://www.hennessy.com/en-int/collection/hennessy-vsop-privilege",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 78,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Ugni Blanc distillate",
+        "style": "Cognac VSOP",
+        "origin": "Cognac, France",
+        "msrp": 55
+      },
+      "name": "Hennessy VSOP Privilège",
+      "tags": [
+        {
+          "id": "apricot",
+          "weight": 1.0
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.95
+        },
+        {
+          "id": "oak",
+          "weight": 0.85
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "cognac",
+      "journeyLevel": "advanced",
+      "id": "spi-trk-hennessy-xo",
+      "sensory": {
+        "body": 6,
+        "sweetness": 7,
+        "pepper": 6,
+        "cocoa": 7,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-HENNESSY-XO",
+        "article": "https://www.hennessy.com/en-us/collection/hennessy-xo",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 17,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Ugni Blanc wine distillate (blended eaux-de-vie)",
+        "style": "Cognac XO",
+        "origin": "Cognac, France",
+        "msrp": 200
+      },
+      "name": "Hennessy XO",
+      "tags": [
+        {
+          "id": "pepper",
+          "weight": 1.0
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.95
+        },
+        {
+          "id": "oak",
+          "weight": 0.85
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.75
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "japanese",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-hibiki-harmony",
+      "sensory": {
+        "body": 6,
+        "sweetness": 7,
+        "pepper": 2,
+        "cocoa": 7,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-HIBIKI-HARMONY",
+        "article": "https://house.suntory.com/hibiki-whisky/hibiki-japanese-harmony",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 15,
+      "spec": {
+        "proof": 86.0,
+        "abvPercent": 43.0,
+        "mash": "Blended malt & grain (Chita, Yamazaki, Hakushu components)",
+        "style": "Blended Japanese whisky",
+        "origin": "Japan",
+        "msrp": 95
+      },
+      "name": "Hibiki Harmony",
+      "tags": [
+        {
+          "id": "rose",
+          "weight": 1.0
+        },
+        {
+          "id": "lychee",
+          "weight": 0.95
+        },
+        {
+          "id": "herbal",
+          "weight": 0.85
+        },
+        {
+          "id": "sandalwood",
+          "weight": 0.75
+        },
+        {
+          "id": "wood",
+          "weight": 0.7
+        },
+        {
+          "id": "honey",
+          "weight": 0.65
+        },
+        {
+          "id": "citrus",
+          "weight": 0.6
+        },
+        {
+          "id": "orange_peel",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "scotch",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-hp-12",
+      "sensory": {
+        "body": 5,
+        "sweetness": 7,
+        "pepper": 7,
+        "cocoa": 4,
+        "earthiness": 6
+      },
+      "tracker": {
+        "sku": "SPI-TRK-HP-12",
+        "article": "https://www.highlandparkwhisky.com/en/single-malt-whisky/12-year-old",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 45,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "100% malted barley (lightly peated)",
+        "style": "Single malt Scotch",
+        "origin": "Orkney, Scotland",
+        "msrp": 55
+      },
+      "name": "Highland Park 12 Year",
+      "tags": [
+        {
+          "id": "honey",
+          "weight": 1.0
+        },
+        {
+          "id": "citrus",
+          "weight": 0.95
+        },
+        {
+          "id": "pepper",
+          "weight": 0.85
+        },
+        {
+          "id": "wood",
+          "weight": 0.75
+        },
+        {
+          "id": "smoke",
+          "weight": 0.7
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "irish",
+      "journeyLevel": "novice",
+      "id": "spi-trk-jameson-bb",
+      "sensory": {
+        "body": 4,
+        "sweetness": 7,
+        "pepper": 2,
+        "cocoa": 7,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-JAMESON-BB",
+        "article": "https://www.jamesonwhiskey.com/en-us/our-whiskey/jameson-black-barrel/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 58,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Pot still & grain; double-char barrels",
+        "style": "Blended Irish whiskey",
+        "origin": "Ireland",
+        "msrp": 35
+      },
+      "name": "Jameson Black Barrel",
+      "tags": [
+        {
+          "id": "toffee",
+          "weight": 1.0
+        },
+        {
+          "id": "cream",
+          "weight": 0.95
+        },
+        {
+          "id": "spice",
+          "weight": 0.85
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.75
+        },
+        {
+          "id": "wood",
+          "weight": 0.7
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "irish",
+      "journeyLevel": "novice",
+      "id": "spi-trk-jameson-orig",
+      "sensory": {
+        "body": 4,
+        "sweetness": 7,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-JAMESON-ORIG",
+        "article": "https://www.royalbatch.com/blog-detail/best-selling-alcohol-in-the-usa-in-2025-what-americans-actually-chose",
+        "source": "Industry reference (US retail sales 2025)"
+      },
+      "journeyRank": 91,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Pot still & grain whiskey blend",
+        "style": "Blended Irish whiskey",
+        "origin": "Ireland",
+        "msrp": 28
+      },
+      "name": "Jameson Irish Whiskey",
+      "tags": [
+        {
+          "id": "honey",
+          "weight": 1.0
+        },
+        {
+          "id": "apple",
+          "weight": 0.95
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.85
+        },
+        {
+          "id": "spice",
+          "weight": 0.75
+        },
+        {
+          "id": "wood",
+          "weight": 0.7
+        },
+        {
+          "id": "floral",
+          "weight": 0.65
+        },
+        {
+          "id": "malt",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    }
+  ]
+}

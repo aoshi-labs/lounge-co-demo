@@ -1,0 +1,92 @@
+  .cart-item{background:var(--bg-surface);border:1px solid var(--bg-border);border-radius:14px;padding:18px;display:flex;align-items:center;gap:16px;}
+
+
+/* === Page-specific styles === */
+.topbar-back-link { display:flex; align-items:center; gap:6px; color:var(--text-secondary); text-decoration:none; font-size:13px; font-weight:500; transition:color .2s; }
+.topbar-user-avatar-elite { background:var(--tier-elite); color:var(--tier-elite-ink); width:34px; height:34px; font-size:12px; }
+.visit-page-frame { display:flex; justify-content:center; padding:32px 20px; gap:24px; }
+.visit-items-column { width:100%; max-width:580px; display:flex; flex-direction:column; gap:14px; }
+.visit-page-header { display:flex; align-items:baseline; justify-content:space-between; }
+.visit-page-title { font-family:var(--font-display); font-size:2rem; font-weight:700; color:var(--text-primary); }
+.visit-item-count { font-size:13px; color:var(--text-muted); }
+.visit-item-thumb { font-size:2rem; width:50px; height:50px; display:flex; align-items:center; justify-content:center; background:var(--bg-elevated); border-radius:10px; border:1px solid var(--bg-border); flex-shrink:0; }
+.visit-item-name { font-family:var(--font-display); font-size:1.05rem; font-weight:600; color:var(--text-primary); }
+.visit-item-meta { font-size:11px; color:var(--text-muted); margin-top:2px; }
+.visit-qty-stepper { display:flex; align-items:center; gap:8px; background:var(--bg-elevated); border:1px solid var(--bg-border); border-radius:8px; padding:4px; }
+.visit-qty-button { width:28px; height:28px; border:none; background:none; color:var(--text-secondary); font-size:16px; cursor:pointer; border-radius:5px; }
+.visit-qty-value { font-size:13px; font-weight:600; color:var(--text-primary); min-width:16px; text-align:center; }
+.visit-item-price-col { text-align:right; min-width:48px; }
+.visit-item-price { font-size:15px; font-weight:700; color:var(--text-primary); }
+.visit-item-remove-btn { background:none; border:none; cursor:pointer; color:var(--text-muted); padding:4px; transition:color .2s; }
+.visit-note-card { background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:14px; padding:18px; }
+.visit-note-label { font-size:12px; font-weight:600; color:var(--text-secondary); margin-bottom:8px; }
+.visit-note-textarea { width:100%; background:var(--bg-elevated); border:1px solid var(--bg-border); border-radius:8px; padding:10px 12px; font-size:13px; font-family:var(--font-body); font-style:italic; color:var(--text-primary); outline:none; resize:none; transition:border-color .2s; }
+.visit-points-preview { background:var(--gold-subtle); border:1px solid rgba(var(--gold-rgb), .2); border-radius:12px; padding:14px 18px; display:flex; align-items:center; gap:12px; }
+.visit-points-title { font-size:13px; font-weight:600; color:var(--gold); }
+.visit-summary-column { width:300px; flex-shrink:0; display:flex; flex-direction:column; gap:14px; }
+.visit-summary-card { background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:16px; padding:22px; position:sticky; top:76px; }
+.visit-summary-title { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
+.visit-summary-list { display:flex; flex-direction:column; gap:10px; margin-bottom:16px; }
+.visit-summary-row { display:flex; justify-content:space-between; font-size:13px; color:var(--text-secondary); }
+.visit-summary-divider { height:1px; background:var(--bg-border); margin-bottom:14px; }
+.visit-total-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
+.visit-total-label { font-size:14px; font-weight:600; color:var(--text-primary); }
+.visit-total-amount { font-family:var(--font-display); font-size:1.6rem; font-weight:700; color:var(--text-primary); }
+.visit-service-notice { background:var(--bg-elevated); border:1px solid var(--bg-border); border-radius:10px; padding:12px 14px; margin-bottom:16px; font-size:12px; color:var(--text-muted); line-height:1.5; }
+.visit-service-notice-icon { display:inline; margin-right:5px; }
+.visit-send-request-btn { width:100%; background:var(--burg); color:var(--cream); border:none; border-radius:10px; padding:14px; font-family:var(--font-ui); font-size:15px; font-weight:700; cursor:pointer; transition:background .15s; }
+.visit-continue-link { display:block; text-align:center; margin-top:12px; font-size:13px; color:var(--text-muted); text-decoration:none; transition:color .2s; }
+.visit-hours-card { background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:14px; padding:16px; }
+.visit-hours-title { font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); margin-bottom:10px; }
+.visit-hours-list { font-size:13px; color:var(--text-secondary); line-height:1.7; }
+.visit-hours-row { display:flex; justify-content:space-between; }
+.visit-success-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,.7); z-index:200; display:none; align-items:center; justify-content:center; }
+.visit-success-modal-card { background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:20px; padding:36px; max-width:360px; width:90%; text-align:center; }
+.visit-success-modal-icon { width:60px; height:60px; background:rgba(var(--tier-elite-rgb), .15); border:2px solid var(--tier-elite); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; }
+.visit-success-modal-title { font-family:var(--font-display); font-size:1.5rem; font-weight:700; color:var(--text-primary); margin-bottom:8px; }
+.visit-success-modal-message { font-family:var(--font-body); font-style:italic; font-size:14px; color:var(--text-secondary); line-height:1.65; margin-bottom:20px; }
+.visit-success-modal-cta { display:block; background:var(--burg); color:var(--cream); border-radius:9px; padding:12px; font-family:var(--font-ui); font-size:14px; font-weight:700; text-decoration:none; margin-bottom:10px; }
+.visit-success-modal-secondary { font-size:13px; color:var(--text-muted); text-decoration:none; }
+
+/* Mobile (≤767px): the 580px cart column + 300px no-shrink summary column
+   side-by-side overflows iPhone-SE-class viewports (under 375px once
+   padding lands). Stack them vertically so each column gets the full
+   content width. */
+@media (max-width: 767px) {
+  .visit-page-frame { flex-direction: column; }
+  .visit-items-column,
+  .visit-summary-column {
+    width: 100%;
+    max-width: none;
+    flex-shrink: 1;
+  }
+  .visit-summary-card { position: static; }    /* sticky summary doesn't make sense once stacked */
+
+  /* Cart row — 5 horizontal segments (thumb · name · qty · price · trash)
+     is too much for a phone width. Switch to a 2-row grid:
+       row 1: [thumb] [name + meta]                 [trash]
+       row 2: [qty stepper]                  [price]
+     Reads as: identify → adjust → see price → remove. */
+  .cart-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      "thumb name trash"
+      "qty   .    price";
+    column-gap: 12px;
+    row-gap: 10px;
+    align-items: center;
+    padding: 14px;
+  }
+  .cart-item > .visit-item-thumb { grid-area: thumb; }
+  .cart-item > .sidebar-user-info  { grid-area: name; min-width: 0; }
+  .cart-item > .visit-qty-stepper { grid-area: qty;   justify-self: start; }
+  .cart-item > .visit-item-price-col { grid-area: price; justify-self: end;   }
+  .cart-item > .visit-item-remove-btn { grid-area: trash; }
+}
+
+@media (max-width: 639px) {
+  .visit-page-title { font-size: 1.5rem; line-height: 1.15; }
+  .visit-total-amount { font-size: 1.3rem; line-height: 1.15; }
+  .visit-success-modal-title { font-size: 1.2rem; }
+}

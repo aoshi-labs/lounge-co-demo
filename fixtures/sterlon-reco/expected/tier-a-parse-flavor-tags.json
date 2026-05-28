@@ -1,0 +1,27 @@
+[
+  {
+    "text": "show me something with caramel and chocolate",
+    "tags": [
+      "caramel",
+      "chocolate"
+    ],
+    "stableOnRepeat": true
+  },
+  {
+    "text": "That pour had dark chocolate and cedar notes",
+    "tags": [
+      "dark_chocolate",
+      "cedar"
+    ],
+    "stableOnRepeat": true
+  },
+  {
+    "text": "peated smoke and iodine",
+    "tags": [
+      "peat",
+      "iodine",
+      "smoke"
+    ],
+    "stableOnRepeat": true
+  }
+]

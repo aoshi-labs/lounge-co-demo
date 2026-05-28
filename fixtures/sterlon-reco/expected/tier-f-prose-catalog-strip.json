@@ -1,0 +1,15 @@
+{
+  "cases": [
+    {
+      "id": "strips-pipe-schema",
+      "ok": true,
+      "output": "Earthy notes of cedar and cocoa. $12"
+    },
+    {
+      "id": "strips-ops-why",
+      "ok": true,
+      "output": "The drier pour keeps the smoke crisp."
+    }
+  ],
+  "ok": true
+}

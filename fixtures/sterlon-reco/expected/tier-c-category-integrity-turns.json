@@ -1,0 +1,75 @@
+[
+  {
+    "prompt": "bold bourbon pairing tonight",
+    "spirit": "Knob Creek Kentucky Straight Bourbon",
+    "deckKey": "bourbon",
+    "expectedDeck": "bourbon",
+    "deckMatches": true,
+    "forbiddenHit": false,
+    "degraded": false,
+    "signals": [
+      "catalog-shell",
+      "context-runtime",
+      "named-spirit",
+      "pairing-strategy-balanced",
+      "flight-philosophy",
+      "ontology-suppressed",
+      "ontology-curated-why"
+    ],
+    "ok": true
+  },
+  {
+    "prompt": "tequila reposado recommendation",
+    "spirit": "Clase Azul Reposado",
+    "deckKey": "agave",
+    "expectedDeck": "agave",
+    "deckMatches": true,
+    "forbiddenHit": false,
+    "degraded": false,
+    "signals": [
+      "catalog-shell",
+      "context-runtime",
+      "named-spirit",
+      "pairing-strategy-balanced",
+      "flight-philosophy",
+      "flight-philosophy-rerank-skipped"
+    ],
+    "ok": true
+  },
+  {
+    "prompt": "peated islay scotch pour",
+    "spirit": "Lagavulin 8 Year",
+    "deckKey": "peated",
+    "expectedDeck": "peated",
+    "deckMatches": true,
+    "forbiddenHit": false,
+    "degraded": false,
+    "signals": [
+      "catalog-shell",
+      "context-runtime",
+      "named-spirit",
+      "category-spirit",
+      "pairing-strategy-balanced",
+      "flight-philosophy"
+    ],
+    "ok": true
+  },
+  {
+    "prompt": "cognac with a cigar",
+    "spirit": null,
+    "deckKey": null,
+    "expectedDeck": "cognac",
+    "deckMatches": false,
+    "forbiddenHit": false,
+    "degraded": false,
+    "signals": [
+      "catalog-shell",
+      "context-runtime",
+      "named-spirit",
+      "category-cigar",
+      "pairing-strategy-balanced",
+      "flight-philosophy"
+    ],
+    "ok": false
+  }
+]

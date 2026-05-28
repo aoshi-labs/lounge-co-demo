@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "shard": "tracker-03",
+  "category": "spirit",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 8,
+  "products": [
+    {
+      "menuLine": "Dalmore 12 Year · Highland, Scotland · $75 · 86 proof (43.0% ABV) · Notes: orange marmalade, chocolate",
+      "guidance": {
+        "bestFor": "Sherry Scotch, orange note request, classic lounge pairing.",
+        "avoidIf": "User wants heavy peat only.",
+        "whyRecommend": "Recommend when orange and chocolate in Scotch should echo a maduro — marmalade, sherry, cocoa.",
+        "occasion": "After dinner",
+        "flavorFamily": "Orange & sherry",
+        "pairingAffinity": "Maduro / robusto",
+        "memberBlurb": "Dalmore 12 — orange marmalade and sherry over chocolate and oak. The Highland Scotch cigar bars have loved for decades."
+      },
+      "id": "spi-trk-dalmore-12",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Diplomático Reserva Exclusiva · Venezuela · $42 · 80 proof (40.0% ABV) · Notes: brown sugar, orange",
+      "guidance": {
+        "bestFor": "Cigar-first pairing, rum curious member, dessert-profile spirit.",
+        "avoidIf": "User wants dry agricole rhum or zero sweetness.",
+        "whyRecommend": "Recommend when cigar pairing is the goal — brown sugar, orange, molasses, and chocolate beside maduro.",
+        "occasion": "After dinner",
+        "flavorFamily": "Sweet & molasses",
+        "pairingAffinity": "Maduro / any premium cigar",
+        "memberBlurb": "Diplomático Reserva Exclusiva — orange peel and toffee over fudge, dark chocolate, and dried fruit. Brand-official cigar-pairing rum."
+      },
+      "id": "spi-trk-diplo-re",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Don Julio 1942 · Jalisco, Mexico · $175 · 80 proof (40.0% ABV) · Notes: caramel, vanilla",
+      "guidance": {
+        "bestFor": "Tequila prestige request, 1942 by name, celebratory cigar night.",
+        "avoidIf": "User wants blanco/mezcal smoke or budget under $80.",
+        "whyRecommend": "Recommend when the member names 1942 or wants celebratory tequila — caramel, vanilla, and roasted agave.",
+        "occasion": "Celebration",
+        "flavorFamily": "Caramel & oak",
+        "pairingAffinity": "Medium-full cigar",
+        "memberBlurb": "Don Julio 1942 — caramel, vanilla, and roasted agave in the pour everyone requests at the lounge. Have an answer ready."
+      },
+      "id": "spi-trk-dj-1942",
+      "provenance": {
+        "beginnerSafe": "No",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Del Maguey Vida Mezcal · Oaxaca, Mexico · $38 · 80 proof (40.0% ABV) · Notes: smoke, roasted agave",
+      "guidance": {
+        "bestFor": "Mezcal curious, smoky pairing, agave explorer.",
+        "avoidIf": "User hates smoke.",
+        "whyRecommend": "Recommend when the member is ready for mezcal — smoke, roasted agave, and citrus beside earthy cigars.",
+        "occasion": "After dinner",
+        "flavorFamily": "Smoke & agave",
+        "pairingAffinity": "Maduro / earthy",
+        "memberBlurb": "Del Maguey Vida — espadín mezcal with smoke and roasted agave. The mezcal pour that teaches the category without boutique pricing."
+      },
+      "id": "spi-trk-dm-vida",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Don Julio Reposado · Jalisco, Mexico · $55 · 80 proof (40.0% ABV) · Notes: cooked agave, vanilla",
+      "guidance": {
+        "bestFor": "Member moving from cocktails to sipping tequila, medium-full cigar night.",
+        "avoidIf": "User wants only blanco crispness or ultra-luxury 1942.",
+        "whyRecommend": "Recommend when the member wants Don Julio character below 1942 — vanilla, oak, and agave for sipping.",
+        "occasion": "After dinner",
+        "flavorFamily": "Oak & agave",
+        "pairingAffinity": "Medium-full cigar",
+        "memberBlurb": "Don Julio Reposado — the tequila people buy twice. Vanilla and oak over cooked agave when someone is done with shots and ready to sip."
+      },
+      "id": "spi-trk-donjulio-rep",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Industry reference (US retail sales 2025)",
+        "dataGrade": 7
+      }
+    },
+    {
+      "menuLine": "D'USSÉ VSOP Cognac · Cognac, France · $50 · 80 proof (40.0% ABV) · Notes: dried fruit, honey",
+      "guidance": {
+        "bestFor": "Cognac curious, Jay-Z brand recognition, medium-full cigar.",
+        "avoidIf": "User wants only XO prestige.",
+        "whyRecommend": "Recommend when cognac is cultural shorthand but XO is too much — honey, fruit, and oak.",
+        "occasion": "Celebration",
+        "flavorFamily": "Fruit & oak",
+        "pairingAffinity": "Medium-full cigar",
+        "memberBlurb": "D'USSÉ VSOP — honey and dried fruit in the cognac brand lounges hear about from culture, not just connoisseurs."
+      },
+      "id": "spi-trk-dusse-vsop",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Eagle Rare Kentucky Straight Bourbon · Kentucky · $35 · 90 proof (45% ABV) · Journey: Intermediate · Notes: leather, orange peel",
+      "guidance": {
+        "bestFor": "Member wants refined bourbon without Pappy pricing, citrus-leather cigar pairing.",
+        "avoidIf": "User demands cask-strength only or Islay smoke.",
+        "whyRecommend": "Recommend when the member wants elegant bourbon — leather, orange peel, and polished oak.",
+        "occasion": "Relaxed evening",
+        "flavorFamily": "Elegant oak",
+        "pairingAffinity": "Corojo / medium-full cigar",
+        "memberBlurb": "Eagle Rare 10 — toffee, orange peel, and leather over candied almonds and cocoa. Official BT ten-year profile without collector hype."
+      },
+      "id": "spi-trk-eagle-rare",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Elijah Craig Small Batch · Kentucky · $30 · 94 proof (47.0% ABV) · Journey: Intermediate · Notes: caramel, vanilla",
+      "guidance": {
+        "bestFor": "Value-premium bourbon, everyday pour, balanced cigar night.",
+        "avoidIf": "User wants peat or tequila only.",
+        "whyRecommend": "Recommend as reliable small-batch bourbon — caramel, spice, and oak at fair price.",
+        "occasion": "Everyday pour",
+        "flavorFamily": "Caramel & oak",
+        "pairingAffinity": "Natural / Habano",
+        "memberBlurb": "Elijah Craig Small Batch — caramel and baking spice from a heritage Kentucky name. Honest bourbon that works every night beside a cigar."
+      },
+      "id": "spi-trk-ec-sb",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    }
+  ]
+}

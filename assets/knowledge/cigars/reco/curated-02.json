@@ -1,0 +1,400 @@
+{
+  "version": 1,
+  "shard": "curated-02",
+  "category": "cigar",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 9,
+  "products": [
+    {
+      "tracker": {
+        "sku": "CUR-10-UPMANN-M50"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "wood",
+          "weight": 0.95
+        },
+        {
+          "id": "earth",
+          "weight": 0.85
+        },
+        {
+          "id": "leather",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "tier": 6,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "60 min",
+        "wrapper": "Cuba",
+        "binder": "Cuba",
+        "filler": "Cuba"
+      },
+      "id": "cur-10-upmann-m50",
+      "sensory": {
+        "body": 6,
+        "sweetness": 5,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "H. Upmann Magnum Magnum 50",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-11-VR-UNICO"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "wood",
+          "weight": 0.95
+        },
+        {
+          "id": "earth",
+          "weight": 0.85
+        },
+        {
+          "id": "leather",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "tier": 6,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "90 min",
+        "wrapper": "Cuba",
+        "binder": "Cuba",
+        "filler": "Cuba"
+      },
+      "id": "cur-11-vr-unico",
+      "sensory": {
+        "body": 7,
+        "sweetness": 5,
+        "pepper": 6,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Vegas Robaina Vegas Robaina Unicos",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-12-PART-LUSI"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "wood",
+          "weight": 0.95
+        },
+        {
+          "id": "earth",
+          "weight": 0.85
+        },
+        {
+          "id": "leather",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "tier": 7,
+        "strength": 5,
+        "body": "Full",
+        "smokeTime": "90 min",
+        "wrapper": "Cuba",
+        "binder": "Cuba",
+        "filler": "Cuba"
+      },
+      "id": "cur-12-part-lusi",
+      "sensory": {
+        "body": 9,
+        "sweetness": 5,
+        "pepper": 7,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Partagás Lusitania",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-13-PAD-1964-EX"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.95
+        },
+        {
+          "id": "coffee",
+          "weight": 0.85
+        },
+        {
+          "id": "earth",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 19,
+        "tier": 7,
+        "strength": 5,
+        "body": "Full",
+        "smokeTime": "60 min",
+        "wrapper": "Nicaraguan Maduro",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "cur-13-pad-1964-ex",
+      "sensory": {
+        "body": 9,
+        "sweetness": 5,
+        "pepper": 7,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "Padron 1964 Anniversary Exclusivo",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-14-COHIBA-ROB"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "wood",
+          "weight": 0.95
+        },
+        {
+          "id": "earth",
+          "weight": 0.85
+        },
+        {
+          "id": "leather",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 14,
+        "tier": 4,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "60 min",
+        "wrapper": "Cameroon",
+        "binder": "Indonesian Jember",
+        "filler": "Dominican Piloto Cubano"
+      },
+      "id": "cur-14-cohiba-rob",
+      "sensory": {
+        "body": 6,
+        "sweetness": 5,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Cohiba Dominican / Red Dot Robusto",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-15-RYJ-RR-CH"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cream",
+          "weight": 1.0
+        },
+        {
+          "id": "cedar",
+          "weight": 0.95
+        },
+        {
+          "id": "nut",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 10,
+        "tier": 4,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "90 min",
+        "wrapper": "Ecuador Connecticut",
+        "binder": "Nicaragua",
+        "filler": "Dominican Republic / Nicaragua"
+      },
+      "id": "cur-15-ryj-rr-ch",
+      "sensory": {
+        "body": 6,
+        "sweetness": 6,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Romeo y Julieta Reserva Real Churchill",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-16-MF-JUDGE-TORO"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.95
+        },
+        {
+          "id": "coffee",
+          "weight": 0.85
+        },
+        {
+          "id": "earth",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 16,
+        "tier": 7,
+        "strength": 5,
+        "body": "Full",
+        "smokeTime": "90 min",
+        "wrapper": "Nicaragua",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "cur-16-mf-judge-toro",
+      "sensory": {
+        "body": 9,
+        "sweetness": 5,
+        "pepper": 7,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "My Father The Judge Toro",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-17-DAV-NO2"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cream",
+          "weight": 1.0
+        },
+        {
+          "id": "cedar",
+          "weight": 0.95
+        },
+        {
+          "id": "nut",
+          "weight": 0.85
+        },
+        {
+          "id": "spice",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 19,
+        "tier": 6,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "45 min",
+        "wrapper": "Ecuador Connecticut",
+        "binder": "Dominican Republic",
+        "filler": "Dominican Republic"
+      },
+      "id": "cur-17-dav-no2",
+      "sensory": {
+        "body": 6,
+        "sweetness": 6,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Davidoff No. 2",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-18-FERIO-PRESTIGE"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "wood",
+          "weight": 1.0
+        },
+        {
+          "id": "cedar",
+          "weight": 0.95
+        },
+        {
+          "id": "nut",
+          "weight": 0.85
+        }
+      ],
+      "spec": {
+        "msrp": 14,
+        "tier": 5,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "90 min",
+        "wrapper": "Nicaragua",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "cur-18-ferio-prestige",
+      "sensory": {
+        "body": 7,
+        "sweetness": 5,
+        "pepper": 6,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Ferio Tego Timeless Prestige",
+      "category": "cigar"
+    }
+  ]
+}

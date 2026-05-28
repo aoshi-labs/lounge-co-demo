@@ -1,0 +1,214 @@
+{
+  "version": 1,
+  "shard": "ca25-top25-01",
+  "category": "cigar",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 9,
+  "products": [
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/padron-60th-anniversary-perfecto-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Coffee",
+        "occasion": "Collector",
+        "pairingAffinity": "Cognac",
+        "wrapperRole": "Nicaraguan wrapper gives cocoa, coffee, dark sweetness, and puro identity.",
+        "binderRole": "Nicaraguan binder reinforces burn, structure, and regional continuity.",
+        "fillerRole": "Nicaraguan filler drives the rich Padron profile: cocoa, coffee, earth, and medium-full strength.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/padron-60th-anniversary-perfecto-2025.",
+        "avoidIf": "Beginner, budget-sensitive user, short time window, or user wants mild cream.",
+        "whyRecommend": "Recommend when the user explicitly wants the 2025 Cigar of the Year or elite Nicaraguan collector status.",
+        "memberBlurb": "2025 Cigar of the Year — Padron anniversary perfecto with malted milk, cafe au lait, and chocolate in a Nicaraguan puro. Collector occasion."
+      },
+      "menuLine": "Padron 60th Anniversary · 6 × 52 · Perfecto · Full · Nicaragua · $45 · Notes: malted milk, cafe au lait, chocolate, cocoa",
+      "stickSize": "6 × 52 · Perfecto",
+      "id": "ca25-01-padron-60"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/cohiba-ambar-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Dessert",
+        "occasion": "Collector",
+        "pairingAffinity": "Cognac",
+        "wrapperRole": "Cuban wrapper supports Cohiba elegance, oak, cream, and luxury aroma.",
+        "binderRole": "Cuban binder keeps the puro structure precise and integrated.",
+        "fillerRole": "Cuban filler provides the Cohiba core, including selected tobacco and extra fermentation character.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/cohiba-ambar-2025.",
+        "avoidIf": "User wants legal U.S. retail availability, low price, or beginner mildness.",
+        "whyRecommend": "Recommend when the request centers on Cuban prestige, rarity, and polished luxury flavor.",
+        "memberBlurb": "CA 2025 #2 — barrel-fermented Cohiba in the new 53-ring Ambar size. Oak and caramel core, creamy almond, elegant fruit finish; pigtail cap nods to the original Lancero."
+      },
+      "menuLine": "The Cohiba Ambar · 5¼ × 53 · Ambar · Medium-Full · Cuban · — · Notes: oak, caramel, almond, cream",
+      "stickSize": "5¼ × 53 · Ambar",
+      "id": "ca25-02-cohiba-ambar"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/tatuaje-black-petite-lancero-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Dessert",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Nicaraguan wrapper concentrates sweetness, oak, and rustic farm-roll character.",
+        "binderRole": "Nicaraguan binder keeps the narrow format burning with focused flavor.",
+        "fillerRole": "Nicaraguan filler delivers compact but intense Tatuaje/My Father character.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/tatuaje-black-petite-lancero-2025.",
+        "avoidIf": "User wants mild cream, large ring gauge comfort, or low flavor intensity.",
+        "whyRecommend": "Recommend when the user has less time but still wants serious boutique flavor.",
+        "memberBlurb": "Big flavor in a slim ring — campfire smores, oak, and Tatuaje intensity when you only have 45 minutes. Boutique density over size."
+      },
+      "menuLine": "Tatuaje Black · 6 × 38 · Petite Lancero · Medium · Nicaragua · $11 · Notes: smores, campfire sweetness, oak, tannin",
+      "stickSize": "6 × 38 · Petite Lancero",
+      "id": "ca25-03-tatuaje-black"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/cuesta-rey-centro-fino-sungrown-pyramid-no-9-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "After dinner",
+        "pairingAffinity": "Rum",
+        "wrapperRole": "Ecuadorian Sungrown wrapper adds spice, sweetness, and richer color to a Dominican core.",
+        "binderRole": "Dominican binder supports Fuente-made construction and steady burn.",
+        "fillerRole": "Dominican filler keeps the profile rooted in classic Dominican balance with added sungrown force.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/cuesta-rey-centro-fino-sungrown-pyramid-no-9-2025.",
+        "avoidIf": "Beginner looking for ultra mild smoke or user dislikes sungrown spice.",
+        "whyRecommend": "Recommend for a Dominican region lesson that is richer than basic foundation cigars."
+      },
+      "menuLine": "Cuesta-Rey Centro Fino Sungrown Pyramid No. 9 · 6½ × 52 · Pyramid · Medium-Full · Dominican · $12 · Notes: sweet spice, cedar, toasted tobacco, earth",
+      "stickSize": "6½ × 52 · Pyramid",
+      "id": "ca25-04-cuesta-rey-cf"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/trinidad-espiritu-series-no-3-belicoso-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Dark & Heavy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Mexican wrapper adds dark sweetness, earth, and maduro-like depth.",
+        "binderRole": "Nicaraguan binder supports a bolder, modern Trinidad profile.",
+        "fillerRole": "Nicaraguan filler brings spice, body, and regional intensity.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/trinidad-espiritu-series-no-3-belicoso-2025.",
+        "avoidIf": "User wants classic Cuban Trinidad profile or mild beginner smoke.",
+        "whyRecommend": "Recommend when the user wants a rich modern take on a legacy name.",
+        "memberBlurb": "Modern Trinidad revival — Mexican wrapper depth over Nicaraguan spice in a belicoso. Legacy name, contemporary body."
+      },
+      "menuLine": "Trinidad Espiritu Series No. 3 · 6 × 52 · Belicoso · Medium-Full · Nicaragua · $14 · Notes: dark sweetness, earth, spice, cocoa",
+      "stickSize": "6 × 52 · Belicoso",
+      "id": "ca25-05-trinidad-esp3"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/rocky-patel-emerald-robusto-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Celebration",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuadorian wrapper contributes polish, cream, and aromatic sweetness.",
+        "binderRole": "Mexican and Nicaraguan binders add structure and savory backbone.",
+        "fillerRole": "Honduran and Nicaraguan filler provide balance, body, and gentle complexity.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/rocky-patel-emerald-robusto-2025.",
+        "avoidIf": "User wants extreme power, collector rarity, or very short smoke.",
+        "whyRecommend": "Recommend as a balanced modern cigar with enough body but not overwhelming aggression."
+      },
+      "menuLine": "Rocky Patel Emerald · 5 × 50 · Robusto · Medium · Nicaragua · $12 · Notes: cream, spice, wood, toasted nuts",
+      "stickSize": "5 × 50 · Robusto",
+      "id": "ca25-06-rocky-emerald"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/nasser-the-goat-by-a-j-fernandez-toro-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Dark & Heavy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Mexican San Andres wrapper adds dark earth, cocoa, and sweetness.",
+        "binderRole": "Nicaraguan binder gives structure and A.J. Fernandez intensity.",
+        "fillerRole": "Nicaraguan filler drives pepper, body, and dark regional strength.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/nasser-the-goat-by-a-j-fernandez-toro-2025.",
+        "avoidIf": "Beginner, mild preference, or user wants delicate cream.",
+        "whyRecommend": "Recommend when the user wants modern dark Nicaraguan power with boutique story appeal.",
+        "memberBlurb": "A.J. Fernandez dark power with San Andrés wrapper — cocoa, earth, and pepper plus a story-driven release. Bold after-dinner Nicaraguan."
+      },
+      "menuLine": "A.J. Fernandez Nasser The Goat · 6 × 52 · Toro · Medium-Full · Nicaragua · $14 · Notes: cocoa, earth, pepper, dark sweetness",
+      "stickSize": "6 × 52 · Toro",
+      "id": "ca25-07-nasser-goat"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/diplomaticos-genios-exclusivo-phoenicia-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "Collector",
+        "pairingAffinity": "Scotch",
+        "wrapperRole": "Cuban wrapper brings wood, earth, and elegant regional-edition aroma.",
+        "binderRole": "Cuban binder keeps the puro profile integrated and classic.",
+        "fillerRole": "Cuban filler supplies Cuban earth, cedar, spice, and collector appeal.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/diplomaticos-genios-exclusivo-phoenicia-2025.",
+        "avoidIf": "User wants easy U.S. availability, low cost, or non-Cuban sourcing.",
+        "whyRecommend": "Recommend only when rarity and Cuban regional identity are part of the request."
+      },
+      "menuLine": "Diplomaticos Genios Exclusivo Phoenicia · 6 × 52 · Genios · Full · Cuban · — · Notes: wood, cedar, earth, spice",
+      "stickSize": "6 × 52 · Genios",
+      "id": "ca25-08-diplomaticos-genios"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/fuente-fuente-opusx-angel-s-share-reserva-d-chateau-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "Collector",
+        "pairingAffinity": "Cognac",
+        "wrapperRole": "Dominican wrapper is the core achievement, adding spice, sweetness, and estate-grown rarity.",
+        "binderRole": "Dominican binder keeps the puro structure elegant and Fuente-like.",
+        "fillerRole": "Dominican filler provides cedar, spice, fruit, and OpusX complexity.",
+        "bestFor": "Celebration, cognac, experienced smoker wanting OpusX rarity without standard OpusX pepper bomb.",
+        "avoidIf": "User wants full body, maximum strength, bold espresso pairing, or a powerhouse smoke — Angel's Share is a softer, cream-forward OpusX sub-line, not standard OpusX strength.",
+        "whyRecommend": "Recommend when the user wants OpusX prestige with a sweeter, cream-forward profile — not maximum strength or bold bitter coffee."
+      },
+      "menuLine": "Arturo Fuente Fuente Fuente OpusX Angel's Share Reserva d'Chateau · 7 × 48 · Churchill · Medium-Full · Dominican · $35 · Notes: cedar, baking spice, fruit, cream",
+      "stickSize": "7 × 48 · Churchill",
+      "id": "ca25-09-opusx-angel"
+    }
+  ]
+}

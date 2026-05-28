@@ -1,0 +1,21 @@
+{
+  "cases": [
+    {
+      "id": "connecticut-espresso-versus-maduro-bourbon",
+      "educational": true,
+      "expertise": true,
+      "comparison": false,
+      "continuity": "none",
+      "ok": true
+    },
+    {
+      "id": "session-side-by-side",
+      "educational": false,
+      "expertise": false,
+      "comparison": true,
+      "continuity": "comparison",
+      "ok": true
+    }
+  ],
+  "ok": true
+}

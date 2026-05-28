@@ -1,0 +1,392 @@
+{
+  "version": 1,
+  "description": "Human-curated cigar–spirit pairing benchmark for Sterlon Phase 3.5. Names must exist on hydrated LoungeProducts catalog.",
+  "gradeScale": {
+    "A": 0.88,
+    "B": 0.76,
+    "C": 0.64,
+    "D": 0.52,
+    "F": 0
+  },
+  "cases": [
+    {
+      "id": "expert-padron-bourbon",
+      "tier": "expert",
+      "cigar": "E.P. Carrillo Encore Majestic",
+      "spirit": "Buffalo Trace",
+      "expectedGoodCategories": ["bourbon", "rye"],
+      "expectedBadCategories": ["vodka", "agave", "peated"],
+      "expectedFlavorMatches": ["cocoa", "coffee", "oak", "caramel"],
+      "expectedOccasions": ["evening", "after dinner"],
+      "expectedBodyMatch": true,
+      "expectedStrengthMatch": true,
+      "minGrade": "C",
+      "expectedPairingNotes": "Full Nicaraguan cocoa–coffee smoke with classic bourbon vanilla–caramel bridge.",
+      "allowedVariance": { "bodyDeltaMax": 3, "spiritDeckAlternates": ["rye"] },
+      "antiPairings": false,
+      "beginnerSuitability": "intermediate",
+      "luxurySuitability": "classic"
+    },
+    {
+      "id": "expert-cognac-fuente",
+      "tier": "expert",
+      "cigar": "Arturo Fuente Rosado Sungrown Fifty-Two",
+      "spirit": "Hennessy XO",
+      "expectedGoodCategories": ["cognac", "rum"],
+      "expectedBadCategories": ["bourbon", "vodka", "agave", "peated"],
+      "expectedFlavorMatches": ["caramel", "oak", "spice"],
+      "expectedBodyMatch": true,
+      "minGrade": "C",
+      "expectedPairingNotes": "Sungrown Dominican sweetness meets cognac fruit and oak.",
+      "allowedVariance": { "bodyDeltaMax": 2 },
+      "antiPairings": false,
+      "luxurySuitability": "luxury"
+    },
+    {
+      "id": "expert-coffee-morning",
+      "tier": "expert",
+      "cigar": "Arturo Fuente Chateau Fuente Double",
+      "spirit": "Woodford Reserve",
+      "expectedGoodCategories": ["bourbon", "rye", "irish"],
+      "expectedBadCategories": ["peated", "vodka"],
+      "expectedFlavorMatches": ["coffee", "cedar", "caramel"],
+      "expectedOccasions": ["morning", "coffee"],
+      "minGrade": "B",
+      "expectedPairingNotes": "Coffee-forward cigar with approachable bourbon; lounge breakfast pairing.",
+      "antiPairings": false,
+      "beginnerSuitability": "beginner"
+    },
+    {
+      "id": "expert-rum-dessert",
+      "tier": "expert",
+      "cigar": "La Aroma de Cuba Mi Amor Robusto",
+      "spirit": "Diplomatico Reserva Exclusiva",
+      "expectedGoodCategories": ["rum", "cognac"],
+      "expectedBadCategories": ["vodka", "agave", "peated"],
+      "expectedFlavorMatches": ["cocoa", "caramel", "dark_fruit"],
+      "minGrade": "C",
+      "expectedPairingNotes": "Sweet dark cigar with rich rum; dessert-leaning flight.",
+      "antiPairings": false,
+      "luxurySuitability": "luxury"
+    },
+    {
+      "id": "expert-scotch-medium",
+      "tier": "expert",
+      "cigar": "Hoyo de Monterrey Le Hoyo de San Juan",
+      "spirit": "Macallan 12",
+      "expectedGoodCategories": ["scotch", "irish"],
+      "expectedBadCategories": ["vodka", "agave"],
+      "expectedFlavorMatches": ["cedar", "wood", "fruit"],
+      "minGrade": "C",
+      "expectedPairingNotes": "Medium Cuban-leaning wood with sherried Speyside.",
+      "allowedVariance": { "spiritDeckAlternates": ["irish"] },
+      "antiPairings": false
+    },
+    {
+      "id": "anti-peat-delicate",
+      "tier": "anti-pairing",
+      "cigar": "Macanudo Cafe Robusto / Hyde Park",
+      "spirit": "Lagavulin 16",
+      "expectedGoodCategories": [],
+      "expectedBadCategories": ["peated", "scotch"],
+      "antiPairings": true,
+      "expectedMaxGrade": "D",
+      "expectedPairingNotes": "Delicate Connecticut should not be buried by Islay peat.",
+      "beginnerSuitability": "beginner"
+    },
+    {
+      "id": "anti-cognac-peat-bomb",
+      "tier": "anti-pairing",
+      "cigar": "601 La Bomba Warhead X",
+      "spirit": "Glenfiddich 12",
+      "expectedBadCategories": ["scotch"],
+      "antiPairings": true,
+      "expectedMaxGrade": "C",
+      "expectedPairingNotes": "Full Nicaraguan bomb vs light Speyside — body mismatch.",
+      "expectedBodyMatch": false
+    },
+    {
+      "id": "anti-agave-dessert-cigar",
+      "tier": "anti-pairing",
+      "cigar": "Arturo Fuente Rosado Sungrown Fifty-Two",
+      "spirit": "Clase Azul Reposado",
+      "expectedBadCategories": ["agave"],
+      "antiPairings": true,
+      "expectedMaxGrade": "C",
+      "expectedPairingNotes": "Cognac-affinity cigar with tequila — category tension for traditional sommelier read."
+    },
+    {
+      "id": "edge-quick-smoke",
+      "tier": "edge",
+      "cigar": "Macanudo Café Court (Tubo)",
+      "spirit": "Buffalo Trace",
+      "expectedGoodCategories": ["bourbon"],
+      "expectedOccasions": ["quick", "lunch"],
+      "minGrade": "B",
+      "expectedPairingNotes": "Short mild smoke with easy bourbon.",
+      "beginnerSuitability": "beginner",
+      "context": { "quickSmoke": true, "journeyLevel": "novice" }
+    },
+    {
+      "id": "edge-luxury-flight",
+      "tier": "edge",
+      "cigar": "A.J. Fernandez San Lotano Oval Oval Robusto",
+      "spirit": "Pappy Van Winkle 23yr",
+      "expectedGoodCategories": ["bourbon", "cognac"],
+      "minGrade": "B",
+      "allowedVariance": { "bodyDeltaMax": 3, "spiritDeckAlternates": ["bourbon", "cognac"], "affinityVariance": true },
+      "luxurySuitability": "unicorn",
+      "expectedPairingNotes": "Collector bourbon with a cigar that carries caramel, oak, and aged-tobacco weight.",
+      "antiPairings": false
+    },
+    {
+      "id": "edge-budget-value",
+      "tier": "edge",
+      "cigar": "Oliva Serie G Maduro Special G",
+      "spirit": "Buffalo Trace",
+      "expectedGoodCategories": ["bourbon", "rye"],
+      "minGrade": "B",
+      "context": { "budgetCeiling": 35 },
+      "expectedPairingNotes": "Value cigar with value-forward bourbon."
+    },
+    {
+      "id": "subtle-rye-spice",
+      "tier": "subtle",
+      "cigar": "La Aroma de Cuba Habano Reserve Monarch",
+      "spirit": "Sazerac Rye",
+      "expectedGoodCategories": ["rye", "bourbon"],
+      "expectedFlavorMatches": ["spice", "cedar", "caramel"],
+      "minGrade": "C",
+      "allowedVariance": { "bodyDeltaMax": 3 },
+      "expectedPairingNotes": "Spice-forward medium-full cigar with rye lift."
+    },
+    {
+      "id": "controversial-peated-bold",
+      "tier": "controversial",
+      "cigar": "Drew Estate Liga Privada No. 9 Robusto / Toro / Corona Doble",
+      "spirit": "Ardbeg 10",
+      "expectedGoodCategories": ["scotch", "peated"],
+      "expectedBadCategories": ["vodka", "agave"],
+      "minGrade": "C",
+      "expectedPairingNotes": "Bold smoke meets bold peat — polarizing but defensible for peat lovers.",
+      "allowedVariance": { "bodyDeltaMax": 3, "affinityVariance": true }
+    },
+    {
+      "id": "contrast-rye-cuts-maduro",
+      "tier": "contrast",
+      "cigar": "Oliva Serie G Maduro Special G",
+      "spirit": "Sazerac Rye",
+      "expectedPairingStyle": "contrast",
+      "minContrastScore": 0.34,
+      "expectedGoodCategories": ["rye", "bourbon"],
+      "minGrade": "C",
+      "expectedPairingNotes": "Rye dryness and spice cut maduro sweetness — classic controlled contrast.",
+      "allowedVariance": { "bodyDeltaMax": 3 }
+    },
+    {
+      "id": "contrast-agave-brightens",
+      "tier": "contrast",
+      "cigar": "Oliva Serie V Melanio Maduro Robusto",
+      "spirit": "Don Julio 1942",
+      "expectedPairingStyle": "contrast",
+      "minContrastScore": 0.34,
+      "expectedGoodCategories": ["agave"],
+      "minGrade": "C",
+      "expectedPairingNotes": "Agave brightness vs sungrown sweetness — tension, not harmony clone.",
+      "allowedVariance": { "bodyDeltaMax": 4 }
+    },
+    {
+      "id": "contrast-palate-reset",
+      "tier": "contrast",
+      "cigar": "Macanudo Café Court (Tubo)",
+      "spirit": "Sazerac Rye",
+      "expectedPairingStyle": "contrast",
+      "minContrastScore": 0.28,
+      "minGrade": "C",
+      "expectedPairingNotes": "Mild smoke with botanical lift — palate refresh between puffs.",
+      "beginnerSuitability": "intermediate",
+      "allowedVariance": { "bodyDeltaMax": 4 }
+    },
+    {
+      "id": "contrast-education-dessert",
+      "tier": "contrast",
+      "cigar": "La Aroma de Cuba Mi Amor Robusto",
+      "spirit": "Buffalo Trace",
+      "expectedPairingStyle": "contrast",
+      "minContrastScore": 0.18,
+      "minGrade": "D",
+      "expectedPairingNotes": "Sweet dark cigar vs drier bourbon — teaches sweetness offset, not clone pairing.",
+      "allowedVariance": { "bodyDeltaMax": 3 }
+    },
+    {
+      "id": "harmony-luxury-opus-pappy",
+      "tier": "harmony",
+      "cigar": "Arturo Fuente Opus X Angel's Share",
+      "spirit": "The Macallan 18 Year Sherry Oak",
+      "expectedGoodCategories": ["cognac", "rum", "scotch", "bourbon"],
+      "minGrade": "B",
+      "expectedPairingNotes": "Angel's Share leans better with sherried luxury malt than a sugary bourbon-first lane.",
+      "allowedVariance": { "bodyDeltaMax": 3, "affinityVariance": true },
+      "antiPairings": false,
+      "luxurySuitability": "unicorn"
+    },
+    {
+      "id": "contrast-vodka-reset",
+      "tier": "contrast",
+      "cigar": "Macanudo Café Court (Tubo)",
+      "spirit": "Tito's Handmade Vodka",
+      "expectedPairingStyle": "contrast",
+      "minContrastScore": 0.25,
+      "expectedGoodCategories": ["vodka"],
+      "minGrade": "C",
+      "expectedPairingNotes": "Mild Connecticut with clean vodka — palate reset pairing.",
+      "allowedVariance": { "bodyDeltaMax": 4, "affinityVariance": true },
+      "beginnerSuitability": "beginner"
+    },
+    {
+      "id": "harmony-baseline-padron",
+      "tier": "harmony",
+      "cigar": "E.P. Carrillo Encore Majestic",
+      "spirit": "Buffalo Trace",
+      "expectedPairingStyle": "complementary",
+      "forbidHighContrast": true,
+      "minGrade": "C",
+      "expectedPairingNotes": "Harmony-first lounge classic — should not be scored as pure contrast play."
+    },
+    {
+      "id": "contrast-novice-guard",
+      "tier": "contrast",
+      "cigar": "Macanudo Cafe Robusto / Hyde Park",
+      "spirit": "Lagavulin 16",
+      "antiPairings": true,
+      "expectedMaxGrade": "D",
+      "forbidHighContrast": false,
+      "context": { "journeyLevel": "novice" },
+      "expectedPairingNotes": "Novice must not receive aggressive peat bury — beginner safety gate."
+    },
+    {
+      "id": "spirit-tracker-rye-spice",
+      "tier": "spirit-forward",
+      "cigar": "Oliva Serie V Melanio Maduro Robusto",
+      "spirit": "Pikesville Straight Rye",
+      "expectedGoodCategories": ["rye", "bourbon"],
+      "expectedBadCategories": ["vodka", "agave"],
+      "expectedFlavorMatches": ["spice", "cocoa", "cedar"],
+      "minGrade": "C",
+      "expectedPairingNotes": "Tracker rye menu name — spice-forward maduro with Maryland rye lift.",
+      "allowedVariance": { "bodyDeltaMax": 3, "spiritDeckAlternates": ["bourbon"] },
+      "antiPairings": false
+    },
+    {
+      "id": "spirit-tracker-scotch-sherry",
+      "tier": "spirit-forward",
+      "cigar": "Hoyo de Monterrey Le Hoyo de San Juan",
+      "spirit": "Glenlivet 12 Year",
+      "expectedGoodCategories": ["scotch", "irish"],
+      "expectedBadCategories": ["vodka", "agave", "peated"],
+      "expectedFlavorMatches": ["fruit", "cedar", "honey"],
+      "minGrade": "C",
+      "expectedPairingNotes": "Tracker Speyside menu name — medium wood with approachable sherried malt.",
+      "allowedVariance": { "spiritDeckAlternates": ["irish"] },
+      "antiPairings": false
+    },
+    {
+      "id": "spirit-tracker-peat-bold",
+      "tier": "spirit-forward",
+      "cigar": "Drew Estate Liga Privada No. 9 Robusto / Toro / Corona Doble",
+      "spirit": "Ardbeg 10",
+      "expectedGoodCategories": ["scotch", "peated"],
+      "expectedBadCategories": ["vodka", "agave"],
+      "minGrade": "C",
+      "expectedPairingNotes": "Tracker Islay menu name — bold maduro smoke meets peated malt for peat lovers.",
+      "allowedVariance": { "bodyDeltaMax": 3 },
+      "antiPairings": false
+    },
+    {
+      "id": "spirit-tracker-agave-reposado",
+      "tier": "spirit-forward",
+      "cigar": "Hoyo de Monterrey Le Hoyo de San Juan",
+      "spirit": "Fortaleza Reposado",
+      "expectedGoodCategories": ["agave"],
+      "expectedBadCategories": ["vodka", "peated"],
+      "minGrade": "C",
+      "expectedPairingNotes": "Tracker agave menu name — medium cigar with traditional reposado brightness.",
+      "allowedVariance": { "bodyDeltaMax": 4 },
+      "antiPairings": false
+    },
+    {
+      "id": "spirit-tracker-vodka-mild",
+      "tier": "spirit-forward",
+      "cigar": "Macanudo Café Court (Tubo)",
+      "spirit": "Tito's Handmade Vodka",
+      "expectedGoodCategories": ["vodka"],
+      "expectedBadCategories": ["peated", "scotch"],
+      "minGrade": "C",
+      "context": { "promptText": "clean neutral palate reset beside a mild cigar" },
+      "expectedPairingNotes": "Tracker vodka menu name — mild Connecticut with clean corn vodka reset.",
+      "allowedVariance": { "bodyDeltaMax": 4 },
+      "antiPairings": false,
+      "beginnerSuitability": "beginner"
+    }
+  ],
+  "promptScenarios": [
+    {
+      "id": "neutral-bourbon-flight",
+      "prompt": "recommend a cigar and bourbon pairing",
+      "journeyLevel": "advanced",
+      "categoryFocus": "pairing",
+      "expect": { "spiritDeckIn": ["bourbon", "rye"], "minBestGrade": "C" }
+    },
+    {
+      "id": "beginner-quick",
+      "prompt": "quick lunch smoke something mild with an easy pour",
+      "journeyLevel": "novice",
+      "expect": { "minBestGrade": "C", "ontologySuppressed": true }
+    },
+    {
+      "id": "cognac-after-dinner",
+      "prompt": "after dinner cognac and a cigar",
+      "journeyLevel": "advanced",
+      "categoryFocus": "pairing",
+      "expect": { "spiritDeckIn": ["cognac", "rum"], "minBestGrade": "C" }
+    },
+    {
+      "id": "coffee-morning",
+      "prompt": "morning coffee with a cigar under $12",
+      "journeyLevel": "novice",
+      "expect": { "minBestGrade": "C" }
+    },
+    {
+      "id": "investor-luxury",
+      "prompt": "something luxurious for a celebration tonight",
+      "journeyLevel": "advanced",
+      "expect": { "minBestGrade": "B" }
+    },
+    {
+      "id": "contrast-surprise",
+      "prompt": "surprise me with something unexpected but still lounge-worthy",
+      "journeyLevel": "advanced",
+      "expect": { "minBestGrade": "B", "pairingStrategy": "adventurous" }
+    },
+    {
+      "id": "contrast-safe-harmony",
+      "prompt": "safe classic pairing nothing too wild",
+      "journeyLevel": "novice",
+      "expect": { "minBestGrade": "C", "pairingStrategy": "complementary" }
+    }
+  ],
+  "investorWalkthrough": [
+    { "id": "beginner", "prompt": "first cigar something smooth under $10", "journeyLevel": "novice" },
+    { "id": "bourbon", "prompt": "bold bourbon and a full bodied cigar", "journeyLevel": "advanced" },
+    { "id": "agave", "prompt": "tequila pairing for a medium cigar", "journeyLevel": "advanced" },
+    { "id": "luxury", "prompt": "top shelf pairing for a special occasion", "journeyLevel": "advanced" },
+    { "id": "exploration", "prompt": "surprise me with a full flight best refined wildcard", "journeyLevel": "advanced" },
+    { "id": "quick-smoke", "prompt": "short smoke quick lunch break", "journeyLevel": "novice" },
+    { "id": "unexpected-amazing", "prompt": "unexpected but amazing pairing challenge me", "journeyLevel": "advanced", "minGrade": "C" },
+    { "id": "dessert-contrast", "prompt": "dessert cigar with a pour that cuts the sweetness", "journeyLevel": "advanced", "minGrade": "C" },
+    { "id": "agave-maduro", "prompt": "agave with a maduro cigar something interesting", "journeyLevel": "advanced", "minGrade": "C" },
+    { "id": "rye-spice-balance", "prompt": "rye that balances a spicy full cigar", "journeyLevel": "advanced", "minGrade": "C" },
+    { "id": "palate-reset", "prompt": "palate reset pairing mild cigar brighter spirit", "journeyLevel": "intermediate", "minGrade": "C" },
+    { "id": "advanced-sommelier", "prompt": "advanced sommelier contrast pairing with tension", "journeyLevel": "advanced", "minGrade": "C" }
+  ]
+}

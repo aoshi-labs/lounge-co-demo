@@ -1,0 +1,193 @@
+/* ─────────────────────────────────────────────────────────────
+   my-visits.css — page-specific styles
+   Extracted from inline <style> block in my-visits.html.
+   Shared chrome (sidebar, top-bar, .topbar-actions, mobile-overlay,
+   brand/user typography) lives in lounge.css.
+──────────────────────────────────────────────────────────────── */
+
+/* ────────────────────────────────────────
+   my-visits — page-specific styles
+──────────────────────────────────────── */
+.mv-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.mv-stat {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+.mv-stat-n {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+.mv-stat-label {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 6px;
+}
+.mv-filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.mv-chips {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.mv-chip {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--bg-border);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.mv-chip:hover { border-color: var(--gold-dim); color: var(--text-primary); }
+.mv-chip.active {
+  background: var(--gold-subtle);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.mv-date-select {
+  margin-left: auto;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--bg-border);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+}
+.mv-list { display: flex; flex-direction: column; gap: 12px; }
+.mv-card {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 18px;
+  align-items: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.mv-card:hover {
+  border-color: var(--gold-dim);
+  transform: translateY(-1px);
+}
+.mv-date-block {
+  text-align: center;
+  padding: 8px 6px;
+  border-radius: 8px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border-dim);
+}
+.mv-date-month {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-dim);
+}
+.mv-date-day {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-top: 2px;
+}
+.mv-body { min-width: 0; }
+.mv-venue {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.mv-meta {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-muted);
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.mv-meta span { display: inline-flex; align-items: center; gap: 4px; }
+.mv-tags {
+  margin-top: 6px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.mv-tag {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+.mv-tag-rated { color: var(--gold); background: var(--gold-subtle); }
+.mv-tag-private {
+  color: var(--burg);
+  background: rgba(var(--burg-rgb), 0.08);
+}
+.mv-rating {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--gold);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.mv-empty {
+  padding: 48px 24px;
+  text-align: center;
+  border: 1px dashed var(--bg-border);
+  border-radius: 12px;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-style: italic;
+}
+.mv-retention-hint {
+  margin-top: 28px;
+  padding: 14px 18px;
+  border: 1px solid var(--bg-border);
+  border-radius: 8px;
+  background: var(--bg-elevated);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-secondary);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.mv-retention-hint i { color: var(--gold-dim); flex-shrink: 0; }
+.mv-retention-hint a { color: var(--gold); text-decoration: none; font-weight: 600; }
+.mv-retention-hint a:hover { text-decoration: underline; }
+
+@media (max-width: 767px) {
+  .mv-stats { grid-template-columns: repeat(2, 1fr); }
+  .mv-card { grid-template-columns: 48px 1fr; }
+  .mv-rating { grid-column: 2; justify-self: end; }
+  .mv-date-select { margin-left: 0; }
+}

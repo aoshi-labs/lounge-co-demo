@@ -1,0 +1,12 @@
+{
+  "parentTurnHasTurnId": true,
+  "refinedTurnHasTurnId": true,
+  "turnIdsAreDifferent": true,
+  "parentRuntimeMode": "normal",
+  "refinedRuntimeMode": "normal",
+  "parentDegraded": false,
+  "refinedDegraded": false,
+  "parentFrozen": true,
+  "refinedFrozen": true,
+  "refinedHasCards": true
+}

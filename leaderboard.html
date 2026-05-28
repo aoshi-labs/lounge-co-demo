@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Leaderboard — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Member rankings by points — podium of top contributors and your progress toward the next tier." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Leaderboard — Lounge & Co." />
+  <meta property="og:description" content="Member rankings by points — podium of top contributors and your progress toward the next tier." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Leaderboard — Lounge & Co." />
+  <meta name="twitter:description" content="Member rankings by points — podium of top contributors and your progress toward the next tier." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/leaderboard.css"/>
+</head>
+<body>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Thomas H.</div><div class="sidebar-user-tier">Elite · 1,744 pts · #4</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area">
+  <h1 class="visually-hidden">Leaderboard</h1>
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu"><i data-lucide="menu" class="ic-16"></i></button>
+    <div class="topbar-actions">
+    </div>
+  </header>
+
+  <div class="page-content">
+
+    <!-- CENTER -->
+    <div class="leaderboard-page-stack">
+
+      <!-- Page header H1 + tagline removed; the auto-injected .top-bar-logo
+           (bar-chart-3 icon + "Leaderboard" label) serves as the page title. -->
+
+      <!-- Period tabs + (mobile only) rail-view tabs.
+           The trailing 3 (.leaderboard-period-tab-rail) bring the right-rail widgets
+           reachable from the main column on mobile where the rail is hidden.
+           Hidden on desktop via CSS — the rail itself shows them there. -->
+      <div class="leaderboard-period-tabs">
+        <button class="filter-tab active" data-leaderboard-view="rankings" onclick="setPeriod(this)">This Month</button>
+        <button class="filter-tab" data-leaderboard-view="rankings" onclick="setPeriod(this)">All Time</button>
+        <button class="filter-tab" data-leaderboard-view="rankings" onclick="setPeriod(this)">Reviews Only</button>
+        <button class="filter-tab" data-leaderboard-view="rankings" onclick="setPeriod(this)">Check-Ins</button>
+        <button class="filter-tab leaderboard-period-tab-rail" data-leaderboard-view="progress" onclick="setPeriod(this)">Your Progress</button>
+        <button class="filter-tab leaderboard-period-tab-rail" data-leaderboard-view="tiers" onclick="setPeriod(this)">Tier Legend</button>
+        <button class="filter-tab leaderboard-period-tab-rail" data-leaderboard-view="howto" onclick="setPeriod(this)">How to</button>
+      </div>
+
+      <!-- Rankings view (default, all period tabs map to this) -->
+      <div id="leaderboard-view-rankings" class="leaderboard-view">
+
+      <!-- Podium -->
+      <div class="leaderboard-podium">
+
+        <!-- #2 Silver -->
+        <a href="profile.html" class="podium-card-runner-up">
+          <div class="avatar podium-avatar-runner-up"><img src="assets/images/james-w.jpg" alt=""/></div>
+          <div class="podium-rank-runner-up">2nd</div>
+          <div class="podium-name">James W.</div>
+          <div class="podium-points">2,415 pts</div>
+        </a>
+
+        <!-- #1 Gold -->
+        <a href="profile.html" class="podium-card-champion">
+          <div class="podium-crown">👑</div>
+          <div class="avatar podium-avatar-champion"><img src="assets/images/marcus-r.jpg" alt=""/></div>
+          <div class="podium-rank-champion">1st</div>
+          <div class="podium-name-champion">Marcus R.</div>
+          <div class="podium-points-champion">2,840 pts</div>
+        </a>
+
+        <!-- #3 Bronze -->
+        <a href="profile.html" class="podium-card-bronze">
+          <div class="avatar podium-avatar-bronze"><img src="assets/images/robert-b.jpg" alt=""/></div>
+          <div class="podium-rank-bronze">3rd</div>
+          <div class="podium-name">Robert B.</div>
+          <div class="podium-points">1,980 pts</div>
+        </a>
+      </div>
+
+      <!-- Ranked list -->
+      <div class="rank-list">
+
+        <!-- #4 YOU -->
+        <a href="profile.html" class="rank-row is-you">
+          <div class="rank-number-you">4</div>
+          <div class="avatar rank-avatar-you"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+          <div class="sidebar-user-info">
+            <div class="rank-name-you">You · Thomas H.</div>
+            <div class="rank-meta">Elite · 87 posts · 12-day streak</div>
+          </div>
+          <div class="rank-points-block">
+            <div class="rank-points-num-you">1,744</div>
+            <div class="rank-points-label">pts</div>
+          </div>
+        </a>
+
+        <a href="profile.html" class="rank-row">
+          <div class="rank-number">5</div>
+          <div class="avatar rank-avatar-member"><img src="assets/images/derick-l.jpg" alt=""/></div>
+          <div class="sidebar-user-info">
+            <div class="rank-name">Derek L.</div>
+            <div class="rank-meta">Member · 64 posts</div>
+          </div>
+          <div class="rank-points-block"><div class="rank-points-num">1,512</div><div class="rank-points-label">pts</div></div>
+        </a>
+
+        <a href="profile.html" class="rank-row">
+          <div class="rank-number">6</div>
+          <div class="avatar rank-avatar-alan">AK</div>
+          <div class="sidebar-user-info">
+            <div class="rank-name">Alan K.</div>
+            <div class="rank-meta">Member · 58 posts</div>
+          </div>
+          <div class="rank-points-block"><div class="rank-points-num">1,388</div><div class="rank-points-label">pts</div></div>
+        </a>
+
+        <a href="profile.html" class="rank-row">
+          <div class="rank-number">7</div>
+          <div class="avatar rank-avatar-patrick">PM</div>
+          <div class="sidebar-user-info">
+            <div class="rank-name">Patrick M.</div>
+            <div class="rank-meta">Member · 51 posts</div>
+          </div>
+          <div class="rank-points-block"><div class="rank-points-num">1,201</div><div class="rank-points-label">pts</div></div>
+        </a>
+
+        <a href="profile.html" class="rank-row">
+          <div class="rank-number">8</div>
+          <div class="avatar rank-avatar-sean">SO</div>
+          <div class="sidebar-user-info">
+            <div class="rank-name">Sean O.</div>
+            <div class="rank-meta">Member · 47 posts</div>
+          </div>
+          <div class="rank-points-block"><div class="rank-points-num">1,082</div><div class="rank-points-label">pts</div></div>
+        </a>
+
+        <a href="profile.html" class="rank-row">
+          <div class="rank-number">9</div>
+          <div class="avatar rank-avatar-ethan">EH</div>
+          <div class="sidebar-user-info">
+            <div class="rank-name">Ethan H.</div>
+            <div class="rank-meta">Member · 39 posts</div>
+          </div>
+          <div class="rank-points-block"><div class="rank-points-num">947</div><div class="rank-points-label">pts</div></div>
+        </a>
+
+        <a href="profile.html" class="rank-row">
+          <div class="rank-number">10</div>
+          <div class="avatar rank-avatar-vincent">VC</div>
+          <div class="sidebar-user-info">
+            <div class="rank-name">Vincent C.</div>
+            <div class="rank-meta">Member · 36 posts</div>
+          </div>
+          <div class="rank-points-block"><div class="rank-points-num">894</div><div class="rank-points-label">pts</div></div>
+        </a>
+      </div>
+
+      <button onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--bg-border)';this.style.color='var(--text-secondary)'" class="rank-show-more-btn">Show all 247 members →</button>
+      </div><!-- /#leaderboard-view-rankings -->
+
+      <!-- Rail-view tabs (mobile-only inline copies of the right-rail
+           widgets). Same widget chrome, just placed in the main column so
+           the carousel tabs above can swap to them on narrow viewports. -->
+      <div id="leaderboard-view-progress" class="leaderboard-view" hidden>
+        <div class="widget progress-card">
+          <div class="widget-title">🏆 Your Progress</div>
+          <div class="progress-header">
+            <div class="progress-rank">#4</div>
+            <div><div class="progress-tier-name">Elite Tier</div><div class="podium-points">1,744 points</div></div>
+          </div>
+          <div class="progress-bar-labels">
+            <span class="progress-bar-label-from">To #3 Bronze</span>
+            <span class="progress-bar-label-to">236 to go</span>
+          </div>
+          <div class="progress-bar-track"><div class="progress-bar-fill"></div></div>
+        </div>
+      </div>
+
+      <div id="leaderboard-view-tiers" class="leaderboard-view" hidden>
+        <div class="widget">
+          <div class="widget-title">📜 Tier Legend</div>
+          <div class="tier-legend-list">
+            <div class="tier-legend-row"><div class="tier-legend-dot-champion"></div><div><div class="tier-legend-name">Champion · #1</div><div class="tier-legend-pts">2,500+ pts</div></div></div>
+            <div class="tier-legend-row"><div class="tier-legend-dot-runner-up"></div><div><div class="tier-legend-name">Runner-Up · #2</div><div class="tier-legend-pts">2,000+ pts</div></div></div>
+            <div class="tier-legend-row"><div class="tier-legend-dot-bronze"></div><div><div class="tier-legend-name">Bronze · #3</div><div class="tier-legend-pts">1,800+ pts</div></div></div>
+            <div class="tier-legend-row"><div class="tier-legend-dot-elite"></div><div><div class="tier-legend-name">Elite · #4–5</div><div class="tier-legend-pts">1,200+ pts</div></div></div>
+            <div class="tier-legend-row"><div class="tier-legend-dot-member"></div><div><div class="tier-legend-name">Member · #6+</div><div class="tier-legend-pts">Earning</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="leaderboard-view-howto" class="leaderboard-view" hidden>
+        <div class="widget">
+          <div class="widget-title">💎 How to Earn</div>
+          <div class="how-to-earn-list">
+            <div class="how-to-earn-row"><span>Write a review</span><span class="how-to-earn-pts">+50 pts</span></div>
+            <div class="how-to-earn-row"><span>Check in</span><span class="how-to-earn-pts">+25 pts</span></div>
+            <div class="how-to-earn-row"><span>RSVP an event</span><span class="how-to-earn-pts">+30 pts</span></div>
+            <div class="how-to-earn-row"><span>Attend an event</span><span class="how-to-earn-pts">+100 pts</span></div>
+            <div class="how-to-earn-row"><span>Top-voted review</span><span class="how-to-earn-pts">+150 pts</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RAIL -->
+    <aside class="rail-col leaderboard-rail">
+
+      <!-- Your progress -->
+      <div class="widget progress-card">
+        <div class="widget-title">🏆 Your Progress</div>
+        <div class="progress-header">
+          <div class="progress-rank">#4</div>
+          <div><div class="progress-tier-name">Elite Tier</div><div class="podium-points">1,744 points</div></div>
+        </div>
+        <div class="progress-bar-labels">
+          <span class="progress-bar-label-from">To #3 Bronze</span>
+          <span class="progress-bar-label-to">236 to go</span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill"></div>
+        </div>
+      </div>
+
+      <!-- Tier legend -->
+      <div class="widget">
+        <div class="widget-title">📜 Tier Legend</div>
+        <div class="tier-legend-list">
+          <div class="tier-legend-row"><div class="tier-legend-dot-champion"></div><div><div class="tier-legend-name">Champion · #1</div><div class="tier-legend-pts">2,500+ pts</div></div></div>
+          <div class="tier-legend-row"><div class="tier-legend-dot-runner-up"></div><div><div class="tier-legend-name">Runner-Up · #2</div><div class="tier-legend-pts">2,000+ pts</div></div></div>
+          <div class="tier-legend-row"><div class="tier-legend-dot-bronze"></div><div><div class="tier-legend-name">Bronze · #3</div><div class="tier-legend-pts">1,800+ pts</div></div></div>
+          <div class="tier-legend-row"><div class="tier-legend-dot-elite"></div><div><div class="tier-legend-name">Elite · #4–5</div><div class="tier-legend-pts">1,200+ pts</div></div></div>
+          <div class="tier-legend-row"><div class="tier-legend-dot-member"></div><div><div class="tier-legend-name">Member · #6+</div><div class="tier-legend-pts">Earning</div></div></div>
+        </div>
+      </div>
+
+      <!-- How to earn -->
+      <div class="widget">
+        <div class="widget-title">💎 How to Earn</div>
+        <div class="how-to-earn-list">
+          <div class="how-to-earn-row"><span>Write a review</span><span class="how-to-earn-pts">+50 pts</span></div>
+          <div class="how-to-earn-row"><span>Check in</span><span class="how-to-earn-pts">+25 pts</span></div>
+          <div class="how-to-earn-row"><span>RSVP an event</span><span class="how-to-earn-pts">+30 pts</span></div>
+          <div class="how-to-earn-row"><span>Attend an event</span><span class="how-to-earn-pts">+100 pts</span></div>
+          <div class="how-to-earn-row"><span>Top-voted review</span><span class="how-to-earn-pts">+150 pts</span></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+<nav class="bottom-nav">
+  <a href="feed.html" class="bottom-nav-item"><i data-lucide="newspaper" class="ic-20"></i>Feed</a>
+  <a href="explore.html" class="bottom-nav-item"><i data-lucide="search" class="ic-20"></i>Explore</a>
+  <a href="create-post.html" class="bottom-nav-item"><div class="bottom-nav-create-btn"><i data-lucide="plus" class="ic-20"></i></div></a>
+  <a href="events.html" class="bottom-nav-item"><i data-lucide="calendar" class="ic-20"></i>Events</a>
+  <a href="profile.html" class="bottom-nav-item"><i data-lucide="user" class="ic-20"></i>Profile</a>
+</nav>
+
+<script>
+  function setPeriod(btn){
+    document.querySelectorAll('.leaderboard-period-tabs .filter-tab').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Swap the visible view based on the tab's data-leaderboard-view. All four
+    // period tabs map to 'rankings' (no actual filtering yet, mockup-only).
+    const view = btn.getAttribute('data-leaderboard-view') || 'rankings';
+    document.querySelectorAll('.leaderboard-view').forEach(v => {
+      v.hidden = (v.id !== 'leaderboard-view-' + view);
+    });
+
+    if (btn.scrollIntoView) {
+      btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  }
+
+  /* Carousel arrows for the period filter tabs (.leaderboard-period-tabs) — same pattern as
+     every other carousel in the app. Shared button/wrapper styles live in
+     lounge.css; .leaderboard-tabs-carousel is registered there for symmetric-row
+     arrow positioning. */
+  (function setupLeaderboardTabsArrows(){
+    const track = document.querySelector('.leaderboard-period-tabs');
+    if (!track || track.dataset.carouselWired === '1') return;
+    track.dataset.carouselWired = '1';
+
+    const wrap = document.createElement('div');
+    wrap.className = 'pro-lib-carousel leaderboard-tabs-carousel';
+    track.parentNode.insertBefore(wrap, track);
+    wrap.appendChild(track);
+
+    const mkArrow = (dir, glyph, label) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'pro-lib-arrow pro-lib-arrow-' + dir;
+      b.setAttribute('aria-label', label);
+      b.innerHTML = glyph;
+      return b;
+    };
+    const left  = mkArrow('left',  '‹', 'Scroll left');
+    const right = mkArrow('right', '›', 'Scroll right');
+    wrap.appendChild(left);
+    wrap.appendChild(right);
+
+    const step = (mult) => {
+      track.scrollBy({ left: track.clientWidth * 0.7 * mult, behavior: 'smooth' });
+    };
+    left.addEventListener('click',  () => step(-1));
+    right.addEventListener('click', () => step( 1));
+
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      const x = track.scrollLeft;
+      const overflow = max > 4;
+      const atEnd = x >= max - 1;
+      left.classList.toggle('pro-lib-arrow-hidden',  !(overflow && atEnd));
+      right.classList.toggle('pro-lib-arrow-hidden', !(overflow && !atEnd));
+    };
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    setTimeout(update, 80);
+    setTimeout(update, 500);
+  })();
+</script>
+</body>
+</html>

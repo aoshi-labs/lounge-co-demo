@@ -1,0 +1,475 @@
+{
+  "version": 1,
+  "shard": "ca24-bestbuy-02",
+  "category": "cigar",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 9,
+  "products": [
+    {
+      "tracker": {
+        "sku": "BB24-11-LFD-CAM-3",
+        "caList": "Best Buy",
+        "caListYear": 2024,
+        "caRank": "",
+        "caRating": 89
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "spice",
+          "weight": 0.95
+        },
+        {
+          "id": "tobacco",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.7
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.65
+        }
+      ],
+      "spec": {
+        "msrp": 6,
+        "tier": 3,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "45 min",
+        "wrapper": "Cameroon",
+        "binder": "Dominican Republic",
+        "filler": "Dominican Republic"
+      },
+      "id": "bb24-11-lfd-cam-3",
+      "sensory": {
+        "body": 6,
+        "sweetness": 6,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "La Flor Dominicana Cameroon Cabinet No. 3",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "BB24-12-OLIVA-CT-PC",
+        "caList": "Best Buy",
+        "caListYear": 2024,
+        "caRank": "",
+        "caRating": 89
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cream",
+          "weight": 1.0
+        },
+        {
+          "id": "cedar",
+          "weight": 0.95
+        },
+        {
+          "id": "nut",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 7,
+        "tier": 3,
+        "strength": 2,
+        "body": "Medium-Light",
+        "smokeTime": "45 min",
+        "wrapper": "Ecuador Connecticut",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "bb24-12-oliva-ct-pc",
+      "sensory": {
+        "body": 4,
+        "sweetness": 6,
+        "pepper": 4,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Oliva Connecticut Reserve Petit Corona",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "BB24-13-PUNCH-KB-GORDO",
+        "caList": "Best Buy",
+        "caListYear": 2024,
+        "caRank": "",
+        "caRating": 89
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cream",
+          "weight": 1.0
+        },
+        {
+          "id": "cedar",
+          "weight": 0.95
+        },
+        {
+          "id": "nut",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 7,
+        "tier": 3,
+        "strength": 2,
+        "body": "Medium-Light",
+        "smokeTime": "90 min",
+        "wrapper": "Ecuador Connecticut",
+        "binder": "Honduras",
+        "filler": "Honduras / Nicaragua"
+      },
+      "id": "bb24-13-punch-kb-gordo",
+      "sensory": {
+        "body": 4,
+        "sweetness": 6,
+        "pepper": 4,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Punch Knuckle Buster Shade Gordo",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "BB24-14-PUNCH-KB-STUB",
+        "caList": "Best Buy",
+        "caListYear": 2024,
+        "caRank": "",
+        "caRating": 89
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cream",
+          "weight": 1.0
+        },
+        {
+          "id": "cedar",
+          "weight": 0.95
+        },
+        {
+          "id": "nut",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 5,
+        "tier": 3,
+        "strength": 2,
+        "body": "Medium-Light",
+        "smokeTime": "45 min",
+        "wrapper": "Ecuador Connecticut",
+        "binder": "Honduras",
+        "filler": "Honduras / Nicaragua"
+      },
+      "id": "bb24-14-punch-kb-stub",
+      "sensory": {
+        "body": 4,
+        "sweetness": 6,
+        "pepper": 4,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Punch Knuckle Buster Shade Stubby",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "BB24-15-PUNCH-KB-TORO",
+        "caList": "Best Buy",
+        "caListYear": 2024,
+        "caRank": "",
+        "caRating": 89
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cream",
+          "weight": 1.0
+        },
+        {
+          "id": "cedar",
+          "weight": 0.95
+        },
+        {
+          "id": "nut",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 6,
+        "tier": 3,
+        "strength": 2,
+        "body": "Medium-Light",
+        "smokeTime": "60 min",
+        "wrapper": "Ecuador Connecticut",
+        "binder": "Honduras",
+        "filler": "Honduras / Nicaragua"
+      },
+      "id": "bb24-15-punch-kb-toro",
+      "sensory": {
+        "body": 4,
+        "sweetness": 6,
+        "pepper": 4,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Punch Knuckle Buster Shade Toro",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "BB24-16-RP-V90-JR",
+        "caList": "Best Buy",
+        "caListYear": 2024,
+        "caRank": "",
+        "caRating": 89
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "wood",
+          "weight": 0.95
+        },
+        {
+          "id": "leather",
+          "weight": 0.85
+        },
+        {
+          "id": "earth",
+          "weight": 0.75
+        },
+        {
+          "id": "tobacco",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 4,
+        "tier": 3,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "45 min",
+        "wrapper": "Honduras",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua / Dominican Republic"
+      },
+      "id": "bb24-16-rp-v90-jr",
+      "sensory": {
+        "body": 6,
+        "sweetness": 5,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Rocky Patel Vintage 1990 Juniors",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "BB24-17-7204-DOG",
+        "caList": "Best Buy",
+        "caListYear": 2024,
+        "caRank": "",
+        "caRating": 88
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "earth",
+          "weight": 1.0
+        },
+        {
+          "id": "spice",
+          "weight": 0.95
+        },
+        {
+          "id": "cedar",
+          "weight": 0.85
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.75
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.7
+        },
+        {
+          "id": "toast",
+          "weight": 0.65
+        }
+      ],
+      "spec": {
+        "msrp": 7,
+        "tier": 3,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "30 min",
+        "wrapper": "Honduras",
+        "binder": "Honduras",
+        "filler": "Honduras / Nicaragua"
+      },
+      "id": "bb24-17-7204-dog",
+      "sensory": {
+        "body": 6,
+        "sweetness": 5,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "7-20-4 Factory 57 Dog Walker",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "BB24-18-NICA-BELLY",
+        "caList": "Best Buy",
+        "caListYear": 2024,
+        "caRank": "",
+        "caRating": 88
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "earth",
+          "weight": 1.0
+        },
+        {
+          "id": "spice",
+          "weight": 0.95
+        },
+        {
+          "id": "cedar",
+          "weight": 0.85
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.75
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.7
+        },
+        {
+          "id": "toast",
+          "weight": 0.65
+        }
+      ],
+      "spec": {
+        "msrp": 7,
+        "tier": 4,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "90 min",
+        "wrapper": "Nicaragua",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "bb24-18-nica-belly",
+      "sensory": {
+        "body": 7,
+        "sweetness": 5,
+        "pepper": 6,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Nica Rustica Nica Rustica Belly",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "BB24-20-SAGA-TOMO3",
+        "caList": "Best Buy",
+        "caListYear": 2024,
+        "caRank": "",
+        "caRating": 88
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "wood",
+          "weight": 0.95
+        },
+        {
+          "id": "leather",
+          "weight": 0.85
+        },
+        {
+          "id": "earth",
+          "weight": 0.75
+        },
+        {
+          "id": "tobacco",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 7,
+        "tier": 3,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "45 min",
+        "wrapper": "Ecuador",
+        "binder": "Dominican Republic",
+        "filler": "Dominican Republic / Nicaragua"
+      },
+      "id": "bb24-20-saga-tomo3",
+      "sensory": {
+        "body": 6,
+        "sweetness": 5,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Saga Short Tales Tomo III",
+      "category": "cigar"
+    }
+  ]
+}

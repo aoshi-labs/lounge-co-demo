@@ -1,0 +1,88 @@
+{
+  "comfortAskDetected": false,
+  "targetSmokeMinutes": 60,
+  "connecticutWrapperCount": 0,
+  "minTierInFlight": 3,
+  "maxStrengthInFlight": 4,
+  "cardsProductIds": [
+    {
+      "slot": "best",
+      "cigarId": "cur-20-ashton-vsg-torp",
+      "spiritId": "spi-trk-ec-sb"
+    },
+    {
+      "slot": "safe",
+      "cigarId": "vid-20-def-classic-rob",
+      "spiritId": "spi-trk-ec-sb"
+    },
+    {
+      "slot": "wildcard",
+      "cigarId": "vid-16-esteban-mofo-rob",
+      "spiritId": "spi-trk-ec-sb"
+    }
+  ],
+  "cigarIdsDistinct": true,
+  "spiritIdsDistinct": false,
+  "spiritBestIsAnchor": true,
+  "spiritRelativesDistinctWhenPoolAllows": false,
+  "bestPreservesLockedId": true,
+  "slotRoleMetadata": [
+    {
+      "manufacturerKey": "ashton",
+      "lineKey": "ashton vsg",
+      "tier": 5,
+      "strength": 4,
+      "pepper": 6,
+      "wrapper": "ecuador sumatra",
+      "contrastVsBest": 0
+    },
+    {
+      "manufacturerKey": "definition",
+      "lineKey": "definition cigars classic",
+      "tier": 3,
+      "strength": 3,
+      "pepper": 5,
+      "wrapper": "nicaragua habano",
+      "contrastVsBest": 0
+    },
+    {
+      "manufacturerKey": "esteban",
+      "lineKey": "esteban carreras maduro mofo",
+      "tier": 4,
+      "strength": 4,
+      "pepper": 6,
+      "wrapper": "san andrés maduro",
+      "contrastVsBest": 0
+    }
+  ],
+  "wildcardContrastMeaningful": true,
+  "refinedElevatedVsBest": false,
+  "repairFired": [],
+  "progressionIntent": false,
+  "provenanceSignals": [
+    "catalog-shell",
+    "context-runtime",
+    "open-pairing",
+    "pairing-strategy-contrast",
+    "flight-philosophy",
+    "flight-philosophy-rerank-skipped",
+    "ontology-suppressed"
+  ],
+  "generatePipelineOrder": [
+    "pickSlotIds",
+    "applyFlightSlotDiversityIds",
+    "reconcileBestPickBodyIntentIds",
+    "reconcileWildcardBodyIntentIds",
+    "applyCigarFlightPhilosophy",
+    "applySpiritFlightPhilosophy"
+  ],
+  "rankedPoolSize": 182,
+  "governanceOk": true,
+  "pairingEvalGrades": [
+    0.882,
+    1,
+    0.882
+  ],
+  "bestPairingGradeGteRefinedMinusOne": true,
+  "wildcardHospitalityContrast": false
+}

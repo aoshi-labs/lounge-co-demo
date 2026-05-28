@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>The Single Malts Society — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Private room details, photos, capacity, and booking options." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="The Single Malts Society — Lounge & Co." />
+  <meta property="og:description" content="Private room details, photos, capacity, and booking options." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Single Malts Society — Lounge & Co." />
+  <meta name="twitter:description" content="Private room details, photos, capacity, and booking options." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/room-detail.css"/>
+</head>
+<body>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Thomas H.</div><div class="sidebar-user-tier">Elite · 1,744 pts · #4</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area">
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu"><i data-lucide="menu" class="ic-16"></i></button>
+    <div class="topbar-actions">
+      <a href="rooms.html" class="icon-btn fee-newpost-btn" title="Back to Rooms" aria-label="Back to Rooms">
+        <i data-lucide="chevron-left" class="ic-16"></i><span>Back to Rooms</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="page-content">
+
+    <div class="room-detail-page-stack">
+
+      <!-- Room header -->
+      <div class="room-detail-header">
+        <div class="room-detail-header-row">
+          <div class="room-detail-header-info">
+            <div class="room-detail-title-row">
+              <h1 class="room-detail-title">The Single Malts Society</h1>
+              <i data-lucide="lock" class="ic-16"></i>
+            </div>
+            <p class="room-detail-tagline">Scotch nerds, neat. Sherry casks, peat bombs, and the occasional rare Japanese pour.</p>
+          </div>
+          <button onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--bg-border)';this.style.color='var(--text-secondary)'" class="room-detail-settings-btn">⚙ Settings</button>
+        </div>
+
+        <div class="room-detail-meta-row">
+          <span><strong class="room-detail-meta-strong">12</strong> members</span>
+          <span><strong class="room-detail-meta-strong">187</strong> posts</span>
+          <span><strong class="room-detail-meta-strong">3</strong> active today</span>
+          <span class="room-detail-meta-muted">Created Mar 2023 by <span class="room-detail-meta-gold">Marcus R.</span></span>
+        </div>
+      </div>
+
+      <!-- Mobile-only inline rail. The right .rail-col is hidden by the
+           app shell on ≤900px, so its widgets are duplicated here in the
+           main column, right below the room header. Order: Members →
+           Room Rules → Mute → Leave Room. -->
+      <div class="room-detail-mobile-rail">
+
+        <div class="widget">
+          <div class="widget-title">👥 Members</div>
+          <div class="members-list">
+            <div class="members-row">
+              <div class="avatar members-avatar-champion"><img src="assets/images/marcus-r.jpg" alt=""/></div>
+              <div class="room-detail-post-author-info"><div class="members-name">Marcus R.</div><div class="members-role">Owner</div></div>
+            </div>
+            <div class="members-row">
+              <div class="avatar members-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+              <div class="room-detail-post-author-info"><div class="members-name">Thomas H. <span class="members-you-tag">(you)</span></div></div>
+            </div>
+            <div class="members-row">
+              <div class="avatar members-avatar-runner-up"><img src="assets/images/james-w.jpg" alt=""/></div>
+              <div class="room-detail-post-author-info"><div class="members-name">James W.</div></div>
+            </div>
+            <div class="members-row">
+              <div class="avatar members-avatar-bronze"><img src="assets/images/robert-b.jpg" alt=""/></div>
+              <div class="room-detail-post-author-info"><div class="members-name">Robert B.</div></div>
+            </div>
+            <div class="members-row">
+              <div class="avatar members-avatar-member"><img src="assets/images/derick-l.jpg" alt=""/></div>
+              <div class="room-detail-post-author-info"><div class="members-name">Derek L.</div></div>
+            </div>
+          </div>
+          <button onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'" class="members-show-more">View all 12 →</button>
+        </div>
+
+        <div class="widget">
+          <div class="widget-title">📜 Room Rules</div>
+          <ol class="room-rules-list">
+            <li>Single malts only. Blends in #general.</li>
+            <li>Tasting notes welcome, sales pitches aren't.</li>
+            <li>Be kind. We're all here for the drams.</li>
+          </ol>
+        </div>
+
+        <div class="widget">
+          <div class="widget-title">🔔 Mute Notifications</div>
+          <p class="room-action-description">You'll still see posts in the feed but won't get pinged.</p>
+          <button class="room-mute-btn">Mute Room</button>
+        </div>
+
+        <div class="widget">
+          <div class="widget-title">🚪 Leave Room</div>
+          <p class="room-action-description">You'll be removed from the room. Posts will no longer appear in your feed.</p>
+          <button class="room-leave-btn">Leave Room</button>
+        </div>
+
+      </div>
+
+      <!-- Compose -->
+      <div class="room-detail-compose">
+        <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+        <a href="create-post.html" class="room-detail-compose-input">Share with the Single Malts Society…</a>
+        <a href="create-post.html" class="room-detail-compose-btn">Post</a>
+      </div>
+
+      <!-- Post 1 -->
+      <div class="post-card">
+        <div class="room-detail-post-header">
+          <div class="avatar room-detail-post-avatar-champion"><img src="assets/images/marcus-r.jpg" alt=""/></div>
+          <div class="room-detail-post-author-info">
+            <div class="room-detail-post-author-name">Marcus R.</div>
+            <div class="room-detail-post-meta">2 hours ago · in <a href="#" class="room-detail-post-meta-link">Single Malts Society</a></div>
+          </div>
+        </div>
+        <p class="room-detail-post-body">"Cracked open the Glenfarclas 25 last night for the first time. Worth the wait — the longer sherry cask aging shows up immediately. Dried fig, dark chocolate, and a finish that lasts a full minute. Anyone else have a bottle they're holding?"</p>
+        <div class="room-detail-post-chips">
+          <span class="rating-chip">Glenfarclas 25</span><span class="rating-chip">Sherried</span><span class="rating-chip">★ 5.0</span>
+        </div>
+        <div class="room-detail-post-actions">
+          <button class="post-action" onclick="toggleLike(this)"><i data-lucide="heart" class="ic-14"></i><span>8</span></button>
+          <button class="post-action"><i data-lucide="message-square" class="ic-14"></i>4</button>
+        </div>
+      </div>
+
+      <!-- Post 2 -->
+      <div class="post-card">
+        <div class="room-detail-post-header">
+          <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+          <div class="room-detail-post-author-info">
+            <div class="room-detail-post-author-name">Thomas H.</div>
+            <div class="room-detail-post-meta">5 hours ago</div>
+          </div>
+        </div>
+        <p class="room-detail-post-body">"Question for the room: looking for a peated Speyside under $100. Have tried the BenRiach Curiositas and liked it but want something with a touch more sherry influence. Recommendations?"</p>
+        <div class="room-detail-post-actions">
+          <button class="post-action" onclick="toggleLike(this)"><i data-lucide="heart" class="ic-14"></i><span>3</span></button>
+          <button class="post-action"><i data-lucide="message-square" class="ic-14"></i>9</button>
+        </div>
+      </div>
+
+      <!-- Post 3 -->
+      <div class="post-card">
+        <div class="room-detail-post-header">
+          <div class="avatar room-detail-post-avatar-runner-up"><img src="assets/images/james-w.jpg" alt=""/></div>
+          <div class="room-detail-post-author-info">
+            <div class="room-detail-post-author-name">James W.</div>
+            <div class="room-detail-post-meta">Yesterday · <span class="room-detail-meta-gold">Highland Park 18</span></div>
+          </div>
+        </div>
+        <p class="room-detail-post-body">"Highland Park 18 deserves more love. Smoke, honey, dried orange peel — Orkney whisky at its finest. Was paired with a Padron Anniversary which was perhaps too rich for the malt, but a fascinating contrast nonetheless."</p>
+        <div class="room-detail-post-chips">
+          <span class="rating-chip">Highland Park 18</span><span class="rating-chip">Honeyed</span><span class="rating-chip">★ 4.7</span>
+        </div>
+        <div class="room-detail-post-actions">
+          <button class="post-action" onclick="toggleLike(this)"><i data-lucide="heart" class="ic-14"></i><span>11</span></button>
+          <button class="post-action"><i data-lucide="message-square" class="ic-14"></i>2</button>
+        </div>
+      </div>
+
+      <button onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--bg-border)';this.style.color='var(--text-secondary)'" class="room-detail-load-more-btn">Load older posts</button>
+
+    </div>
+
+    <!-- RAIL -->
+    <aside class="rail-col room-detail-rail">
+
+      <div class="widget">
+        <div class="widget-title">👥 Members</div>
+        <div class="members-list">
+          <div class="members-row">
+            <div class="avatar members-avatar-champion"><img src="assets/images/marcus-r.jpg" alt=""/></div>
+            <div class="room-detail-post-author-info"><div class="members-name">Marcus R.</div><div class="members-role">Owner</div></div>
+          </div>
+          <div class="members-row">
+            <div class="avatar members-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+            <div class="room-detail-post-author-info"><div class="members-name">Thomas H. <span class="members-you-tag">(you)</span></div></div>
+          </div>
+          <div class="members-row">
+            <div class="avatar members-avatar-runner-up"><img src="assets/images/james-w.jpg" alt=""/></div>
+            <div class="room-detail-post-author-info"><div class="members-name">James W.</div></div>
+          </div>
+          <div class="members-row">
+            <div class="avatar members-avatar-bronze"><img src="assets/images/robert-b.jpg" alt=""/></div>
+            <div class="room-detail-post-author-info"><div class="members-name">Robert B.</div></div>
+          </div>
+          <div class="members-row">
+            <div class="avatar members-avatar-member"><img src="assets/images/derick-l.jpg" alt=""/></div>
+            <div class="room-detail-post-author-info"><div class="members-name">Derek L.</div></div>
+          </div>
+        </div>
+        <button onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'" class="members-show-more">View all 12 →</button>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">📜 Room Rules</div>
+        <ol class="room-rules-list">
+          <li>Single malts only. Blends in #general.</li>
+          <li>Tasting notes welcome, sales pitches aren't.</li>
+          <li>Be kind. We're all here for the drams.</li>
+        </ol>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">🔔 Mute Notifications</div>
+        <p class="room-action-description">You'll still see posts in the feed but won't get pinged.</p>
+        <button class="room-mute-btn">Mute Room</button>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">🚪 Leave Room</div>
+        <p class="room-action-description">You'll be removed from the room. Posts will no longer appear in your feed.</p>
+        <button class="room-leave-btn">Leave Room</button>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+<nav class="bottom-nav">
+  <a href="feed.html" class="bottom-nav-item"><i data-lucide="newspaper" class="ic-20"></i>Feed</a>
+  <a href="explore.html" class="bottom-nav-item"><i data-lucide="search" class="ic-20"></i>Explore</a>
+  <a href="create-post.html" class="bottom-nav-item"><div class="bottom-nav-create-btn"><i data-lucide="plus" class="ic-20"></i></div></a>
+  <a href="events.html" class="bottom-nav-item"><i data-lucide="calendar" class="ic-20"></i>Events</a>
+  <a href="profile.html" class="bottom-nav-item"><i data-lucide="user" class="ic-20"></i>Profile</a>
+</nav>
+</body>
+</html>

@@ -1,0 +1,199 @@
+{
+  "version": 1,
+  "shard": "curated-06",
+  "category": "cigar",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 8,
+  "products": [
+    {
+      "provenance": {
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 9,
+        "recommendationConfidence": "High",
+        "beginnerSafe": "No",
+        "articleSource": "https://www.padron.com/"
+      },
+      "guidance": {
+        "flavorFamily": "Coffee",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Maduro wrapper drives molasses, dark cocoa, and sweet earth on torpedo.",
+        "binderRole": "Nicaraguan binder — full-bodied 1964 maduro integration.",
+        "fillerRole": "Nicaraguan filler — flagship maduro pairing weight.",
+        "bestFor": "Heavy Cabernet, cask-strength bourbon, port wine, Padron premium maduro pick.",
+        "avoidIf": "Beginner or user wants natural 1964 only.",
+        "whyRecommend": "Recommend for bold pours against 1964 maduro torpedo — full body, sweet earth finish."
+      },
+      "menuLine": "Padron 1964 Anniversary Series · 6 × 52 · Torpedo · Full · Nicaragua · $19 · Notes: dark cocoa, molasses, dark coffee, sweet earth, cedar",
+      "stickSize": "6 × 52 · Torpedo",
+      "id": "cur-46-pad-1964-tor-mad"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 9,
+        "recommendationConfidence": "High",
+        "beginnerSafe": "No",
+        "articleSource": "https://www.padron.com/"
+      },
+      "guidance": {
+        "flavorFamily": "Dark & Heavy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Scotch",
+        "wrapperRole": "Natural wrapper on 1926 stock — pepper and leather up front.",
+        "binderRole": "Nicaraguan binder — older, stronger 5-year leaf.",
+        "fillerRole": "Nicaraguan filler — unmistakably full-bodied vs 1964.",
+        "bestFor": "Smoky Islay Scotch, cask-strength rum, double ristretto, Padron power Best Pick.",
+        "avoidIf": "Beginner, nicotine-sensitive, or user wants 1964 smoothness only.",
+        "whyRecommend": "Recommend when user wants Padron 1926 power on figurado No. 2 — natural wrapper."
+      },
+      "menuLine": "Padron 1926 Series · 5½ × 52 · Figurado · Full · Nicaragua · $24 · Notes: black pepper, dark chocolate, leather, cedar, oily char",
+      "stickSize": "5½ × 52 · Figurado",
+      "id": "cur-47-pad-1926-n2-nat"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 9,
+        "recommendationConfidence": "High",
+        "beginnerSafe": "No",
+        "articleSource": "https://www.padron.com/"
+      },
+      "guidance": {
+        "flavorFamily": "Dark & Heavy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Maduro wrapper adds molasses sweetness over 1926 strength.",
+        "binderRole": "Nicaraguan binder — full combustion on figurado.",
+        "fillerRole": "Nicaraguan filler — boldest Padron tier below Family Reserve.",
+        "bestFor": "Cask-strength bourbon, Islay Scotch, espresso, Padron super-premium maduro.",
+        "avoidIf": "User wants mild Damaso or Thousands entry tier.",
+        "whyRecommend": "Recommend as 1926 No. 2 maduro — maximum Padron pairing weight before Family Reserve."
+      },
+      "menuLine": "Padron 1926 Series · 5½ × 52 · Figurado · Full · Nicaragua · $26 · Notes: dark cocoa, molasses, black pepper, leather, char",
+      "stickSize": "5½ × 52 · Figurado",
+      "id": "cur-48-pad-1926-n2-mad"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 9,
+        "recommendationConfidence": "High",
+        "beginnerSafe": "No",
+        "articleSource": "https://www.padron.com/"
+      },
+      "guidance": {
+        "flavorFamily": "Dark & Heavy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Scotch",
+        "wrapperRole": "Natural wrapper on large 6¼ × 52 toro — extended full-bodied session.",
+        "binderRole": "Nicaraguan binder — 1926 construction.",
+        "fillerRole": "Nicaraguan filler — 5-year aged, stronger than 1964.",
+        "bestFor": "Islay Scotch, cask-strength rum, espresso, long after-dinner Padron.",
+        "avoidIf": "Short time window or beginner.",
+        "whyRecommend": "Recommend when user cites 1926 No. 9 — toro format power, natural wrapper.",
+        "memberBlurb": "1926 No. 9 natural — the toro-sized five-year Padron for members who want length and force."
+      },
+      "menuLine": "Padron 1926 Series · 6¼ × 52 · Toro · Full · Nicaragua · $28 · Notes: black pepper, dark chocolate, leather, cedar, sweetness",
+      "stickSize": "6¼ × 52 · Toro",
+      "id": "cur-49-pad-1926-n9-nat"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 9,
+        "recommendationConfidence": "High",
+        "beginnerSafe": "No",
+        "articleSource": "https://www.padron.com/"
+      },
+      "guidance": {
+        "flavorFamily": "Dark & Heavy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Maduro wrapper on 1926 No. 9 — molasses and dark cocoa over pepper.",
+        "binderRole": "Nicaraguan binder.",
+        "fillerRole": "Nicaraguan filler — boldest everyday super-premium.",
+        "bestFor": "Cask-strength bourbon, port, double espresso, Padron 1926 Best Pick (maduro).",
+        "avoidIf": "Mild Connecticut or Thousands tier only.",
+        "whyRecommend": "Recommend as 1926 No. 9 maduro — toro flagship for heavy pours.",
+        "memberBlurb": "1926 No. 9 maduro — toro with five-year maduro weight; the super-premium Padron default for bourbon."
+      },
+      "menuLine": "Padron 1926 Series · 6¼ × 52 · Toro · Full · Nicaragua · $30 · Notes: dark cocoa, molasses, pepper, leather, char",
+      "stickSize": "6¼ × 52 · Toro",
+      "id": "cur-50-pad-1926-n9-mad"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 9,
+        "recommendationConfidence": "High",
+        "beginnerSafe": "No",
+        "articleSource": "https://www.padron.com/"
+      },
+      "guidance": {
+        "flavorFamily": "Earthy",
+        "occasion": "Celebration",
+        "pairingAffinity": "Cognac",
+        "wrapperRole": "Aged Nicaraguan wrapper — massive complexity without harshness.",
+        "binderRole": "Nicaraguan binder — decade-plus stock.",
+        "fillerRole": "Nicaraguan filler — shifting earth, fruit, cocoa arc.",
+        "bestFor": "Extra añejo tequila, Blue Label Scotch, rare cognac, Padron refined luxury slot.",
+        "avoidIf": "Budget cap under $25 or user wants Thousands/1964 only.",
+        "whyRecommend": "Recommend as Family Reserve refined option — pinnacle smoothness, No. 44 format."
+      },
+      "menuLine": "Padron Family Reserve No. 44 · 6 × 52 · Torpedo · Full · Nicaragua · $38 · Notes: earth, dark fruit, cocoa, cream",
+      "stickSize": "6 × 52 · Torpedo",
+      "id": "cur-51-pad-fr-44"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 9,
+        "recommendationConfidence": "High",
+        "beginnerSafe": "No",
+        "articleSource": "https://www.padron.com/"
+      },
+      "guidance": {
+        "flavorFamily": "Earthy",
+        "occasion": "Celebration",
+        "pairingAffinity": "Cognac",
+        "wrapperRole": "Aged wrapper on extended churchill — creamy, evolving finish.",
+        "binderRole": "Nicaraguan binder — Family Reserve construction.",
+        "fillerRole": "Nicaraguan filler — rarest Padron reserves.",
+        "bestFor": "Extra añejo, Blue Label, cognac, collector celebration.",
+        "avoidIf": "Short session or budget-sensitive member.",
+        "whyRecommend": "Recommend when user asks for Padron pinnacle — Family Reserve churchill.",
+        "memberBlurb": "Family Reserve No. 50 — the long, creamy Padron luxury session for cognac and extra añejo."
+      },
+      "menuLine": "Padron Family Reserve No. 50 · 7 × 50 · Churchill · Full · Nicaragua · $42 · Notes: earth, fruit, cocoa, cream",
+      "stickSize": "7 × 50 · Churchill",
+      "id": "cur-52-pad-fr-50"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 9,
+        "recommendationConfidence": "High",
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.padron.com/"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Morning coffee",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Connecticut Shade wrapper — sole mild Padron — cream and soft pepper.",
+        "binderRole": "Nicaraguan binder under mild wrapper.",
+        "fillerRole": "Nicaraguan filler — medium body, creamy, approachable.",
+        "bestFor": "Creamy lattes, white Burgundy, pilsners, Padron contrast wildcard vs 1926/1964 maduro.",
+        "avoidIf": "User wants full Nicaraguan puro power, 1926 pepper bomb, or maduro sweetness only.",
+        "whyRecommend": "Recommend when user wants Padron prestige with Connecticut mildness — creamy wildcard in Padron-only flights.",
+        "memberBlurb": "Padron Damaso — the only Connecticut Shade Padron; creamy wildcard in an all-Padron flight."
+      },
+      "menuLine": "Padron Damaso Robusto · 5¼ × 50 · Robusto · Medium · Nicaragua · $14 · Notes: cream, cedar, white pepper",
+      "stickSize": "5¼ × 50 · Robusto",
+      "id": "cur-53-pad-damaso-rob"
+    }
+  ]
+}

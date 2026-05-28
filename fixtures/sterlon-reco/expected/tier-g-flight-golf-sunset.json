@@ -1,0 +1,81 @@
+{
+  "comfortAskDetected": true,
+  "targetSmokeMinutes": 58,
+  "connecticutWrapperCount": 2,
+  "minTierInFlight": 2,
+  "maxStrengthInFlight": 3,
+  "cardsProductIds": [
+    {
+      "slot": "best",
+      "cigarId": "bb25-14-lg-ct-hc",
+      "spiritId": "spi-trk-bookers"
+    },
+    {
+      "slot": "safe",
+      "cigarId": "cur-08-hoyo-epicure",
+      "spiritId": "spi-trk-bookers"
+    },
+    {
+      "slot": "wildcard",
+      "cigarId": "bb25-19-mac-court",
+      "spiritId": "spi-trk-bookers"
+    }
+  ],
+  "cigarIdsDistinct": true,
+  "spiritIdsDistinct": false,
+  "spiritBestIsAnchor": true,
+  "spiritRelativesDistinctWhenPoolAllows": false,
+  "bestPreservesLockedId": true,
+  "slotRoleMetadata": [
+    {
+      "manufacturerKey": "la",
+      "lineKey": "la galera connecticut",
+      "tier": 3,
+      "strength": 2,
+      "pepper": 4,
+      "wrapper": "ecuador connecticut",
+      "contrastVsBest": 0
+    },
+    {
+      "manufacturerKey": "hoyo de monterrey",
+      "lineKey": "hoyo de monterrey epicure epicure no. 2",
+      "tier": 6,
+      "strength": 3,
+      "pepper": 5,
+      "wrapper": "cuba",
+      "contrastVsBest": 0
+    },
+    {
+      "manufacturerKey": "macanudo",
+      "lineKey": "macanudo café",
+      "tier": 2,
+      "strength": 2,
+      "pepper": 4,
+      "wrapper": "connecticut shade",
+      "contrastVsBest": 0
+    }
+  ],
+  "wildcardContrastMeaningful": true,
+  "refinedElevatedVsBest": true,
+  "repairFired": [],
+  "progressionIntent": false,
+  "provenanceSignals": [
+    "catalog-shell",
+    "context-runtime",
+    "named-spirit",
+    "pairing-strategy-complementary",
+    "flight-philosophy",
+    "flight-philosophy-rerank-skipped",
+    "ontology-suppressed"
+  ],
+  "generatePipelineOrder": [
+    "pickSlotIds",
+    "applyFlightSlotDiversityIds",
+    "reconcileBestPickBodyIntentIds",
+    "reconcileWildcardBodyIntentIds",
+    "applyCigarFlightPhilosophy",
+    "applySpiritFlightPhilosophy"
+  ],
+  "rankedPoolSize": 154,
+  "governanceOk": true
+}

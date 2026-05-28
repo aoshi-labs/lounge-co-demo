@@ -1,0 +1,24 @@
+{
+  "budgetMode": "ceiling",
+  "budgetMin": null,
+  "budgetMax": 40,
+  "budgetTarget": null,
+  "budgetCeiling": 40,
+  "categoryFocus": "spirit",
+  "degraded": false,
+  "cigars": [
+    null,
+    null,
+    null
+  ],
+  "cigarMsrps": [
+    null,
+    null,
+    null
+  ],
+  "spirit": "Russell's Reserve 10 Year",
+  "spiritMsrp": 45,
+  "allCigarsWithinBudget": true,
+  "spiritWithinBudget": false,
+  "hasBudgetSignal": true
+}

@@ -1,0 +1,22 @@
+{
+  "canonicalPass": 22,
+  "canonicalTotal": 26,
+  "scenarioPass": 5,
+  "scenarioTotal": 7,
+  "averageGrade": "B",
+  "averageGradeNumeric": 0.789,
+  "antiPairingViolations": 4,
+  "ontologyLiftAvg": 0.05266666666666666,
+  "gate": {
+    "ok": false,
+    "canonFail": 4,
+    "antiOk": true,
+    "scenarioFail": 2,
+    "benchmarkAverageNumeric": 0.7730869565217392,
+    "averageGradeNumeric": 0.789,
+    "averageRealism": 0.72,
+    "gradeOk": true,
+    "ontologyLiftAvg": 0.05266666666666666
+  },
+  "ok": false
+}

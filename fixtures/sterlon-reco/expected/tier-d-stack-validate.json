@@ -1,0 +1,19 @@
+{
+  "ok": false,
+  "missing": [
+    "SterlonGateway",
+    "SterlonPresentationLifecycle",
+    "SterlonGatewayLifecycle",
+    "SterlonProsePipeline",
+    "SterlonPresentationOverlays"
+  ],
+  "warnings": [
+    "SterlonConciergeProse",
+    "SterlonScrollAnchor",
+    "SterlonChatPrompts",
+    "SterlonTurnHandlers"
+  ],
+  "hasResolveTurn": true,
+  "hasLoungeProducts": true,
+  "requiredModuleCount": 12
+}

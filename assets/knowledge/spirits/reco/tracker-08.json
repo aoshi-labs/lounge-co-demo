@@ -1,0 +1,403 @@
+{
+  "version": 1,
+  "shard": "tracker-08",
+  "category": "spirit",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 8,
+  "products": [
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-makers-mark",
+      "sensory": {
+        "body": 5,
+        "sweetness": 7,
+        "pepper": 3,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-MAKERS-MARK",
+        "article": "https://www.royalbatch.com/blog-detail/best-selling-alcohol-in-the-usa-in-2025-what-americans-actually-chose",
+        "source": "Industry reference (US retail sales 2025)"
+      },
+      "journeyRank": 90,
+      "spec": {
+        "proof": 90.0,
+        "abvPercent": 45.0,
+        "mash": "Wheated mash (no rye)",
+        "style": "Wheated bourbon",
+        "origin": "Kentucky",
+        "msrp": 32
+      },
+      "name": "Maker's Mark Kentucky Straight Bourbon",
+      "tags": [
+        {
+          "id": "vanilla",
+          "weight": 1.0
+        },
+        {
+          "id": "caramel",
+          "weight": 0.95
+        },
+        {
+          "id": "honey",
+          "weight": 0.85
+        },
+        {
+          "id": "citrus",
+          "weight": 0.75
+        },
+        {
+          "id": "orange_peel",
+          "weight": 0.7
+        },
+        {
+          "id": "oak",
+          "weight": 0.65
+        },
+        {
+          "id": "spice",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "japanese",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-mars-iwai",
+      "sensory": {
+        "body": 5,
+        "sweetness": 6,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-MARS-IWAI",
+        "article": "https://www.hombo.co.jp/en/product/iwai-tradition/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 62,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Blended malt & grain (sherry casks)",
+        "style": "Blended Japanese whisky",
+        "origin": "Japan",
+        "msrp": 45
+      },
+      "name": "Mars Iwai Tradition",
+      "tags": [
+        {
+          "id": "plum",
+          "weight": 1.0
+        },
+        {
+          "id": "cherry",
+          "weight": 0.95
+        },
+        {
+          "id": "spice",
+          "weight": 0.85
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "cognac",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-martell-bs",
+      "sensory": {
+        "body": 5,
+        "sweetness": 8,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-MARTELL-BS",
+        "article": "https://www.martell.com/en-ww/collection/blue-swift/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 76,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Cognac eaux-de-vie; bourbon barrel finish",
+        "style": "Cognac finished (VSOP, bourbon cask)",
+        "origin": "Cognac, France",
+        "msrp": 55
+      },
+      "name": "Martell Blue Swift",
+      "tags": [
+        {
+          "id": "banana",
+          "weight": 1.0
+        },
+        {
+          "id": "caramel",
+          "weight": 0.95
+        },
+        {
+          "id": "pear",
+          "weight": 0.85
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.75
+        },
+        {
+          "id": "coconut",
+          "weight": 0.7
+        },
+        {
+          "id": "spice",
+          "weight": 0.65
+        },
+        {
+          "id": "cinnamon",
+          "weight": 0.6
+        },
+        {
+          "id": "ginger",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "cognac",
+      "journeyLevel": "advanced",
+      "id": "spi-trk-martell-cb",
+      "sensory": {
+        "body": 6,
+        "sweetness": 7,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-MARTELL-CB",
+        "article": "https://www.martell.com/en-us/collection/cordon-bleu/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 77,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Borderies & Grande Champagne eaux-de-vie",
+        "style": "Cognac XO",
+        "origin": "Cognac, France",
+        "msrp": 220
+      },
+      "name": "Martell Cordon Bleu",
+      "tags": [
+        {
+          "id": "plum",
+          "weight": 1.0
+        },
+        {
+          "id": "apple",
+          "weight": 0.95
+        },
+        {
+          "id": "spice",
+          "weight": 0.85
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-mich-bbn",
+      "sensory": {
+        "body": 5,
+        "sweetness": 6,
+        "pepper": 3,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-MICH-BBN",
+        "article": "https://michters.com/kentucky-straight-bourbon/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 31,
+      "spec": {
+        "proof": 91.4,
+        "abvPercent": 45.7,
+        "mash": "Traditional bourbon mash",
+        "style": "Kentucky Straight Bourbon",
+        "origin": "Kentucky",
+        "msrp": 48
+      },
+      "name": "Michter's US*1 Kentucky Straight Bourbon",
+      "tags": [
+        {
+          "id": "caramel",
+          "weight": 1.0
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.95
+        },
+        {
+          "id": "smoke",
+          "weight": 0.85
+        },
+        {
+          "id": "oak",
+          "weight": 0.75
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "rye",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-mich-rye",
+      "sensory": {
+        "body": 5,
+        "sweetness": 6,
+        "pepper": 6,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-MICH-RYE",
+        "article": "https://michters.com/whiskey/us1-kentucky-straight-rye/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 40,
+      "spec": {
+        "proof": 84.8,
+        "abvPercent": 42.4,
+        "mash": "Rye-forward mash",
+        "style": "Kentucky Straight Rye",
+        "origin": "Kentucky",
+        "msrp": 48
+      },
+      "name": "Michter's US*1 Straight Rye",
+      "tags": [
+        {
+          "id": "spice",
+          "weight": 1.0
+        },
+        {
+          "id": "pepper",
+          "weight": 0.95
+        },
+        {
+          "id": "citrus",
+          "weight": 0.85
+        },
+        {
+          "id": "toffee",
+          "weight": 0.75
+        },
+        {
+          "id": "oak",
+          "weight": 0.7
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "scotch",
+      "journeyLevel": "novice",
+      "id": "spi-trk-monkey-shoulder",
+      "sensory": {
+        "body": 4,
+        "sweetness": 7,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-MONKEY-SHOULDER",
+        "article": "https://www.williamgrant.com/gb/brands/monkey-shoulder/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 53,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Blended Speyside malts",
+        "style": "Blended malt Scotch",
+        "origin": "Scotland",
+        "msrp": 35
+      },
+      "name": "Monkey Shoulder Blended Malt Scotch",
+      "tags": [
+        {
+          "id": "vanilla",
+          "weight": 1.0
+        },
+        {
+          "id": "floral",
+          "weight": 0.95
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "agave",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-montelobo",
+      "sensory": {
+        "body": 5,
+        "sweetness": 6,
+        "pepper": 7,
+        "cocoa": 4,
+        "earthiness": 7
+      },
+      "tracker": {
+        "sku": "SPI-TRK-MONTELOBO",
+        "article": "https://www.montelobos.com/en-us/our-mezcals/montelobos-espadin/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 73,
+      "spec": {
+        "proof": 86.4,
+        "abvPercent": 43.2,
+        "mash": "100% espadín agave",
+        "style": "Espadín mezcal",
+        "origin": "Oaxaca, Mexico",
+        "msrp": 35
+      },
+      "name": "Montelobos Espadín Mezcal",
+      "tags": [
+        {
+          "id": "earth",
+          "weight": 1.0
+        },
+        {
+          "id": "honey",
+          "weight": 0.95
+        },
+        {
+          "id": "citrus",
+          "weight": 0.85
+        },
+        {
+          "id": "smoke",
+          "weight": 0.75
+        },
+        {
+          "id": "agave",
+          "weight": 0.7
+        },
+        {
+          "id": "herbal",
+          "weight": 0.65
+        }
+      ],
+      "category": "spirit"
+    }
+  ]
+}

@@ -1,0 +1,474 @@
+[
+  {
+    "sku": "CA24-15-RYJ-WIDE",
+    "flavor_notes": "cedar, wood, earth, leather, mineral tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/romeo-y-julieta-wide-churchill-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/romeo-y-julieta-wide-churchill-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-16-PERDOMO-30-SG",
+    "flavor_notes": "cedar, baking spice, sweet tobacco, toast, light cocoa",
+    "article": "https://www.cigaraficionado.com/top25cigar/perdomo-30th-anniversary-sun-grown-epicure-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/perdomo-30th-anniversary-sun-grown-epicure-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-17-PLAS-151",
+    "flavor_notes": "cedar, wood, earth, leather, mineral tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/plasencia-cosecha-151-la-musica-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/plasencia-cosecha-151-la-musica-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-18-601-WARHEAD",
+    "flavor_notes": "cocoa, earth, pepper, espresso, dark sweetness",
+    "article": "https://www.cigaraficionado.com/top25cigar/601-la-bomba-warhead-x-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/601-la-bomba-warhead-x-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-19-HERRERA-NORTENO",
+    "flavor_notes": "earth, savory spice, cedar, cocoa, toasted tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/herrera-esteli-norteno-lonsdale-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/herrera-esteli-norteno-lonsdale-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-20-COHIBA-RIVIERA",
+    "flavor_notes": "cream, cedar, nuts, toast, light sweetness",
+    "article": "https://www.cigaraficionado.com/top25cigar/cohiba-riviera-robusto-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/cohiba-riviera-robusto-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-21-LFD-CHISELITO",
+    "flavor_notes": "cocoa, earth, pepper, espresso, dark sweetness",
+    "article": "https://www.cigaraficionado.com/top25cigar/la-flor-dominicana-double-ligero-chiselito-maduro-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/la-flor-dominicana-double-ligero-chiselito-maduro-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-22-ONEOFF-BT",
+    "flavor_notes": "earth, savory spice, cedar, cocoa, toasted tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/oneoff-black-tan-robusto-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/oneoff-black-tan-robusto-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-23-WARPED-CORTO",
+    "flavor_notes": "cedar, baking spice, sweet tobacco, toast, light cocoa",
+    "article": "https://www.cigaraficionado.com/top25cigar/warped-corto-x52-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/warped-corto-x52-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-24-FERIO-SUMMA",
+    "flavor_notes": "cedar, wood, earth, leather, mineral tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/ferio-tego-summa-corona-gorda-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/ferio-tego-summa-corona-gorda-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-25-TAT-RES-A1",
+    "flavor_notes": "cedar, wood, earth, leather, mineral tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/tatuaje-reserva-a-uno-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/tatuaje-reserva-a-uno-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-01-PADRON-60",
+    "flavor_notes": "malted milk, cafe au lait, chocolate, coffee",
+    "article": "https://www.cigaraficionado.com/top25cigar/padron-60th-anniversary-perfecto-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/padron-60th-anniversary-perfecto-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-02-COHIBA-AMBAR",
+    "flavor_notes": "oak, caramel, almond, cream, fruit",
+    "article": "https://www.cigaraficionado.com/top25cigar/cohiba-ambar-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/cohiba-ambar-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-03-TATUAJE-BLACK",
+    "flavor_notes": "smores, campfire, oak, tannin",
+    "article": "https://www.cigaraficionado.com/top25cigar/tatuaje-black-petite-lancero-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/tatuaje-black-petite-lancero-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-04-CUESTA-REY-CF",
+    "flavor_notes": "honey, nougat, chocolate, cashew",
+    "article": "https://www.cigaraficionado.com/top25cigar/cuesta-rey-centro-fino-sungrown-pyramid-no-9-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/cuesta-rey-centro-fino-sungrown-pyramid-no-9-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-05-TRINIDAD-ESP3",
+    "flavor_notes": "toasted vanilla, nougat, brown sugar, toffee",
+    "article": "https://www.cigaraficionado.com/top25cigar/trinidad-espiritu-series-no-3-belicoso-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/trinidad-espiritu-series-no-3-belicoso-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-06-ROCKY-EMERALD",
+    "flavor_notes": "ground coffee, leather, hickory, black pepper",
+    "article": "https://www.cigaraficionado.com/top25cigar/rocky-patel-emerald-robusto-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/rocky-patel-emerald-robusto-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-07-NASSER-GOAT",
+    "flavor_notes": "chocolate-covered almonds, vanilla, earth, coffee, raisin, coconut rum cake",
+    "article": "https://www.cigaraficionado.com/top25cigar/nasser-the-goat-by-a-j-fernandez-toro-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/nasser-the-goat-by-a-j-fernandez-toro-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-08-DIPLOMATICOS-GENIOS",
+    "flavor_notes": "caramel, peaches, autumn apples, tea, cigar box, earth",
+    "article": "https://www.cigaraficionado.com/top25cigar/diplomaticos-genios-exclusivo-phoenicia-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/diplomaticos-genios-exclusivo-phoenicia-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-09-OPUSX-ANGEL",
+    "flavor_notes": "licorice, wood, baking spices, leather, honey, red pepper",
+    "article": "https://www.cigaraficionado.com/top25cigar/fuente-fuente-opusx-angel-s-share-reserva-d-chateau-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/fuente-fuente-opusx-angel-s-share-reserva-d-chateau-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-10-FERIO-TIMELESS",
+    "flavor_notes": "toffee, cocoa, toasty marshmallow, nuts",
+    "article": "https://www.cigaraficionado.com/top25cigar/ferio-tego-timeless-supreme-650-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/ferio-tego-timeless-supreme-650-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-11-LIGA-T52",
+    "flavor_notes": "earth, caramel, cinnamon, clove",
+    "article": "https://www.cigaraficionado.com/top25cigar/liga-privada-t52-corona-viva-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/liga-privada-t52-corona-viva-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-12-MAC-EMISSARY-FR",
+    "flavor_notes": "leather, black pepper, coffee bean, cocoa",
+    "article": "https://www.cigaraficionado.com/top25cigar/macanudo-emissary-france-churchill-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/macanudo-emissary-france-churchill-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-13-LFD-30YEARS",
+    "flavor_notes": "leather, coffee, coconut, clove",
+    "article": "https://www.cigaraficionado.com/top25cigar/la-flor-dominicana-30-years-chisel-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/la-flor-dominicana-30-years-chisel-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-14-AGING-QUATTRO",
+    "flavor_notes": "pepper, cinnamon, nutmeg, orange peel",
+    "article": "https://www.cigaraficionado.com/top25cigar/aging-room-quattro-nicaragua-concerto-impromptu-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/aging-room-quattro-nicaragua-concerto-impromptu-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-15-DAV-MILLENNIUM",
+    "flavor_notes": "maple candy, coffee bean, dark chocolate, oak, mocha, baking spice",
+    "article": "https://www.cigaraficionado.com/top25cigar/davidoff-millennium-blend-series-piramides-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/davidoff-millennium-blend-series-piramides-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-16-GELLIS-SAUNTER",
+    "flavor_notes": "nuts, wood, sweetness",
+    "article": "https://www.cigaraficionado.com/top25cigar/gellis-family-cigars-saunter-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/gellis-family-cigars-saunter-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-17-VIAJE-ANNIV-SILVER",
+    "flavor_notes": "gingerbread, caramel, Christmas cake, candied orange peel, nutmeg",
+    "article": "https://www.cigaraficionado.com/top25cigar/viaje-fifteen-plus-two-and-a-half-anniversary-silver-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/viaje-fifteen-plus-two-and-a-half-anniversary-silver-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-18-OLIVA-MEL-MAD",
+    "flavor_notes": "dark chocolate, raisin, caramel, mineral",
+    "article": "https://www.cigaraficionado.com/top25cigar/oliva-serie-v-melanio-maduro-robusto-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/oliva-serie-v-melanio-maduro-robusto-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-19-SANCHO-PANZA",
+    "flavor_notes": "chocolate, honey-roasted peanut, toffee, cherry, raisin, fig",
+    "article": "https://www.cigaraficionado.com/top25cigar/sancho-panza-belicoso-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/sancho-panza-belicoso-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-20-ONEOFF-BLACK",
+    "flavor_notes": "marzipan, white pepper, leather, hearty grains",
+    "article": "https://www.cigaraficionado.com/top25cigar/oneoff-black-toro-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/oneoff-black-toro-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-21-CLE-MADURO",
+    "flavor_notes": "red pepper, cinnamon, ginger, leather, wood",
+    "article": "https://www.cigaraficionado.com/top25cigar/c-l-e-maduro-50x5-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/c-l-e-maduro-50x5-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-22-OLMEC-MADURO",
+    "flavor_notes": "earth, spice, coffee bean, black cherry",
+    "article": "https://www.cigaraficionado.com/top25cigar/olmec-maduro-grande-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/olmec-maduro-grande-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-23-LA-AROMA",
+    "flavor_notes": "roasted peanut, toasted chestnut, licorice, minerals",
+    "article": "https://www.cigaraficionado.com/top25cigar/la-aroma-de-cuba-robusto-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/la-aroma-de-cuba-robusto-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-24-LA-AURORA-FUERTE",
+    "flavor_notes": "oak, nuts, leather, caramel",
+    "article": "https://www.cigaraficionado.com/top25cigar/la-aurora-family-creed-series-fuerte-sol-robusto-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/la-aurora-family-creed-series-fuerte-sol-robusto-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA25-25-ALADINO-85",
+    "flavor_notes": "almond paste, baking spices, freshly baked cookie",
+    "article": "https://www.cigaraficionado.com/top25cigar/aladino-85-aniversario-reserva-toro-2025",
+    "source_confidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/aladino-85-aniversario-reserva-toro-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-01-HOYO-SANJUAN",
+    "flavor_notes": "delicate, aromatic, elegant, light, complex",
+    "article": "https://www.habanos.com/en/news/hoyo-de-monterrey-le-hoyo-de-san-juan-en/",
+    "source_confidence": "Habanos official",
+    "research": "Verified against https://www.habanos.com/en/news/hoyo-de-monterrey-le-hoyo-de-san-juan-en/.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-02-EPC-MAJESTIC",
+    "flavor_notes": "oak, tea, caramel, orange peel, woody",
+    "article": "https://www.cigaraficionado.com/ratings/20939/name/e-p-carrillo-encore-majestic",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/20939/name/e-p-carrillo-encore-majestic.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-03-AF-ROSADO-52",
+    "flavor_notes": "wood, citrus, cinnamon, almond, sweet",
+    "article": "https://www.cigaraficionado.com/ratings/21651/name/arturo-fuente-rosado-sungrown-magnum-r-vitola-fifty-two",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/21651/name/arturo-fuente-rosado-sungrown-magnum-r-vitola-fifty-two.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-04-COHIBA-PIR-E",
+    "flavor_notes": "medium-full, refined, creamy, complex",
+    "article": "https://www.habanos.com/en/news/cohiba-piramides-extra-primer-figurado-en-la-gama-permanente-de-cohiba-en/",
+    "source_confidence": "Habanos official",
+    "research": "Verified against https://www.habanos.com/en/news/cohiba-piramides-extra-primer-figurado-en-la-gama-permanente-de-cohiba-en/.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-05-OPUSX-RDC",
+    "flavor_notes": "licorice, wood, baking spices, leather, honey, red pepper",
+    "article": "https://www.cigaraficionado.com/top25cigar/fuente-fuente-opusx-angel-s-share-reserva-d-chateau-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/fuente-fuente-opusx-angel-s-share-reserva-d-chateau-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-06-AF-DCHATEAU",
+    "flavor_notes": "cream, cedar, nuts, coffee, light sweetness",
+    "article": "https://www.cigaraficionado.com/ratings/16970/name/arturo-fuente-chateau-fuente-churchill",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/16970/name/arturo-fuente-chateau-fuente-churchill.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-07-FDLA-TG",
+    "flavor_notes": "earth, cocoa, anise, sweet",
+    "article": "https://www.cigaraficionado.com/ratings/19863/name/flor-de-las-antillas-maduro-toro-gordo-toro",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/19863/name/flor-de-las-antillas-maduro-toro-gordo-toro.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-08-HOYO-EPICURE",
+    "flavor_notes": "delicate, aromatic, elegant, light, creamy",
+    "article": "https://www.habanos.com/en/the-habanos-brands-academia/hoyo-de-monterrey-brand/",
+    "source_confidence": "Habanos official",
+    "research": "Verified against https://www.habanos.com/en/the-habanos-brands-academia/hoyo-de-monterrey-brand/.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-09-ZINO-CHUBBY",
+    "flavor_notes": "cream, cedar, nuts, floral, light spice",
+    "article": "https://www.cigaraficionado.com/ratings/25542/name/davidoff-signature-petit-corona-petit-corona",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/25542/name/davidoff-signature-petit-corona-petit-corona.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-10-UPMANN-M50",
+    "flavor_notes": "light, medium, balanced, woody, creamy",
+    "article": "https://www.habanos.com/en/news/habanos-s-a-presenta-magnum-50-de-h-upmann-en/",
+    "source_confidence": "Habanos official",
+    "research": "Verified against https://www.habanos.com/en/news/habanos-s-a-presenta-magnum-50-de-h-upmann-en/.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-11-VR-UNICO",
+    "flavor_notes": "medium-full, rich, woody, earthy, balanced",
+    "article": "https://www.habanos.com/en/the-habanos-brands-academia/vegas-robaina-brand/",
+    "source_confidence": "Habanos official",
+    "research": "Verified against https://www.habanos.com/en/the-habanos-brands-academia/vegas-robaina-brand/.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-12-PART-LUSI",
+    "flavor_notes": "full, powerful, earthy, spicy, woody",
+    "article": "https://www.habanos.com/en/the-habanos-brands-academia/partagas-brand/",
+    "source_confidence": "Habanos official",
+    "research": "Verified against https://www.habanos.com/en/the-habanos-brands-academia/partagas-brand/.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-13-PAD-1964-EX",
+    "flavor_notes": "cocoa, coffee, earth, sweet tobacco, cedar",
+    "article": "https://www.cigaraficionado.com/top25cigar/padron-1964-anniversary-series-exclusivo-maduro-2011",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/top25cigar/padron-1964-anniversary-series-exclusivo-maduro-2011.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-14-COHIBA-ROB",
+    "flavor_notes": "sweet wood, nuts, steely tang",
+    "article": "https://www.cigaraficionado.com/ratings/7738/name/cohiba-robusto-robusto",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/7738/name/cohiba-robusto-robusto.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-15-RYJ-RR-CH",
+    "flavor_notes": "wood, nuts, leather, wheaty, mellow",
+    "article": "https://www.cigaraficionado.com/ratings/8964/name/romeo-y-julieta-reserva-real-churchill-churchill",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/8964/name/romeo-y-julieta-reserva-real-churchill-churchill.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-16-MF-JUDGE-TORO",
+    "flavor_notes": "smoky, peaty, wood, salty, nuts, spice",
+    "article": "https://www.cigaraficionado.com/ratings/20372/name/my-father-the-judge-toro-fino-toro",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/20372/name/my-father-the-judge-toro-fino-toro.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-17-DAV-NO2",
+    "flavor_notes": "cream, cedar, nuts, floral, light spice",
+    "article": "https://www.cigaraficionado.com/ratings/21447/name/davidoff-signature-petit-corona-petit-corona",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/21447/name/davidoff-signature-petit-corona-petit-corona.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-18-FERIO-PRESTIGE",
+    "flavor_notes": "nuts, wood, cedar, almond, molasses, vanilla",
+    "article": "https://www.cigaraficionado.com/ratings/24199/name/ferio-tego-timeless-prestige-churchill-churchill",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/24199/name/ferio-tego-timeless-prestige-churchill-churchill.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-19-PAD-1926-35",
+    "flavor_notes": "nuts, spice, cedar, black tea, sweetness",
+    "article": "https://www.cigaraficionado.com/ratings/25726/name/padron-serie-1926-no-35",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/25726/name/padron-serie-1926-no-35.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-20-ASHTON-VSG-TORP",
+    "flavor_notes": "roasted coffee, tobacco, earthy, cedar",
+    "article": "https://www.cigaraficionado.com/ratings/14125/name/ashton-virgin-sun-grown-torpedo-figurado",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/14125/name/ashton-virgin-sun-grown-torpedo-figurado.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-21-COH-SIGLO-VI",
+    "flavor_notes": "medium, aromatic, complex, creamy",
+    "article": "https://www.habanos.com/en/news/cohiba-siglo-vi-tubos-en/",
+    "source_confidence": "Habanos official",
+    "research": "Verified against https://www.habanos.com/en/news/cohiba-siglo-vi-tubos-en/.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-22-MONTE-NO2",
+    "flavor_notes": "leather, cinnamon, nutmeg, tangy wood",
+    "article": "https://www.cigaraficionado.com/ratings/25885/name/montecristo-no-2",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/25885/name/montecristo-no-2.",
+    "grade": 10
+  },
+  {
+    "sku": "CUR-23-LIGA-H99-ROB",
+    "flavor_notes": "earth, dark chocolate, espresso, apple pie, raisin",
+    "article": "https://www.cigaraficionado.com/ratings/25581/name/liga-privada-h99-corona-doble-churchill",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Verified against https://www.cigaraficionado.com/ratings/25581/name/liga-privada-h99-corona-doble-churchill.",
+    "grade": 10
+  }
+]

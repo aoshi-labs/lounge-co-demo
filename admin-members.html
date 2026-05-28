@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Members — Admin</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Manage your lounge's members — view, search, verify, and moderate." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Members — Admin" />
+  <meta property="og:description" content="Manage your lounge's members — view, search, verify, and moderate." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Members — Admin" />
+  <meta name="twitter:description" content="Manage your lounge's members — view, search, verify, and moderate." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/admin-members.css"/>
+</head>
+<body>
+
+<nav class="sidebar admin" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Owner Console</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row"><div class="avatar sidebar-user-avatar-owner"><img src="assets/images/gerald-o.jpg" alt=""/></div><div class="sidebar-user-info"><div class="sidebar-user-name">Gerald Owens</div><div class="sidebar-user-tier">Owner</div></div></div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Overview</div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Dashboard</a>
+    <a href="admin-analytics.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Analytics</a>
+    <div class="nav-section-label">Manage</div>
+    <a href="admin-members.html" class="nav-item active"><i data-lucide="users" class="ic-17"></i>Members</a>
+    <a href="admin-catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="admin-orders.html" class="nav-item"><i data-lucide="receipt-text" class="ic-17"></i>Requests<span class="notif-dot">3</span></a>
+    <a href="admin-events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-settings.html" class="nav-item"><i data-lucide="settings" class="ic-17"></i>Lounge Settings</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="chevron-left" class="ic-17"></i>Back to Member View</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area admin">
+  <h1 class="visually-hidden">Members</h1>
+  <header class="top-bar">
+    <button class="icon-btn sup-menu-btn" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+      <i data-lucide="menu" class="ic-16"></i>
+    </button>
+    <div class="topbar-actions">
+      <button class="admin-members-invite-btn">+ Invite Member</button>
+    </div>
+  </header>
+
+  <div class="admin-members-content">
+
+    <!-- Filters row -->
+    <div class="admin-members-filters-row">
+      <input class="input admin-members-search-input" type="text" placeholder="Search by name, email, or username…" aria-label="Search members"/>
+      <div class="admin-members-button-row">
+        <button class="filter-tab active" onclick="setFilter(this)">All</button>
+        <button class="filter-tab" onclick="setFilter(this)">Pending <span class="admin-members-filter-count-badge">5</span></button>
+        <button class="filter-tab" onclick="setFilter(this)">Elite+</button>
+        <button class="filter-tab" onclick="setFilter(this)">Staff</button>
+        <button class="filter-tab" onclick="setFilter(this)">Banned</button>
+      </div>
+    </div>
+
+    <!-- Stats summary — moved out of the top bar to sit directly beneath
+         the search + filter row where it reads as context for the table. -->
+    <div class="adm-stats-summary">247 active · 5 pending</div>
+
+    <!-- Pending review banner -->
+    <div class="admin-members-pending-banner">
+      <i data-lucide="alert-circle" class="ic-20"></i>
+      <div class="admin-members-pending-banner-body"><div class="admin-members-pending-banner-title">5 member applications need review</div><div class="admin-members-pending-banner-subtext">Applicants completed age verification — your approval grants lounge access.</div></div>
+      <button class="admin-members-pending-banner-cta">Review Now</button>
+    </div>
+
+    <!-- Members table -->
+    <div class="admin-members-table">
+      <table>
+        <thead><tr><th>Member</th><th>Joined</th><th>Tier</th><th>Points</th><th>Last Active</th><th>Spend MTD</th><th></th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="admin-members-table-member-cell"><div class="avatar admin-members-avatar-champion"><img src="assets/images/marcus-r.jpg" alt=""/></div><div><div class="admin-members-table-name">Marcus Reilly</div><div class="admin-members-table-email">marcus.r@example.com</div></div></div></td>
+            <td>Jan 2022</td>
+            <td><span class="tier-pill admin-members-tier-pill-champion">Champion</span></td>
+            <td class="admin-members-table-points-gold">2,840</td>
+            <td>2h ago</td>
+            <td class="admin-members-table-spend">$684</td>
+            <td><button class="icon-btn admin-members-table-more-btn" aria-label="More options"><i data-lucide="more-horizontal" class="ic-14"></i></button></td>
+          </tr>
+          <tr>
+            <td><div class="admin-members-table-member-cell"><div class="avatar admin-members-avatar-runner-up"><img src="assets/images/james-w.jpg" alt=""/></div><div><div class="admin-members-table-name">James Wallace</div><div class="admin-members-table-email">james.w@example.com</div></div></div></td>
+            <td>Sep 2022</td>
+            <td><span class="tier-pill admin-members-tier-pill-runner-up">Runner-Up</span></td>
+            <td>2,415</td>
+            <td>1h ago</td>
+            <td class="admin-members-table-spend">$542</td>
+            <td><button class="icon-btn admin-members-table-more-btn" aria-label="More options"><i data-lucide="more-horizontal" class="ic-14"></i></button></td>
+          </tr>
+          <tr>
+            <td><div class="admin-members-table-member-cell"><div class="avatar admin-members-avatar-bronze"><img src="assets/images/robert-b.jpg" alt=""/></div><div><div class="admin-members-table-name">Robert Barlow</div><div class="admin-members-table-email">robert.b@example.com</div></div></div></td>
+            <td>Nov 2022</td>
+            <td><span class="tier-pill admin-members-tier-pill-bronze">Bronze</span></td>
+            <td>1,980</td>
+            <td>3h ago</td>
+            <td class="admin-members-table-spend">$398</td>
+            <td><button class="icon-btn admin-members-table-more-btn" aria-label="More options"><i data-lucide="more-horizontal" class="ic-14"></i></button></td>
+          </tr>
+          <tr>
+            <td><div class="admin-members-table-member-cell"><div class="avatar admin-members-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div><div><div class="admin-members-table-name">Thomas Harrington</div><div class="admin-members-table-email">thomas.h@example.com</div></div></div></td>
+            <td>Mar 2023</td>
+            <td><span class="tier-pill admin-members-tier-pill-elite">Elite</span></td>
+            <td>1,744</td>
+            <td>42m ago</td>
+            <td class="admin-members-table-spend">$352</td>
+            <td><button class="icon-btn admin-members-table-more-btn" aria-label="More options"><i data-lucide="more-horizontal" class="ic-14"></i></button></td>
+          </tr>
+          <tr>
+            <td><div class="admin-members-table-member-cell"><div class="avatar admin-members-avatar-brown"><img src="assets/images/derick-l.jpg" alt=""/></div><div><div class="admin-members-table-name">Derek Lambert</div><div class="admin-members-table-email">derek.l@example.com</div></div></div></td>
+            <td>Apr 2023</td>
+            <td><span class="tier-pill admin-members-tier-pill-member">Member</span></td>
+            <td>1,512</td>
+            <td>5h ago</td>
+            <td class="admin-members-table-spend">$267</td>
+            <td><button class="icon-btn admin-members-table-more-btn" aria-label="More options"><i data-lucide="more-horizontal" class="ic-14"></i></button></td>
+          </tr>
+          <tr>
+            <td><div class="admin-members-table-member-cell"><div class="avatar admin-members-avatar-blue">AK</div><div><div class="admin-members-table-name">Alan Kim</div><div class="admin-members-table-email">alan.k@example.com</div></div></div></td>
+            <td>Jul 2023</td>
+            <td><span class="tier-pill admin-members-tier-pill-member">Member</span></td>
+            <td>1,388</td>
+            <td>Yesterday</td>
+            <td class="admin-members-table-spend">$215</td>
+            <td><button class="icon-btn admin-members-table-more-btn" aria-label="More options"><i data-lucide="more-horizontal" class="ic-14"></i></button></td>
+          </tr>
+          <tr>
+            <td><div class="admin-members-table-member-cell"><div class="avatar admin-members-avatar-pending">SK</div><div><div class="admin-members-table-name">Stephen Knight <span class="admin-members-pending-badge">PENDING</span></div><div class="admin-members-table-email">stephen.k@example.com · Applied 2 days ago</div></div></div></td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td class="admin-members-pending-row-actions"><button class="admin-members-approve-btn">Approve</button><button class="admin-members-deny-btn">Deny</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="admin-members-pagination">
+        <span class="admin-members-pagination-count">Showing 7 of 247 members</span>
+        <div class="admin-members-button-row">
+          <button class="icon-btn admin-members-pagination-btn" aria-label="Previous"><i data-lucide="chevron-left" class="ic-12"></i></button>
+          <button class="icon-btn admin-members-pagination-btn-active">1</button>
+          <button class="icon-btn admin-members-pagination-btn">2</button>
+          <button class="icon-btn admin-members-pagination-btn">3</button>
+          <button class="icon-btn admin-members-pagination-btn" aria-label="Next"><i data-lucide="chevron-right" class="ic-12"></i></button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+</body>
+</html>

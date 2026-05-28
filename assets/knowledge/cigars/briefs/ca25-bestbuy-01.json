@@ -1,0 +1,209 @@
+{
+  "version": 1,
+  "shard": "ca25-bestbuy-01",
+  "category": "cigar",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 9,
+  "products": [
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/don-lino-africa-kudu-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Savory",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Nicaragua wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/don-lino-africa-kudu-2025.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $6' requests - cite CA 2025 Best Buy list."
+      },
+      "menuLine": "Don Lino Africa · 4 × 38 · Petit Corona · Medium · Nicaragua · $6 · Notes: earth, savory spice, cedar, cocoa, toasted tobacco",
+      "stickSize": "4 × 38 · Petit Corona",
+      "id": "bb25-01-donlino-kudu"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/el-rey-del-mundo-shade-grown-churchill-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuador Connecticut wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Honduras binder supports structure and integration with the filler.",
+        "fillerRole": "Honduras / Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/el-rey-del-mundo-shade-grown-churchill-2025.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $7' requests - cite CA 2025 Best Buy list."
+      },
+      "menuLine": "El Rey del Mundo Shade Grown · 7 × 48 · Churchill · Medium-Light · Honduras · $7 · Notes: cream, cedar, nuts, toast, light sweetness",
+      "stickSize": "7 × 48 · Churchill",
+      "id": "bb25-02-erdm-shade-ch"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/brick-house-corona-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Savory",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Brazil wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Honduras binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/brick-house-corona-2025.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $7' requests - cite CA 2025 Best Buy list."
+      },
+      "menuLine": "Brick House Brick House · 5½ × 44 · Corona · Medium · Nicaragua · $7 · Notes: earth, savory spice, cedar, cocoa, toasted tobacco",
+      "stickSize": "5½ × 44 · Corona",
+      "id": "bb25-03-brick-corona"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/arturo-fuente-petit-corona-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "Morning coffee",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Cameroon wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Dominican Republic binder supports structure and integration with the filler.",
+        "fillerRole": "Dominican Republic filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/arturo-fuente-petit-corona-2025.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $6' requests - cite CA 2025 Best Buy list."
+      },
+      "menuLine": "Arturo Fuente Arturo Fuente · 5¼ × 42 · Petit Corona · Medium · Dominican Republic · $6 · Notes: cedar, wood, earth, leather, mineral tobacco",
+      "stickSize": "5¼ × 42 · Petit Corona",
+      "id": "bb25-04-af-pc"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/punch-bottle-rocket-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Savory",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Honduras wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Honduras binder supports structure and integration with the filler.",
+        "fillerRole": "Honduras / Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/punch-bottle-rocket-2025.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $7' requests - cite CA 2025 Best Buy list."
+      },
+      "menuLine": "Punch Bottle Rocket · 5¼ × 52 · Figurado · Medium-Full · Honduras · $7 · Notes: earth, savory spice, cedar, cocoa, toasted tobacco",
+      "stickSize": "5¼ × 52 · Figurado",
+      "id": "bb25-05-punch-bottle"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/arturo-fuente-spanish-lonsdale-maduro-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "After dinner",
+        "pairingAffinity": "Rum",
+        "wrapperRole": "Broadleaf Maduro wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Dominican Republic binder supports structure and integration with the filler.",
+        "fillerRole": "Dominican Republic filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/arturo-fuente-spanish-lonsdale-maduro-2025.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $7' requests - cite CA 2025 Best Buy list."
+      },
+      "menuLine": "Arturo Fuente Spanish Lonsdale · 6½ × 42 · Lonsdale · Medium-Full · Dominican Republic · $7 · Notes: cedar, baking spice, sweet tobacco, toast, light cocoa",
+      "stickSize": "6½ × 42 · Lonsdale",
+      "id": "bb25-06-af-span-lon-m"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/charter-oak-ct-habano-lonsdale-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Savory",
+        "occasion": "After dinner",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuador Habano wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/charter-oak-ct-habano-lonsdale-2025.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $7' requests - cite CA 2025 Best Buy list."
+      },
+      "menuLine": "Charter Oak Connecticut Habano · 6½ × 44 · Lonsdale · Medium · Nicaragua · $7 · Notes: earth, savory spice, cedar, cocoa, toasted tobacco",
+      "stickSize": "6½ × 44 · Lonsdale",
+      "id": "bb25-07-charter-hab-lon"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/don-diego-corona-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Morning coffee",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuador Connecticut wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Dominican Republic binder supports structure and integration with the filler.",
+        "fillerRole": "Dominican Republic filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/don-diego-corona-2025.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $6' requests - cite CA 2025 Best Buy list."
+      },
+      "menuLine": "Don Diego Don Diego · 5½ × 44 · Corona · Medium-Light · Dominican Republic · $6 · Notes: cream, cedar, nuts, toast, light sweetness",
+      "stickSize": "5½ × 44 · Corona",
+      "id": "bb25-08-dondiego-cor"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/alec-bradley-chunk-maduro-xl-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Coffee",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "San Andrés Maduro wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Honduras binder supports structure and integration with the filler.",
+        "fillerRole": "Honduras / Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/alec-bradley-chunk-maduro-xl-2025.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $6' requests - cite CA 2025 Best Buy list."
+      },
+      "menuLine": "Alec Bradley Chunk Maduro · 4½ × 60 · Robusto · Medium-Full · Honduras · $6 · Notes: cocoa, coffee, earth, dark sweetness, cedar",
+      "stickSize": "4½ × 60 · Robusto",
+      "id": "bb25-09-ab-chunk-xl"
+    }
+  ]
+}

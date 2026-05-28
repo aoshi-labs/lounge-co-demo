@@ -1,0 +1,22 @@
+[
+  {
+    "text": "What cigar would pair with this bourbon?",
+    "bias": "cigar",
+    "ok": true
+  },
+  {
+    "text": "What should I pour with my full-bodied cigar?",
+    "bias": "spirit",
+    "ok": true
+  },
+  {
+    "text": "show me something with caramel and chocolate",
+    "bias": null,
+    "ok": true
+  },
+  {
+    "text": "Suggest a cigar with cocoa and espresso notes",
+    "bias": "cigar",
+    "ok": true
+  }
+]

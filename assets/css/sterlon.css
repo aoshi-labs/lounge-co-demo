@@ -1,0 +1,1839 @@
+  .ai-bubble{background:transparent;border:0;border-radius:0;padding:0;font-family:var(--font-body);font-style:italic;font-size:14px;color:var(--text-secondary);line-height:1.75;max-width:100%;}
+  .ai-bubble.ai-bubble--plain{padding:0;line-height:1.65;}
+  .ai-bubble.ai-bubble--plain .sterlon-pace-line{margin:0;font-family:var(--font-body);font-style:italic;font-weight:400;color:var(--text-secondary);}
+  .ai-bubble.ai-bubble--plain .sterlon-pace-line + .sterlon-pace-line{margin-top:10px;}
+  .ai-bubble.ai-bubble--plain .sterlon-pace-line.is-lead{color:var(--text-secondary);}
+  .user-bubble{background:var(--burg);color:var(--cream);border-radius:14px 14px 4px 14px;padding:12px 16px;font-family:var(--font-ui);font-size:14px;line-height:1.6;max-width:75%;margin-left:auto;}
+  .prompt-chip{background:var(--bg-elevated);border:1px solid var(--bg-border);border-radius:99px;padding:6px 14px;font-family:var(--font-ui);font-size:12px;color:var(--text-secondary);cursor:pointer;transition:all .15s;white-space:nowrap;}
+  .prompt-chip:hover{border-color:var(--gold);color:var(--gold);}
+
+
+/* === Page-specific styles === */
+.sterlon-product-body { flex:1; min-width:0; }
+.sterlon-topbar-identity { display:flex; align-items:center; gap:10px; }
+.sterlon-topbar-avatar { width:34px; height:34px; background:linear-gradient(135deg,var(--gold),var(--burg)); border-radius:50%; display:flex; align-items:center; justify-content:center; }
+.sterlon-topbar-name { font-size:14px; font-weight:600; color:var(--text-primary); line-height:1; }
+.sterlon-topbar-status { font-size: 10px; color: var(--tier-elite); font-weight: 600; margin-top: 2px; }
+.topbar-actions { margin-left:auto; display:flex; align-items:center; gap:8px; }
+.sterlon-chat-col {
+  width: 100%;
+  max-width: 620px;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 0;
+}
+.sterlon-chat-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-right: 2px;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+.sterlon-chat-scroll .sterlon-welcome { flex-shrink: 0; }
+.sterlon-chat-col > .sterlon-quick-actions,
+.sterlon-chat-col > .sterlon-rate-hint,
+.sterlon-chat-col > .sterlon-composer-wrap {
+  flex-shrink: 0;
+}
+.sterlon-composer-wrap {
+  padding: 10px 0 4px;
+  display: flex;
+  border-top: 1px solid var(--bg-border);
+  background: var(--bg-base);
+}
+html:has(.sterlon-chat-col),
+body:has(.sterlon-chat-col) {
+  overflow: hidden;
+  height: 100%;
+}
+.main-area:has(.sterlon-chat-col) {
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.main-area:has(.sterlon-chat-col) .page-content {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  align-items: stretch;
+}
+.sterlon-welcome { text-align:center; padding:8px 0 18px; }
+.sterlon-welcome-title { font-family:var(--font-display); font-size:1.6rem; font-weight:600; color:var(--text-primary); margin-bottom:4px; }
+.sterlon-welcome-sub { font-family:var(--font-body); font-style:italic; font-size:13px; color:var(--text-secondary); }
+.sterlon-chat-log { display:flex; flex-direction:column; gap:14px; }
+.sterlon-bubble-row { display:flex; align-items:flex-start; gap:10px; }
+.sterlon-bubble-avatar { width:32px; height:32px; background:linear-gradient(135deg,var(--gold),var(--burg)); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.sterlon-avatar-img { width:100%; height:100%; object-fit:cover; border-radius:50%; display:block; }
+.sterlon-bubble-stack { display:flex; flex-direction:column; gap:10px; max-width:80%; }
+.sterlon-bubble-emphasis { color:var(--gold); font-style:normal; }
+.sterlon-product-card { display:flex; align-items:center; gap:14px; background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:12px; padding:14px; text-decoration:none; transition:border-color .2s; }
+.sterlon-product-thumb { font-size:2rem; width:50px; height:50px; display:flex; align-items:center; justify-content:center; background:var(--bg-elevated); border-radius:9px; overflow:hidden; flex-shrink:0; }
+.sterlon-product-thumb > img { width:100%; height:100%; object-fit:contain; display:block; }
+.sterlon-product-name { font-family:var(--font-display); font-size:1rem; font-weight:600; color:var(--text-primary); }
+.sterlon-product-meta { font-size:11px; color:var(--text-muted); margin-top:2px; }
+.sterlon-product-row { display:flex; align-items:center; gap:10px; margin-top:6px; }
+.sterlon-product-rating { font-family:var(--font-display); font-size:.9rem; color:var(--gold); }
+.sterlon-product-price { font-size:13px; font-weight:700; color:var(--text-primary); }
+.sterlon-add-btn { background:var(--burg); color:var(--cream); border:none; border-radius:7px; padding:7px 12px; font-family:var(--font-ui); font-size:11px; font-weight:700; cursor:pointer; flex-shrink:0; }
+.sterlon-followups-row { display:flex; gap:8px; flex-wrap:wrap; margin-top:4px; }
+.sterlon-rail { width:268px; flex-shrink:0; display:flex; flex-direction:column; gap:14px; padding-top:8px; }
+.sterlon-rail-list { display:flex; flex-direction:column; gap:8px; }
+.sterlon-prompt-chip { text-align:left; display:block; width:100%; border-radius:9px; padding:10px 12px; line-height:1.4; white-space:normal; }
+.sterlon-history-item-current { display:block; padding:9px 10px; background:var(--bg-elevated); border-radius:8px; border:1px solid var(--bg-border); text-decoration:none; transition:border-color .2s; }
+.sterlon-history-title-current { font-size:12px; color:var(--text-primary); font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.sterlon-history-time { font-size:10px; color:var(--text-muted); margin-top:2px; }
+.sterlon-history-item { display:block; padding:9px 10px; background:transparent; border-radius:8px; text-decoration:none; transition:background .15s; }
+.sterlon-history-title { font-size:12px; color:var(--text-secondary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.sterlon-about-card { background:linear-gradient(135deg,var(--gold-subtle),var(--bg-surface)); }
+.sterlon-about-text { font-family:var(--font-body); font-style:italic; font-size:12px; color:var(--text-secondary); line-height:1.6; }
+@media (max-width: 900px) {
+  .main-area:has(.sterlon-chat-col) { padding-bottom: 70px; }
+}
+.sterlon-rate-hint { display:flex; align-items:center; gap:8px; padding:8px 14px; margin:4px 0 0; border:1px solid var(--bg-border); border-radius:8px; background:var(--bg-elevated); font-family:var(--font-ui); font-size:11px; color:var(--text-secondary); }
+.sterlon-rate-hint i { color:var(--gold-dim); flex-shrink:0; }
+.sterlon-rate-hint a { color:var(--gold); text-decoration:none; font-weight:600; margin-left:2px; }
+.sterlon-rate-hint a:hover { text-decoration:underline; }
+
+.sterlon-stack-degraded {
+  margin: 0 0 8px;
+  padding: 8px 14px;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: 8px;
+  background: var(--bg-elevated);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* === Log-a-tasting sheet (A6) — slide-up from bottom of viewport === */
+
+/* Product-card action stack — Log this above + Add */
+.sterlon-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.sterlon-log-btn {
+  background: transparent;
+  border: 1px solid var(--bg-border);
+  color: var(--text-secondary);
+  border-radius: 7px;
+  padding: 7px 12px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color .15s, color .15s, background .15s;
+  white-space: nowrap;
+}
+.sterlon-log-btn:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-subtle); }
+
+/* B2 — Wishlist toggle button on AI product cards */
+.sterlon-wish-btn {
+  background: transparent;
+  border: 1px solid var(--bg-border);
+  color: var(--text-secondary);
+  border-radius: 7px;
+  width: 30px; height: 30px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: border-color .15s, color .15s, background .15s, transform .15s;
+}
+.sterlon-wish-btn:hover { border-color: var(--gold); color: var(--gold); transform: scale(1.05); }
+.sterlon-wish-btn.active {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: var(--gold-subtle);
+}
+.sterlon-wish-btn.active svg { fill: currentColor; }
+
+/* Sheet container — full-viewport overlay */
+.log-sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+}
+.log-sheet[hidden] { display: none; }
+.log-sheet-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  opacity: 0;
+  transition: opacity .25s;
+  pointer-events: auto;
+}
+.log-sheet.open .log-sheet-backdrop { opacity: 1; }
+
+.log-sheet-panel {
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translate(-50%, 100%);
+  width: 100%;
+  max-width: 540px;
+  background: var(--bg-surface);
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  padding: 12px 20px 24px;
+  transition: transform .3s cubic-bezier(.22,.61,.36,1);
+  pointer-events: auto;
+  box-shadow: 0 -12px 50px rgba(0,0,0,.5);
+  max-height: 92vh;
+  overflow-y: auto;
+}
+.log-sheet.open .log-sheet-panel { transform: translate(-50%, 0); }
+
+.log-sheet-handle {
+  width: 40px; height: 4px;
+  background: var(--bg-border);
+  border-radius: 99px;
+  margin: 0 auto 14px;
+}
+.log-sheet-close {
+  position: absolute;
+  top: 14px; right: 14px;
+  width: 28px; height: 28px;
+  border: none;
+  background: var(--bg-elevated);
+  border-radius: 50%;
+  color: var(--text-secondary);
+  font-size: 18px;
+  font-family: var(--font-ui);
+  line-height: 1;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: color .15s, background .15s;
+}
+.log-sheet-close:hover { color: var(--text-primary); background: var(--bg-border); }
+
+/* Header row */
+.log-sheet-header {
+  display: flex; align-items: center; gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--bg-border);
+  margin-bottom: 16px;
+}
+.log-sheet-thumb {
+  width: 44px; height: 44px;
+  background: var(--bg-elevated);
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.log-sheet-label {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.log-sheet-product {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 2px;
+}
+
+/* Section header for each form group */
+.log-section { margin-bottom: 16px; }
+.log-section-label {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+/* Rating slider */
+.log-rating-row {
+  display: flex; align-items: center; gap: 10px;
+}
+.log-slider {
+  flex: 1;
+  height: 4px;
+  background: var(--bg-elevated);
+  border-radius: 99px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+.log-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px; height: 16px;
+  background: var(--gold);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid var(--bg-surface);
+}
+.log-slider::-moz-range-thumb {
+  width: 16px; height: 16px;
+  background: var(--gold);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid var(--bg-surface);
+}
+.log-rating-val {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  width: 30px;
+  text-align: right;
+}
+.log-rating-max {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* Flavor multi-select chips */
+.log-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.log-chip {
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  border-radius: 99px;
+  padding: 6px 12px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: border-color .15s, color .15s, background .15s;
+}
+.log-chip:hover { border-color: var(--gold-dim); color: var(--gold); }
+.log-chip.active {
+  background: var(--gold-subtle);
+  border-color: var(--gold);
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* One-line note */
+.log-note {
+  width: 100%;
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  border-radius: 9px;
+  padding: 10px 14px;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color .15s;
+}
+.log-note::placeholder { color: var(--text-muted); }
+.log-note:focus { border-color: var(--gold); }
+
+/* B4 — Paired with… field inside the log sheet */
+.log-section-opt {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0;
+  text-transform: lowercase;
+  margin-left: 6px;
+}
+.log-pair-wrap { position: relative; }
+.log-pair-input { width: 100%; }
+.log-pair-suggestions {
+  margin-top: 6px;
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 9px;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  max-height: 160px;
+  overflow-y: auto;
+}
+.log-pair-suggestion {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 10px;
+  background: transparent;
+  border: none;
+  border-radius: 7px;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-primary);
+  transition: background .12s;
+}
+.log-pair-suggestion:hover { background: var(--bg-elevated); }
+.log-pair-suggestion em {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 10px;
+  margin-left: auto;
+}
+.log-pair-selected {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.log-pair-chip {
+  display: inline-flex;
+  align-items: center;
+  background: var(--gold-subtle);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  border-radius: 99px;
+  padding: 5px 12px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+}
+.log-pair-clear {
+  background: transparent;
+  border: 1px solid var(--bg-border);
+  color: var(--text-muted);
+  border-radius: 50%;
+  width: 24px; height: 24px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}
+.log-pair-clear:hover { color: var(--text-primary); border-color: var(--text-secondary); }
+
+/* Privacy panel — A8 hook */
+.log-privacy {
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  border-radius: 9px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.log-privacy-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+.log-privacy-row input {
+  accent-color: var(--gold);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.log-privacy-row:hover { color: var(--text-primary); }
+
+/* Save button — burgundy CTA */
+.log-save {
+  width: 100%;
+  background: var(--burg);
+  color: var(--cream);
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .15s;
+}
+.log-save:hover { background: var(--burg-hover); }
+
+/* === Source anchors beneath AI bubbles (A5) ===
+   Small low-emphasis chip row + an expandable detail drawer that shows the
+   specific cited rows. Tap a chip to reveal; tap again or another chip to swap. */
+/* Source attribution row — "Based on:" label + a scrollable track of chips.
+   The label sits outside the scroll container so it never moves; only the
+   chip track scrolls horizontally when it overflows. */
+.sterlon-sources {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+  min-width: 0;
+  position: relative;  /* anchor for the carousel chevron affordance */
+}
+.sterlon-source-label { flex-shrink: 0; }
+
+/* The scrollable chip track. Carries only the chips; label is a sibling.
+
+   Three carousel affordances stack here:
+     1. Internal padding — chips never sit flush against the track edges, so
+        there's visible breathing room at the start and end of the scroll.
+     2. Right-edge mask-image fade — chips dissolve softly into nothing,
+        telegraphing that more content lives past the visible edge.
+     3. A › chevron pinned to the right of .sterlon-sources (rule below) — an
+        always-on visual badge that reads "this row is a carousel". */
+.sterlon-source-track {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 22px 2px 8px;     /* L/R whitespace inside the scrollable area */
+  overflow-x: auto;
+  scrollbar-width: none;         /* Firefox */
+  -ms-overflow-style: none;      /* IE/Edge legacy */
+  scroll-snap-type: x proximity;
+}
+.sterlon-source-track::-webkit-scrollbar { display: none; }
+.sterlon-source-chip { flex-shrink: 0; scroll-snap-align: start; }
+
+/* Overflow-only affordances — the right-edge fade and chevron only appear
+   when chips actually exceed the track width. JS toggles .sterlon-has-overflow
+   on the wrapper (see init in sterlon.html). */
+.sterlon-sources.sterlon-has-overflow .sterlon-source-track {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 0,
+    black calc(100% - 32px),
+    transparent 100%
+  );
+          mask-image: linear-gradient(
+    to right,
+    black 0,
+    black calc(100% - 32px),
+    transparent 100%
+  );
+}
+/* The static ›-after chevron was replaced by interactive left/right
+   arrows injected by setupSterlonCarousels in sterlon.html — see
+   lounge.css `.pro-lib-arrow*` for the shared button styles. */
+
+/* The injected .pro-lib-carousel wrapper is now a flex child of
+   .sterlon-sources (it sits between the "Based on:" label and the scrollable
+   track), so it must inherit the flex:1 + min-width:0 the track used to
+   carry directly. Without this the wrapper collapses to content-width,
+   the track inside loses its constraint, chips never overflow, and the
+   scroll never engages — i.e. the carousel breaks. */
+.sterlon-sources > .pro-lib-carousel {
+  flex: 1;
+  min-width: 0;
+  display: flex;       /* so the track inside picks up min-width:0 chain */
+}
+.sterlon-source-carousel > .sterlon-source-track {
+  flex: 1;
+  min-width: 0;
+}
+/* Show the arrows at all viewports for source-chip rows (chip overflow
+   isn't mobile-only here — it happens whenever there are more than ~3
+   citations in an AI bubble). */
+.sterlon-source-carousel .pro-lib-arrow { display: flex; }
+.sterlon-source-label {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.sterlon-source-chip {
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  border-radius: 99px;
+  padding: 3px 9px;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: border-color .15s, color .15s, background .15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.sterlon-source-chip:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.sterlon-source-chip.active {
+  background: var(--gold-subtle);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.sterlon-source-detail {
+  padding: 10px 14px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  border-left: 2px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-top: 6px;
+}
+.sterlon-source-detail[hidden] { display: none; }
+.sterlon-source-detail strong {
+  font-style: normal;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-family: var(--font-ui);
+}
+.sterlon-source-detail .src-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--bg-border);
+}
+.sterlon-source-detail .src-row:last-child { border-bottom: none; }
+.sterlon-source-detail .src-row span:last-child {
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* === Context strip — vertical stack inside the right-rail widget ===
+   Each item gets a full row, no horizontal truncation. */
+.sterlon-context-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sterlon-context-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: border-color .15s, background .15s, transform .15s;
+}
+.sterlon-context-clickable { cursor: pointer; }
+.sterlon-context-clickable:hover { border-color: var(--gold); transform: translateY(-1px); }
+
+.sterlon-context-card-burg { background: rgba(var(--burg-rgb), .10); border-color: rgba(var(--burg-rgb), .25); }
+.sterlon-context-card-burg:hover { border-color: var(--burg); background: rgba(var(--burg-rgb), .15); }
+.sterlon-context-card-burg .sterlon-context-label { color: var(--burg); }
+
+.sterlon-context-icon-gold  { color: var(--gold);          flex-shrink: 0; margin-top: 2px; }
+.sterlon-context-icon-muted { color: var(--text-muted);    flex-shrink: 0; margin-top: 2px; }
+
+.sterlon-context-body { flex: 1; min-width: 0; }
+.sterlon-context-label {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.sterlon-context-text {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.45;
+}
+
+/* Live dot for "Open / open until X" status */
+.sterlon-context-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0; margin-top: 6px; }
+.sterlon-context-dot-live {
+  background: var(--tier-elite);
+  box-shadow: 0 0 0 0 rgba(var(--tier-elite-rgb), .55);
+  animation: sterlon-context-pulse 2.4s ease-in-out infinite;
+}
+@keyframes sterlon-context-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(var(--tier-elite-rgb), .55); }
+  50%      { box-shadow: 0 0 0 6px rgba(var(--tier-elite-rgb), 0); }
+}
+
+/* Quick-action chip row — sits above the composer, anchored to the chat
+   column. Wrapper / track split mirrors .sterlon-sources / .sterlon-source-track so
+   the same overflow-only carousel affordances (mask fade + chevron) can be
+   applied here on a class toggle from JS. */
+.sterlon-quick-actions {
+  margin-top: 12px;
+  padding-top: 4px;
+  position: relative;             /* anchor for the .sterlon-has-overflow chevron */
+}
+.sterlon-quick-actions-track {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 22px 0 2px;          /* L/R whitespace inside the scrollable area */
+  overflow-x: auto;
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;       /* IE/Edge legacy */
+  scroll-snap-type: x proximity;
+}
+.sterlon-quick-actions-track::-webkit-scrollbar { display: none; }
+
+/* Overflow-only affordances — same pattern as .sterlon-sources. JS toggles
+   .sterlon-has-overflow on the wrapper when the track's scrollWidth exceeds
+   its clientWidth (see updateChipCarousels in sterlon.html). */
+.sterlon-quick-actions.sterlon-has-overflow .sterlon-quick-actions-track {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 0,
+    black calc(100% - 32px),
+    transparent 100%
+  );
+          mask-image: linear-gradient(
+    to right,
+    black 0,
+    black calc(100% - 32px),
+    transparent 100%
+  );
+}
+/* Static ›-after chevron replaced by the interactive left/right arrows
+   injected by setupSterlonCarousels (sterlon.html). Wrapper just needs
+   to fill its parent's width — no flex chain like .sterlon-sources since the
+   track is the only in-flow child of .sterlon-quick-actions. */
+.sterlon-quick-actions > .pro-lib-carousel { width: 100%; }
+.sterlon-quick-carousel .pro-lib-arrow { display: flex; }
+
+.sterlon-quick-chip {
+  flex-shrink: 0;
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 99px;
+  padding: 7px 14px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: border-color .15s, color .15s, background .15s;
+  white-space: nowrap;
+  scroll-snap-align: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.sterlon-quick-chip:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-subtle); }
+.sterlon-quick-chip:active { transform: scale(.97); }
+
+/* "More" chip — visually distinct so it reads as an affordance, not a prompt */
+.sterlon-quick-chip-more { color: var(--text-muted); background: transparent; }
+.sterlon-quick-chip-more:hover { color: var(--text-primary); border-color: var(--text-secondary); background: transparent; }
+
+/* Right-rail sub-text: explains that this widget is the deeper-prompts surface,
+   distinct from the chip row that lives in the chat column. */
+.sterlon-rail-sub { font-family: var(--font-body); font-style: italic; font-size: 11px; color: var(--text-muted); margin: -8px 0 12px; line-height: 1.55; }
+
+/* Icon-only action buttons inside the chat input (voice / image / replay) */
+.sterlon-composer-input-wrap .input-action {
+  background: none;
+  border: none;
+  width: 30px; height: 30px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 8px;
+  color: var(--text-muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background .15s, color .15s;
+}
+.sterlon-composer-input-wrap .input-action:hover { background: var(--bg-elevated); color: var(--gold); }
+.sterlon-composer-input-wrap .input-action:active { transform: scale(.95); }
+
+.sterlon-composer-row { width:100%; max-width:620px; display:flex; gap:10px; align-items:flex-end; }
+.sterlon-composer-input-wrap { flex:1; background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:14px; padding:8px 8px 8px 10px; display:flex; align-items:center; gap:6px; }
+.sterlon-composer-input-wrap--tools { position: relative; }
+.sterlon-composer-tools-menu {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 8px);
+  z-index: 120;
+  min-width: 220px;
+  padding: 6px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.sterlon-composer-tools-menu[hidden] { display: none !important; }
+.sterlon-composer-tools-item {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.sterlon-composer-tools-item:hover {
+  background: var(--gold-subtle);
+  color: var(--gold);
+}
+.sterlon-composer-textarea { flex:1; background:none; border:none; font-family:var(--font-ui); font-size:14px; color:var(--text-primary); outline:none; resize:none; line-height:1.5; max-height:120px; }
+.sterlon-send-btn { background:var(--burg); color:var(--cream); border:none; border-radius:8px; width:34px; height:34px; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0; }
+
+/* ─── Defensive: flex items along the textarea + chat chain need min-width:0.
+   Flex items default to min-width:auto (intrinsic content size). A bare
+   <textarea> without a cols attribute reports ~200px intrinsic width, which
+   blocks the parent flex chain from shrinking. The same default also makes
+   .sterlon-bubble-stack / .sterlon-bubble-row / .sterlon-chat-col refuse to shrink past their content's
+   natural size, producing horizontal overflow at 375px. Applied at all
+   viewports — no visual effect at desktop widths since flex still grows to
+   fill. (.sterlon-bubble-row / .sterlon-bubble-stack stay named for sterlon-chat.js compatibility.) */
+.sterlon-chat-col, .sterlon-bubble-row, .sterlon-bubble-stack, .sterlon-composer-row, .sterlon-composer-input-wrap, .sterlon-composer-textarea { min-width: 0; }
+
+/* Long unbreakable strings (a URL, a model number) inside chat bubbles should
+   break rather than overflow at narrow viewports. */
+.ai-bubble, .user-bubble { overflow-wrap: anywhere; word-break: break-word; }
+
+/* New-conversation button — burgundy CTA fill so it reads as a primary
+   action, matching the .btn-burg pattern used elsewhere. Expands from the
+   default square .icon-btn to a pill so the "New conversation" label has room;
+   on narrow viewports the label collapses to keep only the icon. */
+.topbar-actions button {
+  background: var(--burg);
+  border-color: var(--burg);
+  color: var(--cream);
+}
+.sterlon-newchat-btn {
+  width: auto;
+  padding: 0 14px;
+  gap: 8px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+.topbar-actions button:hover {
+  background: var(--burg-hover);
+  border-color: var(--burg-hover);
+  color: var(--cream);
+}
+
+/* ─── Sterlon structured-output styles ───
+   sterlon-chat.js renders into the ai-bubble + adjacent blocks under .sterlon-bubble-stack:
+     • .ai-bubble → one or more <p class="sterlon-pace-line is-lead?">
+     • .sterlon-reco-primary-wrap → single hero card (stage 1)
+     • .sterlon-reco-expand → "Want another direction?" affordance
+     • .sterlon-reco-stage-secondary → alternate cards + conversational chips (stage 2)
+     • .sterlon-reco-grid-alt → two alternate tier cards when expanded
+   These classes had no CSS, so the bubble paragraphs collapsed together and
+   the recommendation cards / why-list / follow-up chips rendered unstyled. */
+
+/* Paced paragraphs inside the AI bubble. The lead line carries more weight. */
+.ai-bubble .sterlon-pace-line { margin: 0; }
+.ai-bubble .sterlon-pace-line + .sterlon-pace-line { margin-top: 8px; }
+.ai-bubble .sterlon-pace-line.is-lead { color: var(--text-primary); font-weight: 500; }
+
+/* Conversational recommendation thread — prose leads, card supports.
+   The outer prose bubble carries: ownership line (display, bold) + one
+   sensory paragraph + an optional observational closer (both in Lora italic,
+   softer). The card below carries title + atmosphere + 3-col metadata. */
+.sterlon-bubble-stack.sterlon-reco-thread {
+  max-width: min(100%, 580px);
+  gap: 18px;
+}
+.sterlon-bubble-stack.sterlon-reco-thread .ai-bubble.sterlon-reco-prose {
+  background: transparent;
+  border: 0;
+  padding: 2px 4px 4px;
+  max-width: 100%;
+  font-family: var(--font-display);
+  font-style: normal;
+  font-size: 1.04rem;
+  line-height: 1.65;
+  color: var(--text-primary);
+}
+.sterlon-bubble-stack.sterlon-reco-thread .ai-bubble.sterlon-reco-prose .sterlon-pace-line {
+  font-family: inherit;
+  font-style: normal;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+}
+/* Lead (ownership line) — display font, present but not theatrical. */
+.sterlon-bubble-stack.sterlon-reco-thread .ai-bubble.sterlon-reco-prose .sterlon-pace-line.is-lead {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.005em;
+  color: var(--text-primary);
+}
+/* Sensory paragraph + observation — softer, spoken Lora italic voice. */
+.sterlon-bubble-stack.sterlon-reco-thread .ai-bubble.sterlon-reco-prose .sterlon-pace-line.is-mood {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-top: 14px;
+  max-width: 40em;
+}
+.sterlon-bubble-stack.sterlon-reco-thread .ai-bubble.sterlon-reco-prose .sterlon-pace-line.is-mood + .sterlon-pace-line.is-mood {
+  margin-top: 10px;
+  color: var(--text-muted);
+}
+.sterlon-reco-emphasis {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* "Why this works" — inset rationale block under the lead paragraph. */
+.sterlon-why-wrap {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-left: 2px solid var(--gold);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.sterlon-why-title {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.sterlon-why-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.sterlon-why-list li {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  position: relative;
+  padding-left: 14px;
+}
+.sterlon-why-list li::before {
+  content: "·";
+  position: absolute;
+  left: 4px;
+  top: -2px;
+  color: var(--gold);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Stage 1 — conversational primary card (supports prose, not the headline). */
+.sterlon-reco-primary-wrap {
+  max-width: 100%;
+}
+.sterlon-reco-card.is-hero,
+.sterlon-reco-card--conversation {
+  max-width: 100%;
+}
+
+.sterlon-reco-card--conversation {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(var(--gold-rgb), 0.16);
+  background: linear-gradient(155deg, rgba(var(--gold-rgb), 0.05) 0%, var(--bg-surface) 38%, var(--bg-elevated) 100%);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.26);
+  padding: 0;
+}
+.sterlon-reco-card--conversation:hover {
+  transform: none;
+  border-color: rgba(var(--gold-rgb), 0.16);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.26);
+}
+.sterlon-reco-card-atmosphere {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 60% at 92% 12%, rgba(var(--gold-rgb), 0.10), transparent 62%),
+    radial-gradient(ellipse 55% 45% at 8% 92%, rgba(var(--burg-rgb), 0.06), transparent 58%);
+  opacity: 0.95;
+}
+.sterlon-reco-card-atmosphere::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+}
+
+/* Card inner: title sits above the metadata columns. With prose now living
+   in the outer bubble, the card stays compact — title + atmospheric texture
+   + 3-col metadata. */
+.sterlon-reco-card-inner {
+  position: relative;
+  z-index: 1;
+  padding: 20px 24px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.sterlon-reco-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+}
+.sterlon-reco-card-title i {
+  color: var(--gold-dim);
+  opacity: 0.85;
+  width: 14px;
+  height: 14px;
+}
+
+/* Unified card prose — the emotional hero lives INSIDE the card surface. */
+.sterlon-reco-card-prose {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 34em;
+  position: relative;
+  z-index: 1;
+}
+.sterlon-reco-card-lead {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.12rem;
+  line-height: 1.5;
+  letter-spacing: 0.005em;
+  color: var(--text-primary);
+}
+.sterlon-reco-card-product {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.42rem;
+  line-height: 1.18;
+  letter-spacing: 0.005em;
+  color: var(--gold);
+  margin-top: 4px;
+}
+.sterlon-reco-card-mood {
+  margin: 0;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  max-width: 22em;
+}
+
+/* Illustration: drifts top-right, lightly rotated, fades into the card.
+   Currently hidden — the cigar glyph was throwing off the composition. The
+   markup is kept so we can re-enable a refined illustration later without a
+   JS change; just drop `display: none` here. */
+.sterlon-reco-card--unified .sterlon-reco-card-illus {
+  display: none;
+  position: absolute;
+  top: -4px;
+  right: -18px;
+  width: 230px;
+  height: 198px;
+  color: rgba(var(--gold-rgb), 0.36);
+  opacity: 0.55;
+  pointer-events: none;
+  transform: rotate(-3deg);
+  z-index: 0;
+  -webkit-mask-image: radial-gradient(ellipse at 70% 30%, black 28%, transparent 78%);
+          mask-image: radial-gradient(ellipse at 70% 30%, black 28%, transparent 78%);
+}
+/* Non-unified legacy fallback (kept for safety; same drift). */
+.sterlon-reco-card-illus {
+  position: absolute;
+  top: -10px;
+  right: -14px;
+  width: 148px;
+  height: 148px;
+  color: rgba(var(--gold-rgb), 0.32);
+  opacity: 0.55;
+  pointer-events: none;
+  transform: rotate(-4deg);
+  -webkit-mask-image: radial-gradient(ellipse at 72% 28%, black 30%, transparent 76%);
+          mask-image: radial-gradient(ellipse at 72% 28%, black 30%, transparent 76%);
+}
+.sterlon-reco-illus-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Metadata: supporting voice, vertical breath, lighter weight. The hairline
+   divider used to sit above the columns (separating inner prose from
+   metadata) — with prose now in the outer bubble, the title→columns gap is
+   carried by the .sterlon-reco-card-inner flex gap instead. */
+.sterlon-reco-card-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  padding-right: 4px;
+}
+.sterlon-reco-col {
+  padding: 0 14px;
+  border-left: 1px solid rgba(255, 255, 255, 0.045);
+}
+.sterlon-reco-col:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+.sterlon-reco-col-label {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 7px;
+}
+.sterlon-reco-col-value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: rgba(245, 240, 230, 0.86);
+}
+
+/* Unified flight — three slots (BEST PICK / REFINED OPTION / CONTRAST WILDCARD) in one card */
+.sterlon-reco-card-stack--flight {
+  display: block;
+  width: 100%;
+}
+.sterlon-reco-card--flight .sterlon-reco-card-inner {
+  gap: 0;
+  padding: 18px 20px 20px;
+}
+.sterlon-reco-card--flight .sterlon-reco-card-atmosphere {
+  background:
+    radial-gradient(ellipse 115% 95% at 50% 55%, transparent 42%, rgba(0, 0, 0, 0.38) 100%),
+    radial-gradient(ellipse 70% 55% at 88% 8%, rgba(var(--gold-rgb), 0.07), transparent 58%),
+    radial-gradient(ellipse 55% 45% at 10% 94%, rgba(var(--burg-rgb), 0.05), transparent 55%);
+}
+.sterlon-reco-flight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  width: 100%;
+}
+.sterlon-reco-flight-slot {
+  position: relative;
+  padding: 14px 18px;
+  border-left: 1px solid rgba(255, 255, 255, 0.045);
+  min-width: 0;
+}
+.sterlon-reco-flight-slot:first-child {
+  border-left: 0;
+}
+.sterlon-reco-flight-slot-head {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 12px;
+}
+.sterlon-reco-flight-slot-head i {
+  color: rgba(var(--gold-rgb), 0.72);
+  opacity: 0.9;
+  flex-shrink: 0;
+}
+.sterlon-reco-flight-slot-label {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(var(--gold-rgb), 0.68);
+  line-height: 1.2;
+}
+.sterlon-reco-flight-slot--focusable {
+  cursor: pointer;
+  border-radius: 0;
+}
+.sterlon-reco-flight-slot--focusable:hover {
+  background: transparent;
+}
+.sterlon-reco-flight-slot--focusable.is-prose-active {
+  background:
+    radial-gradient(ellipse 95% 75% at 50% 28%, rgba(var(--gold-rgb), 0.09), transparent 68%);
+  box-shadow: none;
+}
+.sterlon-reco-flight-slot--focusable.is-prose-active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--gold-rgb), 0.42) 18%,
+    rgba(var(--gold-rgb), 0.78) 50%,
+    rgba(var(--gold-rgb), 0.42) 82%,
+    transparent
+  );
+  border-radius: 1px;
+  pointer-events: none;
+}
+.sterlon-reco-flight-slot--focusable.is-prose-active .sterlon-reco-flight-slot-label {
+  color: rgba(var(--gold-rgb), 0.82);
+}
+.sterlon-reco-flight-prose-hint {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin: 8px 0 0;
+  letter-spacing: 0.02em;
+}
+.sterlon-reco-flight-slot-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sterlon-reco-flight-line-label {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.sterlon-reco-flight-line-value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.94rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  color: rgba(245, 240, 230, 0.9);
+}
+.sterlon-reco-flight-line-meta {
+  display: block;
+  margin-top: 5px;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  color: rgba(245, 240, 230, 0.42);
+}
+.sterlon-reco-stock--quiet {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  opacity: 0.78;
+}
+
+/* Refinement — same evening evolving, not a fresh reveal. Quieter than the
+   initial sensory paragraph; a subtle hairline above it marks the
+   conversational pivot ("and then..."). Specificity is scoped under the
+   prose thread so it wins over the generic .sterlon-pace-line rules. */
+.sterlon-bubble-stack.sterlon-reco-thread .ai-bubble.sterlon-reco-prose .sterlon-pace-line.sterlon-refinement-line {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(var(--gold-rgb), 0.06);
+  max-width: 40em;
+}
+.sterlon-reco-primary-wrap.is-refining .sterlon-reco-card {
+  transition: border-color .25s ease;
+}
+.sterlon-bubble-stack[data-reco-evolved] .sterlon-reco-card--conversation,
+.sterlon-reco-card--conversation.is-evolved {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+  border-color: rgba(var(--gold-rgb), 0.24);
+}
+.sterlon-bubble-stack[data-reco-evolved] .sterlon-reco-card--conversation:hover,
+.sterlon-reco-card--conversation.is-evolved:hover {
+  transform: none;
+}
+
+/* Progressive expansion affordance */
+.sterlon-reco-expand {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+}
+.sterlon-reco-expand[hidden] {
+  display: none !important;
+}
+.sterlon-reco-expand-btn {
+  align-self: flex-start;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gold);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color .15s;
+}
+.sterlon-reco-expand-btn:hover {
+  color: var(--cream);
+}
+.sterlon-reco-expand-hint {
+  margin: 0;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  max-width: 36em;
+}
+
+/* Stage 2 — alternate routes (hidden until expansion or exploration chips). */
+.sterlon-reco-stage-secondary[hidden] {
+  display: none !important;
+}
+.sterlon-reco-alt-lead {
+  margin: 10px 0 8px;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+/* Backup options — quieter, optional, not equal recommendations. */
+.sterlon-reco-stage-secondary {
+  margin-top: 14px;
+}
+.sterlon-reco-grid-alt {
+  gap: 10px;
+}
+.sterlon-reco-card--backup {
+  padding: 10px 12px;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  box-shadow: none;
+  opacity: 0.92;
+}
+.sterlon-reco-card--backup:hover {
+  transform: none;
+  border-color: rgba(var(--gold-rgb), 0.16);
+  opacity: 1;
+}
+.sterlon-reco-card--backup.is-wildcard {
+  background: rgba(var(--burg-rgb), 0.06);
+  border-color: rgba(var(--burg-rgb), 0.14);
+}
+.sterlon-reco-backup-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+.sterlon-reco-backup-head i {
+  color: var(--gold-dim);
+  flex-shrink: 0;
+}
+.sterlon-reco-card--backup.is-wildcard .sterlon-reco-backup-head i {
+  color: rgba(180, 90, 110, 0.9);
+}
+.sterlon-reco-backup-label {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.sterlon-reco-card--backup.is-wildcard .sterlon-reco-backup-label {
+  color: rgba(200, 130, 145, 0.95);
+}
+.sterlon-reco-backup-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.sterlon-reco-backup-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.sterlon-reco-backup-row > span {
+  font-family: var(--font-ui);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.sterlon-reco-backup-row > strong {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.35;
+}
+
+/* Quick-action bar — Contrast / New picks / Save flight — sits between card stack and chips. */
+.sterlon-reco-quick-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.sterlon-quick-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 7px;
+  padding: 5px 10px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: border-color .15s, color .15s, background .15s;
+  white-space: nowrap;
+}
+.sterlon-quick-action-btn i {
+  color: rgba(var(--gold-rgb), 0.45);
+  flex-shrink: 0;
+}
+.sterlon-quick-action-btn:hover {
+  border-color: rgba(var(--gold-rgb), 0.22);
+  color: var(--text-secondary);
+  background: rgba(var(--gold-rgb), 0.04);
+}
+.sterlon-quick-action-btn:hover i {
+  color: var(--gold-dim);
+}
+.sterlon-quick-action-btn--save.is-saved,
+.sterlon-quick-action-btn--save.is-saved i {
+  color: var(--gold);
+  border-color: rgba(var(--gold-rgb), 0.3);
+}
+
+/* Recommendation grid — three tiers side by side, stacking on narrow viewports. */
+.sterlon-reco-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.sterlon-reco-grid-alt {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.sterlon-reco-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color .15s, transform .15s;
+}
+.sterlon-reco-card:hover:not(.sterlon-reco-card--conversation) {
+  border-color: var(--gold-dim);
+  transform: translateY(-1px);
+}
+.sterlon-reco-card.is-primary:not(.sterlon-reco-card--conversation) {
+  background: linear-gradient(135deg, var(--gold-subtle), var(--bg-surface));
+  border-color: rgba(var(--gold-rgb), .35);
+}
+.sterlon-reco-card.is-wildcard {
+  background: linear-gradient(135deg, rgba(var(--burg-rgb), .10), var(--bg-surface));
+  border-color: rgba(var(--burg-rgb), .35);
+}
+.sterlon-reco-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+.sterlon-reco-label {
+  font-family: var(--font-display);
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: .01em;
+}
+.sterlon-reco-tier {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.sterlon-reco-card.is-wildcard .sterlon-reco-tier { color: var(--burg); }
+.sterlon-reco-descriptor {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+.sterlon-reco-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 4px 0;
+  border-top: 1px dashed var(--bg-border-dim);
+}
+.sterlon-reco-row:first-of-type { border-top: 0; padding-top: 0; }
+.sterlon-reco-row > span {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.sterlon-reco-row > strong {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--text-primary);
+  line-height: 1.35;
+}
+.sterlon-reco-stock {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: var(--text-muted);
+  margin-top: auto;
+  padding-top: 4px;
+  border-top: 1px solid var(--bg-border-dim);
+}
+
+/* Recommendation action hierarchy — primary (max 3) + progressive disclosure. */
+.sterlon-reco-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 4px;
+}
+.sterlon-followups-primary {
+  max-width: 100%;
+}
+.sterlon-reco-more-options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+.sterlon-reco-more-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.sterlon-reco-more-toggle:hover {
+  color: var(--gold);
+}
+.sterlon-reco-more-toggle[aria-expanded="true"] i {
+  transform: rotate(180deg);
+}
+.sterlon-reco-more-toggle i {
+  transition: transform 0.2s ease;
+}
+.sterlon-followups-advanced[hidden] {
+  display: none !important;
+}
+.sterlon-followups-advanced:not([hidden]) {
+  padding-top: 2px;
+}
+
+/* Follow-up suggestion chips beneath the recommendation card. */
+.sterlon-followups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.sterlon-follow-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(var(--gold-rgb), 0.14);
+  border-radius: 99px;
+  padding: 7px 12px;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color .15s, color .15s, background .15s;
+}
+.sterlon-follow-chip i {
+  color: var(--gold-dim);
+  flex-shrink: 0;
+  font-style: normal;
+}
+.sterlon-follow-chip span {
+  line-height: 1.2;
+}
+.sterlon-follow-chip:hover {
+  border-color: rgba(var(--gold-rgb), 0.32);
+  color: var(--cream);
+  background: rgba(var(--gold-rgb), 0.08);
+}
+
+/* Typing-indicator dots used by addTypingIndicator(). */
+.typing-dots { display: inline-flex; gap: 3px; align-items: center; }
+.typing-dots span {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 0;
+  color: var(--text-muted);
+  animation: sterlon-typing 1.2s infinite ease-in-out;
+}
+.typing-dots span:nth-child(2) { animation-delay: .15s; }
+.typing-dots span:nth-child(3) { animation-delay: .30s; }
+@keyframes sterlon-typing {
+  0%, 60%, 100% { opacity: .25; transform: translateY(0); }
+  30%           { opacity: 1;   transform: translateY(-2px); }
+}
+
+/* ─── iPhone-SE-class viewports (≤639px) ─── */
+@media (max-width: 639px) {
+  /* Drop the 80% AI-column cap that clips embedded product cards at 375px.
+     (.sterlon-bubble-stack keeps its name — sterlon-chat.js writes/queries it.) */
+  .sterlon-bubble-stack { max-width: 100%; }
+
+  /* Product card: wrap actions below content so the card never overflows. */
+  .sterlon-product-card { flex-wrap: wrap; padding: 12px; gap: 10px; }
+  .sterlon-product-thumb { width: 42px; height: 42px; font-size: 1.5rem; }
+  .sterlon-card-actions {
+    flex-direction: row;
+    flex-basis: 100%;
+    flex-shrink: 1;
+    border-top: 1px solid var(--bg-border);
+    padding-top: 8px;
+  }
+  .sterlon-log-btn { flex: 1; min-width: 0; }
+
+  /* Sterlon top bar: hide the Sterlon subtitle on iPhone-SE-class viewports
+     — the title alone fits, and freeing this row keeps the action group from
+     wrapping. (Decorative only; not a feature.) */
+  .sterlon-topbar-status { display: none; }
+
+  /* Composer at 375px: keep the voice / image / replay input-actions visible
+     so mobile has feature parity with desktop. At ~355px chat-col width the
+     textarea ends up ~189px wide — narrow but workable. */
+
+  /* ─── Type scale: tighten one step at iPhone-SE-class widths ───
+     The desktop scale leaves the welcome heading and the chat bubbles
+     visually heavy on a 375px viewport — content fits but feels chunky.
+     Step each role down one notch so more conversation is visible per
+     screen without losing the editorial serif identity. */
+  .sterlon-welcome-title    { font-size: 1.25rem; }   /* welcome heading 25.6 → 20px */
+  .sterlon-welcome-sub      { font-size: 12px; }      /* welcome sub-text */
+  .ai-bubble                { font-size: 13px; padding: 12px 14px; }
+  .user-bubble              { font-size: 13px; padding: 10px 14px; }
+  .sterlon-product-name     { font-size: 0.9rem; }    /* product name 16 → 14.4px */
+  .sterlon-product-meta     { font-size: 10px; }      /* product meta */
+  .sterlon-product-price    { font-size: 12px; }      /* product price */
+  .sterlon-add-btn          { font-size: 10px; padding: 6px 10px; }   /* + Add button */
+  .sterlon-log-btn              { font-size: 10px; padding: 6px 10px; }
+  .sterlon-quick-chip                { font-size: 11px; padding: 6px 12px; }
+  .sterlon-source-chip          { font-size: 9px;  padding: 2px 8px; }
+  .sterlon-source-label         { font-size: 9px; }
+  .sterlon-source-detail        { font-size: 11px; padding: 8px 12px; }
+  .sterlon-topbar-name      { font-size: 13px; }      /* top-bar title */
+  .sterlon-composer-textarea { font-size: 13px; }      /* composer textarea */
+
+  /* Sterlon structured output — collapse to a single column so cards aren't
+     squeezed below their content width at 375px. */
+  .sterlon-reco-grid,
+  .sterlon-reco-grid-alt { grid-template-columns: 1fr; }
+  .sterlon-reco-card.is-hero { max-width: 100%; }
+  .sterlon-reco-card { padding: 10px 12px; }
+  .sterlon-reco-label { font-size: .9rem; }
+  .sterlon-why-list li { font-size: 12px; }
+  .sterlon-bubble-stack.sterlon-reco-thread { gap: 14px; }
+  .sterlon-bubble-stack.sterlon-reco-thread .ai-bubble.sterlon-reco-prose { font-size: 1rem; line-height: 1.6; }
+  .sterlon-bubble-stack.sterlon-reco-thread .ai-bubble.sterlon-reco-prose .sterlon-pace-line.is-lead { font-size: 1.1rem; }
+  .sterlon-bubble-stack.sterlon-reco-thread .ai-bubble.sterlon-reco-prose .sterlon-pace-line.is-mood { font-size: 13.5px; margin-top: 12px; }
+  .sterlon-reco-card-inner {
+    padding: 16px 16px 16px;
+    gap: 14px;
+  }
+  .sterlon-reco-card-columns {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding-right: 0;
+  }
+  .sterlon-reco-col {
+    padding: 0;
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.045);
+    padding-top: 10px;
+  }
+  .sterlon-reco-col:first-child { border-top: 0; padding-top: 0; }
+  .sterlon-reco-flight-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .sterlon-reco-flight-slot {
+    padding: 12px 0;
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.045);
+    padding-top: 14px;
+  }
+  .sterlon-reco-flight-slot:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+  .sterlon-reco-flight-slot--focusable.is-prose-active::before {
+    left: 0;
+    right: 0;
+  }
+}
+
+/* ── Conversational presentation (paced streaming + staged reveal) ── */
+.sterlon-present-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  max-height: 0;
+  overflow: hidden;
+  margin: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border-width: 0 !important;
+}
+.sterlon-present-in {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.48s ease,
+    transform 0.52s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--sterlon-stagger, 0ms);
+  will-change: opacity, transform;
+}
+.sterlon-present-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+  max-height: none;
+  overflow: visible;
+}
+.sterlon-bubble-stack.sterlon-presenting .ai-bubble.sterlon-reco-prose {
+  min-height: 1.6em;
+}
+.sterlon-stream-line {
+  transition: opacity 0.28s ease;
+}
+.sterlon-stream-line.is-settled {
+  opacity: 1;
+}
+.sterlon-stream-bubble .sterlon-pace-line.is-lead {
+  animation: sterlonProseSettle 0.35s ease both;
+}
+.sterlon-reco-primary-wrap.sterlon-present-in .sterlon-reco-card--conversation {
+  box-shadow: 0 20px 52px rgba(0, 0, 0, 0.3);
+}
+.sterlon-reco-actions .sterlon-follow-chip.sterlon-present-in {
+  transform: translateY(6px);
+}
+.sterlon-reco-actions .sterlon-follow-chip.sterlon-present-in.is-visible,
+.sterlon-reco-actions .sterlon-reco-more-toggle.sterlon-present-in.is-visible {
+  transform: translateY(0);
+}
+@keyframes sterlonProseSettle {
+  from { opacity: 0.88; }
+  to { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sterlon-present-in,
+  .sterlon-stream-line,
+  .sterlon-stream-bubble .sterlon-pace-line.is-lead {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  .sterlon-present-hidden {
+    opacity: 1 !important;
+    visibility: visible !important;
+    max-height: none !important;
+    pointer-events: auto !important;
+  }
+}

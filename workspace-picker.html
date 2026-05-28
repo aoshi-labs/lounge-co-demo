@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Venues — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       Platform-level page. Members land here after login when they belong
+       to 2+ venues, or via the sidebar's "My Venues" entry from any
+       platform-context page. Lounge & Co.-branded throughout; each venue
+       card shows the venue's identity (name + logo + tagline + stats).
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Switch between your joined venues on Lounge & Co." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/workspace-picker.css"/>
+</head>
+<body>
+
+<div class="mobile-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Thomas H.</div><div class="sidebar-user-tier">Elite · 1,744 pts · #4</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area">
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+      <i data-lucide="menu" class="ic-16"></i>
+    </button>
+    <div class="topbar-actions"></div>
+  </header>
+
+  <div class="content-area content-area--wide">
+
+    <h1 class="wp-greeting">Welcome back, Thomas.</h1>
+    <p class="wp-subtitle">Choose a venue to open, or discover more on the network.</p>
+
+    <div class="wp-section-label">Your venues</div>
+    <div class="wp-venues-grid">
+
+      <!-- Venue 1: Estate-tier public venue, recent activity -->
+      <a href="feed.html" class="wp-venue-card">
+        <div class="wp-venue-header">
+          <div class="wp-venue-mark">CDM</div>
+          <div class="wp-venue-info">
+            <div class="wp-venue-name">Casa de Montecristo</div>
+            <div class="wp-venue-meta">Brickell · Public · Estate</div>
+          </div>
+        </div>
+        <div class="wp-venue-badges">
+          <span class="wp-badge">Verified</span>
+          <span class="wp-badge">Estate</span>
+        </div>
+        <div class="wp-venue-snippet">
+          <strong>3 new posts</strong> since your last visit · Padrón 1964 just landed in the humidor · Marcus rated the new Cohiba ★4.9
+        </div>
+      </a>
+
+      <!-- Venue 2: Pro-tier private venue, member-approved -->
+      <a href="feed.html" class="wp-venue-card">
+        <div class="wp-venue-header">
+          <div class="wp-venue-mark">R&amp;C</div>
+          <div class="wp-venue-info">
+            <div class="wp-venue-name">Reserve &amp; Co.</div>
+            <div class="wp-venue-meta">Tribeca · Private · Pro</div>
+          </div>
+        </div>
+        <div class="wp-venue-badges">
+          <span class="wp-badge">Verified</span>
+          <span class="wp-badge wp-badge-private">Private</span>
+        </div>
+        <div class="wp-venue-snippet">
+          <strong>October Anejo Night</strong> — Saturday at 8pm · 12 of 25 spots remain · Sterlon picked 3 cigars for you
+        </div>
+      </a>
+
+      <!-- Venue 3: Private, request pending -->
+      <div class="wp-venue-card wp-venue-card-pending" aria-label="Cigar Inn — request pending">
+        <div class="wp-venue-header">
+          <div class="wp-venue-mark">CI</div>
+          <div class="wp-venue-info">
+            <div class="wp-venue-name">The Cigar Inn</div>
+            <div class="wp-venue-meta">Upper East Side · Private · Estate</div>
+          </div>
+        </div>
+        <div class="wp-venue-badges">
+          <span class="wp-badge wp-badge-private">Private</span>
+          <span class="wp-badge wp-badge-pending">Request pending</span>
+        </div>
+        <div class="wp-venue-snippet">
+          You requested access 3 days ago. The Inn approves new members on Tuesdays.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ─────────────────────────────────────
+         Discover more — CTA to the platform-wide venue directory
+    ───────────────────────────────────── -->
+    <a href="discover-venues.html" class="wp-discover-card">
+      <div class="wp-discover-title">Discover more venues</div>
+      <div class="wp-discover-sub">Browse premium cigar lounges &amp; spirits bars on the network</div>
+    </a>
+  </div>
+</main>
+
+</body>
+</html>

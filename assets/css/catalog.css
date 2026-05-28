@@ -1,0 +1,136 @@
+  .product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  .product-card{background:var(--bg-surface);border:1px solid var(--bg-border);border-radius:14px;overflow:hidden;transition:border-color .2s,transform .15s;cursor:pointer;}
+  .product-card:hover{border-color:rgba(var(--gold-rgb), .3);transform:translateY(-1px);}
+  .product-img{height:100px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;position:relative;overflow:hidden;}
+  .product-img > img{width:100%;height:100%;object-fit:cover;display:block;}
+
+
+/* === Page-local catalog styles === */
+.topbar-icon-stack { position:relative; }
+.topbar-icon-dot { position:absolute; top:4px; right:4px; }
+.topbar-icon-badge { position:absolute; top:-4px; right:-4px; width:16px; height:16px; background:var(--burg); border-radius:50%; font-size:9px; font-weight:700; color:var(--cream); display:flex; align-items:center; justify-content:center; }
+.topbar-avatar-elite { background:var(--tier-elite); color:var(--tier-elite-ink); width:34px; height:34px; font-size:12px; }
+.catalog-page-frame { display:flex; justify-content:center; padding:24px 20px; gap:20px; }
+.catalog-page-stack { width:100%; max-width:760px; display:flex; flex-direction:column; gap:18px; }
+.catalog-page-title { font-family:var(--font-display); font-size:2rem; font-weight:700; color:var(--text-primary); line-height:1.1; }
+.catalog-page-subtitle { font-family:var(--font-body); font-style:italic; font-size:14px; color:var(--text-secondary); margin-top:6px; }
+/* Category filter row — full carousel chrome (hidden scrollbar, scroll-
+   snap, right-edge mask fade). Arrows are JS-injected and styled via the
+   shared .pro-lib-arrow* rules in lounge.css. */
+.catalog-category-tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  min-width: 0;
+  padding: 0 22px 2px 2px;
+  overflow-x: auto;
+  scrollbar-width: none;            /* Firefox */
+  -ms-overflow-style: none;         /* IE/Edge legacy */
+  scroll-snap-type: x proximity;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 0,
+    black calc(100% - 32px),
+    transparent 100%
+  );
+          mask-image: linear-gradient(
+    to right,
+    black 0,
+    black calc(100% - 32px),
+    transparent 100%
+  );
+}
+.catalog-category-tabs::-webkit-scrollbar { display: none; }
+.catalog-category-tabs > .filter-tab {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+/* JS-injected wrapper inherits the flex-item slot inside .catalog-page-stack (flex
+   column). min-width:0 lets the inner track shrink and scroll. */
+.catalog-page-stack > .pro-lib-carousel {
+  min-width: 0;
+  width: 100%;
+}
+.catalog-tabs-carousel .pro-lib-arrow { display: flex; }
+.catalog-product-link { text-decoration:none; }
+.catalog-product-img-torpedo { background:linear-gradient(135deg,rgba(139,90,43,.3),rgba(30,20,10,.8)); }
+.catalog-product-body { padding:14px; }
+.catalog-product-title { font-family:var(--font-display); font-size:1.05rem; font-weight:600; color:var(--text-primary); margin-bottom:2px; }
+.catalog-product-meta { font-size:11px; color:var(--text-muted); margin-bottom:8px; }
+.catalog-product-rating-row { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
+.catalog-product-rating-score { font-family:var(--font-display); font-size:.95rem; color:var(--gold); }
+.catalog-product-rating-count { font-size:10px; color:var(--text-muted); }
+.catalog-product-price-row { display:flex; align-items:center; justify-content:space-between; }
+.catalog-product-price { font-size:15px; font-weight:700; color:var(--text-primary); }
+.catalog-product-add-btn { background:var(--burg); color:var(--cream); border:none; border-radius:7px; padding:6px 14px; font-family:var(--font-ui); font-size:12px; font-weight:600; cursor:pointer; transition:background .15s; }
+.catalog-product-img-padron { background:linear-gradient(135deg,rgba(180,80,20,.3),rgba(30,20,10,.8)); }
+.catalog-product-add-btn-alt { background:var(--burg); color:var(--cream); border:none; border-radius:7px; padding:6px 14px; font-family:var(--font-ui); font-size:12px; font-weight:600; cursor:pointer; }
+.catalog-product-img-fuente { background:linear-gradient(135deg,rgba(var(--gold-rgb), .15),rgba(30,20,10,.8)); }
+.catalog-product-img-liga { background:linear-gradient(135deg,rgba(74,30,10,.4),rgba(30,20,10,.8)); }
+.catalog-product-img-myfather { background:linear-gradient(135deg,rgba(60,40,20,.4),rgba(20,12,6,.9)); }
+.catalog-product-img-cohiba { background:linear-gradient(135deg,rgba(var(--gold-rgb), .2),rgba(var(--burg-rgb), .2),rgba(20,12,6,.85)); }
+.catalog-product-img-glenfarclas { background:linear-gradient(135deg,rgba(180,130,30,.2),rgba(20,12,6,.9)); }
+.catalog-product-img-pappy { background:linear-gradient(135deg,rgba(var(--gold-rgb), .25),rgba(var(--burg-rgb), .15),rgba(20,12,6,.85)); }
+.catalog-product-img-lagavulin { background:linear-gradient(135deg,rgba(60,40,100,.3),rgba(20,12,6,.9)); }
+.catalog-product-img-aberfeldy { background:linear-gradient(135deg,rgba(180,140,40,.2),rgba(20,12,6,.9)); }
+.catalog-product-img-xikar { background:linear-gradient(135deg,rgba(100,80,40,.3),rgba(20,12,6,.9)); }
+.catalog-product-img-vector { background:linear-gradient(135deg,rgba(80,60,20,.3),rgba(20,12,6,.9)); }
+.catalog-product-img-vector > img { object-fit: cover; }
+.catalog-rail { width:268px; flex-shrink:0; display:flex; flex-direction:column; gap:14px; }
+.catalog-tab-list { display:flex; flex-direction:column; gap:8px; margin-bottom:12px; }
+.catalog-tab-row { display:flex; align-items:center; justify-content:space-between; padding:8px 10px; background:var(--bg-elevated); border-radius:8px; border:1px solid var(--bg-border); }
+.catalog-tab-item-name { font-size:13px; color:var(--text-primary); }
+.catalog-tab-item-price { font-size:13px; font-weight:600; color:var(--text-primary); }
+.catalog-tab-total-row { display:flex; justify-content:space-between; align-items:center; padding-top:10px; border-top:1px solid var(--bg-border); margin-bottom:12px; }
+.catalog-tab-total-label { font-size:12px; color:var(--text-muted); }
+.catalog-tab-total-value { font-size:16px; font-weight:700; font-family:var(--font-display); color:var(--text-primary); }
+.catalog-tab-view-btn { display:block; width:100%; background:var(--burg); color:var(--cream); border:none; border-radius:8px; padding:10px; font-family:var(--font-ui); font-size:13px; font-weight:600; cursor:pointer; text-align:center; text-decoration:none; }
+.catalog-ai-quote { background:var(--gold-subtle); border:1px solid rgba(var(--gold-rgb), .2); border-radius:12px; padding:14px; font-family:var(--font-body); font-style:italic; font-size:13px; color:var(--text-secondary); line-height:1.65; margin-bottom:12px; }
+.catalog-ai-cta { font-size:12px; font-weight:600; color:var(--gold); text-decoration:none; }
+.catalog-reviewed-list { display:flex; flex-direction:column; gap:8px; }
+.catalog-reviewed-row { display:flex; align-items:center; gap:10px; text-decoration:none; padding:8px; border-radius:8px; transition:background .15s; }
+.catalog-reviewed-thumb { font-size:1.4rem; width:36px; height:36px; border-radius:6px; overflow:hidden; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+.catalog-reviewed-thumb > img { width:100%; height:100%; object-fit:cover; display:block; }
+.catalog-reviewed-info { flex:1; }
+.catalog-reviewed-rating { font-family:var(--font-display); font-size:.9rem; color:var(--gold); }
+
+/* In-page catalog search bar (moved out of the top bar so it lives next
+   to the content it filters). Same visual rhythm as the .explore-search
+   bar on explore.html — gold-focus border, leading magnifier icon. */
+.catalog-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.catalog-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+.catalog-search-input {
+  width: 100%;
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  border-radius: 10px;
+  padding: 12px 14px 12px 40px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color .2s, background .2s;
+}
+.catalog-search-input::placeholder { color: var(--text-muted); }
+.catalog-search-input:focus {
+  border-color: var(--gold);
+  background: var(--bg-surface);
+}
+
+/* iPhone-SE (≤639px): tighten the page title and search input on narrow
+   viewports. Kept page-local so other pages' headings are unaffected. */
+@media (max-width: 639px) {
+  .catalog-page-title { font-size: 1.5rem; line-height: 1.15; }
+  .catalog-search-input { font-size: 13px; padding: 11px 12px 11px 38px; }
+}

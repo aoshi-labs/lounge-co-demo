@@ -1,0 +1,12 @@
+services:
+  sterlon-gateway:
+    build: .
+    ports:
+      - "8787:8787"
+    environment:
+      PORT: 8787
+      HOST: 0.0.0.0
+      GROQ_API_KEY: ${GROQ_API_KEY:?Set GROQ_API_KEY in your shell or .env}
+      GROQ_MODEL: ${GROQ_MODEL:-openai/gpt-oss-120b}
+      GROQ_MAX_RETRIES: ${GROQ_MAX_RETRIES:-3}
+      GROQ_REQUEST_INTERVAL_MS: ${GROQ_REQUEST_INTERVAL_MS:-1200}

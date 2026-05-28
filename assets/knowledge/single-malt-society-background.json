@@ -1,0 +1,126 @@
+{
+  "marketing_image": {
+    "meta": {
+      "spec_version": "1.0.0",
+      "title": "Single Malt Society Event Background Plate",
+      "campaign": "lounge_event_hero",
+      "brand_name": "Lounge & Co.",
+      "usage_context": "event_background_overlay"
+    },
+    "subject": {
+      "type": "atmospheric_still_life",
+      "name": "Crystal whiskey glass with amber scotch on peat-stained oak",
+      "variant": "evening_scotch_tasting_scene",
+      "physical_properties": {
+        "primary_element": "heavy lead-crystal whiskey glass with a generous pour of amber single-malt scotch and one large clear ice sphere catching warm refractions",
+        "secondary_element": "natural cork stopper resting beside the glass, faint sherry-cask staining at its base",
+        "tertiary_element": "thin curl of vapor rising from the glass and dissipating into shadow, faint peat-smoke haze in the air",
+        "finish": "cinematic, photoreal"
+      }
+    },
+    "props": {
+      "foreground": [
+        {
+          "type": "whiskey_glass_with_ice_sphere",
+          "count": 1,
+          "position": "bottom_right_third",
+          "notes": "positioned on the rule-of-thirds intersection so upper-left two-thirds remain clean for overlay text; faceted lead-crystal glass, amber scotch glow lit from within by the key light, single 2-inch ice sphere catching warm refractions"
+        },
+        {
+          "type": "cork_stopper",
+          "count": 1,
+          "position": "right_of_glass",
+          "notes": "natural cork bottle stopper laid on its side, faint sherry-cask staining at the base, suggesting a recently opened bottle"
+        }
+      ],
+      "midground": [
+        {
+          "type": "open_tasting_journal",
+          "count": 1,
+          "position": "lower_right",
+          "notes": "small leather-bound tasting journal open at an angle, faint fountain-pen ink strokes visible but unreadable (no legible text), out of focus; suggests careful note-keeping without revealing content"
+        }
+      ],
+      "background": [
+        {
+          "type": "distillery_bottle_shelf",
+          "count": 1,
+          "position": "deep_background_left",
+          "notes": "out-of-focus row of dark glass scotch bottles with handwritten paper labels on a shadowed wooden shelf; bottles read as suggestion not branding, no legible text or logos"
+        },
+        {
+          "type": "mahogany_paneled_wall",
+          "count": 1,
+          "position": "full_backdrop",
+          "notes": "deep mahogany or walnut wainscoting, vertical grain, mostly in shadow with one warm light pool on the upper-left for text legibility"
+        },
+        {
+          "type": "peat_smoke_haze",
+          "count": 1,
+          "position": "ambient",
+          "notes": "very subtle volumetric haze across the frame with a faint peat-smoke tint, catches the key light into soft god-rays without obscuring detail"
+        }
+      ]
+    },
+    "environment": {
+      "surface": {
+        "material": "wood",
+        "description": "aged peat-stained oak tabletop with subtle ring-stain patina and a soft satin sheen, not glossy; darker and more weathered than typical walnut to read as scotch-cellar provenance",
+        "reflection_strength": 0.25
+      },
+      "background": {
+        "color": "#0E0C0A",
+        "secondary_color": "#1A1410",
+        "texture": "warm grain with shadowed mahogany",
+        "effect": "shallow_bokeh_with_warm_practical_lights",
+        "negative_space_zone": "upper_left_to_center — keep visually quiet for overlay text"
+      },
+      "atmosphere": {
+        "mood": "scotch-nerd reverent, sherry-cask intimate, dusty-old-bottle prestigious, after-hours members-only",
+        "keywords": ["editorial", "Macallan campaign", "Glenfiddich archive", "cinematic", "low-key", "candlelit", "sherry cask", "peat smoke", "private cellar"]
+      }
+    },
+    "camera": {
+      "angle": "low_angle",
+      "framing": "wide",
+      "aspect_ratio": "16:9",
+      "focal_length_mm": 50,
+      "depth_of_field": "shallow",
+      "focus_point": "amber scotch and ice sphere refractions",
+      "composition_notes": "rule of thirds — subject locked to lower-right intersection; upper-left two-thirds reserved for event title overlay"
+    },
+    "lighting": {
+      "key_light_direction": "three_quarter_right",
+      "key_light_intensity": "medium",
+      "key_light_quality": "warm tungsten ~2700K, soft falloff, motivated by an unseen table lamp; backlights the amber scotch so the pour glows from within",
+      "fill_light_direction": "left",
+      "fill_light_intensity": "very_low",
+      "rim_light": true,
+      "rim_light_notes": "subtle warm rim on ice sphere edge and glass rim to separate from background; faint rim along cork stopper",
+      "color_temperature": "warm",
+      "practical_lights": "distant out-of-focus warm bokeh points in deep background (suggesting bar shelving / candles)"
+    },
+    "brand": {
+      "logo_asset": null,
+      "primary_colors": ["#D4AF37", "#800020", "#0E0C0A", "#1A1410", "#EDE5DA"],
+      "palette_intent": "warm gold and burgundy accents on near-black warm base, matching Lounge & Co. design tokens",
+      "must_match_assets": [],
+      "forbidden_changes": [
+        "do_not_add_any_text",
+        "do_not_add_any_logos",
+        "do_not_brighten_overall_exposure",
+        "do_not_render_human_faces",
+        "do_not_add_modern_tech_or_phones",
+        "do_not_use_cool_color_temperatures"
+      ]
+    },
+    "controls": {
+      "lock_composition": true,
+      "lock_negative_space_zone": true,
+      "allow_background_variation": "minor",
+      "allow_prop_relayout": "small_only",
+      "output_resolution": "3840x2160",
+      "render_intent": "photoreal, shot on medium-format, low ISO, fine grain"
+    }
+  }
+}

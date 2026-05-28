@@ -1,0 +1,126 @@
+{
+  "description": "Canonical curated spirits merged into spirits.reco.json (manufacturer-verified, sheet SKUs SPI-CUR-*).",
+  "products": [
+    {
+      "id": "pappy-van-winkle-23yr",
+      "name": "Pappy Van Winkle 23yr",
+      "category": "spirit",
+      "deckKey": "bourbon",
+      "tracker": { "sku": "SPI-CUR-PAPPY-23" },
+      "spec": {
+        "proof": 95.6,
+        "abvPercent": 47.8,
+        "mash": "Wheated mash",
+        "style": "Straight bourbon",
+        "origin": "Kentucky",
+        "msrp": 85
+      },
+      "journeyLevel": "advanced",
+      "journeyRank": 10,
+      "tags": [
+        { "id": "caramel", "weight": 1 },
+        { "id": "ripe_apple", "weight": 0.95 },
+        { "id": "cherry", "weight": 0.95 },
+        { "id": "oak", "weight": 0.9 },
+        { "id": "tobacco", "weight": 0.85 },
+        { "id": "chocolate", "weight": 0.75 },
+        { "id": "wood", "weight": 0.85 }
+      ],
+      "sensory": { "body": 8, "sweetness": 8, "pepper": 3, "cocoa": 6, "earthiness": 4 },
+      "awards": [
+        { "year": 2019, "result": "Gold", "organization": "San Francisco World Spirits Competition" },
+        { "year": 2019, "result": "Silver", "organization": "International Wine & Spirits Competition", "detail": "Star Attraction" },
+        { "year": 2018, "result": "Excellent / Highly Recommended", "organization": "Ultimate Spirits Challenge", "detail": "90–94 pts · Star Attraction" },
+        { "year": 2018, "result": "Best Bourbon / Best Small Batch Bourbon", "organization": "New York World Wine & Spirits Competition", "detail": "Trophy" },
+        { "year": 2018, "result": "5 Stars — Highest Recommendation", "organization": "F. Paul Pacult's Spirit Journal", "detail": "Star Attraction" },
+        { "year": 2018, "result": "Overall Winner", "organization": "World Whiskies Awards — Whisky Magazine", "detail": "Trophy" }
+      ],
+      "expertise": {
+        "paragraphs": [
+          "Pappy 23 is straight bourbon from a wheated mash, bottled at 95.6 proof (47.8% ABV) — Advanced on the whiskey journey, where long-aged wheated bourbons live.",
+          "It opens with caramel and ripe apples, then cherries, oak and tobacco come forward with a quiet hint of chocolate underneath.",
+          "The wood is pronounced but never harsh — barrel character that rides on top of orchard fruit instead of drying the palate out.",
+          "It lands on a long, sweet caramel finish — the kind that keeps unfolding between sips rather than fading off the tongue."
+        ],
+        "pairingBridge": "Cherry, oak and chocolate in the glass reward a maduro or cocoa-leaning cigar — the cigar picks up the chocolate, its leather picks up the tobacco, and neither side fights for the room."
+      },
+      "presentation": {
+        "sensoryPrelude": {
+          "paragraph": "Caramel and ripe apple open first, then cherry, oak, and tobacco with a quiet hint of chocolate — pronounced wood that never turns harsh beside the {{cigar}}.",
+          "observation": "The finish stays long and sweet on caramel. Patient, full, and worth sipping slowly between draws."
+        },
+        "flavorHero": {
+          "caramelChocolate": "Caramel and chocolate in the glass — my pick is the Pappy Van Winkle 23yr. Ripe apple and cherry over oak and tobacco, pronounced wood giving way to a long sweet caramel finish.",
+          "appleOrchard": "That apple and orchard note points to the Pappy Van Winkle 23yr — caramel and cherry up front, oak and tobacco in the middle, long sweet caramel on the finish.",
+          "woodOak": "Wood and oak in the glass — the Pappy Van Winkle 23yr delivers pronounced barrel character without drying out: caramel, ripe apple, cherry, and a long sweet caramel finish."
+        }
+      },
+      "menuLine": "Pappy Van Winkle 23yr · Kentucky Straight Bourbon · $85 · 95.6 proof (47.8% ABV) · wheated mash · Whiskey Journey: Advanced · Notes: caramel, ripe apples, cherries, oak, tobacco, hint of chocolate; pronounced wood flavors into a long sweet caramel finish · Awards: SF World Spirits Gold 2019; IWSC Silver 2019 (Star Attraction); USC Excellent/Highly Recommended 90–94 pts 2018; NYWWSC Best Bourbon & Best Small Batch 2018; Pacult 5 Stars 2018; World Whiskies Awards Overall Winner 2018",
+      "guidance": {
+        "bestFor": "Celebration pours, advanced wheated bourbon seekers, luxury cigar pairings.",
+        "avoidIf": "Novice first bourbon, budget ceiling under $40, or user wants low-proof session pours.",
+        "whyRecommend": "Recommend when the member names Pappy, wants a unicorn bourbon, or asks for advanced wheated depth with orchard fruit and long caramel finish.",
+        "occasion": "Celebration",
+        "flavorFamily": "Bourbon",
+        "pairingAffinity": "Maduro / cocoa-forward cigars",
+        "memberBlurb": "Pappy Van Winkle 23yr — long-aged wheated bourbon with caramel, orchard fruit, and pronounced sweet wood."
+      },
+      "provenance": {
+        "beginnerSafe": false,
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "id": "blantons-single-barrel",
+      "name": "Blanton's Single Barrel",
+      "category": "spirit",
+      "deckKey": "bourbon",
+      "tracker": { "sku": "SPI-CUR-BLANTONS" },
+      "spec": {
+        "proof": 93,
+        "abvPercent": 46.5,
+        "mash": "Corn, rye, malted barley (Buffalo Trace mash bill #1)",
+        "style": "Kentucky Straight Bourbon",
+        "origin": "Kentucky",
+        "msrp": 31
+      },
+      "journeyLevel": "novice",
+      "journeyRank": 1,
+      "tags": [
+        { "id": "maple", "weight": 0.9 },
+        { "id": "honey", "weight": 0.85 },
+        { "id": "vanilla", "weight": 0.85 },
+        { "id": "orange_peel", "weight": 0.8 },
+        { "id": "berry", "weight": 0.75 },
+        { "id": "caramel", "weight": 0.8 },
+        { "id": "toffee", "weight": 0.8 },
+        { "id": "spice", "weight": 0.75 }
+      ],
+      "sensory": { "body": 5, "sweetness": 7, "pepper": 4, "cocoa": 3, "earthiness": 2 },
+      "expertise": {
+        "paragraphs": [
+          "Blanton's Single Barrel is Kentucky straight bourbon from Buffalo Trace mash bill #1 at 93 proof — maple, honey, and vanilla with orange citrus, stewed berries, caramel, and toffee (distillery-official profile).",
+          "It is the original single-barrel bourbon: approachable structure for a relaxed cigar without the long-aged weight of allocated Van Winkle bottles.",
+          "Novice on the whiskey journey — the natural first stop before you reach for advanced wheated pours like Pappy 23."
+        ],
+        "pairingBridge": "Cream and cedar in a medium-bodied cigar echo the citrus and baking spice in the glass; caramel and toffee in the pour keep the finish sweet between draws."
+      },
+      "menuLine": "Blanton's Single Barrel · Kentucky Straight Bourbon · $31 · 93 proof (46.5% ABV) · BT mash bill #1 · Whiskey Journey: Novice · Notes: maple, honey, vanilla, orange citrus, stewed berries, caramel, toffee, baking spice",
+      "guidance": {
+        "bestFor": "First bourbon pour, approachable cigar pairings, Buffalo Trace curiosity.",
+        "avoidIf": "User wants peat, agave, or ultra-premium allocated pours only.",
+        "whyRecommend": "Recommend as the canonical novice bourbon — single-barrel sweetness with citrus lift beside medium cigars.",
+        "occasion": "Evening lounge",
+        "flavorFamily": "Bourbon",
+        "pairingAffinity": "Medium-bodied cigars, cream and cedar profiles",
+        "memberBlurb": "Blanton's Single Barrel — the original single-barrel bourbon with maple, honey, citrus, and baking spice."
+      },
+      "provenance": {
+        "beginnerSafe": true,
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    }
+  ]
+}

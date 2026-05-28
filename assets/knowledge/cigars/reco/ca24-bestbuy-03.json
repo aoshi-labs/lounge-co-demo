@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "shard": "ca24-bestbuy-03",
+  "category": "cigar",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 1,
+  "products": [
+    {
+      "tracker": {
+        "sku": "BB24-21-OSCAR-2012",
+        "caList": "Best Buy",
+        "caListYear": 2024,
+        "caRank": "",
+        "caRating": 87
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cream",
+          "weight": 1.0
+        },
+        {
+          "id": "cedar",
+          "weight": 0.95
+        },
+        {
+          "id": "nut",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 7,
+        "tier": 3,
+        "strength": 2,
+        "body": "Medium-Light",
+        "smokeTime": "45 min",
+        "wrapper": "Ecuador Connecticut",
+        "binder": "Honduras",
+        "filler": "Honduras / Nicaragua"
+      },
+      "id": "bb24-21-oscar-2012",
+      "sensory": {
+        "body": 4,
+        "sweetness": 6,
+        "pepper": 4,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "2012 by Oscar Valladares Connecticut Short Robusto",
+      "category": "cigar"
+    }
+  ]
+}

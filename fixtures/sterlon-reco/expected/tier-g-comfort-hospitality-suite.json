@@ -1,0 +1,102 @@
+{
+  "cases": [
+    {
+      "id": "prompt-1",
+      "comfortAskDetected": true,
+      "connecticutCapOk": true,
+      "connecticutWrapperCount": 0,
+      "cigarIdsDistinct": true,
+      "refinedLanePreserved": true,
+      "wildcardLanePreserved": true,
+      "notAllLowTierMild": true,
+      "wrapperKeysInFlight": [
+        "Nicaragua",
+        "Cuba",
+        "San Andrés Maduro"
+      ],
+      "suiteOk": true
+    },
+    {
+      "id": "prompt-2",
+      "comfortAskDetected": true,
+      "connecticutCapOk": true,
+      "connecticutWrapperCount": 0,
+      "cigarIdsDistinct": true,
+      "refinedLanePreserved": true,
+      "wildcardLanePreserved": true,
+      "notAllLowTierMild": true,
+      "wrapperKeysInFlight": [
+        "Ecuador Habano",
+        "Cuba",
+        "Nicaragua Habano"
+      ],
+      "suiteOk": true
+    },
+    {
+      "id": "prompt-3",
+      "comfortAskDetected": true,
+      "connecticutCapOk": true,
+      "connecticutWrapperCount": 0,
+      "cigarIdsDistinct": true,
+      "refinedLanePreserved": true,
+      "wildcardLanePreserved": true,
+      "notAllLowTierMild": true,
+      "wrapperKeysInFlight": [
+        "Nicaragua",
+        "Nicaragua Habano",
+        "Honduras"
+      ],
+      "suiteOk": true
+    },
+    {
+      "id": "prompt-4",
+      "comfortAskDetected": true,
+      "connecticutCapOk": true,
+      "connecticutWrapperCount": 0,
+      "cigarIdsDistinct": true,
+      "refinedLanePreserved": true,
+      "wildcardLanePreserved": true,
+      "notAllLowTierMild": true,
+      "wrapperKeysInFlight": [
+        "Cameroon",
+        "Cameroon",
+        "Nicaragua"
+      ],
+      "suiteOk": true
+    },
+    {
+      "id": "prompt-5",
+      "comfortAskDetected": true,
+      "connecticutCapOk": true,
+      "connecticutWrapperCount": 0,
+      "cigarIdsDistinct": true,
+      "refinedLanePreserved": true,
+      "wildcardLanePreserved": true,
+      "notAllLowTierMild": true,
+      "wrapperKeysInFlight": [
+        "Nicaragua",
+        "Nicaragua Habano",
+        "Honduras"
+      ],
+      "suiteOk": true
+    },
+    {
+      "id": "prompt-6",
+      "comfortAskDetected": true,
+      "connecticutCapOk": true,
+      "connecticutWrapperCount": 0,
+      "cigarIdsDistinct": true,
+      "refinedLanePreserved": true,
+      "wildcardLanePreserved": true,
+      "notAllLowTierMild": true,
+      "wrapperKeysInFlight": [
+        "Mexico",
+        "Nicaragua Habano",
+        "San Andrés Maduro"
+      ],
+      "suiteOk": true
+    }
+  ],
+  "allPromptsOk": true,
+  "ok": true
+}

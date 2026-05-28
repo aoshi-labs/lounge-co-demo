@@ -1,0 +1,19 @@
+{
+  "productIdAuthorityVersion": 2,
+  "allSlotsHaveProductIds": true,
+  "generateEmitsIdsOnly": true,
+  "cardsProductIds": [
+    {
+      "cigarId": "ca25-06-rocky-emerald",
+      "spiritId": "blantons-single-barrel"
+    },
+    {
+      "cigarId": "ca25-16-gellis-saunter",
+      "spiritId": "blantons-single-barrel"
+    },
+    {
+      "cigarId": "vid-20-def-classic-rob",
+      "spiritId": "blantons-single-barrel"
+    }
+  ]
+}

@@ -1,0 +1,453 @@
+{
+  "version": 1,
+  "shard": "ca24-top25-01",
+  "category": "cigar",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 9,
+  "products": [
+    {
+      "tracker": {
+        "sku": "CA24-01-MF-JUDGE",
+        "caList": "Top 25",
+        "caListYear": 2024,
+        "caRank": 1,
+        "caRating": 97
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.95
+        },
+        {
+          "id": "coffee",
+          "weight": 0.85
+        },
+        {
+          "id": "earth",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 18,
+        "tier": 7,
+        "strength": 5,
+        "body": "Full",
+        "smokeTime": "90 min",
+        "wrapper": "Nicaragua",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "ca24-01-mf-judge",
+      "sensory": {
+        "body": 9,
+        "sweetness": 5,
+        "pepper": 7,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "My Father The Judge",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CA24-02-MONTE-1935",
+        "caList": "Top 25",
+        "caListYear": 2024,
+        "caRank": 2,
+        "caRating": 96
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "spice",
+          "weight": 0.95
+        },
+        {
+          "id": "tobacco",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 16,
+        "tier": 6,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "90 min",
+        "wrapper": "Nicaragua",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "ca24-02-monte-1935",
+      "sensory": {
+        "body": 7,
+        "sweetness": 6,
+        "pepper": 6,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Montecristo 1935 Anniversary Nicaragua Espeso",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CA24-03-EPC-ENCORE",
+        "caList": "Top 25",
+        "caListYear": 2024,
+        "caRank": 3,
+        "caRating": 96
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "wood",
+          "weight": 0.95
+        },
+        {
+          "id": "earth",
+          "weight": 0.85
+        },
+        {
+          "id": "leather",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 15,
+        "tier": 6,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "90 min",
+        "wrapper": "Nicaragua",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "ca24-03-epc-encore",
+      "sensory": {
+        "body": 7,
+        "sweetness": 5,
+        "pepper": 6,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "E.P. Carrillo Encore Celestial",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CA24-04-PADRON-1926",
+        "caList": "Top 25",
+        "caListYear": 2024,
+        "caRank": 4,
+        "caRating": 95
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.95
+        },
+        {
+          "id": "coffee",
+          "weight": 0.85
+        },
+        {
+          "id": "earth",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 22,
+        "tier": 7,
+        "strength": 5,
+        "body": "Full",
+        "smokeTime": "60 min",
+        "wrapper": "Nicaragua",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "ca24-04-padron-1926",
+      "sensory": {
+        "body": 9,
+        "sweetness": 5,
+        "pepper": 7,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "Padron 1926 No. 6",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CA24-05-PARTAGAS-MAESTRA",
+        "caList": "Top 25",
+        "caListYear": 2024,
+        "caRank": 5,
+        "caRating": 95
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "wood",
+          "weight": 0.95
+        },
+        {
+          "id": "earth",
+          "weight": 0.85
+        },
+        {
+          "id": "leather",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "tier": 7,
+        "strength": 5,
+        "body": "Full",
+        "smokeTime": "90 min",
+        "wrapper": "Cuba",
+        "binder": "Cuba",
+        "filler": "Cuba"
+      },
+      "id": "ca24-05-partagas-maestra",
+      "sensory": {
+        "body": 9,
+        "sweetness": 5,
+        "pepper": 7,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Partagás Línea Maestra Maestro",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CA24-06-OLIVA-MEL-TORP",
+        "caList": "Top 25",
+        "caListYear": 2024,
+        "caRank": 6,
+        "caRating": 95
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.95
+        },
+        {
+          "id": "earth",
+          "weight": 0.85
+        },
+        {
+          "id": "pepper",
+          "weight": 0.75
+        },
+        {
+          "id": "espresso",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 12,
+        "tier": 5,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "90 min",
+        "wrapper": "Mexico",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "ca24-06-oliva-mel-torp",
+      "sensory": {
+        "body": 7,
+        "sweetness": 5,
+        "pepper": 6,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "Oliva Serie V Melanio Maduro Torpedo",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CA24-07-RP-CONVICTION",
+        "caList": "Top 25",
+        "caListYear": 2024,
+        "caRank": 7,
+        "caRating": 94
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "earth",
+          "weight": 1.0
+        },
+        {
+          "id": "spice",
+          "weight": 0.95
+        },
+        {
+          "id": "cedar",
+          "weight": 0.85
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.75
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 14,
+        "tier": 5,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "90 min",
+        "wrapper": "Nicaragua",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "ca24-07-rp-conviction",
+      "sensory": {
+        "body": 7,
+        "sweetness": 5,
+        "pepper": 6,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Rocky Patel Conviction Toro",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CA24-08-COHIBA-MAD5",
+        "caList": "Top 25",
+        "caListYear": 2024,
+        "caRank": 8,
+        "caRating": 94
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.95
+        },
+        {
+          "id": "earth",
+          "weight": 0.85
+        },
+        {
+          "id": "pepper",
+          "weight": 0.75
+        },
+        {
+          "id": "espresso",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "tier": 7,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "60 min",
+        "wrapper": "Cuba",
+        "binder": "Cuba",
+        "filler": "Cuba"
+      },
+      "id": "ca24-08-cohiba-mad5",
+      "sensory": {
+        "body": 7,
+        "sweetness": 5,
+        "pepper": 6,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "Cohiba Maduro 5 Mágicos",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CA24-09-AF-EYEBULL",
+        "caList": "Top 25",
+        "caListYear": 2024,
+        "caRank": 9,
+        "caRating": 94
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "spice",
+          "weight": 0.95
+        },
+        {
+          "id": "tobacco",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 16,
+        "tier": 6,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "90 min",
+        "wrapper": "Cameroon",
+        "binder": "Dominican Republic",
+        "filler": "Dominican Republic"
+      },
+      "id": "ca24-09-af-eyebull",
+      "sensory": {
+        "body": 7,
+        "sweetness": 6,
+        "pepper": 6,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Arturo Fuente Don Carlos Eye of the Bull",
+      "category": "cigar"
+    }
+  ]
+}

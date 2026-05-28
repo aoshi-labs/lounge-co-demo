@@ -1,0 +1,13 @@
+{
+  "deckKey": "bourbon",
+  "flavorRoutedSpirit": "Pappy Van Winkle 23yr",
+  "activeCategoryFocus": "spirit",
+  "latchedJourneyLevel": "novice",
+  "levelNovice": "novice",
+  "levelIdempotent": true,
+  "eveningOccasion": "afterDinner",
+  "refinementAxis": "lighter",
+  "refinementTarget": "best",
+  "refinementChainDepth": 1,
+  "budgetCeiling": 30
+}

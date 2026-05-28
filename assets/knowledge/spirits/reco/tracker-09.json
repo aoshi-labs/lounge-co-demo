@@ -1,0 +1,435 @@
+{
+  "version": 1,
+  "shard": "tracker-09",
+  "category": "spirit",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 8,
+  "products": [
+    {
+      "deckKey": "rum",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-mtgay-xo",
+      "sensory": {
+        "body": 5,
+        "sweetness": 7,
+        "pepper": 2,
+        "cocoa": 7,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-MTGAY-XO",
+        "article": "https://www.mountgayrum.com/rum/xo/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 63,
+      "spec": {
+        "proof": 86.0,
+        "abvPercent": 43.0,
+        "mash": "Molasses-based (column & pot)",
+        "style": "Aged rum",
+        "origin": "Barbados",
+        "msrp": 45
+      },
+      "name": "Mount Gay XO",
+      "tags": [
+        {
+          "id": "vanilla",
+          "weight": 1.0
+        },
+        {
+          "id": "oak",
+          "weight": 0.95
+        },
+        {
+          "id": "spice",
+          "weight": 0.85
+        },
+        {
+          "id": "caramel",
+          "weight": 0.75
+        },
+        {
+          "id": "fig",
+          "weight": 0.7
+        },
+        {
+          "id": "dark_chocolate",
+          "weight": 0.65
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "vodka",
+      "journeyLevel": "novice",
+      "id": "spi-trk-new-amsterdam",
+      "sensory": {
+        "body": 2,
+        "sweetness": 4,
+        "pepper": 2,
+        "cocoa": 2,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-NEW-AMSTERDAM",
+        "article": "https://www.royalbatch.com/blog-detail/best-selling-alcohol-in-the-usa-in-2025-what-americans-actually-chose",
+        "source": "Industry reference (US retail sales 2025)"
+      },
+      "journeyRank": 85,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Grain spirit",
+        "style": "Grain vodka",
+        "origin": "California",
+        "msrp": 15
+      },
+      "name": "New Amsterdam Vodka",
+      "tags": [
+        {
+          "id": "citrus",
+          "weight": 1.0
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.95
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "japanese",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-nikka-coffey",
+      "sensory": {
+        "body": 5,
+        "sweetness": 7,
+        "pepper": 3,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-NIKKA-COFFEY",
+        "article": "https://www.nikka.com/en/brands/coffeygrain/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 61,
+      "spec": {
+        "proof": 90.0,
+        "abvPercent": 45.0,
+        "mash": "Corn dominant column still",
+        "style": "Grain whisky (column still)",
+        "origin": "Japan",
+        "msrp": 65
+      },
+      "name": "Nikka Coffey Grain Whisky",
+      "tags": [
+        {
+          "id": "pear",
+          "weight": 1.0
+        },
+        {
+          "id": "cherry",
+          "weight": 0.95
+        },
+        {
+          "id": "citrus",
+          "weight": 0.85
+        },
+        {
+          "id": "coconut",
+          "weight": 0.75
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.7
+        },
+        {
+          "id": "banana",
+          "weight": 0.65
+        },
+        {
+          "id": "caramel",
+          "weight": 0.6
+        },
+        {
+          "id": "anise",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "japanese",
+      "journeyLevel": "advanced",
+      "id": "spi-trk-nikka-ftb",
+      "sensory": {
+        "body": 7,
+        "sweetness": 6,
+        "pepper": 4,
+        "cocoa": 7,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-NIKKA-FTB",
+        "article": "https://www.nikka.com/en/brands/fromthebarrel/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 59,
+      "spec": {
+        "proof": 102.8,
+        "abvPercent": 51.4,
+        "mash": "Blended malt & grain cask strength",
+        "style": "Blended Japanese whisky",
+        "origin": "Japan",
+        "msrp": 55
+      },
+      "name": "Nikka From the Barrel",
+      "tags": [
+        {
+          "id": "oak",
+          "weight": 1.0
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.95
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.85
+        },
+        {
+          "id": "citrus",
+          "weight": 0.75
+        },
+        {
+          "id": "orange_peel",
+          "weight": 0.7
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "scotch",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-oban-14",
+      "sensory": {
+        "body": 5,
+        "sweetness": 6,
+        "pepper": 7,
+        "cocoa": 7,
+        "earthiness": 6
+      },
+      "tracker": {
+        "sku": "SPI-TRK-OBAN-14",
+        "article": "https://www.malts.com/en-us/products/oban-14-year-old-single-malt-scotch-whisky-750ml",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 49,
+      "spec": {
+        "proof": 86.0,
+        "abvPercent": 43.0,
+        "mash": "100% malted barley",
+        "style": "Single malt Scotch",
+        "origin": "West Highland, Scotland",
+        "msrp": 85
+      },
+      "name": "Oban 14 Year",
+      "tags": [
+        {
+          "id": "honey",
+          "weight": 1.0
+        },
+        {
+          "id": "citrus",
+          "weight": 0.95
+        },
+        {
+          "id": "smoke",
+          "weight": 0.85
+        },
+        {
+          "id": "mint",
+          "weight": 0.75
+        },
+        {
+          "id": "dark_chocolate",
+          "weight": 0.7
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.65
+        },
+        {
+          "id": "apple",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-of-1920",
+      "sensory": {
+        "body": 6,
+        "sweetness": 6,
+        "pepper": 5,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-OF-1920",
+        "article": "https://www.oldforester.com/bourbons/1920-prohibition-style/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 6,
+      "spec": {
+        "proof": 115.0,
+        "abvPercent": 57.5,
+        "mash": "Corn, rye, malted barley (Whiskey Row series)",
+        "style": "Kentucky Straight Bourbon",
+        "origin": "Kentucky",
+        "msrp": 65
+      },
+      "name": "Old Forester 1920",
+      "tags": [
+        {
+          "id": "cherry",
+          "weight": 1.0
+        },
+        {
+          "id": "caramel",
+          "weight": 0.95
+        },
+        {
+          "id": "dark_chocolate",
+          "weight": 0.85
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.75
+        },
+        {
+          "id": "maple",
+          "weight": 0.7
+        },
+        {
+          "id": "spice",
+          "weight": 0.65
+        },
+        {
+          "id": "malt",
+          "weight": 0.6
+        },
+        {
+          "id": "nougat",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "agave",
+      "journeyLevel": "novice",
+      "id": "spi-trk-patron-silver",
+      "sensory": {
+        "body": 5,
+        "sweetness": 7,
+        "pepper": 6,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-PATRON-SILVER",
+        "article": "https://www.patrontequila.com/products/patron-silver",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 71,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "100% Blue Weber agave",
+        "style": "100% agave blanco",
+        "origin": "Jalisco, Mexico",
+        "msrp": 45
+      },
+      "name": "Patrón Silver",
+      "tags": [
+        {
+          "id": "agave",
+          "weight": 1.0
+        },
+        {
+          "id": "citrus",
+          "weight": 0.95
+        },
+        {
+          "id": "honey",
+          "weight": 0.85
+        },
+        {
+          "id": "pepper",
+          "weight": 0.75
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-penelope",
+      "sensory": {
+        "body": 5,
+        "sweetness": 7,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-PENELOPE",
+        "article": "https://www.penelopebourbon.com/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 36,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "High-rye bourbon blend",
+        "style": "Straight bourbon (MGP blend)",
+        "origin": "Kentucky / Indiana",
+        "msrp": 42
+      },
+      "name": "Penelope Bourbon",
+      "tags": [
+        {
+          "id": "caramel",
+          "weight": 1.0
+        },
+        {
+          "id": "oak",
+          "weight": 0.95
+        },
+        {
+          "id": "citrus",
+          "weight": 0.85
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.75
+        },
+        {
+          "id": "cream",
+          "weight": 0.7
+        }
+      ],
+      "category": "spirit"
+    }
+  ]
+}

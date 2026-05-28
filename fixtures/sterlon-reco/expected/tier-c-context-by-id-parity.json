@@ -1,0 +1,8 @@
+{
+  "cigarIdMatch": true,
+  "spiritIdMatch": true,
+  "foodIdMatch": true,
+  "cigarSpiritMatches": true,
+  "spiritFoodMatches": true,
+  "confidenceMatch": true
+}

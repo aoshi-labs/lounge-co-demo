@@ -1,0 +1,423 @@
+{
+  "version": 1,
+  "shard": "tracker-07",
+  "category": "spirit",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 8,
+  "products": [
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-knob-9",
+      "sensory": {
+        "body": 6,
+        "sweetness": 6,
+        "pepper": 4,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-KNOB-9",
+        "article": "https://www.knobcreek.com/whiskies/9-year-old-bourbon-whiskey",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 33,
+      "spec": {
+        "proof": 100.0,
+        "abvPercent": 50.0,
+        "mash": "Traditional bourbon mash",
+        "style": "Kentucky Straight Bourbon",
+        "origin": "Kentucky",
+        "msrp": 40
+      },
+      "name": "Knob Creek Kentucky Straight Bourbon",
+      "tags": [
+        {
+          "id": "oak",
+          "weight": 1.0
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.95
+        },
+        {
+          "id": "caramel",
+          "weight": 0.85
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "peated",
+      "journeyLevel": "advanced",
+      "id": "spi-trk-lag-16",
+      "sensory": {
+        "body": 6,
+        "sweetness": 6,
+        "pepper": 7,
+        "cocoa": 4,
+        "earthiness": 8
+      },
+      "tracker": {
+        "sku": "SPI-TRK-LAG-16",
+        "article": "https://www.malts.com/en-us/products/lagavulin-16-year-old-single-malt-scotch-whisky-750ml",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 13,
+      "spec": {
+        "proof": 86.0,
+        "abvPercent": 43.0,
+        "mash": "100% malted barley",
+        "style": "Single malt Scotch",
+        "origin": "Islay, Scotland",
+        "msrp": 110
+      },
+      "name": "Lagavulin 16",
+      "tags": [
+        {
+          "id": "peat",
+          "weight": 1.0
+        },
+        {
+          "id": "smoke",
+          "weight": 0.95
+        },
+        {
+          "id": "iodine",
+          "weight": 0.85
+        },
+        {
+          "id": "maritime",
+          "weight": 0.75
+        },
+        {
+          "id": "wood",
+          "weight": 0.7
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "peated",
+      "journeyLevel": "advanced",
+      "id": "spi-trk-lag-8",
+      "sensory": {
+        "body": 5,
+        "sweetness": 6,
+        "pepper": 7,
+        "cocoa": 7,
+        "earthiness": 8
+      },
+      "tracker": {
+        "sku": "SPI-TRK-LAG-8",
+        "article": "https://www.malts.com/en-gb/products/lagavulin-8-year-old-single-malt-scotch-whisky-70cl",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 55,
+      "spec": {
+        "proof": 96.0,
+        "abvPercent": 48.0,
+        "mash": "100% malted barley",
+        "style": "Single malt Scotch",
+        "origin": "Islay, Scotland",
+        "msrp": 75
+      },
+      "name": "Lagavulin 8 Year",
+      "tags": [
+        {
+          "id": "chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "citrus",
+          "weight": 0.95
+        },
+        {
+          "id": "smoke",
+          "weight": 0.85
+        },
+        {
+          "id": "malt",
+          "weight": 0.75
+        },
+        {
+          "id": "peat",
+          "weight": 0.7
+        },
+        {
+          "id": "pepper",
+          "weight": 0.65
+        },
+        {
+          "id": "dark_chocolate",
+          "weight": 0.6
+        },
+        {
+          "id": "mint",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "peated",
+      "journeyLevel": "advanced",
+      "id": "spi-trk-laph-10",
+      "sensory": {
+        "body": 5,
+        "sweetness": 6,
+        "pepper": 7,
+        "cocoa": 4,
+        "earthiness": 8
+      },
+      "tracker": {
+        "sku": "SPI-TRK-LAPH-10",
+        "article": "https://www.laphroaig.com/whiskies/10-year-old",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 41,
+      "spec": {
+        "proof": 86.0,
+        "abvPercent": 43.0,
+        "mash": "100% malted barley",
+        "style": "Single malt Scotch",
+        "origin": "Islay, Scotland",
+        "msrp": 55
+      },
+      "name": "Laphroaig 10 Year",
+      "tags": [
+        {
+          "id": "peat",
+          "weight": 1.0
+        },
+        {
+          "id": "smoke",
+          "weight": 0.95
+        },
+        {
+          "id": "maritime",
+          "weight": 0.85
+        },
+        {
+          "id": "iodine",
+          "weight": 0.75
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.7
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "agave",
+      "journeyLevel": "novice",
+      "id": "spi-trk-lunazul-blanco",
+      "sensory": {
+        "body": 4,
+        "sweetness": 7,
+        "pepper": 6,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-LUNAZUL-BLANCO",
+        "article": "https://www.royalbatch.com/blog-detail/best-selling-alcohol-in-the-usa-in-2025-what-americans-actually-chose",
+        "source": "Industry reference (US retail sales 2025)"
+      },
+      "journeyRank": 86,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "100% Blue Weber agave",
+        "style": "100% agave blanco",
+        "origin": "Jalisco, Mexico",
+        "msrp": 22
+      },
+      "name": "Lunazul Blanco",
+      "tags": [
+        {
+          "id": "agave",
+          "weight": 1.0
+        },
+        {
+          "id": "citrus",
+          "weight": 0.95
+        },
+        {
+          "id": "pepper",
+          "weight": 0.85
+        },
+        {
+          "id": "herbal",
+          "weight": 0.75
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "scotch",
+      "journeyLevel": "advanced",
+      "id": "spi-trk-macallan-12",
+      "sensory": {
+        "body": 6,
+        "sweetness": 6,
+        "pepper": 7,
+        "cocoa": 4,
+        "earthiness": 6
+      },
+      "tracker": {
+        "sku": "SPI-TRK-MACALLAN-12",
+        "article": "https://usshop.themacallan.com/products/the-macallan-sherry-oak-12-years-old",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 12,
+      "spec": {
+        "proof": 86.0,
+        "abvPercent": 43.0,
+        "mash": "100% malted barley",
+        "style": "Single malt Scotch",
+        "origin": "Speyside, Scotland",
+        "msrp": 70
+      },
+      "name": "Macallan 12",
+      "tags": [
+        {
+          "id": "vanilla",
+          "weight": 1.0
+        },
+        {
+          "id": "dried_fruit",
+          "weight": 0.95
+        },
+        {
+          "id": "oak",
+          "weight": 0.85
+        },
+        {
+          "id": "spice",
+          "weight": 0.75
+        },
+        {
+          "id": "wood",
+          "weight": 0.7
+        },
+        {
+          "id": "smoke",
+          "weight": 0.65
+        },
+        {
+          "id": "sherry",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "scotch",
+      "journeyLevel": "advanced",
+      "id": "spi-trk-macallan-18",
+      "sensory": {
+        "body": 6,
+        "sweetness": 7,
+        "pepper": 2,
+        "cocoa": 7,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-MACALLAN-18",
+        "article": "https://usshop.themacallan.com/products/sherry-oak-18-years-old",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 56,
+      "spec": {
+        "proof": 86.0,
+        "abvPercent": 43.0,
+        "mash": "100% malted barley",
+        "style": "Single malt Scotch",
+        "origin": "Speyside, Scotland",
+        "msrp": 350
+      },
+      "name": "The Macallan 18 Year Sherry Oak",
+      "tags": [
+        {
+          "id": "ginger",
+          "weight": 1.0
+        },
+        {
+          "id": "citrus",
+          "weight": 0.95
+        },
+        {
+          "id": "cinnamon",
+          "weight": 0.85
+        },
+        {
+          "id": "dark_chocolate",
+          "weight": 0.75
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.7
+        },
+        {
+          "id": "apricot",
+          "weight": 0.65
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-makers-46",
+      "sensory": {
+        "body": 5,
+        "sweetness": 7,
+        "pepper": 3,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-MAKERS-46",
+        "article": "https://www.makersmark.com/our-bourbon/makers-46",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 29,
+      "spec": {
+        "proof": 94.0,
+        "abvPercent": 47.0,
+        "mash": "Wheated mash; seared French oak staves",
+        "style": "Wheated bourbon (stave-finished)",
+        "origin": "Kentucky",
+        "msrp": 42
+      },
+      "name": "Maker's 46",
+      "tags": [
+        {
+          "id": "oak",
+          "weight": 1.0
+        },
+        {
+          "id": "caramel",
+          "weight": 0.95
+        },
+        {
+          "id": "spice",
+          "weight": 0.85
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.75
+        }
+      ],
+      "category": "spirit"
+    }
+  ]
+}

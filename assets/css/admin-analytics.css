@@ -1,0 +1,484 @@
+/* ============================================================
+   admin-analytics.html — page-specific styles
+   (Shared design system in assets/css/lounge.css)
+   ============================================================ */
+
+/* Sidebar + user-row chrome now lives in lounge.css under the
+   .sidebar.admin context — admin-analytics inherits those rules. */
+
+/* ───── Top bar ───── */
+.page-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.period-select {
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  color: var(--text-secondary);
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-family: var(--font-ui);
+}
+.top-bar-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-export {
+  background: var(--burg);
+  border: 1px solid var(--burg);
+  color: var(--cream);
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+.btn-export:hover { background: var(--burg-hover); border-color: var(--burg-hover); }
+
+/* Page-level period selector — sits between the tabs and the analytics
+   content as a filter for the content beneath it. */
+.admin-analytics-period-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Overview tab content — was a bare <div> with each section (stat strip,
+   charts, top products, day-of-week heatmap, etc.) stacking flush. Flex
+   column + gap puts honest breathing room between every analytics
+   section. `:not([hidden])` so when switchAnalyticsTab toggles the
+   `hidden` attribute we don't fight its `display: none`. */
+#admin-analytics-tab-overview:not([hidden]) {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ───── Page container + layout ───── */
+.page-container {
+  padding: 24px 24px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 1300px;
+  width: 100%;
+}
+.row-2-1 { display: grid; grid-template-columns: 2fr 1fr; gap: 14px; }
+.row-1-1 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 1023px) {
+  .row-2-1, .row-1-1 { grid-template-columns: 1fr; }
+}
+
+/* ───── Stat strip + cards ───── */
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+@media (max-width: 1023px) {
+  .stat-strip { grid-template-columns: repeat(2, 1fr); }
+}
+.stat-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+.stat-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+.stat-delta {
+  font-size: 11px;
+  margin-top: 4px;
+}
+.stat-delta.up { color: var(--tier-elite); }
+.stat-delta.down { color: var(--burg); }
+
+/* ───── Widget overrides (slightly larger padding than shared) ───── */
+.widget { padding: 20px; }
+.widget-title {
+  font-size: 11px;
+  margin-bottom: 14px;
+}
+
+/* ───── Chart helpers (SVG + legends + axes) ───── */
+.chart-svg { width: 100%; height: auto; }
+.chart-legend {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.legend-item { display: flex; align-items: center; gap: 6px; }
+.legend-swatch { width: 10px; height: 2px; }
+.legend-swatch.gold { background: var(--gold); }
+.legend-swatch.dashed-emerald {
+  background: var(--tier-elite);
+  border-top: 2px dashed var(--tier-elite);
+}
+
+.bar-axis {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 6px;
+  padding: 0 6px;
+}
+.bar-axis-around {
+  display: flex;
+  justify-content: space-around;
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+.bar-axis .hl, .bar-axis-around .hl { color: var(--gold); }
+.bar-axis .hl-bold, .bar-axis-around .hl-bold {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* ───── Member growth summary ───── */
+.growth-summary {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--bg-border);
+}
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+.summary-row:last-child { margin-bottom: 0; }
+.summary-row .val { color: var(--text-primary); font-weight: 700; }
+.summary-row .val.up { color: var(--tier-elite); }
+.summary-row .val.down { color: var(--burg); }
+
+/* ───── Tier distribution list ───── */
+.tier-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.tier-item .tier-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+.tier-item .tier-label { font-weight: 600; }
+.tier-label.champion { color: var(--gold); }
+.tier-label.silver { color: var(--tier-runner-up); }
+.tier-label.elite-color { color: var(--tier-elite); }
+.tier-label.member-color { color: var(--text-secondary); }
+.tier-meta { color: var(--text-muted); }
+.tier-track {
+  height: 8px;
+  background: var(--bg-elevated);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.tier-fill { height: 100%; }
+.tier-fill.champion { width: 0.4%; min-width: 6px; background: var(--gold); }
+.tier-fill.silver { width: 0.8%; min-width: 8px; background: var(--tier-runner-up); }
+.tier-fill.elite-color { width: 3.2%; background: var(--tier-elite); }
+.tier-fill.member-color { width: 95.6%; background: var(--text-secondary); }
+
+/* ───── Engagement note (italic copy under chart) ───── */
+.engagement-note {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 14px;
+  font-family: var(--font-body);
+  font-style: italic;
+}
+
+/* ───── Spend + review lists ───── */
+.spend-list, .review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.spend-list { gap: 10px; }
+.spend-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+.spend-row .avatar {
+  width: 30px;
+  height: 30px;
+  font-size: 11px;
+}
+.spend-row .name { flex: 1; color: var(--text-primary); }
+.spend-row .amount { color: var(--gold); font-weight: 600; }
+
+/* Avatar colour variants used on this page */
+.avatar-gold { background: var(--gold); color: var(--bg-base); }
+.avatar-silver { background: var(--tier-runner-up); color: var(--tier-runner-up-ink); }
+.avatar-bronze { background: var(--tier-bronze); color: var(--tier-bronze-ink); }
+.avatar-elite { background: var(--tier-elite); color: var(--tier-elite-ink); }
+
+.review-list { font-size: 13px; }
+.review-row {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-secondary);
+}
+.review-row .count {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* === A15 — Sterlon Funnel tab ============================================ */
+
+/* Tab nav */
+.admin-analytics-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--bg-border);
+  margin-bottom: 18px;
+}
+.admin-analytics-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  padding: 11px 18px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color .15s, border-color .15s;
+}
+.admin-analytics-tab:hover:not(.active) { color: var(--text-secondary); }
+.admin-analytics-tab.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+  font-weight: 600;
+}
+.admin-analytics-tab [data-lucide], .admin-analytics-tab svg { color: currentColor; }
+
+/* Funnel summary header */
+.admin-analytics-funnel-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+.admin-analytics-funnel-sub {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-top: 6px;
+  max-width: 540px;
+}
+.admin-analytics-funnel-overall {
+  text-align: right;
+  flex-shrink: 0;
+}
+.admin-analytics-funnel-overall-num {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+.admin-analytics-funnel-overall-label {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* The funnel itself — each stage is a horizontal bar whose width = --w (% of total) */
+.admin-analytics-funnel {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.admin-analytics-funnel-stage {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.admin-analytics-funnel-bar {
+  height: 56px;
+  width: var(--w, 100%);
+  border-radius: 8px;
+  flex-shrink: 0;
+  max-width: 60%;
+  transition: filter .15s;
+}
+.admin-analytics-funnel-bar-1 { background: linear-gradient(90deg, var(--gold) 0%, var(--gold-dim) 100%); }
+.admin-analytics-funnel-bar-2 { background: linear-gradient(90deg, var(--gold-dim) 0%, var(--burg) 100%); }
+.admin-analytics-funnel-bar-3 { background: linear-gradient(90deg, var(--burg) 0%, var(--burg-hover) 100%); }
+
+.admin-analytics-funnel-meta {
+  flex: 1;
+  min-width: 0;
+}
+.admin-analytics-funnel-step {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.admin-analytics-funnel-count {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.1;
+  margin-top: 2px;
+}
+.admin-analytics-funnel-count-burg { color: var(--burg); }
+.admin-analytics-funnel-pct {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+/* Drop-off rows between stages */
+.admin-analytics-funnel-dropoff {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  margin: 6px 0 6px 0;
+  background: var(--bg-elevated);
+  border-left: 3px solid var(--burg);
+  border-radius: 0 8px 8px 0;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+.admin-analytics-funnel-dropoff [data-lucide],
+.admin-analytics-funnel-dropoff svg { color: var(--burg); flex-shrink: 0; }
+.admin-analytics-funnel-dropoff strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+.admin-analytics-funnel-dropoff-pct {
+  margin-left: auto;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--burg);
+  flex-shrink: 0;
+}
+
+/* Per-step detail row (3 widgets side-by-side) */
+.row-1-1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.admin-analytics-detail { display: flex; flex-direction: column; gap: 10px; font-size: 13px; }
+.admin-analytics-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed var(--bg-border);
+  color: var(--text-secondary);
+}
+.admin-analytics-detail-row:last-child { border-bottom: none; padding-bottom: 0; }
+.admin-analytics-detail-row .val {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.admin-analytics-detail-row .val.up    { color: var(--tier-elite); }
+.admin-analytics-detail-row .val.down  { color: var(--burg); }
+.admin-analytics-detail-row .val.burg  { color: var(--burg); }
+
+/* Drop-off question list */
+.admin-analytics-dropoff-list { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+.admin-analytics-dropoff-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 14px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  border-radius: 10px;
+}
+.admin-analytics-dropoff-question {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-primary);
+  flex: 1;
+  min-width: 0;
+}
+.admin-analytics-dropoff-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.admin-analytics-dropoff-count {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+.admin-analytics-dropoff-tag {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: var(--gold-subtle);
+  border: 1px solid rgba(var(--gold-rgb), .3);
+  border-radius: 99px;
+  padding: 3px 9px;
+}
+
+/* Mobile */
+@media (max-width: 1023px) {
+  .row-1-1-1 { grid-template-columns: 1fr; }
+  .admin-analytics-funnel-bar { max-width: 100%; }
+  .admin-analytics-funnel-stage { gap: 10px; flex-direction: column; align-items: stretch; }
+  .admin-analytics-funnel-overall { width: 100%; text-align: left; }
+  .admin-analytics-dropoff-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+}

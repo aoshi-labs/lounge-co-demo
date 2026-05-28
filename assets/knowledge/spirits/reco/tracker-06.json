@@ -1,0 +1,399 @@
+{
+  "version": 1,
+  "shard": "tracker-06",
+  "category": "spirit",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 8,
+  "products": [
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "novice",
+      "id": "spi-trk-jd-old7",
+      "sensory": {
+        "body": 4,
+        "sweetness": 7,
+        "pepper": 7,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-JD-OLD7",
+        "article": "https://www.royalbatch.com/blog-detail/best-selling-alcohol-in-the-usa-in-2025-what-americans-actually-chose",
+        "source": "Industry reference (US retail sales 2025)"
+      },
+      "journeyRank": 88,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Corn, rye, malt (Lincoln County Process)",
+        "style": "Tennessee whiskey (charcoal mellowed)",
+        "origin": "Tennessee",
+        "msrp": 28
+      },
+      "name": "Jack Daniel's Old No. 7",
+      "tags": [
+        {
+          "id": "banana",
+          "weight": 1.0
+        },
+        {
+          "id": "caramel",
+          "weight": 0.95
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.85
+        },
+        {
+          "id": "oak",
+          "weight": 0.75
+        },
+        {
+          "id": "smoke",
+          "weight": 0.7
+        },
+        {
+          "id": "brown_sugar",
+          "weight": 0.65
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-jd-sb",
+      "sensory": {
+        "body": 5,
+        "sweetness": 7,
+        "pepper": 3,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-JD-SB",
+        "article": "https://www.jackdaniels.com/en-us/our-process/single-barrel",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 38,
+      "spec": {
+        "proof": 94.0,
+        "abvPercent": 47.0,
+        "mash": "Corn, rye, malt (Lincoln County Process)",
+        "style": "Tennessee whiskey (charcoal mellowed)",
+        "origin": "Tennessee",
+        "msrp": 55
+      },
+      "name": "Jack Daniel's Single Barrel Select",
+      "tags": [
+        {
+          "id": "oak",
+          "weight": 1.0
+        },
+        {
+          "id": "caramel",
+          "weight": 0.95
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.85
+        },
+        {
+          "id": "floral",
+          "weight": 0.75
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-jeff-ocean",
+      "sensory": {
+        "body": 5,
+        "sweetness": 7,
+        "pepper": 3,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-JEFF-OCEAN",
+        "article": "https://jeffersonsbourbon.com/whiskeys/jeffersons-ocean-bourbon/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 37,
+      "spec": {
+        "proof": 90.0,
+        "abvPercent": 45.0,
+        "mash": "Bourbon blend; sea aging",
+        "style": "Straight bourbon (finished at sea)",
+        "origin": "Kentucky",
+        "msrp": 85
+      },
+      "name": "Jefferson's Ocean Aged at Sea",
+      "tags": [
+        {
+          "id": "maritime",
+          "weight": 1.0
+        },
+        {
+          "id": "caramel",
+          "weight": 0.95
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.85
+        },
+        {
+          "id": "oak",
+          "weight": 0.75
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "novice",
+      "id": "spi-trk-jim-beam-white",
+      "sensory": {
+        "body": 4,
+        "sweetness": 7,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-JIM-BEAM-WHITE",
+        "article": "https://www.royalbatch.com/blog-detail/best-selling-alcohol-in-the-usa-in-2025-what-americans-actually-chose",
+        "source": "Industry reference (US retail sales 2025)"
+      },
+      "journeyRank": 89,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Corn-forward Jim Beam family mash",
+        "style": "Kentucky Straight Bourbon",
+        "origin": "Kentucky",
+        "msrp": 20
+      },
+      "name": "Jim Beam Kentucky Straight Bourbon",
+      "tags": [
+        {
+          "id": "vanilla",
+          "weight": 1.0
+        },
+        {
+          "id": "caramel",
+          "weight": 0.95
+        },
+        {
+          "id": "oak",
+          "weight": 0.85
+        },
+        {
+          "id": "spice",
+          "weight": 0.75
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "scotch",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-jw-black",
+      "sensory": {
+        "body": 5,
+        "sweetness": 6,
+        "pepper": 7,
+        "cocoa": 4,
+        "earthiness": 6
+      },
+      "tracker": {
+        "sku": "SPI-TRK-JW-BLACK",
+        "article": "https://www.malts.com/en-gb/products/johnnie-walker-black-label-blended-scotch-whisky-70cl",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 44,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Blended malts & grains",
+        "style": "Blended Scotch whisky",
+        "origin": "Scotland",
+        "msrp": 42
+      },
+      "name": "Johnnie Walker Black Label",
+      "tags": [
+        {
+          "id": "dark_fruit",
+          "weight": 1.0
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.95
+        },
+        {
+          "id": "cream",
+          "weight": 0.85
+        },
+        {
+          "id": "toffee",
+          "weight": 0.75
+        },
+        {
+          "id": "smoke",
+          "weight": 0.7
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "scotch",
+      "journeyLevel": "advanced",
+      "id": "spi-trk-jw-blue",
+      "sensory": {
+        "body": 6,
+        "sweetness": 6,
+        "pepper": 7,
+        "cocoa": 7,
+        "earthiness": 6
+      },
+      "tracker": {
+        "sku": "SPI-TRK-JW-BLUE",
+        "article": "https://www.malts.com/en-gb/products/johnnie-walker-blue-label",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 14,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Blended malts & grains",
+        "style": "Blended Scotch whisky",
+        "origin": "Scotland",
+        "msrp": 225
+      },
+      "name": "Johnnie Walker Blue",
+      "tags": [
+        {
+          "id": "smoke",
+          "weight": 1.0
+        },
+        {
+          "id": "dried_fruit",
+          "weight": 0.95
+        },
+        {
+          "id": "citrus",
+          "weight": 0.85
+        },
+        {
+          "id": "honey",
+          "weight": 0.75
+        },
+        {
+          "id": "spice",
+          "weight": 0.7
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.65
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "peated",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-jw-green",
+      "sensory": {
+        "body": 5,
+        "sweetness": 6,
+        "pepper": 7,
+        "cocoa": 4,
+        "earthiness": 8
+      },
+      "tracker": {
+        "sku": "SPI-TRK-JW-GREEN",
+        "article": "https://www.johnniewalker.com/en-us/our-whisky/johnnie-walker-green-label-14-year-old",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 54,
+      "spec": {
+        "proof": 86.0,
+        "abvPercent": 43.0,
+        "mash": "Blended malts (no grain)",
+        "style": "Blended malt Scotch",
+        "origin": "Scotland",
+        "msrp": 65
+      },
+      "name": "Johnnie Walker Green Label",
+      "tags": [
+        {
+          "id": "floral",
+          "weight": 1.0
+        },
+        {
+          "id": "oak",
+          "weight": 0.95
+        },
+        {
+          "id": "cedar",
+          "weight": 0.85
+        },
+        {
+          "id": "peat",
+          "weight": 0.75
+        },
+        {
+          "id": "smoke",
+          "weight": 0.7
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "vodka",
+      "journeyLevel": "novice",
+      "id": "spi-trk-ketel-one",
+      "sensory": {
+        "body": 2,
+        "sweetness": 4,
+        "pepper": 2,
+        "cocoa": 2,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-KETEL-ONE",
+        "article": "https://www.ketelone.com/vodkas/ketel-one-vodka",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 81,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Wheat & grain spirit",
+        "style": "Pot still vodka",
+        "origin": "Netherlands",
+        "msrp": 28
+      },
+      "name": "Ketel One Vodka",
+      "tags": [
+        {
+          "id": "citrus",
+          "weight": 1.0
+        },
+        {
+          "id": "honey",
+          "weight": 0.95
+        }
+      ],
+      "category": "spirit"
+    }
+  ]
+}

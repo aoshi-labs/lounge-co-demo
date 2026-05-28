@@ -1,0 +1,116 @@
+  /* Super-admin sidebar variants live in lounge.css (.sidebar.super, .sidebar.super .nav-item.active, etc.) */
+  table{width:100%;border-collapse:separate;border-spacing:0;}
+  th{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);text-align:left;padding:10px 14px;border-bottom:1px solid var(--bg-border);}
+  td{padding:14px;border-bottom:1px solid var(--bg-border);font-size:13px;color:var(--text-secondary);}
+  tbody tr:hover{background:var(--bg-elevated);}
+  .status-pill{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:99px;font-size:10px;font-weight:700;}
+
+
+/* === Sidebar header + user card === */
+.superadmin-venues-page-title { font-size:15px; font-weight:600; color:var(--text-primary); }
+.superadmin-venues-row-location { font-size:11px; color:var(--text-muted); }
+.superadmin-venues-onboard-button {
+  background: var(--burg);
+  color: var(--cream);
+  border: 1px solid var(--burg);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+.superadmin-venues-onboard-button:hover { background: var(--burg-hover); border-color: var(--burg-hover); }
+.superadmin-venues-frame { padding:24px 24px 40px; display:flex; flex-direction:column; gap:16px; max-width:1300px; width:100%; }
+.superadmin-venues-filter-row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+.superadmin-venues-search-input { flex:1; min-width:240px; }
+.superadmin-venues-button-group { display:flex; gap:6px; }
+.superadmin-venues-filter-badge { background:var(--gold); color:var(--bg-base); border-radius:99px; padding:1px 5px; font-size:9px; margin-left:3px; }
+.superadmin-venues-table-card { background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:14px; overflow:hidden; }
+.superadmin-venues-lounge-cell { display:flex; align-items:center; gap:10px; }
+.superadmin-venues-avatar-gold { background:var(--gold); color:var(--bg-base); }
+.superadmin-venues-row-name { color:var(--text-primary); font-weight:600; }
+.superadmin-venues-subdomain { font-family:'JetBrains Mono',monospace; color:var(--gold); font-size:12px; }
+.superadmin-venues-status-active { background:rgba(var(--tier-elite-rgb), .15); color:var(--tier-elite); border:1px solid rgba(var(--tier-elite-rgb), .3); }
+.superadmin-venues-plan-cedar { color:var(--gold); font-weight:600; }
+.superadmin-venues-row-actions { width:28px; height:28px; border:none; }
+.superadmin-venues-avatar-burg { background:var(--burg); color:var(--cream); }
+.superadmin-venues-avatar-elite { background:var(--tier-elite); color:var(--tier-elite-ink); }
+.superadmin-venues-avatar-brown { background:var(--avatar-brown); color:var(--avatar-brown-ink); }
+.superadmin-venues-avatar-blue { background:var(--avatar-blue); color:var(--avatar-blue-ink); }
+.superadmin-venues-avatar-magenta { background:var(--avatar-magenta); color:var(--avatar-magenta-ink); }
+.superadmin-venues-status-trial { background:rgba(var(--gold-rgb), 0.15); color:var(--gold); border:1px solid rgba(var(--gold-rgb), 0.3); }
+.superadmin-venues-plan-trial { color:var(--text-muted); }
+.superadmin-venues-avatar-bronze { background:var(--tier-bronze); color:var(--tier-bronze-ink); }
+.superadmin-venues-avatar-steel { background:var(--avatar-steel); color:var(--avatar-steel-ink); }
+.superadmin-venues-table-footer { padding:14px 18px; display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--bg-border); }
+.superadmin-venues-footer-meta { font-size:12px; color:var(--text-muted); }
+.superadmin-venues-page-button-active { width:30px; height:30px; border-color:var(--gold); color:var(--gold); }
+.superadmin-venues-page-button { width:30px; height:30px; }
+
+/* Stats summary — sits between the filter row and the table card.
+   Same muted look as the secondary metadata elsewhere on the page. */
+.superadmin-venues-stats-summary {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: .02em;
+  padding: 2px 4px;
+}
+
+/* Mobile (≤767px): the venues table reads more naturally as a stack of
+   per-venue cards. Hide the thead row, turn each tr into a small grid
+   card with named areas (name + actions on top, subdomain + status next,
+   plan/members/MRR triplet, then joined date). Cells inside become block
+   children with no borders / padding so the grid does all the layout. */
+@media (max-width: 767px) {
+  .superadmin-venues-table-card { overflow: visible; background: transparent; border: none; }
+  .superadmin-venues-table-card > table { display: block; min-width: 0; width: 100%; }
+  .superadmin-venues-table-card thead { display: none; }
+  .superadmin-venues-table-card tbody { display: flex; flex-direction: column; gap: 12px; }
+  .superadmin-venues-table-card tr {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    grid-template-areas:
+      "name      name    actions"
+      "subdomain status  status"
+      "plan      members mrr"
+      "joined    joined  joined";
+    column-gap: 12px;
+    row-gap: 8px;
+    padding: 14px;
+    background: var(--bg-surface);
+    border: 1px solid var(--bg-border);
+    border-radius: 12px;
+  }
+  .superadmin-venues-table-card td {
+    display: block;
+    border: none;
+    padding: 0;
+    font-size: 13px;
+  }
+  .superadmin-venues-table-card tr > td:nth-child(1) { grid-area: name; }
+  .superadmin-venues-table-card tr > td:nth-child(2) { grid-area: subdomain; align-self: center; }
+  .superadmin-venues-table-card tr > td:nth-child(3) { grid-area: status; justify-self: end; align-self: center; }
+  .superadmin-venues-table-card tr > td:nth-child(4) { grid-area: plan; align-self: center; }
+  .superadmin-venues-table-card tr > td:nth-child(5) { grid-area: members; justify-self: center; align-self: center; }
+  .superadmin-venues-table-card tr > td:nth-child(6) { grid-area: mrr; justify-self: end; align-self: center; }
+  .superadmin-venues-table-card tr > td:nth-child(7) {
+    grid-area: joined;
+    font-size: 11px;
+    color: var(--text-muted);
+    padding-top: 4px;
+    border-top: 1px solid var(--bg-border);
+  }
+  .superadmin-venues-table-card tr > td:nth-child(8) { grid-area: actions; justify-self: end; align-self: start; }
+
+  /* Members / MRR / plan triplet — add subtle labels via ::before so the
+     numbers aren't ambiguous without a header row. Inter-spaced, tiny. */
+  .superadmin-venues-table-card tr > td:nth-child(4)::before { content: 'Plan · ';    color: var(--text-muted); font-size: 11px; }
+  .superadmin-venues-table-card tr > td:nth-child(5)::before { content: 'Members · '; color: var(--text-muted); font-size: 11px; }
+  .superadmin-venues-table-card tr > td:nth-child(6)::before { content: 'MRR · ';     color: var(--text-muted); font-size: 11px; }
+  .superadmin-venues-table-card tr > td:nth-child(7)::before { content: 'Joined ';    color: var(--text-muted); }
+
+  .superadmin-venues-table-footer { padding: 12px 14px; }
+}

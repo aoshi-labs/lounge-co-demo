@@ -1,0 +1,132 @@
+{
+  "marketing_image": {
+    "meta": {
+      "spec_version": "1.0.0",
+      "title": "Bourbon Hunters Event Background Plate",
+      "campaign": "lounge_event_hero",
+      "brand_name": "Lounge & Co.",
+      "usage_context": "event_background_overlay"
+    },
+    "subject": {
+      "type": "atmospheric_still_life",
+      "name": "Stout rocks glass of neat bourbon on a charred oak stave-end",
+      "variant": "evening_bourbon_hunt_scene",
+      "physical_properties": {
+        "primary_element": "stout rocks glass of deep mahogany-amber bourbon, neat, no ice; thick base catching warm refractions",
+        "secondary_element": "worn American oak barrel stave-end serving as a coaster, exposed char layer visible at one edge",
+        "tertiary_element": "tarnished brass bottle-hunter's keyring with three aged bottle medallions resting beside the glass",
+        "finish": "cinematic, photoreal"
+      }
+    },
+    "props": {
+      "foreground": [
+        {
+          "type": "bourbon_rocks_glass",
+          "count": 1,
+          "position": "bottom_right_third",
+          "notes": "positioned on the rule-of-thirds intersection so upper-left two-thirds remain clean for overlay text; bourbon glows mahogany-amber from internal back-lighting; thick faceted base"
+        },
+        {
+          "type": "charred_oak_stave_coaster",
+          "count": 1,
+          "position": "under_glass",
+          "notes": "rough-cut barrel stave-end serving as a coaster, char layer crackle visible at the chamfered edge, signals authentic provenance"
+        },
+        {
+          "type": "brass_bottle_hunter_keyring",
+          "count": 1,
+          "position": "right_of_glass",
+          "notes": "tarnished brass keyring with three aged bottle medallions (no readable text or logos), patina suggests years of cellar visits"
+        }
+      ],
+      "midground": [
+        {
+          "type": "stacked_barrel_staves",
+          "count": 1,
+          "position": "lower_right_edge",
+          "notes": "partial out-of-focus stack of charred barrel staves cropped at frame edge, char layer catching warm rim light, supporting element only"
+        }
+      ],
+      "background": [
+        {
+          "type": "edison_bulb_pendant",
+          "count": 1,
+          "position": "upper_left_deep",
+          "notes": "single dim Edison-bulb pendant hanging out of focus in the deep background, providing one warm practical light pool on the upper-left for text legibility"
+        },
+        {
+          "type": "mahogany_paneled_wall",
+          "count": 1,
+          "position": "full_backdrop",
+          "notes": "deep mahogany or walnut wainscoting with subtle Americana cabin tones, vertical grain, mostly in shadow"
+        },
+        {
+          "type": "smoke_haze",
+          "count": 1,
+          "position": "ambient",
+          "notes": "very subtle volumetric haze across the frame, catches the key light into soft god-rays without obscuring detail"
+        }
+      ]
+    },
+    "environment": {
+      "surface": {
+        "material": "wood",
+        "description": "aged dark walnut tabletop with subtle ring-stain patina and a soft satin sheen, not glossy; reads as a well-loved tasting bench",
+        "reflection_strength": 0.25
+      },
+      "background": {
+        "color": "#0E0C0A",
+        "secondary_color": "#1A1410",
+        "texture": "warm grain with shadowed mahogany",
+        "effect": "shallow_bokeh_with_warm_practical_lights",
+        "negative_space_zone": "upper_left_to_center — keep visually quiet for overlay text"
+      },
+      "atmosphere": {
+        "mood": "well-educated bourbon enthusiast, dusty-bottle pursuit, Pappy/Weller lore, rugged Americana but still prestigious and after-hours members-only",
+        "keywords": ["editorial", "Pappy Van Winkle archive", "Weller cellar", "cinematic", "low-key", "char and caramel", "barrel proof", "dusty-bottle hunt", "Americana prestige"]
+      }
+    },
+    "camera": {
+      "angle": "low_angle",
+      "framing": "wide",
+      "aspect_ratio": "16:9",
+      "focal_length_mm": 50,
+      "depth_of_field": "shallow",
+      "focus_point": "bourbon surface meniscus and glass rim",
+      "composition_notes": "rule of thirds — subject locked to lower-right intersection; upper-left two-thirds reserved for event title overlay"
+    },
+    "lighting": {
+      "key_light_direction": "three_quarter_right",
+      "key_light_intensity": "medium",
+      "key_light_quality": "warm tungsten ~2700K, soft falloff, motivated by the unseen Edison-bulb pendant; backlights the bourbon so the pour glows mahogany-amber from within",
+      "fill_light_direction": "left",
+      "fill_light_intensity": "very_low",
+      "rim_light": true,
+      "rim_light_notes": "subtle warm rim on the rocks-glass rim and the charred edge of the stave to separate them from the background; faint rim on the brass keyring",
+      "color_temperature": "warm",
+      "practical_lights": "distant out-of-focus warm bokeh points in deep background (suggesting cellar shelving / candles)"
+    },
+    "brand": {
+      "logo_asset": null,
+      "primary_colors": ["#D4AF37", "#800020", "#0E0C0A", "#1A1410", "#EDE5DA"],
+      "palette_intent": "warm gold and burgundy accents on near-black warm base, matching Lounge & Co. design tokens",
+      "must_match_assets": [],
+      "forbidden_changes": [
+        "do_not_add_any_text",
+        "do_not_add_any_logos",
+        "do_not_brighten_overall_exposure",
+        "do_not_render_human_faces",
+        "do_not_add_modern_tech_or_phones",
+        "do_not_use_cool_color_temperatures"
+      ]
+    },
+    "controls": {
+      "lock_composition": true,
+      "lock_negative_space_zone": true,
+      "allow_background_variation": "minor",
+      "allow_prop_relayout": "small_only",
+      "output_resolution": "3840x2160",
+      "render_intent": "photoreal, shot on medium-format, low ISO, fine grain"
+    }
+  }
+}

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Analytics — Admin</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Visitor patterns, engagement metrics, and revenue trends for your lounge." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Analytics — Admin" />
+  <meta property="og:description" content="Visitor patterns, engagement metrics, and revenue trends for your lounge." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Analytics — Admin" />
+  <meta name="twitter:description" content="Visitor patterns, engagement metrics, and revenue trends for your lounge." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/admin-analytics.css"/>
+</head>
+<body>
+
+<nav class="sidebar admin" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name">Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Owner Console</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-owner"><img src="assets/images/gerald-o.jpg" alt=""/></div>
+      <div class="sidebar-user-info">
+        <div class="sidebar-user-name">Gerald Owens</div>
+        <div class="sidebar-user-role">Owner</div>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Overview</div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Dashboard</a>
+    <a href="admin-analytics.html" class="nav-item active"><i data-lucide="bar-chart-3" class="ic-17"></i>Analytics</a>
+    <div class="nav-section-label">Manage</div>
+    <a href="admin-members.html" class="nav-item"><i data-lucide="users" class="ic-17"></i>Members</a>
+    <a href="admin-catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="admin-orders.html" class="nav-item"><i data-lucide="receipt-text" class="ic-17"></i>Requests<span class="notif-dot">3</span></a>
+    <a href="admin-events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-settings.html" class="nav-item"><i data-lucide="settings" class="ic-17"></i>Lounge Settings</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="chevron-left" class="ic-17"></i>Back to Member View</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area admin">
+  <h1 class="visually-hidden">Analytics</h1>
+  <header class="top-bar">
+    <button class="icon-btn sup-menu-btn" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+      <i data-lucide="menu" class="ic-16"></i>
+    </button>
+    <div class="top-bar-actions">
+      <button class="btn-export">⤓ Export CSV</button>
+    </div>
+  </header>
+
+  <div class="page-container">
+
+    <!-- A15 — Tab nav: Overview (existing) + Sterlon Funnel (new) -->
+    <div class="admin-analytics-tabs">
+      <button class="admin-analytics-tab active" onclick="switchAnalyticsTab(this,'overview')">Overview</button>
+      <button class="admin-analytics-tab" onclick="switchAnalyticsTab(this,'funnel')">
+        <i data-lucide="trending-down" class="ic-13"></i>Sterlon Funnel
+      </button>
+    </div>
+
+    <!-- Period selector — sits below the tabs as a filter for the
+         analytics content directly beneath it. -->
+    <div class="admin-analytics-period-row">
+      <select class="period-select" aria-label="Analytics time period">
+        <option>Last 30 days</option>
+        <option>Last 90 days</option>
+        <option>Year to date</option>
+      </select>
+    </div>
+
+    <div id="admin-analytics-tab-overview">
+    <!-- Stat strip -->
+    <div class="stat-strip">
+      <div class="stat-card">
+        <div class="stat-label">Total Revenue</div>
+        <div class="stat-num">$18,420</div>
+        <div class="stat-delta up">▲ +18.4% vs prior</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Avg Member Spend</div>
+        <div class="stat-num">$74.58</div>
+        <div class="stat-delta up">▲ +$8.20 MoM</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Active Member Rate</div>
+        <div class="stat-num">84%</div>
+        <div class="stat-delta up">▲ +3pts</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Avg Check-Ins / Member</div>
+        <div class="stat-num">4.7</div>
+        <div class="stat-delta up">▲ +0.4 this month</div>
+      </div>
+    </div>
+
+    <!-- Revenue + member growth chart -->
+    <div class="row-2-1">
+      <div class="widget">
+        <div class="widget-title">📈 Revenue Trend</div>
+        <svg class="chart-svg" viewBox="0 0 700 240">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#D4AF37" stop-opacity=".3"/>
+              <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#4A7C59" stop-opacity=".2"/>
+              <stop offset="100%" stop-color="#4A7C59" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <line x1="0" y1="50" x2="700" y2="50" stroke="#2E2620" stroke-dasharray="2,4"/>
+          <line x1="0" y1="120" x2="700" y2="120" stroke="#2E2620" stroke-dasharray="2,4"/>
+          <line x1="0" y1="190" x2="700" y2="190" stroke="#2E2620" stroke-dasharray="2,4"/>
+          <path d="M0,180 L60,160 L120,140 L180,150 L240,120 L300,130 L360,100 L420,90 L480,105 L540,75 L600,90 L660,55 L700,40 L700,240 L0,240 Z" fill="url(#g1)"/>
+          <path d="M0,180 L60,160 L120,140 L180,150 L240,120 L300,130 L360,100 L420,90 L480,105 L540,75 L600,90 L660,55 L700,40" stroke="#D4AF37" stroke-width="2.5" fill="none"/>
+          <path d="M0,200 L60,195 L120,185 L180,180 L240,170 L300,165 L360,155 L420,150 L480,145 L540,135 L600,125 L660,115 L700,108" stroke="#4A7C59" stroke-width="2" stroke-dasharray="4,3" fill="none"/>
+          <circle cx="700" cy="40" r="4" fill="#D4AF37"/>
+        </svg>
+        <div class="chart-legend">
+          <span class="legend-item"><span class="legend-swatch gold"></span>Revenue</span>
+          <span class="legend-item"><span class="legend-swatch dashed-emerald"></span>Prior period</span>
+        </div>
+      </div>
+      <div class="widget">
+        <div class="widget-title">📊 Member Growth</div>
+        <svg class="chart-svg" viewBox="0 0 320 200">
+          <rect x="20" y="120" width="22" height="60" fill="var(--burg)" opacity=".5" rx="3"/>
+          <rect x="60" y="100" width="22" height="80" fill="var(--burg)" opacity=".6" rx="3"/>
+          <rect x="100" y="90" width="22" height="90" fill="var(--burg)" opacity=".7" rx="3"/>
+          <rect x="140" y="85" width="22" height="95" fill="var(--burg)" opacity=".75" rx="3"/>
+          <rect x="180" y="75" width="22" height="105" fill="var(--burg)" opacity=".85" rx="3"/>
+          <rect x="220" y="60" width="22" height="120" fill="var(--burg)" opacity=".9" rx="3"/>
+          <rect x="260" y="40" width="22" height="140" fill="var(--burg)" rx="3"/>
+        </svg>
+        <div class="bar-axis">
+          <span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span>
+        </div>
+        <div class="growth-summary">
+          <div class="summary-row"><span>Total members</span><span class="val">247</span></div>
+          <div class="summary-row"><span>New this month</span><span class="val up">+12</span></div>
+          <div class="summary-row"><span>Churn</span><span class="val down">-3</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cohorts + tier distribution -->
+    <div class="row-1-1">
+      <div class="widget">
+        <div class="widget-title">🎯 Tier Distribution</div>
+        <div class="tier-list">
+          <div class="tier-item">
+            <div class="tier-head">
+              <span class="tier-label champion">Champion (#1)</span>
+              <span class="tier-meta">1 · 0.4%</span>
+            </div>
+            <div class="tier-track"><div class="tier-fill champion"></div></div>
+          </div>
+          <div class="tier-item">
+            <div class="tier-head">
+              <span class="tier-label silver">Runner-Up / Bronze</span>
+              <span class="tier-meta">2 · 0.8%</span>
+            </div>
+            <div class="tier-track"><div class="tier-fill silver"></div></div>
+          </div>
+          <div class="tier-item">
+            <div class="tier-head">
+              <span class="tier-label elite-color">Elite (#4–5)</span>
+              <span class="tier-meta">8 · 3.2%</span>
+            </div>
+            <div class="tier-track"><div class="tier-fill elite-color"></div></div>
+          </div>
+          <div class="tier-item">
+            <div class="tier-head">
+              <span class="tier-label member-color">Member</span>
+              <span class="tier-meta">236 · 95.6%</span>
+            </div>
+            <div class="tier-track"><div class="tier-fill member-color"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">⚡ Engagement by Day-of-Week</div>
+        <svg class="chart-svg" viewBox="0 0 320 160">
+          <rect x="10" y="100" width="32" height="50" fill="var(--gold)" opacity=".4" rx="3"/>
+          <rect x="55" y="90" width="32" height="60" fill="var(--gold)" opacity=".5" rx="3"/>
+          <rect x="100" y="85" width="32" height="65" fill="var(--gold)" opacity=".55" rx="3"/>
+          <rect x="145" y="70" width="32" height="80" fill="var(--gold)" opacity=".7" rx="3"/>
+          <rect x="190" y="40" width="32" height="110" fill="var(--gold)" opacity=".9" rx="3"/>
+          <rect x="235" y="20" width="32" height="130" fill="var(--gold)" rx="3"/>
+          <rect x="280" y="80" width="32" height="70" fill="var(--gold)" opacity=".6" rx="3"/>
+        </svg>
+        <div class="bar-axis-around">
+          <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span>
+          <span class="hl">Fri</span>
+          <span class="hl-bold">Sat</span>
+          <span>Sun</span>
+        </div>
+        <div class="engagement-note">Peak nights: Saturday (avg 42 members), Friday (38). Consider Saturday-only inventory targeting.</div>
+      </div>
+    </div>
+
+    <!-- Top performers -->
+    <div class="row-1-1">
+      <div class="widget">
+        <div class="widget-title">💎 Highest Lifetime Spend</div>
+        <div class="spend-list">
+          <div class="spend-row">
+            <div class="avatar avatar-gold"><img src="assets/images/marcus-r.jpg" alt=""/></div>
+            <div class="name">Marcus R.</div>
+            <div class="amount">$4,820</div>
+          </div>
+          <div class="spend-row">
+            <div class="avatar avatar-silver"><img src="assets/images/james-w.jpg" alt=""/></div>
+            <div class="name">James W.</div>
+            <div class="amount">$3,640</div>
+          </div>
+          <div class="spend-row">
+            <div class="avatar avatar-bronze"><img src="assets/images/robert-b.jpg" alt=""/></div>
+            <div class="name">Robert B.</div>
+            <div class="amount">$2,910</div>
+          </div>
+          <div class="spend-row">
+            <div class="avatar avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+            <div class="name">Thomas H.</div>
+            <div class="amount">$2,420</div>
+          </div>
+        </div>
+      </div>
+      <div class="widget">
+        <div class="widget-title">🏷️ Most Reviewed Products</div>
+        <div class="review-list">
+          <div class="review-row"><span>Cohiba Siglo VI</span><span class="count">72 reviews</span></div>
+          <div class="review-row"><span>Lagavulin 16yr</span><span class="count">67 reviews</span></div>
+          <div class="review-row"><span>Padron 1926 No.35</span><span class="count">61 reviews</span></div>
+          <div class="review-row"><span>Liga Privada No.9</span><span class="count">55 reviews</span></div>
+          <div class="review-row"><span>Arturo Fuente Opus X</span><span class="count">49 reviews</span></div>
+        </div>
+      </div>
+    </div>
+
+    </div><!-- /admin-analytics-tab-overview -->
+
+    <!-- ===== Sterlon Funnel tab (A15, item 4) ===== -->
+    <div id="admin-analytics-tab-funnel" class="admin-analytics-tab-pane" hidden>
+
+      <!-- Funnel summary header -->
+      <div class="widget">
+        <div class="admin-analytics-funnel-head">
+          <div>
+            <div class="widget-title">📊 Sterlon Funnel</div>
+            <div class="admin-analytics-funnel-sub">Sessions → recommendations → tab adds, last 30 days. Drop-off at each step is where the model is leaving revenue on the floor.</div>
+          </div>
+          <div class="admin-analytics-funnel-overall">
+            <div class="admin-analytics-funnel-overall-num">20.9%</div>
+            <div class="admin-analytics-funnel-overall-label">Sessions → Tab adds</div>
+          </div>
+        </div>
+
+        <!-- The funnel itself: three stages, decreasing width, with drop-off rows between -->
+        <div class="admin-analytics-funnel">
+          <div class="admin-analytics-funnel-stage" style="--w:100%">
+            <div class="admin-analytics-funnel-bar admin-analytics-funnel-bar-1"></div>
+            <div class="admin-analytics-funnel-meta">
+              <div class="admin-analytics-funnel-step">Step 1 · Sterlon Sessions</div>
+              <div class="admin-analytics-funnel-count">1,247</div>
+              <div class="admin-analytics-funnel-pct">100% of inbound</div>
+            </div>
+          </div>
+
+          <div class="admin-analytics-funnel-dropoff">
+            <i data-lucide="chevron-down" class="ic-15"></i>
+            <span><strong>563</strong> sessions ended without a recommendation</span>
+            <span class="admin-analytics-funnel-dropoff-pct">−45%</span>
+          </div>
+
+          <div class="admin-analytics-funnel-stage" style="--w:55%">
+            <div class="admin-analytics-funnel-bar admin-analytics-funnel-bar-2"></div>
+            <div class="admin-analytics-funnel-meta">
+              <div class="admin-analytics-funnel-step">Step 2 · Recommendations Surfaced</div>
+              <div class="admin-analytics-funnel-count">684</div>
+              <div class="admin-analytics-funnel-pct">55% of sessions</div>
+            </div>
+          </div>
+
+          <div class="admin-analytics-funnel-dropoff">
+            <i data-lucide="chevron-down" class="ic-15"></i>
+            <span><strong>424</strong> recommendations did not convert to a tab add</span>
+            <span class="admin-analytics-funnel-dropoff-pct">−62%</span>
+          </div>
+
+          <div class="admin-analytics-funnel-stage" style="--w:21%">
+            <div class="admin-analytics-funnel-bar admin-analytics-funnel-bar-3"></div>
+            <div class="admin-analytics-funnel-meta">
+              <div class="admin-analytics-funnel-step">Step 3 · Tab Adds Attributed</div>
+              <div class="admin-analytics-funnel-count admin-analytics-funnel-count-burg">260</div>
+              <div class="admin-analytics-funnel-pct">38% of recommendations · $8,890 revenue</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Per-step detail panels -->
+      <div class="row-1-1-1">
+        <div class="widget">
+          <div class="widget-title">🪑 Step 1 · Sessions</div>
+          <div class="admin-analytics-detail">
+            <div class="admin-analytics-detail-row"><span>Peak hour</span><span class="val">9–11 PM</span></div>
+            <div class="admin-analytics-detail-row"><span>Avg duration</span><span class="val">4 min 12s</span></div>
+            <div class="admin-analytics-detail-row"><span>Avg messages / session</span><span class="val">6.6</span></div>
+            <div class="admin-analytics-detail-row"><span>Top member tier</span><span class="val">Elite (42%)</span></div>
+            <div class="admin-analytics-detail-row"><span>Sessions on mobile</span><span class="val">68%</span></div>
+          </div>
+        </div>
+
+        <div class="widget">
+          <div class="widget-title">💡 Step 2 · Recommendations</div>
+          <div class="admin-analytics-detail">
+            <div class="admin-analytics-detail-row"><span>Avg recs / session w/ rec</span><span class="val">1.7</span></div>
+            <div class="admin-analytics-detail-row"><span>Most-surfaced product</span><span class="val">Padron 1926</span></div>
+            <div class="admin-analytics-detail-row"><span>Promoted-pour CTR</span><span class="val up">▲ 47%</span></div>
+            <div class="admin-analytics-detail-row"><span>Pairing requests</span><span class="val">38% of recs</span></div>
+            <div class="admin-analytics-detail-row"><span>"Wildcard" requests</span><span class="val">14%</span></div>
+          </div>
+        </div>
+
+        <div class="widget">
+          <div class="widget-title">🧾 Step 3 · Tab Adds</div>
+          <div class="admin-analytics-detail">
+            <div class="admin-analytics-detail-row"><span>Avg tab value</span><span class="val burg">$34.20</span></div>
+            <div class="admin-analytics-detail-row"><span>Conversion vs catalog browse</span><span class="val up">2.3×</span></div>
+            <div class="admin-analytics-detail-row"><span>Multi-item tabs</span><span class="val">31%</span></div>
+            <div class="admin-analytics-detail-row"><span>Cigars-led tabs</span><span class="val">62%</span></div>
+            <div class="admin-analytics-detail-row"><span>Spirits-led tabs</span><span class="val">28%</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Drop-off intelligence: where the model is failing -->
+      <div class="widget">
+        <div class="widget-title">🔍 Top Drop-Off Questions</div>
+        <div class="admin-analytics-funnel-sub">Sessions where Sterlon didn't surface a product card — usually questions outside its current knowledge boundary. Each row is a candidate for the RAG corpus or staff playbook.</div>
+
+        <div class="admin-analytics-dropoff-list">
+          <div class="admin-analytics-dropoff-row">
+            <div class="admin-analytics-dropoff-question">"What was the cigar Maya mentioned last Tuesday?"</div>
+            <div class="admin-analytics-dropoff-meta">
+              <span class="admin-analytics-dropoff-count">38 sessions</span>
+              <span class="admin-analytics-dropoff-tag">Needs: staff playbook</span>
+            </div>
+          </div>
+          <div class="admin-analytics-dropoff-row">
+            <div class="admin-analytics-dropoff-question">"Can I get the same bottle near my house?"</div>
+            <div class="admin-analytics-dropoff-meta">
+              <span class="admin-analytics-dropoff-count">29 sessions</span>
+              <span class="admin-analytics-dropoff-tag">Needs: partner API</span>
+            </div>
+          </div>
+          <div class="admin-analytics-dropoff-row">
+            <div class="admin-analytics-dropoff-question">"Pair with food I'm bringing"</div>
+            <div class="admin-analytics-dropoff-meta">
+              <span class="admin-analytics-dropoff-count">21 sessions</span>
+              <span class="admin-analytics-dropoff-tag">Needs: pairing corpus</span>
+            </div>
+          </div>
+          <div class="admin-analytics-dropoff-row">
+            <div class="admin-analytics-dropoff-question">"Anything Maya specifically recommends this week?"</div>
+            <div class="admin-analytics-dropoff-meta">
+              <span class="admin-analytics-dropoff-count">18 sessions</span>
+              <span class="admin-analytics-dropoff-tag">Needs: curated list</span>
+            </div>
+          </div>
+          <div class="admin-analytics-dropoff-row">
+            <div class="admin-analytics-dropoff-question">"Do you have aged Pappy?"</div>
+            <div class="admin-analytics-dropoff-meta">
+              <span class="admin-analytics-dropoff-count">14 sessions</span>
+              <span class="admin-analytics-dropoff-tag">Needs: inventory link</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /admin-analytics-tab-funnel -->
+
+  </div>
+</main>
+
+<script>
+  function switchAnalyticsTab(btn, name){
+    document.querySelectorAll('.admin-analytics-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('admin-analytics-tab-overview').hidden = (name !== 'overview');
+    document.getElementById('admin-analytics-tab-funnel').hidden   = (name !== 'funnel');
+    if (window.Lounge && window.Lounge.renderIcons) window.Lounge.renderIcons();
+  }
+</script>
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+</body>
+</html>

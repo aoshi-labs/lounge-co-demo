@@ -1,0 +1,101 @@
+  .notif-row{display:flex;align-items:flex-start;gap:14px;padding:14px 18px;background:var(--bg-surface);border:1px solid var(--bg-border);border-radius:12px;text-decoration:none;color:inherit;transition:border-color .15s;}
+  .notif-row:hover{border-color:rgba(var(--gold-rgb), .3);}
+  .notif-row.unread{background:linear-gradient(90deg,rgba(var(--gold-rgb), .06),var(--bg-surface));border-left:3px solid var(--gold);}
+
+
+/* ─── Shared chrome (sidebar, top bar, mobile overlay) ─── */
+
+/* ─── Page frame ─── */
+.notifications-page-title { font-size:15px; font-weight:600; color:var(--text-primary); }
+.notifications-mark-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 1px solid var(--bg-border);
+  border-radius: 8px;
+  padding: 7px 12px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color .15s, color .15s, background .15s;
+}
+.notifications-mark-all-btn:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-subtle); }
+.notifications-mark-all-btn [data-lucide], .notifications-mark-all-btn svg { display: block; }
+.notifications-page-frame { display:flex; justify-content:center; padding:24px 20px; }
+.notifications-page-stack { width:100%; max-width:680px; display:flex; flex-direction:column; gap:14px; }
+
+/* ─── Filter tabs carousel ─── */
+/* Filter tabs row — full carousel chrome (hidden scrollbar, scroll-snap,
+   right-edge mask fade). Arrows are JS-injected and styled via the shared
+   .pro-lib-arrow* rules in lounge.css. */
+.notifications-filter-tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  min-width: 0;
+  padding: 0 22px 2px 2px;
+  overflow-x: auto;
+  scrollbar-width: none;            /* Firefox */
+  -ms-overflow-style: none;         /* IE/Edge legacy */
+  scroll-snap-type: x proximity;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 0,
+    black calc(100% - 32px),
+    transparent 100%
+  );
+          mask-image: linear-gradient(
+    to right,
+    black 0,
+    black calc(100% - 32px),
+    transparent 100%
+  );
+}
+.notifications-filter-tabs::-webkit-scrollbar { display: none; }
+.notifications-filter-tabs > .filter-tab {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+/* JS-injected wrapper inherits the flex-item slot inside
+   .notifications-page-stack (flex column). min-width:0 lets the inner track
+   shrink and scroll internally instead of overflowing the page. */
+.notifications-page-stack > .pro-lib-carousel {
+  min-width: 0;
+  width: 100%;
+}
+.notifications-tabs-carousel .pro-lib-arrow { display: flex; }
+.notifications-tab-count-pill { background:var(--burg); color:var(--cream); border-radius:99px; padding:1px 6px; font-size:10px; margin-left:4px; }
+
+/* ─── Section labels ─── */
+.notifications-section-label-first { font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted); margin-top:4px; }
+.notif-section-label { font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted); margin-top:14px; }
+
+/* ─── Notification row body + content ─── */
+.notif-row-body { flex:1; min-width:0; }
+.notif-row-text { font-size:13px; color:var(--text-primary); line-height:1.5; }
+.notif-row-text-read { font-size:13px; color:var(--text-secondary); line-height:1.5; }
+.notif-row-time { font-size:11px; color:var(--text-muted); margin-top:3px; }
+.notif-highlight { color:var(--gold); }
+.notif-text-primary { color:var(--text-primary); }
+.notif-text-elite { color:var(--tier-elite); }
+.notif-unread-dot { width:8px; height:8px; background:var(--gold); border-radius:50%; flex-shrink:0; margin-top:6px; }
+
+/* ─── Row leading avatars (per-tier accent) ─── */
+.notif-avatar-champion { background:var(--gold); color:var(--bg-base); }
+.notif-avatar-runner-up { background:var(--tier-runner-up); color:var(--tier-runner-up-ink); }
+.notif-avatar-bronze { background:var(--tier-bronze); color:var(--tier-bronze-ink); }
+.notif-avatar-member { background:var(--avatar-brown); color:var(--avatar-brown-ink); }
+
+/* ─── Row leading icon badges (system / event / order notifications) ─── */
+.notif-icon-elite { width:36px; height:36px; background:rgba(var(--tier-elite-rgb), .15); border:1px solid rgba(var(--tier-elite-rgb), .3); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--tier-elite); flex-shrink:0; }
+.notif-icon-burg { width:36px; height:36px; background:rgba(var(--burg-rgb), .18); border:1px solid rgba(var(--burg-rgb), .3); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--burg); flex-shrink:0; }
+.notif-icon-gold { width:36px; height:36px; background:rgba(var(--gold-rgb), .15); border:1px solid rgba(var(--gold-rgb), .3); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--gold); flex-shrink:0; font-size:1.1rem; }
+.notif-icon-muted { width:36px; height:36px; background:var(--bg-elevated); border:1px solid var(--bg-border); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--text-muted); flex-shrink:0; }
+.notif-icon-trophy { width:36px; height:36px; background:linear-gradient(135deg,var(--gold),var(--burg)); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--cream); flex-shrink:0; font-size:1.1rem; }
+
+/* ─── Row inline actions ─── */
+.notif-follow-back-btn { background:var(--burg); color:var(--cream); border:none; border-radius:7px; padding:6px 12px; font-family:var(--font-ui); font-size:11px; font-weight:700; cursor:pointer; flex-shrink:0; }

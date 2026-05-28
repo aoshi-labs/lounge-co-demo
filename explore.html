@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Discover trending hashtags, featured members, and popular cigars & spirits across the lounge." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Explore — Lounge & Co." />
+  <meta property="og:description" content="Discover trending hashtags, featured members, and popular cigars & spirits across the lounge." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Explore — Lounge & Co." />
+  <meta name="twitter:description" content="Discover trending hashtags, featured members, and popular cigars & spirits across the lounge." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/explore.css"/>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     LEFT SIDEBAR
+═══════════════════════════════════════ -->
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info">
+        <div class="sidebar-user-name">Thomas H.</div>
+        <div class="sidebar-user-tier">Elite · 1,744 pts · #4</div>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     MAIN AREA
+═══════════════════════════════════════ -->
+<main class="main-area">
+  <h1 class="visually-hidden">Explore</h1>
+
+  <!-- Top bar -->
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+      <i data-lucide="menu" class="ic-16"></i>
+    </button>
+    <!-- Top bar intentionally has no search here — the big search bar IS
+         the page. The "Explore" page-title is rendered by the auto-injected
+         .top-bar-logo (search icon + label) in lounge.js. -->
+    <div class="topbar-actions">
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════
+       DEPRECATION BANNER
+       the venue-discovery surface lives at
+       discover-venues.html (platform-scoped, public/private venue gating,
+       Sterlon-recommended section under Pattern A). The per-venue
+       "trending posts / hashtags / top members" explore framing is
+       superseded — the TR1 lock retired trending surfaces, and member
+       discovery happens in my-network.html under the follow-graph model.
+       Internal links should point to discover-venues.html.
+  ══════════════════════════════════════════════════════ -->
+  <div class="deprecation-banner" role="status">
+    <div class="deprecation-banner-inner">
+      <i data-lucide="info" class="ic-15"></i>
+      <div>
+        <strong>This page is deprecated.</strong>
+        <span> Venue discovery moved to <a href="discover-venues.html">Discover Venues</a> (platform-scoped, public/private venue gating). Member discovery is now in <a href="my-network.html">My Network</a> (palate-similarity suggestions for Cellar Club members).</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="explore-content-wrap">
+
+    <!-- ── CENTER ── -->
+    <div class="explore-center-col">
+
+      <!-- Big search bar -->
+      <div class="explore-search-wrap">
+        <div class="explore-search-bar">
+          <i data-lucide="search" class="ic-18"></i>
+          <input class="explore-search-input" type="text" placeholder="Search members, cigars, spirits, hashtags…" aria-label="Search members, cigars, spirits, hashtags" id="explore-search-input-field" oninput="handleSearch(this.value)" />
+          <button id="explore-clear-btn" onclick="clearSearch()" class="explore-search-clear-btn">
+            <i data-lucide="x" class="ic-15"></i>
+          </button>
+        </div>
+
+        <!-- Category filter tabs -->
+        <div class="cat-tabs explore-cat-tabs-wrap">
+          <button class="cat-tab active" onclick="setCategory(this,'all')">All</button>
+          <button class="cat-tab" onclick="setCategory(this,'members')">Members</button>
+          <button class="cat-tab" onclick="setCategory(this,'cigars')">Cigars</button>
+          <button class="cat-tab" onclick="setCategory(this,'spirits')">Spirits</button>
+          <button class="cat-tab" onclick="setCategory(this,'events')">Events</button>
+          <button class="cat-tab" onclick="setCategory(this,'hashtags')">#Hashtags</button>
+        </div>
+      </div>
+
+      <!-- ── Discover content ── -->
+      <div id="explore-discover-content" class="explore-discover-stack">
+
+        <!-- Trending hashtags -->
+        <div>
+          <div class="section-hd">
+            <h2>🔥 Trending This Week</h2>
+            <a href="#">See all</a>
+          </div>
+          <div class="hashtag-grid">
+            <div class="hashtag-pill">
+              <span class="hashtag-name">#Padron1926</span>
+              <span class="hashtag-count">47 posts</span>
+            </div>
+            <div class="hashtag-pill">
+              <span class="hashtag-name">#ScotchAndSmoke</span>
+              <span class="hashtag-count">38 posts</span>
+            </div>
+            <div class="hashtag-pill">
+              <span class="hashtag-name">#PappyVanWinkle</span>
+              <span class="hashtag-count">29 posts</span>
+            </div>
+            <div class="hashtag-pill">
+              <span class="hashtag-name">#OpusX</span>
+              <span class="hashtag-count">24 posts</span>
+            </div>
+            <div class="hashtag-pill">
+              <span class="hashtag-name">#LoungeCoVibes</span>
+              <span class="hashtag-count">21 posts</span>
+            </div>
+            <div class="hashtag-pill">
+              <span class="hashtag-name">#LigaPrivada</span>
+              <span class="hashtag-count">18 posts</span>
+            </div>
+            <div class="hashtag-pill">
+              <span class="hashtag-name">#FullBodyFriday</span>
+              <span class="hashtag-count">15 posts</span>
+            </div>
+            <div class="hashtag-pill">
+              <span class="hashtag-name">#MacallanMoments</span>
+              <span class="hashtag-count">12 posts</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured members -->
+        <div>
+          <div class="section-hd">
+            <h2>👥 Members to Follow</h2>
+            <a href="#">Browse all</a>
+          </div>
+          <div class="card-stack">
+
+            <a href="profile.html" class="card-link">
+              <div class="member-card">
+                <div class="avatar member-avatar-champion"><img src="assets/images/marcus-r.jpg" alt=""/></div>
+                <div class="info-col">
+                  <div class="member-card-name">Marcus R. <span class="member-tier-pill-champion">Champion</span></div>
+                  <div class="member-card-rank">Rank #1 · 2,840 pts · 312 reviews</div>
+                  <div class="member-card-bio">Fuente devotee. Macallan collector. Never met a Cameroon wrapper I didn't like.</div>
+                </div>
+                <button onclick="event.preventDefault();followToggle(this)" class="member-follow-btn">Follow</button>
+              </div>
+            </a>
+
+            <a href="profile.html" class="card-link">
+              <div class="member-card">
+                <div class="avatar member-avatar-runner-up"><img src="assets/images/james-w.jpg" alt=""/></div>
+                <div class="info-col">
+                  <div class="member-card-name">James W. <span class="member-tier-pill-elite">Elite</span></div>
+                  <div class="member-card-rank">Rank #2 · 2,415 pts · 194 reviews</div>
+                  <div class="member-card-bio">Scotch whisky nerd, Liga Privada enthusiast, pairings are my art form.</div>
+                </div>
+                <button onclick="event.preventDefault();followToggle(this)" class="member-follow-btn">Follow</button>
+              </div>
+            </a>
+
+            <a href="profile.html" class="card-link">
+              <div class="member-card">
+                <div class="avatar member-avatar-bronze"><img src="assets/images/robert-b.jpg" alt=""/></div>
+                <div class="info-col">
+                  <div class="member-card-name">Robert B. <span class="member-tier-pill-bronze">Bronze</span></div>
+                  <div class="member-card-rank">Rank #3 · 1,980 pts · 156 reviews</div>
+                  <div class="member-card-bio">Bourbon over Scotch. Dominican over Nicaraguan. Strongly believe in a good Connecticut wrapper after dinner.</div>
+                </div>
+                <button onclick="event.preventDefault();followToggle(this)" class="member-follow-btn">Follow</button>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Cigar discoveries -->
+        <div>
+          <div class="section-hd">
+            <h2><i data-icon="cigar" class="ic-22" aria-hidden="true"></i> Highly Rated Cigars</h2>
+            <a href="catalog.html">View catalog</a>
+          </div>
+          <div class="explore-product-grid">
+
+            <a href="product-detail.html" class="card-link">
+              <div class="product-card">
+                <div class="product-img product-img-padron"><img src="assets/images/padron.jpg" alt=""/></div>
+                <div class="product-body">
+                  <div class="product-name">Padron 1926 No. 35</div>
+                  <div class="product-meta">Full · Nicaraguan</div>
+                  <div class="product-rating-row">
+                    <span class="product-rating">★ 4.9</span>
+                    <span class="product-rating-count">82 reviews</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="product-detail.html" class="card-link">
+              <div class="product-card">
+                <div class="product-img product-img-fuente"><img src="assets/images/fuente-opus.jpg" alt=""/></div>
+                <div class="product-body">
+                  <div class="product-name">Arturo Fuente Opus X</div>
+                  <div class="product-meta">Full · Dominican</div>
+                  <div class="product-rating-row">
+                    <span class="product-rating">★ 4.8</span>
+                    <span class="product-rating-count">71 reviews</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="product-detail.html" class="card-link">
+              <div class="product-card">
+                <div class="product-img product-img-liga"><img src="assets/images/liga-privada.jpg" alt=""/></div>
+                <div class="product-body">
+                  <div class="product-name">Liga Privada No. 9</div>
+                  <div class="product-meta">Full · Nicaraguan</div>
+                  <div class="product-rating-row">
+                    <span class="product-rating">★ 4.8</span>
+                    <span class="product-rating-count">68 reviews</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Spirit discoveries -->
+        <div>
+          <div class="section-hd">
+            <h2><i data-icon="whiskey-glass" class="ic-22" aria-hidden="true"></i> Highly Rated Spirits</h2>
+            <a href="catalog.html">View catalog</a>
+          </div>
+          <div class="explore-product-grid">
+
+            <a href="product-detail.html" class="card-link">
+              <div class="product-card">
+                <div class="product-img product-img-pappy"><img src="assets/images/pappy_van_winkle_23yr.jpg" alt=""/></div>
+                <div class="product-body">
+                  <div class="product-name">Pappy Van Winkle 23yr</div>
+                  <div class="product-meta">Bourbon · Neat</div>
+                  <div class="product-rating-row">
+                    <span class="product-rating">★ 5.0</span>
+                    <span class="product-rating-count">34 reviews</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="product-detail.html" class="card-link">
+              <div class="product-card">
+                <div class="product-img product-img-lagavulin"><img src="assets/images/lagavulin_16yr.jpg" alt=""/></div>
+                <div class="product-body">
+                  <div class="product-name">Lagavulin 16yr</div>
+                  <div class="product-meta">Scotch · Peaty</div>
+                  <div class="product-rating-row">
+                    <span class="product-rating">★ 4.9</span>
+                    <span class="product-rating-count">58 reviews</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="product-detail.html" class="card-link">
+              <div class="product-card">
+                <div class="product-img product-img-macallan"><img src="assets/images/macallan-18.webp" alt=""/></div>
+                <div class="product-body">
+                  <div class="product-name">Macallan 18yr Sherry</div>
+                  <div class="product-meta">Scotch · Sherried</div>
+                  <div class="product-rating-row">
+                    <span class="product-rating">★ 4.9</span>
+                    <span class="product-rating-count">49 reviews</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Most Reviewed This Month — mobile-only (the right rail already
+             surfaces this kind of activity on desktop). Hidden above 700px
+             via .explore-mobile-only in explore.css. -->
+        <div class="explore-mobile-only">
+          <div class="section-hd">
+            <h2>📝 Most Reviewed This Month</h2>
+            <a href="catalog.html">View all</a>
+          </div>
+          <div class="explore-product-grid">
+
+            <a href="product-detail.html" class="card-link">
+              <div class="product-card">
+                <div class="product-img product-img-padron"><img src="assets/images/padron.jpg" alt=""/></div>
+                <div class="product-body">
+                  <div class="product-name">Padron 1926 No. 35</div>
+                  <div class="product-meta">Cigar · Full</div>
+                  <div class="product-rating-row">
+                    <span class="product-rating">★ 4.9</span>
+                    <span class="product-rating-count">128 reviews</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="product-detail.html" class="card-link">
+              <div class="product-card">
+                <div class="product-img product-img-lagavulin"><img src="assets/images/lagavulin_16yr.jpg" alt=""/></div>
+                <div class="product-body">
+                  <div class="product-name">Lagavulin 16yr</div>
+                  <div class="product-meta">Scotch · Peaty</div>
+                  <div class="product-rating-row">
+                    <span class="product-rating">★ 4.9</span>
+                    <span class="product-rating-count">114 reviews</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="product-detail.html" class="card-link">
+              <div class="product-card">
+                <div class="product-img product-img-fuente"><img src="assets/images/fuente-opus.jpg" alt=""/></div>
+                <div class="product-body">
+                  <div class="product-name">Arturo Fuente Opus X</div>
+                  <div class="product-meta">Cigar · Full</div>
+                  <div class="product-rating-row">
+                    <span class="product-rating">★ 4.8</span>
+                    <span class="product-rating-count">96 reviews</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="product-detail.html" class="card-link">
+              <div class="product-card">
+                <div class="product-img product-img-pappy"><img src="assets/images/pappy_van_winkle_23yr.jpg" alt=""/></div>
+                <div class="product-body">
+                  <div class="product-name">Pappy Van Winkle 23yr</div>
+                  <div class="product-meta">Bourbon · Neat</div>
+                  <div class="product-rating-row">
+                    <span class="product-rating">★ 4.9</span>
+                    <span class="product-rating-count">87 reviews</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="product-detail.html" class="card-link">
+              <div class="product-card">
+                <div class="product-img product-img-liga"><img src="assets/images/liga-privada.jpg" alt=""/></div>
+                <div class="product-body">
+                  <div class="product-name">Liga Privada No. 9</div>
+                  <div class="product-meta">Cigar · Full</div>
+                  <div class="product-rating-row">
+                    <span class="product-rating">★ 4.7</span>
+                    <span class="product-rating-count">81 reviews</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="product-detail.html" class="card-link">
+              <div class="product-card">
+                <div class="product-img product-img-macallan"><img src="assets/images/macallan-18.webp" alt=""/></div>
+                <div class="product-body">
+                  <div class="product-name">Macallan 18yr Sherry</div>
+                  <div class="product-meta">Scotch · Sherried</div>
+                  <div class="product-rating-row">
+                    <span class="product-rating">★ 4.9</span>
+                    <span class="product-rating-count">73 reviews</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Recent community activity from non-followed -->
+        <div>
+          <div class="section-hd">
+            <h2>📡 Around the Lounge</h2>
+          </div>
+          <div class="card-stack">
+
+            <div class="activity-card">
+              <div class="avatar activity-avatar-warm"><img src="assets/images/derick-l.jpg" alt=""/></div>
+              <div class="info-col">
+                <div class="activity-text"><span class="activity-actor-name">Derek L.</span> reviewed <span class="activity-product-link">Cohiba Behike 54</span></div>
+                <div class="activity-quote">"Flawless construction, silky draw — cedar and cream with a hint of dark fruit on the finish."</div>
+                <div class="activity-meta-row">
+                  <span class="activity-rating">★ 4.7</span>
+                  <span class="product-rating-count">1 hour ago</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="activity-card">
+              <div class="avatar activity-avatar-blue"><img src="assets/images/samuel-k.jpg" alt=""/></div>
+              <div class="info-col">
+                <div class="activity-text"><span class="activity-actor-name">Samuel K.</span> checked in at Lounge & Co.</div>
+                <div class="member-card-bio">6 members here now</div>
+                <div class="activity-timestamp">45 minutes ago</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Search results panel (hidden by default) -->
+      <div id="explore-search-results" class="explore-search-results">
+        <div class="explore-search-results-label">Showing results for "<span id="explore-search-query-display" class="explore-search-query-text"></span>"</div>
+        <div id="explore-search-result-list" class="card-stack">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── RIGHT RAIL ── -->
+    <aside class="rail-col explore-rail-col">
+
+      <!-- AI recommendation -->
+      <div class="widget">
+        <div class="widget-title">✦ Sterlon Pick</div>
+        <div class="sterlon-pick-quote">"Based on your taste profile, try exploring #PeatyScotch this week — several members are comparing Ardbeg vs Laphroaig with the Ashton VSG."</div>
+        <a href="sterlon.html" class="sterlon-pick-link">Ask Sterlon →</a>
+      </div>
+
+      <!-- Popular this month -->
+      <div class="widget">
+        <div class="widget-title">📈 Most Reviewed This Month</div>
+        <div class="card-stack">
+          <div class="popular-row">
+            <div class="popular-rank-num">1</div>
+            <div class="info-col">
+              <div class="popular-product-name">Padron 1926 No. 35</div>
+              <div class="popular-product-meta">Cigar · 18 reviews</div>
+            </div>
+            <span class="popular-rating">★ 4.9</span>
+          </div>
+          <div class="popular-row">
+            <div class="popular-rank-num">2</div>
+            <div class="info-col">
+              <div class="popular-product-name">Lagavulin 16yr</div>
+              <div class="popular-product-meta">Scotch · 14 reviews</div>
+            </div>
+            <span class="popular-rating">★ 4.9</span>
+          </div>
+          <div class="popular-row">
+            <div class="popular-rank-num">3</div>
+            <div class="info-col">
+              <div class="popular-product-name">Arturo Fuente Opus X</div>
+              <div class="popular-product-meta">Cigar · 11 reviews</div>
+            </div>
+            <span class="popular-rating">★ 4.8</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upcoming events teaser -->
+      <div class="widget">
+        <div class="widget-title">📅 Upcoming Events</div>
+        <a href="event-detail.html" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--bg-border)'" class="upcoming-event-card">
+          <div class="upcoming-event-name">Scotch &amp; Smoke Night</div>
+          <div class="upcoming-event-meta">May 18 · 16 spots left</div>
+        </a>
+        <a href="events.html" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'" class="upcoming-event-view-all">View all events →</a>
+      </div>
+
+    </aside>
+
+  </div>
+</main>
+
+<!-- Mobile overlay -->
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+
+<!-- Bottom nav (mobile) -->
+<nav class="bottom-nav">
+  <a href="feed.html"        class="bottom-nav-item"><i data-lucide="newspaper" class="ic-20"></i>Feed</a>
+  <a href="explore.html"     class="bottom-nav-item active"><i data-lucide="search" class="ic-20"></i>Explore</a>
+  <a href="create-post.html" class="bottom-nav-item"><div class="bottom-nav-create-btn"><i data-lucide="plus" class="ic-20"></i></div></a>
+  <a href="events.html"      class="bottom-nav-item"><i data-lucide="calendar" class="ic-20"></i>Events</a>
+  <a href="profile.html"     class="bottom-nav-item"><i data-lucide="user" class="ic-20"></i>Profile</a>
+</nav>
+
+<script>
+  function setCategory(btn,cat){
+    document.querySelectorAll('.cat-tab').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  function handleSearch(val){
+    const clearBtn=document.getElementById('explore-clear-btn');
+    const discover=document.getElementById('explore-discover-content');
+    const results=document.getElementById('explore-search-results');
+    clearBtn.style.display=val?'block':'none';
+    if(val.length>1){
+      discover.style.display='none';
+      results.style.display='block';
+      document.getElementById('explore-search-query-display').textContent=val;
+      document.getElementById('explore-search-result-list').innerHTML=`
+        <div class="search-result-row">
+          <div class="search-result-avatar"><img src="assets/images/marcus-r.jpg" alt=""/></div>
+          <div><div class="search-result-name">Marcus R.</div><div class="product-rating-count">Member · Champion · #1</div></div>
+        </div>
+        <div class="search-result-row">
+          <div class="search-result-icon-box">🚬</div>
+          <div><div class="search-result-name">Padron 1926 No. 35</div><div class="product-rating-count">Cigar · Full · ★ 4.9</div></div>
+        </div>
+        <div class="search-result-row">
+          <div class="search-result-icon-box">🥃</div>
+          <div><div class="search-result-name">Lagavulin 16yr</div><div class="product-rating-count">Scotch · Peaty · ★ 4.9</div></div>
+        </div>
+      `;
+    } else {
+      discover.style.display='flex';
+      results.style.display='none';
+    }
+  }
+
+  function clearSearch(){
+    document.getElementById('explore-search-input-field').value='';
+    handleSearch('');
+  }
+
+  function followToggle(btn){
+    const following=btn.textContent==='Following';
+    btn.textContent=following?'Follow':'Following';
+    btn.style.background=following?'var(--burg)':'var(--bg-elevated)';
+    btn.style.color=following?'#F5E6D3':'var(--text-secondary)';
+    btn.style.border=following?'none':'1px solid var(--bg-border)';
+  }
+
+  /* Carousel arrows — shared wireCarousel helper handles every horizontal
+     scroller on the explore page. Wraps each track in a .pro-lib-carousel +
+     variant-class container, injects left/right chevron buttons, and runs
+     the same right-lenient / left-strict show logic used app-wide. */
+  function wireCarousel(track, variantClass) {
+    if (!track || track.dataset.carouselWired === '1') return;
+    track.dataset.carouselWired = '1';
+
+    const wrap = document.createElement('div');
+    wrap.className = 'pro-lib-carousel ' + variantClass;
+    track.parentNode.insertBefore(wrap, track);
+    wrap.appendChild(track);
+
+    const mkArrow = (dir, glyph, label) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'pro-lib-arrow pro-lib-arrow-' + dir;
+      b.setAttribute('aria-label', label);
+      b.innerHTML = glyph;
+      return b;
+    };
+    const left  = mkArrow('left',  '‹', 'Scroll left');
+    const right = mkArrow('right', '›', 'Scroll right');
+    wrap.appendChild(left);
+    wrap.appendChild(right);
+
+    const step = (mult) => {
+      track.scrollBy({ left: track.clientWidth * 0.7 * mult, behavior: 'smooth' });
+    };
+    left.addEventListener('click',  () => step(-1));
+    right.addEventListener('click', () => step( 1));
+
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      const x = track.scrollLeft;
+      const overflow = max > 4;
+      const atEnd = x >= max - 1;
+      left.classList.toggle('pro-lib-arrow-hidden',  !(overflow && atEnd));
+      right.classList.toggle('pro-lib-arrow-hidden', !(overflow && !atEnd));
+    };
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    setTimeout(update, 80);
+    setTimeout(update, 500);
+  }
+
+  (function setupExploreCarousels(){
+    document.querySelectorAll('.hashtag-grid')
+      .forEach(t => wireCarousel(t, 'explore-tags-carousel'));
+    document.querySelectorAll('.explore-product-grid')
+      .forEach(t => wireCarousel(t, 'explore-products-carousel'));
+  })();
+</script>
+</body>
+</html>

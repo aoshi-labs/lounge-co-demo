@@ -1,0 +1,7 @@
+{
+  "op": "budgetTurn",
+  "promptText": "recommend a cigar around $20",
+  "categoryFocus": "cigar",
+  "journeyLevel": "intermediate",
+  "session": {}
+}

@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "category": "spirit",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "sourceSkuCount": 92,
+  "productCount": 92,
+  "recoShards": [
+    "reco/curated.json",
+    "reco/tracker-01.json",
+    "reco/tracker-02.json",
+    "reco/tracker-03.json",
+    "reco/tracker-04.json",
+    "reco/tracker-05.json",
+    "reco/tracker-06.json",
+    "reco/tracker-07.json",
+    "reco/tracker-08.json",
+    "reco/tracker-09.json",
+    "reco/tracker-10.json",
+    "reco/tracker-11.json",
+    "reco/tracker-12.json"
+  ],
+  "briefShards": [
+    "briefs/other.json",
+    "briefs/tracker-01.json",
+    "briefs/tracker-02.json",
+    "briefs/tracker-03.json",
+    "briefs/tracker-04.json",
+    "briefs/tracker-05.json",
+    "briefs/tracker-06.json",
+    "briefs/tracker-07.json",
+    "briefs/tracker-08.json",
+    "briefs/tracker-09.json",
+    "briefs/tracker-10.json",
+    "briefs/tracker-11.json",
+    "briefs/tracker-12.json"
+  ]
+}

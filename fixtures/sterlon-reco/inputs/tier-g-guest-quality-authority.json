@@ -1,0 +1,27 @@
+{
+  "op": "guestQualityAuthority",
+  "cases": [
+    {
+      "id": "cigar-only-no-spirit-ids",
+      "promptText": "recommend a cigar under $10",
+      "categoryFocus": "cigar",
+      "journeyLevel": "intermediate"
+    },
+    {
+      "id": "old-forester-spirit-locked",
+      "promptText": "I'm drinking Old Forester 1920 and want a maduro cigar",
+      "categoryFocus": "pairing",
+      "journeyLevel": "intermediate",
+      "expectNamedSpiritId": "spi-trk-of-1920",
+      "expectSpiritLockedAllSlots": true
+    },
+    {
+      "id": "morning-espresso-no-peat-anchor",
+      "promptText": "Pair a cigar with a morning espresso. I want something elegant, smooth, and not too heavy for an early smoke.",
+      "categoryFocus": "pairing",
+      "journeyLevel": "intermediate",
+      "forbiddenSpiritNamePattern": "ardbeg|laphroaig|lagavulin|octomore|casamigos|clase azul|mezcal",
+      "expectSpiritDeckIn": ["bourbon", "irish", "cognac", "rum"]
+    }
+  ]
+}

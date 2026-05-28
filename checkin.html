@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Check In — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Check in at the lounge and let other members know you're here right now." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Check In — Lounge & Co." />
+  <meta property="og:description" content="Check in at the lounge and let other members know you're here right now." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Check In — Lounge & Co." />
+  <meta name="twitter:description" content="Check in at the lounge and let other members know you're here right now." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/checkin.css"/>
+</head>
+<body>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Thomas H.</div><div class="sidebar-user-tier">Elite · 1,744 pts · #4</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area">
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu"><i data-lucide="menu" class="ic-16"></i></button>
+    <div class="topbar-actions">
+    </div>
+  </header>
+
+  <div class="checkin-page-frame">
+    <div class="checkin-page-stack">
+
+      <!-- Hero check-in card -->
+      <div class="checkin-hero-card">
+
+        <!-- Pulse / location -->
+        <div class="checkin-pulse-wrap">
+          <div class="checkin-pulse-ring"></div>
+          <div class="checkin-pulse-ring-2"></div>
+          <div class="checkin-pulse-center">
+            <i data-lucide="map-pin" class="ic-28"></i>
+          </div>
+        </div>
+
+        <div class="checkin-eyebrow">✓ Location Detected</div>
+        <h1 class="checkin-venue-name">Lounge & Co.</h1>
+        <p class="checkin-venue-address">2847 Peachtree St NE, Atlanta · 32 ft away</p>
+
+        <!-- Stats -->
+        <div class="checkin-hero-stats">
+          <div><div class="checkin-stat-num-gold">6</div><div class="checkin-stat-label">Members Here</div></div>
+          <div><div class="checkin-stat-num">+25</div><div class="checkin-stat-label">Points</div></div>
+          <div><div class="checkin-stat-num">12</div><div class="checkin-stat-label">Your Streak</div></div>
+        </div>
+
+        <button onclick="confirmCheckin()" id="checkin-btn" onmouseover="this.style.background='var(--burg-hover)'" onmouseout="this.style.background='var(--burg)'" class="checkin-cta-button">Check In Now</button>
+
+        <div class="checkin-share-row">
+          <input type="checkbox" id="share-feed" checked class="checkin-share-checkbox">
+          <label for="share-feed">Share to feed</label>
+        </div>
+      </div>
+
+      <!-- Presence visibility quick-toggle -->
+      <div class="presence-card" id="presence-card">
+        <i data-lucide="eye" class="ic-22"></i>
+        <div class="presence-card-body">
+          <div class="presence-card-title">Show me as 'currently here'</div>
+          <p class="presence-card-description">Other members see you on the list below while you're checked in. <a href="settings.html#privacy" class="presence-settings-link">Privacy settings</a></p>
+        </div>
+        <label class="toggle"><input type="checkbox" id="presence-quick-toggle" aria-label="Show me as currently here" checked><span class="slider"></span></label>
+      </div>
+
+      <!-- Who's here -->
+      <div class="here-now-card">
+        <div class="here-now-header">
+          <div class="here-now-title">Here Right Now</div>
+          <span class="here-now-meta"><span id="here-count">6</span> members</span>
+        </div>
+        <div class="here-now-list">
+          <a href="profile.html" id="you-here-row" class="here-now-row is-you" style="display:none;">
+            <div class="avatar here-now-avatar-you"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+            <div class="here-now-row-info"><div class="here-now-row-name">Thomas H. <span class="here-now-tag-you">You</span></div><div class="here-now-meta">Visible · checked in just now</div></div>
+            <span class="here-now-status-pill">Here</span>
+          </a>
+          <a href="profile.html" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background='transparent'" class="here-now-row">
+            <div class="avatar here-now-avatar-champion"><img src="assets/images/marcus-r.jpg" alt=""/></div>
+            <div class="here-now-row-info"><div class="here-now-row-name">Marcus R. <span class="here-now-tag-champion">Champion</span></div><div class="here-now-meta">Smoking the Cohiba Siglo VI · 30 min</div></div>
+            <span class="here-now-status-pill">Here</span>
+          </a>
+          <a href="profile.html" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background='transparent'" class="here-now-row">
+            <div class="avatar here-now-avatar-runner-up"><img src="assets/images/james-w.jpg" alt=""/></div>
+            <div class="here-now-row-info"><div class="here-now-row-name">James W. <span class="here-now-tag-elite">Elite</span></div><div class="here-now-meta">Just arrived · 5 min</div></div>
+            <span class="here-now-status-pill">Here</span>
+          </a>
+          <a href="profile.html" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background='transparent'" class="here-now-row">
+            <div class="avatar here-now-avatar-bronze"><img src="assets/images/robert-b.jpg" alt=""/></div>
+            <div class="here-now-row-info"><div class="here-now-row-name">Robert B. <span class="here-now-tag-bronze">Bronze</span></div><div class="here-now-meta">In the lounge · 1 hr</div></div>
+            <span class="here-now-status-pill">Here</span>
+          </a>
+          <a href="profile.html" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background='transparent'" class="here-now-row">
+            <div class="avatar here-now-avatar-member"><img src="assets/images/derick-l.jpg" alt=""/></div>
+            <div class="here-now-row-info"><div class="here-now-row-name">Derek L. <span class="here-now-tag-member">Member</span></div><div class="here-now-meta">2 hrs</div></div>
+            <span class="here-now-status-pill">Here</span>
+          </a>
+        </div>
+        <button onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'" class="here-now-show-more">Show 2 more →</button>
+      </div>
+
+      <!-- Streak bonus card -->
+      <div class="streak-bonus-card">
+        <i data-lucide="flame" class="ic-32"></i>
+        <div>
+          <div class="streak-bonus-title">12-Day Streak!</div>
+          <p class="streak-bonus-description">Check in 3 more days for the "Regular" badge and +200 bonus points.</p>
+        </div>
+      </div>
+
+      <!-- Check-in history -->
+      <div class="history-card">
+        <div class="history-card-header">
+          <div>
+            <div class="history-card-title">Your Check-in History</div>
+            <div class="history-card-subtitle">37 total · 12 this month · longest streak 18 days</div>
+          </div>
+          <div class="history-range-tabs">
+            <button class="history-range-tab is-active" data-range="month">This month</button>
+            <button class="history-range-tab" data-range="all">All time</button>
+          </div>
+        </div>
+
+        <ul class="history-list" id="history-list">
+          <li class="history-item">
+            <div class="history-date-block"><div class="history-date-day">12</div><div class="history-date-month">MAY</div></div>
+            <div class="history-item-info">
+              <div class="history-venue-name">Lounge & Co. <span class="history-tonight-tag">· tonight</span></div>
+              <div class="history-item-meta">8:42 PM · Padron 1964 + Lagavulin 16 · 2 hr 18 min</div>
+            </div>
+            <span class="history-points-pill">+25 pts</span>
+          </li>
+          <li class="history-item">
+            <div class="history-date-block"><div class="history-date-day">10</div><div class="history-date-month">MAY</div></div>
+            <div class="history-item-info">
+              <div class="history-venue-name" data-lounge-name>Lounge & Co.</div>
+              <div class="history-item-meta">7:15 PM · Cohiba Siglo VI · 1 hr 42 min</div>
+            </div>
+            <span class="history-points-pill">+25 pts</span>
+          </li>
+          <li class="history-item">
+            <div class="history-date-block"><div class="history-date-day">08</div><div class="history-date-month">MAY</div></div>
+            <div class="history-item-info">
+              <div class="history-venue-name">Lounge & Co. <span class="history-event-tag">· Whiskey Tasting</span></div>
+              <div class="history-item-meta">9:00 PM · attended event · 3 hr 5 min</div>
+            </div>
+            <span class="history-points-pill">+75 pts</span>
+          </li>
+          <li class="history-item">
+            <div class="history-date-block"><div class="history-date-day">06</div><div class="history-date-month">MAY</div></div>
+            <div class="history-item-info">
+              <div class="history-venue-name" data-lounge-name>Lounge & Co.</div>
+              <div class="history-item-meta">6:48 PM · Ashton VSG · 1 hr 20 min</div>
+            </div>
+            <span class="history-points-pill">+25 pts</span>
+          </li>
+          <li class="history-item">
+            <div class="history-date-block"><div class="history-date-day">04</div><div class="history-date-month">MAY</div></div>
+            <div class="history-item-info">
+              <div class="history-venue-name" data-lounge-name>Lounge & Co.</div>
+              <div class="history-item-meta">8:11 PM · Padron 1926 + Pappy 15 · 2 hr 02 min</div>
+            </div>
+            <span class="history-points-pill">+25 pts</span>
+          </li>
+          <li class="history-item">
+            <div class="history-date-block"><div class="history-date-day">02</div><div class="history-date-month">MAY</div></div>
+            <div class="history-item-info">
+              <div class="history-venue-name" data-lounge-name>Lounge & Co.</div>
+              <div class="history-item-meta">7:32 PM · Davidoff Aniversario · 55 min</div>
+            </div>
+            <span class="history-points-pill">+25 pts</span>
+          </li>
+        </ul>
+
+        <button class="history-show-more-btn" id="history-show-more">View earlier check-ins →</button>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- Success modal -->
+<div id="checkin-success-modal" class="success-modal">
+  <div class="success-modal-card">
+    <div class="success-modal-icon">
+      <i data-lucide="check" class="ic-32"></i>
+    </div>
+    <div class="success-modal-title">You're Checked In!</div>
+    <p class="success-modal-message">+25 points · Enjoy the lounge, Thomas.</p>
+    <a href="feed.html" class="success-modal-cta">Back to Feed</a>
+  </div>
+</div>
+
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+<nav class="bottom-nav">
+  <a href="feed.html" class="bottom-nav-item active"><i data-lucide="newspaper" class="ic-20"></i>Feed</a>
+  <a href="explore.html" class="bottom-nav-item"><i data-lucide="search" class="ic-20"></i>Explore</a>
+  <a href="create-post.html" class="bottom-nav-item"><div class="bottom-nav-create-btn"><i data-lucide="plus" class="ic-20"></i></div></a>
+  <a href="events.html" class="bottom-nav-item"><i data-lucide="calendar" class="ic-20"></i>Events</a>
+  <a href="profile.html" class="bottom-nav-item"><i data-lucide="user" class="ic-20"></i>Profile</a>
+</nav>
+
+<script>
+  function confirmCheckin(){
+    document.getElementById('checkin-success-modal').style.display='flex';
+    // Once "checked in", reveal the "you" row in the Here Right Now list if presence is on
+    const visible = localStorage.getItem('lounge-presence-visible') !== 'false';
+    if (visible) showYouAsHere();
+    localStorage.setItem('lounge-checked-in', 'true');
+  }
+
+  function showYouAsHere(){
+    const row = document.getElementById('you-here-row');
+    const count = document.getElementById('here-count');
+    if(!row || row.style.display === 'flex') return;
+    row.style.display = 'flex';
+    if(count) count.textContent = String(parseInt(count.textContent, 10) + 1);
+  }
+  function hideYouAsHere(){
+    const row = document.getElementById('you-here-row');
+    const count = document.getElementById('here-count');
+    if(!row || row.style.display === 'none') return;
+    row.style.display = 'none';
+    if(count) count.textContent = String(Math.max(0, parseInt(count.textContent, 10) - 1));
+  }
+
+  // Init presence quick-toggle from localStorage; sync with settings.html toggle
+  (function initPresence(){
+    const t = document.getElementById('presence-quick-toggle');
+    if(!t) return;
+    const stored = localStorage.getItem('lounge-presence-visible');
+    if(stored !== null) t.checked = stored === 'true';
+    const checkedIn = localStorage.getItem('lounge-checked-in') === 'true';
+    if(checkedIn && t.checked) showYouAsHere();
+    t.addEventListener('change', () => {
+      localStorage.setItem('lounge-presence-visible', t.checked);
+      const ci = localStorage.getItem('lounge-checked-in') === 'true';
+      if(t.checked && ci) showYouAsHere(); else hideYouAsHere();
+      if(window.Lounge && Lounge.toast){
+        Lounge.toast(t.checked ? "Visible on 'Here Right Now'" : "Hidden from 'Here Right Now'", { variant: t.checked ? 'success' : 'burg' });
+      }
+    });
+  })();
+
+  // History range tabs (mockup — both ranges render the same list for now)
+  document.querySelectorAll('.history-range-tab').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.history-range-tab').forEach(x => x.classList.remove('is-active'));
+    b.classList.add('is-active');
+  }));
+
+  document.getElementById('history-show-more')?.addEventListener('click', () => {
+    if(window.Lounge && Lounge.toast) Lounge.toast('Older history coming in the backend phase', { variant: 'burg' });
+  });
+</script>
+</body>
+</html>

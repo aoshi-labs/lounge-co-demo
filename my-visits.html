@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Visits — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       Platform-level page.
+       Lifetime Visit history across every venue the member has joined.
+       Per TV2 vocabulary: a "Visit" is the member-initiated in-venue session
+       (member-owned, not a staff-initiated tab). Items consumed during a
+       Visit are journaling entries — no tobacco/alcohol commerce happens
+       on the platform; the venue's POS runs the real transaction.
+
+       Retention by tier (per BUSINESS_MODEL §7):
+         Free        — 30 days of Visit history
+         Connoisseur — 1 year
+         Cellar Club — lifetime
+
+       This page is platform-scoped under I2 (Hybrid §7.1). Visits across all
+       joined venues are unified; visibility on each Visit's items respects
+       per-post visibility settings (defaults by venue public/private status).
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Your lifetime Visit history across every venue on Lounge & Co." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/my-visits.css"/>
+</head>
+<body>
+
+<div class="mobile-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Thomas H.</div><div class="sidebar-user-tier">Elite · 1,744 pts · #4</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area">
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+      <i data-lucide="menu" class="ic-16"></i>
+    </button>
+    <div class="topbar-actions"></div>
+  </header>
+
+  <div class="content-area">
+
+    <h1 class="page-heading">My Visits</h1>
+    <p class="page-lede">Every evening you've spent at a Lounge &amp; Co. venue, kept for you.</p>
+
+    <!-- Stats strip -->
+    <div class="mv-stats">
+      <div class="mv-stat">
+        <div class="mv-stat-n">142</div>
+        <div class="mv-stat-label">Total Visits</div>
+      </div>
+      <div class="mv-stat">
+        <div class="mv-stat-n">7</div>
+        <div class="mv-stat-label">Venues Visited</div>
+      </div>
+      <div class="mv-stat">
+        <div class="mv-stat-n">2h 18m</div>
+        <div class="mv-stat-label">Avg. Duration</div>
+      </div>
+      <div class="mv-stat">
+        <div class="mv-stat-n">CDM</div>
+        <div class="mv-stat-label">Most Visited</div>
+      </div>
+    </div>
+
+    <!-- Filters: venue chips + date range -->
+    <div class="mv-filters">
+      <div class="mv-chips">
+        <button class="mv-chip active" type="button">All venues</button>
+        <button class="mv-chip" type="button">Casa de Montecristo</button>
+        <button class="mv-chip" type="button">Mahogany Room</button>
+        <button class="mv-chip" type="button">The Cellar Club</button>
+        <button class="mv-chip" type="button">Highland House</button>
+      </div>
+      <select class="mv-date-select" aria-label="Date range">
+        <option>All time</option>
+        <option>Last 30 days</option>
+        <option>Last 90 days</option>
+        <option>This year</option>
+        <option>Last year</option>
+      </select>
+    </div>
+
+    <!-- Visit list -->
+    <div class="mv-list">
+
+      <a href="#" class="mv-card">
+        <div class="mv-date-block">
+          <div class="mv-date-month">May</div>
+          <div class="mv-date-day">17</div>
+        </div>
+        <div class="mv-body">
+          <div class="mv-venue">Casa de Montecristo</div>
+          <div class="mv-meta">
+            <span><i data-lucide="clock" class="ic-12"></i>7:42 PM · 2h 36m</span>
+            <span><i data-lucide="notebook-pen" class="ic-12"></i>4 items</span>
+            <span><i data-lucide="message-square" class="ic-12"></i>1 post</span>
+          </div>
+          <div class="mv-tags">
+            <span class="mv-tag mv-tag-rated">★ Rated 4.8</span>
+            <span class="mv-tag">Padron 1926</span>
+            <span class="mv-tag">Glenfarclas 17</span>
+          </div>
+        </div>
+        <div class="mv-rating">★ 4.8</div>
+      </a>
+
+      <a href="#" class="mv-card">
+        <div class="mv-date-block">
+          <div class="mv-date-month">May</div>
+          <div class="mv-date-day">10</div>
+        </div>
+        <div class="mv-body">
+          <div class="mv-venue">Mahogany Room</div>
+          <div class="mv-meta">
+            <span><i data-lucide="clock" class="ic-12"></i>8:15 PM · 1h 48m</span>
+            <span><i data-lucide="notebook-pen" class="ic-12"></i>2 items</span>
+            <span><i data-lucide="message-square" class="ic-12"></i>0 posts</span>
+          </div>
+          <div class="mv-tags">
+            <span class="mv-tag mv-tag-private">Private venue</span>
+            <span class="mv-tag">Ashton VSG</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="mv-card">
+        <div class="mv-date-block">
+          <div class="mv-date-month">May</div>
+          <div class="mv-date-day">04</div>
+        </div>
+        <div class="mv-body">
+          <div class="mv-venue">Casa de Montecristo</div>
+          <div class="mv-meta">
+            <span><i data-lucide="clock" class="ic-12"></i>6:58 PM · 3h 02m</span>
+            <span><i data-lucide="notebook-pen" class="ic-12"></i>6 items</span>
+            <span><i data-lucide="message-square" class="ic-12"></i>2 posts</span>
+          </div>
+          <div class="mv-tags">
+            <span class="mv-tag mv-tag-rated">★ Rated 4.6</span>
+            <span class="mv-tag">Scotch &amp; Smoke Night</span>
+          </div>
+        </div>
+        <div class="mv-rating">★ 4.6</div>
+      </a>
+
+      <a href="#" class="mv-card">
+        <div class="mv-date-block">
+          <div class="mv-date-month">Apr</div>
+          <div class="mv-date-day">28</div>
+        </div>
+        <div class="mv-body">
+          <div class="mv-venue">Highland House</div>
+          <div class="mv-meta">
+            <span><i data-lucide="clock" class="ic-12"></i>9:04 PM · 1h 12m</span>
+            <span><i data-lucide="notebook-pen" class="ic-12"></i>1 item</span>
+            <span><i data-lucide="message-square" class="ic-12"></i>0 posts</span>
+          </div>
+          <div class="mv-tags">
+            <span class="mv-tag">Macallan 18</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="mv-card">
+        <div class="mv-date-block">
+          <div class="mv-date-month">Apr</div>
+          <div class="mv-date-day">19</div>
+        </div>
+        <div class="mv-body">
+          <div class="mv-venue">The Cellar Club</div>
+          <div class="mv-meta">
+            <span><i data-lucide="clock" class="ic-12"></i>7:30 PM · 2h 50m</span>
+            <span><i data-lucide="notebook-pen" class="ic-12"></i>5 items</span>
+            <span><i data-lucide="message-square" class="ic-12"></i>3 posts</span>
+          </div>
+          <div class="mv-tags">
+            <span class="mv-tag mv-tag-rated">★ Rated 4.9</span>
+            <span class="mv-tag mv-tag-private">Private venue</span>
+            <span class="mv-tag">Pappy 23</span>
+          </div>
+        </div>
+        <div class="mv-rating">★ 4.9</div>
+      </a>
+
+      <a href="#" class="mv-card">
+        <div class="mv-date-block">
+          <div class="mv-date-month">Apr</div>
+          <div class="mv-date-day">12</div>
+        </div>
+        <div class="mv-body">
+          <div class="mv-venue">Casa de Montecristo</div>
+          <div class="mv-meta">
+            <span><i data-lucide="clock" class="ic-12"></i>8:00 PM · 2h 06m</span>
+            <span><i data-lucide="notebook-pen" class="ic-12"></i>3 items</span>
+            <span><i data-lucide="message-square" class="ic-12"></i>1 post</span>
+          </div>
+          <div class="mv-tags">
+            <span class="mv-tag">Cohiba Behike</span>
+            <span class="mv-tag">Lagavulin 16</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Tier-graduated retention hint. Free: 30 days; Connoisseur: 1 year;
+         Cellar Club (this user): lifetime. -->
+    <div class="mv-retention-hint">
+      <i data-lucide="info" class="ic-13"></i>
+      <span>As a Cellar Club member, your Visit history is kept for life. <a href="member-billing.html">View plan</a>.</span>
+    </div>
+
+  </div>
+</main>
+
+<!-- Mobile bottom nav (platform context) -->
+<nav class="bottom-nav">
+  <a href="feed.html" class="bottom-nav-item"><i data-lucide="newspaper" class="ic-20"></i>Feed</a>
+  <a href="discover-venues.html" class="bottom-nav-item"><i data-lucide="map" class="ic-20"></i>Discover</a>
+  <a href="sterlon.html" class="bottom-nav-item"><div class="bottom-nav-create-btn"><i data-lucide="sparkles" class="ic-20"></i></div></a>
+  <a href="my-network.html" class="bottom-nav-item"><i data-lucide="users" class="ic-20"></i>Network</a>
+  <a href="profile.html" class="bottom-nav-item"><i data-lucide="user" class="ic-20"></i>Profile</a>
+</nav>
+
+<script>
+  // Filter chip toggle (demo only — backend hook later)
+  document.querySelectorAll('.mv-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.mv-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

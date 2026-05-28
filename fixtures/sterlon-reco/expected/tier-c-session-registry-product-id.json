@@ -1,0 +1,7 @@
+{
+  "bestHasSpiritId": true,
+  "bestHasCigarId": true,
+  "registryLen": 2,
+  "registryEntriesHaveProductId": true,
+  "dedupeById": true
+}

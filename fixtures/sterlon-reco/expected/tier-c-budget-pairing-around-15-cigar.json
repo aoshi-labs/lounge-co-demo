@@ -1,0 +1,24 @@
+{
+  "budgetMode": "around",
+  "budgetMin": 11,
+  "budgetMax": 19,
+  "budgetTarget": 15,
+  "budgetCeiling": null,
+  "categoryFocus": "pairing",
+  "degraded": false,
+  "cigars": [
+    "Oliva Serie V Melanio Maduro Robusto",
+    "Arturo Fuente Don Carlos Personal Reserve",
+    "OneOff Black & Tan Robusto"
+  ],
+  "cigarMsrps": [
+    11,
+    17,
+    12
+  ],
+  "spirit": "Casamigos Reposado",
+  "spiritMsrp": 55,
+  "allCigarsWithinBudget": true,
+  "spiritWithinBudget": false,
+  "hasBudgetSignal": true
+}

@@ -1,0 +1,253 @@
+/* === Library — personal purchase history === */
+
+/* Sidebar header text + user row */
+
+/* Top bar */
+.topbar-title { font-family: var(--font-ui); font-size: 15px; font-weight: 600; color: var(--text-primary); }
+.topbar-action-link {
+  background: var(--bg-elevated); border: 1px solid var(--bg-border); border-radius: 8px;
+  padding: 7px 14px; font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+  color: var(--text-primary); text-decoration: none; transition: border-color .15s, color .15s;
+}
+.topbar-action-link:hover { border-color: var(--gold); color: var(--gold); }
+
+/* Layout */
+.library-page-frame { display: flex; justify-content: center; padding: 24px 20px 40px; gap: 20px; }
+.library-page-stack { width: 100%; max-width: 720px; display: flex; flex-direction: column; gap: 18px; }
+.library-rail-col { width: 268px; flex-shrink: 0; display: flex; flex-direction: column; gap: 14px; }
+
+/* Stats strip */
+.lib-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.lib-stat {
+  background: var(--bg-surface); border: 1px solid var(--bg-border); border-radius: 12px;
+  padding: 14px 16px;
+}
+.lib-stat-num {
+  font-family: var(--font-display); font-size: 1.5rem; font-weight: 700;
+  color: var(--text-primary); line-height: 1;
+}
+.lib-num-burg { color: var(--burg); }
+.lib-num-gold { color: var(--gold); }
+.lib-stat-lbl {
+  font-size: 9px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--text-muted); margin-top: 6px;
+}
+
+/* Filter tabs */
+.lib-filters {
+  display: flex; align-items: center; gap: 8px;
+  border-bottom: 1px solid var(--bg-border);
+  padding-bottom: 12px;
+  flex-wrap: wrap;
+}
+.filter-tab {
+  background: transparent; border: 1px solid var(--bg-border); border-radius: 99px;
+  padding: 6px 14px; font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+  color: var(--text-secondary); cursor: pointer; transition: background .15s, color .15s, border-color .15s;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.filter-tab:hover { color: var(--text-primary); border-color: var(--gold-dim); }
+.filter-tab.active { background: var(--gold-subtle); border-color: var(--gold); color: var(--gold); }
+.lib-count { font-size: 10px; color: var(--text-muted); }
+.filter-tab.active .lib-count { color: var(--gold); }
+.lib-spacer { flex: 1; }
+.lib-sort {
+  background: var(--bg-elevated); border: 1px solid var(--bg-border); border-radius: 7px;
+  padding: 6px 10px; font-family: var(--font-ui); font-size: 12px; color: var(--text-primary);
+  cursor: pointer; outline: none;
+}
+.lib-sort:focus { border-color: var(--gold); }
+
+/* Grid */
+.lib-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+.lib-card {
+  background: var(--bg-surface); border: 1px solid var(--bg-border); border-radius: 14px;
+  overflow: hidden; text-decoration: none; color: var(--text-primary);
+  display: flex; flex-direction: column;
+  transition: border-color .2s, transform .2s;
+}
+.lib-card:hover { border-color: var(--gold-dim); transform: translateY(-2px); }
+.lib-thumb {
+  height: 92px; display: flex; align-items: center; justify-content: center;
+  font-size: 36px;
+  overflow: hidden;
+}
+.lib-thumb > img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.lib-thumb-burg   { background: linear-gradient(135deg, rgba(var(--burg-rgb), .30) 0%, rgba(30,24,16,.85) 100%); }
+.lib-thumb-gold   { background: linear-gradient(135deg, rgba(var(--gold-rgb), .25) 0%, rgba(30,24,16,.85) 100%); }
+.lib-thumb-bronze { background: linear-gradient(135deg, rgba(var(--tier-bronze-rgb), .25) 0%, rgba(30,24,16,.85) 100%); }
+.lib-body { padding: 14px; display: flex; flex-direction: column; gap: 6px; }
+.lib-name {
+  font-family: var(--font-display); font-size: 1.05rem; font-weight: 600;
+  color: var(--text-primary); line-height: 1.2;
+}
+.lib-meta { font-size: 11px; color: var(--text-muted); }
+.lib-row { display: flex; align-items: center; justify-content: space-between; margin-top: 4px; }
+.lib-qty {
+  font-family: var(--font-ui); font-size: 11px; font-weight: 700;
+  color: var(--gold);
+}
+.lib-foot {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 8px; padding-top: 10px; border-top: 1px solid var(--bg-border);
+}
+.lib-date { font-size: 10px; color: var(--text-muted); }
+.lib-price { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--text-primary); }
+
+/* Load more */
+.lib-loadmore { padding-top: 4px; }
+.lib-loadbtn {
+  background: var(--bg-surface); border: 1px solid var(--bg-border); border-radius: 9px;
+  padding: 11px; width: 100%; font-family: var(--font-ui); font-size: 13px; font-weight: 500;
+  color: var(--text-secondary); cursor: pointer; transition: border-color .2s, color .2s;
+}
+.lib-loadbtn:hover { border-color: var(--gold); color: var(--gold); }
+
+/* Right rail — collection bars */
+.lib-summary { display: flex; flex-direction: column; gap: 12px; }
+.lib-srow { display: flex; align-items: center; gap: 10px; }
+.lib-srow-lbl { font-size: 11px; font-weight: 500; color: var(--text-secondary); width: 76px; flex-shrink: 0; }
+.lib-bar { flex: 1; height: 6px; background: var(--bg-elevated); border-radius: 99px; overflow: hidden; }
+.lib-fill { height: 100%; border-radius: 99px; }
+.lib-fill-cigar  { width: 68%; background: var(--burg); }
+.lib-fill-spirit { width: 26%; background: var(--gold); }
+.lib-fill-acc    { width: 6%;  background: var(--tier-bronze); }
+.lib-srow-val { font-size: 11px; font-weight: 700; color: var(--text-primary); width: 28px; text-align: right; flex-shrink: 0; }
+
+/* Brand list */
+.lib-brands { display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--text-secondary); }
+.lib-brand { display: flex; justify-content: space-between; }
+.lib-brand-c { color: var(--gold); font-family: var(--font-display); font-weight: 700; }
+
+/* Quick reorder */
+.lib-reorder { display: flex; flex-direction: column; gap: 10px; }
+.lib-reo {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px; background: var(--bg-elevated); border: 1px solid var(--bg-border);
+  border-radius: 10px;
+}
+.lib-reo-thumb {
+  width: 36px; height: 36px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+  overflow: hidden;
+}
+.lib-reo-thumb > img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.lib-reo-body { flex: 1; min-width: 0; }
+.lib-reo-name { font-size: 12px; font-weight: 600; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lib-reo-meta { font-size: 10px; color: var(--text-muted); margin-top: 1px; }
+.lib-reo-btn {
+  background: var(--burg); color: var(--cream); border: none; border-radius: 7px;
+  padding: 6px 11px; font-family: var(--font-ui); font-size: 11px; font-weight: 700;
+  cursor: pointer; transition: background .15s;
+}
+.lib-reo-btn:hover { background: var(--burg-hover); }
+
+/* Rating chip override (so it sits in row) */
+.rating-chip { background: var(--bg-elevated); border: 1px solid var(--bg-border); border-radius: 6px; padding: 3px 8px; font-size: 10px; color: var(--text-secondary); }
+
+/* === B2 — Wishlist (Want to try) === */
+
+/* Bookmark toggle on every card — absolute, top-right of card */
+.lib-card { position: relative; }
+.lib-bookmark {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(0,0,0,.25);
+  background: rgba(var(--bg-base-rgb), .5);
+  backdrop-filter: blur(4px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: background .15s, color .15s, transform .15s, border-color .15s;
+}
+.lib-bookmark:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+  transform: scale(1.08);
+}
+.lib-bookmark.active {
+  color: var(--gold);
+  border-color: var(--gold);
+  background: rgba(var(--gold-rgb), .20);
+}
+.lib-bookmark.active svg { fill: currentColor; }
+
+/* Filter-tab variant for the Wishlist tab */
+.lib-wish-tab { display: inline-flex; align-items: center; gap: 6px; }
+.lib-wish-count { /* inherits base .lib-count styling — no special background */ }
+
+/* Dedicated Want-to-try section beneath owned items */
+.lib-wish-section {
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid var(--bg-border);
+}
+.lib-wish-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.lib-wish-title { color: var(--gold); margin-bottom: 4px; }
+.lib-wish-sub {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  max-width: 480px;
+}
+.lib-wish-badge {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: var(--gold-subtle);
+  border: 1px solid rgba(var(--gold-rgb), .3);
+  border-radius: 99px;
+  padding: 4px 10px;
+  flex-shrink: 0;
+}
+
+/* Wishlist card variant — subtle gold left-edge to distinguish from owned */
+.lib-card-wish { border-color: rgba(var(--gold-rgb), .25); }
+.lib-card-wish:hover { border-color: var(--gold); }
+
+/* Stock badges on wishlist cards */
+.lib-wish-stock {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--tier-elite);
+  letter-spacing: .04em;
+}
+.lib-wish-stock-low      { color: var(--tier-bronze); }
+.lib-wish-stock-out      { color: var(--text-muted); }
+.lib-wish-stock-restock  { color: var(--gold); }
+
+/* Mobile overlay */
+
+/* Mobile */
+@media (max-width: 1023px) {
+  .hamburger-button { display: flex; }
+  .library-page-frame { flex-direction: column; padding: 16px; gap: 16px; }
+  .library-page-stack { max-width: 100%; }
+  .library-rail-col { display: none; }
+  .lib-stats { grid-template-columns: 1fr 1fr; }
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subscription — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       Platform-level page.
+       Member subscription billing — placeholder for Stripe Customer Portal embed.
+       Members manage their tier (Free / Connoisseur / Cellar Club), payment
+       method, invoices, upgrades, downgrades, and cancellation here.
+       Real implementation: embed Stripe Customer Portal iframe; this is the
+       mockup shell with tier-comparison cards + portal entry point.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Manage your Lounge & Co. subscription." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/member-billing.css"/>
+</head>
+<body>
+
+<div class="mobile-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Thomas H.</div><div class="sidebar-user-tier">Elite · 1,744 pts · #4</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area">
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+      <i data-lucide="menu" class="ic-16"></i>
+    </button>
+    <div class="topbar-actions"></div>
+  </header>
+
+  <div class="content-area">
+
+    <h1 class="page-heading page-heading--standalone">Subscription</h1>
+
+    <!-- Current tier card -->
+    <div class="mb-current">
+      <div class="mb-current-head">
+        <div>
+          <div class="mb-current-label">Your tier</div>
+          <div class="mb-current-tier">Cellar Club</div>
+          <div class="mb-current-price">$19.00 / month · billed monthly</div>
+        </div>
+        <button class="mb-current-portal" type="button">
+          <i data-lucide="external-link" class="ic-15"></i>
+          Manage in Stripe portal
+        </button>
+      </div>
+      <div class="mb-current-meta">
+        <div>
+          <div class="mb-current-meta-label">Next billing date</div>
+          <div class="mb-current-meta-value">Jun 17, 2026</div>
+        </div>
+        <div>
+          <div class="mb-current-meta-label">Payment method</div>
+          <div class="mb-current-meta-value">Visa ending in 4242</div>
+        </div>
+        <div>
+          <div class="mb-current-meta-label">Member since</div>
+          <div class="mb-current-meta-value">Mar 2024</div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="mb-section-title">Switch tier</h2>
+    <p style="font-family:var(--font-body);font-size:13px;color:var(--text-muted);margin-top:-8px;margin-bottom:18px;font-style:italic;">Annual billing saves 15%. Downgrades take effect at the end of your current billing period.</p>
+
+    <div class="mb-tiers">
+
+      <div class="mb-tier">
+        <div class="mb-tier-name">Free</div>
+        <div class="mb-tier-price">$0</div>
+        <div class="mb-tier-price-sub">Forever</div>
+        <ul class="mb-tier-features">
+          <li>Join unlimited public venues</li>
+          <li>Sterlon (10–15 turns/day)</li>
+          <li>Venue-scoped discoverability</li>
+          <li>Activity feed (30-day history)</li>
+          <li>Standard event RSVP</li>
+        </ul>
+        <button class="mb-tier-btn mb-tier-btn-downgrade" type="button">Downgrade</button>
+      </div>
+
+      <div class="mb-tier">
+        <div class="mb-tier-name">Connoisseur</div>
+        <div class="mb-tier-price">$9</div>
+        <div class="mb-tier-price-sub">/ month · $89/year</div>
+        <ul class="mb-tier-features">
+          <li>Everything in Free</li>
+          <li>Multi-venue palate sync</li>
+          <li>Platform-wide discoverability</li>
+          <li>Sterlon 50 turns/day</li>
+          <li>DM 25 strangers/day</li>
+          <li>Activity feed (1 year + Year-in-Drinks summary)</li>
+          <li>Verified Member badge</li>
+        </ul>
+        <button class="mb-tier-btn mb-tier-btn-downgrade" type="button">Switch to Connoisseur</button>
+      </div>
+
+      <div class="mb-tier mb-tier-current">
+        <div class="mb-tier-name">Cellar Club</div>
+        <div class="mb-tier-price">$19</div>
+        <div class="mb-tier-price-sub">/ month · $179/year</div>
+        <ul class="mb-tier-features">
+          <li>Everything in Connoisseur</li>
+          <li>Request access to private venues</li>
+          <li>Sterlon unlimited</li>
+          <li>Sterlon-suggested follows (palate similarity)</li>
+          <li>DM 100 strangers/day</li>
+          <li>Activity feed (lifetime)</li>
+          <li>Year-in-Drinks deep-dive</li>
+          <li>Custom palate radar export</li>
+          <li>Priority event RSVP (Phase 2)</li>
+        </ul>
+        <button class="mb-tier-btn mb-tier-btn-current" type="button" disabled>Current tier</button>
+      </div>
+
+    </div>
+
+    <h2 class="mb-section-title">Invoices</h2>
+    <div class="mb-invoices">
+      <div class="mb-invoice mb-invoice-head">
+        <div>Period</div>
+        <div>Amount</div>
+        <div>Status</div>
+        <div>Receipt</div>
+      </div>
+      <div class="mb-invoice">
+        <div>May 17 – Jun 17, 2026</div>
+        <div class="mb-invoice-amount">$19.00</div>
+        <div>Paid</div>
+        <a href="#" class="mb-invoice-link">PDF</a>
+      </div>
+      <div class="mb-invoice">
+        <div>Apr 17 – May 17, 2026</div>
+        <div class="mb-invoice-amount">$19.00</div>
+        <div>Paid</div>
+        <a href="#" class="mb-invoice-link">PDF</a>
+      </div>
+      <div class="mb-invoice">
+        <div>Mar 17 – Apr 17, 2026</div>
+        <div class="mb-invoice-amount">$19.00</div>
+        <div>Paid</div>
+        <a href="#" class="mb-invoice-link">PDF</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+</body>
+</html>

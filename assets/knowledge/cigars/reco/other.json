@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "shard": "other",
+  "category": "cigar",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 3,
+  "products": [
+    {
+      "tracker": {
+        "sku": "L5-DREW-LIGA9"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "dark_chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.95
+        },
+        {
+          "id": "espresso",
+          "weight": 0.85
+        },
+        {
+          "id": "earth",
+          "weight": 0.75
+        },
+        {
+          "id": "leather",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 13,
+        "tier": 5,
+        "strength": 6,
+        "body": "Full",
+        "smokeTime": "90 min",
+        "wrapper": "Connecticut Broadleaf",
+        "binder": "Brazilian Mata Fina",
+        "filler": "Honduras / Nicaragua"
+      },
+      "id": "l5-drew-liga9",
+      "sensory": {
+        "body": 9,
+        "sweetness": 5,
+        "pepper": 8,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "Drew Estate Liga Privada No. 9 Robusto / Toro / Corona Doble",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "L5-DTT-SINCOMP"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.95
+        },
+        {
+          "id": "leather",
+          "weight": 0.85
+        },
+        {
+          "id": "cream",
+          "weight": 0.75
+        },
+        {
+          "id": "earth",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 15,
+        "tier": 5,
+        "strength": 5,
+        "body": "Medium-Full",
+        "smokeTime": "90 min",
+        "wrapper": "Mexican San Andres Maduro",
+        "binder": "Ecuador Habano",
+        "filler": "Nicaragua"
+      },
+      "id": "l5-dtt-sincomp",
+      "sensory": {
+        "body": 7,
+        "sweetness": 5,
+        "pepper": 7,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Dunbarton Tobacco & Trust Sin Compromiso No. 2 / No. 5 / Seleccion Maduro",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "L5-FOUND-TABERNACLE"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.95
+        },
+        {
+          "id": "espresso",
+          "weight": 0.85
+        },
+        {
+          "id": "leather",
+          "weight": 0.75
+        },
+        {
+          "id": "earth",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 13,
+        "tier": 5,
+        "strength": 6,
+        "body": "Full",
+        "smokeTime": "90 min",
+        "wrapper": "Connecticut Broadleaf",
+        "binder": "Mexican San Andres",
+        "filler": "Nicaragua / Honduras"
+      },
+      "id": "l5-found-tabernacle",
+      "sensory": {
+        "body": 9,
+        "sweetness": 5,
+        "pepper": 8,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "Foundation Cigar Company The Tabernacle CT Broadleaf Robusto / Toro / Lancero",
+      "category": "cigar"
+    }
+  ]
+}

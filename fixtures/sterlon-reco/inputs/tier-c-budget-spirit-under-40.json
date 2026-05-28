@@ -1,0 +1,7 @@
+{
+  "op": "budgetTurn",
+  "promptText": "recommend a bourbon under $40",
+  "categoryFocus": "spirit",
+  "journeyLevel": "intermediate",
+  "session": {}
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Events Manager — Admin</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Schedule and manage tastings, pairings, and member events at your lounge." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Events Manager — Admin" />
+  <meta property="og:description" content="Schedule and manage tastings, pairings, and member events at your lounge." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Events Manager — Admin" />
+  <meta name="twitter:description" content="Schedule and manage tastings, pairings, and member events at your lounge." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/admin-events.css"/>
+</head>
+<body>
+
+<nav class="sidebar admin" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Owner Console</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row"><div class="avatar sidebar-user-avatar-owner"><img src="assets/images/gerald-o.jpg" alt=""/></div><div class="sidebar-user-info"><div class="sidebar-user-name">Gerald Owens</div><div class="sidebar-user-tier">Owner</div></div></div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Overview</div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Dashboard</a>
+    <a href="admin-analytics.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Analytics</a>
+    <div class="nav-section-label">Manage</div>
+    <a href="admin-members.html" class="nav-item"><i data-lucide="users" class="ic-17"></i>Members</a>
+    <a href="admin-catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="admin-orders.html" class="nav-item"><i data-lucide="receipt-text" class="ic-17"></i>Requests<span class="notif-dot">3</span></a>
+    <a href="admin-events.html" class="nav-item active"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-settings.html" class="nav-item"><i data-lucide="settings" class="ic-17"></i>Lounge Settings</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="chevron-left" class="ic-17"></i>Back to Member View</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area admin">
+  <h1 class="visually-hidden">Events Manager</h1>
+  <header class="top-bar">
+    <button class="icon-btn sup-menu-btn" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+      <i data-lucide="menu" class="ic-16"></i>
+    </button>
+    <div class="topbar-actions">
+      <button class="admin-events-create-btn">+ Create Event</button>
+    </div>
+  </header>
+
+  <div class="admin-events-page-frame">
+
+    <div class="admin-events-filter-row">
+      <button class="filter-tab active">Upcoming</button>
+      <button class="filter-tab">Draft</button>
+      <button class="filter-tab">Past</button>
+      <button class="filter-tab">Cancelled</button>
+    </div>
+
+    <!-- Stats sub-text — preserved from the old top bar (`admin-events-topbar-stats` span),
+         repositioned beneath the filter row where it reads as context for
+         the event list below. -->
+    <div class="adm-stats-summary">5 upcoming · 12 past</div>
+
+    <!-- Event 1 -->
+    <div class="event-row">
+      <div class="admin-events-date-block-burg">
+        <div class="admin-events-date-month-burg">May</div>
+        <div class="admin-events-date-day">18</div>
+      </div>
+      <div class="admin-events-row-info">
+        <div class="admin-events-row-header">
+          <h3 class="admin-events-row-title">Scotch &amp; Smoke Night</h3>
+          <span class="admin-events-status-published">Published</span>
+        </div>
+        <div class="admin-events-row-meta">7:00 PM – 10:00 PM · Hosted by Gerald W. · $45/person</div>
+      </div>
+      <div class="admin-events-rsvp-block">
+        <div class="admin-events-rsvp-num">14<span class="admin-events-rsvp-cap"> / 30</span></div>
+        <div class="admin-events-rsvp-label">RSVPs</div>
+        <!-- A15 — fill-rate bar -->
+        <div class="adm-fill-bar"><div class="adm-fill-bar-fill" style="width:47%"></div></div>
+        <div class="adm-fill-pct">47% filled</div>
+      </div>
+      <div class="admin-events-actions">
+        <!-- A15 — promote-in-concierge CTA. Pushes the event to all member Sterlon sessions. -->
+        <button class="adm-promote-btn" onclick="promoteEvent(this,'Scotch &amp; Smoke Night')" title="Promote in Sterlon — push to all member sessions">
+          <i data-lucide="megaphone" class="ic-13"></i>Promote
+        </button>
+        <button class="icon-btn" aria-label="Edit" title="Edit"><i data-lucide="edit-2" class="ic-14"></i></button>
+        <button class="icon-btn" aria-label="Message attendees" title="Message attendees"><i data-lucide="mail" class="ic-14"></i></button>
+        <button class="icon-btn" aria-label="More" title="More"><i data-lucide="more-horizontal" class="ic-14"></i></button>
+      </div>
+    </div>
+
+    <!-- Event 2 -->
+    <div class="event-row">
+      <div class="admin-events-date-block-gold">
+        <div class="admin-events-date-month-gold">Jun</div>
+        <div class="admin-events-date-day">01</div>
+      </div>
+      <div class="admin-events-row-info">
+        <div class="admin-events-row-header">
+          <h3 class="admin-events-row-title">Padron Vertical Tasting</h3>
+          <span class="admin-events-status-published">Published</span>
+        </div>
+        <div class="admin-events-row-meta">7:00 PM · $65/person</div>
+      </div>
+      <div class="admin-events-rsvp-block">
+        <div class="admin-events-rsvp-num">7<span class="admin-events-rsvp-cap"> / 20</span></div>
+        <div class="admin-events-rsvp-label">RSVPs</div>
+        <div class="adm-fill-bar"><div class="adm-fill-bar-fill adm-fill-bar-low" style="width:35%"></div></div>
+        <div class="adm-fill-pct adm-fill-pct-warn">35% filled · needs a boost</div>
+      </div>
+      <div class="admin-events-actions">
+        <button class="adm-promote-btn adm-promote-btn-urgent" onclick="promoteEvent(this,'Padron Vertical Tasting')" title="Low fill — promote in Sterlon">
+          <i data-lucide="megaphone" class="ic-13"></i>Promote
+        </button>
+        <button class="icon-btn" aria-label="Edit" title="Edit"><i data-lucide="edit" class="ic-14"></i></button>
+        <button class="icon-btn" aria-label="More" title="More"><i data-lucide="more-horizontal" class="ic-14"></i></button>
+      </div>
+    </div>
+
+    <!-- Event 3 (Draft) -->
+    <div class="event-row is-draft">
+      <div class="admin-events-date-block-muted">
+        <div class="admin-events-date-month-muted">Jun</div>
+        <div class="admin-events-date-day-muted">14</div>
+      </div>
+      <div class="admin-events-row-info">
+        <div class="admin-events-row-header">
+          <h3 class="admin-events-row-title">Father's Day Bourbon Flight</h3>
+          <span class="admin-events-status-draft">Draft</span>
+        </div>
+        <div class="admin-events-row-meta">6:30 PM · $85/person · Not yet published</div>
+      </div>
+      <div class="admin-events-rsvp-draft">— / 40</div>
+      <div class="admin-events-actions">
+        <button class="admin-events-publish-btn">Publish</button>
+        <button class="icon-btn" aria-label="More" title="More"><i data-lucide="more-horizontal" class="ic-14"></i></button>
+      </div>
+    </div>
+
+    <!-- Event 4 -->
+    <div class="event-row">
+      <div class="admin-events-date-block-gold">
+        <div class="admin-events-date-month-gold">Jun</div>
+        <div class="admin-events-date-day">22</div>
+      </div>
+      <div class="admin-events-row-info">
+        <div class="admin-events-row-header">
+          <h3 class="admin-events-row-title">Cuban Heritage Night</h3>
+          <span class="admin-events-status-published">Published</span>
+        </div>
+        <div class="admin-events-row-meta">8:00 PM · $75/person</div>
+      </div>
+      <div class="admin-events-rsvp-block">
+        <div class="admin-events-rsvp-num">18<span class="admin-events-rsvp-cap"> / 35</span></div>
+        <div class="admin-events-rsvp-label">RSVPs</div>
+      </div>
+      <div class="admin-events-actions">
+        <button class="icon-btn" aria-label="Edit" title="Edit"><i data-lucide="edit" class="ic-14"></i></button>
+        <button class="icon-btn" aria-label="More" title="More"><i data-lucide="more-horizontal" class="ic-14"></i></button>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- shared behaviors loaded via assets/javascript/lounge.js -->
+<script>
+  /* A15 — Push an event into Sterlon's recommendation queue.
+     Real impl writes the event to the per-venue "promoted events" list
+     with a TTL until event start time. */
+  function promoteEvent(btn, name){
+    btn.classList.add('adm-promote-btn-on');
+    btn.innerHTML = '<i data-lucide="check" class="ic-13"></i>Promoted';
+    if (window.Lounge && window.Lounge.renderIcons) window.Lounge.renderIcons();
+    if (window.toast) toast('📣 Promoting "' + name + '" in Sterlon', { variant: 'success', duration: 3000 });
+  }
+</script>
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+</body>
+</html>

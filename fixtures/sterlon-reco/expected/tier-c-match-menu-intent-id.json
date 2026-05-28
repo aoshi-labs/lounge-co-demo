@@ -1,0 +1,8 @@
+{
+  "directHasProductId": true,
+  "directIntentOnly": true,
+  "shimHasProductId": true,
+  "shimIntentOnly": true,
+  "categoriesAlign": true,
+  "idsAlign": true
+}

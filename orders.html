@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>My Activity — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Your past tabs and recent activity at the lounge." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="My Activity — Lounge & Co." />
+  <meta property="og:description" content="Your past tabs and recent activity at the lounge." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="My Activity — Lounge & Co." />
+  <meta name="twitter:description" content="Your past tabs and recent activity at the lounge." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/orders.css"/>
+</head>
+<body>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Thomas H.</div><div class="sidebar-user-tier">Elite · 1,744 pts · #4</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area">
+  <h1 class="visually-hidden">My Activity</h1>
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu"><i data-lucide="menu" class="ic-16"></i></button>
+    <div class="topbar-actions">
+      <a href="catalog.html" class="topbar-new-request-btn">+ New Request</a>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════
+       DEPRECATION BANNER
+       Per BUSINESS_MODEL §0.1: no tobacco/alcohol product commerce, ever.
+       L0 (day 1) commerce surface is platform subscriptions only — there
+       is no "Order" object in the day-1 schema. Phase 2 reintroduces
+       Orders for L1 event tickets (Stripe Connect, venue as MoR); Phase 3
+       adds L2 non-tobacco merch. This page is preserved for the historical
+       request-to-staff service flow used inside venue workspaces.
+       Member lifetime journal lives at my-visits.html (platform-scoped).
+  ══════════════════════════════════════════════════════ -->
+  <div class="deprecation-banner" role="status">
+    <div class="deprecation-banner-inner">
+      <i data-lucide="info" class="ic-15"></i>
+      <div>
+        <strong>This page is deprecated.</strong>
+        <span> Lounge &amp; Co. doesn't process tobacco or alcohol transactions — every real charge happens at the venue's POS in person. Your lifetime activity now lives at <a href="my-visits.html">My Visits</a>. Phase 2 may repurpose this surface for L1 event-ticket order history (Stripe Connect, venue as Merchant of Record).</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-page-frame">
+    <div class="activity-page-stack">
+
+      <!-- Active order with progress -->
+      <div class="order-card visit-card-current">
+        <div class="visit-card-header">
+          <div class="visit-status-group">
+            <span class="status-pill status-pill-ready">
+              <span class="status-pulse-dot"></span>
+              Ready for Pickup
+            </span>
+            <span class="visit-meta-text">Request #CR-0042</span>
+          </div>
+          <span class="visit-meta-text">Today · 7:48 PM</span>
+        </div>
+
+        <!-- Progress track -->
+        <div class="visit-progress-section">
+          <div class="visit-progress-track">
+            <!-- Step 1: Sent -->
+            <div class="visit-progress-step">
+              <div class="visit-progress-marker-done">
+                <i data-lucide="check" class="ic-14"></i>
+              </div>
+              <span class="visit-progress-label-done">Sent</span>
+            </div>
+            <div class="visit-progress-connector-done"></div>
+            <!-- Step 2: Acknowledged -->
+            <div class="visit-progress-step">
+              <div class="visit-progress-marker-done">
+                <i data-lucide="check" class="ic-14"></i>
+              </div>
+              <span class="visit-progress-label-done">Acknowledged</span>
+            </div>
+            <div class="visit-progress-connector-done"></div>
+            <!-- Step 3: Ready -->
+            <div class="visit-progress-step">
+              <div class="visit-progress-marker-done">
+                <i data-lucide="check" class="ic-14"></i>
+              </div>
+              <span class="visit-progress-label-done">Ready</span>
+            </div>
+            <div class="visit-progress-connector-pending"></div>
+            <!-- Step 4: Served -->
+            <div class="visit-progress-step">
+              <div class="visit-progress-marker-pending">
+                <i data-lucide="check" class="ic-12"></i>
+              </div>
+              <span class="visit-progress-label-pending">Served</span>
+            </div>
+          </div>
+          <div class="visit-progress-status-message">Your items are ready — staff is on the way to your seat.</div>
+        </div>
+
+        <div class="visit-items-list">
+          <div class="visit-item-row">
+            <span>Padron 1926 No. 35 × 1</span><span>$42</span>
+          </div>
+          <div class="visit-item-row">
+            <span>Lagavulin 16yr × 1</span><span>$22</span>
+          </div>
+          <div class="visit-item-row">
+            <span>Ashton VSG Torpedo × 2</span><span>$56</span>
+          </div>
+          <div class="visit-items-divider"></div>
+          <div class="visit-items-total">
+            <span>Total</span><span>$120</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Past activity -->
+      <div class="activity-section-label">Past Activity</div>
+
+      <!-- Past order 1: Delivered -->
+      <div class="order-card">
+        <div class="visit-history-header">
+          <div class="visit-status-group">
+            <span class="status-pill status-pill-served">Served</span>
+            <span class="visit-meta-text">Request #CR-0039</span>
+          </div>
+          <span class="visit-meta-text">3 days ago</span>
+        </div>
+        <div class="visit-history-body">
+          <div class="visit-history-items-summary">Cohiba Siglo VI × 1, Glenfarclas 17yr × 2 <span class="visit-history-price">· $101</span></div>
+          <div class="visit-history-actions">
+            <a href="create-post.html" class="visit-history-review-btn">Write Review</a>
+            <button class="visit-history-repeat-btn">Same again</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Past order 2 -->
+      <div class="order-card">
+        <div class="visit-history-header">
+          <div class="visit-status-group">
+            <span class="status-pill status-pill-served">Served</span>
+            <span class="visit-meta-text">Request #CR-0035</span>
+          </div>
+          <span class="visit-meta-text">1 week ago</span>
+        </div>
+        <div class="visit-history-body">
+          <div class="visit-history-items-summary">Arturo Fuente Opus X × 1, Pappy Van Winkle 23yr × 1 <span class="visit-history-price">· $123</span></div>
+          <div class="visit-history-actions">
+            <button class="visit-history-repeat-btn">Same again</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Past order 3 -->
+      <div class="order-card">
+        <div class="visit-history-header">
+          <div class="visit-status-group">
+            <span class="status-pill status-pill-served">Served</span>
+            <span class="visit-meta-text">Request #CR-0031</span>
+          </div>
+          <span class="visit-meta-text">2 weeks ago</span>
+        </div>
+        <div class="visit-history-body">
+          <div class="visit-history-items-summary">Liga Privada No. 9 × 2, Aberfeldy 12yr × 1 <span class="visit-history-price">· $60</span></div>
+          <div class="visit-history-actions">
+            <button class="visit-history-repeat-btn">Same again</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+<nav class="bottom-nav">
+  <a href="feed.html" class="bottom-nav-item"><i data-lucide="newspaper" class="ic-20"></i>Feed</a>
+  <a href="explore.html" class="bottom-nav-item"><i data-lucide="search" class="ic-20"></i>Explore</a>
+  <a href="create-post.html" class="bottom-nav-item"><div class="bottom-nav-create-btn"><i data-lucide="plus" class="ic-20"></i></div></a>
+  <a href="events.html" class="bottom-nav-item"><i data-lucide="calendar" class="ic-20"></i>Events</a>
+  <a href="profile.html" class="bottom-nav-item"><i data-lucide="user" class="ic-20"></i>Profile</a>
+</nav>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "op": "parseBudgetIntents",
+  "cases": [
+    { "text": "under $20" },
+    { "text": "around $15" },
+    { "text": "$10-ish" },
+    { "text": "about $25" },
+    { "text": "between $10 and $20" },
+    { "text": "recommend a pairing for the evening" }
+  ]
+}

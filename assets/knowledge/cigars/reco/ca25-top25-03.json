@@ -1,0 +1,358 @@
+{
+  "version": 1,
+  "shard": "ca25-top25-03",
+  "category": "cigar",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 7,
+  "products": [
+    {
+      "tracker": {
+        "sku": "CA25-19-SANCHO-PANZA",
+        "caList": "Top 25",
+        "caListYear": 2025,
+        "caRank": 19,
+        "caRating": 94
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "wood",
+          "weight": 0.95
+        },
+        {
+          "id": "earth",
+          "weight": 0.85
+        },
+        {
+          "id": "spice",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "tier": 6,
+        "strength": 5,
+        "body": "Full",
+        "smokeTime": "90 min",
+        "wrapper": "Cuba",
+        "binder": "Cuba",
+        "filler": "Cuba"
+      },
+      "id": "ca25-19-sancho-panza",
+      "sensory": {
+        "body": 9,
+        "sweetness": 5,
+        "pepper": 7,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Sancho Panza Belicoso",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CA25-20-ONEOFF-BLACK",
+        "caList": "Top 25",
+        "caListYear": 2025,
+        "caRank": 20,
+        "caRating": 94
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "spice",
+          "weight": 1.0
+        },
+        {
+          "id": "earth",
+          "weight": 0.95
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.85
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.75
+        },
+        {
+          "id": "cedar",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 14,
+        "tier": 5,
+        "strength": 5,
+        "body": "Medium-Full",
+        "smokeTime": "90 min",
+        "wrapper": "Nicaragua",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "ca25-20-oneoff-black",
+      "sensory": {
+        "body": 7,
+        "sweetness": 5,
+        "pepper": 7,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "OneOff Black Toro",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CA25-21-CLE-MADURO",
+        "caList": "Top 25",
+        "caListYear": 2025,
+        "caRank": 21,
+        "caRating": 94
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.95
+        },
+        {
+          "id": "earth",
+          "weight": 0.85
+        },
+        {
+          "id": "spice",
+          "weight": 0.75
+        },
+        {
+          "id": "nut",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 10,
+        "tier": 4,
+        "strength": 6,
+        "body": "Full",
+        "smokeTime": "60 min",
+        "wrapper": "Mexico",
+        "binder": "Honduras",
+        "filler": "Colombia / Honduras"
+      },
+      "id": "ca25-21-cle-maduro",
+      "sensory": {
+        "body": 9,
+        "sweetness": 5,
+        "pepper": 8,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "C.L.E. Maduro 50x5",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CA25-22-OLMEC-MADURO",
+        "caList": "Top 25",
+        "caListYear": 2025,
+        "caRank": 22,
+        "caRating": 94
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.95
+        },
+        {
+          "id": "earth",
+          "weight": 0.85
+        },
+        {
+          "id": "espresso",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 14,
+        "tier": 5,
+        "strength": 6,
+        "body": "Full",
+        "smokeTime": "2 hr+",
+        "wrapper": "Mexico",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "ca25-22-olmec-maduro",
+      "sensory": {
+        "body": 9,
+        "sweetness": 5,
+        "pepper": 8,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "Foundation Cigar Company Olmec Maduro Grande",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CA25-23-LA-AROMA",
+        "caList": "Top 25",
+        "caListYear": 2025,
+        "caRank": 23,
+        "caRating": 93
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "toast",
+          "weight": 1.0
+        },
+        {
+          "id": "coffee",
+          "weight": 0.95
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.85
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 9,
+        "tier": 4,
+        "strength": 6,
+        "body": "Full",
+        "smokeTime": "60 min",
+        "wrapper": "Connecticut Broadleaf",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "ca25-23-la-aroma",
+      "sensory": {
+        "body": 9,
+        "sweetness": 5,
+        "pepper": 8,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "La Aroma de Cuba Original Robusto",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CA25-24-LA-AURORA-FUERTE",
+        "caList": "Top 25",
+        "caListYear": 2025,
+        "caRank": 24,
+        "caRating": 93
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "spice",
+          "weight": 1.0
+        },
+        {
+          "id": "earth",
+          "weight": 0.95
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.85
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.75
+        },
+        {
+          "id": "leather",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 12,
+        "tier": 5,
+        "strength": 5,
+        "body": "Medium-Full",
+        "smokeTime": "60 min",
+        "wrapper": "Mexico",
+        "binder": "Nicaragua",
+        "filler": "Dominican Republic / Nicaragua / Pennsylvania Broadleaf"
+      },
+      "id": "ca25-24-la-aurora-fuerte",
+      "sensory": {
+        "body": 7,
+        "sweetness": 5,
+        "pepper": 7,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "La Aurora Family Creed Series Fuerte Sol Robusto",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CA25-25-ALADINO-85",
+        "caList": "Top 25",
+        "caListYear": 2025,
+        "caRank": 25,
+        "caRating": 93
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "wood",
+          "weight": 0.95
+        },
+        {
+          "id": "spice",
+          "weight": 0.85
+        },
+        {
+          "id": "earth",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 15,
+        "tier": 6,
+        "strength": 4,
+        "body": "Medium",
+        "smokeTime": "90 min",
+        "wrapper": "Honduras",
+        "binder": "Honduras",
+        "filler": "Honduras"
+      },
+      "id": "ca25-25-aladino-85",
+      "sensory": {
+        "body": 6,
+        "sweetness": 5,
+        "pepper": 6,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Aladino 85 Aniversario Reserva Toro",
+      "category": "cigar"
+    }
+  ]
+}

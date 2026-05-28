@@ -1,0 +1,24 @@
+{
+  "anchorCigar": "Padron 1926 No. 35",
+  "slots": {
+    "best": "Tito's Handmade Vodka",
+    "safe": "Patrón Silver",
+    "wildcard": "Rémy Martin XO"
+  },
+  "cardsCigar": [
+    "Alec Bradley Man O' War 10th Anniversary Toro",
+    "Macanudo Cafe Robusto / Hyde Park",
+    "Rocky Patel Emerald Robusto"
+  ],
+  "cardsSpirit": [
+    "Blanton's Single Barrel",
+    "Blanton's Single Barrel",
+    "Blanton's Single Barrel"
+  ],
+  "allCigarsMatchAnchor": false,
+  "allSpiritsNonNull": true,
+  "spiritsDistinctWhenMenuAllows": false,
+  "cardsHaveFood": false,
+  "cardsHaveWhy": true,
+  "slotsMatchCards": false
+}

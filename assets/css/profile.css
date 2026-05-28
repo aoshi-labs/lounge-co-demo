@@ -1,0 +1,1227 @@
+
+  /* Profile-specific mobile content-row override */
+  @media(max-width:1023px){
+    .content-row{padding:0 0 24px !important;}
+  }
+
+  /* ── Profile header ── */
+  .profile-banner{height:160px;background:linear-gradient(135deg,rgba(var(--burg-rgb), .4) 0%,rgba(30,24,16,.8) 40%,rgba(var(--gold-rgb), .12) 100%);position:relative;overflow:hidden;}
+  /* User-uploaded banner photo — rendered as a real <img> child so the
+     mockup mirrors what the upload feature will produce. Sits behind the
+     gradient tint (which is layered via ::before below) so text + avatar
+     stay legible regardless of which image the member picks. */
+  .profile-banner-img{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    z-index:0;
+    pointer-events:none;
+  }
+  .profile-banner::before{
+    content:'';
+    position:absolute; inset:0;
+    background:linear-gradient(135deg, rgba(var(--bg-base-rgb), .35) 0%, rgba(30,24,16,.45) 50%, rgba(var(--burg-rgb), .30) 100%);
+    z-index:1;
+    pointer-events:none;
+  }
+  .profile-banner::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+  .profile-header{padding:0 28px 0;position:relative;}
+  .profile-avatar-wrap{position:relative;display:inline-block;margin-top:-52px;z-index:5;}
+  .profile-avatar{width:100px;height:100px;border-radius:50%;background:var(--tier-elite);color:var(--tier-elite-ink);display:flex;align-items:center;justify-content:center;font-family:var(--font-ui);font-size:28px;font-weight:700;border:4px solid var(--bg-surface);}
+  .tier-badge-ring{position:absolute;bottom:4px;right:4px;width:26px;height:26px;border-radius:50%;background:var(--tier-elite);border:2px solid var(--bg-surface);display:flex;align-items:center;justify-content:center;}
+
+  /* ── Profile tabs ── */
+  .profile-tabs{display:flex;border-bottom:1px solid var(--bg-border);padding:0 28px;gap:0;}
+  .profile-tab{padding:14px 20px;font-family:var(--font-ui);font-size:13px;font-weight:500;color:var(--text-muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .2s,border-color .2s;background:none;border-top:none;border-left:none;border-right:none;}
+  .profile-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
+  .profile-tab:hover:not(.active){color:var(--text-secondary);}
+
+  /* ── Post card (same as feed) ── */
+  .post-card{background:var(--bg-surface);border:1px solid var(--bg-border);border-radius:14px;padding:18px;}
+  .post-body{font-family:var(--font-body);font-size:14px;line-height:1.75;color:var(--text-secondary);font-style:italic;margin:10px 0;}
+
+  /* ── Taste profile bars ── */
+  .taste-bar-wrap{display:flex;flex-direction:column;gap:10px;}
+  .taste-row{display:flex;align-items:center;gap:10px;}
+  .taste-label{font-size:11px;font-weight:500;color:var(--text-secondary);width:80px;flex-shrink:0;}
+  .taste-track{flex:1;height:6px;background:var(--bg-elevated);border-radius:99px;overflow:hidden;}
+  .taste-fill{height:100%;border-radius:99px;background:linear-gradient(to right,var(--burg),var(--gold));}
+  .taste-pct{font-size:10px;color:var(--text-muted);width:28px;text-align:right;flex-shrink:0;}
+
+  /* ── Badge grid ── */
+  .badge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:12px;}
+  .badge-item{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;background:var(--bg-elevated);border:1px solid var(--bg-border);border-radius:12px;text-align:center;}
+  .badge-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;}
+  .badge-name{font-size:10px;font-weight:600;color:var(--text-secondary);line-height:1.3;}
+  .badge-earned{font-size:9px;color:var(--text-muted);}
+
+  /* ── Widget (right rail) ── */
+  .widget-title{font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+
+  /* ── Bottom nav ── */
+
+  /* ── Stat pill ── */
+  .stat-pill{display:flex;flex-direction:column;align-items:center;gap:2px;}
+  .stat-num{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--text-primary);line-height:1;}
+  .stat-lbl{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);}
+
+  /* tags */
+  .tag-elite{background:rgba(var(--tier-elite-rgb), .1);border:1px solid rgba(var(--tier-elite-rgb), .25);color:var(--tier-elite);}
+
+
+/* === Profile-page-only aliases (sidebar + topbar shared rules now live in lounge.css) === */
+.avatar-elite { background: var(--tier-elite); color: var(--tier-elite-ink); }
+.row-info { flex: 1; min-width: 0; }
+
+/* === Profile page layout === */
+.profile-content-row { display:flex; justify-content:center; padding:0 20px 40px; gap:20px; }
+.profile-main-col { width:100%; max-width:680px; display:flex; flex-direction:column; gap:0; }
+.profile-header-card { padding:0 24px 20px; background:var(--bg-surface); border-left:1px solid var(--bg-border); border-right:1px solid var(--bg-border); }
+.profile-header-row { display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+.profile-header-actions { display:flex; gap:10px; margin-bottom:8px; }
+.profile-edit-btn { display:flex; align-items:center; gap:7px; background:var(--bg-elevated); border:1px solid var(--bg-border); border-radius:9px; padding:9px 18px; font-family:var(--font-ui); font-size:13px; font-weight:600; color:var(--text-primary); text-decoration:none; transition:border-color .2s; }
+
+/* === Profile identity (name, handle, bio, location, stats) === */
+.profile-identity { margin-top:8px; }
+.profile-name-row { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.profile-name { font-family:var(--font-display); font-size:1.7rem; font-weight:700; color:var(--text-primary); line-height:1; }
+.profile-handle-meta { font-family:var(--font-ui); font-size:13px; color:var(--text-muted); margin-top:4px; }
+.profile-bio { font-family:var(--font-body); font-style:italic; font-size:14px; color:var(--text-secondary); margin-top:10px; line-height:1.65; }
+.profile-location { display:flex; align-items:center; gap:6px; margin-top:10px; font-size:12px; color:var(--text-muted); }
+.profile-stats-row { display:flex; gap:28px; margin-top:20px; padding-top:18px; border-top:1px solid var(--bg-border); }
+
+/* Promotion candidates — small shared accents */
+.text-gold { color:var(--gold); }
+.rank-text-elite { font-family:var(--font-display); color:var(--tier-elite); }
+
+/* === Profile tabs + tab panes === */
+.profile-tabs-card { background:var(--bg-surface); border-left:1px solid var(--bg-border); border-right:1px solid var(--bg-border); }
+.profile-tab { position: relative; }
+.profile-tab-count { position: absolute; top: 4px; right: 4px; background:var(--burg); color:var(--cream); border-radius:99px; padding:1px 6px; font-size:10px; line-height:1.4; }
+.profile-tabs-pane { background:var(--bg-base); padding:20px 0; display:flex; flex-direction:column; gap:14px; }
+
+/* === Profile post card (Posts tab) === */
+.profile-post-card { padding:18px 20px; }
+.profile-post-head { display:flex; align-items:center; gap:12px; margin-bottom:4px; }
+.profile-post-head-info { flex:1; }
+.profile-post-author { font-size:14px; font-weight:600; color:var(--text-primary); }
+.meta-sm { font-size:11px; color:var(--text-muted); }
+.profile-post-rating { font-family:var(--font-display); font-size:15px; color:var(--gold); }
+.profile-post-chips { display:flex; gap:7px; flex-wrap:wrap; margin-bottom:12px; }
+.profile-post-actions { display:flex; align-items:center; gap:14px; border-top:1px solid var(--bg-border); padding-top:10px; margin-top:4px; }
+.profile-load-more-wrap { padding:16px 24px; }
+.profile-load-more-btn { background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:9px; padding:12px; font-family:var(--font-ui); font-size:13px; font-weight:500; color:var(--text-secondary); cursor:pointer; width:100%; transition:border-color .2s,color .2s; }
+
+/* === Badges tab === */
+.badges-tab { display:none; padding:0 24px 8px; }
+.badges-section-title { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); margin-bottom:14px; }
+.badge-bg-gold { background:rgba(var(--gold-rgb), .12); }
+.badge-bg-burg { background:rgba(var(--burg-rgb), .12); }
+.badge-bg-elite { background:rgba(var(--tier-elite-rgb), .12); }
+.badge-bg-bronze { background:rgba(var(--tier-bronze-rgb), .12); }
+.badge-item-locked { opacity:.35; border-style:dashed; }
+.badge-bg-locked { background:var(--bg-border); }
+
+/* === Generic tab pane (about, reviews) + About-tab cards === */
+.profile-pane { display:none; padding:0 24px; }
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.about-card { background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:12px; padding:16px; overflow:hidden; transition:border-color .2s, transform .2s; }
+.about-card:hover { border-color: var(--gold-dim); transform: translateY(-2px); }
+.about-card-title { font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); margin-bottom:12px; }
+.brand-list { display:flex; flex-direction:column; gap:8px; font-size:13px; color:var(--text-secondary); }
+.brand-row { display:flex; justify-content:space-between; }
+.brand-count { color:var(--text-muted); }
+
+/* === Reviews tab grid === */
+.reviews-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+
+/* === Right rail (profile) === */
+.profile-rail { width:268px; flex-shrink:0; display:flex; flex-direction:column; gap:14px; padding-top:20px; }
+
+/* People You May Know widget */
+.pym-list { display:flex; flex-direction:column; gap:12px; }
+.pym-row { display:flex; align-items:center; gap:10px; }
+.avatar-bg-gold { background:var(--gold); color:var(--bg-base); }
+.avatar-bg-silver { background:var(--tier-runner-up); color:var(--tier-runner-up-ink); }
+.avatar-bg-brown { background:var(--avatar-brown); color:var(--avatar-brown-ink); }
+.row-name { font-size:13px; font-weight:600; color:var(--text-primary); }
+.row-sub { font-size:10px; color:var(--text-muted); }
+.follow-btn { background:var(--burg); color:var(--cream); border:none; border-radius:7px; padding:6px 12px; font-family:var(--font-ui); font-size:11px; font-weight:700; cursor:pointer; }
+
+/* Radar mini-widget link */
+.radar-view-full-link { font-size:12px; color:var(--text-muted); text-decoration:none; }
+
+/* Rank widget */
+.rank-row { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+.rank-num { font-family:var(--font-display); font-size:2.2rem; font-weight:700; color:var(--tier-elite); line-height:1; }
+.rank-progress-head { display:flex; justify-content:space-between; margin-bottom:5px; }
+.rank-progress-label { font-size:10px; font-weight:700; letter-spacing:.05em; color:var(--text-muted); text-transform:uppercase; }
+.rank-progress-target { font-size:10px; font-weight:700; color:var(--tier-bronze); }
+.rank-progress-track { height:6px; background:var(--bg-elevated); border-radius:99px; overflow:hidden; }
+.rank-progress-fill { height:100%; width:88%; background:linear-gradient(to right,var(--tier-elite),var(--tier-bronze)); border-radius:99px; }
+
+/* Generic widget footer link */
+.widget-link { display:block; margin-top:12px; font-family:var(--font-ui); font-size:12px; color:var(--text-muted); text-decoration:none; }
+
+/* Mobile drawer backdrop */
+
+/* ── A7: Library on Profile (action button + tab + grid) ──────────── */
+
+/* Header action-row button — secondary outline next to "Edit Profile" */
+.pro-lib-action {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  border-radius: 9px;
+  padding: 9px 18px;
+  font-family: var(--font-ui); font-size: 13px; font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: border-color .15s, color .15s, background .15s;
+  cursor: pointer;
+}
+.pro-lib-action:hover { border-color: var(--gold); color: var(--gold); }
+
+/* Tab container */
+.pro-lib-tab {
+  display: none;
+  padding: 0 24px;
+}
+
+/* Stats strip — compact, 4 columns */
+.pro-lib-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.pro-lib-stat {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 11px;
+  padding: 12px 14px;
+}
+.pro-lib-stat-num {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+.pro-lib-stat-burg { color: var(--burg); }
+.pro-lib-stat-gold { color: var(--gold); }
+.pro-lib-stat-lbl {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* Filter tabs row */
+.pro-lib-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-bottom: 1px solid var(--bg-border);
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+/* Carousel arrow rules now live in lounge.css so any page (profile,
+   sterlon, etc.) can use them. See `.pro-lib-carousel` + the
+   `.pro-lib-arrow*` classes there. */
+
+/* Symmetric-track arrow positioning (.pro-streak-carousel,
+   .pro-tabs-carousel) now lives in lounge.css alongside the shared
+   .pro-lib-arrow base rule. */
+.pro-lib-count { font-size: 10px; color: var(--text-muted); margin-left: 4px; }
+.filter-tab.active .pro-lib-count { color: var(--gold); }
+
+/* Card grid */
+.pro-lib-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+.pro-lib-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text-primary);
+  display: flex; flex-direction: column;
+  transition: border-color .2s, transform .2s;
+}
+.pro-lib-card:hover { border-color: var(--gold-dim); transform: translateY(-2px); }
+.pro-lib-thumb {
+  height: 70px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px;
+  overflow: hidden;
+}
+.pro-lib-thumb > img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pro-lib-thumb-burg { background: linear-gradient(135deg, rgba(var(--burg-rgb), .30) 0%, rgba(30,24,16,.85) 100%); }
+.pro-lib-thumb-gold { background: linear-gradient(135deg, rgba(var(--gold-rgb), .25) 0%, rgba(30,24,16,.85) 100%); }
+.pro-lib-body { padding: 12px; display: flex; flex-direction: column; gap: 4px; }
+.pro-lib-name {
+  font-family: var(--font-display);
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+.pro-lib-meta { font-size: 10px; color: var(--text-muted); }
+.pro-lib-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+.pro-lib-qty { font-family: var(--font-ui); font-size: 11px; font-weight: 700; color: var(--gold); }
+
+/* Footer: privacy hint + full-library link */
+.pro-lib-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--bg-border);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pro-lib-privacy {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-ui); font-size: 11px;
+  color: var(--text-muted);
+}
+.pro-lib-full {
+  font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+  color: var(--gold);
+  text-decoration: none;
+}
+.pro-lib-full:hover { text-decoration: underline; }
+
+/* Mobile — single-column grid + 2-col stats */
+@media (max-width: 1023px) {
+  /* Parent shrinkability — .profile-tabs-pane is display:flex column, so #tab-library
+     (a flex item with class .pro-lib-tab) defaults to min-width:auto =
+     intrinsic content width. Without min-width:0 the wide carousel content
+     propagates up and the page overflows instead of the carousel scrolling
+     inside its own box. */
+  .pro-lib-tab { padding: 0 16px; min-width: 0; }
+  .pro-lib-stats { grid-template-columns: 1fr 1fr; }
+
+  /* Filters carousel — mirror of the .sterlon-source-track pattern on
+     sterlon.css (≈line 459): hidden scrollbar, asymmetric padding,
+     scroll-snap on the X axis, soft right-edge mask-image fade. */
+  .pro-lib-filters {
+    display: flex;
+    /* Base rule sets flex-wrap:wrap — force nowrap on mobile so chips
+       overflow into the scroll track instead of stacking to a new line. */
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 12px;
+    min-width: 0;
+    padding: 2px 22px 12px 2px;
+    overflow-x: auto;
+    scrollbar-width: none;            /* Firefox */
+    -ms-overflow-style: none;         /* IE/Edge legacy */
+    scroll-snap-type: x proximity;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      black 0,
+      black calc(100% - 32px),
+      transparent 100%
+    );
+            mask-image: linear-gradient(
+      to right,
+      black 0,
+      black calc(100% - 32px),
+      transparent 100%
+    );
+  }
+  .pro-lib-filters::-webkit-scrollbar { display: none; }
+
+  /* Arrows are mobile-only — desktop has plenty of room. */
+  .pro-lib-arrow { display: flex; }
+
+  /* Filter chips — auto width per label, but never shrink and always snap. */
+  .pro-lib-filters > .filter-tab {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+
+  /* Library cards stay a regular 2-col wrapping grid on mobile (NOT a
+     carousel — only the filter row scrolls). */
+  .pro-lib-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── Library widget ── */
+.lib-widget-head { display:flex; gap:14px; margin-bottom:14px; padding-bottom:14px; border-bottom:1px solid var(--bg-border); }
+.lib-widget-head > div { flex:1; }
+.lib-widget-num { font-family:var(--font-display); font-size:1.4rem; font-weight:700; color:var(--text-primary); line-height:1; }
+.lib-widget-num-burg { color:var(--burg); }
+.lib-widget-lbl { font-size:9px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--text-muted); margin-top:4px; }
+.lib-widget-recent { display:flex; flex-direction:column; gap:10px; margin-bottom:6px; }
+.lib-widget-item { display:flex; align-items:center; gap:10px; }
+.lib-widget-thumb { width:32px; height:32px; border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0; overflow:hidden; }
+.lib-widget-thumb > img { width:100%; height:100%; object-fit:cover; display:block; }
+.lib-widget-burg { background:rgba(var(--burg-rgb), .15); }
+.lib-widget-gold { background:rgba(var(--gold-rgb), .15); }
+
+/* B2 — Wishlist preview widget on profile rail */
+.pro-wish-title { color: var(--gold); }
+.pro-wish-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 6px; }
+.pro-wish-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text-primary);
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--bg-border);
+}
+.pro-wish-item:last-of-type { border-bottom: none; }
+.pro-wish-item:hover .row-name { color: var(--gold); }
+.pro-wish-restock { color: var(--gold) !important; font-weight: 600; }
+
+/* === B3 — Flavor radar (palate signature) ===
+   Two sizes: a 320×320 hero radar on Profile → About, and a 160×160 mini
+   in the right rail. Both are pure SVG; values come from inline coords for
+   v1 and will be derived from library/flavor-chip distribution in v2. */
+
+/* Hero radar in the About tab */
+.taste-radar {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  margin: 4px auto 0;
+}
+.taste-radar-poly { transition: opacity .25s; }
+.taste-radar:hover .taste-radar-poly { opacity: .85; }
+.taste-radar-labels text {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  fill: var(--text-secondary);
+  letter-spacing: .04em;
+}
+.taste-radar-val {
+  font-family: var(--font-display) !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  fill: var(--gold) !important;
+}
+.taste-radar-caption {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.6;
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: var(--bg-elevated);
+  border-left: 2px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+}
+.taste-radar-caption strong {
+  color: var(--gold);
+  font-style: normal;
+  font-family: var(--font-ui);
+  font-weight: 600;
+}
+.taste-radar-caption .cigar-color  { color: var(--gold); }
+.taste-radar-caption .spirit-color { color: var(--burg); }
+
+/* B3 — Toggleable legend above the radar */
+.taste-radar-legend {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+.taste-radar-key {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid var(--bg-border);
+  border-radius: 99px;
+  padding: 6px 12px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: border-color .15s, color .15s, opacity .15s;
+}
+.taste-radar-key:not(.active) { opacity: .55; }
+.taste-radar-key-cigar.active  { border-color: var(--gold); color: var(--gold); }
+.taste-radar-key-spirit.active { border-color: var(--burg); color: var(--burg); }
+.taste-radar-key-dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+}
+.taste-radar-key-cigar-dot  { background: var(--gold); }
+.taste-radar-key-spirit-dot { background: var(--burg); }
+
+/* B3 — Hidden layer state (toggled by legend) */
+.taste-radar-hidden { display: none; }
+
+/* B3 — Per-axis comparison grid below the radar */
+.taste-radar-detail {
+  margin-top: 14px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+.taste-radar-detail-head,
+.taste-radar-detail-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 6px 0;
+  font-family: var(--font-ui);
+  font-size: 11px;
+}
+.taste-radar-detail-head {
+  border-bottom: 1px dashed var(--bg-border);
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.taste-radar-detail-head span { display: inline-flex; align-items: center; gap: 6px; }
+.taste-radar-detail-row {
+  border-bottom: 1px dashed var(--bg-border);
+  color: var(--text-secondary);
+}
+.taste-radar-detail-row:last-child { border-bottom: none; }
+.taste-radar-detail-row span {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+.taste-radar-detail-row span:first-child {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.taste-radar-detail .cigar-color  { color: var(--gold) !important; }
+.taste-radar-detail .spirit-color { color: var(--burg) !important; }
+
+/* Mini radar legend — dual-color dots */
+.taste-radar-mini-dot-gold { background: var(--gold); }
+.taste-radar-mini-dot-burg { background: var(--burg); }
+
+/* === B5 — "Your Run" weekly-regulars widget (no streaks, no kids' game vibe) === */
+.pro-run-title { color: var(--gold); }
+
+.pro-run-cur {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.pro-run-num {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  flex-shrink: 0;
+}
+.pro-run-meta { flex: 1; min-width: 0; }
+.pro-run-lbl {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.pro-run-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* 12-dot calendar */
+.pro-run-cal {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 4px;
+  margin-bottom: 6px;
+}
+.pro-run-dot {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid var(--bg-border);
+  transition: transform .15s;
+}
+.pro-run-dot.active {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.pro-run-dot-now {
+  box-shadow: 0 0 0 2px var(--bg-surface), 0 0 0 3px var(--gold);
+  animation: pro-run-pulse 2.4s ease-in-out infinite;
+}
+@keyframes pro-run-pulse {
+  0%, 100% { box-shadow: 0 0 0 2px var(--bg-surface), 0 0 0 3px var(--gold), 0 0 0 3px rgba(var(--gold-rgb), .0); }
+  50%      { box-shadow: 0 0 0 2px var(--bg-surface), 0 0 0 3px var(--gold), 0 0 6px 3px rgba(var(--gold-rgb), .35); }
+}
+.pro-run-axis {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-ui);
+  font-size: 9px;
+  color: var(--text-muted);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.pro-run-nudge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  background: var(--gold-subtle);
+  border: 1px solid rgba(var(--gold-rgb), .25);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 12px;
+  color: var(--gold);
+  line-height: 1.4;
+}
+.pro-run-nudge [data-lucide],
+.pro-run-nudge svg { color: var(--gold); flex-shrink: 0; }
+
+/* Mini radar in the right rail */
+.taste-radar-mini {
+  display: block;
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+  margin: 0 auto 12px;
+}
+.taste-radar-mini-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--text-secondary);
+  padding: 0 4px;
+}
+.taste-radar-mini-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.taste-radar-mini-dot {
+  display: inline-block;
+  width: 7px; height: 7px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+/* iPhone-SE (≤639px): tighten profile heading. .profile-name here is the user-name
+   heading (1.7rem display) — on product-detail.css the analogous selector is an
+   11px label instead, which is why the rule lives per-page rather than in lounge.css. */
+
+/* Spacing between post cards — switchTab() sets inline `display: block`
+   when this tab activates, which kills any flex gap on the wrapper. Apply
+   spacing via direct-child margin instead so it survives that stomp. */
+#tab-posts > * + * { margin-top: 14px; }
+
+@media (max-width: 639px) {
+  /* The shared mobile shell (this file, ~line 19) forces
+       .content-row { padding: 0 0 24px !important }
+     at <=1023px, which kills the page gutter and butts the column flush to
+     the viewport edge. Restore a gutter on iPhone SE so the warm --bg-base
+     reads as a frame around the header card and the post cards. */
+  .content-row { padding: 0 14px 40px !important; }
+  .profile-main-col { min-width: 0; }
+  .profile-header-card { padding: 0 16px 20px; }
+  .profile-tabs-card { overflow: visible; }
+  .profile-tabs { padding: 0 4px; }
+  .profile-tab { flex: 1 1 0; min-width: 0; text-align: center; }
+  .profile-tabs-pane { min-width: 0; padding: 16px 0 0; }
+
+  .profile-post-card { padding: 16px 14px; }
+
+  /* Text — shrink display + body + chrome sizes for narrow viewports. */
+  .profile-name { font-size: 1.25rem; line-height: 1.15; }
+  .profile-handle-meta { font-size: 12px; }
+  .profile-bio { font-size: 13px; }
+  .profile-location { font-size: 11px; }
+  .stat-num { font-size: 1.15rem; }
+  .stat-lbl { font-size: 9px; }
+  .profile-stats-row { gap: 16px; }
+  .post-body { font-size: 13px; line-height: 1.65; }
+  .profile-post-author { font-size: 13px; }
+  .meta-sm { font-size: 10px; }
+  .rating-chip { font-size: 10px; padding: 2px 7px; }
+  .post-action { font-size: 12px; }
+  .profile-tab { padding: 16px 10px; font-size: 12px; }
+}
+
+/* ───────── SOCIAL TAB ─────────
+   switchTab() sets inline `display: block` when this pane activates, which
+   stomps on any `display: flex` on the wrapper — so spacing is applied via
+   direct-child margins instead of flex `gap`. Same trick on .pro-streak-tab
+   below. */
+.pro-social-tab { padding: 4px 24px 24px; }
+.pro-social-tab > * + * { margin-top: 22px; }
+.pro-social-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.pro-social-stat {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 12px;
+  padding: 14px 12px;
+  text-align: center;
+}
+.pro-social-num {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+.pro-stat-gold { color: var(--gold); }
+.pro-social-lbl {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+.pro-social-section {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 12px;
+  padding: 16px;
+}
+.pro-social-section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.pro-social-section-title {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.pro-social-section-meta {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.pro-social-list { display: flex; flex-direction: column; gap: 12px; }
+.pro-social-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--bg-border-dim, var(--bg-border));
+}
+.pro-social-row:last-child { border-bottom: none; padding-bottom: 0; }
+.pro-social-avatar { width: 38px; height: 38px; font-size: 13px; }
+.pro-avatar-jw { background: var(--tier-elite); color: var(--tier-elite-ink); }
+.pro-avatar-mr { background: var(--burg); color: var(--cream); }
+.pro-avatar-sk { background: var(--gold); color: var(--bg-base); }
+.pro-avatar-dl { background: var(--bg-elevated); color: var(--text-primary); }
+.pro-avatar-dp { background: var(--avatar-slate); color: var(--avatar-slate-ink); }
+.pro-avatar-ar { background: var(--avatar-clay); color: var(--avatar-clay-ink); }
+.pro-avatar-lc { background: var(--avatar-tan); color: var(--avatar-tan-ink); }
+.pro-avatar-mt { background: var(--avatar-teal); color: var(--avatar-teal-ink); }
+.pro-avatar-ev { background: var(--avatar-mauve); color: var(--avatar-mauve-ink); }
+.pro-avatar-rh { background: var(--avatar-stone); color: var(--avatar-stone-ink); }
+.pro-social-row-body { flex: 1; min-width: 0; }
+.pro-social-row-name {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pro-social-row-when {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+.pro-social-row-meta {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pro-social-row-btn {
+  background: none;
+  border: 1px solid var(--bg-border);
+  border-radius: 7px;
+  padding: 6px 12px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color .15s, color .15s, background .15s;
+}
+.pro-social-row-btn:hover { border-color: var(--gold); color: var(--gold); }
+.pro-social-row-btn-following {
+  background: var(--gold-subtle);
+  border-color: var(--gold-dim);
+  color: var(--gold);
+}
+.pro-social-row-btn-cta {
+  background: var(--burg);
+  border-color: var(--burg);
+  color: var(--cream);
+}
+.pro-social-row-btn-cta:hover { background: var(--burg-hover); border-color: var(--burg-hover); color: var(--cream); }
+
+/* Section header count pill (e.g. "Following 98") + "See all →" link */
+.pro-social-count {
+  display: inline-block;
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  border-radius: 99px;
+  padding: 1px 8px;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.pro-social-section-link {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gold);
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: color .15s;
+}
+.pro-social-section-link:hover { color: var(--gold-dim); }
+
+/* "Mutual" tag next to a follower's name */
+.pro-social-row-tag {
+  display: inline-block;
+  background: var(--gold-subtle);
+  border: 1px solid rgba(var(--gold-rgb), .25);
+  color: var(--gold);
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+/* ───────── STREAK TAB ───────── */
+.pro-streak-tab { padding: 4px 24px 24px; }
+.pro-streak-tab > * + * { margin-top: 22px; }
+.pro-streak-hero {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 12px;
+  padding: 18px;
+  flex-wrap: wrap;
+}
+.pro-streak-current { display: flex; align-items: baseline; gap: 10px; }
+.pro-streak-num {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+.pro-streak-current-lbl {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-secondary);
+  letter-spacing: .02em;
+}
+.pro-streak-divider {
+  width: 1px;
+  align-self: stretch;
+  background: var(--bg-border);
+}
+.pro-streak-metric { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; }
+.pro-streak-metric-num {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+.pro-streak-metric-lbl {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.pro-streak-section {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 12px;
+  padding: 16px;
+}
+.pro-streak-section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.pro-streak-section-title {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.pro-streak-section-meta {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.pro-streak-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 6px;
+}
+.pro-streak-day {
+  aspect-ratio: 1 / 1;
+  min-height: 44px;            /* 44px = Apple HIG / Material touch target */
+  border-radius: 8px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: transform .15s, border-color .15s, background .15s;
+}
+.pro-streak-day > span {
+  pointer-events: none;
+  font-variant-numeric: tabular-nums;  /* keeps numbers aligned column-to-column */
+}
+.pro-streak-day:hover { transform: scale(1.08); border-color: var(--gold-dim); }
+.pro-streak-day:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+.pro-streak-day-on {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--bg-base);
+}
+.pro-streak-day-now {
+  box-shadow: 0 0 0 2px var(--bg-surface), 0 0 0 3px var(--gold);
+  animation: pro-run-pulse 2.4s ease-in-out infinite;
+}
+
+/* Calendar weekday header — Sunday through Saturday, aligned to the same
+   7-column grid the day cells sit in below. Anchors each column visually. */
+.pro-streak-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin-bottom: 6px;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+.pro-streak-weekdays > span {
+  text-align: center;
+}
+
+/* Quick-read summary + legend underneath the grid. */
+.pro-streak-summary {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--bg-border);
+}
+.pro-streak-summary-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.pro-streak-summary-stat strong {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0;
+}
+.pro-streak-summary-legend {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.pro-streak-legend-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+}
+.pro-streak-legend-dot + span,
+.pro-streak-legend-dot.pro-streak-day-on { margin-right: 4px; }
+.pro-streak-summary-legend .pro-streak-day-on {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.pro-streak-milestones { display: flex; flex-direction: column; gap: 10px; }
+.pro-streak-milestone {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  border-radius: 9px;
+  color: var(--text-secondary);
+}
+.pro-streak-milestone svg {
+  flex-shrink: 0;
+  stroke: var(--text-muted);
+}
+.pro-streak-milestone-hit {
+  border-color: rgba(var(--tier-elite-rgb), .35);
+  background: rgba(var(--tier-elite-rgb), .08);
+  color: var(--text-primary);
+}
+.pro-streak-milestone-hit svg { stroke: var(--tier-elite); }
+.pro-streak-milestone-name {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: inherit;
+}
+.pro-streak-milestone-meta {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Mobile-friendly Streak + Social tabs. Breakpoint bumped to 700px so it
+   covers actual phones (≤430px) AND phablet / smaller-tablet widths too. */
+@media (max-width: 767px) {
+  .pro-social-tab, .pro-streak-tab { padding: 4px 14px 24px; }
+  .pro-social-tab > * + *, .pro-streak-tab > * + * { margin-top: 16px; }
+
+  .pro-social-stats { gap: 8px; }
+  .pro-social-stat { padding: 10px 6px; }
+  .pro-social-num { font-size: 1.3rem; }
+
+  /* ── Streak hero ── stack the headline on its own row (full width,
+     centered, large gold number), put the two metrics side-by-side under
+     a hairline divider. Drives a clear visual hierarchy on mobile that
+     the desktop row-layout can't deliver. */
+  .pro-streak-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 14px;
+    padding: 22px 18px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--gold-subtle), var(--bg-surface));
+  }
+  .pro-streak-current {
+    grid-column: 1 / -1;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--bg-border);
+  }
+  .pro-streak-num { font-size: 3.4rem; }
+  .pro-streak-current-lbl {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .pro-streak-divider { display: none; }
+  .pro-streak-metric-num { font-size: 1.4rem; }
+  .pro-streak-metric-lbl { font-size: 9px; }
+
+  /* Section chrome — header collapses to a vertical stack so the helper
+     text doesn't fight the title for one line. */
+  .pro-streak-section { padding: 14px; }
+  .pro-streak-section-head { flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 12px; }
+
+  /* 30-day timeline on mobile — research-driven redesign.
+       - Apple HIG / Material: minimum touch-target 44px. Pinning each pill
+         to 60×60 puts us comfortably above that.
+       - Eleken / Muzli 2026 calendar UX: below ~360px width, raw grids
+         feel cramped — favor a horizontal scrollable strip instead.
+       - Same carousel chrome as the .pro-lib-filters row (and the sterlon
+         .sterlon-source-track on the concierge page) so users learn one
+         interaction pattern that recurs across the app. */
+  .pro-streak-weekdays { display: none; }
+  .pro-streak-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    grid-template-columns: none;        /* override desktop grid template */
+    gap: 8px;
+    min-width: 0;
+    padding: 4px 28px 6px 2px;          /* asymmetric — extra room on right for the mask fade */
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;              /* Firefox */
+    -ms-overflow-style: none;           /* IE/Edge legacy */
+    scroll-snap-type: x proximity;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      black 0,
+      black calc(100% - 32px),
+      transparent 100%
+    );
+            mask-image: linear-gradient(
+      to right,
+      black 0,
+      black calc(100% - 32px),
+      transparent 100%
+    );
+  }
+  .pro-streak-grid::-webkit-scrollbar { display: none; }
+  .pro-streak-day {
+    flex: 0 0 56px;                     /* 56px wide → 56px tall (aspect-ratio) */
+    aspect-ratio: 1 / 1;
+    min-height: 56px;
+    border-radius: 12px;
+    font-size: 15px;
+    scroll-snap-align: start;
+  }
+  /* Today gets a slightly bigger ring so the user spots it at a glance
+     when the strip first appears (most recent day ends up on the right
+     since the cells are in oldest → newest order). */
+  .pro-streak-day-now {
+    box-shadow: 0 0 0 2px var(--bg-surface), 0 0 0 4px var(--gold);
+  }
+
+  .pro-streak-summary {
+    gap: 14px;
+    margin-top: 14px;
+    padding-top: 14px;
+  }
+  .pro-streak-summary-stat { font-size: 10px; }
+  .pro-streak-summary-stat strong { font-size: 1.2rem; }
+  /* Drop the legend below the stats so numbers don't fight for the row. */
+  .pro-streak-summary-legend { margin-left: 0; width: 100%; }
+
+  /* Milestones — comfortable touch hit area + tighter type hierarchy. */
+  .pro-streak-milestone { padding: 14px; gap: 14px; }
+  .pro-streak-milestone-name { font-size: 14px; }
+  .pro-streak-milestone-meta { font-size: 11px; }
+
+  /* ───── Profile tabs carousel ─────
+     7 tabs (Posts, Reviews, Social, Library, Badges, Streak, About) get
+     bunched at iPhone SE width. Same carousel chrome as the filter row
+     and streak strip — hidden scrollbar, scroll-snap, right-edge mask
+     fade — so tabs scroll horizontally with their natural width instead
+     of cramming into the viewport. Auto-scroll on tab change keeps the
+     active tab in view (see profile.html's switchTab + scrollIntoView). */
+  .profile-tabs.profile-tabs-card {
+    flex-wrap: nowrap;
+    gap: 4px;
+    min-width: 0;
+    padding: 0 24px 0 2px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;            /* Firefox */
+    -ms-overflow-style: none;         /* IE/Edge legacy */
+    scroll-snap-type: x proximity;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      black 0,
+      black calc(100% - 32px),
+      transparent 100%
+    );
+            mask-image: linear-gradient(
+      to right,
+      black 0,
+      black calc(100% - 32px),
+      transparent 100%
+    );
+  }
+  .profile-tabs.profile-tabs-card::-webkit-scrollbar { display: none; }
+  /* Override the earlier ≤639px `flex: 1 1 0` rule that was making all
+     7 tabs share the width — let each tab keep its natural label width. */
+  .profile-tabs.profile-tabs-card > .profile-tab {
+    flex: 0 0 auto;
+    min-width: 0;
+    scroll-snap-align: start;
+    padding: 14px 14px;
+    font-size: 12px;
+  }
+
+  /* About tab — collapse the 2-col Palate Signature + Top Brands grid into
+     a single column on mobile so each card gets the full content width.
+     Tighter side padding too — 24px L/R was crowding the radar SVG. */
+  .profile-pane { padding: 0 14px; }
+  .about-grid { grid-template-columns: 1fr; }
+}

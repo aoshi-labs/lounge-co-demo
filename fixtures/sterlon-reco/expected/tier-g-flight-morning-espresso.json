@@ -1,0 +1,81 @@
+{
+  "comfortAskDetected": true,
+  "targetSmokeMinutes": 50,
+  "connecticutWrapperCount": 0,
+  "minTierInFlight": 3,
+  "maxStrengthInFlight": 3,
+  "cardsProductIds": [
+    {
+      "slot": "best",
+      "cigarId": "l3-ryj-1875",
+      "spiritId": "spi-trk-ec-sb"
+    },
+    {
+      "slot": "safe",
+      "cigarId": "vid-08-ajf-sanlot-rob",
+      "spiritId": "spi-trk-ec-sb"
+    },
+    {
+      "slot": "wildcard",
+      "cigarId": "vid-20-def-classic-rob",
+      "spiritId": "spi-trk-ec-sb"
+    }
+  ],
+  "cigarIdsDistinct": true,
+  "spiritIdsDistinct": false,
+  "spiritBestIsAnchor": true,
+  "spiritRelativesDistinctWhenPoolAllows": false,
+  "bestPreservesLockedId": true,
+  "slotRoleMetadata": [
+    {
+      "manufacturerKey": "romeo y julieta",
+      "lineKey": "romeo y julieta 1875 churchill",
+      "tier": 3,
+      "strength": 3,
+      "pepper": 5,
+      "wrapper": "indonesian shade",
+      "contrastVsBest": 0
+    },
+    {
+      "manufacturerKey": "a.j.",
+      "lineKey": "a.j. fernandez san lotano oval",
+      "tier": 4,
+      "strength": 3,
+      "pepper": 5,
+      "wrapper": "nicaragua",
+      "contrastVsBest": 0
+    },
+    {
+      "manufacturerKey": "definition",
+      "lineKey": "definition cigars classic",
+      "tier": 3,
+      "strength": 3,
+      "pepper": 5,
+      "wrapper": "nicaragua habano",
+      "contrastVsBest": 0
+    }
+  ],
+  "wildcardContrastMeaningful": true,
+  "refinedElevatedVsBest": true,
+  "repairFired": [],
+  "progressionIntent": false,
+  "provenanceSignals": [
+    "catalog-shell",
+    "context-runtime",
+    "catalog-pairing",
+    "pairing-strategy-complementary",
+    "flight-philosophy",
+    "flight-philosophy-rerank-skipped",
+    "ontology-suppressed"
+  ],
+  "generatePipelineOrder": [
+    "pickSlotIds",
+    "applyFlightSlotDiversityIds",
+    "reconcileBestPickBodyIntentIds",
+    "reconcileWildcardBodyIntentIds",
+    "applyCigarFlightPhilosophy",
+    "applySpiritFlightPhilosophy"
+  ],
+  "rankedPoolSize": 59,
+  "governanceOk": true
+}

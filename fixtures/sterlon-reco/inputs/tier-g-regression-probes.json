@@ -1,0 +1,56 @@
+{
+  "op": "guestQualityAuthority",
+  "cases": [
+    {
+      "id": "old-forester-maduro-locked",
+      "promptText": "I'm drinking Old Forester 1920 and want a maduro cigar",
+      "categoryFocus": "pairing",
+      "journeyLevel": "intermediate",
+      "expectNamedSpiritId": "spi-trk-of-1920",
+      "expectSpiritLockedAllSlots": true,
+      "expectAllMaduroCigars": true,
+      "forbidLigeroHeavyOnAnchorSlots": ["best", "safe"]
+    },
+    {
+      "id": "old-forester-after-dinner-maduro",
+      "promptText": "I'm drinking Old Forester 1920 after dinner and want a rich maduro cigar",
+      "categoryFocus": "pairing",
+      "journeyLevel": "intermediate",
+      "expectNamedSpiritId": "spi-trk-of-1920",
+      "expectSpiritLockedAllSlots": true,
+      "expectAllMaduroCigars": true,
+      "forbidLigeroHeavyOnAnchorSlots": ["best", "safe"]
+    },
+    {
+      "id": "buffalo-trace-novice-smoker",
+      "promptText": "I'm new to cigars and sipping Buffalo Trace. Recommend something approachable.",
+      "categoryFocus": "pairing",
+      "journeyLevel": "novice",
+      "expectNamedSpiritId": "spi-trk-bt-buffalo",
+      "forbiddenSpiritNamePattern": "ardbeg|laphroaig|lagavulin|octomore"
+    },
+    {
+      "id": "morning-espresso-pairing",
+      "promptText": "Pair a cigar with a morning espresso. I want something elegant, smooth, and not too heavy for an early smoke.",
+      "categoryFocus": "pairing",
+      "journeyLevel": "intermediate",
+      "expectFocus": "pairing",
+      "forbiddenSpiritNamePattern": "ardbeg|laphroaig|lagavulin|octomore|casamigos|clase azul|mezcal",
+      "expectSpiritDeckIn": ["bourbon", "irish", "cognac", "rum"],
+      "expectDistinctWhyAcrossSlots": true
+    },
+    {
+      "id": "cigar-only-under-budget",
+      "promptText": "recommend a cigar under $10",
+      "categoryFocus": "cigar",
+      "journeyLevel": "intermediate"
+    },
+    {
+      "id": "cigar-only-coffee-no-pair",
+      "promptText": "I need a cigar with my morning espresso",
+      "categoryFocus": "cigar",
+      "journeyLevel": "intermediate",
+      "expectFocus": "cigar"
+    }
+  ]
+}

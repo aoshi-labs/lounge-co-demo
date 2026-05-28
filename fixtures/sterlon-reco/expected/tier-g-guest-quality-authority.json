@@ -1,0 +1,120 @@
+{
+  "cases": [
+    {
+      "id": "cigar-only-no-spirit-ids",
+      "categoryFocus": "cigar",
+      "checks": {
+        "noSpiritOnCards": true
+      },
+      "ok": true,
+      "cardsProductIds": [
+        {
+          "slot": "best",
+          "cigarId": "bb24-08-punch-dragon",
+          "spiritId": null,
+          "why": [
+            "The drier Casamigos Reposado keeps Punch Dragon Fire Short Gordo from turning one-note on...",
+            "Recommend for value seekers citing CA 2024 Best Buy — Lunar New Year Dragon Fire short go..."
+          ]
+        },
+        {
+          "slot": "safe",
+          "cigarId": "vid-16-esteban-mofo-rob",
+          "spiritId": null,
+          "why": [
+            "The drier Casamigos Reposado keeps Esteban Carreras Maduro Mofo Robusto from turning one-...",
+            "Recommend when teaching Maduro Mofo identity, AJ/Aganorsa progression, or transcript-prio..."
+          ]
+        },
+        {
+          "slot": "wildcard",
+          "cigarId": "bb25-09-ab-chunk-xl",
+          "spiritId": null,
+          "why": [
+            "The drier Casamigos Reposado keeps Alec Bradley Chunk Maduro XL from turning one-note on...",
+            "Recommend for value seekers, humidor fillers, or 'something good under $6' requests - cit..."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "old-forester-spirit-locked",
+      "categoryFocus": "pairing",
+      "checks": {
+        "namedSpiritResolved": true,
+        "bestSpiritLocked": true,
+        "allSlotsSameSpirit": true
+      },
+      "ok": true,
+      "cardsProductIds": [
+        {
+          "slot": "best",
+          "cigarId": "cur-37-ashton-maduro",
+          "spiritId": "spi-trk-of-1920",
+          "why": [
+            "Recommend as Ashton contrast pick against bitter espresso or tannic pours — maduro sweetn...",
+            "Cocoa in the smoke threads cleanly into the chocolate column in the glass.",
+            "Shared flavor architecture links cocoa depth across the flight."
+          ]
+        },
+        {
+          "slot": "safe",
+          "cigarId": "bb25-06-af-span-lon-m",
+          "spiritId": "spi-trk-of-1920",
+          "why": [
+            "Recommend for value seekers, humidor fillers, or 'something good under $7' requests - cit...",
+            "Cocoa in the smoke threads cleanly into the chocolate column in the glass.",
+            "Shared flavor architecture links cocoa depth across the flight."
+          ]
+        },
+        {
+          "slot": "wildcard",
+          "cigarId": "vid-11-epc-allegiance-toro",
+          "spiritId": "spi-trk-of-1920",
+          "why": [
+            "Recommend when teaching Allegiance identity, AJ/Aganorsa progression, or transcript-prior...",
+            "Shared flavor architecture links spice thread across the flight.",
+            "Body lines up — both sides sit in the same weight class so neither overpowers."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "morning-espresso-no-peat-anchor",
+      "categoryFocus": "pairing",
+      "checks": {
+        "morningSpiritNotPeated": true,
+        "spiritDeckInCoffeeBias": true
+      },
+      "ok": true,
+      "cardsProductIds": [
+        {
+          "slot": "best",
+          "cigarId": "l3-ryj-1875",
+          "spiritId": "spi-trk-ec-sb",
+          "why": [
+            "Elijah Craig Small Batch gives the espresso a caramel-oak bridge — sweetness in the glass...",
+            "Stay with cream in the smoke — polite beside the espresso, not pepper-forward or ligero-h..."
+          ]
+        },
+        {
+          "slot": "safe",
+          "cigarId": "vid-08-ajf-sanlot-rob",
+          "spiritId": "spi-trk-ec-sb",
+          "why": [
+            "Refined pick: cream, cocoa, or cedar for smooth volume — approachable beside bitter coffe..."
+          ]
+        },
+        {
+          "slot": "wildcard",
+          "cigarId": "vid-20-def-classic-rob",
+          "spiritId": "spi-trk-ec-sb",
+          "why": [
+            "Wildcard can stretch the lane — still cream, cocoa, or cedar beside the cup, not pepper-f..."
+          ]
+        }
+      ]
+    }
+  ],
+  "ok": true
+}

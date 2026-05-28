@@ -1,0 +1,229 @@
+{
+  "version": 1,
+  "shard": "curated-05",
+  "category": "cigar",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 9,
+  "products": [
+    {
+      "provenance": {
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 9,
+        "recommendationConfidence": "High",
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.ashtoncigar.com/"
+      },
+      "parentCompany": "Ashton",
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Fermented Connecticut Broadleaf brings molasses, dark cocoa, and raisin sweetness.",
+        "binderRole": "Dominican binder supports even burn through the sweet wrapper.",
+        "fillerRole": "Dominican filler adds cedar backbone without overwhelming the maduro finish.",
+        "bestFor": "Heavy tannic red wine, dark porter, rich espresso, contrast wildcard flights.",
+        "avoidIf": "User wants dry, ultra-mild Connecticut only.",
+        "whyRecommend": "Recommend as Ashton contrast pick against bitter espresso or tannic pours — maduro sweetness, not VSG spice bomb.",
+        "memberBlurb": "Ashton Aged Maduro — broadleaf sweetness for after-dinner contrast; pairs with espresso and Cabernet-style reds."
+      },
+      "menuLine": "Ashton Aged Maduro · 5 × 50 · Robusto · Medium-Full · Dominican · $14 · Notes: molasses, dark cocoa, sweet raisins",
+      "stickSize": "5 × 50 · Robusto",
+      "id": "cur-37-ashton-maduro"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 9,
+        "recommendationConfidence": "High",
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.ashtoncigar.com/"
+      },
+      "parentCompany": "Ashton",
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "Celebration",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Ecuadorian Habano wrapper adds spice, sheen, and savory-sweet balance.",
+        "binderRole": "Dominican binder integrates the multi-origin filler stack.",
+        "fillerRole": "Dominican and Nicaraguan filler delivers pepper, cinnamon, and structured body.",
+        "bestFor": "Luxury or refined requests, mid-tier single malt, high-proof rye, clean mezcal.",
+        "avoidIf": "Beginner seeking mildest Connecticut only.",
+        "whyRecommend": "Recommend as Ashton refined line — more elegant than VSG, more body than Classic.",
+        "memberBlurb": "Ashton Symmetry — refined Ecuador Habano balance for celebration pours without full VSG intensity."
+      },
+      "menuLine": "Ashton Symmetry · 5 × 50 · Robusto · Medium-Full · Dominican · $16 · Notes: white pepper, cinnamon, herbal sweetness",
+      "stickSize": "5 × 50 · Robusto",
+      "id": "cur-38-ashton-symmetry"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 9,
+        "recommendationConfidence": "High",
+        "beginnerSafe": "No",
+        "articleSource": "https://www.ashtoncigar.com/"
+      },
+      "parentCompany": "Ashton",
+      "guidance": {
+        "flavorFamily": "Coffee",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Nicaraguan Habano wrapper drives espresso, cocoa, and sharp spice up front.",
+        "binderRole": "Nicaraguan binder supports Garcia-family combustion and strength.",
+        "fillerRole": "Nicaraguan filler delivers full body, dark chocolate, and pepper kick.",
+        "bestFor": "Stout, heavy port, rye whiskey, bold espresso, Ashton full-body Best Pick slot.",
+        "avoidIf": "Beginner, nicotine-sensitive, or user wants mild Connecticut.",
+        "whyRecommend": "Recommend for full-body espresso/bourbon pairing — Ashton-distributed Nicaraguan flagship, not Elegancia mild line.",
+        "memberBlurb": "San Cristobal Clasico — Ashton-distributed My Father full body for bold pours; distinct from Elegancia Connecticut."
+      },
+      "menuLine": "San Cristobal Clasico · 5 × 50 · Robusto · Full · Nicaragua · $10 · Notes: espresso, dark chocolate, pepper",
+      "stickSize": "5 × 50 · Robusto",
+      "id": "cur-39-sc-clasico-rob"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 9,
+        "recommendationConfidence": "High",
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.ashtoncigar.com/"
+      },
+      "parentCompany": "Ashton",
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "Celebration",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Ecuadorian Habano adds aromatic spice and sweet molasses top notes.",
+        "binderRole": "Nicaraguan binder keeps the blend cohesive and elegant.",
+        "fillerRole": "Nicaraguan filler supplies coffee, cedar, and medium-full refinement.",
+        "bestFor": "Belgian quadrupel, complex Japanese whisky, dark roast drip coffee, Ashton refined slot.",
+        "avoidIf": "User wants maximum pepper bomb Clasico only.",
+        "whyRecommend": "Recommend as refined San Cristobal within Ashton ecosystem flights — not the same as Clasico power.",
+        "memberBlurb": "San Cristobal Quintessence — Ashton-distributed refined line: aromatic Habano wrapper vs Clasico pepper forward."
+      },
+      "menuLine": "San Cristobal Quintessence · 5 × 50 · Robusto · Medium-Full · Nicaragua · $12 · Notes: molasses, coffee, cedar",
+      "stickSize": "5 × 50 · Robusto",
+      "id": "cur-40-sc-quint-rob"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 9,
+        "recommendationConfidence": "High",
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.padron.com/"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "Morning coffee",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Natural Nicaraguan wrapper delivers crisp wood, earth, and light cocoa with a clean pepper finish.",
+        "binderRole": "Nicaraguan binder supports honest Thousands-series construction.",
+        "fillerRole": "Nicaraguan filler — aged 2.5–3 years — straightforward medium body.",
+        "bestFor": "Nutty brown ales, light-to-medium roast coffee, smooth Irish whiskey, everyday Padron entry.",
+        "avoidIf": "User wants full maduro sweetness, 1964 box-pressed luxury only, or ultra-mild Connecticut (see Damaso).",
+        "whyRecommend": "Recommend as Padron Thousands natural — affordable daily driver before 1964 tier.",
+        "memberBlurb": "Padron Thousands 3000 natural — entry-tier corona with crisp wood and pepper; the affordable Padron lesson."
+      },
+      "menuLine": "Padron Thousands Series · 5½ × 42 · Corona · Medium · Nicaragua · $8 · Notes: crisp wood, earth, light cocoa, sharp pepper",
+      "stickSize": "5½ × 42 · Corona",
+      "id": "cur-41-pad-3000-nat"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 9,
+        "recommendationConfidence": "High",
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.padron.com/"
+      },
+      "guidance": {
+        "flavorFamily": "Coffee",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Maduro wrapper adds dark baking chocolate, espresso, and toasted depth.",
+        "binderRole": "Nicaraguan binder anchors the maduro Thousands profile.",
+        "fillerRole": "Aged Nicaraguan filler delivers medium-full body and coffee-forward sweetness.",
+        "bestFor": "Dry Irish stouts, traditional espresso shots, sweet bourbon, Padron contrast vs natural Thousands.",
+        "avoidIf": "User wants mildest Connecticut only (Damaso) or 1926 power only.",
+        "whyRecommend": "Recommend as Thousands maduro contrast — sweeter, heavier than 3000 natural.",
+        "memberBlurb": "Padron 3000 maduro — baking chocolate and espresso in the Thousands tier; step up from natural before 1964."
+      },
+      "menuLine": "Padron Thousands Series · 5½ × 42 · Corona · Medium-Full · Nicaragua · $9 · Notes: dark baking chocolate, espresso, toast, earth, cedar",
+      "stickSize": "5½ × 42 · Corona",
+      "id": "cur-42-pad-3000-mad"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 9,
+        "recommendationConfidence": "High",
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.padron.com/"
+      },
+      "guidance": {
+        "flavorFamily": "Coffee",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Maduro wrapper on classic 5½ × 50 format — heavier cocoa and espresso than natural.",
+        "binderRole": "Nicaraguan binder — puro construction.",
+        "fillerRole": "Nicaraguan filler — aged 2.5–3 years — robust daily profile.",
+        "bestFor": "Stout, espresso, sweet bourbon; Padron wildcard vs L4-PAD-2000 natural.",
+        "avoidIf": "Beginner nicotine-sensitive or user asked for Thousands natural only.",
+        "whyRecommend": "Recommend when user wants Padron Thousands with maduro weight on robusto format.",
+        "memberBlurb": "Thousands Robusto maduro — same honest Padron puro as 2000 natural, with maduro sweetness dialed up."
+      },
+      "menuLine": "Padron Thousands Series · 5½ × 50 · Robusto · Medium-Full · Nicaragua · $10 · Notes: dark chocolate, espresso, toast, earth, cedar",
+      "stickSize": "5½ × 50 · Robusto",
+      "id": "cur-43-pad-thou-rob-mad"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 9,
+        "recommendationConfidence": "High",
+        "beginnerSafe": "No",
+        "articleSource": "https://www.padron.com/"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "Celebration",
+        "pairingAffinity": "Scotch",
+        "wrapperRole": "Natural Nicaraguan wrapper on box-pressed 1964 — toasted nuts and cedar over coffee bean.",
+        "binderRole": "Nicaraguan binder — 4-year aged stock — seamless burn.",
+        "fillerRole": "Nicaraguan filler — flagship benchmark body without maduro sweetness.",
+        "bestFor": "Speyside single malt, añejo tequila, clean rye whiskey, Padron premium Best Pick.",
+        "avoidIf": "User wants maximum maduro molasses only (see maduro Exclusivo/Torpedo) or Thousands price point.",
+        "whyRecommend": "Recommend as 1964 natural flagship — gold standard for premium spirits pairing."
+      },
+      "menuLine": "Padron 1964 Anniversary Series · 5½ × 50 · Box-Pressed Robusto · Medium-Full · Nicaragua · $17 · Notes: toasted nuts, cedar, coffee bean, baking spice, cocoa",
+      "stickSize": "5½ × 50 · Box-Pressed Robusto",
+      "id": "cur-44-pad-1964-ex-nat"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 9,
+        "recommendationConfidence": "High",
+        "beginnerSafe": "No",
+        "articleSource": "https://www.padron.com/"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "Celebration",
+        "pairingAffinity": "Scotch",
+        "wrapperRole": "Natural wrapper on torpedo format concentrates cedar and nutty top notes.",
+        "binderRole": "Nicaraguan binder — box-pressed family construction.",
+        "fillerRole": "Nicaraguan filler — smooth, complex, medium-full.",
+        "bestFor": "Speyside malt, añejo tequila, rye; refined Padron 1964 vitola choice.",
+        "avoidIf": "User wants short robusto time window or full maduro body.",
+        "whyRecommend": "Recommend when user wants 1964 natural in torpedo format — not Exclusivo duplicate."
+      },
+      "menuLine": "Padron 1964 Anniversary Series · 6 × 52 · Torpedo · Medium-Full · Nicaragua · $18 · Notes: toasted nuts, cedar, coffee, baking spice, cocoa",
+      "stickSize": "6 × 52 · Torpedo",
+      "id": "cur-45-pad-1964-tor-nat"
+    }
+  ]
+}

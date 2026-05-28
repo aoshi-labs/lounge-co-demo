@@ -1,0 +1,6 @@
+{
+  "op": "validateCards",
+  "cards": [],
+  "promptText": "plain",
+  "options": { "journeyLevel": "advanced" }
+}

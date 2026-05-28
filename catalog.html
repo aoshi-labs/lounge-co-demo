@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Catalog — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Browse the lounge's full humidor and bottle list, organized by category." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Catalog — Lounge & Co." />
+  <meta property="og:description" content="Browse the lounge's full humidor and bottle list, organized by category." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Catalog — Lounge & Co." />
+  <meta name="twitter:description" content="Browse the lounge's full humidor and bottle list, organized by category." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/catalog.css"/>
+</head>
+<body>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Thomas H.</div><div class="sidebar-user-tier">Elite · 1,744 pts · #4</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area">
+  <h1 class="visually-hidden">Catalog</h1>
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+      <i data-lucide="menu" class="ic-16"></i>
+    </button>
+    <div class="topbar-actions">
+    </div>
+  </header>
+
+  <div class="page-content">
+
+    <!-- CENTER -->
+    <div class="catalog-page-stack">
+
+      <!-- Page header removed entirely; the auto-injected .top-bar-logo
+           (file-text icon + "Catalog" label) serves as the page title. -->
+
+      <!-- Page-level search bar — moved out of the top bar so it lives
+           alongside the catalog content it filters. -->
+      <div class="catalog-search-wrap">
+        <i data-lucide="search" class="ic-16 catalog-search-icon"></i>
+        <input class="catalog-search-input" type="text" placeholder="Search catalog…" aria-label="Search catalog" id="catalog-search" oninput="filterCards()"/>
+      </div>
+
+      <!-- Filter tabs -->
+      <div class="catalog-category-tabs">
+        <button class="filter-tab active" onclick="setCategory(this,'all')" data-cat="all">All Items</button>
+        <button class="filter-tab" onclick="setCategory(this,'cigar')" data-cat="cigar"><i data-icon="cigar" class="ic-14" aria-hidden="true"></i> Cigars</button>
+        <button class="filter-tab" onclick="setCategory(this,'spirit')" data-cat="spirit"><i data-icon="whiskey-glass" class="ic-14" aria-hidden="true"></i> Spirits</button>
+        <button class="filter-tab" onclick="setCategory(this,'accessory')" data-cat="accessory"><i data-lucide="scissors" class="ic-14"></i> Accessories</button>
+      </div>
+
+      <!-- Product grid -->
+      <div class="product-grid" id="product-grid">
+
+        <!-- Cigar 1 -->
+        <a href="product-detail.html" class="product-card catalog-product-link" data-cat="cigar">
+          <div class="product-img catalog-product-img-torpedo"><img src="assets/images/torpedo.jpg" alt=""/></div>
+          <div class="catalog-product-body">
+            <div class="catalog-product-title">Ashton VSG Torpedo</div>
+            <div class="catalog-product-meta">Honduras · Medium-Full</div>
+            <div class="catalog-product-rating-row">
+              <span class="catalog-product-rating-score">★ 4.8</span>
+              <span class="catalog-product-rating-count">38 reviews</span>
+            </div>
+            <div class="catalog-product-price-row">
+              <span class="catalog-product-price">$28</span>
+              <button onclick="event.preventDefault();addToVisit(this)" onmouseover="this.style.background='var(--burg-hover)'" onmouseout="this.style.background='var(--burg)'" class="catalog-product-add-btn">Add to my visit</button>
+            </div>
+          </div>
+        </a>
+
+        <!-- Cigar 2 -->
+        <a href="product-detail.html" class="product-card catalog-product-link" data-cat="cigar">
+          <div class="product-img catalog-product-img-padron"><img src="assets/images/padron.jpg" alt=""/></div>
+          <div class="catalog-product-body">
+            <div class="catalog-product-title">Padron 1926 No. 35</div>
+            <div class="catalog-product-meta">Nicaragua · Full</div>
+            <div class="catalog-product-rating-row">
+              <span class="catalog-product-rating-score">★ 4.9</span>
+              <span class="catalog-product-rating-count">61 reviews</span>
+            </div>
+            <div class="catalog-product-price-row">
+              <span class="catalog-product-price">$42</span>
+              <button onclick="event.preventDefault();addToVisit(this)" class="catalog-product-add-btn-alt">Add to my visit</button>
+            </div>
+          </div>
+        </a>
+
+        <!-- Cigar 3 -->
+        <a href="product-detail.html" class="product-card catalog-product-link" data-cat="cigar">
+          <div class="product-img catalog-product-img-fuente"><img src="assets/images/fuente-opus.jpg" alt=""/></div>
+          <div class="catalog-product-body">
+            <div class="catalog-product-title">Arturo Fuente Opus X</div>
+            <div class="catalog-product-meta">Dominican Rep. · Full</div>
+            <div class="catalog-product-rating-row">
+              <span class="catalog-product-rating-score">★ 4.7</span>
+              <span class="catalog-product-rating-count">49 reviews</span>
+            </div>
+            <div class="catalog-product-price-row">
+              <span class="catalog-product-price">$38</span>
+              <button onclick="event.preventDefault();addToVisit(this)" class="catalog-product-add-btn-alt">Add to my visit</button>
+            </div>
+          </div>
+        </a>
+
+        <!-- Cigar 4 -->
+        <a href="product-detail.html" class="product-card catalog-product-link" data-cat="cigar">
+          <div class="product-img catalog-product-img-liga"><img src="assets/images/liga-privada.jpg" alt=""/></div>
+          <div class="catalog-product-body">
+            <div class="catalog-product-title">Liga Privada No. 9</div>
+            <div class="catalog-product-meta">Nicaragua · Medium-Full</div>
+            <div class="catalog-product-rating-row">
+              <span class="catalog-product-rating-score">★ 4.6</span>
+              <span class="catalog-product-rating-count">55 reviews</span>
+            </div>
+            <div class="catalog-product-price-row">
+              <span class="catalog-product-price">$22</span>
+              <button onclick="event.preventDefault();addToVisit(this)" class="catalog-product-add-btn-alt">Add to my visit</button>
+            </div>
+          </div>
+        </a>
+
+        <!-- Cigar 5 -->
+        <a href="product-detail.html" class="product-card catalog-product-link" data-cat="cigar">
+          <div class="product-img catalog-product-img-myfather"><img src="assets/images/my-fatherle bijou 1922.webp" alt=""/></div>
+          <div class="catalog-product-body">
+            <div class="catalog-product-title">My Father Le Bijou</div>
+            <div class="catalog-product-meta">Nicaragua · Full</div>
+            <div class="catalog-product-rating-row">
+              <span class="catalog-product-rating-score">★ 4.5</span>
+              <span class="catalog-product-rating-count">29 reviews</span>
+            </div>
+            <div class="catalog-product-price-row">
+              <span class="catalog-product-price">$18</span>
+              <button onclick="event.preventDefault();addToVisit(this)" class="catalog-product-add-btn-alt">Add to my visit</button>
+            </div>
+          </div>
+        </a>
+
+        <!-- Cigar 6 -->
+        <a href="product-detail.html" class="product-card catalog-product-link" data-cat="cigar">
+          <div class="product-img catalog-product-img-cohiba"><img src="assets/images/cohiba_stick.webp" alt=""/></div>
+          <div class="catalog-product-body">
+            <div class="catalog-product-title">Cohiba Siglo VI</div>
+            <div class="catalog-product-meta">Cuba · Medium-Full</div>
+            <div class="catalog-product-rating-row">
+              <span class="catalog-product-rating-score">★ 4.9</span>
+              <span class="catalog-product-rating-count">72 reviews</span>
+            </div>
+            <div class="catalog-product-price-row">
+              <span class="catalog-product-price">$55</span>
+              <button onclick="event.preventDefault();addToVisit(this)" class="catalog-product-add-btn-alt">Add to my visit</button>
+            </div>
+          </div>
+        </a>
+
+        <!-- Spirit 1 -->
+        <a href="product-detail.html" class="product-card catalog-product-link" data-cat="spirit">
+          <div class="product-img catalog-product-img-glenfarclas"><img src="assets/images/glenfarclas_17yr.jpg" alt=""/></div>
+          <div class="catalog-product-body">
+            <div class="catalog-product-title">Glenfarclas 17yr</div>
+            <div class="catalog-product-meta">Speyside Scotch · Sherried</div>
+            <div class="catalog-product-rating-row">
+              <span class="catalog-product-rating-score">★ 4.8</span>
+              <span class="catalog-product-rating-count">44 reviews</span>
+            </div>
+            <div class="catalog-product-price-row">
+              <span class="catalog-product-price">$24</span>
+              <button onclick="event.preventDefault();addToVisit(this)" class="catalog-product-add-btn-alt">Add to my visit</button>
+            </div>
+          </div>
+        </a>
+
+        <!-- Spirit 2 -->
+        <a href="product-detail.html" class="product-card catalog-product-link" data-cat="spirit">
+          <div class="product-img catalog-product-img-pappy"><img src="assets/images/pappy_van_winkle_23yr.jpg" alt=""/></div>
+          <div class="catalog-product-body">
+            <div class="catalog-product-title">Pappy Van Winkle 23yr</div>
+            <div class="catalog-product-meta">Kentucky Bourbon · Rich</div>
+            <div class="catalog-product-rating-row">
+              <span class="catalog-product-rating-score">★ 5.0</span>
+              <span class="catalog-product-rating-count">18 reviews</span>
+            </div>
+            <div class="catalog-product-price-row">
+              <span class="catalog-product-price">$85</span>
+              <button onclick="event.preventDefault();addToVisit(this)" class="catalog-product-add-btn-alt">Add to my visit</button>
+            </div>
+          </div>
+        </a>
+
+        <!-- Spirit 3 -->
+        <a href="product-detail.html" class="product-card catalog-product-link" data-cat="spirit">
+          <div class="product-img catalog-product-img-lagavulin"><img src="assets/images/lagavulin_16yr.jpg" alt=""/></div>
+          <div class="catalog-product-body">
+            <div class="catalog-product-title">Lagavulin 16yr</div>
+            <div class="catalog-product-meta">Islay Scotch · Peaty</div>
+            <div class="catalog-product-rating-row">
+              <span class="catalog-product-rating-score">★ 4.9</span>
+              <span class="catalog-product-rating-count">67 reviews</span>
+            </div>
+            <div class="catalog-product-price-row">
+              <span class="catalog-product-price">$22</span>
+              <button onclick="event.preventDefault();addToVisit(this)" class="catalog-product-add-btn-alt">Add to my visit</button>
+            </div>
+          </div>
+        </a>
+
+        <!-- Spirit 4 -->
+        <a href="product-detail.html" class="product-card catalog-product-link" data-cat="spirit">
+          <div class="product-img catalog-product-img-aberfeldy"><img src="assets/images/FY26_Aberfeldy_WebUpdate_12YO_Desktop_Hero_PBX_3200x1800-1-1.jpg" alt=""/></div>
+          <div class="catalog-product-body">
+            <div class="catalog-product-title">Aberfeldy 12yr</div>
+            <div class="catalog-product-meta">Highland Scotch · Honeyed</div>
+            <div class="catalog-product-rating-row">
+              <span class="catalog-product-rating-score">★ 4.4</span>
+              <span class="catalog-product-rating-count">22 reviews</span>
+            </div>
+            <div class="catalog-product-price-row">
+              <span class="catalog-product-price">$16</span>
+              <button onclick="event.preventDefault();addToVisit(this)" class="catalog-product-add-btn-alt">Add to my visit</button>
+            </div>
+          </div>
+        </a>
+
+        <!-- Accessory 1 -->
+        <a href="product-detail.html" class="product-card catalog-product-link" data-cat="accessory">
+          <div class="product-img catalog-product-img-xikar"><img src="assets/images/xikar_vx2.jpg" alt=""/></div>
+          <div class="catalog-product-body">
+            <div class="catalog-product-title">Xikar Xi3 Cutter</div>
+            <div class="catalog-product-meta">Accessory · Stainless</div>
+            <div class="catalog-product-rating-row">
+              <span class="catalog-product-rating-score">★ 4.6</span>
+              <span class="catalog-product-rating-count">11 reviews</span>
+            </div>
+            <div class="catalog-product-price-row">
+              <span class="catalog-product-price">$45</span>
+              <button onclick="event.preventDefault();addToVisit(this)" class="catalog-product-add-btn-alt">Add to my visit</button>
+            </div>
+          </div>
+        </a>
+
+        <!-- Accessory 2 -->
+        <a href="product-detail.html" class="product-card catalog-product-link" data-cat="accessory">
+          <div class="product-img catalog-product-img-vector"><img src="assets/images/vector-kgm-dupla-butane-dual-pipe-and-jet-torch-lighter-mahogany-lacquer__76978.jpg" alt=""/></div>
+          <div class="catalog-product-body">
+            <div class="catalog-product-title">Vector KGM Torch</div>
+            <div class="catalog-product-meta">Accessory · Triple Flame</div>
+            <div class="catalog-product-rating-row">
+              <span class="catalog-product-rating-score">★ 4.3</span>
+              <span class="catalog-product-rating-count">8 reviews</span>
+            </div>
+            <div class="catalog-product-price-row">
+              <span class="catalog-product-price">$35</span>
+              <button onclick="event.preventDefault();addToVisit(this)" class="catalog-product-add-btn-alt">Add to my visit</button>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- RAIL -->
+    <aside class="rail-col catalog-rail">
+
+      <!-- Tab summary -->
+      <div class="widget">
+        <div class="widget-title">📓 My Visit</div>
+        <div id="cart-items" class="catalog-tab-list">
+          <div class="catalog-tab-row">
+            <div><div class="catalog-tab-item-name">Padron 1926 No. 35</div><div class="catalog-product-rating-count">× 1</div></div>
+            <span class="catalog-tab-item-price">$42</span>
+          </div>
+          <div class="catalog-tab-row">
+            <div><div class="catalog-tab-item-name">Lagavulin 16yr</div><div class="catalog-product-rating-count">× 1</div></div>
+            <span class="catalog-tab-item-price">$22</span>
+          </div>
+        </div>
+        <div class="catalog-tab-total-row">
+          <span class="catalog-tab-total-label">Total</span>
+          <span class="catalog-tab-total-value">$64</span>
+        </div>
+        <a href="cart.html" class="catalog-tab-view-btn">View My Visit</a>
+      </div>
+
+      <!-- AI pick -->
+      <div class="widget">
+        <div class="widget-title">✦ AI Pick for You</div>
+        <div class="catalog-ai-quote">"Based on your reviews, the Cohiba Siglo VI with a pour of Glenfarclas 17 would be an ideal pairing tonight — sherry sweetness meets Cuban creaminess."</div>
+        <a href="sterlon.html" class="catalog-ai-cta">Get a recommendation →</a>
+      </div>
+
+      <!-- Most reviewed -->
+      <div class="widget">
+        <div class="widget-title">⭐ Most Reviewed</div>
+        <div class="catalog-reviewed-list">
+          <a href="product-detail.html" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background='transparent'" class="catalog-reviewed-row">
+            <div class="catalog-reviewed-thumb"><img src="assets/images/lagavulin_16yr.jpg" alt=""/></div>
+            <div class="catalog-reviewed-info"><div class="catalog-tab-item-name">Lagavulin 16yr</div><div class="catalog-product-rating-count">67 reviews</div></div>
+            <div class="catalog-reviewed-rating">★ 4.9</div>
+          </a>
+          <a href="product-detail.html" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background='transparent'" class="catalog-reviewed-row">
+            <div class="catalog-reviewed-thumb"><img src="assets/images/cohiba_stick.webp" alt=""/></div>
+            <div class="catalog-reviewed-info"><div class="catalog-tab-item-name">Cohiba Siglo VI</div><div class="catalog-product-rating-count">72 reviews</div></div>
+            <div class="catalog-reviewed-rating">★ 4.9</div>
+          </a>
+          <a href="product-detail.html" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background='transparent'" class="catalog-reviewed-row">
+            <div class="catalog-reviewed-thumb"><img src="assets/images/padron-1926-no-35.webp" alt=""/></div>
+            <div class="catalog-reviewed-info"><div class="catalog-tab-item-name">Padron 1926 No. 35</div><div class="catalog-product-rating-count">61 reviews</div></div>
+            <div class="catalog-reviewed-rating">★ 4.9</div>
+          </a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+<nav class="bottom-nav">
+  <a href="feed.html" class="bottom-nav-item"><i data-lucide="newspaper" class="ic-20"></i>Feed</a>
+  <a href="explore.html" class="bottom-nav-item"><i data-lucide="search" class="ic-20"></i>Explore</a>
+  <a href="create-post.html" class="bottom-nav-item"><div class="bottom-nav-create-btn"><i data-lucide="plus" class="ic-20"></i></div></a>
+  <a href="events.html" class="bottom-nav-item"><i data-lucide="calendar" class="ic-20"></i>Events</a>
+  <a href="profile.html" class="bottom-nav-item"><i data-lucide="user" class="ic-20"></i>Profile</a>
+</nav>
+
+<script>
+  function addToVisit(btn){
+    if(window.Lounge) Lounge.visit.bump(1);
+    btn.textContent='Added ✓';btn.style.background='#4A7C59';
+    if(window.Lounge) Lounge.toast('Added to my tab', {variant:'success'});
+    setTimeout(()=>{btn.textContent='Add to my visit';btn.style.background='var(--burg)';},1500);
+  }
+  function setCategory(btn,cat){
+    document.querySelectorAll('.catalog-category-tabs .filter-tab').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.product-card').forEach(card=>{
+      card.style.display=(cat==='all'||card.dataset.cat===cat)?'block':'none';
+    });
+    if (btn.scrollIntoView) {
+      btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  }
+  function filterCards(){
+    const q=document.getElementById('catalog-search').value.toLowerCase();
+    document.querySelectorAll('.product-card').forEach(card=>{
+      card.style.display=card.textContent.toLowerCase().includes(q)?'block':'none';
+    });
+  }
+
+  /* Carousel arrows for the category filter row (.catalog-category-tabs). Same shared
+     pattern as every other carousel in the app — wraps the track in a
+     .pro-lib-carousel + .catalog-tabs-carousel container, injects left / right
+     chevron buttons, and runs the right-lenient / left-strict show logic.
+     Shared button styles live in lounge.css; .catalog-tabs-carousel is in the
+     symmetric-track arrow-position list there. */
+  (function setupCatTabsArrows(){
+    const track = document.querySelector('.catalog-category-tabs');
+    if (!track || track.dataset.carouselWired === '1') return;
+    track.dataset.carouselWired = '1';
+
+    const wrap = document.createElement('div');
+    wrap.className = 'pro-lib-carousel catalog-tabs-carousel';
+    track.parentNode.insertBefore(wrap, track);
+    wrap.appendChild(track);
+
+    const mkArrow = (dir, glyph, label) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'pro-lib-arrow pro-lib-arrow-' + dir;
+      b.setAttribute('aria-label', label);
+      b.innerHTML = glyph;
+      return b;
+    };
+    const left  = mkArrow('left',  '‹', 'Scroll left');
+    const right = mkArrow('right', '›', 'Scroll right');
+    wrap.appendChild(left);
+    wrap.appendChild(right);
+
+    const step = (mult) => {
+      track.scrollBy({ left: track.clientWidth * 0.7 * mult, behavior: 'smooth' });
+    };
+    left.addEventListener('click',  () => step(-1));
+    right.addEventListener('click', () => step( 1));
+
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      const x = track.scrollLeft;
+      const overflow = max > 4;
+      const atEnd = x >= max - 1;
+      left.classList.toggle('pro-lib-arrow-hidden',  !(overflow && atEnd));
+      right.classList.toggle('pro-lib-arrow-hidden', !(overflow && !atEnd));
+    };
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    setTimeout(update, 80);
+    setTimeout(update, 500);
+  })();
+</script>
+</body>
+</html>

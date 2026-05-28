@@ -1,0 +1,243 @@
+{
+  "cases": [
+    {
+      "id": "old-forester-maduro-locked",
+      "categoryFocus": "pairing",
+      "checks": {
+        "namedSpiritResolved": true,
+        "bestSpiritLocked": true,
+        "allSlotsSameSpirit": true,
+        "noLigeroHeavyOnAnchorSlots": true,
+        "allMaduroCigars": true
+      },
+      "ok": true,
+      "cardsProductIds": [
+        {
+          "slot": "best",
+          "cigarId": "cur-37-ashton-maduro",
+          "spiritId": "spi-trk-of-1920",
+          "why": [
+            "Recommend as Ashton contrast pick against bitter espresso or tannic pours — maduro sweetn...",
+            "Cocoa in the smoke threads cleanly into the chocolate column in the glass.",
+            "Shared flavor architecture links cocoa depth across the flight."
+          ]
+        },
+        {
+          "slot": "safe",
+          "cigarId": "bb25-06-af-span-lon-m",
+          "spiritId": "spi-trk-of-1920",
+          "why": [
+            "Recommend for value seekers, humidor fillers, or 'something good under $7' requests - cit...",
+            "Cocoa in the smoke threads cleanly into the chocolate column in the glass.",
+            "Shared flavor architecture links cocoa depth across the flight."
+          ]
+        },
+        {
+          "slot": "wildcard",
+          "cigarId": "vid-11-epc-allegiance-toro",
+          "spiritId": "spi-trk-of-1920",
+          "why": [
+            "Recommend when teaching Allegiance identity, AJ/Aganorsa progression, or transcript-prior...",
+            "Shared flavor architecture links spice thread across the flight.",
+            "Body lines up — both sides sit in the same weight class so neither overpowers."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "old-forester-after-dinner-maduro",
+      "categoryFocus": "pairing",
+      "checks": {
+        "namedSpiritResolved": true,
+        "bestSpiritLocked": true,
+        "allSlotsSameSpirit": true,
+        "noLigeroHeavyOnAnchorSlots": true,
+        "allMaduroCigars": true
+      },
+      "ok": true,
+      "cardsProductIds": [
+        {
+          "slot": "best",
+          "cigarId": "cur-37-ashton-maduro",
+          "spiritId": "spi-trk-of-1920",
+          "why": [
+            "Recommend as Ashton contrast pick against bitter espresso or tannic pours — maduro sweetn...",
+            "Cocoa in the smoke threads cleanly into the chocolate column in the glass.",
+            "Shared flavor architecture links cocoa depth across the flight."
+          ]
+        },
+        {
+          "slot": "safe",
+          "cigarId": "bb25-06-af-span-lon-m",
+          "spiritId": "spi-trk-of-1920",
+          "why": [
+            "Recommend for value seekers, humidor fillers, or 'something good under $7' requests - cit...",
+            "Cocoa in the smoke threads cleanly into the chocolate column in the glass.",
+            "Shared flavor architecture links cocoa depth across the flight."
+          ]
+        },
+        {
+          "slot": "wildcard",
+          "cigarId": "vid-11-epc-allegiance-toro",
+          "spiritId": "spi-trk-of-1920",
+          "why": [
+            "Recommend when teaching Allegiance identity, AJ/Aganorsa progression, or transcript-prior...",
+            "Shared flavor architecture links spice thread across the flight.",
+            "Body lines up — both sides sit in the same weight class so neither overpowers."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "buffalo-trace-novice-smoker",
+      "categoryFocus": "pairing",
+      "checks": {
+        "namedSpiritResolved": true,
+        "bestSpiritLocked": true,
+        "morningSpiritNotPeated": true
+      },
+      "ok": true,
+      "cardsProductIds": [
+        {
+          "slot": "best",
+          "cigarId": "htd-10-cohiba",
+          "spiritId": "spi-trk-bt-buffalo",
+          "why": [
+            "The drier Buffalo Trace keeps Cohiba Dominican / Red Dot Varies from turning one-note on...",
+            "Recommend for medium-bodied Dominican prestige with Cameroon texture—U.S.-legal alternati..."
+          ]
+        },
+        {
+          "slot": "safe",
+          "cigarId": "vid-19-af-doncar-n2",
+          "spiritId": "spi-trk-bt-buffalo",
+          "why": [
+            "Spice in the smoke wakes Buffalo Trace without the glass needing to shout.",
+            "Recommend when teaching Don Carlos identity, AJ/Aganorsa progression, or transcript-prior..."
+          ]
+        },
+        {
+          "slot": "wildcard",
+          "cigarId": "vid-08-ajf-sanlot-rob",
+          "spiritId": "spi-trk-bt-buffalo",
+          "why": [
+            "The drier Buffalo Trace keeps A.J. Fernandez San Lotano Oval Oval Robusto from turning on...",
+            "Recommend when teaching San Lotano Oval identity, AJ/Aganorsa progression, or transcript-..."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "morning-espresso-pairing",
+      "categoryFocus": "pairing",
+      "checks": {
+        "morningSpiritNotPeated": true,
+        "distinctWhyAcrossSlots": true,
+        "spiritDeckInCoffeeBias": true,
+        "categoryFocus": true
+      },
+      "ok": true,
+      "cardsProductIds": [
+        {
+          "slot": "best",
+          "cigarId": "l3-ryj-1875",
+          "spiritId": "spi-trk-ec-sb",
+          "why": [
+            "Elijah Craig Small Batch gives the espresso a caramel-oak bridge — sweetness in the glass...",
+            "Stay with cream in the smoke — polite beside the espresso, not pepper-forward or ligero-h..."
+          ]
+        },
+        {
+          "slot": "safe",
+          "cigarId": "vid-08-ajf-sanlot-rob",
+          "spiritId": "spi-trk-ec-sb",
+          "why": [
+            "Refined pick: cream, cocoa, or cedar for smooth volume — approachable beside bitter coffe..."
+          ]
+        },
+        {
+          "slot": "wildcard",
+          "cigarId": "vid-20-def-classic-rob",
+          "spiritId": "spi-trk-ec-sb",
+          "why": [
+            "Wildcard can stretch the lane — still cream, cocoa, or cedar beside the cup, not pepper-f..."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cigar-only-under-budget",
+      "categoryFocus": "cigar",
+      "checks": {
+        "noSpiritOnCards": true
+      },
+      "ok": true,
+      "cardsProductIds": [
+        {
+          "slot": "best",
+          "cigarId": "bb24-08-punch-dragon",
+          "spiritId": null,
+          "why": [
+            "The drier Casamigos Reposado keeps Punch Dragon Fire Short Gordo from turning one-note on...",
+            "Recommend for value seekers citing CA 2024 Best Buy — Lunar New Year Dragon Fire short go..."
+          ]
+        },
+        {
+          "slot": "safe",
+          "cigarId": "vid-16-esteban-mofo-rob",
+          "spiritId": null,
+          "why": [
+            "The drier Casamigos Reposado keeps Esteban Carreras Maduro Mofo Robusto from turning one-...",
+            "Recommend when teaching Maduro Mofo identity, AJ/Aganorsa progression, or transcript-prio..."
+          ]
+        },
+        {
+          "slot": "wildcard",
+          "cigarId": "bb25-09-ab-chunk-xl",
+          "spiritId": null,
+          "why": [
+            "The drier Casamigos Reposado keeps Alec Bradley Chunk Maduro XL from turning one-note on...",
+            "Recommend for value seekers, humidor fillers, or 'something good under $6' requests - cit..."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cigar-only-coffee-no-pair",
+      "categoryFocus": "cigar",
+      "checks": {
+        "noSpiritOnCards": true,
+        "categoryFocus": true
+      },
+      "ok": true,
+      "cardsProductIds": [
+        {
+          "slot": "best",
+          "cigarId": "cur-42-pad-3000-mad",
+          "spiritId": null,
+          "why": [
+            "Michter's US*1 Kentucky gives the espresso a caramel-oak bridge — enough sweetness in the...",
+            "Stay with cocoa or cedar in the smoke — polite beside the espresso, not pepper-forward or..."
+          ]
+        },
+        {
+          "slot": "safe",
+          "cigarId": "l3-mac-cafe",
+          "spiritId": null,
+          "why": [
+            "Refined pick: cream or cocoa or cedar for smooth volume — approachable beside bitter coff..."
+          ]
+        },
+        {
+          "slot": "wildcard",
+          "cigarId": "bb25-09-ab-chunk-xl",
+          "spiritId": null,
+          "why": [
+            "Wildcard can stretch the lane — still cream, cocoa, or cedar beside the cup, not pepper-f..."
+          ]
+        }
+      ]
+    }
+  ],
+  "ok": true
+}

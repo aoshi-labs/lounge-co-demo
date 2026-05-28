@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Network — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       Platform-level page.
+       Follow graph + suggested follows. Tier 2 (Cellar Club) members see
+       palate-similarity-driven "Suggested Connoisseurs" (per N25/MD3).
+       Free + Tier 1 see follow/following lists only.
+       Per SD2 lock: this is a member-preference signal (palate similarity),
+       NOT an AI recommendation — keeps the legal lane clean.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Your follow graph + suggested connoisseurs on Lounge & Co." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/my-network.css"/>
+</head>
+<body>
+
+<div class="mobile-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Thomas H.</div><div class="sidebar-user-tier">Elite · 1,744 pts · #4</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area">
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+      <i data-lucide="menu" class="ic-16"></i>
+    </button>
+    <div class="topbar-actions"></div>
+  </header>
+
+  <div class="content-area">
+
+    <h1 class="page-heading">My Network</h1>
+    <p class="page-lede">Your follow graph across every venue on Lounge & Co.</p>
+
+    <div class="nw-stats">
+      <div class="nw-stat">
+        <div class="nw-stat-n">87</div>
+        <div class="nw-stat-label">Following</div>
+      </div>
+      <div class="nw-stat">
+        <div class="nw-stat-n">154</div>
+        <div class="nw-stat-label">Followers</div>
+      </div>
+      <div class="nw-stat">
+        <div class="nw-stat-n">12</div>
+        <div class="nw-stat-label">Suggested</div>
+      </div>
+    </div>
+
+    <div class="nw-tabs">
+      <button class="nw-tab active" type="button">Suggested</button>
+      <button class="nw-tab" type="button">Following</button>
+      <button class="nw-tab" type="button">Followers</button>
+    </div>
+
+    <!-- Suggested Connoisseurs (Tier 2 feature per MD3 / N25) -->
+    <section class="nw-section">
+      <div class="nw-section-header">
+        <div class="nw-section-title">Suggested Connoisseurs</div>
+        <div class="nw-section-sub">Palate similarity · Cellar Club feature</div>
+      </div>
+      <p style="font-family:var(--font-body);font-size:13px;color:var(--text-muted);margin:-6px 0 16px;font-style:italic;">Members with palates similar to yours. Based on your taste signals, not an algorithmic recommendation.</p>
+      <div class="nw-grid">
+
+        <div class="nw-card">
+          <div class="nw-card-avatar">SK</div>
+          <div class="nw-card-body">
+            <div class="nw-match"><i data-lucide="sparkles" class="ic-12"></i> 91% palate match</div>
+            <div class="nw-card-name">Sterling K.</div>
+            <div class="nw-card-meta">Member at Casa de Montecristo &amp; The Saloon</div>
+            <div class="nw-card-snippet">Loves Maduros · high-rye bourbon person · 247 ratings</div>
+          </div>
+          <button class="nw-btn" type="button">Follow</button>
+        </div>
+
+        <div class="nw-card">
+          <div class="nw-card-avatar">DM</div>
+          <div class="nw-card-body">
+            <div class="nw-match"><i data-lucide="sparkles" class="ic-12"></i> 86% palate match</div>
+            <div class="nw-card-name">Diego M.</div>
+            <div class="nw-card-meta">Member at Casa Verde Cigar Co.</div>
+            <div class="nw-card-snippet">Padrón collector · Nicaraguan tobacco focus · 188 ratings</div>
+          </div>
+          <button class="nw-btn" type="button">Follow</button>
+        </div>
+
+        <div class="nw-card">
+          <div class="nw-card-avatar">JA</div>
+          <div class="nw-card-body">
+            <div class="nw-match"><i data-lucide="sparkles" class="ic-12"></i> 83% palate match</div>
+            <div class="nw-card-name">Jasper A.</div>
+            <div class="nw-card-meta">Member at Reserve &amp; Co.</div>
+            <div class="nw-card-snippet">Sherry-cask Scotch + earthy cigars · multi-venue regular</div>
+          </div>
+          <button class="nw-btn" type="button">Follow</button>
+        </div>
+
+        <div class="nw-card">
+          <div class="nw-card-avatar">EH</div>
+          <div class="nw-card-body">
+            <div class="nw-match"><i data-lucide="sparkles" class="ic-12"></i> 79% palate match</div>
+            <div class="nw-card-name">Eleanor H.</div>
+            <div class="nw-card-meta">Member at Rye &amp; Reason</div>
+            <div class="nw-card-snippet">Rye specialist · cigar-pairing curator · 312 ratings</div>
+          </div>
+          <button class="nw-btn" type="button">Follow</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Recently active in your network -->
+    <section class="nw-section">
+      <div class="nw-section-header">
+        <div class="nw-section-title">Recently active</div>
+        <div class="nw-section-sub">From people you follow</div>
+      </div>
+      <div class="nw-grid">
+
+        <div class="nw-card">
+          <div class="nw-card-avatar">MK</div>
+          <div class="nw-card-body">
+            <div class="nw-card-name">Marcus K.</div>
+            <div class="nw-card-meta">Visited Casa de Montecristo · 2h ago</div>
+            <div class="nw-card-snippet">Rated Padrón 1926 ★4.9 · "best maduro of the year"</div>
+          </div>
+          <button class="nw-btn nw-btn-following" type="button">Following</button>
+        </div>
+
+        <div class="nw-card">
+          <div class="nw-card-avatar">LV</div>
+          <div class="nw-card-body">
+            <div class="nw-card-name">Laura V.</div>
+            <div class="nw-card-meta">RSVPd Anejo Night · 5h ago</div>
+            <div class="nw-card-snippet">"Counting down — bringing my last Pappy 20"</div>
+          </div>
+          <button class="nw-btn nw-btn-following" type="button">Following</button>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+</main>
+
+</body>
+</html>

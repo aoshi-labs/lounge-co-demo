@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Library — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Your personal collection — cigars and spirits you've tried, rated, or want to try." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Library — Lounge & Co." />
+  <meta property="og:description" content="Your personal collection — cigars and spirits you've tried, rated, or want to try." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Library — Lounge & Co." />
+  <meta name="twitter:description" content="Your personal collection — cigars and spirits you've tried, rated, or want to try." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/library.css"/>
+</head>
+<body>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Thomas H.</div><div class="sidebar-user-tier">Elite · 1,744 pts · #4</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area">
+  <h1 class="visually-hidden">Library</h1>
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu"><i data-lucide="menu" class="ic-16"></i></button>
+    <span class="topbar-title">Your Library</span>
+    <div class="topbar-actions">
+      <a href="orders.html" class="topbar-action-link">My Activity</a>
+    </div>
+  </header>
+
+  <div class="library-page-frame">
+    <div class="library-page-stack">
+
+      <!-- Stats strip -->
+      <div class="lib-stats">
+        <div class="lib-stat">
+          <div class="lib-stat-num">47</div>
+          <div class="lib-stat-lbl">Items Acquired</div>
+        </div>
+        <div class="lib-stat">
+          <div class="lib-stat-num lib-num-burg">$3,240</div>
+          <div class="lib-stat-lbl">Lifetime Spend</div>
+        </div>
+        <div class="lib-stat">
+          <div class="lib-stat-num lib-num-gold">Padron</div>
+          <div class="lib-stat-lbl">Top Brand</div>
+        </div>
+        <div class="lib-stat">
+          <div class="lib-stat-num">Cigars</div>
+          <div class="lib-stat-lbl">Favorite Category</div>
+        </div>
+      </div>
+
+      <!-- Filter tabs -->
+      <div class="lib-filters">
+        <button class="filter-tab active" onclick="setFilter(this)">All <span class="lib-count">47</span></button>
+        <button class="filter-tab" onclick="setFilter(this)">Cigars <span class="lib-count">32</span></button>
+        <button class="filter-tab" onclick="setFilter(this)">Spirits <span class="lib-count">12</span></button>
+        <button class="filter-tab" onclick="setFilter(this)">Accessories <span class="lib-count">3</span></button>
+        <button class="filter-tab lib-wish-tab" onclick="setFilter(this)"><i data-lucide="bookmark" class="ic-12"></i>Want to try <span class="lib-count lib-wish-count">6</span></button>
+        <div class="lib-spacer"></div>
+        <select class="lib-sort" aria-label="Sort library">
+          <option>Most Recent</option>
+          <option>Highest Rated</option>
+          <option>Most Logged</option>
+          <option>Alphabetical</option>
+        </select>
+      </div>
+
+      <!-- Library grid (owned items) -->
+      <div class="lib-grid">
+
+        <a href="product-detail.html" class="lib-card">
+          <button class="lib-bookmark" onclick="event.preventDefault();toggleWishlist(this,'Padron 1926 No. 35')" title="Add to Want to try" aria-label="Toggle wishlist"><i data-lucide="bookmark" class="ic-13"></i></button>
+          <div class="lib-thumb lib-thumb-burg"><img src="assets/images/padron-1926-no-35.webp" alt=""/></div>
+          <div class="lib-body">
+            <div class="lib-name">Padron 1926 No. 35</div>
+            <div class="lib-meta">Padron · Cigar · Full</div>
+            <div class="lib-row">
+              <span class="rating-chip">★ 4.9 your rating</span>
+              <span class="lib-qty">×3</span>
+            </div>
+            <div class="lib-foot">
+              <span class="lib-date">Last bought May 8</span>
+              <span class="lib-price">$92.00</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="product-detail.html" class="lib-card">
+          <div class="lib-thumb lib-thumb-gold"><img src="assets/images/lagavulin_16yr.jpg" alt=""/></div>
+          <div class="lib-body">
+            <div class="lib-name">Lagavulin 16yr</div>
+            <div class="lib-meta">Lagavulin · Scotch · Peated</div>
+            <div class="lib-row">
+              <span class="rating-chip">★ 5.0 your rating</span>
+              <span class="lib-qty">×2</span>
+            </div>
+            <div class="lib-foot">
+              <span class="lib-date">Last bought Apr 22</span>
+              <span class="lib-price">$118.00</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="product-detail.html" class="lib-card">
+          <div class="lib-thumb lib-thumb-burg"><img src="assets/images/ashton_vsg_torpedo.jpg" alt=""/></div>
+          <div class="lib-body">
+            <div class="lib-name">Ashton VSG Torpedo</div>
+            <div class="lib-meta">Ashton · Cigar · Medium-Full</div>
+            <div class="lib-row">
+              <span class="rating-chip">★ 4.7 your rating</span>
+              <span class="lib-qty">×5</span>
+            </div>
+            <div class="lib-foot">
+              <span class="lib-date">Last bought Apr 14</span>
+              <span class="lib-price">$74.00</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="product-detail.html" class="lib-card">
+          <div class="lib-thumb lib-thumb-gold"><img src="assets/images/glenfarclas_17yr.jpg" alt=""/></div>
+          <div class="lib-body">
+            <div class="lib-name">Glenfarclas 17yr</div>
+            <div class="lib-meta">Glenfarclas · Scotch · Sherried</div>
+            <div class="lib-row">
+              <span class="rating-chip">★ 4.8 your rating</span>
+              <span class="lib-qty">×1</span>
+            </div>
+            <div class="lib-foot">
+              <span class="lib-date">Last bought Apr 4</span>
+              <span class="lib-price">$84.00</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="product-detail.html" class="lib-card">
+          <div class="lib-thumb lib-thumb-burg"><img src="assets/images/fuente-opus.jpg" alt=""/></div>
+          <div class="lib-body">
+            <div class="lib-name">Arturo Fuente Opus X</div>
+            <div class="lib-meta">Fuente · Cigar · Full</div>
+            <div class="lib-row">
+              <span class="rating-chip">★ 4.6 your rating</span>
+              <span class="lib-qty">×2</span>
+            </div>
+            <div class="lib-foot">
+              <span class="lib-date">Last bought Mar 28</span>
+              <span class="lib-price">$45.00</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="product-detail.html" class="lib-card">
+          <div class="lib-thumb lib-thumb-gold"><img src="assets/images/macallan-18.webp" alt=""/></div>
+          <div class="lib-body">
+            <div class="lib-name">Macallan 18 Sherry Oak</div>
+            <div class="lib-meta">Macallan · Scotch · Sherried</div>
+            <div class="lib-row">
+              <span class="rating-chip">★ 4.5 your rating</span>
+              <span class="lib-qty">×1</span>
+            </div>
+            <div class="lib-foot">
+              <span class="lib-date">Last bought Mar 15</span>
+              <span class="lib-price">$280.00</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="product-detail.html" class="lib-card">
+          <div class="lib-thumb lib-thumb-burg"><img src="assets/images/my-fatherle bijou 1922.webp" alt=""/></div>
+          <div class="lib-body">
+            <div class="lib-name">My Father Le Bijou 1922</div>
+            <div class="lib-meta">My Father · Cigar · Full</div>
+            <div class="lib-row">
+              <span class="rating-chip">★ 4.4 your rating</span>
+              <span class="lib-qty">×4</span>
+            </div>
+            <div class="lib-foot">
+              <span class="lib-date">Last bought Mar 8</span>
+              <span class="lib-price">$58.00</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="product-detail.html" class="lib-card">
+          <div class="lib-thumb lib-thumb-bronze">⚙️</div>
+          <div class="lib-body">
+            <div class="lib-name">Xikar VX2 V-Cut</div>
+            <div class="lib-meta">Xikar · Accessory · Cutter</div>
+            <div class="lib-row">
+              <span class="rating-chip">★ 4.8 your rating</span>
+              <span class="lib-qty">×1</span>
+            </div>
+            <div class="lib-foot">
+              <span class="lib-date">Bought Feb 18</span>
+              <span class="lib-price">$72.00</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="product-detail.html" class="lib-card">
+          <div class="lib-thumb lib-thumb-burg"><img src="assets/images/Davidoff-Winston-Churchill-Churchill-2.jpg" alt=""/></div>
+          <div class="lib-body">
+            <div class="lib-name">Davidoff Winston Churchill</div>
+            <div class="lib-meta">Davidoff · Cigar · Medium</div>
+            <div class="lib-row">
+              <span class="rating-chip">★ 4.7 your rating</span>
+              <span class="lib-qty">×3</span>
+            </div>
+            <div class="lib-foot">
+              <span class="lib-date">Last bought Feb 2</span>
+              <span class="lib-price">$36.00</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- B2 — Want to try (wishlist) section -->
+      <div class="lib-wish-section">
+        <div class="lib-wish-head">
+          <div>
+            <div class="widget-title lib-wish-title">🔖 Want to Try</div>
+            <p class="lib-wish-sub">Things on your radar. Sterlon factors these into recommendations; staff sees aggregate demand.</p>
+          </div>
+          <span class="lib-wish-badge">6 items</span>
+        </div>
+
+        <div class="lib-grid">
+          <a href="product-detail.html" class="lib-card lib-card-wish">
+            <button class="lib-bookmark active" onclick="event.preventDefault();toggleWishlist(this,'Cohiba Behike 56')" title="Remove from wishlist" aria-label="Toggle wishlist"><i data-lucide="bookmark" class="ic-13"></i></button>
+            <div class="lib-thumb lib-thumb-burg"><img src="assets/images/Cohiba Behike 56.jpg" alt=""/></div>
+            <div class="lib-body">
+              <div class="lib-name">Cohiba Behike 56</div>
+              <div class="lib-meta">Cohiba · Cigar · Full</div>
+              <div class="lib-row">
+                <span class="rating-chip">★ 4.9 avg</span>
+                <span class="lib-wish-stock">In stock</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="product-detail.html" class="lib-card lib-card-wish">
+            <button class="lib-bookmark active" onclick="event.preventDefault();toggleWishlist(this,'Macallan 25 Sherry Oak')" title="Remove from wishlist" aria-label="Toggle wishlist"><i data-lucide="bookmark" class="ic-13"></i></button>
+            <div class="lib-thumb lib-thumb-gold"><img src="assets/images/Macallan-Sherry-Cask-25-Year-2022-Release.jpg" alt=""/></div>
+            <div class="lib-body">
+              <div class="lib-name">Macallan 25 Sherry Oak</div>
+              <div class="lib-meta">Macallan · Scotch · Sherried</div>
+              <div class="lib-row">
+                <span class="rating-chip">★ 4.9 avg</span>
+                <span class="lib-wish-stock lib-wish-stock-low">1 left</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="product-detail.html" class="lib-card lib-card-wish">
+            <button class="lib-bookmark active" onclick="event.preventDefault();toggleWishlist(this,'Pappy Van Winkle 23yr')" title="Remove from wishlist" aria-label="Toggle wishlist"><i data-lucide="bookmark" class="ic-13"></i></button>
+            <div class="lib-thumb lib-thumb-gold"><img src="assets/images/pappy_van_winkle_23yr.jpg" alt=""/></div>
+            <div class="lib-body">
+              <div class="lib-name">Pappy Van Winkle 23yr</div>
+              <div class="lib-meta">Van Winkle · Bourbon · Aged</div>
+              <div class="lib-row">
+                <span class="rating-chip">★ 5.0 avg</span>
+                <span class="lib-wish-stock lib-wish-stock-restock">↻ Restocked tonight</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="product-detail.html" class="lib-card lib-card-wish">
+            <button class="lib-bookmark active" onclick="event.preventDefault();toggleWishlist(this,'Davidoff Aniversario No. 3')" title="Remove from wishlist" aria-label="Toggle wishlist"><i data-lucide="bookmark" class="ic-13"></i></button>
+            <div class="lib-thumb lib-thumb-burg"><img src="assets/images/Davidoff-Winston-Churchill-Churchill-2.jpg" alt=""/></div>
+            <div class="lib-body">
+              <div class="lib-name">Davidoff Aniversario No. 3</div>
+              <div class="lib-meta">Davidoff · Cigar · Medium-Full</div>
+              <div class="lib-row">
+                <span class="rating-chip">★ 4.7 avg</span>
+                <span class="lib-wish-stock">In stock</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="product-detail.html" class="lib-card lib-card-wish">
+            <button class="lib-bookmark active" onclick="event.preventDefault();toggleWishlist(this,'Yamazaki 18yr')" title="Remove from wishlist" aria-label="Toggle wishlist"><i data-lucide="bookmark" class="ic-13"></i></button>
+            <div class="lib-thumb lib-thumb-gold"><img src="assets/images/yamazaki 18yr.jpg" alt=""/></div>
+            <div class="lib-body">
+              <div class="lib-name">Yamazaki 18yr</div>
+              <div class="lib-meta">Suntory · Japanese · Sherried</div>
+              <div class="lib-row">
+                <span class="rating-chip">★ 4.8 avg</span>
+                <span class="lib-wish-stock lib-wish-stock-out">Out of stock</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="product-detail.html" class="lib-card lib-card-wish">
+            <button class="lib-bookmark active" onclick="event.preventDefault();toggleWishlist(this,'Liga Privada No. 9')" title="Remove from wishlist" aria-label="Toggle wishlist"><i data-lucide="bookmark" class="ic-13"></i></button>
+            <div class="lib-thumb lib-thumb-burg"><img src="assets/images/liga-privada.jpg" alt=""/></div>
+            <div class="lib-body">
+              <div class="lib-name">Liga Privada No. 9</div>
+              <div class="lib-meta">Drew Estate · Cigar · Full</div>
+              <div class="lib-row">
+                <span class="rating-chip">★ 4.6 avg</span>
+                <span class="lib-wish-stock">In stock</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="lib-loadmore">
+        <button class="lib-loadbtn">Load older activity</button>
+      </div>
+
+    </div>
+
+    <!-- Right rail -->
+    <aside class="rail-col library-rail-col">
+
+      <div class="widget">
+        <div class="widget-title">📚 Your Collection</div>
+        <div class="lib-summary">
+          <div class="lib-srow"><span class="lib-srow-lbl">Cigars</span><div class="lib-bar"><div class="lib-fill lib-fill-cigar"></div></div><span class="lib-srow-val">32</span></div>
+          <div class="lib-srow"><span class="lib-srow-lbl">Spirits</span><div class="lib-bar"><div class="lib-fill lib-fill-spirit"></div></div><span class="lib-srow-val">12</span></div>
+          <div class="lib-srow"><span class="lib-srow-lbl">Accessories</span><div class="lib-bar"><div class="lib-fill lib-fill-acc"></div></div><span class="lib-srow-val">3</span></div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">🏷️ Top Brands</div>
+        <div class="lib-brands">
+          <div class="lib-brand"><span>Padron</span><span class="lib-brand-c">12</span></div>
+          <div class="lib-brand"><span>Lagavulin</span><span class="lib-brand-c">5</span></div>
+          <div class="lib-brand"><span>Ashton</span><span class="lib-brand-c">5</span></div>
+          <div class="lib-brand"><span>Glenfarclas</span><span class="lib-brand-c">4</span></div>
+          <div class="lib-brand"><span>Fuente</span><span class="lib-brand-c">4</span></div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">↻ Same again</div>
+        <div class="lib-reorder">
+          <div class="lib-reo">
+            <div class="lib-reo-thumb lib-thumb-burg"><img src="assets/images/padron-1926-no-35.webp" alt=""/></div>
+            <div class="lib-reo-body">
+              <div class="lib-reo-name">Padron 1926 No. 35</div>
+              <div class="lib-reo-meta">Running low · 1 left</div>
+            </div>
+            <button class="lib-reo-btn">Same again</button>
+          </div>
+          <div class="lib-reo">
+            <div class="lib-reo-thumb lib-thumb-gold"><img src="assets/images/lagavulin_16yr.jpg" alt=""/></div>
+            <div class="lib-reo-body">
+              <div class="lib-reo-name">Lagavulin 16yr</div>
+              <div class="lib-reo-meta">You loved this</div>
+            </div>
+            <button class="lib-reo-btn">Same again</button>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</main>
+
+<!-- Mobile overlay -->
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+
+<!-- Bottom nav (mobile) -->
+<nav class="bottom-nav">
+  <a href="feed.html"        class="bottom-nav-item"><i data-lucide="newspaper" class="ic-20"></i>Feed</a>
+  <a href="explore.html"     class="bottom-nav-item"><i data-lucide="search" class="ic-20"></i>Explore</a>
+  <a href="create-post.html" class="bottom-nav-item"><div class="bottom-nav-create-btn"><i data-lucide="plus" class="ic-20"></i></div></a>
+  <a href="events.html"      class="bottom-nav-item"><i data-lucide="calendar" class="ic-20"></i>Events</a>
+  <a href="profile.html"     class="bottom-nav-item"><i data-lucide="user" class="ic-20"></i>Profile</a>
+</nav>
+
+<script>
+  /* B2 — Toggle a product into/out of the wishlist. Updates the bookmark icon
+     fill state and the "Want to try" filter-tab count. Real impl writes to the
+     library entry's `wishlist` flag. */
+  function toggleWishlist(btn, name){
+    const wasActive = btn.classList.contains('active');
+    btn.classList.toggle('active');
+    btn.title = wasActive ? 'Add to Want to try' : 'Remove from wishlist';
+    // Update the filter-tab count
+    const badge = document.querySelector('.lib-wish-count');
+    if (badge) {
+      const n = document.querySelectorAll('.lib-bookmark.active').length;
+      badge.textContent = n;
+    }
+    if (window.toast) {
+      toast(wasActive
+        ? '↺ Removed ' + name + ' from your wishlist'
+        : '🔖 Added ' + name + ' to Want to try', { variant: wasActive ? '' : 'success', duration: 2800 });
+    }
+  }
+</script>
+
+</body>
+</html>

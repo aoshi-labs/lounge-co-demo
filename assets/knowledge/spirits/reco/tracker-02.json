@@ -1,0 +1,427 @@
+{
+  "version": 1,
+  "shard": "tracker-02",
+  "category": "spirit",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 8,
+  "products": [
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "advanced",
+      "id": "spi-trk-bookers",
+      "sensory": {
+        "body": 6,
+        "sweetness": 7,
+        "pepper": 6,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-BOOKERS",
+        "article": "https://www.bookersbourbon.com/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 23,
+      "spec": {
+        "proof": 125.0,
+        "abvPercent": 62.5,
+        "mash": "Corn-forward Jim Beam family mash",
+        "style": "Kentucky Straight Bourbon",
+        "origin": "Kentucky",
+        "msrp": 85
+      },
+      "name": "Booker's Bourbon",
+      "tags": [
+        {
+          "id": "vanilla",
+          "weight": 1.0
+        },
+        {
+          "id": "spice",
+          "weight": 0.95
+        },
+        {
+          "id": "oak",
+          "weight": 0.85
+        },
+        {
+          "id": "caramel",
+          "weight": 0.75
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "novice",
+      "id": "spi-trk-bt-buffalo",
+      "sensory": {
+        "body": 4,
+        "sweetness": 7,
+        "pepper": 3,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-BT-BUFFALO",
+        "article": "https://www.buffalotracedistillery.com/our-brands/buffalo-trace/buffalo-trace-bourbon/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 2,
+      "spec": {
+        "proof": 90.0,
+        "abvPercent": 45.0,
+        "mash": "Corn, rye, malted barley (BT mash bill #1)",
+        "style": "Kentucky Straight Bourbon",
+        "origin": "Kentucky",
+        "msrp": 28
+      },
+      "name": "Buffalo Trace",
+      "tags": [
+        {
+          "id": "vanilla",
+          "weight": 1.0
+        },
+        {
+          "id": "mint",
+          "weight": 0.95
+        },
+        {
+          "id": "molasses",
+          "weight": 0.85
+        },
+        {
+          "id": "brown_sugar",
+          "weight": 0.75
+        },
+        {
+          "id": "spice",
+          "weight": 0.7
+        },
+        {
+          "id": "oak",
+          "weight": 0.65
+        },
+        {
+          "id": "toffee",
+          "weight": 0.6
+        },
+        {
+          "id": "dark_fruit",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "novice",
+      "id": "spi-trk-bulleit-bbn",
+      "sensory": {
+        "body": 4,
+        "sweetness": 6,
+        "pepper": 3,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-BULLEIT-BBN",
+        "article": "https://www.bulleit.com/whiskeys/bulleit-bourbon",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 28,
+      "spec": {
+        "proof": 90.0,
+        "abvPercent": 45.0,
+        "mash": "High-rye mash",
+        "style": "High-rye bourbon",
+        "origin": "Kentucky",
+        "msrp": 32
+      },
+      "name": "Bulleit Bourbon",
+      "tags": [
+        {
+          "id": "spice",
+          "weight": 1.0
+        },
+        {
+          "id": "oak",
+          "weight": 0.95
+        },
+        {
+          "id": "maple",
+          "weight": 0.85
+        },
+        {
+          "id": "nutmeg",
+          "weight": 0.75
+        },
+        {
+          "id": "toffee",
+          "weight": 0.7
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "agave",
+      "journeyLevel": "advanced",
+      "id": "spi-trk-casa-dragones",
+      "sensory": {
+        "body": 6,
+        "sweetness": 8,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-CASA-DRAGONES",
+        "article": "https://casadragones.com/us/sipping-tequila/casa-dragones-joven/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 72,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "100% Blue Weber agave",
+        "style": "100% agave joven (blanco & añejo blend)",
+        "origin": "Jalisco, Mexico",
+        "msrp": 285
+      },
+      "name": "Casa Dragones Joven",
+      "tags": [
+        {
+          "id": "floral",
+          "weight": 1.0
+        },
+        {
+          "id": "citrus",
+          "weight": 0.95
+        },
+        {
+          "id": "agave",
+          "weight": 0.85
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.75
+        },
+        {
+          "id": "spice",
+          "weight": 0.7
+        },
+        {
+          "id": "pear",
+          "weight": 0.65
+        },
+        {
+          "id": "hazelnut",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "agave",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-casamigos-rep",
+      "sensory": {
+        "body": 5,
+        "sweetness": 8,
+        "pepper": 2,
+        "cocoa": 7,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-CASAMIGOS-REP",
+        "article": "https://www.casamigos.com/en-us/our-tequilas/reposado",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 69,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "100% Blue Weber agave",
+        "style": "100% agave tequila",
+        "origin": "Jalisco, Mexico",
+        "msrp": 55
+      },
+      "name": "Casamigos Reposado",
+      "tags": [
+        {
+          "id": "caramel",
+          "weight": 1.0
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.95
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.85
+        },
+        {
+          "id": "dried_fruit",
+          "weight": 0.75
+        },
+        {
+          "id": "spice",
+          "weight": 0.7
+        },
+        {
+          "id": "oak",
+          "weight": 0.65
+        },
+        {
+          "id": "agave",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "scotch",
+      "journeyLevel": "novice",
+      "id": "spi-trk-chivas-12",
+      "sensory": {
+        "body": 4,
+        "sweetness": 7,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-CHIVAS-12",
+        "article": "https://www.chivas.com/en-gb/collection/chivas-12",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 52,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Blended malts & grains",
+        "style": "Blended Scotch whisky",
+        "origin": "Scotland",
+        "msrp": 38
+      },
+      "name": "Chivas Regal 12",
+      "tags": [
+        {
+          "id": "herbal",
+          "weight": 1.0
+        },
+        {
+          "id": "honey",
+          "weight": 0.95
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.85
+        },
+        {
+          "id": "hazelnut",
+          "weight": 0.75
+        },
+        {
+          "id": "toffee",
+          "weight": 0.7
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "agave",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-clase-azul-rep",
+      "sensory": {
+        "body": 6,
+        "sweetness": 8,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-CLASE-AZUL-REP",
+        "article": "https://claseazul.com/clase-azul-family/clase-azul-reposado",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 19,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "100% Blue Weber agave",
+        "style": "100% agave tequila",
+        "origin": "Jalisco, Mexico",
+        "msrp": 150
+      },
+      "name": "Clase Azul Reposado",
+      "tags": [
+        {
+          "id": "vanilla",
+          "weight": 1.0
+        },
+        {
+          "id": "caramel",
+          "weight": 0.95
+        },
+        {
+          "id": "agave",
+          "weight": 0.85
+        },
+        {
+          "id": "dried_fruit",
+          "weight": 0.75
+        },
+        {
+          "id": "spice",
+          "weight": 0.7
+        },
+        {
+          "id": "oak",
+          "weight": 0.65
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "cognac",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-courvoisier-vsop",
+      "sensory": {
+        "body": 5,
+        "sweetness": 7,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-COURVOISIER-VSOP",
+        "article": "https://www.courvoisier.com/en-us/cognac-collection/vsop/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 75,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Ugni Blanc distillate",
+        "style": "Cognac VSOP",
+        "origin": "Cognac, France",
+        "msrp": 45
+      },
+      "name": "Courvoisier VSOP Exclusif",
+      "tags": [
+        {
+          "id": "cinnamon",
+          "weight": 1.0
+        },
+        {
+          "id": "ginger",
+          "weight": 0.95
+        }
+      ],
+      "category": "spirit"
+    }
+  ]
+}

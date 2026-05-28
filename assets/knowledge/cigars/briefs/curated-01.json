@@ -1,0 +1,211 @@
+{
+  "version": 1,
+  "shard": "curated-01",
+  "category": "cigar",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 9,
+  "products": [
+    {
+      "provenance": {
+        "sourceConfidence": "Habanos official",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.habanos.com/en/news/hoyo-de-monterrey-le-hoyo-de-san-juan-en/"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Scotch",
+        "wrapperRole": "Cuba wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Cuba binder supports structure and integration with the filler.",
+        "fillerRole": "Cuba filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.habanos.com/en/news/hoyo-de-monterrey-le-hoyo-de-san-juan-en/.",
+        "avoidIf": "Beginner seeking ultra-mild only, or user needs U.S. retail when cigar is island Cuban.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, Le Hoyo de San Juan, or asks for a medium woodsy reference."
+      },
+      "menuLine": "Hoyo de Monterrey Le Hoyo de San Juan · 5.875 × 46 · Corona Gorda · Medium · Cuban · — · Notes: cedar, wood, earth, leather",
+      "stickSize": "5.875 × 46 · Corona Gorda",
+      "id": "cur-01-hoyo-sanjuan"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/ratings/20939/name/e-p-carrillo-encore-majestic"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "Celebration",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Nicaragua wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/20939/name/e-p-carrillo-encore-majestic.",
+        "avoidIf": "Beginner nicotine-sensitive, opposite wrapper style, or very short time window.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, Encore, or asks for a medium-full woodsy reference."
+      },
+      "menuLine": "E.P. Carrillo Encore Majestic · 6 × 58 · Toro Gordo · Medium-Full · Nicaragua · $16 · Notes: cedar, wood, earth, leather",
+      "stickSize": "6 × 58 · Toro Gordo",
+      "id": "cur-02-epc-majestic"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/ratings/21651/name/arturo-fuente-rosado-sungrown-magnum-r-vitola-fifty-two"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "Celebration",
+        "pairingAffinity": "Cognac",
+        "wrapperRole": "Ecuador wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Dominican Republic binder supports structure and integration with the filler.",
+        "fillerRole": "Dominican Republic filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/21651/name/arturo-fuente-rosado-sungrown-magnum-r-vitola-fifty-two.",
+        "avoidIf": "Beginner nicotine-sensitive, opposite wrapper style, or very short time window.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, Rosado Sungrown, or asks for a medium-full sweet spice reference."
+      },
+      "menuLine": "Arturo Fuente Rosado Sungrown Fifty-Two · 6 × 52 · Toro · Medium-Full · Dominican · $14 · Notes: cedar, baking spice, sweet tobacco, toast",
+      "stickSize": "6 × 52 · Toro",
+      "id": "cur-03-af-rosado-52"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Habanos official",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.habanos.com/en/news/cohiba-piramides-extra-primer-figurado-en-la-gama-permanente-de-cohiba-en/"
+      },
+      "guidance": {
+        "flavorFamily": "Dessert",
+        "occasion": "Collector",
+        "pairingAffinity": "Cognac",
+        "wrapperRole": "Cuba wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Cuba binder supports structure and integration with the filler.",
+        "fillerRole": "Cuba filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.habanos.com/en/news/cohiba-piramides-extra-primer-figurado-en-la-gama-permanente-de-cohiba-en/.",
+        "avoidIf": "Beginner seeking ultra-mild only, or user needs U.S. retail when cigar is island Cuban.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, Pirámides Extra, or asks for a medium-full dessert reference.",
+        "memberBlurb": "Island Cohiba piramide - cocoa, leather, and refined Cuban luxury in a tapered format. Collector Cuban only."
+      },
+      "menuLine": "Cohiba Pirámides Extra · 6.375 × 54 · Pirámide · Medium-Full · Cuban · — · Notes: caramel, cream, oak, almond",
+      "stickSize": "6.375 × 54 · Pirámide",
+      "id": "cur-04-cohiba-pir-e"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/fuente-fuente-opusx-angel-s-share-reserva-d-chateau-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "Collector",
+        "pairingAffinity": "Cognac",
+        "wrapperRole": "Dominican Republic wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Dominican Republic binder supports structure and integration with the filler.",
+        "fillerRole": "Dominican Republic filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/fuente-fuente-opusx-angel-s-share-reserva-d-chateau-2025.",
+        "avoidIf": "Beginner nicotine-sensitive, opposite wrapper style, or very short time window.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, Fuente Fuente OpusX, or asks for a full sweet spice reference."
+      },
+      "menuLine": "Arturo Fuente Fuente Fuente OpusX · 7 × 48 · Churchill · Full · Dominican · $32 · Notes: cedar, baking spice, sweet tobacco, toast",
+      "stickSize": "7 × 48 · Churchill",
+      "id": "cur-05-opusx-rdc"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/ratings/16970/name/arturo-fuente-chateau-fuente-churchill"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Golf course",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Connecticut Shade wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Dominican Republic binder supports structure and integration with the filler.",
+        "fillerRole": "Dominican Republic filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/16970/name/arturo-fuente-chateau-fuente-churchill.",
+        "avoidIf": "Beginner nicotine-sensitive, opposite wrapper style, or very short time window.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, Chateau Fuente, or asks for a medium creamy reference."
+      },
+      "menuLine": "Arturo Fuente Chateau Fuente Double · 6¾ × 54 · Toro · Medium · Dominican · $9 · Notes: cream, cedar, nuts, toast",
+      "stickSize": "6¾ × 54 · Toro",
+      "id": "cur-06-af-dchateau"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/ratings/19863/name/flor-de-las-antillas-maduro-toro-gordo-toro"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "After dinner",
+        "pairingAffinity": "Rum",
+        "wrapperRole": "Nicaragua wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/19863/name/flor-de-las-antillas-maduro-toro-gordo-toro.",
+        "avoidIf": "Beginner nicotine-sensitive, opposite wrapper style, or very short time window.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, Flor de las Antillas, or asks for a medium-full sweet spice reference."
+      },
+      "menuLine": "Flor de las Antillas · 6½ × 58 · Toro Gordo · Medium-Full · Nicaragua · $11 · Notes: cedar, baking spice, sweet tobacco, toast",
+      "stickSize": "6½ × 58 · Toro Gordo",
+      "id": "cur-07-fdla-tg"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Habanos official",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.habanos.com/en/the-habanos-brands-academia/hoyo-de-monterrey-brand/"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Morning coffee",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Cuba wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Cuba binder supports structure and integration with the filler.",
+        "fillerRole": "Cuba filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.habanos.com/en/the-habanos-brands-academia/hoyo-de-monterrey-brand/.",
+        "avoidIf": "Beginner seeking ultra-mild only, or user needs U.S. retail when cigar is island Cuban.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, Epicure, or asks for a medium creamy reference."
+      },
+      "menuLine": "Hoyo de Monterrey Epicure Epicure No. 2 · 4½ × 50 · Petit Robusto · Medium · Cuban · — · Notes: cream, cedar, nuts, toast",
+      "stickSize": "4½ × 50 · Petit Robusto",
+      "id": "cur-08-hoyo-epicure"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/ratings/25542/name/davidoff-signature-petit-corona-petit-corona"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Celebration",
+        "pairingAffinity": "Champagne",
+        "wrapperRole": "Ecuador wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Dominican Republic binder supports structure and integration with the filler.",
+        "fillerRole": "Dominican Republic / Peru / Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/25542/name/davidoff-signature-petit-corona-petit-corona.",
+        "avoidIf": "Beginner nicotine-sensitive, opposite wrapper style, or very short time window.",
+        "whyRecommend": "Recommend when the user cites this hall-of-fame stick, Zino Platinum Crown Series, or asks for a medium creamy reference.",
+        "memberBlurb": "Davidoff Zino platinum polish - cream, toast, and champagne-friendly elegance in a chubby 54-ring."
+      },
+      "menuLine": "Davidoff Zino Platinum Crown Series · 4.625 × 54 · Robusto · Medium · Dominican · $18 · Notes: cream, cedar, nuts, toast",
+      "stickSize": "4.625 × 54 · Robusto",
+      "id": "cur-09-zino-chubby"
+    }
+  ]
+}

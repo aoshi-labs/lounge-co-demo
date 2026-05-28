@@ -1,0 +1,86 @@
+{
+  "rubric": "Flavor notes and proof must match brand or distillery official pages. Source URL in Article Source (AC); Source Confidence (W) = Manufacturer official.",
+  "skus": {
+    "SPI-CUR-PAPPY-23": {
+      "row": 2,
+      "notes": "caramel, ripe apple, cherry, oak, tobacco, chocolate",
+      "research": "Buffalo Trace / Old Rip Van Winkle official: wheated bourbon 23 years; 95.6 proof. Finish long sweet caramel with pronounced wood.",
+      "source": "Manufacturer official",
+      "article": "https://www.buffalotracedistillery.com/our-brands/van-winkle/pappy-van-winkle-23-year/"
+    },
+    "SPI-CUR-BLANTONS": {
+      "row": 3,
+      "notes": "maple, honey, vanilla, orange citrus, stewed berries, caramel, toffee, baking spice",
+      "research": "Blanton's official: single barrel Kentucky straight bourbon, 93 proof, BT mash bill #1 (not wheated). Horse-stopper presentation; cult request pour.",
+      "source": "Manufacturer official",
+      "article": "https://www.blantonsbourbon.com/"
+    },
+    "SPI-TRK-BT-BUFFALO": {
+      "row": 4,
+      "notes": "vanilla, mint, molasses, brown sugar, spice, oak, toffee, dark fruit, anise",
+      "research": "Buffalo Trace Distillery official flagship; 90 proof, mash bill #1.",
+      "source": "Manufacturer official",
+      "article": "https://www.buffalotracedistillery.com/our-brands/buffalo-trace/buffalo-trace-bourbon/"
+    },
+    "SPI-TRK-WOODFORD": {
+      "row": 5,
+      "notes": "dried fruit, mint, orange, cocoa, vanilla, tobacco spice, citrus, cinnamon, toffee, caramel, chocolate",
+      "research": "Woodford Reserve official: 90.4 proof pot-still bourbon; 200+ flavor notes per distillery.",
+      "source": "Manufacturer official",
+      "article": "https://www.woodfordreserve.com/whiskey/straight-bourbon-whiskey/"
+    },
+    "SPI-TRK-OF-1920": {
+      "row": 6,
+      "notes": "cherry preserves, caramel, dark chocolate, maple syrup, spiced nuts, malt, nougat, rye spice, cedar, toasted coconut, charred marshmallow, oak spice",
+      "research": "Old Forester official Whiskey Row; 115 proof homage to Prohibition-era barrel proof.",
+      "source": "Manufacturer official",
+      "article": "https://www.oldforester.com/bourbons/1920-prohibition-style/"
+    },
+    "SPI-TRK-EAGLE-RARE": {
+      "row": 7,
+      "notes": "toffee, orange peel, herbs, honey, leather, oak, candied almonds, cocoa",
+      "research": "Buffalo Trace Distillery official Eagle Rare 10 Year; 90 proof, mash bill #1.",
+      "source": "Manufacturer official",
+      "article": "https://www.buffalotracedistillery.com/our-brands/eagle-rare/eagle-rare-10/"
+    },
+    "SPI-TRK-WP-10": {
+      "row": 8,
+      "notes": "allspice, orange peel, anise, oak, char, caramel, vanilla, rye spice, mint, butterscotch",
+      "mash": "High-rye whiskey (Canadian distillate; bottled in Vermont)",
+      "origin": "Shoreham, Vermont",
+      "research": "WhistlePig official 10 Year Small Batch Rye; 100 proof. Nose/palate/finish per whistlepigwhiskey.com.",
+      "source": "Manufacturer official",
+      "article": "https://www.whistlepigwhiskey.com/whiskeys/10-year"
+    },
+    "SPI-TRK-SAZERAC-RYE": {
+      "row": 9,
+      "notes": "clove, vanilla, anise, pepper, candied spice, citrus, licorice",
+      "family": "Spice & citrus",
+      "research": "Sazerac Company official: 90 proof Kentucky straight rye; classic Sazerac cocktail base.",
+      "source": "Manufacturer official",
+      "article": "http://www.sazerac.com/our-brands/sazerac-rye-whiskey.html"
+    },
+    "SPI-TRK-GLENFID-12": {
+      "row": 12,
+      "notes": "pear, butterscotch, cream, malt, subtle oak, fresh fruit",
+      "family": "Pear & malt",
+      "research": "Glenfiddich official 12 Year Old; 40% ABV Speyside single malt.",
+      "source": "Manufacturer official",
+      "article": "https://www.glenfiddich.com/12-year-old"
+    },
+    "SPI-TRK-DIPLO-RE": {
+      "row": 16,
+      "notes": "orange peel, toffee, licorice, fudge, dark chocolate, dried fruit, molasses",
+      "research": "Diplomático official Reserva Exclusiva; 40% ABV Venezuelan rum blend.",
+      "source": "Manufacturer official",
+      "article": "https://www.diplomaticorums.com/"
+    },
+    "SPI-TRK-ZACAPA-23": {
+      "row": 17,
+      "notes": "caramel, vanilla, cacao, butterscotch, toasted hazelnut, toffee, dried pineapple, apricot, nutmeg, leather, tobacco, coffee, cinnamon, ginger",
+      "research": "Ron Zacapa official No. 23 Centenario; Sistema Solera 6–23 years; 40% ABV.",
+      "source": "Manufacturer official",
+      "article": "https://www.zacaparum.com/en-us/rums/zacapa-23-centenario"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "cases": [
+    {
+      "id": "foreign-brand-prepends",
+      "expectAnchored": true,
+      "anchored": true,
+      "ok": true
+    },
+    {
+      "id": "aligned-brand-no-prepend",
+      "expectAnchored": false,
+      "anchored": false,
+      "ok": true
+    },
+    {
+      "id": "generic-wrapper-no-prepend",
+      "expectAnchored": false,
+      "anchored": false,
+      "ok": true
+    }
+  ],
+  "ok": true
+}

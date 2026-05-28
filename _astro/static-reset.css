@@ -1,0 +1,96 @@
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+.chapter,
+#join-flow {
+  position: relative !important;
+  top: auto !important;
+  min-height: 100svh !important;
+  margin-top: 0 !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.chapter-inner,
+.chapter-accent,
+.chapter-label,
+.chapter-headline,
+.chapter-body,
+.chapter-number,
+.scroll-cue,
+.foundation-beats,
+.foundation-signoff,
+.sterlon-trial,
+.sterlon-watermark,
+.sterlon-example,
+.chapter-phone__frame,
+.phone-pillar-caption,
+.prelude-word,
+.hero-word {
+  opacity: 1 !important;
+  transform: none !important;
+  will-change: auto !important;
+}
+
+.hero-sequence canvas,
+.hero-sequence__fallback,
+.hero-sequence__desktop-animation,
+.phone-video,
+video {
+  display: none !important;
+}
+
+.chapter-phone__track {
+  position: relative !important;
+  top: auto !important;
+  height: auto !important;
+}
+
+#hero {
+  display: block !important;
+  min-height: 200svh !important;
+}
+
+#hero .hero-panel {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#hero .hero-panel--two-layers {
+  align-items: center;
+  text-align: center;
+}
+
+#hero .hero-panel--two-layers .chapter-logo {
+  display: block;
+  width: 96px;
+  height: auto;
+  margin: 0 auto 28px;
+  filter: drop-shadow(0 2px 16px rgba(212, 175, 55, .18));
+}
+
+#hero .hero-panel--two-layers .chapter-headline {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(2.25rem, 4.9vw, 5.25rem);
+}
+
+#hero .hero-panel--two-layers .chapter-body {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 760px;
+}

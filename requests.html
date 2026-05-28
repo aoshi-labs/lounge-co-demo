@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Requests — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       Platform-level page.
+       Silent DM Requests inbox per DM3. Unfollowed-sender DMs land here:
+       no push notification, no badge count, no lock-screen preview.
+       Member can accept (moves to main inbox + auto-follows), decline
+       (soft-blocks for 30 days), or block (platform-wide direct-contact
+       block per block-semantics (b)).
+       Tier-graduated rate limits (RL3): Free 5/day, Tier 1 25/day, Tier 2 100/day.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Your silent DM Requests inbox on Lounge & Co." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/requests.css"/>
+</head>
+<body>
+
+<div class="mobile-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Thomas H.</div><div class="sidebar-user-tier">Elite · 1,744 pts · #4</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area">
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+      <i data-lucide="menu" class="ic-16"></i>
+    </button>
+    <div class="topbar-actions"></div>
+  </header>
+
+  <div class="content-area content-area--narrow">
+
+    <h1 class="page-heading">Requests</h1>
+    <p class="page-lede">DMs from members you don't follow. Silent — no push, no badge until you open this page.</p>
+
+    <!-- Explainer banner -->
+    <div class="rq-banner">
+      <i data-lucide="info" class="rq-banner-icon ic-17"></i>
+      <div class="rq-banner-body">
+        <strong>How Requests work.</strong> Strangers can DM you, but their messages land here instead of your main inbox. You won't get notifications for them. Accept to move the conversation to your main inbox and follow the sender; Decline soft-blocks them for 30 days; Block prevents direct contact platform-wide.
+        Your tier (Cellar Club) lets strangers send up to <strong>100 requests/day</strong> to your inbox.
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="rq-tabs">
+      <button class="rq-tab active" type="button">Requests<span class="rq-count">3</span></button>
+      <button class="rq-tab" type="button">Declined<span class="rq-count">0</span></button>
+      <button class="rq-tab" type="button">Blocked<span class="rq-count">2</span></button>
+    </div>
+
+    <!-- Request list -->
+    <div class="rq-list">
+
+      <article class="rq-item">
+        <div class="rq-item-avatar">RP</div>
+        <div class="rq-item-body">
+          <div class="rq-item-head">
+            <span class="rq-item-name">Ricardo P.</span>
+            <span class="rq-item-meta">Member at Casa Verde · 2h ago</span>
+          </div>
+          <div class="rq-item-msg">Hey — I saw your rating on the Padrón 1964. Heading to Casa de Montecristo next week; any suggestions on what's worth ordering there?</div>
+          <div class="rq-item-actions">
+            <button class="rq-btn rq-btn-accept" type="button">Accept</button>
+            <button class="rq-btn" type="button">Decline</button>
+            <button class="rq-btn rq-btn-block" type="button">Block</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="rq-item">
+        <div class="rq-item-avatar">MK</div>
+        <div class="rq-item-body">
+          <div class="rq-item-head">
+            <span class="rq-item-name">Mark K.</span>
+            <span class="rq-item-meta">Member at The Saloon · yesterday</span>
+          </div>
+          <div class="rq-item-msg">Loved your post on the Highland Park 18. Mind if I ask which bottle store you sourced it from? Trying to find one for my home cellar.</div>
+          <div class="rq-item-actions">
+            <button class="rq-btn rq-btn-accept" type="button">Accept</button>
+            <button class="rq-btn" type="button">Decline</button>
+            <button class="rq-btn rq-btn-block" type="button">Block</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="rq-item">
+        <div class="rq-item-avatar">JA</div>
+        <div class="rq-item-body">
+          <div class="rq-item-head">
+            <span class="rq-item-name">James A.</span>
+            <span class="rq-item-meta">Member at Reserve & Co. · 3 days ago</span>
+          </div>
+          <div class="rq-item-msg">Are you going to October Anejo Night? I'll be there — drop me a line if you want to compare notes on the Padrón Family Reserve.</div>
+          <div class="rq-item-actions">
+            <button class="rq-btn rq-btn-accept" type="button">Accept</button>
+            <button class="rq-btn" type="button">Decline</button>
+            <button class="rq-btn rq-btn-block" type="button">Block</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</main>
+
+</body>
+</html>

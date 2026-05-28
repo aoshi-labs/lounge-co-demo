@@ -1,0 +1,100 @@
+  /* ── Page-specific layout (overrides lounge.css's generic page-content row) ── */
+  .content-row{flex:1;display:flex;align-items:flex-start;padding:24px 20px;gap:20px;max-width:1160px;width:100%;}
+  .feed-col{flex:1;min-width:0;display:flex;flex-direction:column;gap:14px;}
+  .rail-col{width:280px;flex-shrink:0;display:flex;flex-direction:column;gap:14px;}
+
+  @media(max-width:1023px){
+    .content-row{padding:16px 14px;}
+  }
+
+  /* ── Page-specific feed elements ── */
+  .fee-title{font-size:15px;font-weight:600;color:var(--text-primary);font-family:var(--font-ui);}
+
+  /* Post card */
+  .post-author{font-size:14px;font-weight:600;color:var(--text-primary);}
+  .post-meta{font-size:11px;color:var(--text-muted);margin-top:2px;}
+  .post-body{font-family:var(--font-body);font-size:14px;line-height:1.75;color:var(--text-secondary);font-style:italic;margin:12px 0;}
+  .post-actions{display:flex;align-items:center;gap:14px;border-top:1px solid var(--bg-border);padding-top:12px;margin-top:12px;}
+
+  /* Compose card */
+  .compose-card{background:var(--bg-surface);border:1px solid var(--bg-border);border-radius:16px;padding:16px 20px;display:flex;align-items:center;gap:12px;}
+  .compose-input{flex:1;background:var(--bg-elevated);border:1px solid var(--bg-border);border-radius:8px;padding:11px 14px;font-size:14px;font-family:var(--font-body);font-style:italic;color:var(--text-muted);cursor:pointer;transition:border-color .2s;}
+  .compose-input:hover{border-color:var(--gold);color:var(--text-secondary);}
+
+  /* Event embed */
+  .event-embed{background:linear-gradient(90deg,rgba(var(--bg-base-rgb), .92) 0%,rgba(var(--bg-base-rgb), .55) 60%,rgba(var(--bg-base-rgb), .35) 100%),url('../images/whiskey_on_rocks.jpg') center/cover no-repeat,var(--bg-elevated);border:1px solid var(--bg-border);border-radius:10px;padding:14px 16px;margin:10px 0;}
+
+  /* Post photo (between header avatar and body paragraph) */
+  .post-photo{width:100%;max-height:380px;object-fit:cover;border-radius:10px;border:1px solid var(--bg-border);margin:10px 0;display:block;}
+
+  /* AI chat bubble */
+  .ai-bubble{background:var(--gold-subtle);border:1px solid rgba(var(--gold-rgb), .2);border-radius:12px;padding:14px 16px;font-family:var(--font-body);font-style:italic;font-size:13px;color:var(--text-secondary);line-height:1.65;margin-bottom:12px;}
+
+  /* Bottom-nav icon margin (page-specific tweak; bottom-nav-item itself lives in lounge.css) */
+  .bottom-nav-item svg{margin-bottom:1px;}
+
+
+/* === Page-specific classes === */
+.feed-col-stack { width:100%; max-width:600px; display:flex; flex-direction:column; gap:14px; }
+.feed-filter-row { display:flex; gap:8px; overflow-x:auto; padding-bottom:2px; }
+.feed-filter-inactive { background:transparent; border-color:var(--bg-border); color:var(--text-muted); }
+.post-card-header { display:flex; align-items:center; gap:12px; margin-bottom:4px; }
+.post-author-avatar-gold { background:var(--gold); color:var(--bg-base); }
+.post-author-info { flex:1; }
+.post-author-tag { font-size:10px; padding:2px 7px; margin-left:4px; }
+.post-meta-product { color:var(--gold); }
+.post-meta-venue { color:var(--gold-dim); text-decoration:none; font-weight:600; }
+.post-meta-venue:hover { color:var(--gold); text-decoration:underline; }
+.post-more-btn { border:none; width:28px; height:28px; }
+.post-ratings-row { display:flex; gap:7px; flex-wrap:wrap; margin-bottom:12px; }
+.post-star-rating { margin-left:auto; font-family:var(--font-display); font-size:15px; color:var(--gold); }
+.post-author-avatar-official { background:var(--burg); color:var(--cream); }
+.event-embed-eyebrow { font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+.event-embed-title { font-family:var(--font-display); font-size:1.2rem; font-weight:600; color:var(--text-primary); margin-bottom:5px; }
+.event-embed-meta { font-size:12px; color:var(--text-secondary); margin-bottom:14px; }
+.event-embed-actions { display:flex; gap:10px; flex-wrap:wrap; }
+.event-embed-rsvp-btn { background:var(--burg); color:var(--cream); font-family:var(--font-ui); font-weight:600; font-size:13px; border-radius:7px; padding:8px 18px; text-decoration:none; }
+.event-embed-details-link { color:var(--text-secondary); font-family:var(--font-ui); font-size:13px; padding:8px 4px; text-decoration:none; }
+.post-actions-event { margin-top:4px; }
+.post-author-tag-elite { background:rgba(var(--tier-elite-rgb), .1); border:1px solid rgba(var(--tier-elite-rgb), .25); color:var(--tier-elite); font-size:10px; padding:2px 7px; margin-left:4px; }
+.post-meta-product-bronze { color:var(--tier-bronze); }
+.load-more-btn { background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:10px; padding:13px; font-family:var(--font-ui); font-size:13px; font-weight:500; color:var(--text-secondary); cursor:pointer; width:100%; transition:border-color .2s,color .2s; }
+.right-rail { width:268px; flex-shrink:0; display:flex; flex-direction:column; gap:14px; }
+.checkin-widget-subtitle { font-family:var(--font-body); font-style:italic; font-size:13px; color:var(--text-secondary); margin-bottom:12px; }
+.checkin-widget-cta { display:flex; align-items:center; justify-content:center; background:var(--burg); color:var(--cream); font-family:var(--font-ui); font-weight:600; font-size:13px; border-radius:8px; padding:10px; text-decoration:none; }
+.sterlon-widget-link { font-family:var(--font-ui); font-size:13px; color:var(--gold); font-weight:600; text-decoration:none; }
+.events-widget-list { display:flex; flex-direction:column; gap:10px; }
+.events-widget-row { text-decoration:none; display:flex; flex-direction:column; gap:3px; padding:10px 12px; background:var(--bg-elevated); border-radius:9px; border:1px solid var(--bg-border); transition:border-color .2s; }
+.events-widget-row-title { font-family:var(--font-display); font-size:14px; font-weight:600; color:var(--text-primary); }
+.events-widget-row-meta { font-family:var(--font-ui); font-size:11px; color:var(--text-muted); }
+.widget-view-all-link { display:block; margin-top:12px; font-family:var(--font-ui); font-size:12px; color:var(--text-muted); text-decoration:none; }
+.leaderboard-widget-list { display:flex; flex-direction:column; gap:7px; }
+.leaderboard-widget-row { display:flex; align-items:center; gap:9px; }
+.leaderboard-widget-rank-champion { font-family:var(--font-display); font-size:.95rem; font-weight:700; color:var(--gold); width:16px; flex-shrink:0; }
+.leaderboard-widget-avatar-champion { background:rgba(var(--gold-rgb), .15); color:var(--gold); border:1px solid rgba(var(--gold-rgb), .3); width:30px; height:30px; font-size:11px; }
+.leaderboard-widget-row-name { flex:1; font-size:13px; color:var(--text-primary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.leaderboard-widget-row-points { font-size:11px; color:var(--text-muted); flex-shrink:0; }
+.leaderboard-widget-rank-runner-up { font-family:var(--font-display); font-size:.95rem; font-weight:700; color:var(--tier-runner-up); width:16px; flex-shrink:0; }
+.leaderboard-widget-avatar-runner-up { background:rgba(var(--tier-runner-up-rgb), .1); color:var(--tier-runner-up); border:1px solid rgba(var(--tier-runner-up-rgb), .25); width:30px; height:30px; font-size:11px; }
+.leaderboard-widget-rank-bronze { font-family:var(--font-display); font-size:.95rem; font-weight:700; color:var(--tier-bronze); width:16px; flex-shrink:0; }
+.leaderboard-widget-avatar-bronze { background:rgba(var(--tier-bronze-rgb), .1); color:var(--tier-bronze); border:1px solid rgba(var(--tier-bronze-rgb), .25); width:30px; height:30px; font-size:11px; }
+.leaderboard-widget-spacer { text-align:center; padding:2px 0; font-size:11px; color:var(--text-muted); letter-spacing:.15em; }
+.leaderboard-widget-you-card { background:var(--bg-elevated); border:1px solid rgba(var(--tier-elite-rgb), .3); border-radius:9px; padding:10px 10px 8px; }
+.leaderboard-widget-you-row { display:flex; align-items:center; gap:9px; margin-bottom:9px; }
+.leaderboard-widget-rank-you { font-family:var(--font-display); font-size:.95rem; font-weight:700; color:var(--tier-elite); width:16px; flex-shrink:0; }
+.leaderboard-widget-avatar-you { background:rgba(var(--tier-elite-rgb), .2); color:var(--tier-elite); border:1px solid rgba(var(--tier-elite-rgb), .35); width:30px; height:30px; font-size:11px; }
+.leaderboard-widget-you-label { font-size:13px; font-weight:600; color:var(--tier-elite); line-height:1.2; }
+.leaderboard-widget-you-name { font-size:10px; color:var(--text-muted); }
+.leaderboard-widget-you-points { font-size:12px; font-weight:600; color:var(--tier-elite); flex-shrink:0; }
+.leaderboard-widget-progress { margin-bottom:6px; }
+.leaderboard-widget-progress-labels { display:flex; justify-content:space-between; margin-bottom:5px; }
+.leaderboard-widget-progress-target { font-size:10px; font-weight:700; letter-spacing:.05em; color:var(--text-muted); text-transform:uppercase; }
+.leaderboard-widget-progress-needed { font-size:10px; font-weight:700; color:var(--tier-bronze); }
+.leaderboard-widget-progress-track { height:5px; background:var(--bg-border); border-radius:99px; overflow:hidden; }
+.leaderboard-widget-progress-fill { height:100%; width:88%; background:linear-gradient(to right,var(--tier-elite),var(--tier-bronze)); border-radius:99px; transition:width .4s ease; }
+.leaderboard-widget-progress-endpoints { display:flex; justify-content:space-between; margin-top:4px; }
+.leaderboard-widget-progress-current { font-size:9px; color:var(--text-muted); }
+.leaderboard-widget-progress-target-value { font-size:9px; color:var(--tier-bronze); }
+
+/* .fee-newpost-btn rule promoted to lounge.css so post-detail and any
+   future page can reuse the same burgundy pill without redeclaring. */

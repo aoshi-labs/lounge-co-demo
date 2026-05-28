@@ -1,0 +1,142 @@
+{
+  "version": 1,
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "sourceCounts": {
+    "csv": 81,
+    "tsv": 171,
+    "jsonRows": 180,
+    "corrections": 46,
+    "smokerFacing": 84,
+    "mergedSkus": 184,
+    "dedupedDisplayNames": 2
+  },
+  "fieldCoverage": {
+    "wrapperRole": 183,
+    "binderRole": 183,
+    "fillerRole": 183,
+    "bestFor": 183,
+    "avoidIf": 183,
+    "whyRecommend": 183,
+    "sourceConfidence": 178,
+    "dataGrade": 178,
+    "articleSource": 178,
+    "imageUrl": 0,
+    "beginnerSafe": 183,
+    "memberBlurb": 42,
+    "_totalRows": 184
+  },
+  "shards": [
+    {
+      "path": "cigars/sources/levels.json",
+      "source": "levels",
+      "rowCount": 8
+    },
+    {
+      "path": "cigars/sources/curated-01.json",
+      "source": "curated",
+      "part": 1,
+      "rowCount": 13
+    },
+    {
+      "path": "cigars/sources/curated-02.json",
+      "source": "curated",
+      "part": 2,
+      "rowCount": 13
+    },
+    {
+      "path": "cigars/sources/curated-03.json",
+      "source": "curated",
+      "part": 3,
+      "rowCount": 13
+    },
+    {
+      "path": "cigars/sources/curated-04.json",
+      "source": "curated",
+      "part": 4,
+      "rowCount": 13
+    },
+    {
+      "path": "cigars/sources/curated-05.json",
+      "source": "curated",
+      "part": 5,
+      "rowCount": 1
+    },
+    {
+      "path": "cigars/sources/ca24-top25-01.json",
+      "source": "ca24-top25",
+      "part": 1,
+      "rowCount": 13
+    },
+    {
+      "path": "cigars/sources/ca24-top25-02.json",
+      "source": "ca24-top25",
+      "part": 2,
+      "rowCount": 12
+    },
+    {
+      "path": "cigars/sources/ca24-bestbuy-01.json",
+      "source": "ca24-bestbuy",
+      "part": 1,
+      "rowCount": 13
+    },
+    {
+      "path": "cigars/sources/ca24-bestbuy-02.json",
+      "source": "ca24-bestbuy",
+      "part": 2,
+      "rowCount": 6
+    },
+    {
+      "path": "cigars/sources/ca25-top25-01.json",
+      "source": "ca25-top25",
+      "part": 1,
+      "rowCount": 13
+    },
+    {
+      "path": "cigars/sources/ca25-top25-02.json",
+      "source": "ca25-top25",
+      "part": 2,
+      "rowCount": 12
+    },
+    {
+      "path": "cigars/sources/ca25-bestbuy-01.json",
+      "source": "ca25-bestbuy",
+      "part": 1,
+      "rowCount": 13
+    },
+    {
+      "path": "cigars/sources/ca25-bestbuy-02.json",
+      "source": "ca25-bestbuy",
+      "part": 2,
+      "rowCount": 11
+    },
+    {
+      "path": "cigars/sources/transcript-01.json",
+      "source": "transcript",
+      "part": 1,
+      "rowCount": 13
+    },
+    {
+      "path": "cigars/sources/transcript-02.json",
+      "source": "transcript",
+      "part": 2,
+      "rowCount": 13
+    },
+    {
+      "path": "cigars/sources/transcript-03.json",
+      "source": "transcript",
+      "part": 3,
+      "rowCount": 1
+    },
+    {
+      "path": "cigars/sources/other.json",
+      "source": "other",
+      "rowCount": 3
+    }
+  ],
+  "validation": {
+    "errorCount": 0,
+    "warningCount": 20,
+    "errors": []
+  }
+}

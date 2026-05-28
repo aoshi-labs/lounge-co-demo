@@ -1,0 +1,157 @@
+  .event-row{background:var(--bg-surface);border:1px solid var(--bg-border);border-radius:14px;padding:18px 22px;display:flex;align-items:center;gap:20px;}
+
+
+/* === Page-specific styles === */
+.admin-events-row-info{ flex:1; min-width:0; }
+.admin-events-section-title{ font-size:15px; font-weight:600; color:var(--text-primary); }
+.admin-events-topbar-stats { font-size:11px; color:var(--text-muted); }
+.admin-events-create-btn { background:var(--burg); color:var(--cream); border:none; border-radius:8px; padding:8px 14px; font-family:var(--font-ui); font-size:13px; font-weight:600; cursor:pointer; }
+.admin-events-page-frame { padding:24px 24px 40px; max-width:1100px; width:100%; display:flex; flex-direction:column; gap:14px; }
+.admin-events-filter-row { display:flex; gap:6px; }
+.admin-events-date-block-burg { text-align:center; background:rgba(var(--burg-rgb), .18); border:1px solid rgba(var(--burg-rgb), .3); border-radius:10px; padding:10px 14px; flex-shrink:0; }
+.admin-events-date-month-burg { font-family:var(--font-display); font-size:.75rem; font-weight:600; color:var(--burg); letter-spacing:.08em; text-transform:uppercase; }
+.admin-events-date-day { font-family:var(--font-display); font-size:1.8rem; font-weight:700; color:var(--text-primary); line-height:.9; margin-top:4px; }
+.admin-events-row-header { display:flex; align-items:center; gap:8px; margin-bottom:4px; }
+.admin-events-row-title { font-family:var(--font-display); font-size:1.2rem; font-weight:600; color:var(--text-primary); }
+.admin-events-status-published { background:rgba(var(--tier-elite-rgb), .15); color:var(--tier-elite); border-radius:99px; padding:2px 8px; font-size:10px; font-weight:700; }
+.admin-events-row-meta { font-size:12px; color:var(--text-muted); }
+.admin-events-rsvp-block { text-align:right; flex-shrink:0; }
+.admin-events-rsvp-num { font-family:var(--font-display); font-size:1.6rem; font-weight:700; color:var(--text-primary); line-height:1; }
+.admin-events-rsvp-cap { font-size:1rem; color:var(--text-muted); }
+.admin-events-rsvp-label { font-size:11px; color:var(--text-muted); margin-top:2px; }
+.admin-events-actions { display:flex; gap:6px; flex-shrink:0; }
+.admin-events-date-block-gold { text-align:center; background:rgba(var(--gold-rgb), .15); border:1px solid rgba(var(--gold-rgb), .3); border-radius:10px; padding:10px 14px; flex-shrink:0; }
+.admin-events-date-month-gold { font-family:var(--font-display); font-size:.75rem; font-weight:600; color:var(--gold); letter-spacing:.08em; text-transform:uppercase; }
+.is-draft { border-style:dashed; opacity:.85; }
+.admin-events-date-block-muted { text-align:center; background:var(--bg-elevated); border:1px solid var(--bg-border); border-radius:10px; padding:10px 14px; flex-shrink:0; }
+.admin-events-date-month-muted { font-family:var(--font-display); font-size:.75rem; font-weight:600; color:var(--text-muted); letter-spacing:.08em; text-transform:uppercase; }
+.admin-events-date-day-muted { font-family:var(--font-display); font-size:1.8rem; font-weight:700; color:var(--text-secondary); line-height:.9; margin-top:4px; }
+.admin-events-status-draft { background:var(--bg-elevated); color:var(--text-muted); border:1px solid var(--bg-border); border-radius:99px; padding:2px 8px; font-size:10px; font-weight:700; }
+.admin-events-rsvp-draft { text-align:right; flex-shrink:0; color:var(--text-muted); font-size:12px; }
+.admin-events-publish-btn { background:var(--burg); color:var(--cream); border:none; border-radius:7px; padding:6px 12px; font-family:var(--font-ui); font-size:11px; font-weight:700; cursor:pointer; }
+
+/* === A15 — Event fill-rate + promote-in-concierge === */
+.adm-fill-bar {
+  width: 90px;
+  height: 4px;
+  background: var(--bg-elevated);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-top: 8px;
+  margin-left: auto;
+}
+.adm-fill-bar-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--burg), var(--gold));
+  border-radius: 99px;
+}
+.adm-fill-bar-low { background: var(--burg); }
+.adm-fill-pct {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+.adm-fill-pct-warn { color: var(--burg); font-weight: 600; }
+
+.adm-promote-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  border-radius: 7px;
+  padding: 6px 10px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .15s, transform .15s;
+}
+.adm-promote-btn:hover { background: var(--gold-subtle); }
+.adm-promote-btn-urgent { border-color: var(--burg); color: var(--burg); }
+.adm-promote-btn-urgent:hover { background: rgba(var(--burg-rgb), .10); }
+.adm-promote-btn-on {
+  background: var(--gold);
+  color: var(--bg-base);
+  border-color: var(--gold);
+}
+.adm-promote-btn-on:hover { background: var(--gold-dim); }
+
+/* Mobile (≤767px): the event-row jams 4 cells (date · info · rsvp ·
+   actions) onto one flex line and overflows. Restack as a 2-col grid
+   with named areas — date+info on the header row, then rsvp and
+   actions stretching full width below. */
+@media (max-width: 767px) {
+  .event-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "date     info"
+      "rsvp     rsvp"
+      "actions  actions";
+    column-gap: 14px;
+    row-gap: 14px;
+    padding: 16px;
+    align-items: start;
+  }
+  .event-row > .admin-events-date-block-burg,
+  .event-row > .admin-events-date-block-gold,
+  .event-row > .admin-events-date-block-muted { grid-area: date; }
+  .event-row > .admin-events-row-info { grid-area: info; min-width: 0; }
+  .event-row > .admin-events-rsvp-block,
+  .event-row > .admin-events-rsvp-draft { grid-area: rsvp; }
+  .event-row > .admin-events-actions { grid-area: actions; }
+
+  /* RSVP block — was right-aligned vertical stack. Spread the number,
+     label, and fill-bar across one horizontal row so it doesn't waste
+     vertical space and reads as a single line of context. */
+  .admin-events-rsvp-block {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 14px;
+    align-items: center;
+    text-align: left;
+    padding-top: 4px;
+    border-top: 1px solid var(--bg-border);
+  }
+  .admin-events-rsvp-block > .admin-events-rsvp-num { grid-row: 1 / 3; align-self: center; }
+  .admin-events-rsvp-block > .admin-events-rsvp-label { display: none; }
+  .admin-events-rsvp-block > .adm-fill-bar {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0;
+    align-self: end;
+  }
+  .admin-events-rsvp-block > .adm-fill-pct {
+    margin-top: 2px;
+    align-self: start;
+  }
+  /* Draft row's admin-events-rsvp-draft ("— / 40") — left-align under the info, drop the
+     top border so it doesn't look like a misplaced rsvp block. */
+  .admin-events-rsvp-draft {
+    text-align: left;
+    padding-top: 4px;
+    border-top: 1px solid var(--bg-border);
+  }
+
+  /* Actions row — left-aligned, wrap if needed so the Promote pill +
+     icon buttons don't horizontally clip on narrow phones. */
+  .admin-events-actions {
+    flex-wrap: wrap;
+    padding-top: 4px;
+    border-top: 1px solid var(--bg-border);
+  }
+  .adm-promote-btn { margin-right: auto; }
+}
+
+/* iPhone-SE (≤639px): tighten heading classes. .admin-events-date-day/.admin-events-rsvp-num/.admin-events-date-day-muted here
+   are page-title classes on admin-events; the same names mean different
+   things (badges, layout classes, labels) in the other admin pages, so the
+   rule lives here next to the local definitions. */
+@media (max-width: 639px) {
+  .admin-events-date-day { font-size: 1.3rem; line-height: 1.15; }
+  .admin-events-rsvp-num { font-size: 1.3rem; line-height: 1.15; }
+  .admin-events-date-day-muted { font-size: 1.3rem; line-height: 1.15; }
+}

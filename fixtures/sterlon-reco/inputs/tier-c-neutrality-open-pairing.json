@@ -1,0 +1,11 @@
+{
+  "op": "openPairingProbe",
+  "prompts": [
+    "what should I smoke tonight",
+    "surprise me with a pairing",
+    "something new from the menu",
+    "evening recommendation",
+    "help me pick a cigar and pour",
+    "what pairs well tonight"
+  ]
+}

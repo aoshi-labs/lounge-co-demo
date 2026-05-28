@@ -1,0 +1,17 @@
+{
+  "op": "proseCatalogStrip",
+  "cases": [
+    {
+      "id": "strips-pipe-schema",
+      "input": "Earthy notes of cedar and cocoa. $12 | Size: 5 × 50 · Robusto | Wrapper: Nicaragua | Binder: Nicaragua | MSRP: $12 | Occasion: Morning",
+      "expectContains": "Earthy notes of cedar and cocoa",
+      "expectExcludes": ["Wrapper:", "MSRP:", "Size:"]
+    },
+    {
+      "id": "strips-ops-why",
+      "input": "The drier pour keeps the smoke crisp. Recommend for value seekers, humidor fillers, or something good under $7 requests - cit.",
+      "expectContains": "The drier pour keeps the smoke crisp",
+      "expectExcludes": ["value seekers", "humidor"]
+    }
+  ]
+}

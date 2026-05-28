@@ -1,0 +1,10 @@
+{
+  "op": "ctxScoreParity",
+  "opts": {
+    "cigar": "Padron 1926 No. 35",
+    "spirit": "Pappy Van Winkle 23yr",
+    "food": "Dark Chocolate Flight",
+    "journeyLevel": "advanced",
+    "pairingMode": "best"
+  }
+}

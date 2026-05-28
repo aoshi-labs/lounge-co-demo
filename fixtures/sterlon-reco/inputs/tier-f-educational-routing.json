@@ -1,0 +1,19 @@
+{
+  "op": "educationalRouting",
+  "cases": [
+    {
+      "id": "connecticut-espresso-versus-maduro-bourbon",
+      "text": "Explain the difference between pairing a Connecticut cigar with espresso versus pairing a Maduro with bourbon.",
+      "expectExpertise": true,
+      "expectComparisonContinuity": false,
+      "expectEducational": true
+    },
+    {
+      "id": "session-side-by-side",
+      "text": "Show me both side by side from this session",
+      "expectExpertise": false,
+      "expectComparisonContinuity": true,
+      "expectEducational": false
+    }
+  ]
+}

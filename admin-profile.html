@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Profile — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="View your lounge's public-facing profile as members see it." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="My Profile — Lounge & Co." />
+  <meta property="og:description" content="View your lounge's public-facing profile as members see it." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="My Profile — Lounge & Co." />
+  <meta name="twitter:description" content="View your lounge's public-facing profile as members see it." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/admin-profile.css"/>
+</head>
+<body>
+
+<nav class="sidebar admin" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Owner Console</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-owner"><img src="assets/images/gerald-o.jpg" alt=""/></div>
+      <div class="sidebar-user-info">
+        <div class="sidebar-user-name">Gerald Owens</div>
+        <div class="sidebar-user-tier">Owner · Lounge & Co.</div>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Overview</div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Dashboard</a>
+    <a href="admin-analytics.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Analytics</a>
+    <div class="nav-section-label">Manage</div>
+    <a href="admin-members.html" class="nav-item"><i data-lucide="users" class="ic-17"></i>Members</a>
+    <a href="admin-catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="admin-orders.html" class="nav-item"><i data-lucide="receipt-text" class="ic-17"></i>Requests<span class="notif-dot">3</span></a>
+    <a href="admin-events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-settings.html" class="nav-item"><i data-lucide="settings" class="ic-17"></i>Lounge Settings</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="chevron-left" class="ic-17"></i>Back to Member View</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area admin">
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu"><i data-lucide="menu" class="ic-16"></i></button>
+    <span class="topbar-title">My Profile</span>
+    <div class="topbar-actions">
+    </div>
+  </header>
+
+  <div class="content-row admin-profile-frame">
+
+    <!-- ── CENTER: Profile ── -->
+    <div class="admin-profile-stack">
+
+      <!-- Banner -->
+      <div class="profile-banner profile-banner-admin"></div>
+
+      <!-- Header card -->
+      <div class="profile-header admin-profile-header-card">
+        <div class="admin-profile-header-top-row">
+          <div class="profile-avatar-wrap">
+            <div class="profile-avatar profile-avatar-admin"><img src="assets/images/gerald-o.jpg" alt=""/></div>
+            <div class="tier-badge-ring admin-badge-ring" title="Owner">
+              <i data-lucide="shield" class="ic-12"></i>
+            </div>
+          </div>
+          <div class="admin-profile-header-actions">
+            <a href="admin-settings.html" class="admin-profile-edit-btn">
+              <i data-lucide="edit-2" class="ic-14"></i>Edit Profile
+            </a>
+          </div>
+        </div>
+
+        <div class="admin-profile-identity">
+          <div class="admin-profile-name-row">
+            <h1 class="admin-profile-name">Gerald Owens</h1>
+            <span class="tag tag-burg">Owner</span>
+          </div>
+          <div class="admin-profile-handle">@gerald · Owner since June 2019</div>
+          <p class="admin-profile-bio">Steward of Lounge & Co. since 2019. Building a community where craft, ritual, and conversation matter most. Personal favorites: Padron Anniversary 1964 and Macallan 25.</p>
+          <div class="admin-profile-location">
+            <i data-lucide="map-pin" class="ic-13"></i>Atlanta, GA · Lounge & Co.
+          </div>
+        </div>
+
+        <div class="admin-profile-stats-row">
+          <div class="stat-pill"><span class="stat-num">247</span><span class="stat-lbl">Members</span></div>
+          <div class="stat-pill"><span class="stat-num">48</span><span class="stat-lbl">Events Hosted</span></div>
+          <div class="stat-pill"><span class="stat-num admin-profile-stat-revenue">$8.4k</span><span class="stat-lbl">Monthly</span></div>
+          <div class="stat-pill"><span class="stat-num admin-profile-stat-rating">4.9★</span><span class="stat-lbl">Rating</span></div>
+          <div class="stat-pill"><span class="stat-num">7 yr</span><span class="stat-lbl">Tenure</span></div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="profile-tabs admin-profile-tabs-bar">
+        <button class="profile-tab active" onclick="switchTab(this,'overview')">Overview</button>
+        <button class="profile-tab" onclick="switchTab(this,'activity')">Activity</button>
+        <button class="profile-tab" onclick="switchTab(this,'team')">Team <span class="admin-profile-tab-count">4</span></button>
+        <button class="profile-tab" onclick="switchTab(this,'about')">About</button>
+      </div>
+
+      <div id="tab-content" class="admin-profile-tab-body">
+
+        <!-- OVERVIEW (default) -->
+        <div id="tab-overview">
+          <div class="admin-profile-overview-grid">
+            <div class="admin-profile-overview-card">
+              <div class="admin-profile-overview-card-label">Lounge Status</div>
+              <div class="admin-profile-overview-card-value">Active <span class="tag tag-burg admin-profile-plan-tag">Premium Plan</span></div>
+              <div class="admin-profile-overview-card-meta">All systems operational · 99.98% uptime</div>
+            </div>
+            <div class="admin-profile-overview-card">
+              <div class="admin-profile-overview-card-label">Monthly Growth</div>
+              <div class="admin-profile-overview-card-value admin-profile-value-positive">+14 members</div>
+              <div class="admin-profile-overview-card-meta">+5.8% over last month</div>
+            </div>
+            <div class="admin-profile-overview-card">
+              <div class="admin-profile-overview-card-label">Top Member</div>
+              <div class="admin-profile-overview-card-value">Marcus R. <span class="admin-profile-champion-label">Champion #1</span></div>
+              <div class="admin-profile-overview-card-meta">2,140 pts · $1,820 lifetime spend</div>
+            </div>
+            <div class="admin-profile-overview-card">
+              <div class="admin-profile-overview-card-label">Next Event</div>
+              <div class="admin-profile-overview-card-value">Scotch &amp; Smoke Night</div>
+              <div class="admin-profile-overview-card-meta">Sat May 18 · 14 of 30 spots taken</div>
+            </div>
+          </div>
+
+          <div class="admin-profile-approvals">
+            <div class="admin-profile-approvals-title">Pending Approvals</div>
+            <div class="admin-profile-approvals-list">
+              <div class="admin-profile-approval-row">
+                <div class="avatar admin-profile-approval-avatar-burg">JD</div>
+                <div class="admin-profile-row-info">
+                  <div class="sidebar-user-name">John D.</div>
+                  <div class="admin-profile-row-meta">Applied yesterday · referred by Marcus R.</div>
+                </div>
+                <button class="admin-profile-approve-btn">Approve</button>
+              </div>
+              <div class="admin-profile-approval-row">
+                <div class="avatar admin-profile-approval-avatar-burg-alt">SK</div>
+                <div class="admin-profile-row-info">
+                  <div class="sidebar-user-name">Sarah K.</div>
+                  <div class="admin-profile-row-meta">Applied 2 days ago · ID verified</div>
+                </div>
+                <button class="admin-profile-approve-btn">Approve</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACTIVITY -->
+        <div id="tab-activity" class="admin-profile-tab-pane">
+          <div class="admin-profile-list-stack">
+            <div class="admin-profile-activity-row">
+              <div class="admin-profile-activity-icon admin-profile-activity-icon-burg"><i data-lucide="check-circle" class="ic-14"></i></div>
+              <div class="admin-profile-row-info">
+                <div class="sidebar-user-name">Approved Marcus R. for Champion tier</div>
+                <div class="admin-profile-row-meta">2 hours ago</div>
+              </div>
+            </div>
+            <div class="admin-profile-activity-row">
+              <div class="admin-profile-activity-icon admin-profile-activity-icon-gold"><i data-lucide="calendar" class="ic-14"></i></div>
+              <div class="admin-profile-row-info">
+                <div class="sidebar-user-name">Created event: Scotch &amp; Smoke Night</div>
+                <div class="admin-profile-row-meta">Yesterday · 14 RSVPs already</div>
+              </div>
+            </div>
+            <div class="admin-profile-activity-row">
+              <div class="admin-profile-activity-icon admin-profile-activity-icon-elite"><i data-lucide="message-square" class="ic-14"></i></div>
+              <div class="admin-profile-row-info">
+                <div class="sidebar-user-name">Posted as Lounge & Co.: "New Davidoff Aniversario shipment arrived…"</div>
+                <div class="admin-profile-row-meta">3 days ago · 41 likes, 12 comments</div>
+              </div>
+            </div>
+            <div class="admin-profile-activity-row">
+              <div class="admin-profile-activity-icon admin-profile-activity-icon-burg"><i data-lucide="package" class="ic-14"></i></div>
+              <div class="admin-profile-row-info">
+                <div class="sidebar-user-name">Added 6 new products to catalog</div>
+                <div class="admin-profile-row-meta">5 days ago</div>
+              </div>
+            </div>
+            <div class="admin-profile-activity-row">
+              <div class="admin-profile-activity-icon admin-profile-activity-icon-gold"><i data-lucide="users" class="ic-14"></i></div>
+              <div class="admin-profile-row-info">
+                <div class="sidebar-user-name">Approved 3 new members</div>
+                <div class="admin-profile-row-meta">1 week ago</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TEAM -->
+        <div id="tab-team" class="admin-profile-tab-pane">
+          <div class="admin-profile-section-label">Staff &amp; Roles</div>
+          <div class="admin-profile-list-stack">
+            <div class="admin-profile-approval-row">
+              <div class="avatar admin-profile-approval-avatar-burg"><img src="assets/images/gerald-o.jpg" alt=""/></div>
+              <div class="admin-profile-row-info">
+                <div class="sidebar-user-name">Gerald Owens</div>
+                <div class="admin-profile-row-meta">Owner · Founder · Atlanta, GA</div>
+              </div>
+              <span class="tag tag-burg">Owner</span>
+            </div>
+            <div class="admin-profile-approval-row">
+              <div class="avatar admin-profile-team-avatar-gold"><img src="assets/images/maya-v.jpg" alt=""/></div>
+              <div class="admin-profile-row-info">
+                <div class="sidebar-user-name">Maya V.</div>
+                <div class="admin-profile-row-meta">General Manager · Cigar curator</div>
+              </div>
+              <span class="tag tag-gold">Manager</span>
+            </div>
+            <div class="admin-profile-approval-row">
+              <div class="avatar admin-profile-team-avatar-elite"><img src="assets/images/david-h.jpg" alt=""/></div>
+              <div class="admin-profile-row-info">
+                <div class="sidebar-user-name">David H.</div>
+                <div class="admin-profile-row-meta">Spirits Sommelier · Tasting events</div>
+              </div>
+              <span class="tag tag-gold">Staff</span>
+            </div>
+            <div class="admin-profile-approval-row">
+              <div class="avatar admin-profile-team-avatar-bronze">RA</div>
+              <div class="admin-profile-row-info">
+                <div class="sidebar-user-name">Renee A.</div>
+                <div class="admin-profile-row-meta">Front of house · Member onboarding</div>
+              </div>
+              <span class="tag tag-gold">Staff</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ABOUT -->
+        <div id="tab-about" class="admin-profile-tab-pane">
+          <div class="admin-profile-about-stack">
+            <div class="admin-profile-overview-card">
+              <div class="admin-profile-overview-card-label">Owner Bio</div>
+              <p class="admin-profile-about-text">Gerald opened Lounge & Co. in June 2019 after twenty years in hospitality and a lifelong love of fine tobacco. He believes a lounge is a refuge — a quiet hour for serious conversation and an honest pour. He personally curates the cigar program and hosts every Saturday's pairing flight.</p>
+            </div>
+            <div class="admin-profile-overview-card">
+              <div class="admin-profile-overview-card-label">Lounge Philosophy</div>
+              <p class="admin-profile-about-text">"Members first. Craft over hype. Quiet over loud. Lounge & Co. is a place where people who care about the details come together, leave their phones in the drawer, and talk to each other again."</p>
+            </div>
+            <div class="admin-profile-overview-card">
+              <div class="admin-profile-overview-card-label">Personal Favorites</div>
+              <div class="admin-profile-favorites-list">
+                <div class="admin-profile-favorite-row"><span>Padron Anniversary 1964</span><span class="admin-profile-favorite-note">Cigar of the year, every year</span></div>
+                <div class="admin-profile-favorite-row"><span>Macallan 25 Sherry Oak</span><span class="admin-profile-favorite-note">Sunday close-out pour</span></div>
+                <div class="admin-profile-favorite-row"><span>Davidoff Winston Churchill</span><span class="admin-profile-favorite-note">When the conversation matters</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── RIGHT RAIL ── -->
+    <aside class="rail-col admin-profile-rail">
+
+      <!-- Quick actions -->
+      <div class="widget">
+        <div class="widget-title admin-profile-widget-title-burg">⚡ Quick Actions</div>
+        <div class="admin-profile-quick-actions">
+          <a href="admin-orders.html" class="admin-profile-quick-action-link">
+            <span>Pending requests</span><span class="admin-profile-quick-action-count-burg">3</span>
+          </a>
+          <a href="admin-members.html" class="admin-profile-quick-action-link">
+            <span>Member approvals</span><span class="admin-profile-quick-action-count-burg">2</span>
+          </a>
+          <a href="admin-events.html" class="admin-profile-quick-action-link">
+            <span>Drafts</span><span class="admin-profile-quick-action-count-muted">1</span>
+          </a>
+          <a href="admin-catalog.html" class="admin-profile-quick-action-link">
+            <span>Low-stock items</span><span class="admin-profile-quick-action-count-burg">2</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Lounge health -->
+      <div class="widget">
+        <div class="widget-title admin-profile-widget-title-burg">📊 Lounge Health</div>
+        <div class="admin-profile-health-row">
+          <div class="admin-profile-health-row-head">
+            <span class="admin-profile-health-label">Member retention</span>
+            <span class="admin-profile-health-value">94%</span>
+          </div>
+          <div class="admin-profile-health-track"><div class="admin-profile-health-bar admin-profile-health-bar-94"></div></div>
+        </div>
+        <div class="admin-profile-health-row">
+          <div class="admin-profile-health-row-head">
+            <span class="admin-profile-health-label">Event fill rate</span>
+            <span class="admin-profile-health-value">87%</span>
+          </div>
+          <div class="admin-profile-health-track"><div class="admin-profile-health-bar admin-profile-health-bar-87"></div></div>
+        </div>
+        <div class="admin-profile-health-row">
+          <div class="admin-profile-health-row-head">
+            <span class="admin-profile-health-label">Request fulfillment</span>
+            <span class="admin-profile-health-value">99%</span>
+          </div>
+          <div class="admin-profile-health-track"><div class="admin-profile-health-bar admin-profile-health-bar-99"></div></div>
+        </div>
+        <a href="admin-analytics.html" class="admin-profile-analytics-link">Full analytics →</a>
+      </div>
+
+      <!-- Subscription -->
+      <div class="widget">
+        <div class="widget-title admin-profile-widget-title-burg">💼 Subscription</div>
+        <div class="admin-profile-subscription-plan">Premium · $249/mo</div>
+        <div class="admin-profile-subscription-meta">Renews June 1 · Next invoice $249</div>
+        <div class="admin-profile-subscription-actions">
+          <a href="admin-settings.html" class="admin-profile-subscription-btn">Manage plan</a>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</main>
+
+<!-- Mobile overlay -->
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+
+<script>
+  function switchTab(btn, name) {
+    document.querySelectorAll('.profile-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    ['overview','activity','team','about'].forEach(t => {
+      const el = document.getElementById('tab-' + t);
+      if (el) el.style.display = (t === name ? 'block' : 'none');
+    });
+  }
+
+  /* Carousel arrows for the stats row (.admin-profile-stats-row). Same shared pattern used
+     across the app — wraps the track in a .pro-lib-carousel +
+     .apr-stats-carousel container and injects left / right chevron
+     buttons with right-lenient / left-strict visibility logic. */
+  (function setupAprStatsArrows(){
+    const track = document.querySelector('.admin-profile-stats-row');
+    if (!track || track.dataset.carouselWired === '1') return;
+    track.dataset.carouselWired = '1';
+
+    const wrap = document.createElement('div');
+    wrap.className = 'pro-lib-carousel apr-stats-carousel';
+    track.parentNode.insertBefore(wrap, track);
+    wrap.appendChild(track);
+
+    const mkArrow = (dir, glyph, label) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'pro-lib-arrow pro-lib-arrow-' + dir;
+      b.setAttribute('aria-label', label);
+      b.innerHTML = glyph;
+      return b;
+    };
+    const left  = mkArrow('left',  '‹', 'Scroll left');
+    const right = mkArrow('right', '›', 'Scroll right');
+    wrap.appendChild(left);
+    wrap.appendChild(right);
+
+    const step = (mult) => {
+      track.scrollBy({ left: track.clientWidth * 0.7 * mult, behavior: 'smooth' });
+    };
+    left.addEventListener('click',  () => step(-1));
+    right.addEventListener('click', () => step( 1));
+
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      const x = track.scrollLeft;
+      const overflow = max > 4;
+      const atEnd = x >= max - 1;
+      left.classList.toggle('pro-lib-arrow-hidden',  !(overflow && atEnd));
+      right.classList.toggle('pro-lib-arrow-hidden', !(overflow && !atEnd));
+    };
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    setTimeout(update, 80);
+    setTimeout(update, 500);
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "op": "recommendationTurnContract",
+  "promptText": "What should I pour with my Padron?",
+  "anchorCigar": "Padron 1926 No. 35",
+  "categoryFocus": null,
+  "session": {}
+}

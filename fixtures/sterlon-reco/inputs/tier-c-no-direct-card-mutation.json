@@ -1,0 +1,7 @@
+{
+  "op": "noDirectCardMutation",
+  "parentPromptText": "recommend a pairing",
+  "parentJourneyLevel": "advanced",
+  "refinementAxes": ["lighter", "bolder", "budget", "adventure"],
+  "description": "P0.6: parent RecommendationTurn must remain frozen and unchanged after any refinement; each refinement produces a distinct new turn"
+}

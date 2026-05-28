@@ -1,0 +1,29 @@
+{
+  "cases": [
+    {
+      "id": "pass-84-wildcard-lighter",
+      "expect": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "pass-90-swap-wildcard-softer",
+      "expect": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "fail-fresh-recommend-long",
+      "expect": false,
+      "actual": false,
+      "ok": true
+    },
+    {
+      "id": "fail-comparative-curiosity",
+      "expect": false,
+      "actual": false,
+      "ok": true
+    }
+  ],
+  "ok": true
+}

@@ -1,0 +1,17 @@
+{
+  "op": "validateCards",
+  "cards": [
+    {
+      "label": "Not A Label",
+      "tier": "Ultra",
+      "cigar": "Off Menu Cigar",
+      "spirit": "Lagavulin",
+      "food": "Pizza",
+      "why": [
+        "  a   very   long   why   line   that   should   be   truncated   because   it   exceeds   ninety two characters easily for testing "
+      ]
+    }
+  ],
+  "promptText": "luxury collector rare peat",
+  "options": { "journeyLevel": "novice", "preserveAnchoredCigar": true }
+}

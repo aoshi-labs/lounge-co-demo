@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "shard": "tracker-02",
+  "category": "spirit",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 8,
+  "products": [
+    {
+      "menuLine": "Booker's Bourbon · Kentucky · $85 · 125 proof (62.5% ABV) · Journey: Advanced · Notes: caramel, vanilla",
+      "guidance": {
+        "bestFor": "Experienced bourbon drinker, bold cigar, wants proof.",
+        "avoidIf": "Beginner or low-proof preference only.",
+        "whyRecommend": "Recommend when the member wants cask-strength bourbon for a maduro — caramel, oak, and serious heat.",
+        "occasion": "After dinner",
+        "flavorFamily": "Caramel & heat",
+        "pairingAffinity": "Maduro / full-bodied",
+        "memberBlurb": "Booker's — uncut Kentucky strength with caramel and peanut brittle over oak. Built for a full-bodied cigar when you want the glass to match the stick."
+      },
+      "id": "spi-trk-bookers",
+      "provenance": {
+        "beginnerSafe": "No",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Buffalo Trace Kentucky Straight Bourbon · Kentucky · $28 · 90 proof (45% ABV) · Journey: Novice · Notes: vanilla, caramel",
+      "guidance": {
+        "bestFor": "Bourbon beginner, first pour, user wants approachable sweetness without heat.",
+        "avoidIf": "User wants peat, high-proof spice bomb, or allocated wheated collector only.",
+        "whyRecommend": "Recommend when the member is new to bourbon or asks what to start with — vanilla, caramel, gentle oak.",
+        "occasion": "Everyday pour",
+        "flavorFamily": "Vanilla & caramel",
+        "pairingAffinity": "Connecticut / mild cigar",
+        "memberBlurb": "Buffalo Trace — vanilla, mint, and molasses over brown sugar, toffee, and dark fruit. The distillery's official teaching pour for bourbon newcomers."
+      },
+      "id": "spi-trk-bt-buffalo",
+      "provenance": {
+        "beginnerSafe": "Yes",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Bulleit Kentucky Straight Bourbon · Kentucky · $32 · 90 proof (45.0% ABV) · Journey: Novice · Notes: dried fruit, vanilla",
+      "guidance": {
+        "bestFor": "High-rye curious, classic cocktail, recognizable shelf pour.",
+        "avoidIf": "User wants wheated softness only.",
+        "whyRecommend": "Recommend as approachable high-rye bourbon — dried fruit and spice without Booker's heat.",
+        "occasion": "Everyday pour",
+        "flavorFamily": "Dried fruit & spice",
+        "pairingAffinity": "Medium cigar",
+        "memberBlurb": "Bulleit Bourbon — high-rye spice and dried fruit in a pour every bar stocks. Easy to recommend when someone just says bourbon."
+      },
+      "id": "spi-trk-bulleit-bbn",
+      "provenance": {
+        "beginnerSafe": "Yes",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Casa Dragones Joven · Jalisco, Mexico · $285 · 80 proof (40.0% ABV) · Notes: citrus, pepper",
+      "guidance": {
+        "bestFor": "Ultra-luxury tequila, celebration, member names Casa Dragones.",
+        "avoidIf": "Budget under $100.",
+        "whyRecommend": "Recommend when the member wants top-shelf tequila beyond 1942 — crisp, floral, luxury agave.",
+        "occasion": "Celebration",
+        "flavorFamily": "Crisp luxury",
+        "pairingAffinity": "Refined medium cigar",
+        "memberBlurb": "Casa Dragones Joven — crisp luxury agave with floral lift. The tequila pour for members who already own Clase Azul and want what insiders drink."
+      },
+      "id": "spi-trk-casa-dragones",
+      "provenance": {
+        "beginnerSafe": "No",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Casamigos Reposado · Jalisco, Mexico · $55 · 80 proof (40.0% ABV) · Notes: vanilla, caramel",
+      "guidance": {
+        "bestFor": "Celebrity tequila ask, lounge demo, gift pour.",
+        "avoidIf": "Agave purist who rejects sweet profiles.",
+        "whyRecommend": "Recommend when the member names Casamigos — vanilla, caramel, and easy sweetness.",
+        "occasion": "Celebration",
+        "flavorFamily": "Vanilla & caramel",
+        "pairingAffinity": "Medium cigar",
+        "memberBlurb": "Casamigos Reposado — vanilla and caramel agave in the bottle everyone saw on Instagram. Have a good answer ready."
+      },
+      "id": "spi-trk-casamigos-rep",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Chivas Regal 12 Year · Scotland · $38 · 80 proof (40.0% ABV) · Notes: honey, apple",
+      "guidance": {
+        "bestFor": "Blend beginner, mild cigar, classic brand ask.",
+        "avoidIf": "Single-malt snob only.",
+        "whyRecommend": "Recommend when the member wants an easy blended Scotch — honey, apple, and hazelnut.",
+        "occasion": "Everyday pour",
+        "flavorFamily": "Honey & apple",
+        "pairingAffinity": "Mild / medium cigar",
+        "memberBlurb": "Chivas 12 — honey and apple in a blend your father probably drank. Approachable prestige that still works beside a cigar."
+      },
+      "id": "spi-trk-chivas-12",
+      "provenance": {
+        "beginnerSafe": "Yes",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Clase Azul Reposado · Jalisco, Mexico · $150 · 80 proof (40.0% ABV) · Notes: vanilla, caramel",
+      "guidance": {
+        "bestFor": "Tequila prestige, gift pour, member wants recognizable luxury agave.",
+        "avoidIf": "User wants blanco-only or mezcal smoke.",
+        "whyRecommend": "Recommend when visual luxury and tequila recognition matter — vanilla, caramel, iconic ceramic.",
+        "occasion": "Celebration",
+        "flavorFamily": "Vanilla & sweet agave",
+        "pairingAffinity": "Medium cigar",
+        "memberBlurb": "Clase Azul Reposado — vanilla and caramel agave in the ceramic bottle everyone photographs. Luxury tequila as theater."
+      },
+      "id": "spi-trk-clase-azul-rep",
+      "provenance": {
+        "beginnerSafe": "No",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Courvoisier VSOP Exclusif · Cognac, France · $45 · 80 proof (40.0% ABV) · Notes: apricot, vanilla",
+      "guidance": {
+        "bestFor": "VSOP cognac, classic brand, after-dinner cigar.",
+        "avoidIf": "User wants Scotch only.",
+        "whyRecommend": "Recommend when approachable cognac is needed — apricot, vanilla, and oak.",
+        "occasion": "After dinner",
+        "flavorFamily": "Stone fruit",
+        "pairingAffinity": "Medium cigar",
+        "memberBlurb": "Courvoisier VSOP — apricot and vanilla in a classic French VSOP. Cognac entry before you reach for Hennessy XO."
+      },
+      "id": "spi-trk-courvoisier-vsop",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    }
+  ]
+}

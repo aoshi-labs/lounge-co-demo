@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Age Verification — Lounge & Co.</title>
+
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: gate page must never rank. Social previews still useful
+       (e.g. shared invite links), so OG + Twitter cards stay populated.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Verify your age to join Lounge & Co. — the network for 21+ premium cigar and spirits connoisseurs. Verification is handled by Token of Trust." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://loungeco.lounge.app/age-verify" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Lounge & Co. — Members 21+" />
+  <meta property="og:description" content="The network for 21+ cigar and spirits connoisseurs. Verify your age to join." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lounge & Co. — Members 21+" />
+  <meta name="twitter:description" content="The network for 21+ cigar and spirits connoisseurs." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/age-verify.css"/>
+</head>
+<body>
+
+
+
+<!-- ════════════════════════════════════════════════════════
+     NAVIGATION — desktop links + mobile hamburger drawer
+════════════════════════════════════════════════════════ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="landing.html" class="av-nav-logo">
+      <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+      <div>
+        <div class="logo-text-name" data-lounge-name>Lounge & Co.</div>
+        <div class="logo-text-sub">Connoisseur Network</div>
+      </div>
+    </a>
+    <div id="desktop-links" class="av-nav-desktop">
+      <div class="dynamic-nav-links av-nav-dynamic"></div>
+      <div class="av-nav-divider"></div>
+      <a href="login.html" class="nav-link av-nav-signin">Sign In</a>
+      <a href="age-verify.html" class="nav-cta">Join Now</a>
+    </div>
+    <div class="av-nav-right">
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <i data-lucide="menu" class="ic-22"></i>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="mobile-menu av-mobile-menu">
+    <div class="dynamic-nav-links mobile-nav av-mobile-dynamic"></div>
+    <div class="av-mobile-divider"></div>
+    <a href="login.html" class="nav-link av-mobile-link">Sign In</a>
+    <a href="age-verify.html" class="nav-cta av-mobile-cta">Join Now</a>
+  </div>
+</nav>
+
+  <div class="card">
+
+    <!-- Brand -->
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <h1 id="lounge-name">Lounge & Co.</h1>
+
+    <div class="ornament">
+      <svg width="10" height="10" viewBox="0 0 12 12" fill="var(--gold-dim)"><polygon points="6,0 7.5,4.5 12,4.5 8.25,7.5 9.75,12 6,9 2.25,12 3.75,7.5 0,4.5 4.5,4.5"/></svg>
+    </div>
+
+    <p class="sub">Lounge &amp; Co. is the network for premium cigar and spirits connoisseurs.<br>You must be <strong class="age-verify-requirement-emphasis">21 years of age or older</strong> to join.</p>
+
+    <!-- Error (kept for backend-stage failures — Token of Trust rejection, etc.) -->
+    <div class="error-msg" id="error-msg">We couldn't verify your age. Please try again or contact support.</div>
+
+    <!-- Platform-wide messaging — F4 acceptance criteria. Post-2026-05-17
+         pivot: TOT verification is platform-scoped from day 1 and the cost
+         is absorbed by Lounge & Co. as a CAC line item (not bundled into
+         venue tier overages). One verification, every participating venue. -->
+    <div class="tot-promise" role="note">
+      <i data-lucide="shield-check" class="ic-16 tot-promise-icon" aria-hidden="true"></i>
+      <span>Verify once. Good for every participating venue you join on the Lounge &amp; Co. network — you won't need to verify again.</span>
+    </div>
+
+    <!-- Verification method buttons — replaces the DOB form per F4 (BUSINESS_MODEL.md §0.2). -->
+    <div class="tot-actions">
+      <button type="button" class="btn-burg tot-btn-primary" onclick="verifyWithTOT('id')">
+        <i data-lucide="id-card" class="ic-18" aria-hidden="true"></i>
+        Verify with ID
+      </button>
+      <button type="button" class="btn-secondary tot-btn-secondary" onclick="verifyWithTOT('selfie-id')">
+        <i data-lucide="scan-face" class="ic-18" aria-hidden="true"></i>
+        Verify with Selfie + ID
+      </button>
+    </div>
+
+    <p class="tot-disclosure">
+      Verification is handled by <a href="https://www.tokenoftrust.com/" target="_blank" rel="noopener">Token of Trust</a>, a U.S.-based age-verification service disclosed as a sub-processor in our <a href="#">Member Terms of Service</a> and <a href="#">Privacy Policy</a>. Your government ID is processed by Token of Trust; Lounge &amp; Co. only stores the verification status (whether you passed), never the ID itself.
+    </p>
+
+    <p class="legal">
+      By continuing you confirm you are 21+ and agree to our
+      <a href="#">Member Terms of Service</a>, <a href="#">Privacy Policy</a>, and <a href="#">Acceptable Use Policy</a>.
+    </p>
+
+    <a href="landing.html" class="back-link">← Back to Lounge &amp; Co.</a>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════════════
+       Token of Trust verification modal — PLACEHOLDER UX
+       Production swap: this entire flow is replaced by the TOT JS SDK
+       (token-of-trust.com → Verification → "Embed"), which mounts into
+       a container div and posts the result via postMessage. The placeholder
+       below exists so design reviews + member walkthroughs see the steps
+       in the right order without a TOT sandbox account.
+       ════════════════════════════════════════════════════════════════════ -->
+  <div id="tot-modal" class="tot-modal" role="dialog" aria-modal="true" aria-labelledby="tot-modal-title" aria-hidden="true">
+    <div class="tot-modal-card">
+      <div class="tot-modal-head">
+        <div class="tot-modal-brand">
+          <i data-lucide="shield-check" class="ic-18 tot-modal-brand-icon" aria-hidden="true"></i>
+          <div>
+            <div class="tot-modal-brand-line1">Powered by Token of Trust</div>
+            <div class="tot-modal-brand-line2" id="tot-modal-title">Age Verification</div>
+          </div>
+        </div>
+        <button type="button" class="tot-modal-close" onclick="closeTOTModal()" aria-label="Close">
+          <i data-lucide="x" class="ic-18" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <!-- Step indicator -->
+      <div class="tot-steps" id="tot-steps">
+        <div class="tot-step tot-step-active" data-step="front"><span class="tot-step-num">1</span><span class="tot-step-label">ID Front</span></div>
+        <div class="tot-step" data-step="back"><span class="tot-step-num">2</span><span class="tot-step-label">ID Back</span></div>
+        <div class="tot-step tot-step-selfie" data-step="selfie"><span class="tot-step-num">3</span><span class="tot-step-label">Selfie</span></div>
+        <div class="tot-step" data-step="processing"><span class="tot-step-num">4</span><span class="tot-step-label">Review</span></div>
+      </div>
+
+      <!-- Step body -->
+      <div class="tot-modal-body" id="tot-modal-body">
+
+        <!-- Step: ID front -->
+        <div class="tot-pane" data-pane="front">
+          <div class="tot-pane-art tot-pane-art-id">
+            <i data-lucide="credit-card" class="ic-48" aria-hidden="true"></i>
+          </div>
+          <h3 class="tot-pane-title">Upload the front of your ID</h3>
+          <p class="tot-pane-sub">Driver's license, state ID, or passport. Place it on a flat surface — all four corners visible.</p>
+          <button type="button" class="btn-burg tot-pane-cta" onclick="advanceTOTStep()">
+            <i data-lucide="camera" class="ic-16" aria-hidden="true"></i>
+            Take a photo
+          </button>
+          <button type="button" class="tot-pane-link" onclick="advanceTOTStep()">Or upload a photo</button>
+        </div>
+
+        <!-- Step: ID back -->
+        <div class="tot-pane" data-pane="back" hidden>
+          <div class="tot-pane-art tot-pane-art-id">
+            <i data-lucide="credit-card" class="ic-48 tot-pane-art-flipped" aria-hidden="true"></i>
+          </div>
+          <h3 class="tot-pane-title">Now the back</h3>
+          <p class="tot-pane-sub">Keep the barcode and magnetic strip in frame. Skip this if your ID is single-sided (e.g. passport).</p>
+          <button type="button" class="btn-burg tot-pane-cta" onclick="advanceTOTStep()">
+            <i data-lucide="camera" class="ic-16" aria-hidden="true"></i>
+            Take a photo
+          </button>
+          <button type="button" class="tot-pane-link" onclick="advanceTOTStep()">My ID is single-sided</button>
+        </div>
+
+        <!-- Step: selfie (only shown for selfie-id method) -->
+        <div class="tot-pane" data-pane="selfie" hidden>
+          <div class="tot-pane-art tot-pane-art-selfie">
+            <i data-lucide="user-circle" class="ic-48" aria-hidden="true"></i>
+          </div>
+          <h3 class="tot-pane-title">Take a selfie</h3>
+          <p class="tot-pane-sub">Token of Trust matches your face to the photo on your ID. Bright, even light helps — no sunglasses or hats.</p>
+          <button type="button" class="btn-burg tot-pane-cta" onclick="advanceTOTStep()">
+            <i data-lucide="camera" class="ic-16" aria-hidden="true"></i>
+            Start camera
+          </button>
+        </div>
+
+        <!-- Step: processing -->
+        <div class="tot-pane" data-pane="processing" hidden>
+          <div class="tot-pane-art tot-pane-art-processing">
+            <div class="tot-spinner" aria-hidden="true"></div>
+          </div>
+          <h3 class="tot-pane-title">Reviewing your documents</h3>
+          <p class="tot-pane-sub">Token of Trust is checking your ID. This usually takes about 15 seconds.</p>
+          <div class="tot-progress"><div class="tot-progress-bar" id="tot-progress-bar"></div></div>
+        </div>
+
+        <!-- Step: success -->
+        <div class="tot-pane" data-pane="success" hidden>
+          <div class="tot-pane-art tot-pane-art-success">
+            <i data-lucide="check" class="ic-48" aria-hidden="true"></i>
+          </div>
+          <h3 class="tot-pane-title">You're verified</h3>
+          <p class="tot-pane-sub">Welcome to Lounge &amp; Co. This verification is good for every participating venue on the network — you won't need to do this again.</p>
+          <button type="button" class="btn-burg tot-pane-cta" onclick="finishTOT()">Continue to sign in</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* ════════════════════════════════════════════════════════════════════
+       Token of Trust integration — BUILD SPEC for backend phase
+
+       This page currently runs a *placeholder* flow that simulates the
+       Token of Trust verification UX (tokenoftrust.com). Production wiring:
+
+       1. **Bootstrap.** Load the TOT JS SDK from their CDN with the
+          venue-agnostic platform API key (Lounge & Co. holds the contract,
+          not the venues — §0.2 lock). The SDK is account-scoped, not
+          venue-scoped, so members re-use the same verification across
+          workspaces (this is the load-bearing platform-identity behavior
+          for F5 / Hybrid pivot).
+
+       2. **Mount.** Replace the inner contents of #tot-modal-body with the
+          TOT widget container per their embed docs. The widget owns the
+          step machine (front → back → selfie? → processing → result).
+          Drop the .tot-pane markup; keep .tot-modal-head + .tot-steps as
+          a frame.
+
+       3. **Callback.** TOT posts result via postMessage on completion:
+            { status: 'verified' | 'failed' | 'pending_review', token: '...' }
+          On 'verified', POST { tot_token } to our /api/age-verification
+          endpoint. Backend stores ONLY:
+            - user_id
+            - verified_at timestamp
+            - tot_reference_id (opaque, for audit / re-verification on demand)
+          We never store the ID image, the DOB, the address, or any PII
+          beyond pass/fail + the TOT reference. This is the load-bearing
+          piece for the disclosure copy below the buttons + for the §0.9
+          CCPA service-provider classification.
+
+       4. **Persist.** Backend sets a platform-level `age_verified=true`
+          attribute on the member record. On successful venue join, the
+          venue inherits this fact via the auth layer — venues don't get a
+          copy of the TOT data, just the boolean. This is what makes
+          "verify once, use everywhere" work without leaking platform-level
+          identity data into venue scope (load-bearing for Option C
+          service-provider posture per BUSINESS_MODEL §0.9).
+
+       5. **Expiry / re-verify.** TOT verifications expire (default 1 year).
+          On expiry, redirect back to this page on next session start.
+          Venues can also force re-verification via an admin action; that
+          triggers TOT's re-verification flow without re-uploading the ID
+          (TOT keeps the reference; we just call /reverify on their API).
+
+       6. **Failure modes to handle.**
+          - TOT API down: queue verification, allow temporary entry with
+            a banner "Verifying in the background"
+          - TOT returns 'pending_review' (manual review): block entry,
+            show "We're reviewing your ID — usually under 15 minutes"
+          - TOT returns 'failed': show #error-msg, offer support contact
+            (do NOT show why it failed — TOT recommends generic copy to
+            prevent gaming)
+
+       7. **Cost accounting.** TOT verification cost
+          (~$1.22 per verify) is absorbed by Lounge & Co. as a CAC line
+          item — NOT bundled into venue tiers (per BUSINESS_MODEL §0.2).
+          Implementation: every verification posts to /api/age-verification
+          as a platform-scoped event; finance reports roll up against the
+          platform-CAC ledger, not against a venue. Venues never see TOT
+          spend in their admin console. Veriff or Yoti maintained as
+          documented failover.
+       ════════════════════════════════════════════════════════════════════ */
+
+    window.LOUNGE = { name:"Lounge & Co.", initials:"L&C" };
+    document.getElementById('lounge-name').textContent = LOUNGE.name;
+    // logo-initials element no longer exists on this page (favicon image only)
+    const initialsEl = document.getElementById('logo-initials');
+    if (initialsEl) initialsEl.textContent = LOUNGE.initials;
+
+    /* Pre-fill email from landing page query param */
+    const params = new URLSearchParams(location.search);
+    if (params.get('email')) sessionStorage.setItem('lounge-pending-email', params.get('email'));
+
+    /* ───── Placeholder TOT flow ─────
+       State machine for the demo. Production replaces this entire block
+       with the TOT SDK (see build-spec above). */
+    let _totMethod = null; // 'id' | 'selfie-id'
+
+    function verifyWithTOT(method) {
+      _totMethod = method;
+      const modal = document.getElementById('tot-modal');
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      if (window.Lounge && Lounge.modal) Lounge.modal.open(modal);
+      // Selfie step is hidden for ID-only method
+      document.querySelectorAll('.tot-step-selfie').forEach(el => {
+        el.style.display = method === 'selfie-id' ? '' : 'none';
+      });
+      showTOTPane('front');
+      setTOTStep('front');
+    }
+
+    function closeTOTModal() {
+      const modal = document.getElementById('tot-modal');
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      if (window.Lounge && Lounge.modal) Lounge.modal.close(modal);
+      _totMethod = null;
+    }
+
+    /* Step order. The selfie pane is skipped when method=id. The processing
+       pane runs a fake 2.5s timer before flipping to success. */
+    function paneOrder() {
+      const base = ['front', 'back'];
+      if (_totMethod === 'selfie-id') base.push('selfie');
+      base.push('processing', 'success');
+      return base;
+    }
+
+    function advanceTOTStep() {
+      const order = paneOrder();
+      const current = currentTOTPane();
+      const idx = order.indexOf(current);
+      const next = order[idx + 1];
+      if (!next) return;
+      showTOTPane(next);
+      setTOTStep(next);
+      if (next === 'processing') {
+        const bar = document.getElementById('tot-progress-bar');
+        bar.style.width = '0%';
+        // Demo-only: animate the progress bar then flip to success. Production
+        // replaces this with the TOT postMessage callback.
+        requestAnimationFrame(() => { bar.style.width = '100%'; });
+        setTimeout(() => {
+          showTOTPane('success');
+          setTOTStep('processing'); // keep last step marked active in indicator
+        }, 2500);
+      }
+    }
+
+    function showTOTPane(name) {
+      document.querySelectorAll('.tot-pane').forEach(p => {
+        p.hidden = p.getAttribute('data-pane') !== name;
+      });
+    }
+
+    function currentTOTPane() {
+      const visible = Array.from(document.querySelectorAll('.tot-pane')).find(p => !p.hidden);
+      return visible ? visible.getAttribute('data-pane') : null;
+    }
+
+    function setTOTStep(name) {
+      // Mark the indicator: everything up to and including `name` is active.
+      const order = paneOrder().filter(p => p !== 'success'); // success isn't a step in the indicator
+      const idx = order.indexOf(name);
+      document.querySelectorAll('.tot-step').forEach(s => {
+        const sName = s.getAttribute('data-step');
+        const sIdx = order.indexOf(sName);
+        s.classList.toggle('tot-step-active', sIdx <= idx && sIdx !== -1);
+      });
+    }
+
+    function finishTOT() {
+      // Persist platform-level age-verified flag (matches the §0.2 lock).
+      // Other pages can guard on sessionStorage 'lounge-age-verified'.
+      // Backend phase: this should also write age_verified=true on the
+      // member record server-side, so the flag survives across devices.
+      sessionStorage.setItem('lounge-age-verified', '1');
+      // New members continue to onboarding; existing members go to sign-in.
+      // Backend phase: branch on whether the member account already exists.
+      window.location.href = 'member-onboarding.html';
+    }
+
+    /* Close modal on backdrop click or Escape */
+    document.getElementById('tot-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'tot-modal') closeTOTModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const modal = document.getElementById('tot-modal');
+        if (modal.classList.contains('open')) closeTOTModal();
+      }
+    });
+
+    // Platform nav links ( Lounge & Co. consumer-brand chrome,
+    // not per-venue). Mirrors landing.html navigation.
+    const LOUNGE_NAV = [
+      { label: "Discover", href: "discover-venues.html" },
+      { label: "Sterlon",  href: "sterlon.html" },
+      { label: "Pricing",  href: "member-billing.html" },
+    ];
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.dynamic-nav-links').forEach(container => {
+        LOUNGE_NAV.forEach(link => {
+          const a = document.createElement('a');
+          a.href = link.href; a.textContent = link.label; a.className = 'nav-link';
+          if (container.classList.contains('mobile-nav')) a.style.fontSize = '16px';
+          container.appendChild(a);
+        });
+      });
+    });
+
+    function toggleMenu() {
+      document.getElementById('mobile-menu').classList.toggle('open');
+    }
+
+  </script>
+</body>
+</html>

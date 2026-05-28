@@ -1,0 +1,80 @@
+
+
+/* === Page-specific styles === */
+.topbar-back-link { display:flex; align-items:center; gap:6px; color:var(--text-secondary); text-decoration:none; font-size:13px; font-weight:500; transition:color .2s; }
+.topbar-user-avatar-elite { background:var(--tier-elite); color:var(--tier-elite-ink); width:34px; height:34px; font-size:12px; }
+.event-detail-page-frame { display:flex; justify-content:center; padding:24px 20px; gap:20px; }
+.event-detail-page-stack { width:100%; max-width:680px; display:flex; flex-direction:column; gap:14px; }
+.event-detail-hero { background:linear-gradient(135deg,rgba(var(--burg-rgb), .3),rgba(var(--gold-rgb), .12),var(--bg-surface)); border:1px solid var(--bg-border); border-radius:16px; overflow:hidden; }
+.event-detail-hero-banner { height:200px; background:linear-gradient(135deg,rgba(var(--burg-rgb), .55),rgba(60,30,40,.45),rgba(20,12,6,.65)),url('../images/whiskey_on_rocks.jpg') center/cover no-repeat; position:relative; display:flex; align-items:flex-end; padding:24px; }
+.event-detail-featured-badge { position:absolute; top:18px; left:18px; background:rgba(20,12,6,.7); backdrop-filter:blur(4px); border:1px solid rgba(var(--gold-rgb), .3); border-radius:8px; padding:8px 12px; display:flex; align-items:center; gap:6px; }
+.event-detail-featured-label { font-size:10px; font-weight:700; color:var(--gold); text-transform:uppercase; letter-spacing:.08em; }
+.event-detail-hero-emoji { font-size:5rem; opacity:.4; }
+.event-detail-hero-body { padding:24px 28px; }
+.event-detail-hero-title { font-family:var(--font-display); font-size:2.4rem; font-weight:700; color:var(--text-primary); line-height:1.05; margin-bottom:8px; }
+.event-detail-hero-description { font-family:var(--font-body); font-style:italic; font-size:15px; color:var(--text-secondary); line-height:1.7; margin-bottom:18px; }
+.event-detail-facts-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; margin-bottom:18px; }
+.event-detail-fact-tile { padding:12px 14px; background:var(--bg-elevated); border:1px solid var(--bg-border); border-radius:10px; }
+.event-detail-fact-label { font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:4px; }
+.event-detail-fact-value { font-size:13px; font-weight:600; color:var(--text-primary); }
+.event-detail-fact-subvalue { font-size:11px; color:var(--text-muted); margin-top:1px; }
+.event-detail-fact-subvalue-gold { font-size:11px; color:var(--gold); margin-top:1px; }
+.event-detail-fact-value-gold { font-size:13px; font-weight:600; color:var(--gold); }
+.event-detail-rsvp-primary { width:100%; background:var(--burg); color:var(--cream); border:none; border-radius:10px; padding:14px; font-family:var(--font-ui); font-size:15px; font-weight:700; cursor:pointer; transition:background .15s; }
+.event-detail-section-card { background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:14px; padding:22px 24px; }
+.event-detail-section-title { font-family:var(--font-display); font-size:1.4rem; font-weight:600; color:var(--text-primary); margin-bottom:14px; }
+.event-detail-schedule-list { display:flex; flex-direction:column; gap:14px; }
+.event-detail-schedule-row { display:flex; gap:14px; }
+.event-detail-schedule-time { background:var(--gold-subtle); border:1px solid rgba(var(--gold-rgb), .2); border-radius:8px; padding:6px 10px; font-family:var(--font-display); font-size:.9rem; font-weight:600; color:var(--gold); min-width:70px; text-align:center; flex-shrink:0; }
+.event-detail-item-name { font-size:14px; font-weight:600; color:var(--text-primary); }
+.event-detail-schedule-description { font-family:var(--font-body); font-style:italic; font-size:13px; color:var(--text-secondary); margin-top:3px; line-height:1.6; }
+.event-attendees-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+.event-attendees-title { font-family:var(--font-display); font-size:1.4rem; font-weight:600; color:var(--text-primary); }
+.event-attendees-count { font-size:12px; color:var(--text-muted); }
+.event-attendees-list { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px; }
+.event-attendee-chip { display:flex; align-items:center; gap:10px; padding:8px; background:var(--bg-elevated); border-radius:9px; }
+.event-attendee-avatar-champion { background:var(--gold); color:var(--bg-base); }
+.event-attendee-info { min-width:0; }
+.event-attendee-name { font-size:12px; font-weight:600; color:var(--text-primary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.event-attendee-tier-champion { font-size:10px; color:var(--gold); }
+.event-attendee-avatar-runner-up { background:var(--tier-runner-up); color:var(--tier-runner-up-ink); }
+.event-attendee-tier-elite { font-size:10px; color:var(--tier-elite); }
+.event-attendee-avatar-bronze { background:var(--tier-bronze); color:var(--tier-bronze-ink); }
+.event-attendee-tier-bronze { font-size:10px; color:var(--tier-bronze); }
+.event-attendee-avatar-member { background:var(--avatar-brown); color:var(--avatar-brown-ink); }
+.event-attendee-tier-member { font-size:10px; color:var(--text-muted); }
+.event-attendee-avatar-member-alt { background:var(--avatar-blue); color:var(--avatar-blue-ink); }
+.event-attendee-overflow-chip { display:flex; align-items:center; gap:10px; padding:8px; background:var(--bg-elevated); border-radius:9px; border:1px dashed var(--bg-border); }
+.event-attendee-avatar-overflow { background:var(--bg-base); color:var(--text-muted); }
+.event-detail-meta-muted { font-size:11px; color:var(--text-muted); }
+.event-detail-rail { width:268px; flex-shrink:0; display:flex; flex-direction:column; gap:14px; }
+.event-rail-rsvp-card { background:linear-gradient(135deg,rgba(var(--burg-rgb), .18),var(--bg-surface)); }
+.event-rail-date-block { text-align:center; padding:6px 0; margin-bottom:14px; }
+.event-rail-weekday { font-family:var(--font-display); font-size:.85rem; font-weight:600; color:var(--gold); letter-spacing:.1em; text-transform:uppercase; }
+.event-rail-day { font-family:var(--font-display); font-size:2.6rem; font-weight:700; color:var(--text-primary); line-height:.9; margin-top:4px; }
+.event-rail-time { font-size:12px; color:var(--text-secondary); margin-top:6px; }
+.event-rail-capacity { margin-bottom:14px; }
+.event-rail-capacity-row { display:flex; justify-content:space-between; font-size:11px; color:var(--text-muted); margin-bottom:4px; }
+.event-rail-spots-left { color:var(--gold); }
+.event-rail-progress-track { height:5px; background:var(--bg-elevated); border-radius:99px; overflow:hidden; }
+.event-rail-progress-fill { height:100%; width:47%; background:linear-gradient(to right,var(--burg),var(--gold)); }
+.event-rail-rsvp-button { width:100%; background:var(--burg); color:var(--cream); border:none; border-radius:9px; padding:11px; font-family:var(--font-ui); font-size:13px; font-weight:700; cursor:pointer; }
+.event-rail-host-row { display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+.event-rail-host-avatar { background:var(--burg); color:var(--cream); width:44px; height:44px; font-size:14px; }
+.event-rail-host-bio { font-family:var(--font-body); font-style:italic; font-size:12px; color:var(--text-secondary); line-height:1.6; }
+.event-rail-included-list { list-style:none; display:flex; flex-direction:column; gap:8px; font-size:12px; color:var(--text-secondary); line-height:1.5; }
+.event-rail-included-item { display:flex; gap:8px; }
+.event-rail-included-check { flex-shrink:0; margin-top:3px; }
+
+/* Mobile inline rail — duplicate of the right-rail widgets surfaced in
+   the main column where the rail itself is hidden by the app shell.
+   Hidden on desktop (the real rail shows there). */
+.event-detail-mobile-rail { display: none; }
+@media (max-width: 1023px) {
+  .event-detail-mobile-rail {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 14px;
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "runCount": 120,
+  "promptVariants": 30,
+  "metrics": {
+    "turns": 240,
+    "uniqueSpirits": 65,
+    "uniqueCigars": 67,
+    "menuSpirits": 92,
+    "menuCigars": 184,
+    "spiritUtilizationPct": 70.7,
+    "cigarUtilizationPct": 36.4,
+    "topSpiritSharePct": 4.2,
+    "topCigarSharePct": 8.6,
+    "ashtonSharePct": 0.9,
+    "eagleRareSharePct": 0,
+    "diversityScore": 1,
+    "convergenceScore": 0.066,
+    "entropyScore": 0.934,
+    "ontologyUtilizationScore": 0.967
+  },
+  "thresholds": {
+    "minUniqueSpirits": 12,
+    "minUniqueCigars": 28,
+    "maxTopSpiritSharePct": 18,
+    "maxTopCigarSharePct": 22,
+    "maxAshtonSharePct": 22,
+    "maxEagleRareSharePct": 18,
+    "minSpiritUtilizationPct": 35,
+    "minCigarUtilizationPct": 12,
+    "maxConvergenceScore": 0.42
+  },
+  "checks": {
+    "uniqueSpirits": true,
+    "uniqueCigars": true,
+    "topSpiritShare": true,
+    "topCigarShare": true,
+    "ashtonShare": true,
+    "eagleRareShare": true,
+    "spiritUtilization": true,
+    "cigarUtilization": true,
+    "convergence": true
+  },
+  "ok": true
+}

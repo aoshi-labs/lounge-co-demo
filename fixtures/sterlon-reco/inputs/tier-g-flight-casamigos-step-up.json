@@ -1,0 +1,7 @@
+{
+  "op": "flightPhilosophyTurn",
+  "promptText": "I normally drink Casamigos and smoke whatever the lounge recommends. Give me something that feels like a step up without becoming intimidating.",
+  "expectNamedSpiritAnchor": true,
+  "includePairingEval": true,
+  "session": {}
+}

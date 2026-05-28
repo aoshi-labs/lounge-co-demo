@@ -1,0 +1,6 @@
+{
+  "op": "ontologyAffinityDeck",
+  "cigarName": "Arturo Fuente Chateau Fuente Double",
+  "promptText": "something peaty from islay",
+  "expectedDeck": "bourbon"
+}

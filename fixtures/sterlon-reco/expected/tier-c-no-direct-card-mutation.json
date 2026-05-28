@@ -1,0 +1,14 @@
+{
+  "parentFrozen": true,
+  "parentCardSigUnchanged": true,
+  "allRefinedNotParent": true,
+  "allTurnIdsDistinct": true,
+  "allTurnIdsUnique": true,
+  "refinedCount": 4,
+  "axes": [
+    "lighter",
+    "bolder",
+    "budget",
+    "adventure"
+  ]
+}

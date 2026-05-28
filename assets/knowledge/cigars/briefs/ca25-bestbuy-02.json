@@ -1,0 +1,209 @@
+{
+  "version": 1,
+  "shard": "ca25-bestbuy-02",
+  "category": "cigar",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 9,
+  "products": [
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/punch-rare-corojo-rapido-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuador Habano wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Honduras binder supports structure and integration with the filler.",
+        "fillerRole": "Honduras / Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/punch-rare-corojo-rapido-2025.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $5' requests - cite CA 2025 Best Buy list."
+      },
+      "menuLine": "Punch Rare Corojo · 4⅛ × 42 · Petit Corona · Medium-Full · Honduras · $5 · Notes: cedar, baking spice, sweet tobacco, toast, light cocoa",
+      "stickSize": "4⅛ × 42 · Petit Corona",
+      "id": "bb25-10-punch-rare-rap"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/hvc-hot-cake-golden-line-connecticut-half-corona-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Morning coffee",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuador Connecticut wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/hvc-hot-cake-golden-line-connecticut-half-corona-2025.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $5' requests - cite CA 2025 Best Buy list."
+      },
+      "menuLine": "HVC Hot Cake Golden Line Connecticut · 4 × 44 · Petit Corona · Medium-Light · Nicaragua · $5 · Notes: cream, cedar, nuts, toast, light sweetness",
+      "stickSize": "4 × 44 · Petit Corona",
+      "id": "bb25-11-hvc-hotcake-hc"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/don-pepin-garcia-original-demi-tasse-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Savory",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Nicaragua wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/don-pepin-garcia-original-demi-tasse-2025.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $3' requests - cite CA 2025 Best Buy list."
+      },
+      "menuLine": "Don Pepin Garcia Original · 4 × 32 · Petit Corona · Medium-Full · Nicaragua · $3 · Notes: earth, savory spice, cedar, cocoa, toasted tobacco",
+      "stickSize": "4 × 32 · Petit Corona",
+      "id": "bb25-12-dpg-demi"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/la-galera-imperial-jade-chiquito-perfecto-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuador wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Dominican Republic binder supports structure and integration with the filler.",
+        "fillerRole": "Dominican Republic / Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/la-galera-imperial-jade-chiquito-perfecto-2025.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $7' requests - cite CA 2025 Best Buy list."
+      },
+      "menuLine": "La Galera Imperial Jade · 4 × 48 · Figurado · Medium · Dominican Republic · $7 · Notes: cedar, wood, earth, leather, mineral tobacco",
+      "stickSize": "4 × 48 · Figurado",
+      "id": "bb25-13-lg-imp-jade"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/la-galera-connecticut-half-corona-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Morning coffee",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuador Connecticut wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Dominican Republic binder supports structure and integration with the filler.",
+        "fillerRole": "Dominican Republic filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/la-galera-connecticut-half-corona-2025.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $7' requests - cite CA 2025 Best Buy list."
+      },
+      "menuLine": "La Galera Connecticut · 4 × 44 · Petit Corona · Medium-Light · Dominican Republic · $7 · Notes: cream, cedar, nuts, toast, light sweetness",
+      "stickSize": "4 × 44 · Petit Corona",
+      "id": "bb25-14-lg-ct-hc"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/don-lino-maduro-gran-toro-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Coffee",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Broadleaf Maduro wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Dominican Republic binder supports structure and integration with the filler.",
+        "fillerRole": "Dominican Republic / Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/don-lino-maduro-gran-toro-2025.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $7' requests - cite CA 2025 Best Buy list."
+      },
+      "menuLine": "Don Lino Maduro · 6 × 60 · Gordo · Medium-Full · Dominican Republic · $7 · Notes: cocoa, coffee, earth, dark sweetness, cedar",
+      "stickSize": "6 × 60 · Gordo",
+      "id": "bb25-15-donlino-gt"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/curivari-buenaventura-favoritos-natural-60-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Rum",
+        "wrapperRole": "Nicaragua wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/curivari-buenaventura-favoritos-natural-60-2025.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $6' requests - cite CA 2025 Best Buy list."
+      },
+      "menuLine": "Curivari Buenaventura Favoritos Natural · 6 × 60 · Gordo · Medium · Nicaragua · $6 · Notes: cedar, wood, earth, leather, mineral tobacco",
+      "stickSize": "6 × 60 · Gordo",
+      "id": "bb25-16-curi-nat-60"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/curivari-buenaventura-favoritos-connecticut-50-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuador Connecticut wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/curivari-buenaventura-favoritos-connecticut-50-2025.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $5' requests - cite CA 2025 Best Buy list."
+      },
+      "menuLine": "Curivari Buenaventura Favoritos Connecticut · 5 × 50 · Robusto · Medium-Light · Nicaragua · $5 · Notes: cream, cedar, nuts, toast, light sweetness",
+      "stickSize": "5 × 50 · Robusto",
+      "id": "bb25-17-curi-ct-50"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/la-aurora-cazadores-nicaragua-robusto-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Savory",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Nicaragua wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Dominican Republic binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua / Dominican Republic filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/la-aurora-cazadores-nicaragua-robusto-2025.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $5' requests - cite CA 2025 Best Buy list."
+      },
+      "menuLine": "La Aurora Cazadores Nicaragua · 5 × 50 · Robusto · Medium · Dominican Republic · $5 · Notes: earth, savory spice, cedar, cocoa, toasted tobacco",
+      "stickSize": "5 × 50 · Robusto",
+      "id": "bb25-18-laur-caz-rob"
+    }
+  ]
+}

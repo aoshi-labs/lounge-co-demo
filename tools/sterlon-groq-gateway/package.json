@@ -1,0 +1,12 @@
+{
+  "name": "sterlon-groq-gateway",
+  "private": true,
+  "type": "module",
+  "description": "Dev-only HTTP proxy: Sterlon visionboard → Groq (API key stays on this process).",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Lounge Settings — Admin</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Lounge branding, integrations, billing, and staff permissions." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Lounge Settings — Admin" />
+  <meta property="og:description" content="Lounge branding, integrations, billing, and staff permissions." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lounge Settings — Admin" />
+  <meta name="twitter:description" content="Lounge branding, integrations, billing, and staff permissions." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/admin-settings.css"/>
+</head>
+<body>
+
+<nav class="sidebar admin" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Owner Console</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row"><div class="avatar sidebar-user-avatar-owner"><img src="assets/images/gerald-o.jpg" alt=""/></div><div class="sidebar-user-info"><div class="sidebar-user-name">Gerald Owens</div><div class="sidebar-user-role">Owner</div></div></div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Overview</div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Dashboard</a>
+    <a href="admin-analytics.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Analytics</a>
+    <div class="nav-section-label">Manage</div>
+    <a href="admin-members.html" class="nav-item"><i data-lucide="users" class="ic-17"></i>Members</a>
+    <a href="admin-catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="admin-orders.html" class="nav-item"><i data-lucide="receipt-text" class="ic-17"></i>Requests<span class="notif-dot">3</span></a>
+    <a href="admin-events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-settings.html" class="nav-item active"><i data-lucide="settings" class="ic-17"></i>Lounge Settings</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="chevron-left" class="ic-17"></i>Back to Member View</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area admin">
+  <h1 class="visually-hidden">Lounge Settings</h1>
+  <header class="top-bar">
+    <button class="icon-btn sup-menu-btn" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+      <i data-lucide="menu" class="ic-16"></i>
+    </button>
+  </header>
+
+  <div class="admin-settings-page-frame">
+
+    <!-- LEFT: form sections -->
+    <div class="admin-settings-form-col">
+
+      <!-- Identity -->
+      <section class="section">
+        <h3>Lounge Identity</h3>
+        <div class="admin-settings-field-row">
+          <div><label class="field-label">Lounge Name<input class="input" value="Lounge & Co."/></label></div>
+          <div><label class="field-label">Short Name / Initials<input class="input" value="Lounge & Co. · CR"/></label></div>
+        </div>
+        <div class="admin-settings-field-group"><label class="field-label">Tagline<input class="input" value="Where connoisseurs connect."/></label></div>
+        <div class="admin-settings-field-group"><label class="field-label">About<textarea class="input admin-settings-about-textarea" rows="3">An intimate Atlanta cigar &amp; spirits lounge serving members since 2019. By application only.</textarea></label></div>
+      </section>
+
+      <!-- Branding -->
+      <section class="section">
+        <h3>Branding</h3>
+        <div class="admin-settings-logo-row">
+          <div class="admin-settings-logo-mark">L&C</div>
+          <div><button class="admin-settings-upload-btn">Upload Logo</button><div class="admin-settings-upload-hint">PNG or SVG · 512×512 recommended</div></div>
+        </div>
+        <div class="admin-settings-color-grid">
+          <div>
+            <div class="field-label">Primary Accent (Gold)</div>
+            <div class="color-swatch"><div class="color-dot admin-settings-color-dot-gold"></div><span class="admin-settings-color-hex">#D4AF37</span></div>
+          </div>
+          <div>
+            <div class="field-label">CTA Color (Burgundy)</div>
+            <div class="color-swatch"><div class="color-dot admin-settings-color-dot-burg"></div><span class="admin-settings-color-hex">#800020</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Operations -->
+      <section class="section">
+        <h3>Operations</h3>
+        <div class="admin-settings-field-row">
+          <div><label class="field-label">Street Address<input class="input" value="2847 Peachtree St NE, Atlanta, GA 30305"/></label></div>
+          <div><label class="field-label">Phone<input class="input" value="+1 (404) 555-0142"/></label></div>
+        </div>
+        <div><div class="field-label">Lounge Hours</div>
+          <div class="admin-settings-hours-grid">
+            <div class="admin-settings-hours-cell"><div class="admin-settings-hours-day">Mon – Thu</div><div class="admin-settings-hours-time">4 PM – 11 PM</div></div>
+            <div class="admin-settings-hours-cell"><div class="admin-settings-hours-day">Fri – Sat</div><div class="admin-settings-hours-time">2 PM – 1 AM</div></div>
+            <div class="admin-settings-hours-cell"><div class="admin-settings-hours-day">Sunday</div><div class="admin-settings-hours-time">2 PM – 9 PM</div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Membership -->
+      <section class="section">
+        <h3>Membership Plan</h3>
+        <div class="admin-settings-plan-card">
+          <div>
+            <div class="admin-settings-plan-name">Cedar Plan</div>
+            <div class="admin-settings-plan-meta">Unlimited members · Sterlon · White-label · Next billing May 31</div>
+          </div>
+          <div class="admin-settings-plan-price-col">
+            <div class="admin-settings-plan-price">$299<span class="admin-settings-plan-price-suffix">/mo</span></div>
+            <button class="admin-settings-plan-change-btn">Change plan →</button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- RIGHT: preview -->
+    <div class="preview-col admin-settings-preview-col">
+      <div class="section admin-settings-preview-section">
+        <div class="admin-settings-preview-eyebrow">👁 Live Preview</div>
+        <div class="admin-settings-preview-card">
+          <div class="admin-settings-preview-logo-mark">L&C</div>
+          <div class="admin-settings-preview-name" data-lounge-name>Lounge & Co.</div>
+          <div class="admin-settings-preview-tagline">"Where connoisseurs connect."</div>
+          <button class="admin-settings-preview-cta-btn">Sample CTA Button</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom save widget — Save Changes was originally in the top bar;
+       pulled out so the top bar stays focused on identity (hamburger +
+       auto-injected logo) and the commit action sits anchored to the
+       bottom of the page where the user finishes editing. Mirrors the
+       admin-list-edit `.ale-actions-widget` pattern. -->
+  <div class="adm-save-widget">
+    <div class="adm-save-widget-info">
+      <div class="adm-save-widget-title">Ready to save?</div>
+      <div class="adm-save-widget-sub">Changes apply instantly across landing, login, and the app shell once saved.</div>
+    </div>
+    <button class="topbar-save-btn adm-save-widget-btn">Save Changes</button>
+  </div>
+</main>
+
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+<!-- shared behaviors loaded via assets/javascript/lounge.js -->
+</body>
+</html>

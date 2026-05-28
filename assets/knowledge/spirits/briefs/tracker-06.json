@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "shard": "tracker-06",
+  "category": "spirit",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 8,
+  "products": [
+    {
+      "menuLine": "Jack Daniel's Old No. 7 · Tennessee · $28 · 80 proof (40.0% ABV) · Journey: Novice · Notes: banana, caramel",
+      "guidance": {
+        "bestFor": "Jack Daniel's name ask, Tennessee whiskey curious, classic bar call.",
+        "avoidIf": "User wants Kentucky bourbon or Scotch only.",
+        "whyRecommend": "Recommend when the member wants the iconic Jack pour — banana bread sweetness and charcoal-mellowed Tennessee oak.",
+        "occasion": "Everyday pour",
+        "flavorFamily": "Banana & caramel",
+        "pairingAffinity": "Natural / Habano",
+        "memberBlurb": "Jack Daniel's Old No. 7 — the black-label Tennessee whiskey America never stopped buying. Banana, caramel, and charcoal mellow beside a Habano."
+      },
+      "id": "spi-trk-jd-old7",
+      "provenance": {
+        "beginnerSafe": "Yes",
+        "sourceConfidence": "Industry reference (US retail sales 2025)",
+        "dataGrade": 7
+      }
+    },
+    {
+      "menuLine": "Jack Daniel's Single Barrel Select · Tennessee · $55 · 94 proof (47.0% ABV) · Journey: Intermediate · Notes: banana, caramel",
+      "guidance": {
+        "bestFor": "Jack Daniel's request, Tennessee whiskey curious, Habano pairing.",
+        "avoidIf": "User wants Kentucky bourbon or Scotch only.",
+        "whyRecommend": "Recommend when the member wants Tennessee character — banana bread, caramel, and toasted oak.",
+        "occasion": "Relaxed evening",
+        "flavorFamily": "Banana & caramel",
+        "pairingAffinity": "Natural / Habano",
+        "memberBlurb": "Jack Daniel's Single Barrel — banana and caramel through charcoal-mellowed Tennessee oak. The Jack pour worth recommending beside a cigar."
+      },
+      "id": "spi-trk-jd-sb",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Jefferson's Ocean Aged at Sea · Kentucky · $85 · 90 proof (45.0% ABV) · Journey: Intermediate · Notes: caramel, vanilla",
+      "guidance": {
+        "bestFor": "Demo night, gift story, member wants something to discuss.",
+        "avoidIf": "User wants classic single-barrel only.",
+        "whyRecommend": "Recommend when a story pour matters — caramel and brine from ocean-aged bourbon beside a cigar.",
+        "occasion": "Conversation",
+        "flavorFamily": "Brine & caramel",
+        "pairingAffinity": "Medium-full cigar",
+        "memberBlurb": "Jefferson's Ocean — bourbon that crossed the sea. Brine and caramel with a story every lounge guest asks about."
+      },
+      "id": "spi-trk-jeff-ocean",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Jim Beam Kentucky Straight Bourbon · Kentucky · $20 · 80 proof (40.0% ABV) · Journey: Novice · Notes: vanilla, caramel",
+      "guidance": {
+        "bestFor": "Bourbon beginner, Old Fashioned base, budget Kentucky pour.",
+        "avoidIf": "User wants allocated or high-proof only.",
+        "whyRecommend": "Recommend as America's everyday bourbon — vanilla, caramel, and oak without pretense.",
+        "occasion": "Everyday pour",
+        "flavorFamily": "Vanilla & oak",
+        "pairingAffinity": "Mild / medium cigar",
+        "memberBlurb": "Jim Beam White Label — the bourbon in every American pantry. Vanilla and caramel Kentucky honesty beside a medium cigar."
+      },
+      "id": "spi-trk-jim-beam-white",
+      "provenance": {
+        "beginnerSafe": "Yes",
+        "sourceConfidence": "Industry reference (US retail sales 2025)",
+        "dataGrade": 7
+      }
+    },
+    {
+      "menuLine": "Johnnie Walker Black Label · Scotland · $42 · 80 proof (40.0% ABV) · Notes: honey, smoke",
+      "guidance": {
+        "bestFor": "Gift pour, blend curious, won't spend Blue money.",
+        "avoidIf": "Single-malt purist only.",
+        "whyRecommend": "Recommend when prestige Scotch is needed at accessible price — honey, smoke, dried fruit.",
+        "occasion": "Everyday prestige",
+        "flavorFamily": "Smoke & fruit",
+        "pairingAffinity": "Medium cigar",
+        "memberBlurb": "Johnnie Walker Black — honey and gentle smoke in the blend everyone knows. Prestige without the Blue Label receipt."
+      },
+      "id": "spi-trk-jw-black",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Johnnie Walker Blue Label · Scotland · $225 · 80 proof (40.0% ABV) · Notes: honey, dark fruit",
+      "guidance": {
+        "bestFor": "Gift pour, status request, member names Blue Label, lounge demo prestige.",
+        "avoidIf": "User wants single-malt purist only or budget under $50.",
+        "whyRecommend": "Recommend when prestige recognition matters — honeyed blend with smoke and dark fruit, universally known bottle.",
+        "occasion": "Celebration",
+        "flavorFamily": "Silky prestige",
+        "pairingAffinity": "Premium cigar",
+        "memberBlurb": "Johnnie Walker Blue — instant prestige in the glass. Honey, dark fruit, and a whisper of smoke; value debated, recognition undeniable."
+      },
+      "id": "spi-trk-jw-blue",
+      "provenance": {
+        "beginnerSafe": "No",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Johnnie Walker Green Label · Scotland · $65 · 86 proof (43.0% ABV) · Notes: smoke, cedar",
+      "guidance": {
+        "bestFor": "Malt blend fan, medium-full cigar, discontinued-era prestige still stocked.",
+        "avoidIf": "Budget under $50 only.",
+        "whyRecommend": "Recommend when the member wants vatted malt character — smoke, cedar, and citrus without grain spirit.",
+        "occasion": "Relaxed evening",
+        "flavorFamily": "Smoke & fruit",
+        "pairingAffinity": "Medium-full cigar",
+        "memberBlurb": "Johnnie Walker Green — blended malts only, with smoke and cedar. The vatted malt pour for members between Black and Blue."
+      },
+      "id": "spi-trk-jw-green",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Ketel One Vodka · Netherlands · $28 · 80 proof (40.0% ABV) · Notes: clean, citrus peel",
+      "guidance": {
+        "bestFor": "Vodka soda, martini base, member wants neutral spirit.",
+        "avoidIf": "User wants flavor-forward spirits only.",
+        "whyRecommend": "Recommend when the member wants a clean neutral spirit — citrus peel and mineral.",
+        "occasion": "Cocktail",
+        "flavorFamily": "Clean & crisp",
+        "pairingAffinity": "Mild cigar",
+        "memberBlurb": "Ketel One — crisp Dutch vodka with citrus peel and mineral. Clean enough to let a flavored Connecticut cigar speak."
+      },
+      "id": "spi-trk-ketel-one",
+      "provenance": {
+        "beginnerSafe": "Yes",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    }
+  ]
+}

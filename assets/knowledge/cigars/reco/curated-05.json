@@ -1,0 +1,411 @@
+{
+  "version": 1,
+  "shard": "curated-05",
+  "category": "cigar",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 9,
+  "products": [
+    {
+      "tracker": {
+        "sku": "CUR-37-ASHTON-MADURO"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.95
+        }
+      ],
+      "spec": {
+        "msrp": 14,
+        "tier": 5,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "90 min",
+        "wrapper": "Connecticut Broadleaf Maduro",
+        "binder": "Dominican Republic",
+        "filler": "Dominican Republic"
+      },
+      "id": "cur-37-ashton-maduro",
+      "sensory": {
+        "body": 7,
+        "sweetness": 6,
+        "pepper": 6,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Ashton Aged Maduro Robusto",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-38-ASHTON-SYMMETRY"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "pepper",
+          "weight": 1.0
+        }
+      ],
+      "spec": {
+        "msrp": 16,
+        "tier": 6,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "90 min",
+        "wrapper": "Ecuadorian Habano",
+        "binder": "Dominican Republic",
+        "filler": "Dominican Republic / Nicaragua"
+      },
+      "id": "cur-38-ashton-symmetry",
+      "sensory": {
+        "body": 7,
+        "sweetness": 6,
+        "pepper": 6,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Ashton Symmetry Robusto",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-39-SC-CLASICO-ROB"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "espresso",
+          "weight": 1.0
+        },
+        {
+          "id": "dark_chocolate",
+          "weight": 0.95
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.85
+        },
+        {
+          "id": "pepper",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 10,
+        "tier": 5,
+        "strength": 5,
+        "body": "Full",
+        "smokeTime": "90 min",
+        "wrapper": "Nicaraguan Habano",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "cur-39-sc-clasico-rob",
+      "sensory": {
+        "body": 9,
+        "sweetness": 5,
+        "pepper": 7,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "San Cristobal Clasico Robusto",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-40-SC-QUINT-ROB"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "coffee",
+          "weight": 1.0
+        },
+        {
+          "id": "cedar",
+          "weight": 0.95
+        }
+      ],
+      "spec": {
+        "msrp": 12,
+        "tier": 6,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "90 min",
+        "wrapper": "Ecuadorian Habano",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "cur-40-sc-quint-rob",
+      "sensory": {
+        "body": 7,
+        "sweetness": 6,
+        "pepper": 6,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "San Cristobal Quintessence Robusto",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-41-PAD-3000-NAT"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "wood",
+          "weight": 1.0
+        },
+        {
+          "id": "earth",
+          "weight": 0.95
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.85
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.75
+        },
+        {
+          "id": "pepper",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 8,
+        "tier": 2,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "45 min",
+        "wrapper": "Nicaraguan Natural",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "cur-41-pad-3000-nat",
+      "sensory": {
+        "body": 6,
+        "sweetness": 5,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Padron Thousands Series 3000 Corona Natural",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-42-PAD-3000-MAD"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "espresso",
+          "weight": 0.95
+        },
+        {
+          "id": "toast",
+          "weight": 0.85
+        },
+        {
+          "id": "earth",
+          "weight": 0.75
+        },
+        {
+          "id": "cedar",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 9,
+        "tier": 3,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "60 min",
+        "wrapper": "Nicaraguan Maduro",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "cur-42-pad-3000-mad",
+      "sensory": {
+        "body": 7,
+        "sweetness": 5,
+        "pepper": 6,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "Padron Thousands Series 3000 Corona Maduro",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-43-PAD-THOU-ROB-MAD"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "dark_chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.95
+        },
+        {
+          "id": "espresso",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        },
+        {
+          "id": "earth",
+          "weight": 0.7
+        },
+        {
+          "id": "cedar",
+          "weight": 0.65
+        }
+      ],
+      "spec": {
+        "msrp": 10,
+        "tier": 3,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "60 min",
+        "wrapper": "Nicaraguan Maduro",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "cur-43-pad-thou-rob-mad",
+      "sensory": {
+        "body": 7,
+        "sweetness": 5,
+        "pepper": 6,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "Padron Thousands Series Robusto Maduro",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-44-PAD-1964-EX-NAT"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "nut",
+          "weight": 1.0
+        },
+        {
+          "id": "toast",
+          "weight": 0.95
+        },
+        {
+          "id": "cedar",
+          "weight": 0.85
+        },
+        {
+          "id": "coffee",
+          "weight": 0.75
+        },
+        {
+          "id": "spice",
+          "weight": 0.7
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.65
+        }
+      ],
+      "spec": {
+        "msrp": 17,
+        "tier": 5,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "75 min",
+        "wrapper": "Nicaraguan Natural",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "cur-44-pad-1964-ex-nat",
+      "sensory": {
+        "body": 7,
+        "sweetness": 5,
+        "pepper": 6,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Padron 1964 Anniversary Series Exclusivo Natural",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "CUR-45-PAD-1964-TOR-NAT"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "nut",
+          "weight": 1.0
+        },
+        {
+          "id": "toast",
+          "weight": 0.95
+        },
+        {
+          "id": "cedar",
+          "weight": 0.85
+        },
+        {
+          "id": "coffee",
+          "weight": 0.75
+        },
+        {
+          "id": "spice",
+          "weight": 0.7
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.65
+        }
+      ],
+      "spec": {
+        "msrp": 18,
+        "tier": 5,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "90 min",
+        "wrapper": "Nicaraguan Natural",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "cur-45-pad-1964-tor-nat",
+      "sensory": {
+        "body": 7,
+        "sweetness": 5,
+        "pepper": 6,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Padron 1964 Anniversary Series Torpedo Natural",
+      "category": "cigar"
+    }
+  ]
+}

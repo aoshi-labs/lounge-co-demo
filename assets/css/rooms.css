@@ -1,0 +1,126 @@
+  .room-card{
+    position:relative;
+    background:var(--bg-surface);border:1px solid var(--bg-border);border-radius:14px;overflow:hidden;
+    transition:border-color .2s,transform .15s;
+    text-decoration:none;
+    color:var(--text-primary);   /* explicit so the lock + title don't inherit the default link blue */
+    display:flex;flex-direction:column;
+  }
+  .room-card:hover{border-color:rgba(var(--gold-rgb), .3);transform:translateY(-1px);}
+  /* Public rooms don't get the lock watermark. Add `.room-card-public`
+     to any card that's an open / non-private room (e.g. Cuban Aficionados). */
+  .room-card-public::before { display: none; }
+
+  /* "Private" watermark — gold-tinted Lucide lock SVG pinned to the
+     gradient header band's top-right corner. Replaces the inline lock
+     icon that was rendering with the default link-blue stroke. */
+  .room-card::before{
+    content:'';
+    position:absolute;
+    top:12px;
+    right:12px;
+    width:20px;
+    height:20px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23D4AF37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect width='18' height='11' x='3' y='11' rx='2' ry='2'/><path d='M7 11V7a5 5 0 0 1 10 0v4'/></svg>");
+    background-size:contain;
+    background-repeat:no-repeat;
+    opacity:.55;
+    pointer-events:none;
+    z-index:1;
+  }
+
+
+/* === Page-specific styles === */
+.topbar-title { font-size:15px; font-weight:600; color:var(--text-primary); }
+.rooms-create-button { background:var(--burg); color:var(--cream); border:none; border-radius:8px; padding:8px 14px; font-family:var(--font-ui); font-size:13px; font-weight:600; cursor:pointer; }
+.rooms-page-frame { display:flex; justify-content:center; padding:24px 20px; gap:20px; }
+.rooms-page-stack { width:100%; max-width:780px; display:flex; flex-direction:column; gap:18px; }
+.rooms-page-title { font-family:var(--font-display); font-size:2rem; font-weight:700; color:var(--text-primary); line-height:1.1; }
+.rooms-page-tagline { font-family:var(--font-body); font-style:italic; font-size:14px; color:var(--text-secondary); margin-top:6px; }
+.rooms-section-label { font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted); }
+.rooms-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+.rooms-card-header-single-malts { height:90px; background:linear-gradient(135deg,rgba(var(--bg-base-rgb), .55),rgba(20,12,6,.35)), url("../images/single-malt-society-background.png") center/cover no-repeat; display:flex; align-items:center; justify-content:center; font-size:2.4rem; }
+.rooms-card-body { padding:16px 18px; }
+.rooms-card-title-row { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+.rooms-card-title { font-family:var(--font-display); font-size:1.2rem; font-weight:600; color:var(--text-primary); }
+.rooms-card-description { font-family:var(--font-body); font-style:italic; font-size:12px; color:var(--text-secondary); line-height:1.5; margin-bottom:12px; }
+.rooms-card-footer { display:flex; justify-content:space-between; align-items:center; }
+.rooms-card-members { display:flex; align-items:center; }
+.rooms-avatar-champion { background:var(--gold); color:var(--bg-base); width:24px; height:24px; font-size:9px; border:2px solid var(--bg-surface); }
+.rooms-avatar-elite { background:var(--tier-elite); color:var(--tier-elite-ink); width:24px; height:24px; font-size:9px; margin-left:-6px; border:2px solid var(--bg-surface); }
+.rooms-avatar-runner-up { background:var(--tier-runner-up); color:var(--tier-runner-up-ink); width:24px; height:24px; font-size:9px; margin-left:-6px; border:2px solid var(--bg-surface); }
+.rooms-member-count { font-size:11px; color:var(--text-muted); margin-left:8px; }
+.rooms-new-badge { background:var(--burg); color:var(--cream); border-radius:99px; padding:2px 7px; font-size:10px; font-weight:700; }
+.rooms-card-header-cuban { height:90px; background:linear-gradient(135deg,rgba(var(--bg-base-rgb), .55),rgba(20,12,6,.35)), url("../images/cigar-event-background.png") center/cover no-repeat; display:flex; align-items:center; justify-content:center; font-size:2.4rem; }
+.rooms-avatar-burgundy { background:var(--burg); color:var(--cream); width:24px; height:24px; font-size:9px; border:2px solid var(--bg-surface); }
+.rooms-card-header-bourbon { height:90px; background:linear-gradient(135deg,rgba(var(--bg-base-rgb), .55),rgba(20,12,6,.35)), url("../images/bourbon-hunters-background.png") center/cover no-repeat; display:flex; align-items:center; justify-content:center; font-size:2.4rem; }
+.rooms-avatar-bronze { background:var(--tier-bronze); color:var(--tier-bronze-ink); width:24px; height:24px; font-size:9px; border:2px solid var(--bg-surface); }
+.rooms-card-header-founders { height:90px; background:linear-gradient(135deg,rgba(var(--bg-base-rgb), .55),rgba(20,12,6,.35)), url("../images/founders-circle-background.png") center/cover no-repeat; display:flex; align-items:center; justify-content:center; font-size:2.4rem; }
+.rooms-elite-pill { background:var(--gold-subtle); border:1px solid rgba(var(--gold-rgb), .2); color:var(--gold); border-radius:99px; padding:2px 7px; font-size:10px; font-weight:700; }
+.rooms-section-label-discover { font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted); margin-top:8px; }
+.discover-card { background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:14px; padding:18px; position:relative; }
+
+/* Discover-room private indicator — same gold lock watermark used on
+   .room-card, sized slightly smaller for these simpler cards. Add the
+   .discover-card-private modifier to any discover-room card that's invite-only
+   / request-to-join; public rooms get the .discover-join-button CTA button below
+   and skip the watermark. */
+.discover-card-private::before {
+  content:'';
+  position:absolute;
+  top:12px;
+  right:12px;
+  width:18px;
+  height:18px;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23D4AF37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect width='18' height='11' x='3' y='11' rx='2' ry='2'/><path d='M7 11V7a5 5 0 0 1 10 0v4'/></svg>");
+  background-size:contain;
+  background-repeat:no-repeat;
+  opacity:.55;
+  pointer-events:none;
+  z-index:1;
+}
+
+/* Public-room CTA — burgundy fill, instant-join semantic. Contrasts
+   the gold-subtle "Request to Join" pill that flags private rooms. */
+.discover-join-button {
+  background:var(--burg);
+  border:1px solid var(--burg);
+  color:var(--cream);
+  border-radius:7px;
+  padding:5px 16px;
+  font-family:var(--font-ui);
+  font-size:11px;
+  font-weight:700;
+  cursor:pointer;
+  transition:background .15s, border-color .15s;
+}
+.discover-join-button:hover { background:var(--burg-hover); border-color:var(--burg-hover); }
+.discover-card-header { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+.discover-card-emoji { font-size:1.6rem; }
+.discover-card-title { font-family:var(--font-display); font-size:1.15rem; font-weight:600; color:var(--text-primary); }
+.discover-card-description { font-family:var(--font-body); font-style:italic; font-size:12px; color:var(--text-secondary); line-height:1.55; margin-bottom:12px; }
+.discover-card-member-count { font-size:11px; color:var(--text-muted); }
+.discover-request-button { background:var(--gold-subtle); border:1px solid rgba(var(--gold-rgb), .2); color:var(--gold); border-radius:7px; padding:5px 12px; font-family:var(--font-ui); font-size:11px; font-weight:700; cursor:pointer; }
+.rooms-rail { width:268px; flex-shrink:0; display:flex; flex-direction:column; gap:14px; }
+.rooms-rail-text { font-family:var(--font-body); font-style:italic; font-size:13px; color:var(--text-secondary); line-height:1.65; margin-bottom:12px; }
+.rooms-rail-text-last { font-family:var(--font-body); font-style:italic; font-size:13px; color:var(--text-secondary); line-height:1.65; }
+.rooms-recommend-text { font-family:var(--font-body); font-style:italic; font-size:13px; color:var(--text-secondary); line-height:1.65; margin-bottom:10px; }
+.rooms-recommend-button { width:100%; background:var(--gold-subtle); border:1px solid rgba(var(--gold-rgb), .2); color:var(--gold); border-radius:8px; padding:8px; font-family:var(--font-ui); font-size:12px; font-weight:600; cursor:pointer; }
+
+/* Mobile (≤767px): room cards at the default 2-col grid get squeezed to
+   ~150px wide on iPhone SE — the gradient header band + lock watermark
+   + title + description + member avatars + count + new badge all fight
+   for that narrow column and the card reads as visual noise. Collapse
+   to a single column so each card spans the full content width. */
+@media (max-width: 767px) {
+  .rooms-grid { grid-template-columns: 1fr; gap: 12px; }
+  .rooms-card-body { padding: 14px 16px; }
+  .rooms-card-description { margin-bottom: 10px; }
+  /* Header band is roomy at full-width — tighten the height a hair so
+     the emoji + lock watermark sit more compactly. */
+  .rooms-card-header-single-malts, .rooms-card-header-cuban, .rooms-card-header-bourbon, .rooms-card-header-founders { height: 76px; font-size: 2.1rem; }
+}
+
+@media (max-width: 639px) {
+  .rooms-page-title { font-size: 1.5rem; line-height: 1.15; }
+}

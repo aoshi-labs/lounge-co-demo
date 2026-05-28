@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "shard": "tracker-01",
+  "category": "spirit",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 8,
+  "products": [
+    {
+      "menuLine": "1792 Small Batch Bourbon · Kentucky · $32 · 93.7 proof (46.9% ABV) · Journey: Intermediate · Notes: caramel, vanilla",
+      "guidance": {
+        "bestFor": "Spice-forward cigar, high-proof value bourbon.",
+        "avoidIf": "User wants wheated or very mild.",
+        "whyRecommend": "Recommend when cinnamon and pepper should echo a spicy cigar — high-proof without Booker's price.",
+        "occasion": "After dinner",
+        "flavorFamily": "Spice & caramel",
+        "pairingAffinity": "Corojo / spicy",
+        "memberBlurb": "1792 Small Batch — cinnamon and pepper over caramel at nearly 94 proof. Value bourbon that still feels serious beside a Corojo."
+      },
+      "id": "spi-trk-1792-sb",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Four Roses Single Barrel · Kentucky · $45 · 100 proof (50.0% ABV) · Journey: Intermediate · Notes: cherry, spice",
+      "guidance": {
+        "bestFor": "Bourbon nerd, single-barrel interest, spice-forward cigar.",
+        "avoidIf": "User wants wheated sweetness only.",
+        "whyRecommend": "Recommend for high-rye fruit and spice beside a medium-full cigar — cherry and baking spice without peat.",
+        "occasion": "Relaxed evening",
+        "flavorFamily": "Spice & fruit",
+        "pairingAffinity": "Corojo / medium-full",
+        "memberBlurb": "Four Roses Single Barrel — cherry and spice from a high-rye recipe. The bourbon pour that earns respect from enthusiasts without collector hype."
+      },
+      "id": "spi-trk-4r-sb",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Aberlour 12 Year · Speyside, Scotland · $55 · 86 proof (43.0% ABV) · Notes: sherry, black cherry",
+      "guidance": {
+        "bestFor": "Sherry lover, cherry-chocolate cigar, Speyside value.",
+        "avoidIf": "User wants peat only.",
+        "whyRecommend": "Recommend when sherry sweetness should meet a maduro — black cherry, chocolate, toffee.",
+        "occasion": "After dinner",
+        "flavorFamily": "Sherry & fruit",
+        "pairingAffinity": "Maduro",
+        "memberBlurb": "Aberlour 12 — sherry, black cherry, and chocolate in a Speyside pour. Sherry depth without only reaching for Macallan."
+      },
+      "id": "spi-trk-aberlour-12",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Angel's Envy Kentucky Straight Bourbon · Kentucky · $55 · 86.6 proof (43.3% ABV) · Journey: Intermediate · Notes: port wine, cocoa",
+      "guidance": {
+        "bestFor": "Member wants finished bourbon, cocoa-leaning cigar, conversation pour.",
+        "avoidIf": "User wants dry or unpeated only.",
+        "whyRecommend": "Recommend when port sweetness and cocoa in the glass should echo a maduro — raisin, vanilla, and oak.",
+        "occasion": "After dinner",
+        "flavorFamily": "Port & cocoa",
+        "pairingAffinity": "Maduro / cocoa profile",
+        "memberBlurb": "Angel's Envy — port-finished bourbon with cocoa and raisin over caramel. The finished bourbon cigar lounges keep coming back to."
+      },
+      "id": "spi-trk-angels-envy",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Appleton Estate 21 Year · Jamaica · $120 · 86 proof (43.0% ABV) · Notes: orange, vanilla",
+      "guidance": {
+        "bestFor": "Rum collector, funky Jamaican ask, celebration cigar.",
+        "avoidIf": "User hates ester/funk notes.",
+        "whyRecommend": "Recommend when the member wants Jamaican character — orange, oak, and noble funk.",
+        "occasion": "Celebration",
+        "flavorFamily": "Funk & oak",
+        "pairingAffinity": "Full-bodied cigar",
+        "memberBlurb": "Appleton Estate 21 — orange and vanilla over Jamaican funk and oak. Luxury rum with personality beyond the sweet shelf."
+      },
+      "id": "spi-trk-appleton-21",
+      "provenance": {
+        "beginnerSafe": "No",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Ardbeg 10 Year · Islay, Scotland · $55 · 92 proof (46.0% ABV) · Notes: peat smoke, lime",
+      "guidance": {
+        "bestFor": "Smoke maximalist, Lagavulin wasn't enough, bold maduro.",
+        "avoidIf": "Peat-averse.",
+        "whyRecommend": "Recommend when the member wants the peatiest pour on the rail — lime, espresso, and charcoal smoke.",
+        "occasion": "After dinner",
+        "flavorFamily": "Peat bomb",
+        "pairingAffinity": "Full-bodied maduro",
+        "memberBlurb": "Ardbeg 10 — lime and espresso riding a wave of peat. For the member who told you Lagavulin was too subtle."
+      },
+      "id": "spi-trk-ardbeg-10",
+      "provenance": {
+        "beginnerSafe": "No",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Balvenie 14 Year Caribbean Cask · Speyside, Scotland · $75 · 86 proof (43.0% ABV) · Notes: toffee, vanilla",
+      "guidance": {
+        "bestFor": "Finished Scotch curious, rum-cask interest, celebratory pour.",
+        "avoidIf": "User wants dry or smoky only.",
+        "whyRecommend": "Recommend when rum-cask sweetness should complement a medium-full cigar — toffee, vanilla, apple.",
+        "occasion": "Celebration",
+        "flavorFamily": "Toffee & rum",
+        "pairingAffinity": "Medium-full cigar",
+        "memberBlurb": "Balvenie 14 Caribbean Cask — toffee and rum sweetness from a Speyside finish. Scotch that borrows rum's friendship with cigars."
+      },
+      "id": "spi-trk-balvenie-14",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Basil Hayden's Kentucky Straight Bourbon · Kentucky · $45 · 80 proof (40.0% ABV) · Journey: Novice · Notes: peppermint, tea",
+      "guidance": {
+        "bestFor": "Mild cigar, first bourbon, user intimidated by proof.",
+        "avoidIf": "User wants cask-strength or heavy flavor.",
+        "whyRecommend": "Recommend when the member wants a gentle bourbon beside a mild cigar — peppermint, honey, and light spice.",
+        "occasion": "Afternoon pour",
+        "flavorFamily": "Light spice",
+        "pairingAffinity": "Connecticut / mild",
+        "memberBlurb": "Basil Hayden's — light, peppery, and approachable. The bourbon for a Connecticut wrapper when 100+ proof feels like too much."
+      },
+      "id": "spi-trk-basil-hayden",
+      "provenance": {
+        "beginnerSafe": "Yes",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    }
+  ]
+}

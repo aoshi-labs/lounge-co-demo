@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "shard": "tracker-12",
+  "category": "spirit",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 2,
+  "products": [
+    {
+      "menuLine": "The Yamazaki 12 Year · Japan · $150 · 86 proof (43.0% ABV) · Notes: peach, pineapple",
+      "guidance": {
+        "bestFor": "Japanese whisky prestige, collector conversation, refined fruit-oak cigar pairing.",
+        "avoidIf": "Budget-only or user needs everyday $40 pour.",
+        "whyRecommend": "Recommend when Yamazaki name recognition and refined fruit-mizunara pairing are the point.",
+        "occasion": "Collector",
+        "flavorFamily": "Fruit & mizunara",
+        "pairingAffinity": "Refined medium-full cigar",
+        "memberBlurb": "Yamazaki 12 — peach, mizunara, and quiet spice. The Japanese single malt everyone asks for by name."
+      },
+      "id": "spi-trk-yamazaki-12",
+      "provenance": {
+        "beginnerSafe": "No",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Ron Zacapa 23 · Guatemala · $55 · 80 proof (40.0% ABV) · Notes: honey, raisin",
+      "guidance": {
+        "bestFor": "Sweet rum luxury, special occasion cigar, member wants rum without Diplomatico repeat.",
+        "avoidIf": "User wants white rum or dry spirits only.",
+        "whyRecommend": "Recommend when the member wants luxury sweet rum — honey, raisin, and butterscotch beside a premium cigar.",
+        "occasion": "Celebration",
+        "flavorFamily": "Luxury sweet",
+        "pairingAffinity": "Maduro / Connecticut broadleaf",
+        "memberBlurb": "Ron Zacapa 23 — caramel and butterscotch over apricot, nutmeg, leather, and coffee. Solera luxury rum per distillery tasting profile."
+      },
+      "id": "spi-trk-zacapa-23",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "version": 1,
+  "shard": "transcript-02",
+  "category": "cigar",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 9,
+  "products": [
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/ratings/20366/name/new-world-connecticut-robusto-robusto"
+      },
+      "guidance": {
+        "flavorFamily": "Savory",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Nicaragua wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua / Brazil filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/20366/name/new-world-connecticut-robusto-robusto.",
+        "avoidIf": "Beginner seeking ultra-mild only when strength is medium-full or full.",
+        "whyRecommend": "Recommend when teaching New World identity, AJ/Aganorsa progression, or transcript-priority catalog coverage."
+      },
+      "menuLine": "A.J. Fernandez New World · 5½ × 55 · Robusto · Medium-Full · Nicaragua · $9 · Notes: cedar, leather, lemon peel, mild, fruity",
+      "stickSize": "5½ × 55 · Robusto",
+      "id": "vid-03-ajf-nw-rob"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/ratings/21139/name/new-world-cameroon-selection-toro-toro"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Morning coffee",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Cameroon wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/21139/name/new-world-cameroon-selection-toro-toro.",
+        "avoidIf": "Opposite wrapper lesson needed, or user wants island Cuban only.",
+        "whyRecommend": "Recommend when teaching New World Cameroon identity, AJ/Aganorsa progression, or transcript-priority catalog coverage."
+      },
+      "menuLine": "A.J. Fernandez New World Cameroon · 6 × 54 · Toro · Medium · Nicaragua · $10 · Notes: earth, pepper, cedar, eucalyptus, citrus",
+      "stickSize": "6 × 54 · Toro",
+      "id": "vid-04-ajf-nw-cam-toro"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/ratings/25666/name/dias-de-gloria-brazil-toro"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "Celebration",
+        "pairingAffinity": "Rum",
+        "wrapperRole": "Nicaragua wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/25666/name/dias-de-gloria-brazil-toro.",
+        "avoidIf": "Beginner seeking ultra-mild only when strength is medium-full or full.",
+        "whyRecommend": "Recommend when teaching Dias de Gloria identity, AJ/Aganorsa progression, or transcript-priority catalog coverage."
+      },
+      "menuLine": "A.J. Fernandez Dias de Gloria · 6 × 52 · Toro · Medium-Full · Nicaragua · $11 · Notes: leather, pepper, cinnamon, café au lait, dark chocolate",
+      "stickSize": "6 × 52 · Toro",
+      "id": "vid-05-ajf-ddg-toro"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/rating/bellas-artes-maduro-robusto"
+      },
+      "guidance": {
+        "flavorFamily": "Coffee",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Brazilian Mata Fina wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Mexico binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua / Honduras filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/rating/bellas-artes-maduro-robusto.",
+        "avoidIf": "Opposite wrapper lesson needed, or user wants island Cuban only.",
+        "whyRecommend": "Recommend when teaching Bellas Artes identity, AJ/Aganorsa progression, or transcript-priority catalog coverage."
+      },
+      "menuLine": "A.J. Fernandez Bellas Artes · 5 × 52 · Robusto · Medium · Nicaragua · $10 · Notes: anise, coffee, cashew, tangy, acidity",
+      "stickSize": "5 × 52 · Robusto",
+      "id": "vid-06-ajf-bellas-rob"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/enclave-broadleaf-churchill-2019"
+      },
+      "guidance": {
+        "flavorFamily": "Savory",
+        "occasion": "After dinner",
+        "pairingAffinity": "Rum",
+        "wrapperRole": "Ecuador Sumatra wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua / Honduras filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/enclave-broadleaf-churchill-2019.",
+        "avoidIf": "Beginner seeking ultra-mild only when strength is medium-full or full.",
+        "whyRecommend": "Recommend when teaching Hoyo La Amistad Dark Sumatra identity, AJ/Aganorsa progression, or transcript-priority catalog coverage."
+      },
+      "menuLine": "A.J. Fernandez Hoyo La Amistad Dark Sumatra · 5 × 50 · Robusto · Medium-Full · Nicaragua · $9 · Notes: earth, cocoa, leather, pepper, cedar",
+      "stickSize": "5 × 50 · Robusto",
+      "id": "vid-07-ajf-amistad-rob"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/ratings/8978/name/a-j-fernandez-san-lotano-oval-robusto"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Nicaragua wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua / Honduras filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/8978/name/a-j-fernandez-san-lotano-oval-robusto.",
+        "avoidIf": "Opposite wrapper lesson needed, or user wants island Cuban only.",
+        "whyRecommend": "Recommend when teaching San Lotano Oval identity, AJ/Aganorsa progression, or transcript-priority catalog coverage."
+      },
+      "menuLine": "A.J. Fernandez San Lotano Oval · 5½ × 54 · Robusto · Medium · Nicaragua · $9 · Notes: cedar, earth, leather, cocoa, sweet tobacco",
+      "stickSize": "5½ × 54 · Robusto",
+      "id": "vid-08-ajf-sanlot-rob"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/enclave-broadleaf-churchill-2019"
+      },
+      "guidance": {
+        "flavorFamily": "Coffee",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Connecticut Broadleaf wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/enclave-broadleaf-churchill-2019.",
+        "avoidIf": "Beginner seeking ultra-mild only when strength is medium-full or full.",
+        "whyRecommend": "Recommend when teaching Enclave Broadleaf identity, AJ/Aganorsa progression, or transcript-priority catalog coverage."
+      },
+      "menuLine": "A.J. Fernandez Enclave Broadleaf · 5 × 52 · Robusto · Medium-Full · Nicaragua · $9 · Notes: earth, mineral, milk chocolate, vanilla, anise",
+      "stickSize": "5 × 52 · Robusto",
+      "id": "vid-09-ajf-enclave-rob"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/ratings/21078/name/last-call-maduro-by-aj-fernandez-corticas-odd"
+      },
+      "guidance": {
+        "flavorFamily": "Coffee",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "San Andrés Maduro wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/21078/name/last-call-maduro-by-aj-fernandez-corticas-odd.",
+        "avoidIf": "Opposite wrapper lesson needed, or user wants island Cuban only.",
+        "whyRecommend": "Recommend when teaching Last Call Maduro identity, AJ/Aganorsa progression, or transcript-priority catalog coverage."
+      },
+      "menuLine": "A.J. Fernandez Last Call Maduro · 4½ × 48 · Corona · Medium · Nicaragua · $6 · Notes: oak, vanilla, toasty, charry",
+      "stickSize": "4½ × 48 · Corona",
+      "id": "vid-10-ajf-lastcall-cor"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/ratings/24231/name/e-p-carrillo-allegiance-confidant-toro"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "Celebration",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "United States Connecticut Broadleaf wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Ecuador Sumatra binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/24231/name/e-p-carrillo-allegiance-confidant-toro.",
+        "avoidIf": "Beginner seeking ultra-mild only when strength is medium-full or full.",
+        "whyRecommend": "Recommend when teaching Allegiance identity, AJ/Aganorsa progression, or transcript-priority catalog coverage."
+      },
+      "menuLine": "E.P. Carrillo Allegiance · 6 × 52 · Toro · Medium-Full · United States · $14 · Notes: nutmeg, cinnamon, wood, gingerbread, pepper",
+      "stickSize": "6 × 52 · Toro",
+      "id": "vid-11-epc-allegiance-toro"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "op": "budgetTurn",
+  "promptText": "recommend a pairing for the evening",
+  "categoryFocus": "pairing",
+  "journeyLevel": "intermediate",
+  "session": {}
+}

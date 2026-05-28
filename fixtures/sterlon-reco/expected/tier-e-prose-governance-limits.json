@@ -1,0 +1,58 @@
+[
+  {
+    "profile": "recommendation",
+    "words": 65,
+    "sentences": 4,
+    "withinWordCap": true,
+    "withinSentenceCap": true,
+    "normalizedSpacing": true
+  },
+  {
+    "profile": "recommendation_gateway",
+    "words": 169,
+    "sentences": 12,
+    "withinWordCap": true,
+    "withinSentenceCap": true,
+    "normalizedSpacing": true
+  },
+  {
+    "profile": "refinement",
+    "words": 39,
+    "sentences": 2,
+    "withinWordCap": true,
+    "withinSentenceCap": true,
+    "normalizedSpacing": true
+  },
+  {
+    "profile": "expertise",
+    "words": 65,
+    "sentences": 4,
+    "withinWordCap": true,
+    "withinSentenceCap": true,
+    "normalizedSpacing": true
+  },
+  {
+    "profile": "comparison",
+    "words": 52,
+    "sentences": 3,
+    "withinWordCap": true,
+    "withinSentenceCap": true,
+    "normalizedSpacing": true
+  },
+  {
+    "profile": "clarification",
+    "words": 39,
+    "sentences": 2,
+    "withinWordCap": true,
+    "withinSentenceCap": true,
+    "normalizedSpacing": true
+  },
+  {
+    "profile": "prose",
+    "words": 52,
+    "sentences": 3,
+    "withinWordCap": true,
+    "withinSentenceCap": true,
+    "normalizedSpacing": true
+  }
+]

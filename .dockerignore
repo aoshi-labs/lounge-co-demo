@@ -1,0 +1,12 @@
+.sterlon-local/
+node_modules/
+reports/
+
+# Browser-local overrides and provider secrets must never enter the image.
+assets/javascript/demo-config.local.js
+assets/javascript/sterlon-gateway.local.js
+tools/sterlon-groq-gateway/.env
+
+# Local test/debug output.
+*.log
+*.tmp

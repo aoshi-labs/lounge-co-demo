@@ -1,0 +1,24 @@
+{
+  "budgetMode": "none",
+  "budgetMin": null,
+  "budgetMax": null,
+  "budgetTarget": null,
+  "budgetCeiling": null,
+  "categoryFocus": "pairing",
+  "degraded": false,
+  "cigars": [
+    "Nica Rustica Adobe Toro",
+    "Oliva Serie V Melanio Maduro Torpedo",
+    "Leaf by Oscar Island Maduro Gordo"
+  ],
+  "cigarMsrps": [
+    6,
+    12,
+    10
+  ],
+  "spirit": "Casamigos Reposado",
+  "spiritMsrp": 55,
+  "allCigarsWithinBudget": true,
+  "spiritWithinBudget": true,
+  "hasBudgetSignal": false
+}

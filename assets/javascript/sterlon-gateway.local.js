@@ -1,0 +1,31 @@
+/* ──────────────────────────────────────────────────────────────────────
+   Sterlon chat — local gateway config
+
+   Copy this file to `sterlon-gateway.local.js` in the same directory when
+   you want the static visionboard to call a local/server Sterlon gateway.
+
+   Do not put Groq, Anthropic, OpenAI, or any other provider key here. This
+   file is loaded by the browser. Provider credentials belong only on the
+   server that implements the gateway endpoint.
+
+   Without this file, Sterlon runs in deterministic mock mode using the local
+   pairing deck.
+
+   Local Groq proxy (API key on server only):
+     docs/visionboard/tools/sterlon-groq-gateway/README.md
+
+   Example after `npm start` in that folder:
+     window.STERLON_GATEWAY_URL = 'http://127.0.0.1:8787/api/sterlon/chat';
+
+   Optional model hint passed to the gateway. The server decides what provider
+   and model to use.
+     window.STERLON_MODEL = 'sterlon-demo';
+
+   DevTools checks:
+     Sterlon.isGatewayConfigured()
+     Sterlon.getRuntimeMode()
+     document.documentElement.dataset.sterlonRuntime
+   ────────────────────────────────────────────────────────────────────── */
+
+window.STERLON_GATEWAY_URL = 'http://127.0.0.1:8787/api/sterlon/chat';
+// window.STERLON_MODEL = 'sterlon-demo';

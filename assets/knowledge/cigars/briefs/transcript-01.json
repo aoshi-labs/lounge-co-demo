@@ -1,0 +1,212 @@
+{
+  "version": 1,
+  "shard": "transcript-01",
+  "category": "cigar",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 9,
+  "products": [
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/fuente-fuente-opusx-angel-s-share-reserva-d-chateau-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "Collector",
+        "pairingAffinity": "Cognac",
+        "wrapperRole": "Dominican sun-grown wrapper delivers OpusX signature spice, sweetness, and the prestige of an estate-grown puro cover leaf.",
+        "binderRole": "Dominican binder integrates the puro structure and supports Fuente's precise, celebration-grade construction.",
+        "fillerRole": "Dominican filler provides cedar, baking spice, dried fruit, and layered complexity without outside tobacco.",
+        "bestFor": "Collector, Fuente/OpusX fan, experienced smoker, celebration, cognac pairing, Dominican puro prestige.",
+        "avoidIf": "Beginner, nicotine-sensitive, budget-sensitive, user needs easy daily availability or a short smoke window.",
+        "whyRecommend": "Recommend when prestige, rarity, and a refined full-bodied Dominican puro are the goal—not blunt ligero shock."
+      },
+      "menuLine": "Arturo Fuente Fuente Fuente Opus X Perfecxion X · 5¼ × 42 · Petite Corona · Full · Dominican · $32 · Notes: cedar, baking spice, leather, sweet tobacco",
+      "stickSize": "5¼ × 42 · Petite Corona",
+      "id": "htd-01-opusx"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/ratings/16503/name/ashton-estate-sungrown-churchill"
+      },
+      "parentCompany": "Ashton",
+      "guidance": {
+        "flavorFamily": "Dessert",
+        "occasion": "Celebration",
+        "pairingAffinity": "Port",
+        "wrapperRole": "Dominican sun-grown wrapper adds caramelized sweetness, graham, and restrained spice from Fuente estate leaf.",
+        "binderRole": "Dominican binder keeps the all-Dominican blend coherent and elegantly constructed.",
+        "fillerRole": "Dominican filler supplies cedar, molasses, cocoa, and medium-full body with signature Fuente polish.",
+        "bestFor": "Celebration, port pairing, experienced smoker wanting luxury Dominican richness without OpusX collector pricing.",
+        "avoidIf": "Beginner on empty stomach, user wants mild Connecticut cream only, or lowest nicotine.",
+        "whyRecommend": "Recommend as a top-tier Dominican reserve—rich, smooth, and celebratory (often called the \"velvet hammer\")."
+      },
+      "menuLine": "Ashton ESG Churchill · 7¼ × 52 · Churchill · Full · Dominican · $18 · Notes: graham cracker, cedar, cocoa, molasses",
+      "stickSize": "7¼ × 52 · Churchill",
+      "id": "htd-02-ashton-esg"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/ratings/25727/name/arturo-fuente-hemingway-short-story"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "After dinner",
+        "pairingAffinity": "Rum",
+        "wrapperRole": "Cameroon wrapper contributes honeyed sweetness, baking spice, and aromatic texture unique to African leaf.",
+        "binderRole": "Dominican binder supports figurado construction and even burn through shaped formats.",
+        "fillerRole": "Dominican filler keeps the profile medium-bodied with cedar, earth, brown sugar, and approachable Fuente balance.",
+        "bestFor": "After dinner, rum pairing, craftsmanship/figurado lesson; Short Story for shorter window.",
+        "avoidIf": "User dislikes figurados, wants full ligero power, or needs the lowest nicotine in the book.",
+        "whyRecommend": "Recommend to teach Fuente figurado skill and Cameroon sweetness in a medium, approachable package."
+      },
+      "menuLine": "Arturo Fuente Hemingway Short Story · 4 × 49 · Figurado · Medium · Dominican · $8 · Notes: cedar, brown sugar, baking spice, toast",
+      "stickSize": "4 × 49 · Figurado",
+      "id": "htd-03-af-hemingway"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/ratings/8963/name/ashton-classic-churchill"
+      },
+      "parentCompany": "Ashton",
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Morning coffee",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Connecticut Shade wrapper delivers cream, cedar, almond, and soft sweetness with premium Dominican polish.",
+        "binderRole": "Dominican binder maintains smooth burn and Fuente-made consistency.",
+        "fillerRole": "Dominican filler provides gentle body, nuts, light spice, and reliable mild-to-medium character.",
+        "bestFor": "Beginner, morning coffee, mild luxury, user wants smooth Dominican Connecticut.",
+        "avoidIf": "User wants pepper-forward power, dark maduro body, or collector scarcity story.",
+        "whyRecommend": "Recommend when the user needs a polished, beginner-safe Dominican Connecticut profile."
+      },
+      "menuLine": "Ashton Classic Magnum · 7 × 50 · Magnum · Medium-Light · Dominican · $11 · Notes: cream, cedar, almonds, toast",
+      "stickSize": "7 × 50 · Magnum",
+      "id": "htd-04-ashton-classic"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/ratings/15552/name/montecristo-white-toro-toro"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Morning coffee",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Connecticut Shade wrapper gives grassy sweetness, cream, and classic Cuban-legacy mildness.",
+        "binderRole": "Dominican binder supports approachable, consistent construction from Tabacalera de García.",
+        "fillerRole": "Dominican filler reinforces cedar, nuts, light coffee, and easy-drinking mild body.",
+        "bestFor": "Beginner, morning coffee, Cuban-heritage mild profile, first widely known premium classic.",
+        "avoidIf": "User wants bold pepper, dark maduro, or boutique Nicaraguan intensity.",
+        "whyRecommend": "Recommend as a widely available mild Dominican classic with broad beginner appeal."
+      },
+      "menuLine": "Montecristo Classic / Dominican Toro · 6 × 52 · Toro · Light · Dominican · $9 · Notes: cream, cedar, nuts, grassy sweetness",
+      "stickSize": "6 × 52 · Toro",
+      "id": "htd-07-montecristo"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/ratings/21448/name/davidoff-aniversario-petit-corona"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Celebration",
+        "pairingAffinity": "Cognac",
+        "wrapperRole": "Ecuador Connecticut wrapper adds elegance, cream, and refined aromatic top notes.",
+        "binderRole": "Dominican binder preserves Davidoff's clean construction and balanced mild character.",
+        "fillerRole": "Dominican filler offers subtle nuts, cedar, coffee-with-cream, and low-intensity luxury complexity.",
+        "bestFor": "Celebration, cognac pairing, luxury gift, user wants prestige without strength.",
+        "avoidIf": "User equates luxury with full strength, wants pepper-heavy body, or is budget-sensitive.",
+        "whyRecommend": "Recommend to show that prestige can be gentle, refined, and low-intensity.",
+        "memberBlurb": "Davidoff elegance without punching you in the chest — nuts, cream, and coffee-with-cream in refined construction. Prestige that stays gentle."
+      },
+      "menuLine": "Davidoff Aniversario Churchill · 7 × 50 · Churchill · Medium-Light · Dominican · $28 · Notes: cedar, nuts, cream, coffee",
+      "stickSize": "7 × 50 · Churchill",
+      "id": "htd-09-dav-aniv"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/ratings/7738/name/cohiba-robusto-robusto"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "Collector",
+        "pairingAffinity": "Scotch",
+        "wrapperRole": "Cameroon wrapper adds wood, leather texture, and classic aromatic sweetness.",
+        "binderRole": "Indonesian Jember binder adds supple body and savory depth under the Cameroon top leaf.",
+        "fillerRole": "Dominican Piloto Cubano filler provides cedar, cream, black pepper, and medium Cuban-legacy character.",
+        "bestFor": "After dinner, Scotch pairing, medium heritage prestige, recognizable brand without OpusX pricing.",
+        "avoidIf": "User wants creamy mildness only, Cuban island product (clarify: Red Dot is DR-made), or lowest price point.",
+        "whyRecommend": "Recommend for medium-bodied Dominican prestige with Cameroon texture—U.S.-legal alternative to Cuban Cohiba story.",
+        "memberBlurb": "Cameroon texture and Dominican Piloto body — cedar, cream, and black pepper. Heritage prestige without OpusX money (U.S.-legal DR Cohiba)."
+      },
+      "menuLine": "Cohiba Dominican / Red Dot Robusto · 5 × 50 · Robusto · Medium · Dominican · $14 · Notes: cedar, cream, black pepper, wood",
+      "stickSize": "5 × 50 · Robusto",
+      "id": "htd-10-cohiba"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/ratings/21908/name/romeo-y-julieta-reserve-robusto"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Indonesian TBN wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Dominican Republic binder supports structure and integration with the filler.",
+        "fillerRole": "Dominican Republic / Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/21908/name/romeo-y-julieta-reserve-robusto.",
+        "avoidIf": "Opposite wrapper lesson needed, or user wants island Cuban only.",
+        "whyRecommend": "Recommend when teaching Reserve identity, AJ/Aganorsa progression, or transcript-priority catalog coverage."
+      },
+      "menuLine": "Romeo y Julieta Reserve · 5 × 50 · Robusto · Medium · Dominican Republic · $7 · Notes: leather, cinnamon, almonds, marzipan, toasty",
+      "stickSize": "5 × 50 · Robusto",
+      "id": "vid-01-ryj-reserve-rob"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigarsinternational.com/p/man-o-war-virtue-10-anniversary/2050768/"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Honduras wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Honduras binder supports structure and integration with the filler.",
+        "fillerRole": "Honduras / Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Verified against https://www.cigarsinternational.com/p/man-o-war-virtue-10-anniversary/2050768/.",
+        "avoidIf": "Beginner seeking ultra-mild only when strength is medium-full or full.",
+        "whyRecommend": "Recommend when teaching Man O' War 10th Anniversary identity, AJ/Aganorsa progression, or transcript-priority catalog coverage."
+      },
+      "menuLine": "Alec Bradley Man O' War 10th Anniversary · 6¼ × 54 · Toro · Medium-Full · Honduras · $11 · Notes: nuts, oak, pepper",
+      "stickSize": "6¼ × 54 · Toro",
+      "id": "vid-02-mow-10th-toro"
+    }
+  ]
+}

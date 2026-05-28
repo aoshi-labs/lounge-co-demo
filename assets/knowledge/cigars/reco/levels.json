@@ -1,0 +1,379 @@
+{
+  "version": 1,
+  "shard": "levels",
+  "category": "cigar",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 8,
+  "products": [
+    {
+      "tracker": {
+        "sku": "L3-AF-GRANRES"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "spice",
+          "weight": 0.95
+        },
+        {
+          "id": "wood",
+          "weight": 0.85
+        }
+      ],
+      "spec": {
+        "msrp": 7,
+        "tier": 3,
+        "strength": 3,
+        "body": "Medium-Light",
+        "smokeTime": "45 min",
+        "wrapper": "Natural / Maduro / Cameroon varies",
+        "binder": "Dominican Republic",
+        "filler": "Dominican Republic"
+      },
+      "id": "l3-af-granres",
+      "sensory": {
+        "body": 4,
+        "sweetness": 5,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Arturo Fuente Gran Reserva Rothschild",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "L3-MAC-CAFE"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cream",
+          "weight": 1.0
+        },
+        {
+          "id": "cedar",
+          "weight": 0.95
+        },
+        {
+          "id": "nut",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 8,
+        "tier": 3,
+        "strength": 2,
+        "body": "Light",
+        "smokeTime": "45 min",
+        "wrapper": "Connecticut Shade",
+        "binder": "Mexico",
+        "filler": "Dominican Republic / Mexico"
+      },
+      "id": "l3-mac-cafe",
+      "sensory": {
+        "body": 3,
+        "sweetness": 6,
+        "pepper": 4,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Macanudo Cafe Robusto / Hyde Park",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "L3-MONT-WHITE"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cream",
+          "weight": 1.0
+        },
+        {
+          "id": "cedar",
+          "weight": 0.95
+        },
+        {
+          "id": "spice",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 11,
+        "tier": 3,
+        "strength": 3,
+        "body": "Medium-Light",
+        "smokeTime": "60 min",
+        "wrapper": "Ecuadorian Connecticut Shade",
+        "binder": "Nicaragua",
+        "filler": "Dominican Republic / Nicaragua"
+      },
+      "id": "l3-mont-white",
+      "sensory": {
+        "body": 4,
+        "sweetness": 6,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Montecristo White Series Toro / Rothchilde / Churchill",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "L3-RYJ-1875"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "earth",
+          "weight": 0.95
+        },
+        {
+          "id": "nut",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        },
+        {
+          "id": "pepper",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 9,
+        "tier": 3,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "60 min",
+        "wrapper": "Indonesian Shade",
+        "binder": "Dominican Republic",
+        "filler": "Dominican Republic"
+      },
+      "id": "l3-ryj-1875",
+      "sensory": {
+        "body": 6,
+        "sweetness": 5,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Romeo y Julieta 1875 Churchill / Bully / Toro",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "L4-LFD-DL"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "pepper",
+          "weight": 1.0
+        },
+        {
+          "id": "leather",
+          "weight": 0.95
+        },
+        {
+          "id": "oak",
+          "weight": 0.85
+        },
+        {
+          "id": "earth",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 13,
+        "tier": 4,
+        "strength": 7,
+        "body": "Full",
+        "smokeTime": "90 min",
+        "wrapper": "Ecuadorian Sumatra",
+        "binder": "Dominican Republic",
+        "filler": "Dominican ligero"
+      },
+      "id": "l4-lfd-dl",
+      "sensory": {
+        "body": 9,
+        "sweetness": 5,
+        "pepper": 9,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "La Flor Dominicana Double Ligero Chisel / Robusto / Toro",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "L4-MYF-LEBIJOU"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.95
+        },
+        {
+          "id": "espresso",
+          "weight": 0.85
+        },
+        {
+          "id": "leather",
+          "weight": 0.75
+        },
+        {
+          "id": "pepper",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 13,
+        "tier": 4,
+        "strength": 6,
+        "body": "Full",
+        "smokeTime": "90 min",
+        "wrapper": "Nicaraguan Habano Oscuro",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "l4-myf-lebijou",
+      "sensory": {
+        "body": 9,
+        "sweetness": 5,
+        "pepper": 8,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "My Father Le Bijou 1922 Toro / Torpedo / Churchill",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "L4-OLIVA-SERIEV"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "spice",
+          "weight": 1.0
+        },
+        {
+          "id": "espresso",
+          "weight": 0.95
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.85
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.75
+        },
+        {
+          "id": "cedar",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 11,
+        "tier": 4,
+        "strength": 6,
+        "body": "Full",
+        "smokeTime": "90 min",
+        "wrapper": "Ecuadorian Habano Sun Grown",
+        "binder": "Nicaragua",
+        "filler": "Nicaraguan ligero"
+      },
+      "id": "l4-oliva-seriev",
+      "sensory": {
+        "body": 9,
+        "sweetness": 6,
+        "pepper": 8,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Oliva Serie V Double Robusto / Torpedo / Toro",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "L4-PAD-2000"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.95
+        },
+        {
+          "id": "coffee",
+          "weight": 0.85
+        },
+        {
+          "id": "earth",
+          "weight": 0.75
+        },
+        {
+          "id": "nut",
+          "weight": 0.7
+        },
+        {
+          "id": "cedar",
+          "weight": 0.65
+        }
+      ],
+      "spec": {
+        "msrp": 9,
+        "tier": 4,
+        "strength": 4,
+        "body": "Medium",
+        "smokeTime": "45 min",
+        "wrapper": "Nicaraguan Natural",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "l4-pad-2000",
+      "sensory": {
+        "body": 6,
+        "sweetness": 5,
+        "pepper": 6,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "Padron Thousands Series Robusto Natural",
+      "category": "cigar"
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Venues — Lounge & Co. Platform</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Manage all venues on the platform — create, edit, suspend." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Venues — Lounge & Co. Platform" />
+  <meta property="og:description" content="Manage all venues on the platform — create, edit, suspend." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Venues — Lounge & Co. Platform" />
+  <meta name="twitter:description" content="Manage all venues on the platform — create, edit, suspend." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/superadmin-venues.css"/>
+</head>
+<body>
+
+<nav class="sidebar super" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">★ Platform Admin</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row"><div class="avatar sidebar-user-avatar-super">CJ</div><div class="sidebar-user-info"><div class="sidebar-user-name">Christian J.</div><div class="sidebar-user-tier">★ Super Admin</div></div></div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Platform</div>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Overview</a>
+    <a href="superadmin-venues.html" class="nav-item"><i data-lucide="building" class="ic-17"></i>Venues</a>
+    <a href="#" class="nav-item"><i data-lucide="bar-chart-2" class="ic-17"></i>Revenue</a>
+    <a href="#" class="nav-item"><i data-lucide="layers" class="ic-17"></i>Infrastructure</a>
+    <div class="nav-section-label">Operations</div>
+    <a href="#" class="nav-item"><i data-lucide="message-circle" class="ic-17"></i>Support Inbox</a>
+    <a href="#" class="nav-item"><i data-lucide="file" class="ic-17"></i>Audit Log</a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+    <div class="nav-divider"></div>
+    <a href="feed.html" class="nav-item"><i data-lucide="chevron-left" class="ic-17"></i>Exit to Member View</a>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+  </div>
+</nav>
+
+<main class="main-area super">
+  <h1 class="visually-hidden">Venues</h1>
+  <header class="top-bar">
+    <button class="icon-btn sup-menu-btn" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+      <i data-lucide="menu" class="ic-16"></i>
+    </button>
+    <div class="topbar-actions">
+      <button class="superadmin-venues-onboard-button">+ Onboard Venue</button>
+    </div>
+  </header>
+
+  <div class="superadmin-venues-frame">
+
+    <!-- Filters -->
+    <div class="superadmin-venues-filter-row">
+      <input class="input superadmin-venues-search-input" type="text" placeholder="Search venues by name or subdomain…" aria-label="Search venues by name or subdomain"/>
+      <div class="superadmin-venues-button-group">
+        <button class="filter-tab active">All</button>
+        <button class="filter-tab">Active</button>
+        <button class="filter-tab">Trial <span class="superadmin-venues-filter-badge">1</span></button>
+        <button class="filter-tab">Suspended</button>
+      </div>
+    </div>
+
+    <!-- Venue stats summary — moved out of the top bar to sit directly
+         beneath the search/filter row where it reads as context for the
+         table below it. -->
+    <div class="superadmin-venues-stats-summary">13 active · 1 trial · $3,887 MRR</div>
+
+    <!-- Venue table -->
+    <div class="superadmin-venues-table-card">
+      <table>
+        <thead><tr><th>Lounge</th><th>Subdomain</th><th>Status</th><th>Plan</th><th>Members</th><th>MRR</th><th>Joined</th><th></th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="superadmin-venues-lounge-cell"><div class="avatar superadmin-venues-avatar-gold"><img src="assets/images/logo-favicon.png" alt=""/></div><div><div class="superadmin-venues-row-name" data-lounge-name>Lounge & Co.</div><div class="superadmin-venues-row-location">Atlanta, GA</div></div></div></td>
+            <td><span class="superadmin-venues-subdomain">lounge-co</span></td>
+            <td><span class="status-pill superadmin-venues-status-active">● Active</span></td>
+            <td><span class="superadmin-venues-plan-cedar">Cedar</span></td>
+            <td>247</td>
+            <td class="superadmin-venues-plan-cedar">$299</td>
+            <td>Mar '23</td>
+            <td><button class="icon-btn superadmin-venues-row-actions" aria-label="More options"><i data-lucide="more-horizontal" class="ic-14"></i></button></td>
+          </tr>
+          <tr>
+            <td><div class="superadmin-venues-lounge-cell"><div class="avatar superadmin-venues-avatar-burg">HH</div><div><div class="superadmin-venues-row-name">Havana &amp; Highland</div><div class="superadmin-venues-row-location">Chicago, IL</div></div></div></td>
+            <td><span class="superadmin-venues-subdomain">havana-highland</span></td>
+            <td><span class="status-pill superadmin-venues-status-active">● Active</span></td>
+            <td><span class="superadmin-venues-plan-cedar">Cedar</span></td>
+            <td>412</td>
+            <td class="superadmin-venues-plan-cedar">$299</td>
+            <td>Apr '23</td>
+            <td><button class="icon-btn superadmin-venues-row-actions" aria-label="More options"><i data-lucide="more-horizontal" class="ic-14"></i></button></td>
+          </tr>
+          <tr>
+            <td><div class="superadmin-venues-lounge-cell"><div class="avatar superadmin-venues-avatar-elite">BD</div><div><div class="superadmin-venues-row-name">The Brass Drum</div><div class="superadmin-venues-row-location">Houston, TX</div></div></div></td>
+            <td><span class="superadmin-venues-subdomain">brass-drum</span></td>
+            <td><span class="status-pill superadmin-venues-status-active">● Active</span></td>
+            <td><span class="superadmin-venues-plan-cedar">Cedar</span></td>
+            <td>38</td>
+            <td class="superadmin-venues-plan-cedar">$299</td>
+            <td>2 days ago</td>
+            <td><button class="icon-btn superadmin-venues-row-actions" aria-label="More options"><i data-lucide="more-horizontal" class="ic-14"></i></button></td>
+          </tr>
+          <tr>
+            <td><div class="superadmin-venues-lounge-cell"><div class="avatar superadmin-venues-avatar-brown">CS</div><div><div class="superadmin-venues-row-name">Cigar &amp; Sons NYC</div><div class="superadmin-venues-row-location">New York, NY</div></div></div></td>
+            <td><span class="superadmin-venues-subdomain">cigar-sons</span></td>
+            <td><span class="status-pill superadmin-venues-status-active">● Active</span></td>
+            <td><span class="superadmin-venues-plan-cedar">Cedar</span></td>
+            <td>289</td>
+            <td class="superadmin-venues-plan-cedar">$299</td>
+            <td>Aug '23</td>
+            <td><button class="icon-btn superadmin-venues-row-actions" aria-label="More options"><i data-lucide="more-horizontal" class="ic-14"></i></button></td>
+          </tr>
+          <tr>
+            <td><div class="superadmin-venues-lounge-cell"><div class="avatar superadmin-venues-avatar-blue">LL</div><div><div class="superadmin-venues-row-name">The Library Lounge</div><div class="superadmin-venues-row-location">Boston, MA</div></div></div></td>
+            <td><span class="superadmin-venues-subdomain">library-lounge</span></td>
+            <td><span class="status-pill superadmin-venues-status-active">● Active</span></td>
+            <td><span class="superadmin-venues-plan-cedar">Cedar</span></td>
+            <td>104</td>
+            <td class="superadmin-venues-plan-cedar">$299</td>
+            <td>1 week ago</td>
+            <td><button class="icon-btn superadmin-venues-row-actions" aria-label="More options"><i data-lucide="more-horizontal" class="ic-14"></i></button></td>
+          </tr>
+          <tr>
+            <td><div class="superadmin-venues-lounge-cell"><div class="avatar superadmin-venues-avatar-magenta">SR</div><div><div class="superadmin-venues-row-name">Smoke Ring Co</div><div class="superadmin-venues-row-location">Miami, FL</div></div></div></td>
+            <td><span class="superadmin-venues-subdomain">smoke-ring</span></td>
+            <td><span class="status-pill superadmin-venues-status-trial">● Trial · 4d left</span></td>
+            <td><span class="superadmin-venues-plan-trial">Trial</span></td>
+            <td>67</td>
+            <td class="superadmin-venues-plan-trial">—</td>
+            <td>26 days ago</td>
+            <td><button class="icon-btn superadmin-venues-row-actions" aria-label="More options"><i data-lucide="more-horizontal" class="ic-14"></i></button></td>
+          </tr>
+          <tr>
+            <td><div class="superadmin-venues-lounge-cell"><div class="avatar superadmin-venues-avatar-bronze">PA</div><div><div class="superadmin-venues-row-name">Pappy's Aficionados</div><div class="superadmin-venues-row-location">Louisville, KY</div></div></div></td>
+            <td><span class="superadmin-venues-subdomain">pappys</span></td>
+            <td><span class="status-pill superadmin-venues-status-active">● Active</span></td>
+            <td><span class="superadmin-venues-plan-cedar">Cedar</span></td>
+            <td>198</td>
+            <td class="superadmin-venues-plan-cedar">$299</td>
+            <td>Nov '23</td>
+            <td><button class="icon-btn superadmin-venues-row-actions" aria-label="More options"><i data-lucide="more-horizontal" class="ic-14"></i></button></td>
+          </tr>
+          <tr>
+            <td><div class="superadmin-venues-lounge-cell"><div class="avatar superadmin-venues-avatar-steel">DA</div><div><div class="superadmin-venues-row-name">Davenport's</div><div class="superadmin-venues-row-location">San Francisco, CA</div></div></div></td>
+            <td><span class="superadmin-venues-subdomain">davenports</span></td>
+            <td><span class="status-pill superadmin-venues-status-active">● Active</span></td>
+            <td><span class="superadmin-venues-plan-cedar">Cedar</span></td>
+            <td>132</td>
+            <td class="superadmin-venues-plan-cedar">$299</td>
+            <td>Jan '24</td>
+            <td><button class="icon-btn superadmin-venues-row-actions" aria-label="More options"><i data-lucide="more-horizontal" class="ic-14"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="superadmin-venues-table-footer">
+        <span class="superadmin-venues-footer-meta">Showing 8 of 14 venues</span>
+        <div class="superadmin-venues-button-group">
+          <button class="icon-btn superadmin-venues-page-button-active">1</button>
+          <button class="icon-btn superadmin-venues-page-button">2</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- shared behaviors loaded via assets/javascript/lounge.js -->
+</body>
+</html>

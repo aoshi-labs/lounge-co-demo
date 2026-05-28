@@ -1,0 +1,74 @@
+  /* Super-admin sidebar variants live in lounge.css (.sidebar.super, .sidebar.super .nav-item.active, etc.) */
+  /* Page-specific mobile grid-2 collapse */
+  @media(max-width:1023px){.grid-2{grid-template-columns:1fr!important}}
+
+  /* Page-specific dashboard cards */
+  .stat-card{background:var(--bg-surface);border:1px solid var(--bg-border);border-radius:14px;padding:18px 20px;}
+
+  /* Slightly denser widget than the lounge.css default for super-admin's data-heavy layout */
+  .widget{background:var(--bg-surface);border:1px solid var(--bg-border);border-radius:14px;padding:20px;}
+  .widget-title{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+
+
+/* === Page-specific styles === */
+.topbar-page-title { font-size:15px; font-weight:600; color:var(--text-primary); }
+.topbar-status-pill { font-size:11px; color:var(--tier-elite); font-weight:600; }
+.superadmin-dashboard-frame { padding:24px 24px 40px; display:flex; flex-direction:column; gap:18px; max-width:1300px; width:100%; }
+.superadmin-dashboard-stat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+.superadmin-dashboard-stat-label { font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px; }
+.superadmin-dashboard-stat-value-gold { font-family:var(--font-display); font-size:2rem; font-weight:700; color:var(--gold); line-height:1.05; }
+.superadmin-dashboard-stat-delta-positive { font-size:11px; color:var(--tier-elite); margin-top:6px; }
+.superadmin-dashboard-stat-value { font-family:var(--font-display); font-size:2rem; font-weight:700; color:var(--text-primary); line-height:1.05; }
+.superadmin-dashboard-stat-meta { font-size:11px; color:var(--text-muted); margin-top:6px; }
+.superadmin-dashboard-mrr-grid { display:grid; grid-template-columns:2fr 1fr; gap:14px; }
+.superadmin-dashboard-mrr-chart { width:100%; height:auto; }
+.superadmin-dashboard-mrr-axis { display:flex; justify-content:space-between; font-size:10px; color:var(--text-muted); margin-top:6px; padding:0 4px; }
+.superadmin-dashboard-value-gold { color:var(--gold); font-weight:700; }
+.superadmin-dashboard-top-venues-list { display:flex; flex-direction:column; gap:10px; }
+.superadmin-dashboard-top-venues-row { display:flex; justify-content:space-between; font-size:13px; }
+.superadmin-dashboard-text-primary { color:var(--text-primary); font-weight:600; }
+.superadmin-dashboard-link-muted { display:block; margin-top:14px; font-size:12px; color:var(--text-muted); text-decoration:none; text-align:center; transition:color .2s; }
+.superadmin-dashboard-activity-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.superadmin-dashboard-widget-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
+.superadmin-dashboard-widget-header-title { margin:0; }
+.superadmin-dashboard-widget-header-link { font-size:12px; color:var(--text-muted); text-decoration:none; }
+.superadmin-dashboard-activity-list { display:flex; flex-direction:column; gap:10px; font-size:12px; }
+.superadmin-dashboard-activity-row { display:flex; align-items:center; gap:10px; padding:10px; background:var(--bg-elevated); border-radius:9px; border:1px solid var(--bg-border); }
+.superadmin-dashboard-activity-icon-elite { width:30px; height:30px; background:rgba(var(--tier-elite-rgb), .15); color:var(--tier-elite); border-radius:7px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.superadmin-dashboard-activity-body { flex:1; }
+.superadmin-dashboard-text-muted { color:var(--text-muted); }
+.superadmin-dashboard-activity-icon-gold { width:30px; height:30px; background:rgba(var(--gold-rgb), .15); color:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.superadmin-dashboard-activity-icon-burg { width:30px; height:30px; background:rgba(var(--burg-rgb), .15); color:var(--burg); border-radius:7px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.superadmin-dashboard-infra-list { display:flex; flex-direction:column; gap:12px; }
+.superadmin-dashboard-infra-row-header { display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px; }
+.superadmin-dashboard-infra-value-elite { color:var(--tier-elite); font-weight:600; }
+.superadmin-dashboard-infra-bar-track { height:6px; background:var(--bg-elevated); border-radius:99px; overflow:hidden; }
+.superadmin-dashboard-infra-bar-fill-30 { height:100%; width:30%; background:var(--tier-elite); }
+.superadmin-dashboard-infra-meta { font-size:10px; color:var(--text-muted); margin-top:3px; }
+.superadmin-dashboard-infra-bar-fill-62 { height:100%; width:62%; background:var(--tier-elite); }
+.superadmin-dashboard-infra-value-gold { color:var(--gold); font-weight:600; }
+.superadmin-dashboard-infra-bar-fill-47-gold { height:100%; width:47%; background:var(--gold); }
+.superadmin-dashboard-infra-bar-fill-22 { height:100%; width:22%; background:var(--tier-elite); }
+
+/* Hamburger button — hidden on desktop, lounge.js flips it to display:flex
+   at <=1023px (see setupMobileMenu). Matches the hamburger-button pattern
+   used on other pages. */
+.sup-menu-btn { display: none; }
+
+/* Mobile (≤767px): 4-col stat grid crams 4 cards into iPhone SE width
+   with each card ~80px wide — the 2rem display numbers + the uppercase
+   labels + the % delta line all fight for space and the cards read as
+   visual noise. Collapse to a 2-col grid on phones, then single-column
+   on the narrowest viewports. */
+@media (max-width: 767px) {
+  .superadmin-dashboard-stat-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .stat-card { padding: 14px 14px; }
+  /* Operational status pill — keep the green dot, drop the "All systems
+     operational" label so the top bar reads cleanly on phones. */
+  .sup-status-label { display: none; }
+}
+
+@media (max-width: 639px) {
+  .superadmin-dashboard-stat-value-gold { font-size: 1.5rem; line-height: 1.15; }
+  .superadmin-dashboard-stat-value { font-size: 1.5rem; line-height: 1.15; }
+}

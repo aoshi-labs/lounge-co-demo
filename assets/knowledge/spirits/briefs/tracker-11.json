@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "shard": "tracker-11",
+  "category": "spirit",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 8,
+  "products": [
+    {
+      "menuLine": "Talisker 10 Year · Isle of Skye, Scotland · $60 · 91.6 proof (45.8% ABV) · Notes: pepper, smoke",
+      "guidance": {
+        "bestFor": "Peppery cigar, coastal smoke, member wants peat with spice.",
+        "avoidIf": "User wants unpeated Speyside only.",
+        "whyRecommend": "Recommend when pepper in the cigar should meet pepper and maritime smoke in the glass.",
+        "occasion": "After dinner",
+        "flavorFamily": "Maritime smoke",
+        "pairingAffinity": "Nicaraguan / peppery",
+        "memberBlurb": "Talisker 10 — black pepper and sea salt over maritime smoke. The Scotch that loves a spicy Nicaraguan as much as you do."
+      },
+      "id": "spi-trk-talisker-10",
+      "provenance": {
+        "beginnerSafe": "No",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Tanqueray No. Ten · England · $38 · 94.6 proof (47.3% ABV) · Notes: grapefruit, orange peel",
+      "guidance": {
+        "bestFor": "Martini order, citrus-forward gin, summer lounge.",
+        "avoidIf": "User wants brown spirits only.",
+        "whyRecommend": "Recommend when a martini matters — grapefruit, juniper, and citrus peel.",
+        "occasion": "Cocktail",
+        "flavorFamily": "Citrus & juniper",
+        "pairingAffinity": "Mild / medium cigar",
+        "memberBlurb": "Tanqueray No. Ten — grapefruit and juniper built for martinis. The gin pour when someone wants citrus beside a light cigar."
+      },
+      "id": "spi-trk-tanqueray-10",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Tito's Handmade Vodka · Texas · $28 · 80 proof (40.0% ABV) · Notes: clean, black pepper",
+      "guidance": {
+        "bestFor": "Vodka soda, martini, member wants America's top-selling spirit name.",
+        "avoidIf": "User wants brown spirits or heavy flavor only.",
+        "whyRecommend": "Recommend when the member names Tito's or wants the best-selling US vodka — clean, neutral, cocktail-ready.",
+        "occasion": "Cocktail / everyday",
+        "flavorFamily": "Clean & crisp",
+        "pairingAffinity": "Mild cigar",
+        "memberBlurb": "Tito's Handmade — America's best-selling vodka by volume. Clean corn spirit built for soda, tonic, and letting a mild cigar speak."
+      },
+      "id": "spi-trk-titos",
+      "provenance": {
+        "beginnerSafe": "Yes",
+        "sourceConfidence": "Industry reference (US retail sales 2025)",
+        "dataGrade": 7
+      }
+    },
+    {
+      "menuLine": "Weller Special Reserve · Kentucky · $28 · 90 proof (45.0% ABV) · Journey: Intermediate · Notes: vanilla, honey",
+      "guidance": {
+        "bestFor": "Pappy-adjacent request, wheated bourbon curious, approachable upgrade from BT.",
+        "avoidIf": "User needs lowest shelf or cask-strength only.",
+        "whyRecommend": "Recommend when the member wants wheated bourbon without Pappy pricing — honey, vanilla, soft oak.",
+        "occasion": "Everyday pour",
+        "flavorFamily": "Vanilla & honey",
+        "pairingAffinity": "Medium cigar",
+        "memberBlurb": "Weller Special Reserve — honeyed wheated bourbon on the Buffalo Trace mash bill. The pour people mean when they cannot get Pappy."
+      },
+      "id": "spi-trk-weller-sr",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Woodford Reserve Kentucky Straight Bourbon · Kentucky · $38 · 90.4 proof (45.2% ABV) · Journey: Intermediate · Notes: cocoa, oak",
+      "guidance": {
+        "bestFor": "Member wants polished bourbon between entry and allocated, medium cigar night.",
+        "avoidIf": "User needs lowest price point or maximum peat/smoke.",
+        "whyRecommend": "Recommend for cocoa-oak balance beside a medium-bodied cigar — step up from Buffalo Trace without collector pricing.",
+        "occasion": "After dinner",
+        "flavorFamily": "Cocoa & spice",
+        "pairingAffinity": "Medium-body cigar",
+        "memberBlurb": "Woodford Reserve — dried fruit, orange, and cocoa over cinnamon, toffee, and chocolate. Official pot-still profile built for a medium cigar."
+      },
+      "id": "spi-trk-woodford",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Woodford Reserve Double Oaked · Kentucky · $65 · 90.4 proof (45.2% ABV) · Journey: Intermediate · Notes: toffee, dark chocolate",
+      "guidance": {
+        "bestFor": "Member already likes Woodford standard, wants dessert bourbon.",
+        "avoidIf": "User wants dry or smoky only.",
+        "whyRecommend": "Recommend when toffee and dark chocolate in the glass should match a maduro — double-oak depth.",
+        "occasion": "After dinner",
+        "flavorFamily": "Toffee & oak",
+        "pairingAffinity": "Maduro / dessert profile",
+        "memberBlurb": "Woodford Double Oaked — toffee and dark chocolate from a second barrel pass. Dessert bourbon that still belongs beside a serious cigar."
+      },
+      "id": "spi-trk-woodford-do",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "WhistlePig 10 Year · Vermont (sourced) · $85 · 100 proof (50% ABV) · Journey: Intermediate · Notes: pepper, mint",
+      "guidance": {
+        "bestFor": "User asks for rye, spice-forward cigar, or bourbon drinker ready for rye.",
+        "avoidIf": "User dislikes spice heat or wants unpeated Scotch only.",
+        "whyRecommend": "Recommend when the member wants to learn rye — pepper and mint over oak without losing body.",
+        "occasion": "After dinner",
+        "flavorFamily": "Rye spice",
+        "pairingAffinity": "Peppery / spicy cigar",
+        "memberBlurb": "WhistlePig 10 — allspice and orange peel over caramel, rye spice, and mint with a butterscotch finish. Brand-official 100-proof rye lesson."
+      },
+      "id": "spi-trk-wp-10",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Wild Turkey 101 · Kentucky · $28 · 101 proof (50.5% ABV) · Journey: Novice · Notes: caramel, vanilla",
+      "guidance": {
+        "bestFor": "Value bourbon, Old Fashioned base, rye-curious step up from BT.",
+        "avoidIf": "User wants wheated or ultra-smooth only.",
+        "whyRecommend": "Recommend as the benchmark 101-proof bourbon — spice, caramel, and oak without luxury pricing.",
+        "occasion": "Everyday pour",
+        "flavorFamily": "Rye spice & caramel",
+        "pairingAffinity": "Natural / Habano",
+        "memberBlurb": "Wild Turkey 101 — the benchmark Kentucky bourbon at 101 proof. Rye spice and caramel that teach structure without allocated nonsense."
+      },
+      "id": "spi-trk-wt-101",
+      "provenance": {
+        "beginnerSafe": "Yes",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    }
+  ]
+}

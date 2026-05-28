@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Edit Curated List — Admin</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Edit a curated list — add or remove cigars, spirits, and tasting notes." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Edit Curated List — Admin" />
+  <meta property="og:description" content="Edit a curated list — add or remove cigars, spirits, and tasting notes." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Edit Curated List — Admin" />
+  <meta name="twitter:description" content="Edit a curated list — add or remove cigars, spirits, and tasting notes." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/admin-list-edit.css"/>
+</head>
+<body>
+
+<nav class="sidebar admin" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Owner Console</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-owner"><img src="assets/images/gerald-o.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Gerald Owens</div><div class="sidebar-user-role">Owner</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Overview</div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Dashboard</a>
+    <a href="admin-analytics.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Analytics</a>
+    <div class="nav-section-label">Manage</div>
+    <a href="admin-members.html" class="nav-item"><i data-lucide="users" class="ic-17"></i>Members</a>
+    <a href="admin-catalog.html" class="nav-item active"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="admin-orders.html" class="nav-item"><i data-lucide="receipt-text" class="ic-17"></i>Requests<span class="notif-dot">3</span></a>
+    <a href="admin-events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-settings.html" class="nav-item"><i data-lucide="settings" class="ic-17"></i>Lounge Settings</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="chevron-left" class="ic-17"></i>Back to Member View</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area admin">
+  <h1 class="visually-hidden">Edit Curated List</h1>
+  <header class="top-bar">
+    <button class="icon-btn sup-menu-btn" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+      <i data-lucide="menu" class="ic-16"></i>
+    </button>
+    <!-- Auto-injected .top-bar-logo (list icon + "Edit list" label) lands here. -->
+    <div class="ale-status-pill" id="status-pill">● Editing</div>
+    <a href="admin-catalog.html" class="ale-back-cta" title="Back to Catalog">
+      <i data-lucide="chevron-left" class="ic-14"></i>Back to Catalog
+    </a>
+  </header>
+
+  <div class="ale-body">
+
+    <!-- ========== LEFT: form ========== -->
+    <div class="ale-form">
+
+      <!-- List type selector -->
+      <div class="ale-section">
+        <div class="ale-label">List Type</div>
+        <div class="ale-type-grid">
+          <label class="ale-type">
+            <input type="radio" name="list-type" value="standing" checked onchange="setListType('standing')">
+            <div class="ale-type-card">
+              <i data-lucide="bookmark" class="ic-15"></i>
+              <div class="ale-type-name">Standing</div>
+              <div class="ale-type-sub">Evergreen · always visible</div>
+            </div>
+          </label>
+          <label class="ale-type">
+            <input type="radio" name="list-type" value="tonight" onchange="setListType('tonight')">
+            <div class="ale-type-card">
+              <i data-lucide="flame" class="ic-15"></i>
+              <div class="ale-type-name">Tonight's Flight</div>
+              <div class="ale-type-sub">Refreshes daily · single evening</div>
+            </div>
+          </label>
+          <label class="ale-type">
+            <input type="radio" name="list-type" value="seasonal" onchange="setListType('seasonal')">
+            <div class="ale-type-card">
+              <i data-lucide="leaf" class="ic-15"></i>
+              <div class="ale-type-name">Seasonal</div>
+              <div class="ale-type-sub">3–6 weeks · auto-expires</div>
+            </div>
+          </label>
+          <label class="ale-type">
+            <input type="radio" name="list-type" value="event" onchange="setListType('event')">
+            <div class="ale-type-card">
+              <i data-lucide="calendar" class="ic-15"></i>
+              <div class="ale-type-name">Event-tied</div>
+              <div class="ale-type-sub">Linked to an upcoming event</div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Title -->
+      <div class="ale-section">
+        <label class="ale-label" for="list-title">Title</label>
+        <input id="list-title" class="ale-input" type="text" value="Three Sub-$50 Cigars Worth Your Evening" oninput="updatePreview()" placeholder="What is this list called?">
+      </div>
+
+      <!-- Author -->
+      <div class="ale-section">
+        <label class="ale-label" for="author-name">Author</label>
+        <div class="ale-author-pick">
+          <div class="avatar ale-author-avatar" id="author-avatar"><img src="assets/images/david-h.jpg" alt=""/></div>
+          <select class="ale-input ale-input-select" id="author-name" onchange="updateAuthor(this.value)" aria-label="List author">
+            <option value="David H. · Cigar buyer" data-init="DH">David H. · Cigar buyer</option>
+            <option value="Maya V. · GM" data-init="MV">Maya V. · GM</option>
+            <option value="Gerald O. · Owner" data-init="GO">Gerald O. · Owner</option>
+            <option value="Renee A. · Front of house" data-init="RA">Renee A. · Front of house</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Intro -->
+      <div class="ale-section">
+        <label class="ale-label" for="list-intro">Curator's Intro</label>
+        <textarea id="list-intro" class="ale-input ale-input-textarea" rows="3" oninput="updatePreview()" placeholder="One or two sentences. Personal voice — what makes this list this list?">"Don't let the price fool you — these three punch well above weight. Two Dominicans and one Honduran, all under $50, all worth a serious member's time."</textarea>
+      </div>
+
+      <!-- Date range (only shown for non-standing types) -->
+      <div class="ale-section ale-section-dates" id="date-section" hidden>
+        <div class="ale-label">Active Dates</div>
+        <div class="ale-date-row">
+          <input class="ale-input" type="date" id="date-start" onchange="updatePreview()">
+          <span class="ale-date-sep">→</span>
+          <input class="ale-input" type="date" id="date-end" onchange="updatePreview()">
+        </div>
+        <div class="ale-help">List auto-expires at end date. Tonight's Flight defaults to midnight tonight.</div>
+      </div>
+
+      <!-- Products picker -->
+      <div class="ale-section">
+        <div class="ale-label">Products</div>
+
+        <div class="ale-products" id="products-list">
+          <div class="ale-product-row">
+            <span class="ale-product-rank">1</span>
+            <span class="ale-product-thumb"><img src="assets/images/ashton_vsg_torpedo.jpg" alt=""/></span>
+            <div class="ale-product-info">
+              <div class="ale-product-name">Ashton Classic Magnum</div>
+              <div class="ale-product-meta">Cigar · Dominican · $18</div>
+            </div>
+            <input class="ale-input ale-product-note" type="text" value='"Better than its price for the past 30 years."' oninput="updatePreview()" placeholder="One-line curator note">
+            <button class="ale-product-remove" onclick="removeProduct(this)" title="Remove" aria-label="Remove product"><i data-lucide="x" class="ic-13"></i></button>
+          </div>
+          <div class="ale-product-row">
+            <span class="ale-product-rank">2</span>
+            <span class="ale-product-thumb"><img src="assets/images/fuente-opus.jpg" alt=""/></span>
+            <div class="ale-product-info">
+              <div class="ale-product-name">Arturo Fuente Hemingway Short Story</div>
+              <div class="ale-product-meta">Cigar · Dominican · $11</div>
+            </div>
+            <input class="ale-input ale-product-note" type="text" value='"Perfect length, classic flavor profile."' oninput="updatePreview()" placeholder="One-line curator note">
+            <button class="ale-product-remove" onclick="removeProduct(this)" title="Remove" aria-label="Remove product"><i data-lucide="x" class="ic-13"></i></button>
+          </div>
+          <div class="ale-product-row">
+            <span class="ale-product-rank">3</span>
+            <span class="ale-product-thumb"><img src="assets/images/padron.jpg" alt=""/></span>
+            <div class="ale-product-info">
+              <div class="ale-product-name">Padron 3000 Maduro</div>
+              <div class="ale-product-meta">Cigar · Nicaraguan · $9</div>
+            </div>
+            <input class="ale-input ale-product-note" type="text" value='"Crowd-pleaser for any palate."' oninput="updatePreview()" placeholder="One-line curator note">
+            <button class="ale-product-remove" onclick="removeProduct(this)" title="Remove" aria-label="Remove product"><i data-lucide="x" class="ic-13"></i></button>
+          </div>
+        </div>
+
+        <div class="ale-add-product">
+          <input class="ale-input ale-product-search" type="text" id="product-search" placeholder="Search catalog — type Padron, Lagavulin, …" aria-label="Search catalog to add an item to the list" oninput="filterProductSearch(this.value)">
+          <div class="ale-search-results" id="search-results" hidden>
+            <button class="ale-search-row" onclick="addProduct('Padron 1926 No. 35','assets/images/padron_1926.jpg','Cigar · Nicaraguan · $42')"><img class="ale-search-thumb" src="assets/images/padron_1926.jpg" alt=""/><span>Padron 1926 No. 35</span> · <em>Cigar · $42</em></button>
+            <button class="ale-search-row" onclick="addProduct('Lagavulin 16yr','assets/images/lagavulin_16yr.jpg','Spirit · Islay · $22 / pour')"><img class="ale-search-thumb" src="assets/images/lagavulin_16yr.jpg" alt=""/><span>Lagavulin 16yr</span> · <em>Spirit · $22 / pour</em></button>
+            <button class="ale-search-row" onclick="addProduct('Glenfarclas 17yr','assets/images/glenfarclas_17yr.jpg','Spirit · Speyside · $24 / pour')"><img class="ale-search-thumb" src="assets/images/glenfarclas_17yr.jpg" alt=""/><span>Glenfarclas 17yr</span> · <em>Spirit · $24 / pour</em></button>
+            <button class="ale-search-row" onclick="addProduct('Macallan 18 Sherry Oak','assets/images/macallan-18.webp','Spirit · Speyside · $48 / pour')"><img class="ale-search-thumb" src="assets/images/macallan-18.webp" alt=""/><span>Macallan 18 Sherry Oak</span> · <em>Spirit · $48 / pour</em></button>
+            <button class="ale-search-row" onclick="addProduct('Single Origin Espresso','','Coffee · Ethiopia · $5')"><span>Single Origin Espresso</span> · <em>Coffee · $5</em></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Publish state -->
+      <div class="ale-section">
+        <div class="ale-label">Publish State</div>
+        <div class="ale-publish-toggle">
+          <label class="ale-publish-opt">
+            <input type="radio" name="publish-state" value="draft" checked onchange="setPublishState('draft')">
+            <div class="ale-publish-card">
+              <div class="ale-publish-title">Draft</div>
+              <div class="ale-publish-sub">Only visible to staff</div>
+            </div>
+          </label>
+          <label class="ale-publish-opt">
+            <input type="radio" name="publish-state" value="published" onchange="setPublishState('published')">
+            <div class="ale-publish-card">
+              <div class="ale-publish-title">Published</div>
+              <div class="ale-publish-sub">Live on /lists for all members</div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========== RIGHT: live preview ========== -->
+    <aside class="ale-preview">
+      <div class="ale-preview-head">
+        <i data-lucide="eye" class="ic-13"></i>
+        Live preview · as members will see it
+      </div>
+      <div class="ale-preview-frame">
+        <article class="ale-prev-card">
+          <div class="ale-prev-tag" id="prev-tag">Standing</div>
+          <h3 class="ale-prev-title" id="prev-title">Three Sub-$50 Cigars Worth Your Evening</h3>
+          <div class="ale-prev-byline">
+            <div class="avatar ale-prev-avatar" id="prev-avatar"><img src="assets/images/david-h.jpg" alt=""/></div>
+            <span id="prev-byline">David H. · Cigar buyer · just now</span>
+          </div>
+          <p class="ale-prev-intro" id="prev-intro">"Don't let the price fool you — these three punch well above weight. Two Dominicans and one Honduran, all under $50, all worth a serious member's time."</p>
+          <div class="ale-prev-products" id="prev-products">
+            <div class="ale-prev-product">
+              <span class="ale-prev-rank">1</span>
+              <span class="ale-prev-name">Ashton Classic Magnum</span>
+              <span class="ale-prev-note">— "Better than its price for the past 30 years."</span>
+              <span class="ale-prev-price">$18</span>
+            </div>
+            <div class="ale-prev-product">
+              <span class="ale-prev-rank">2</span>
+              <span class="ale-prev-name">Arturo Fuente Hemingway Short Story</span>
+              <span class="ale-prev-note">— "Perfect length, classic flavor profile."</span>
+              <span class="ale-prev-price">$11</span>
+            </div>
+            <div class="ale-prev-product">
+              <span class="ale-prev-rank">3</span>
+              <span class="ale-prev-name">Padron 3000 Maduro</span>
+              <span class="ale-prev-note">— "Crowd-pleaser for any palate."</span>
+              <span class="ale-prev-price">$9</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Bottom actions widget — Discard / Save Draft / Publish were originally
+       in the top bar; pulled out so the top bar stays focused on identity
+       (logo + status + back) and the destructive/commit actions sit anchored
+       to the bottom of the page where the user finishes editing. -->
+  <div class="ale-actions-widget">
+    <div class="ale-actions-widget-info">
+      <div class="ale-actions-widget-title">Ready to publish?</div>
+      <div class="ale-actions-widget-sub">Save a draft to keep working, or publish to push live on /lists.</div>
+    </div>
+    <div class="ale-actions-widget-btns">
+      <button class="ale-btn-secondary" onclick="discardChanges()">Discard</button>
+      <button class="ale-btn-outline" onclick="saveDraft()">Save Draft</button>
+      <button class="ale-btn-primary" onclick="publishList()">Publish</button>
+    </div>
+  </div>
+</main>
+
+<script>
+  /* B6 admin — Live list editor.
+     Real impl persists to server on save; mockup updates the right-side
+     preview in real time and toasts on save/publish. */
+
+  let listType = 'standing';
+  let publishState = 'draft';
+
+  function setListType(type){
+    listType = type;
+    const dateSection = document.getElementById('date-section');
+    if (dateSection) dateSection.hidden = (type === 'standing');
+    const labels = { standing: 'Standing', tonight: '● Tonight only · Refreshes daily', seasonal: 'Seasonal', event: 'Event-tied' };
+    const tagEl = document.getElementById('prev-tag');
+    if (tagEl) {
+      tagEl.textContent = labels[type];
+      tagEl.className = 'ale-prev-tag ale-prev-tag-' + type;
+    }
+    updatePreview();
+  }
+
+  function setPublishState(state){
+    publishState = state;
+    const pill = document.getElementById('status-pill');
+    if (pill) {
+      pill.textContent = state === 'published' ? '● Published' : '● Editing';
+      pill.className = 'ale-status-pill ' + (state === 'published' ? 'ale-status-pill-pub' : '');
+    }
+  }
+
+  function updateAuthor(value){
+    const opt = document.querySelector('#author-name option[value="' + value + '"]');
+    const initials = opt ? opt.dataset.init : 'GO';
+    const headerAvatar = document.getElementById('author-avatar');
+    const prevAvatar = document.getElementById('prev-avatar');
+    const prevByline = document.getElementById('prev-byline');
+    if (headerAvatar) headerAvatar.textContent = initials;
+    if (prevAvatar) {
+      prevAvatar.textContent = initials;
+      prevAvatar.className = 'avatar ale-prev-avatar' + (initials === 'MV' || initials === 'GO' ? ' ale-prev-avatar-burg' : '');
+    }
+    if (prevByline) prevByline.textContent = value + ' · just now';
+  }
+
+  function updatePreview(){
+    const title = document.getElementById('list-title').value;
+    const intro = document.getElementById('list-intro').value;
+    document.getElementById('prev-title').textContent = title;
+    document.getElementById('prev-intro').textContent = intro;
+    // Re-render product rows
+    const rows = document.querySelectorAll('#products-list .ale-product-row');
+    const prevWrap = document.getElementById('prev-products');
+    if (!prevWrap) return;
+    prevWrap.innerHTML = '';
+    rows.forEach((row, i) => {
+      const name = row.querySelector('.ale-product-name').textContent;
+      const note = row.querySelector('.ale-product-note').value;
+      const meta = row.querySelector('.ale-product-meta').textContent;
+      const priceMatch = meta.match(/\$[\d.,]+/);
+      const price = priceMatch ? priceMatch[0] : '';
+      const el = document.createElement('div');
+      el.className = 'ale-prev-product';
+      el.innerHTML =
+        '<span class="ale-prev-rank">' + (i + 1) + '</span>' +
+        '<span class="ale-prev-name">' + name + '</span>' +
+        '<span class="ale-prev-note">— ' + note + '</span>' +
+        '<span class="ale-prev-price">' + price + '</span>';
+      prevWrap.appendChild(el);
+    });
+  }
+
+  function removeProduct(btn){
+    const row = btn.closest('.ale-product-row');
+    if (row) row.remove();
+    renumberProducts();
+    updatePreview();
+  }
+
+  function renumberProducts(){
+    document.querySelectorAll('#products-list .ale-product-row .ale-product-rank').forEach((r, i) => {
+      r.textContent = i + 1;
+    });
+  }
+
+  function filterProductSearch(value){
+    const results = document.getElementById('search-results');
+    if (!results) return;
+    if (!value || !value.trim()) { results.hidden = true; return; }
+    results.hidden = false;
+    const needle = value.toLowerCase();
+    results.querySelectorAll('.ale-search-row').forEach(r => {
+      r.style.display = r.textContent.toLowerCase().includes(needle) ? '' : 'none';
+    });
+  }
+
+  function addProduct(name, icon, meta){
+    const list = document.getElementById('products-list');
+    const search = document.getElementById('product-search');
+    const results = document.getElementById('search-results');
+    if (!list) return;
+    const rank = list.children.length + 1;
+    const row = document.createElement('div');
+    row.className = 'ale-product-row';
+    // Escape name / meta / icon — these flow from search-row click handlers
+    // today (hardcoded) but the addProduct signature is the entry point for
+    // backend-fed catalog items in v2. Treat as untrusted text.
+    const esc = (window.Lounge && Lounge.escapeHtml) ? Lounge.escapeHtml : (s => s);
+    row.innerHTML =
+      '<span class="ale-product-rank">' + rank + '</span>' +
+      '<span class="ale-product-thumb">' + (icon ? '<img src="' + esc(icon) + '" alt=""/>' : '') + '</span>' +
+      '<div class="ale-product-info">' +
+        '<div class="ale-product-name">' + esc(name) + '</div>' +
+        '<div class="ale-product-meta">' + esc(meta) + '</div>' +
+      '</div>' +
+      '<input class="ale-input ale-product-note" type="text" value="" oninput="updatePreview()" placeholder="One-line curator note">' +
+      '<button class="ale-product-remove" onclick="removeProduct(this)" title="Remove" aria-label="Remove product"><i data-lucide="x" class="ic-13"></i></button>';
+    list.appendChild(row);
+    if (search) search.value = '';
+    if (results) results.hidden = true;
+    if (window.Lounge && window.Lounge.renderIcons) window.Lounge.renderIcons();
+    updatePreview();
+  }
+
+  function saveDraft(){
+    if (window.toast) toast('💾 Saved as draft · only staff can see it', { variant: 'success', duration: 2800 });
+    setTimeout(() => location.href = 'admin-catalog.html', 1200);
+  }
+  function publishList(){
+    const title = document.getElementById('list-title').value.trim() || 'Untitled list';
+    if (window.toast) toast('✓ Published "' + title + '" · live on /lists now', { variant: 'success', duration: 3000 });
+    setTimeout(() => location.href = 'admin-catalog.html', 1400);
+  }
+  function discardChanges(){
+    // Mockup: skip the confirmation gate. Production should swap this for
+    // an in-page confirm modal (not window.confirm()) — design-system fit.
+    if (window.Lounge && Lounge.toast) Lounge.toast('Discarded changes', { variant: 'burg' });
+    setTimeout(() => { location.href = 'admin-catalog.html'; }, 800);
+  }
+</script>
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+</body>
+</html>

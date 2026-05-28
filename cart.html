@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>My Visit — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Items logged on your current Visit — review, adjust, and check out with the venue's staff in person." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="My Visit — Lounge & Co." />
+  <meta property="og:description" content="Items logged on your current Visit — review, adjust, and check out with the venue's staff in person." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="My Visit — Lounge & Co." />
+  <meta name="twitter:description" content="Items logged on your current Visit — review, adjust, and check out with the venue's staff in person." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/cart.css"/>
+</head>
+<body>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Thomas H.</div><div class="sidebar-user-tier">Elite · 1,744 pts · #4</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area">
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu"><i data-lucide="menu" class="ic-16"></i></button>
+    <div class="topbar-actions">
+      <a href="catalog.html" class="icon-btn fee-newpost-btn" title="Back to Catalog" aria-label="Back to Catalog">
+        <i data-lucide="chevron-left" class="ic-16"></i><span>Back to Catalog</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════
+       DEPRECATION BANNER
+       Per BUSINESS_MODEL §0.1: no tobacco/alcohol product commerce, ever.
+       L0 (day 1) is platform subscriptions only — the member's in-venue
+       Visit is journaling, not a transactional cart. Real payment happens
+       at the venue's POS. Phase 2 may repurpose this surface for L1 event
+       ticket commerce (Stripe Connect, venue as Merchant of Record).
+       Vocabulary preserved below for historical reference; the canonical
+       member-side surface is now my-visits.html.
+  ══════════════════════════════════════════════════════ -->
+  <div class="deprecation-banner" role="status">
+    <div class="deprecation-banner-inner">
+      <i data-lucide="info" class="ic-15"></i>
+      <div>
+        <strong>This page is deprecated.</strong>
+        <span> Lounge &amp; Co. doesn't sell tobacco or alcohol — your Visit is a journal of what you logged in person, and the venue handles every real charge at the counter. See <a href="my-visits.html">My Visits</a> for your lifetime activity. Phase 2 may repurpose this surface for L1 event-ticket commerce.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="visit-page-frame">
+
+    <!-- CART COLUMN -->
+    <div class="visit-items-column">
+
+      <div class="visit-page-header">
+        <h1 class="visit-page-title">My Visit</h1>
+        <span class="visit-item-count">3 items</span>
+      </div>
+
+      <!-- Item 1 -->
+      <div class="cart-item">
+        <div class="visit-item-thumb" style="background:url('assets/images/padron-1926-no-35.webp') center/cover no-repeat;"></div>
+        <div class="sidebar-user-info">
+          <div class="visit-item-name">Padron 1926 No. 35</div>
+          <div class="visit-item-meta">Nicaragua · Full body</div>
+        </div>
+        <div class="visit-qty-stepper">
+          <button onclick="adjustQty(this,-1,42)" class="visit-qty-button">−</button>
+          <span class="visit-qty-value">1</span>
+          <button onclick="adjustQty(this,1,42)" class="visit-qty-button">+</button>
+        </div>
+        <div class="visit-item-price-col">
+          <div class="visit-item-price">$42</div>
+        </div>
+        <button onclick="removeItem(this)" onmouseover="this.style.color='var(--burg)'" onmouseout="this.style.color='var(--text-muted)'" class="visit-item-remove-btn">
+          <i data-lucide="trash-2" class="ic-15"></i>
+        </button>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="cart-item">
+        <div class="visit-item-thumb" style="background:url('assets/images/lagavulin_16yr.jpg') center/cover no-repeat;"></div>
+        <div class="sidebar-user-info">
+          <div class="visit-item-name">Lagavulin 16yr</div>
+          <div class="visit-item-meta">Islay Scotch · Peaty</div>
+        </div>
+        <div class="visit-qty-stepper">
+          <button onclick="adjustQty(this,-1,22)" class="visit-qty-button">−</button>
+          <span class="visit-qty-value">1</span>
+          <button onclick="adjustQty(this,1,22)" class="visit-qty-button">+</button>
+        </div>
+        <div class="visit-item-price-col">
+          <div class="visit-item-price">$22</div>
+        </div>
+        <button onclick="removeItem(this)" onmouseover="this.style.color='var(--burg)'" onmouseout="this.style.color='var(--text-muted)'" class="visit-item-remove-btn">
+          <i data-lucide="trash-2" class="ic-15"></i>
+        </button>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="cart-item">
+        <div class="visit-item-thumb" style="background:url('assets/images/ashton_vsg_torpedo.jpg') center/cover no-repeat;"></div>
+        <div class="sidebar-user-info">
+          <div class="visit-item-name">Ashton VSG Torpedo</div>
+          <div class="visit-item-meta">Honduras · Medium-Full</div>
+        </div>
+        <div class="visit-qty-stepper">
+          <button onclick="adjustQty(this,-1,28)" class="visit-qty-button">−</button>
+          <span class="visit-qty-value">2</span>
+          <button onclick="adjustQty(this,1,28)" class="visit-qty-button">+</button>
+        </div>
+        <div class="visit-item-price-col">
+          <div id="visit-item-3-price" class="visit-item-price">$56</div>
+        </div>
+        <button onclick="removeItem(this)" onmouseover="this.style.color='var(--burg)'" onmouseout="this.style.color='var(--text-muted)'" class="visit-item-remove-btn">
+          <i data-lucide="trash-2" class="ic-15"></i>
+        </button>
+      </div>
+
+      <!-- Add note -->
+      <div class="visit-note-card">
+        <div class="visit-note-label">Note for staff (optional)</div>
+        <textarea rows="2" placeholder="Any special requests for the staff…" aria-label="Note for staff" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--bg-border)'" class="visit-note-textarea"></textarea>
+      </div>
+
+      <!-- Points preview -->
+      <div class="visit-points-preview">
+        <i data-lucide="star" class="ic-20"></i>
+        <div><div class="visit-points-title">+45 points for tonight's tab</div><div class="visit-item-meta">Write reviews after to earn up to +180 more</div></div>
+      </div>
+    </div>
+
+    <!-- SUMMARY COLUMN -->
+    <div class="visit-summary-column">
+
+      <div class="visit-summary-card">
+        <div class="visit-summary-title">Visit Summary</div>
+
+        <div class="visit-summary-list">
+          <div class="visit-summary-row">
+            <span>Padron 1926 No. 35 × 1</span><span>$42</span>
+          </div>
+          <div class="visit-summary-row">
+            <span>Lagavulin 16yr × 1</span><span>$22</span>
+          </div>
+          <div class="visit-summary-row">
+            <span>Ashton VSG Torpedo × 2</span><span>$56</span>
+          </div>
+        </div>
+
+        <div class="visit-summary-divider"></div>
+
+        <div class="visit-total-row">
+          <span class="visit-total-label">Total</span>
+          <span class="visit-total-amount">$120</span>
+        </div>
+
+        <div class="visit-service-notice">
+          <i data-lucide="alert-circle" class="visit-service-notice-icon ic-13"></i>
+          Staff will bring items to your seat. Payment is handled at the counter or on your tab.
+        </div>
+
+        <button onclick="sendRequest()" id="visit-send-request-btn" onmouseover="this.style.background='var(--burg-hover)'" onmouseout="this.style.background='var(--burg)'" class="visit-send-request-btn">Send Request to Staff</button>
+
+        <a href="catalog.html" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'" class="visit-continue-link">← Continue browsing</a>
+      </div>
+
+      <!-- Lounge info -->
+      <div class="visit-hours-card">
+        <div class="visit-hours-title">Lounge Hours</div>
+        <div class="visit-hours-list">
+          <div class="visit-hours-row"><span>Mon – Thu</span><span>4 PM – 11 PM</span></div>
+          <div class="visit-hours-row"><span>Fri – Sat</span><span>2 PM – 1 AM</span></div>
+          <div class="visit-hours-row"><span>Sunday</span><span>2 PM – 9 PM</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Request success overlay -->
+<div id="visit-success-modal" class="visit-success-modal">
+  <div class="visit-success-modal-card">
+    <div class="visit-success-modal-icon">
+      <i data-lucide="check" class="ic-28"></i>
+    </div>
+    <div class="visit-success-modal-title">Request Sent!</div>
+    <p class="visit-success-modal-message">Staff has been notified. Your items will be with you shortly. Request #CR-0042.</p>
+    <a href="orders.html" class="visit-success-modal-cta">View My Activity</a>
+    <a href="feed.html" class="visit-success-modal-secondary">Back to Feed</a>
+  </div>
+</div>
+
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+<nav class="bottom-nav">
+  <a href="feed.html" class="bottom-nav-item"><i data-lucide="newspaper" class="ic-20"></i>Feed</a>
+  <a href="explore.html" class="bottom-nav-item"><i data-lucide="search" class="ic-20"></i>Explore</a>
+  <a href="create-post.html" class="bottom-nav-item"><div class="bottom-nav-create-btn"><i data-lucide="plus" class="ic-20"></i></div></a>
+  <a href="events.html" class="bottom-nav-item"><i data-lucide="calendar" class="ic-20"></i>Events</a>
+  <a href="profile.html" class="bottom-nav-item"><i data-lucide="user" class="ic-20"></i>Profile</a>
+</nav>
+
+<script>
+  function adjustQty(btn,d,price){
+    const row=btn.closest('.cart-item');
+    const span=row.querySelector('span[style*="text-align:center"]');
+    const priceEl=row.querySelector('[id$="-price"]')||row.querySelectorAll('div[style*="font-size:15px"]')[0];
+    let q=parseInt(span.textContent)+d;
+    if(q<1)return;
+    span.textContent=q;
+    if(priceEl)priceEl.textContent='$'+(q*price);
+  }
+  function removeItem(btn){
+    const item=btn.closest('.cart-item');
+    item.style.transition='opacity .3s';item.style.opacity='0';
+    setTimeout(()=>item.remove(),300);
+  }
+  function sendRequest(){
+    if(window.Lounge) Lounge.visit.set(0);
+    document.getElementById('visit-success-modal').style.display='flex';
+  }
+</script>
+</body>
+</html>

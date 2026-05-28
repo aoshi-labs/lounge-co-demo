@@ -1,0 +1,474 @@
+[
+  {
+    "sku": "BB24-01-GRAN-HABANO",
+    "flavor_notes": "earth, savory spice, cedar, cocoa, toasted tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/gran-habano-habano-no-3-lunch-break-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/gran-habano-habano-no-3-lunch-break-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "BB24-02-ALADINO-PC",
+    "flavor_notes": "cedar, wood, earth, leather, mineral tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/aladino-petit-corona-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/aladino-petit-corona-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "BB24-03-BRICK-CORONA",
+    "flavor_notes": "earth, savory spice, cedar, cocoa, toasted tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/brick-house-corona-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/brick-house-corona-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "BB24-04-OLIVA-SG-SG",
+    "flavor_notes": "cocoa, earth, pepper, espresso, dark sweetness",
+    "article": "https://www.cigaraficionado.com/top25cigar/oliva-serie-g-maduro-special-g-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/oliva-serie-g-maduro-special-g-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "BB24-05-CAIN-DAYTONA",
+    "flavor_notes": "cream, cedar, nuts, toast, light sweetness",
+    "article": "https://www.cigaraficionado.com/top25cigar/cain-daytona-no-4-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/cain-daytona-no-4-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "BB24-06-CHARTER-OAK",
+    "flavor_notes": "cream, cedar, nuts, toast, light sweetness",
+    "article": "https://www.cigaraficionado.com/top25cigar/charter-oak-ct-shade-rothschild-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/charter-oak-ct-shade-rothschild-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "BB24-07-FYR-18TH",
+    "flavor_notes": "cedar, wood, earth, leather, mineral tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/flores-y-rodriguez-18th-anniversary-millefleurs-corona-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/flores-y-rodriguez-18th-anniversary-millefleurs-corona-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "BB24-08-PUNCH-DRAGON",
+    "flavor_notes": "earth, savory spice, cedar, cocoa, toasted tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/punch-dragon-fire-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/punch-dragon-fire-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "BB24-09-PUNCH-KB-ROB",
+    "flavor_notes": "cream, cedar, nuts, toast, light sweetness",
+    "article": "https://www.cigaraficionado.com/top25cigar/punch-knuckle-buster-shade-robusto-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/punch-knuckle-buster-shade-robusto-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "BB24-10-BOLIVAR-COF",
+    "flavor_notes": "cedar, wood, earth, leather, mineral tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/bolivar-cofradia-petit-corona-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/bolivar-cofradia-petit-corona-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "BB24-11-LFD-CAM-3",
+    "flavor_notes": "cedar, baking spice, sweet tobacco, toast, light cocoa",
+    "article": "https://www.cigaraficionado.com/top25cigar/la-flor-dominicana-cameroon-cabinet-no-3-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/la-flor-dominicana-cameroon-cabinet-no-3-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "BB24-12-OLIVA-CT-PC",
+    "flavor_notes": "cream, cedar, nuts, toast, light sweetness",
+    "article": "https://www.cigaraficionado.com/top25cigar/oliva-connecticut-reserve-petit-corona-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/oliva-connecticut-reserve-petit-corona-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "BB24-13-PUNCH-KB-GORDO",
+    "flavor_notes": "cream, cedar, nuts, toast, light sweetness",
+    "article": "https://www.cigaraficionado.com/top25cigar/punch-knuckle-buster-shade-gordo-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/punch-knuckle-buster-shade-gordo-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "BB24-14-PUNCH-KB-STUB",
+    "flavor_notes": "cream, cedar, nuts, toast, light sweetness",
+    "article": "https://www.cigaraficionado.com/top25cigar/punch-knuckle-buster-shade-stubby-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/punch-knuckle-buster-shade-stubby-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "BB24-15-PUNCH-KB-TORO",
+    "flavor_notes": "cream, cedar, nuts, toast, light sweetness",
+    "article": "https://www.cigaraficionado.com/top25cigar/punch-knuckle-buster-shade-toro-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/punch-knuckle-buster-shade-toro-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "BB24-16-RP-V90-JR",
+    "flavor_notes": "cedar, wood, earth, leather, mineral tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/rocky-patel-vintage-1990-juniors-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/rocky-patel-vintage-1990-juniors-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "BB24-17-7204-DOG",
+    "flavor_notes": "earth, savory spice, cedar, cocoa, toasted tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/7-20-4-factory-57-dog-walker-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/7-20-4-factory-57-dog-walker-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "BB24-18-NICA-BELLY",
+    "flavor_notes": "earth, savory spice, cedar, cocoa, toasted tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/nica-rustica-belly-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/nica-rustica-belly-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "BB24-19-NICA-ADOBE",
+    "flavor_notes": "earth, savory spice, cedar, cocoa, toasted tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/nica-rustica-adobe-toro-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/nica-rustica-adobe-toro-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "BB24-20-SAGA-TOMO3",
+    "flavor_notes": "cedar, wood, earth, leather, mineral tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/saga-short-tales-tomo-iii-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/saga-short-tales-tomo-iii-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "BB24-21-OSCAR-2012",
+    "flavor_notes": "cream, cedar, nuts, toast, light sweetness",
+    "article": "https://www.cigaraficionado.com/top25cigar/2012-by-oscar-valladares-connecticut-short-robusto-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/2012-by-oscar-valladares-connecticut-short-robusto-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-01-DONLINO-KUDU",
+    "flavor_notes": "earth, savory spice, cedar, cocoa, toasted tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/don-lino-africa-kudu-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/don-lino-africa-kudu-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-02-ERDM-SHADE-CH",
+    "flavor_notes": "cream, cedar, nuts, toast, light sweetness",
+    "article": "https://www.cigaraficionado.com/top25cigar/el-rey-del-mundo-shade-grown-churchill-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/el-rey-del-mundo-shade-grown-churchill-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-03-BRICK-CORONA",
+    "flavor_notes": "earth, savory spice, cedar, cocoa, toasted tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/brick-house-corona-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/brick-house-corona-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-04-AF-PC",
+    "flavor_notes": "cedar, wood, earth, leather, mineral tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/arturo-fuente-petit-corona-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/arturo-fuente-petit-corona-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-05-PUNCH-BOTTLE",
+    "flavor_notes": "earth, savory spice, cedar, cocoa, toasted tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/punch-bottle-rocket-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/punch-bottle-rocket-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-06-AF-SPAN-LON-M",
+    "flavor_notes": "cedar, baking spice, sweet tobacco, toast, light cocoa",
+    "article": "https://www.cigaraficionado.com/top25cigar/arturo-fuente-spanish-lonsdale-maduro-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/arturo-fuente-spanish-lonsdale-maduro-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-07-CHARTER-HAB-LON",
+    "flavor_notes": "earth, savory spice, cedar, cocoa, toasted tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/charter-oak-ct-habano-lonsdale-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/charter-oak-ct-habano-lonsdale-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-08-DONDIEGO-COR",
+    "flavor_notes": "cream, cedar, nuts, toast, light sweetness",
+    "article": "https://www.cigaraficionado.com/top25cigar/don-diego-corona-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/don-diego-corona-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-09-AB-CHUNK-XL",
+    "flavor_notes": "cocoa, coffee, earth, dark sweetness, cedar",
+    "article": "https://www.cigaraficionado.com/top25cigar/alec-bradley-chunk-maduro-xl-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/alec-bradley-chunk-maduro-xl-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-10-PUNCH-RARE-RAP",
+    "flavor_notes": "cedar, baking spice, sweet tobacco, toast, light cocoa",
+    "article": "https://www.cigaraficionado.com/top25cigar/punch-rare-corojo-rapido-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/punch-rare-corojo-rapido-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-11-HVC-HOTCAKE-HC",
+    "flavor_notes": "cream, cedar, nuts, toast, light sweetness",
+    "article": "https://www.cigaraficionado.com/top25cigar/hvc-hot-cake-golden-line-connecticut-half-corona-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/hvc-hot-cake-golden-line-connecticut-half-corona-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-12-DPG-DEMI",
+    "flavor_notes": "earth, savory spice, cedar, cocoa, toasted tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/don-pepin-garcia-original-demi-tasse-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/don-pepin-garcia-original-demi-tasse-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-13-LG-IMP-JADE",
+    "flavor_notes": "cedar, wood, earth, leather, mineral tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/la-galera-imperial-jade-chiquito-perfecto-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/la-galera-imperial-jade-chiquito-perfecto-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-14-LG-CT-HC",
+    "flavor_notes": "cream, cedar, nuts, toast, light sweetness",
+    "article": "https://www.cigaraficionado.com/top25cigar/la-galera-connecticut-half-corona-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/la-galera-connecticut-half-corona-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-15-DONLINO-GT",
+    "flavor_notes": "cocoa, coffee, earth, dark sweetness, cedar",
+    "article": "https://www.cigaraficionado.com/top25cigar/don-lino-maduro-gran-toro-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/don-lino-maduro-gran-toro-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-16-CURI-NAT-60",
+    "flavor_notes": "cedar, wood, earth, leather, mineral tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/curivari-buenaventura-favoritos-natural-60-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/curivari-buenaventura-favoritos-natural-60-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-17-CURI-CT-50",
+    "flavor_notes": "cream, cedar, nuts, toast, light sweetness",
+    "article": "https://www.cigaraficionado.com/top25cigar/curivari-buenaventura-favoritos-connecticut-50-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/curivari-buenaventura-favoritos-connecticut-50-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-18-LAUR-CAZ-ROB",
+    "flavor_notes": "earth, savory spice, cedar, cocoa, toasted tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/la-aurora-cazadores-nicaragua-robusto-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/la-aurora-cazadores-nicaragua-robusto-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-19-MAC-COURT",
+    "flavor_notes": "cream, cedar, nuts, toast, light sweetness",
+    "article": "https://www.cigaraficionado.com/top25cigar/macanudo-cafe-court-tubo-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/macanudo-cafe-court-tubo-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-20-ZINO-NIC-HC",
+    "flavor_notes": "cedar, wood, earth, leather, mineral tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/zino-nicaragua-half-corona-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/zino-nicaragua-half-corona-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-21-BOLIVAR-ROB",
+    "flavor_notes": "cedar, wood, earth, leather, mineral tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/bolivar-cofradia-robusto-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/bolivar-cofradia-robusto-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-22-NICA-ADOBE",
+    "flavor_notes": "earth, savory spice, cedar, cocoa, toasted tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/nica-rustica-adobe-toro-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/nica-rustica-adobe-toro-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-23-CLE-MAD-40",
+    "flavor_notes": "cocoa, coffee, earth, dark sweetness, cedar",
+    "article": "https://www.cigaraficionado.com/top25cigar/c-l-e-maduro-40x4-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/c-l-e-maduro-40x4-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "BB25-24-LAUR-CAZ-TOR",
+    "flavor_notes": "earth, savory spice, cedar, cocoa, toasted tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/la-aurora-cazadores-nicaragua-toro-2025",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/la-aurora-cazadores-nicaragua-toro-2025.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-01-MF-JUDGE",
+    "flavor_notes": "cocoa, coffee, earth, dark sweetness, cedar",
+    "article": "https://www.cigaraficionado.com/top25cigar/my-father-the-judge-grand-robusto-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/my-father-the-judge-grand-robusto-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-02-MONTE-1935",
+    "flavor_notes": "cedar, baking spice, sweet tobacco, toast, light cocoa",
+    "article": "https://www.cigaraficionado.com/top25cigar/montecristo-1935-anniversary-nicaragua-espeso-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/montecristo-1935-anniversary-nicaragua-espeso-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-03-EPC-ENCORE",
+    "flavor_notes": "cedar, wood, earth, leather, mineral tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/e-p-carrillo-encore-celestial-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/e-p-carrillo-encore-celestial-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-04-PADRON-1926",
+    "flavor_notes": "cocoa, coffee, earth, dark sweetness, cedar",
+    "article": "https://www.cigaraficionado.com/top25cigar/padron-serie-1926-no-6-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/padron-serie-1926-no-6-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-05-PARTAGAS-MAESTRA",
+    "flavor_notes": "cedar, wood, earth, leather, mineral tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/partagas-linea-maestra-maestro-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/partagas-linea-maestra-maestro-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-06-OLIVA-MEL-TORP",
+    "flavor_notes": "cocoa, earth, pepper, espresso, dark sweetness",
+    "article": "https://www.cigaraficionado.com/top25cigar/oliva-serie-v-melanio-maduro-torpedo-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/oliva-serie-v-melanio-maduro-torpedo-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-07-RP-CONVICTION",
+    "flavor_notes": "earth, savory spice, cedar, cocoa, toasted tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/rocky-patel-conviction-toro-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/rocky-patel-conviction-toro-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-08-COHIBA-MAD5",
+    "flavor_notes": "cocoa, earth, pepper, espresso, dark sweetness",
+    "article": "https://www.cigaraficionado.com/top25cigar/cohiba-maduro-5-magicos-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/cohiba-maduro-5-magicos-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-09-AF-EYEBULL",
+    "flavor_notes": "cedar, baking spice, sweet tobacco, toast, light cocoa",
+    "article": "https://www.cigaraficionado.com/top25cigar/arturo-fuente-don-carlos-eye-of-the-bull-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/arturo-fuente-don-carlos-eye-of-the-bull-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-10-BRICK-CHURCH",
+    "flavor_notes": "earth, savory spice, cedar, cocoa, toasted tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/brick-house-churchill-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/brick-house-churchill-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-11-LA-AROMA-PASION",
+    "flavor_notes": "cocoa, coffee, earth, dark sweetness, cedar",
+    "article": "https://www.cigaraficionado.com/top25cigar/la-aroma-de-cuba-pasion-box-pressed-torpedo-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/la-aroma-de-cuba-pasion-box-pressed-torpedo-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-12-AKSUM-CLARO",
+    "flavor_notes": "cream, cedar, nuts, toast, light sweetness",
+    "article": "https://www.cigaraficionado.com/top25cigar/aksum-claro-robusto-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/aksum-claro-robusto-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-13-VIVA-JESTER",
+    "flavor_notes": "cedar, baking spice, sweet tobacco, toast, light cocoa",
+    "article": "https://www.cigaraficionado.com/top25cigar/viva-la-vida-jester-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/viva-la-vida-jester-2024.",
+    "grade": 10
+  },
+  {
+    "sku": "CA24-14-CASA-MAGNA-XV",
+    "flavor_notes": "cedar, wood, earth, leather, mineral tobacco",
+    "article": "https://www.cigaraficionado.com/top25cigar/casa-magna-colorado-xv-anniversary-6-x-54-2024",
+    "source_confidence": "Cigar Aficionado official review",
+    "research": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/casa-magna-colorado-xv-anniversary-6-x-54-2024.",
+    "grade": 10
+  }
+]

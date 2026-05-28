@@ -1,0 +1,411 @@
+{
+  "version": 1,
+  "shard": "tracker-04",
+  "category": "spirit",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 8,
+  "products": [
+    {
+      "deckKey": "rum",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-eldorado-12",
+      "sensory": {
+        "body": 5,
+        "sweetness": 7,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-ELDORADO-12",
+        "article": "https://theeldoradorum.com/12-our-collection/blended-rums",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 65,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Demerara sugar cane (wood stills)",
+        "style": "Demerara rum",
+        "origin": "Guyana",
+        "msrp": 38
+      },
+      "name": "El Dorado 12 Year",
+      "tags": [
+        {
+          "id": "spice",
+          "weight": 1.0
+        },
+        {
+          "id": "honey",
+          "weight": 0.95
+        },
+        {
+          "id": "dried_fruit",
+          "weight": 0.85
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "agave",
+      "journeyLevel": "novice",
+      "id": "spi-trk-espilon-rep",
+      "sensory": {
+        "body": 4,
+        "sweetness": 8,
+        "pepper": 2,
+        "cocoa": 7,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-ESPILON-REP",
+        "article": "https://www.espolontequila.com/en-us/our-tequilas/tequila-reposado/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 70,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "100% Blue Weber agave",
+        "style": "100% agave tequila",
+        "origin": "Jalisco, Mexico",
+        "msrp": 28
+      },
+      "name": "Espolòn Reposado",
+      "tags": [
+        {
+          "id": "caramel",
+          "weight": 1.0
+        },
+        {
+          "id": "agave",
+          "weight": 0.95
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.85
+        },
+        {
+          "id": "spice",
+          "weight": 0.75
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "agave",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-fortaleza-rep",
+      "sensory": {
+        "body": 5,
+        "sweetness": 7,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-FORTALEZA-REP",
+        "article": "https://tequilafortaleza.com/tequila-fortaleza-reposado/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 67,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "100% Blue Weber agave (stone oven)",
+        "style": "100% agave tequila",
+        "origin": "Jalisco, Mexico",
+        "msrp": 55
+      },
+      "name": "Fortaleza Reposado",
+      "tags": [
+        {
+          "id": "citrus",
+          "weight": 1.0
+        },
+        {
+          "id": "caramel",
+          "weight": 0.95
+        },
+        {
+          "id": "agave",
+          "weight": 0.85
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.75
+        },
+        {
+          "id": "apple",
+          "weight": 0.7
+        },
+        {
+          "id": "earth",
+          "weight": 0.65
+        },
+        {
+          "id": "cinnamon",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "scotch",
+      "journeyLevel": "novice",
+      "id": "spi-trk-glenfid-12",
+      "sensory": {
+        "body": 4,
+        "sweetness": 6,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-GLENFID-12",
+        "article": "https://www.glenfiddich.com/12-year-old",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 8,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "100% malted barley",
+        "style": "Single malt Scotch",
+        "origin": "Speyside, Scotland",
+        "msrp": 48
+      },
+      "name": "Glenfiddich 12",
+      "tags": [
+        {
+          "id": "pear",
+          "weight": 1.0
+        },
+        {
+          "id": "toffee",
+          "weight": 0.95
+        },
+        {
+          "id": "cream",
+          "weight": 0.85
+        },
+        {
+          "id": "malt",
+          "weight": 0.75
+        },
+        {
+          "id": "oak",
+          "weight": 0.7
+        },
+        {
+          "id": "fresh",
+          "weight": 0.65
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "scotch",
+      "journeyLevel": "novice",
+      "id": "spi-trk-glenliv-12",
+      "sensory": {
+        "body": 4,
+        "sweetness": 6,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-GLENLIV-12",
+        "article": "https://www.theglenlivet.com/en-us/whisky/12-year-old-single-malt-scotch/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 47,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "100% malted barley",
+        "style": "Single malt Scotch",
+        "origin": "Speyside, Scotland",
+        "msrp": 48
+      },
+      "name": "Glenlivet 12 Year",
+      "tags": [
+        {
+          "id": "banana",
+          "weight": 1.0
+        },
+        {
+          "id": "peach",
+          "weight": 0.95
+        },
+        {
+          "id": "pineapple",
+          "weight": 0.85
+        },
+        {
+          "id": "apple",
+          "weight": 0.75
+        },
+        {
+          "id": "pear",
+          "weight": 0.7
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.65
+        },
+        {
+          "id": "toffee",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "scotch",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-glenmor-10",
+      "sensory": {
+        "body": 5,
+        "sweetness": 7,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-GLENMOR-10",
+        "article": "https://www.glenmorangie.com/en-us/products/the-original-12-years-old",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 48,
+      "spec": {
+        "proof": 86.0,
+        "abvPercent": 43.0,
+        "mash": "100% malted barley (tall stills)",
+        "style": "Single malt Scotch",
+        "origin": "Highland, Scotland",
+        "msrp": 42
+      },
+      "name": "Glenmorangie Original 10 Year",
+      "tags": [
+        {
+          "id": "citrus",
+          "weight": 1.0
+        },
+        {
+          "id": "peach",
+          "weight": 0.95
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.85
+        },
+        {
+          "id": "coconut",
+          "weight": 0.75
+        },
+        {
+          "id": "maple",
+          "weight": 0.7
+        },
+        {
+          "id": "floral",
+          "weight": 0.65
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "vodka",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-grey-goose",
+      "sensory": {
+        "body": 3,
+        "sweetness": 7,
+        "pepper": 2,
+        "cocoa": 2,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-GREY-GOOSE",
+        "article": "https://www.greygoose.com/en-gb/products/grey-goose-vodka.html",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 82,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Winter wheat",
+        "style": "Winter wheat vodka",
+        "origin": "France",
+        "msrp": 35
+      },
+      "name": "Grey Goose Vodka",
+      "tags": [
+        {
+          "id": "floral",
+          "weight": 1.0
+        },
+        {
+          "id": "toffee",
+          "weight": 0.95
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "japanese",
+      "journeyLevel": "advanced",
+      "id": "spi-trk-hakushu-12",
+      "sensory": {
+        "body": 6,
+        "sweetness": 6,
+        "pepper": 7,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-HAKUSHU-12",
+        "article": "https://house.suntory.com/hakushu-whisky/hakushu-12-years-old",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 60,
+      "spec": {
+        "proof": 86.0,
+        "abvPercent": 43.0,
+        "mash": "100% malted barley",
+        "style": "Single malt Japanese whisky",
+        "origin": "Japan",
+        "msrp": 150
+      },
+      "name": "Hakushu 12 Year",
+      "tags": [
+        {
+          "id": "herbal",
+          "weight": 1.0
+        },
+        {
+          "id": "apple",
+          "weight": 0.95
+        },
+        {
+          "id": "pear",
+          "weight": 0.85
+        },
+        {
+          "id": "mint",
+          "weight": 0.75
+        },
+        {
+          "id": "smoke",
+          "weight": 0.7
+        }
+      ],
+      "category": "spirit"
+    }
+  ]
+}

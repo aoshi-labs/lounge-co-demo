@@ -1,0 +1,11 @@
+{
+  "roundTripOk": true,
+  "loadedIsFrozen": true,
+  "turnIdPreserved": true,
+  "sourcePreserved": true,
+  "runtimeVersionPreserved": true,
+  "scoringVersionPreserved": true,
+  "degradedPreserved": true,
+  "cardsLenPreserved": true,
+  "allowlistVerifiedPreserved": true
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "text": "under $20",
+    "intent": {
+      "mode": "ceiling",
+      "ceiling": 20,
+      "target": null,
+      "min": null,
+      "max": 20
+    }
+  },
+  {
+    "text": "around $15",
+    "intent": {
+      "mode": "around",
+      "ceiling": null,
+      "target": 15,
+      "min": 11,
+      "max": 19
+    }
+  },
+  {
+    "text": "$10-ish",
+    "intent": {
+      "mode": "around",
+      "ceiling": null,
+      "target": 10,
+      "min": 7,
+      "max": 13
+    }
+  },
+  {
+    "text": "about $25",
+    "intent": {
+      "mode": "around",
+      "ceiling": null,
+      "target": 25,
+      "min": 19,
+      "max": 31
+    }
+  },
+  {
+    "text": "between $10 and $20",
+    "intent": {
+      "mode": "range",
+      "ceiling": null,
+      "target": null,
+      "min": 10,
+      "max": 20
+    }
+  },
+  {
+    "text": "recommend a pairing for the evening",
+    "intent": {
+      "mode": "none",
+      "ceiling": null,
+      "target": null,
+      "min": null,
+      "max": null
+    }
+  }
+]

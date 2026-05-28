@@ -1,0 +1,25 @@
+{
+  "op": "refinementIntentBoundary",
+  "cases": [
+    {
+      "id": "pass-84-wildcard-lighter",
+      "prompt": "Can you change the wildcard to a lighter wrapper option that has less black pepper?",
+      "expect": true
+    },
+    {
+      "id": "pass-90-swap-wildcard-softer",
+      "prompt": "Please swap the wildcard for something softer on the wrapper with less pepper and a milder finish overall tonight",
+      "expect": true
+    },
+    {
+      "id": "fail-fresh-recommend-long",
+      "prompt": "Could you recommend me a new flight for tonight with my friends who prefer bourbon and want something completely different from before",
+      "expect": false
+    },
+    {
+      "id": "fail-comparative-curiosity",
+      "prompt": "what's smoother than the first pour we discussed tonight at the lounge",
+      "expect": false
+    }
+  ]
+}

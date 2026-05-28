@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "shard": "ca24-bestbuy-03",
+  "category": "cigar",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 1,
+  "products": [
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/2012-by-oscar-valladares-connecticut-short-robusto-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuador Connecticut wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Honduras binder supports structure and integration with the filler.",
+        "fillerRole": "Honduras / Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/2012-by-oscar-valladares-connecticut-short-robusto-2024.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $7' requests - cite CA 2024 Best Buy list."
+      },
+      "menuLine": "2012 by Oscar Valladares Connecticut · 4 × 50 · Robusto · Medium-Light · Honduras · $7 · Notes: cream, cedar, nuts, toast, light sweetness",
+      "stickSize": "4 × 50 · Robusto",
+      "id": "bb24-21-oscar-2012"
+    }
+  ]
+}

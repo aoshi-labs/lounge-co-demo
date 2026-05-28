@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "shard": "tracker-08",
+  "category": "spirit",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 8,
+  "products": [
+    {
+      "menuLine": "Maker's Mark Kentucky Straight Bourbon · Kentucky · $32 · 90 proof (45.0% ABV) · Journey: Intermediate · Notes: vanilla, caramel",
+      "guidance": {
+        "bestFor": "Wheated bourbon fan, gift pour, red-wax recognition, medium cigar.",
+        "avoidIf": "User wants high-rye spice bomb only.",
+        "whyRecommend": "Recommend when the member wants wheated sweetness with red-wax credibility — honey, vanilla, and soft spice.",
+        "occasion": "After dinner",
+        "flavorFamily": "Vanilla & caramel",
+        "pairingAffinity": "Medium cigar",
+        "memberBlurb": "Maker's Mark — wheated bourbon with the red wax everyone recognizes. Honey and vanilla over orange peel when rye feels too sharp."
+      },
+      "id": "spi-trk-makers-mark",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Industry reference (US retail sales 2025)",
+        "dataGrade": 7
+      }
+    },
+    {
+      "menuLine": "Mars Iwai Tradition · Japan · $45 · 86 proof (43.0% ABV) · Notes: honey, sherry",
+      "guidance": {
+        "bestFor": "Japanese whisky on a budget, sherry profile, medium cigar.",
+        "avoidIf": "User demands Yamazaki/Hibiki only.",
+        "whyRecommend": "Recommend when Japanese sherry character is wanted without flagship pricing.",
+        "occasion": "Relaxed evening",
+        "flavorFamily": "Sherry & fruit",
+        "pairingAffinity": "Medium cigar",
+        "memberBlurb": "Mars Iwai Tradition — sherry and plum in an approachable Japanese blend. Smart pour when the allocated shelves are empty."
+      },
+      "id": "spi-trk-mars-iwai",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Martell Blue Swift · Cognac, France · $55 · 80 proof (40.0% ABV) · Notes: vanilla, grape",
+      "guidance": {
+        "bestFor": "Member likes bourbon and cognac, crossover curious.",
+        "avoidIf": "Cognac purist who rejects finishes.",
+        "whyRecommend": "Recommend when the member loves bourbon and wants to try cognac — vanilla, caramel, familiar oak.",
+        "occasion": "Conversation",
+        "flavorFamily": "Vanilla bridge",
+        "pairingAffinity": "Medium cigar",
+        "memberBlurb": "Martell Blue Swift — cognac finished in bourbon barrels. The bridge pour for bourbon drinkers who are cognac-curious."
+      },
+      "id": "spi-trk-martell-bs",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Martell Cordon Bleu · Cognac, France · $220 · 80 proof (40.0% ABV) · Notes: fig, jasmine",
+      "guidance": {
+        "bestFor": "Cognac collector, floral-fruity luxury, maduro night.",
+        "avoidIf": "Budget VSOP only.",
+        "whyRecommend": "Recommend when the member wants classic Martell luxury — fig, jasmine, and fruit cake depth.",
+        "occasion": "Celebration",
+        "flavorFamily": "Floral & fruit",
+        "pairingAffinity": "Maduro",
+        "memberBlurb": "Martell Cordon Bleu — fig and jasmine in a cognac classic. Luxury for members who already know Hennessy and Rémy XO."
+      },
+      "id": "spi-trk-martell-cb",
+      "provenance": {
+        "beginnerSafe": "No",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Michter's US*1 Kentucky Straight Bourbon · Kentucky · $48 · 91.4 proof (45.7% ABV) · Journey: Intermediate · Notes: stone fruit, vanilla",
+      "guidance": {
+        "bestFor": "Polished bourbon request, gift pour, medium-full cigar.",
+        "avoidIf": "Strict budget-only shopper.",
+        "whyRecommend": "Recommend when the member wants premium Kentucky bourbon — stone fruit, honey, and polished oak.",
+        "occasion": "Relaxed evening",
+        "flavorFamily": "Stone fruit & oak",
+        "pairingAffinity": "Medium-full cigar",
+        "memberBlurb": "Michter's US*1 Bourbon — stone fruit and honey over polished oak. Small-batch Kentucky that reads luxury without Van Winkle theater."
+      },
+      "id": "spi-trk-mich-bbn",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Michter's US*1 Straight Rye · Kentucky · $48 · 84.8 proof (42.4% ABV) · Journey: Intermediate · Notes: citrus, rye spice",
+      "guidance": {
+        "bestFor": "Rye upgrade from Sazerac, polished medium-full pairing.",
+        "avoidIf": "User wants 100+ proof rye only.",
+        "whyRecommend": "Recommend when the member wants premium rye — citrus, spice, and polished oak.",
+        "occasion": "Relaxed evening",
+        "flavorFamily": "Spice & citrus",
+        "pairingAffinity": "Medium-full cigar",
+        "memberBlurb": "Michter's US*1 Rye — citrus and spice in a polished small-batch rye. Premium without the WhistlePig ticket."
+      },
+      "id": "spi-trk-mich-rye",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Monkey Shoulder Blended Malt Scotch · Scotland · $35 · 86 proof (43.0% ABV) · Notes: vanilla, orange",
+      "guidance": {
+        "bestFor": "Scotch beginner, cocktail crowd, approachable malt.",
+        "avoidIf": "User wants single distillery only.",
+        "whyRecommend": "Recommend when the member wants approachable malt — vanilla, orange, and honey without peat fear.",
+        "occasion": "Cocktail / neat",
+        "flavorFamily": "Vanilla & spice",
+        "pairingAffinity": "Medium cigar",
+        "memberBlurb": "Monkey Shoulder — vanilla and orange across blended Speyside malts. Scotch for people who think they do not like Scotch."
+      },
+      "id": "spi-trk-monkey-shoulder",
+      "provenance": {
+        "beginnerSafe": "Yes",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Montelobos Espadín Mezcal · Oaxaca, Mexico · $35 · 80 proof (40.0% ABV) · Notes: smoke, agave",
+      "guidance": {
+        "bestFor": "Mezcal second step, balanced smoke, medium cigar.",
+        "avoidIf": "User hates smoke.",
+        "whyRecommend": "Recommend when Del Maguey was too intense — balanced espadín smoke and citrus.",
+        "occasion": "Relaxed evening",
+        "flavorFamily": "Balanced smoke",
+        "pairingAffinity": "Medium cigar",
+        "memberBlurb": "Montelobos Espadín — balanced smoke and green pepper. Mezcal for members who want smoke without going full campfire."
+      },
+      "id": "spi-trk-montelobo",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    }
+  ]
+}

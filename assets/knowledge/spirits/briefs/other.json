@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "shard": "other",
+  "category": "spirit",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 2,
+  "products": [
+    {
+      "menuLine": "Blanton's Single Barrel · Kentucky Straight Bourbon · $31 · 93 proof (46.5% ABV) · BT mash bill #1 · Whiskey Journey: Novice · Notes: maple, honey, vanilla, orange citrus, stewed berries, caramel, toffee, baking spice",
+      "guidance": {
+        "bestFor": "First bourbon pour, approachable cigar pairings, Buffalo Trace curiosity.",
+        "avoidIf": "User wants peat, agave, or ultra-premium allocated pours only.",
+        "whyRecommend": "Recommend as the canonical novice bourbon — single-barrel sweetness with citrus lift beside medium cigars.",
+        "occasion": "Evening lounge",
+        "flavorFamily": "Bourbon",
+        "pairingAffinity": "Medium-bodied cigars, cream and cedar profiles",
+        "memberBlurb": "Blanton's Single Barrel — the original single-barrel bourbon with maple, honey, citrus, and baking spice."
+      },
+      "id": "blantons-single-barrel",
+      "provenance": {
+        "beginnerSafe": true,
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Pappy Van Winkle 23yr · Kentucky Straight Bourbon · $85 · 95.6 proof (47.8% ABV) · wheated mash · Whiskey Journey: Advanced · Notes: caramel, ripe apples, cherries, oak, tobacco, hint of chocolate; pronounced wood flavors into a long sweet caramel finish · Awards: SF World Spirits Gold 2019; IWSC Silver 2019 (Star Attraction); USC Excellent/Highly Recommended 90–94 pts 2018; NYWWSC Best Bourbon & Best Small Batch 2018; Pacult 5 Stars 2018; World Whiskies Awards Overall Winner 2018",
+      "guidance": {
+        "bestFor": "Celebration pours, advanced wheated bourbon seekers, luxury cigar pairings.",
+        "avoidIf": "Novice first bourbon, budget ceiling under $40, or user wants low-proof session pours.",
+        "whyRecommend": "Recommend when the member names Pappy, wants a unicorn bourbon, or asks for advanced wheated depth with orchard fruit and long caramel finish.",
+        "occasion": "Celebration",
+        "flavorFamily": "Bourbon",
+        "pairingAffinity": "Maduro / cocoa-forward cigars",
+        "memberBlurb": "Pappy Van Winkle 23yr — long-aged wheated bourbon with caramel, orchard fruit, and pronounced sweet wood."
+      },
+      "id": "pappy-van-winkle-23yr",
+      "provenance": {
+        "beginnerSafe": false,
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    }
+  ]
+}

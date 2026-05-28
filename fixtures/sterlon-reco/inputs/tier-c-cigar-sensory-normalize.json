@@ -1,0 +1,37 @@
+{
+  "op": "cigarSensoryNormalize",
+  "cases": [
+    {
+      "id": "numeric-body-strength",
+      "input": {
+        "category": "cigar",
+        "spec": { "body": 4, "strength": 2 }
+      },
+      "expect": {
+        "body": "Medium-Full",
+        "strength": 2,
+        "strengthLabel": "Medium-Light"
+      }
+    },
+    {
+      "id": "string-body-preserved",
+      "input": {
+        "category": "cigar",
+        "spec": { "body": "Medium-Full", "strength": 4 }
+      },
+      "expect": {
+        "body": "Medium-Full",
+        "strength": 4,
+        "strengthLabel": "Medium-Full"
+      }
+    },
+    {
+      "id": "spirit-passthrough",
+      "input": {
+        "category": "spirit",
+        "spec": { "strength": 2 }
+      },
+      "expectUnchanged": true
+    }
+  ]
+}

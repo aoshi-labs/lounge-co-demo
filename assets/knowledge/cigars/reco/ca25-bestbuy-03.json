@@ -1,0 +1,327 @@
+{
+  "version": 1,
+  "shard": "ca25-bestbuy-03",
+  "category": "cigar",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 6,
+  "products": [
+    {
+      "tracker": {
+        "sku": "BB25-19-MAC-COURT",
+        "caList": "Best Buy",
+        "caListYear": 2025,
+        "caRank": "",
+        "caRating": 89
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cream",
+          "weight": 1.0
+        },
+        {
+          "id": "cedar",
+          "weight": 0.95
+        },
+        {
+          "id": "nut",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 5,
+        "tier": 2,
+        "strength": 2,
+        "body": "Medium-Light",
+        "smokeTime": "30 min",
+        "wrapper": "Connecticut Shade",
+        "binder": "Dominican Republic",
+        "filler": "Dominican Republic / Mexico"
+      },
+      "id": "bb25-19-mac-court",
+      "sensory": {
+        "body": 4,
+        "sweetness": 6,
+        "pepper": 4,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Macanudo Café Court (Tubo)",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "BB25-20-ZINO-NIC-HC",
+        "caList": "Best Buy",
+        "caListYear": 2025,
+        "caRank": "",
+        "caRating": 88
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "wood",
+          "weight": 0.95
+        },
+        {
+          "id": "leather",
+          "weight": 0.85
+        },
+        {
+          "id": "earth",
+          "weight": 0.75
+        },
+        {
+          "id": "tobacco",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 7,
+        "tier": 3,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "30 min",
+        "wrapper": "Ecuador",
+        "binder": "Honduras",
+        "filler": "Nicaragua"
+      },
+      "id": "bb25-20-zino-nic-hc",
+      "sensory": {
+        "body": 6,
+        "sweetness": 5,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Zino Nicaragua Half Corona",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "BB25-21-BOLIVAR-ROB",
+        "caList": "Best Buy",
+        "caListYear": 2025,
+        "caRank": "",
+        "caRating": 88
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "wood",
+          "weight": 0.95
+        },
+        {
+          "id": "leather",
+          "weight": 0.85
+        },
+        {
+          "id": "earth",
+          "weight": 0.75
+        },
+        {
+          "id": "tobacco",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 6,
+        "tier": 3,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "60 min",
+        "wrapper": "Honduras",
+        "binder": "Honduras",
+        "filler": "Honduras / Nicaragua"
+      },
+      "id": "bb25-21-bolivar-rob",
+      "sensory": {
+        "body": 6,
+        "sweetness": 5,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Bolivar Cofradia Robusto",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "BB25-22-NICA-ADOBE",
+        "caList": "Best Buy",
+        "caListYear": 2025,
+        "caRank": "",
+        "caRating": 87
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "earth",
+          "weight": 1.0
+        },
+        {
+          "id": "spice",
+          "weight": 0.95
+        },
+        {
+          "id": "cedar",
+          "weight": 0.85
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.75
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.7
+        },
+        {
+          "id": "toast",
+          "weight": 0.65
+        }
+      ],
+      "spec": {
+        "msrp": 6,
+        "tier": 3,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "90 min",
+        "wrapper": "Nicaragua",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "bb25-22-nica-adobe",
+      "sensory": {
+        "body": 7,
+        "sweetness": 5,
+        "pepper": 6,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Nica Rustica Adobe Toro",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "BB25-23-CLE-MAD-40",
+        "caList": "Best Buy",
+        "caListYear": 2025,
+        "caRank": "",
+        "caRating": 87
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.95
+        },
+        {
+          "id": "coffee",
+          "weight": 0.85
+        },
+        {
+          "id": "earth",
+          "weight": 0.75
+        },
+        {
+          "id": "cedar",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 5,
+        "tier": 3,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "30 min",
+        "wrapper": "San Andrés Maduro",
+        "binder": "Honduras",
+        "filler": "Honduras / Nicaragua"
+      },
+      "id": "bb25-23-cle-mad-40",
+      "sensory": {
+        "body": 7,
+        "sweetness": 5,
+        "pepper": 6,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "C.L.E. Maduro 40x4",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "BB25-24-LAUR-CAZ-TOR",
+        "caList": "Best Buy",
+        "caListYear": 2025,
+        "caRank": "",
+        "caRating": 87
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "earth",
+          "weight": 1.0
+        },
+        {
+          "id": "spice",
+          "weight": 0.95
+        },
+        {
+          "id": "cedar",
+          "weight": 0.85
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.75
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.7
+        },
+        {
+          "id": "toast",
+          "weight": 0.65
+        }
+      ],
+      "spec": {
+        "msrp": 5,
+        "tier": 3,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "90 min",
+        "wrapper": "Nicaragua",
+        "binder": "Dominican Republic",
+        "filler": "Nicaragua / Dominican Republic"
+      },
+      "id": "bb25-24-laur-caz-tor",
+      "sensory": {
+        "body": 6,
+        "sweetness": 5,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "La Aurora Cazadores Nicaragua Toro",
+      "category": "cigar"
+    }
+  ]
+}

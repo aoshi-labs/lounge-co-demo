@@ -1,0 +1,193 @@
+/* ─────────────────────────────────────────────────────────────
+   member-billing.css — page-specific styles
+   Extracted from inline <style> block in member-billing.html.
+   Shared chrome (sidebar, top-bar, .topbar-actions, mobile-overlay,
+   brand/user typography) lives in lounge.css.
+──────────────────────────────────────────────────────────────── */
+
+.mb-current {
+  background: linear-gradient(135deg, var(--bg-surface), var(--bg-elevated));
+  border: 1px solid var(--gold-dim);
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 32px;
+}
+.mb-current-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.mb-current-label {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.mb-current-tier {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 28px;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.mb-current-price {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+.mb-current-portal {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+.mb-current-portal:hover { background: var(--gold); color: var(--bg-base); }
+.mb-current-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--bg-border-dim);
+}
+.mb-current-meta-label {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+.mb-current-meta-value {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-primary);
+}
+.mb-section-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+.mb-tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 36px;
+}
+.mb-tier {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.mb-tier-current {
+  border-color: var(--gold);
+  background: linear-gradient(180deg, var(--gold-subtle), var(--bg-surface));
+}
+.mb-tier-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+.mb-tier-price {
+  font-family: var(--font-ui);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+.mb-tier-price-sub {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+.mb-tier-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex: 1;
+}
+.mb-tier-features li {
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 4px;
+}
+.mb-tier-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+.mb-tier-btn {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid var(--gold);
+  background: var(--gold);
+  color: var(--bg-base);
+  transition: opacity 0.15s;
+  text-align: center;
+  text-decoration: none;
+}
+.mb-tier-btn:hover { opacity: 0.9; }
+.mb-tier-btn-current {
+  background: transparent;
+  border-color: var(--bg-border);
+  color: var(--text-muted);
+  cursor: default;
+}
+.mb-tier-btn-downgrade {
+  background: transparent;
+  border-color: var(--bg-border);
+  color: var(--text-secondary);
+}
+.mb-invoices {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.mb-invoice {
+  display: grid;
+  grid-template-columns: 1fr 100px 80px 80px;
+  gap: 16px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--bg-border-dim);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--text-secondary);
+  align-items: center;
+}
+.mb-invoice:last-child { border-bottom: none; }
+.mb-invoice-head { background: var(--bg-elevated); color: var(--text-muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+.mb-invoice-amount { font-weight: 600; color: var(--text-primary); }
+.mb-invoice-link { color: var(--gold); text-decoration: none; }
+@media (max-width: 800px) { .mb-tiers { grid-template-columns: 1fr; } .mb-current-meta { grid-template-columns: 1fr; gap: 12px; } }

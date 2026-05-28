@@ -1,0 +1,96 @@
+  @keyframes pulse-ring{0%{transform:scale(.7);opacity:1}80%,100%{transform:scale(2);opacity:0}}
+
+
+/* === Page-specific styles === */
+.topbar-back-link { display:flex; align-items:center; gap:6px; color:var(--text-secondary); text-decoration:none; font-size:13px; font-weight:500; transition:color .2s; }
+.checkin-page-frame { display:flex; justify-content:center; padding:40px 20px; }
+.checkin-page-stack { width:100%; max-width:520px; display:flex; flex-direction:column; gap:16px; }
+.checkin-hero-card { background:linear-gradient(180deg,rgba(var(--tier-elite-rgb), .18),var(--bg-surface)); border:1px solid var(--bg-border); border-radius:20px; padding:32px; text-align:center; }
+.checkin-pulse-wrap { position:relative; width:80px; height:80px; margin:0 auto 18px; display:flex; align-items:center; justify-content:center; }
+.checkin-pulse-ring { position:absolute; inset:0; border-radius:50%; background:rgba(var(--tier-elite-rgb), .3); animation:pulse-ring 2s infinite; }
+.checkin-pulse-ring-2 { position:absolute; inset:0; border-radius:50%; background:rgba(var(--tier-elite-rgb), .3); animation:pulse-ring 2s infinite .6s; }
+.checkin-pulse-center { position:relative; width:60px; height:60px; background:var(--tier-elite); border-radius:50%; display:flex; align-items:center; justify-content:center; }
+.checkin-eyebrow { font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--tier-elite); margin-bottom:6px; }
+.checkin-venue-name { font-family:var(--font-display); font-size:2rem; font-weight:700; color:var(--text-primary); line-height:1.1; margin-bottom:6px; }
+.checkin-venue-address { font-family:var(--font-body); font-style:italic; font-size:13px; color:var(--text-secondary); margin-bottom:24px; }
+.checkin-hero-stats { display:flex; justify-content:center; gap:32px; margin-bottom:24px; padding:14px 0; border-top:1px solid var(--bg-border); border-bottom:1px solid var(--bg-border); }
+.checkin-stat-num-gold { font-family:var(--font-display); font-size:1.8rem; font-weight:700; color:var(--gold); line-height:1; }
+.checkin-stat-label { font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:.06em; margin-top:3px; }
+.checkin-stat-num { font-family:var(--font-display); font-size:1.8rem; font-weight:700; color:var(--text-primary); line-height:1; }
+.checkin-cta-button { width:100%; background:var(--burg); color:var(--cream); border:none; border-radius:12px; padding:16px; font-family:var(--font-ui); font-size:16px; font-weight:700; cursor:pointer; transition:background .15s; }
+.checkin-share-row { margin-top:14px; display:flex; align-items:center; justify-content:center; gap:8px; font-size:11px; color:var(--text-muted); }
+.checkin-share-checkbox { accent-color:var(--gold); }
+.here-now-card { background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:14px; padding:20px 22px; }
+.here-now-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+.here-now-title { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); }
+.here-now-meta { font-size:11px; color:var(--text-muted); }
+.here-now-list { display:flex; flex-direction:column; gap:10px; }
+.here-now-row { display:flex; align-items:center; gap:12px; text-decoration:none; padding:8px; border-radius:8px; transition:background .15s; }
+.here-now-avatar-champion { background:var(--gold); color:var(--bg-base); }
+.here-now-row-info { flex:1; }
+.here-now-row-name { font-size:13px; font-weight:600; color:var(--text-primary); }
+.here-now-tag-champion { font-size:10px; color:var(--gold); margin-left:4px; }
+.here-now-status-pill { background:rgba(var(--tier-elite-rgb), .15); color:var(--tier-elite); border-radius:99px; padding:3px 8px; font-size:10px; font-weight:700; }
+.here-now-avatar-runner-up { background:var(--tier-runner-up); color:var(--tier-runner-up-ink); }
+.here-now-tag-elite { font-size:10px; color:var(--tier-elite); margin-left:4px; }
+.here-now-avatar-bronze { background:var(--tier-bronze); color:var(--tier-bronze-ink); }
+.here-now-tag-bronze { font-size:10px; color:var(--tier-bronze); margin-left:4px; }
+.here-now-avatar-member { background:var(--avatar-brown); color:var(--avatar-brown-ink); }
+.here-now-tag-member { font-size:10px; color:var(--text-muted); margin-left:4px; }
+.here-now-show-more { width:100%; margin-top:12px; background:none; border:none; font-family:var(--font-ui); font-size:13px; color:var(--text-muted); cursor:pointer; padding:8px; transition:color .2s; }
+.streak-bonus-card { background:linear-gradient(135deg,var(--gold-subtle),var(--bg-surface)); border:1px solid rgba(var(--gold-rgb), .2); border-radius:14px; padding:18px 22px; display:flex; align-items:center; gap:14px; }
+.streak-bonus-title { font-family:var(--font-display); font-size:1.1rem; font-weight:600; color:var(--text-primary); }
+.streak-bonus-description { font-family:var(--font-body); font-style:italic; font-size:12px; color:var(--text-secondary); line-height:1.5; margin-top:3px; }
+.success-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,.75); z-index:200; align-items:center; justify-content:center; }
+.success-modal-card { background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:20px; padding:36px; max-width:340px; width:90%; text-align:center; }
+.success-modal-icon { width:70px; height:70px; background:rgba(var(--tier-elite-rgb), .15); border:3px solid var(--tier-elite); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; }
+.success-modal-title { font-family:var(--font-display); font-size:1.6rem; font-weight:700; color:var(--text-primary); margin-bottom:6px; }
+.success-modal-message { font-family:var(--font-body); font-style:italic; font-size:13px; color:var(--text-secondary); line-height:1.6; margin-bottom:18px; }
+.success-modal-cta { display:block; background:var(--burg); color:var(--cream); border-radius:9px; padding:12px; font-family:var(--font-ui); font-size:14px; font-weight:700; text-decoration:none; }
+
+/* ─── Presence visibility quick-toggle ─── */
+.presence-card { display:flex; align-items:center; gap:14px; background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:14px; padding:16px 18px; }
+.presence-card i { color:var(--gold); flex-shrink:0; }
+.presence-card-body { flex:1; min-width:0; }
+.presence-card-title { font-family:var(--font-ui); font-size:13px; font-weight:600; color:var(--text-primary); }
+.presence-card-description { font-family:var(--font-body); font-style:italic; font-size:11.5px; color:var(--text-secondary); line-height:1.5; margin-top:2px; }
+.presence-settings-link { color:var(--gold); text-decoration:none; }
+.presence-settings-link:hover { text-decoration:underline; }
+
+/* ─── "You" row in Here Right Now list ─── */
+.is-you { background:rgba(var(--gold-rgb),0.06)!important; border:1px solid rgba(var(--gold-rgb),0.22); border-radius:9px; }
+.here-now-avatar-you { background:var(--gold); color:var(--bg-surface); }
+.here-now-tag-you { font-size:10px; color:var(--gold); margin-left:4px; font-weight:700; letter-spacing:0.5px; }
+
+/* ─── Check-in history ─── */
+.history-card { background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:14px; padding:20px 22px; }
+.history-card-header { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:14px; flex-wrap:wrap; }
+.history-card-title { font-family:var(--font-display); font-size:1.15rem; font-weight:600; color:var(--text-primary); }
+.history-card-subtitle { font-family:var(--font-body); font-style:italic; font-size:11.5px; color:var(--text-muted); margin-top:2px; }
+.history-range-tabs { display:flex; gap:6px; }
+.history-range-tab { background:transparent; border:1px solid var(--bg-border); border-radius:99px; padding:5px 11px; font-family:var(--font-ui); font-size:11px; color:var(--text-secondary); cursor:pointer; transition:all .2s; }
+.history-range-tab:hover { color:var(--text-primary); border-color:var(--gold-dim); }
+.is-active { background:var(--gold-subtle); border-color:var(--gold-dim); color:var(--gold); font-weight:600; }
+
+.history-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
+.history-item { display:flex; align-items:center; gap:14px; padding:10px 8px; border-radius:9px; transition:background .2s; }
+.history-item:hover { background:var(--bg-elevated); }
+.history-date-block { flex-shrink:0; width:44px; text-align:center; padding:6px 4px; background:var(--bg-elevated); border:1px solid var(--bg-border-dim); border-radius:8px; }
+.history-date-day { font-family:var(--font-display); font-size:1.15rem; font-weight:700; color:var(--text-primary); line-height:1; }
+.history-date-month { font-family:var(--font-ui); font-size:9px; font-weight:700; letter-spacing:0.8px; color:var(--text-muted); margin-top:2px; }
+.history-item-info { flex:1; min-width:0; }
+.history-venue-name { font-family:var(--font-ui); font-size:13px; font-weight:600; color:var(--text-primary); }
+.history-tonight-tag { font-style:italic; font-size:11px; color:var(--gold); font-weight:500; }
+.history-item-meta { font-family:var(--font-body); font-style:italic; font-size:11.5px; color:var(--text-secondary); line-height:1.4; margin-top:2px; }
+.history-points-pill { flex-shrink:0; font-family:var(--font-ui); font-size:10px; font-weight:700; color:var(--gold); background:var(--gold-subtle); padding:4px 9px; border-radius:99px; }
+.history-event-tag { font-size:10px; color:var(--burg); margin-left:2px; background:rgba(var(--burg-rgb), 0.08); padding:2px 6px; border-radius:99px; font-weight:600; }
+
+.history-show-more-btn { width:100%; margin-top:14px; background:none; border:none; font-family:var(--font-ui); font-size:12px; color:var(--text-muted); cursor:pointer; padding:8px; transition:color .2s; }
+.history-show-more-btn:hover { color:var(--gold); }
+
+@media (max-width: 639px) {
+  .checkin-venue-name { font-size: 1.5rem; line-height: 1.15; }
+  .checkin-stat-num-gold { font-size: 1.3rem; line-height: 1.15; }
+  .checkin-stat-num { font-size: 1.3rem; line-height: 1.15; }
+  .success-modal-title { font-size: 1.3rem; line-height: 1.15; }
+}

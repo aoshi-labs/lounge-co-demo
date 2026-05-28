@@ -1,0 +1,37 @@
+{
+  "inputCigars": [
+    "Charter Oak Connecticut Habano Lonsdale",
+    "Dunbarton Tobacco & Trust Sin Compromiso No. 2 / No. 5 / Seleccion Maduro",
+    "Oliva Serie G Maduro Special G"
+  ],
+  "inputSpirits": [
+    "Ardbeg 10",
+    "Ardbeg 10",
+    "Ardbeg 10"
+  ],
+  "inputFoods": [
+    null,
+    null,
+    null
+  ],
+  "outputCigars": [
+    "Charter Oak Connecticut Habano Lonsdale",
+    "Dunbarton Tobacco & Trust Sin Compromiso No. 2 / No. 5 / Seleccion Maduro",
+    "Oliva Serie G Maduro Special G"
+  ],
+  "outputSpirits": [
+    "Ardbeg 10",
+    "Ardbeg 10",
+    "Ardbeg 10"
+  ],
+  "outputFoods": [
+    null,
+    null,
+    null
+  ],
+  "cigarsUnchanged": true,
+  "spiritsUnchanged": true,
+  "foodsUnchanged": true,
+  "enrichedHasStock": true,
+  "countPreserved": true
+}

@@ -1,0 +1,32 @@
+{
+  "spiritCount": 92,
+  "violationCount": 63,
+  "ok": false,
+  "sampleViolations": [
+    {
+      "code": "journeyRank_corrupt",
+      "name": "1792 Small Batch Bourbon",
+      "journeyRank": 35
+    },
+    {
+      "code": "journeyRank_corrupt",
+      "name": "Aberlour 12 Year",
+      "journeyRank": 50
+    },
+    {
+      "code": "journeyRank_corrupt",
+      "name": "Appleton Estate 21 Year",
+      "journeyRank": 66
+    },
+    {
+      "code": "journeyRank_corrupt",
+      "name": "Ardbeg 10",
+      "journeyRank": 46
+    },
+    {
+      "code": "journeyRank_corrupt",
+      "name": "Balvenie 14 Year Caribbean Cask",
+      "journeyRank": 51
+    }
+  ]
+}

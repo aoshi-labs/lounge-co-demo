@@ -1,0 +1,150 @@
+  @media(max-width:1023px){.sidebar{transform:translateX(-100%)}.sidebar.open{transform:translateX(0)}.main-area{margin-left:0;}.preview-col{display:none!important}}
+  .section{background:var(--bg-surface);border:1px solid var(--bg-border);border-radius:14px;padding:24px 26px;}
+  .section h3{font-family:var(--font-display);font-size:1.3rem;font-weight:600;color:var(--text-primary);margin-bottom:14px;}
+  .section p.helper{font-family:var(--font-body);font-style:italic;font-size:13px;color:var(--text-secondary);margin-bottom:18px;line-height:1.65;}
+  .field-label{font-size:11px;font-weight:600;color:var(--text-secondary);margin-bottom:6px;display:block;}
+  .input{width:100%;background:var(--bg-elevated);border:1px solid var(--bg-border);border-radius:8px;padding:10px 14px;font-size:14px;font-family:var(--font-ui);color:var(--text-primary);outline:none;transition:border-color .2s;}
+  .color-swatch{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;background:var(--bg-elevated);border:1px solid var(--bg-border);border-radius:8px;cursor:pointer;}
+  .color-dot{width:24px;height:24px;border-radius:50%;border:2px solid var(--bg-surface);box-shadow:0 0 0 1px var(--bg-border);}
+
+
+/* === Page-specific styles === */
+.topbar-title { font-size:15px; font-weight:600; color:var(--text-primary); }
+.topbar-save-btn { background:var(--burg); color:var(--cream); border:none; border-radius:8px; padding:8px 14px; font-family:var(--font-ui); font-size:13px; font-weight:600; cursor:pointer; }
+
+/* Bottom save widget — Save Changes lives here instead of the top bar.
+   Card-style band sitting below the form + preview columns, anchored
+   to the editing flow. Mirrors admin-list-edit's .ale-actions-widget. */
+.adm-save-widget {
+  margin: 0 24px 32px;
+  padding: 18px 22px;
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  max-width: 1240px;
+}
+.adm-save-widget-info { flex: 1; min-width: 0; }
+.adm-save-widget-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.adm-save-widget-sub {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.adm-save-widget-btn { flex-shrink: 0; padding: 10px 22px; font-size: 13px; }
+.admin-settings-page-frame { padding:24px 24px 40px; display:flex; gap:20px; max-width:1240px; width:100%; }
+.admin-settings-form-col { flex:1; display:flex; flex-direction:column; gap:18px; }
+.admin-settings-field-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
+.admin-settings-field-group { margin-bottom:14px; }
+.admin-settings-about-textarea { resize:vertical; font-family:var(--font-body); font-style:italic; }
+.admin-settings-inline-row { display:flex; align-items:center; gap:8px; }
+.admin-settings-mono-input { font-family:'JetBrains Mono',monospace; }
+.admin-settings-helper-text { font-size:13px; color:var(--text-muted); }
+.admin-settings-logo-row { display:flex; align-items:center; gap:16px; margin-bottom:18px; }
+.admin-settings-logo-mark { width:80px; height:80px; background:var(--gold); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:24px; font-weight:700; color:var(--bg-base); }
+.admin-settings-upload-btn { background:var(--bg-elevated); border:1px solid var(--bg-border); color:var(--text-primary); border-radius:7px; padding:7px 14px; font-family:var(--font-ui); font-size:12px; font-weight:600; cursor:pointer; margin-right:8px; }
+.admin-settings-upload-hint { font-size:11px; color:var(--text-muted); margin-top:6px; }
+.admin-settings-color-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.admin-settings-color-dot-gold { background:var(--gold); }
+.admin-settings-color-hex { font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--text-primary); }
+.admin-settings-color-dot-burg { background:var(--burg); }
+.admin-settings-hours-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:6px; }
+.admin-settings-hours-cell { background:var(--bg-elevated); border:1px solid var(--bg-border); border-radius:8px; padding:10px 12px; }
+.admin-settings-hours-day { font-size:11px; color:var(--text-muted); }
+.admin-settings-hours-time { font-size:13px; color:var(--text-primary); font-weight:600; margin-top:3px; }
+.admin-settings-plan-card { display:flex; align-items:center; justify-content:space-between; padding:18px; background:linear-gradient(135deg,var(--gold-subtle),var(--bg-elevated)); border:1px solid rgba(var(--gold-rgb), .2); border-radius:11px; }
+.admin-settings-plan-name { font-family:var(--font-display); font-size:1.3rem; font-weight:600; color:var(--text-primary); }
+.admin-settings-plan-meta { font-size:12px; color:var(--text-muted); margin-top:3px; }
+.admin-settings-plan-price-col { text-align:right; }
+.admin-settings-plan-price { font-family:var(--font-display); font-size:1.8rem; font-weight:700; color:var(--gold); }
+.admin-settings-plan-price-suffix { font-size:.8rem; color:var(--text-muted); }
+.admin-settings-plan-change-btn { margin-top:4px; background:none; border:none; font-size:11px; color:var(--text-muted); cursor:pointer; }
+.admin-settings-preview-col { width:320px; flex-shrink:0; position:sticky; top:76px; align-self:flex-start; }
+.admin-settings-preview-section { padding:20px; }
+.admin-settings-preview-eyebrow { font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
+.admin-settings-preview-card { background:var(--bg-base); border:1px solid var(--bg-border); border-radius:10px; padding:18px; text-align:center; }
+.admin-settings-preview-logo-mark { width:50px; height:50px; background:var(--gold); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:16px; font-weight:700; color:var(--bg-base); margin:0 auto 12px; }
+.admin-settings-preview-name { font-family:var(--font-display); font-size:1.3rem; font-weight:600; color:var(--text-primary); margin-bottom:4px; }
+.admin-settings-preview-tagline { font-family:var(--font-body); font-style:italic; font-size:12px; color:var(--text-secondary); margin-bottom:14px; }
+.admin-settings-preview-cta-btn { background:var(--burg); color:var(--cream); border:none; border-radius:7px; padding:7px 18px; font-family:var(--font-ui); font-size:12px; font-weight:600; width:100%; }
+.admin-settings-preview-note { font-family:var(--font-body); font-style:italic; font-size:12px; color:var(--text-muted); line-height:1.55; margin-top:14px; }
+
+/* Mobile (≤1023px) opts the Live Preview column back in — the shell rule
+   above hides it with `display: none !important`. Restack the page as
+   a single column with the preview as a footer panel under the form,
+   and drop the desktop fixed width / sticky position so it flows. */
+@media (max-width: 1023px) {
+  .admin-settings-page-frame { flex-direction: column; gap: 18px; padding: 18px 18px 40px; }
+  .preview-col { display: block !important; }
+  .admin-settings-preview-col {
+    width: 100%;
+    position: static;
+    top: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  /* The Lounge Name + Short Name row (.admin-settings-field-row) and the 3-col Lounge Hours
+     grid (.admin-settings-hours-grid) stack to a single column on phone — both contain
+     longer text inputs that need full width. The brand-color row
+     (.admin-settings-color-grid) stays 2-up because the swatches are small and read more
+     naturally side-by-side. */
+  .admin-settings-field-row,
+  .admin-settings-hours-grid {
+    grid-template-columns: 1fr;
+  }
+  .admin-settings-about-textarea {
+    min-height: 160px;
+  }
+
+  /* Membership plan card — desktop puts the name+meta on the left and
+     $299/mo + "Change plan →" on the right, which collides on a phone.
+     Restack as a grid: name on top-left, price on top-right, the long
+     meta line spans the full second row, and the Change Plan button
+     sits beneath. */
+  .admin-settings-plan-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "name  price"
+      "meta  meta"
+      "cta   cta";
+    column-gap: 12px;
+    row-gap: 8px;
+    padding: 14px 16px;
+  }
+  .admin-settings-plan-card > div:first-child  { display: contents; }
+  .admin-settings-plan-name { grid-area: name; font-size: 1.15rem; }
+  .admin-settings-plan-meta { grid-area: meta; margin-top: 0; line-height: 1.5; }
+  .admin-settings-plan-price-col {
+    display: contents;
+  }
+  .admin-settings-plan-price { grid-area: price; font-size: 1.5rem; align-self: start; }
+  .admin-settings-plan-change-btn { grid-area: cta; justify-self: start; margin-top: 4px; padding: 0; }
+
+  /* Bottom save widget — tighter margin on phone, full-width button so
+     the commit action is easy to thumb. */
+  .adm-save-widget {
+    margin: 0 16px 28px;
+    padding: 14px 16px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .adm-save-widget-btn { width: 100%; }
+}
+
+@media (max-width: 639px) {
+  .admin-settings-plan-price { font-size: 1.3rem; line-height: 1.15; }
+}

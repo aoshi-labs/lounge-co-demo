@@ -1,0 +1,17 @@
+{
+  "adopted": true,
+  "adoptedIsFrozen": true,
+  "adoptedCardsFrozen": true,
+  "bestCardFrozen": true,
+  "provenanceFrozen": true,
+  "validateOk": true,
+  "governanceOk": true,
+  "turnIdPreserved": true,
+  "sourcePreserved": true,
+  "runtimeVersionPreserved": true,
+  "scoringVersionPreserved": true,
+  "cardsLenPreserved": true,
+  "degradedPreserved": true,
+  "journeyLevelPreserved": true,
+  "generatedAtPreserved": true
+}

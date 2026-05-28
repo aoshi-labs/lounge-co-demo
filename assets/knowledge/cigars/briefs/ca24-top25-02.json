@@ -1,0 +1,212 @@
+{
+  "version": 1,
+  "shard": "ca24-top25-02",
+  "category": "cigar",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 9,
+  "products": [
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/brick-house-churchill-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Savory",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Brazil wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Honduras binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/brick-house-churchill-2024.",
+        "avoidIf": "Beginner nicotine-sensitive, very short time window, or user wants opposite body/wrapper style.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, Brick House, or a medium coffee-friendly smoke at this size."
+      },
+      "menuLine": "Brick House · 7 × 50 · Churchill · Medium · Nicaragua · $7 · Notes: earth, savory spice, cedar, cocoa",
+      "stickSize": "7 × 50 · Churchill",
+      "id": "ca24-10-brick-church"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/la-aroma-de-cuba-pasion-box-pressed-torpedo-2024"
+      },
+      "parentCompany": "Ashton",
+      "guidance": {
+        "flavorFamily": "Coffee",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Nicaragua wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Nicaragua binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/la-aroma-de-cuba-pasion-box-pressed-torpedo-2024.",
+        "avoidIf": "Beginner nicotine-sensitive, very short time window, or user wants opposite body/wrapper style.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, Pasión, or a full bourbon-friendly smoke at this size."
+      },
+      "menuLine": "La Aroma de Cuba Pasión Box-Pressed Torpedo · 6⅛ × 52 · Torpedo · Full · Nicaragua · $10 · Notes: cocoa, coffee, earth, dark sweetness",
+      "stickSize": "6⅛ × 52 · Torpedo",
+      "id": "ca24-11-la-aroma-pasion"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/aksum-claro-robusto-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Morning coffee",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuador wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Nicaragua binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/aksum-claro-robusto-2024.",
+        "avoidIf": "Beginner nicotine-sensitive, very short time window, or user wants opposite body/wrapper style.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, Claro, or a medium coffee-friendly smoke at this size."
+      },
+      "menuLine": "Aksum Claro · 5 × 50 · Robusto · Medium · Nicaragua · $11 · Notes: cream, cedar, nuts, toast",
+      "stickSize": "5 × 50 · Robusto",
+      "id": "ca24-12-aksum-claro"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/viva-la-vida-jester-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "Special occasion",
+        "pairingAffinity": "Rum",
+        "wrapperRole": "Mexico wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Nicaragua binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/viva-la-vida-jester-2024.",
+        "avoidIf": "Beginner nicotine-sensitive, very short time window, or user wants opposite body/wrapper style.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, Viva La Vida, or a medium-full rum-friendly smoke at this size."
+      },
+      "menuLine": "Viva La Vida Jester · 6 × 52 · Toro · Medium-Full · Nicaragua · $13 · Notes: cedar, baking spice, sweet tobacco, toast",
+      "stickSize": "6 × 52 · Toro",
+      "id": "ca24-13-viva-jester"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/casa-magna-colorado-xv-anniversary-6-x-54-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "Celebration",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Nicaragua wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Nicaragua binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Nicaragua / Honduras filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/casa-magna-colorado-xv-anniversary-6-x-54-2024.",
+        "avoidIf": "Beginner nicotine-sensitive, very short time window, or user wants opposite body/wrapper style.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, Colorado XV Anniversary, or a medium-full bourbon-friendly smoke at this size."
+      },
+      "menuLine": "Casa Magna Colorado XV Anniversary · 6 × 54 · Toro · Medium-Full · Nicaragua · $12 · Notes: cedar, wood, earth, leather",
+      "stickSize": "6 × 54 · Toro",
+      "id": "ca24-14-casa-magna-xv"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/romeo-y-julieta-wide-churchill-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Scotch",
+        "wrapperRole": "Indonesia wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Dominican Republic binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Dominican Republic / Nicaragua filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/romeo-y-julieta-wide-churchill-2024.",
+        "avoidIf": "Beginner nicotine-sensitive, very short time window, or user wants opposite body/wrapper style.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, Wide Churchill, or a medium scotch-friendly smoke at this size."
+      },
+      "menuLine": "Romeo y Julieta Wide Churchill · 7 × 58 · Churchill · Medium · Dominican · $11 · Notes: cedar, wood, earth, leather",
+      "stickSize": "7 × 58 · Churchill",
+      "id": "ca24-15-ryj-wide"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/perdomo-30th-anniversary-sun-grown-epicure-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "Celebration",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Ecuador wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Nicaragua binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/perdomo-30th-anniversary-sun-grown-epicure-2024.",
+        "avoidIf": "Beginner nicotine-sensitive, very short time window, or user wants opposite body/wrapper style.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, 30th Anniversary Sun Grown, or a medium-full bourbon-friendly smoke at this size.",
+        "memberBlurb": "Perdomo 30th sun-grown — Ecuador wrapper sweetness over Nicaraguan filler. Anniversary smoke with approachable MSRP."
+      },
+      "menuLine": "Perdomo 30th Anniversary Sun Grown Epicure · 6 × 54 · Toro · Medium-Full · Nicaragua · $13 · Notes: cedar, baking spice, sweet tobacco, toast",
+      "stickSize": "6 × 54 · Toro",
+      "id": "ca24-16-perdomo-30-sg"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/plasencia-cosecha-151-la-musica-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Rum",
+        "wrapperRole": "Nicaragua wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Nicaragua binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/plasencia-cosecha-151-la-musica-2024.",
+        "avoidIf": "Beginner nicotine-sensitive, very short time window, or user wants opposite body/wrapper style.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, Cosecha 151, or a medium-full rum-friendly smoke at this size.",
+        "memberBlurb": "Plasencia Cosecha 151 — Nicaraguan puro wood and rum-friendly spice. Heritage grower brand in a classic robusto."
+      },
+      "menuLine": "Plasencia Cosecha 151 La Musica · 5½ × 50 · Robusto · Medium-Full · Nicaragua · $14 · Notes: cedar, wood, earth, leather",
+      "stickSize": "5½ × 50 · Robusto",
+      "id": "ca24-17-plas-151"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/601-la-bomba-warhead-x-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Dark & Heavy",
+        "occasion": "Special occasion",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Nicaragua wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Nicaragua binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/601-la-bomba-warhead-x-2024.",
+        "avoidIf": "Beginner nicotine-sensitive, very short time window, or user wants opposite body/wrapper style.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, La Bomba, or a full bourbon-friendly smoke at this size."
+      },
+      "menuLine": "601 La Bomba Warhead X · 5 × 56 · Robusto · Full · Nicaragua · $12 · Notes: cocoa, earth, pepper, espresso",
+      "stickSize": "5 × 56 · Robusto",
+      "id": "ca24-18-601-warhead"
+    }
+  ]
+}

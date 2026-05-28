@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Requests — Admin</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Live view of open tabs and recently-closed checks across the lounge." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Requests — Admin" />
+  <meta property="og:description" content="Live view of open tabs and recently-closed checks across the lounge." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Requests — Admin" />
+  <meta name="twitter:description" content="Live view of open tabs and recently-closed checks across the lounge." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/admin-orders.css"/>
+</head>
+<body>
+
+<nav class="sidebar admin" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Owner Console</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row"><div class="avatar sidebar-user-avatar-owner"><img src="assets/images/gerald-o.jpg" alt=""/></div><div class="sidebar-user-info"><div class="sidebar-user-name">Gerald Owens</div><div class="sidebar-user-role">Owner</div></div></div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Overview</div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Dashboard</a>
+    <a href="admin-analytics.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Analytics</a>
+    <div class="nav-section-label">Manage</div>
+    <a href="admin-members.html" class="nav-item"><i data-lucide="users" class="ic-17"></i>Members</a>
+    <a href="admin-catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="admin-orders.html" class="nav-item active"><i data-lucide="receipt-text" class="ic-17"></i>Requests<span class="notif-dot">3</span></a>
+    <a href="admin-events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-settings.html" class="nav-item"><i data-lucide="settings" class="ic-17"></i>Lounge Settings</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="chevron-left" class="ic-17"></i>Back to Member View</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area admin">
+  <h1 class="visually-hidden">Requests</h1>
+  <header class="top-bar">
+    <button class="icon-btn sup-menu-btn" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+      <i data-lucide="menu" class="ic-16"></i>
+    </button>
+    <div class="topbar-actions">
+    </div>
+  </header>
+
+  <div class="admin-orders-content">
+
+    <!-- Page header row — stats sub-text on the left, time-period select
+         on the right. The select scopes the kanban beneath to a given
+         window (Today / This Week / Month / Quarter / All Time). Stats
+         preserved from the old top bar. -->
+    <div class="adm-orders-header">
+      <div class="adm-stats-summary">3 active · 47 today</div>
+      <select class="period-select" onchange="setOrderPeriod(this.value)" aria-label="Orders time period">
+        <option value="today">Today</option>
+        <option value="week">This Week</option>
+        <option value="month">This Month</option>
+        <option value="quarter">This Quarter</option>
+        <option value="all">All Time</option>
+      </select>
+    </div>
+
+    <div class="kanban admin-orders-kanban">
+
+      <!-- NEW -->
+      <div class="kanban-col">
+        <div class="col-header admin-orders-col-header-new">
+          <span>● New <span class="admin-orders-col-count-new">1</span></span>
+        </div>
+        <div class="order-card">
+          <div class="admin-orders-card-header">
+            <div><div class="admin-orders-card-id">#CR-0044</div><div class="admin-orders-card-time">Just now</div></div>
+            <div class="avatar admin-orders-card-avatar-green">SO</div>
+          </div>
+          <div class="admin-orders-card-body">Sean O. · Table 4<br><span class="admin-orders-card-items">Cohiba × 1, Lagavulin × 2</span></div>
+          <div class="admin-orders-card-footer">
+            <span class="admin-orders-card-price">$99</span>
+            <button class="admin-orders-card-btn-primary">Accept →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONFIRMED / PREPARING -->
+      <div class="kanban-col">
+        <div class="col-header admin-orders-col-header-preparing">
+          <span>● Preparing <span class="admin-orders-col-count-preparing">1</span></span>
+        </div>
+        <div class="order-card">
+          <div class="admin-orders-card-header">
+            <div><div class="admin-orders-card-id">#CR-0043</div><div class="admin-orders-card-time">12 min ago</div></div>
+            <div class="avatar admin-orders-card-avatar-bronze"><img src="assets/images/robert-b.jpg" alt=""/></div>
+          </div>
+          <div class="admin-orders-card-body">Robert B. · Table 7<br><span class="admin-orders-card-items">Padron × 2, Glenfarclas × 1</span></div>
+          <div class="admin-orders-card-footer">
+            <span class="admin-orders-card-price">$108</span>
+            <button class="admin-orders-card-btn-secondary">Mark Ready →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- READY -->
+      <div class="kanban-col">
+        <div class="col-header admin-orders-col-header-ready">
+          <span>● Ready <span class="admin-orders-col-count-ready">1</span></span>
+        </div>
+        <div class="order-card">
+          <div class="admin-orders-card-header">
+            <div><div class="admin-orders-card-id">#CR-0042</div><div class="admin-orders-card-time">42 min ago</div></div>
+            <div class="avatar admin-orders-card-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+          </div>
+          <div class="admin-orders-card-body">Thomas H. · Table 2<br><span class="admin-orders-card-items">VSG × 2, Lagavulin × 1, Padron × 1</span></div>
+          <div class="admin-orders-card-footer">
+            <span class="admin-orders-card-price">$120</span>
+            <button class="admin-orders-card-btn-success">Served ✓</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPLETED -->
+      <div class="kanban-col">
+        <div class="col-header admin-orders-col-header-completed">
+          <span>● Completed <span class="admin-orders-col-count-completed">44</span></span>
+        </div>
+        <div class="order-card admin-orders-card-completed">
+          <div class="admin-orders-card-header">
+            <div><div class="admin-orders-card-id-completed">#CR-0041</div><div class="admin-orders-card-time">2 hrs ago</div></div>
+            <div class="avatar admin-orders-card-avatar-gold"><img src="assets/images/marcus-r.jpg" alt=""/></div>
+          </div>
+          <div class="admin-orders-card-body-completed">Marcus R. · Cohiba × 1</div>
+          <div class="admin-orders-card-footer">
+            <span class="admin-orders-card-id-completed">$55</span>
+            <span class="admin-orders-card-served-tag">✓ Served</span>
+          </div>
+        </div>
+        <div class="order-card admin-orders-card-completed">
+          <div class="admin-orders-card-header">
+            <div><div class="admin-orders-card-id-completed">#CR-0040</div><div class="admin-orders-card-time">2 hrs ago</div></div>
+            <div class="avatar admin-orders-card-avatar-silver"><img src="assets/images/james-w.jpg" alt=""/></div>
+          </div>
+          <div class="admin-orders-card-body-completed">James W. · Lagavulin × 2, Opus X × 1</div>
+          <div class="admin-orders-card-footer">
+            <span class="admin-orders-card-id-completed">$82</span>
+            <span class="admin-orders-card-served-tag">✓ Served</span>
+          </div>
+        </div>
+        <a href="#" class="admin-orders-load-more">Load more</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+  /* Collapsible kanban columns — each column header acts as a toggle.
+     Clicking it flips a `.collapsed` class on the parent .kanban-col,
+     which the CSS uses to hide everything below the header and rotate
+     the chevron indicator. State is in-memory only for this mockup. */
+  (function setupKanbanCollapse(){
+    const headers = document.querySelectorAll('.kanban-col > .col-header');
+    headers.forEach(header => {
+      // Right-side chevron (Lucide). Re-rendered after injection.
+      const chev = document.createElement('i');
+      chev.setAttribute('data-lucide', 'chevron-down');
+      chev.className = 'ic-14 col-header-chev';
+      header.appendChild(chev);
+
+      header.style.cursor = 'pointer';
+      header.setAttribute('role', 'button');
+      header.setAttribute('tabindex', '0');
+      header.setAttribute('aria-expanded', 'true');
+
+      const toggle = () => {
+        const col = header.parentElement;
+        const collapsed = col.classList.toggle('collapsed');
+        header.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+      };
+      header.addEventListener('click', toggle);
+      header.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggle();
+        }
+      });
+    });
+    if (window.Lounge && window.Lounge.renderIcons) window.Lounge.renderIcons();
+  })();
+
+  /* Time-period select — mockup hook. Real impl re-queries the kanban for
+     the selected window and recomputes the stats line. For now, just
+     update the stats text and toast so the change is observable. */
+  function setOrderPeriod(value){
+    const labels = {
+      today:   '3 active · 47 today',
+      week:    '8 active · 312 this week',
+      month:   '12 active · 1,284 this month',
+      quarter: '14 active · 3,920 this quarter',
+      all:     '14 active · 18,402 lifetime',
+    };
+    const stats = document.querySelector('.adm-stats-summary');
+    if (stats && labels[value]) stats.textContent = labels[value];
+    if (window.toast) toast('Scope: ' + (labels[value] ? value.replace(/^[a-z]/, c => c.toUpperCase()) : value), { duration: 1800 });
+  }
+</script>
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+</body>
+</html>

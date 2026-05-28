@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "shard": "tracker-05",
+  "category": "spirit",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 8,
+  "products": [
+    {
+      "menuLine": "Hendrick's Gin · Scotland · $35 · 88 proof (44.0% ABV) · Notes: cucumber, rose",
+      "guidance": {
+        "bestFor": "Gin & tonic, martini, floral-citrus cigar.",
+        "avoidIf": "User wants whiskey only.",
+        "whyRecommend": "Recommend when the member wants gin beside a mild cigar — cucumber, rose, and juniper.",
+        "occasion": "Cocktail",
+        "flavorFamily": "Floral & cucumber",
+        "pairingAffinity": "Mild / Connecticut",
+        "memberBlurb": "Hendrick's — cucumber and rose over juniper. The gin for a Connecticut cigar and a martini without fighting the smoke."
+      },
+      "id": "spi-trk-hendricks",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Hennessy VS · Cognac, France · $42 · 80 proof (40.0% ABV) · Notes: grape, oak",
+      "guidance": {
+        "bestFor": "Hennessy name at VS tier, cognac-curious, hip-hop/culture recognition.",
+        "avoidIf": "User wants only XO luxury.",
+        "whyRecommend": "Recommend when Hennessy is the ask at entry tier — grape, almond, and oak before VSOP pricing.",
+        "occasion": "Celebration / cocktail",
+        "flavorFamily": "Fruit & oak",
+        "pairingAffinity": "Medium-full cigar",
+        "memberBlurb": "Hennessy VS — the cognac tier America buys in volume. Grape and almond over French oak when the member wants the Hennessy name without XO money."
+      },
+      "id": "spi-trk-hennessy-vs",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Industry reference (US retail sales 2025)",
+        "dataGrade": 7
+      }
+    },
+    {
+      "menuLine": "Hennessy VSOP Privilège · Cognac, France · $55 · 80 proof (40.0% ABV) · Notes: honey, apple",
+      "guidance": {
+        "bestFor": "Hennessy name at accessible tier, celebration, medium-full cigar.",
+        "avoidIf": "User wants only XO.",
+        "whyRecommend": "Recommend when Hennessy is the ask but XO is over budget — honey, apple, almond.",
+        "occasion": "Celebration",
+        "flavorFamily": "Rich fruit",
+        "pairingAffinity": "Medium-full cigar",
+        "memberBlurb": "Hennessy VSOP — honey and apple from the house everyone knows. Cognac prestige before the XO price jump."
+      },
+      "id": "spi-trk-hennessy-vsop",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Hennessy XO · Cognac, France · $200 · 80 proof (40.0% ABV) · Notes: dried fruit, dark chocolate",
+      "guidance": {
+        "bestFor": "Cognac request, hip-hop/lounge culture prestige, after-dinner cigar.",
+        "avoidIf": "User wants unaged spirits or Scotch only.",
+        "whyRecommend": "Recommend when cognac prestige is cultural shorthand — dried fruit, chocolate, and oak depth.",
+        "occasion": "Celebration",
+        "flavorFamily": "Rich & dried fruit",
+        "pairingAffinity": "Maduro / robusto cigar",
+        "memberBlurb": "Hennessy XO — the cognac everyone pictures. Dried fruit, dark chocolate, and oak in a bottle built for celebration."
+      },
+      "id": "spi-trk-hennessy-xo",
+      "provenance": {
+        "beginnerSafe": "No",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Hibiki Japanese Harmony · Japan · $95 · 86 proof (43.0% ABV) · Notes: honey, floral",
+      "guidance": {
+        "bestFor": "Luxury Japanese request, elegant pairing, member wants floral-honey profile.",
+        "avoidIf": "User demands single malt only or heavy peat.",
+        "whyRecommend": "Recommend when the member wants Japanese whisky elegance — honey, floral, and polished oak.",
+        "occasion": "Celebration",
+        "flavorFamily": "Honey & floral",
+        "pairingAffinity": "Medium / refined cigar",
+        "memberBlurb": "Hibiki Harmony — honey, floral lift, and sandalwood polish. Japanese whisky luxury that photographs as well as it pours."
+      },
+      "id": "spi-trk-hibiki-harmony",
+      "provenance": {
+        "beginnerSafe": "No",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Highland Park 12 Year · Orkney, Scotland · $55 · 86 proof (43.0% ABV) · Notes: honey, heather",
+      "guidance": {
+        "bestFor": "Peat-curious beginner, floral-honey profile, medium cigar.",
+        "avoidIf": "User wants heavy Islay only.",
+        "whyRecommend": "Recommend when the member fears peat but wants to explore — heather, honey, and gentle smoke.",
+        "occasion": "Relaxed evening",
+        "flavorFamily": "Honey & heather",
+        "pairingAffinity": "Medium cigar",
+        "memberBlurb": "Highland Park 12 — heather honey with a whisper of Orkney smoke. The bridge pour between Speyside sweetness and Islay fire."
+      },
+      "id": "spi-trk-hp-12",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Jameson Black Barrel · Ireland · $35 · 80 proof (40.0% ABV) · Notes: vanilla, butterscotch",
+      "guidance": {
+        "bestFor": "Irish beginner, Jameson name recognition, medium cigar.",
+        "avoidIf": "User wants single malt Scotch only.",
+        "whyRecommend": "Recommend as approachable Irish — vanilla, butterscotch, and charred oak.",
+        "occasion": "Everyday pour",
+        "flavorFamily": "Vanilla & spice",
+        "pairingAffinity": "Medium cigar",
+        "memberBlurb": "Jameson Black Barrel — vanilla and butterscotch from double-charred barrels. Irish whiskey for members who only know green bottles."
+      },
+      "id": "spi-trk-jameson-bb",
+      "provenance": {
+        "beginnerSafe": "Yes",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Jameson Irish Whiskey · Ireland · $28 · 80 proof (40.0% ABV) · Notes: honey, green apple",
+      "guidance": {
+        "bestFor": "Irish whiskey beginner, St. Patrick's crowd, green-bottle recognition.",
+        "avoidIf": "User wants single malt Scotch only.",
+        "whyRecommend": "Recommend when the member wants the Jameson everyone knows — honey, apple, and easy Irish malt.",
+        "occasion": "Everyday pour",
+        "flavorFamily": "Honey & orchard",
+        "pairingAffinity": "Mild / medium cigar",
+        "memberBlurb": "Jameson Original — Ireland's green bottle on every American bar. Honey and green apple malt that works neat, on ice, or beside a medium cigar."
+      },
+      "id": "spi-trk-jameson-orig",
+      "provenance": {
+        "beginnerSafe": "Yes",
+        "sourceConfidence": "Industry reference (US retail sales 2025)",
+        "dataGrade": 7
+      }
+    }
+  ]
+}

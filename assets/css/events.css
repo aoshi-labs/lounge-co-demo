@@ -1,0 +1,162 @@
+  .event-card{background:var(--bg-surface);border:1px solid var(--bg-border);border-radius:16px;overflow:hidden;transition:border-color .2s,transform .15s;text-decoration:none;display:flex;gap:0;}
+  .event-card:hover{border-color:rgba(var(--gold-rgb), .3);transform:translateY(-1px);}
+  .date-block{width:90px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 14px;background:linear-gradient(180deg,rgba(var(--burg-rgb), .18),rgba(20,12,6,.1));border-right:1px solid var(--bg-border);}
+
+
+/* ─── Sidebar (brand header + user card) ─── */
+
+/* ─── Top bar ─── */
+.topbar-title { font-size:15px; font-weight:600; color:var(--text-primary); }
+.topbar-bell-wrap { position:relative; }
+.topbar-bell-dot { position:absolute; top:4px; right:4px; }
+.topbar-avatar-elite { background:var(--tier-elite); color:var(--tier-elite-ink); width:34px; height:34px; font-size:12px; }
+
+/* ─── Page frame + header ─── */
+.events-page-frame { display:flex; justify-content:center; padding:24px 20px; gap:20px; }
+.events-center-col { width:100%; max-width:660px; display:flex; flex-direction:column; gap:18px; }
+.events-page-title { font-family:var(--font-display); font-size:2rem; font-weight:700; color:var(--text-primary); line-height:1.1; }
+.events-page-tagline { font-family:var(--font-body); font-style:italic; font-size:14px; color:var(--text-secondary); margin-top:6px; }
+/* Filter tabs row — full carousel chrome (hidden scrollbar, scroll-snap,
+   right-edge mask fade). Arrows are JS-injected and styled via the shared
+   .pro-lib-arrow* rules in lounge.css. */
+.events-filter-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  min-width: 0;
+  padding: 0 22px 2px 2px;
+  overflow-x: auto;
+  scrollbar-width: none;            /* Firefox */
+  -ms-overflow-style: none;         /* IE/Edge legacy */
+  scroll-snap-type: x proximity;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 0,
+    black calc(100% - 32px),
+    transparent 100%
+  );
+          mask-image: linear-gradient(
+    to right,
+    black 0,
+    black calc(100% - 32px),
+    transparent 100%
+  );
+}
+.events-filter-row::-webkit-scrollbar { display: none; }
+.events-filter-row > .filter-tab {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+.events-center-col > .pro-lib-carousel {
+  min-width: 0;
+  width: 100%;
+}
+.eve-tabs-carousel .pro-lib-arrow { display: flex; }
+
+/* Mobile-only filter tab (Popular). Hidden on desktop where the right
+   rail / featured event banner already surfaces trending events. */
+@media (min-width: 701px) {
+  .eve-tab-mobile { display: none; }
+}
+.events-filter-badge { background:var(--burg); color:var(--cream); border-radius:99px; padding:1px 6px; font-size:10px; margin-left:4px; }
+
+/* ─── Featured event card (hero variant) ─── */
+.event-card-featured { background:linear-gradient(135deg,rgba(var(--burg-rgb), .25),rgba(var(--gold-rgb), .08),var(--bg-surface)); flex-direction:column; }
+.event-card-featured-hero { padding:24px 24px 20px; background:linear-gradient(90deg,rgba(var(--bg-base-rgb), .92) 0%,rgba(var(--bg-base-rgb), .55) 60%,rgba(var(--bg-base-rgb), .35) 100%),url('../images/whiskey_on_rocks.jpg') center/cover no-repeat; }
+.event-card-featured-header { display:flex; justify-content:space-between; align-items:flex-start; gap:10px; }
+.event-card-featured-eyebrow { display:inline-block; font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+.event-card-featured-title { font-family:var(--font-display); font-size:1.8rem; font-weight:700; color:var(--text-primary); line-height:1.1; margin-bottom:6px; }
+.event-card-featured-description { font-family:var(--font-body); font-style:italic; font-size:14px; color:var(--text-secondary); line-height:1.6; max-width:400px; }
+.event-card-featured-date { text-align:center; background:rgba(var(--burg-rgb), .3); border:1px solid rgba(var(--burg-rgb), .5); border-radius:10px; padding:10px 14px; flex-shrink:0; }
+.event-card-featured-date-month { font-family:var(--font-display); font-size:.85rem; font-weight:600; color:var(--cream); letter-spacing:.08em; text-transform:uppercase; }
+.event-card-featured-date-day { font-family:var(--font-display); font-size:2.2rem; font-weight:700; color:var(--cream); line-height:.9; margin-top:2px; }
+.event-card-featured-meta { display:flex; gap:18px; margin-top:18px; flex-wrap:wrap; font-size:12px; color:var(--text-secondary); }
+.event-card-featured-meta-item { display:flex; align-items:center; gap:5px; }
+.event-card-featured-meta-price { display:flex; align-items:center; gap:5px; color:var(--gold); }
+.event-card-featured-footer { padding:14px 24px; background:rgba(20,12,6,.4); border-top:1px solid var(--bg-border); display:flex; align-items:center; justify-content:space-between; }
+.event-card-featured-avatars { display:flex; align-items:center; }
+.event-card-featured-avatar-champion { background:var(--gold); color:var(--bg-base); width:28px; height:28px; font-size:10px; border:2px solid var(--bg-surface); }
+.event-card-featured-avatar-runner-up { background:var(--tier-runner-up); color:var(--tier-runner-up-ink); width:28px; height:28px; font-size:10px; margin-left:-8px; border:2px solid var(--bg-surface); }
+.event-card-featured-avatar-bronze { background:var(--tier-bronze); color:var(--tier-bronze-ink); width:28px; height:28px; font-size:10px; margin-left:-8px; border:2px solid var(--bg-surface); }
+.event-card-featured-avatar-overflow { background:var(--bg-elevated); color:var(--text-secondary); width:28px; height:28px; font-size:10px; margin-left:-8px; border:2px solid var(--bg-surface); }
+.event-card-featured-cta { background:var(--burg); color:var(--cream); border-radius:8px; padding:9px 18px; font-family:var(--font-ui); font-size:13px; font-weight:700; }
+
+/* ─── Standard event card (date block + body) ─── */
+.event-card-date-month { font-family:var(--font-display); font-size:.75rem; font-weight:600; color:var(--gold); letter-spacing:.08em; text-transform:uppercase; }
+.event-card-date-day { font-family:var(--font-display); font-size:2.4rem; font-weight:700; color:var(--text-primary); line-height:.9; margin-top:4px; }
+.event-card-date-weekday { font-size:10px; color:var(--text-muted); margin-top:4px; text-transform:uppercase; letter-spacing:.05em; }
+.event-card-body { padding:16px 20px; flex:1; display:flex; flex-direction:column; gap:10px; }
+.event-card-header { display:flex; justify-content:space-between; align-items:flex-start; gap:8px; }
+.event-card-title { font-family:var(--font-display); font-size:1.3rem; font-weight:600; color:var(--text-primary); line-height:1.2; }
+.event-card-description { font-family:var(--font-body); font-style:italic; font-size:13px; color:var(--text-secondary); margin-top:4px; line-height:1.6; }
+.event-card-rsvp-pill { background:rgba(var(--tier-elite-rgb), .15); border:1px solid rgba(var(--tier-elite-rgb), .3); color:var(--tier-elite); border-radius:99px; padding:3px 9px; font-size:11px; font-weight:700; white-space:nowrap; }
+.eve-area {
+  display: inline-flex; align-items: center;
+  background: rgba(var(--gold-rgb), .12);
+  border: 1px solid rgba(var(--gold-rgb), .3);
+  color: var(--gold);
+  border-radius: 99px;
+  padding: 4px 12px;
+  font-size: 11px; font-weight: 700; white-space: nowrap;
+}
+/* Force the icon to render as a block-level box so margin-right applies
+   (inline SVGs ignore horizontal margins inconsistently across renderers).
+   Applies to card badges (.eve-area) AND the filter-tab variant that has
+   a leading icon. */
+.eve-area > svg,
+.eve-area > [data-lucide],
+.filter-tab > svg,
+.filter-tab > [data-lucide] {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.eve-badges { display:flex; flex-direction:column; align-items:flex-end; gap:6px; flex-shrink:0; }
+
+/* In-My-Area filter tab — overrides default tab badge color */
+.events-filter-badge-area { background:var(--gold); color:var(--bg-base); }
+
+/* Nearby Events widget */
+.eve-loc { display:flex; align-items:center; gap:8px; padding:9px 12px; background:var(--bg-elevated); border:1px solid var(--bg-border); border-radius:9px; margin-bottom:14px; }
+.eve-loc i { color:var(--gold); }
+.eve-loc-name { flex:1; font-size:12px; font-weight:600; color:var(--text-primary); }
+.eve-loc-edit { font-size:11px; color:var(--gold); text-decoration:none; }
+.eve-loc-edit:hover { text-decoration:underline; }
+
+.eve-radius { margin-bottom:14px; }
+.eve-radius-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; }
+.eve-radius-row label { font-size:11px; font-weight:600; color:var(--text-secondary); }
+.eve-radius-val { font-family:var(--font-display); font-size:14px; font-weight:700; color:var(--gold); }
+.eve-radius-slider { width:100%; height:4px; background:var(--bg-elevated); border-radius:99px; outline:none; -webkit-appearance:none; appearance:none; cursor:pointer; }
+.eve-radius-slider::-webkit-slider-thumb { -webkit-appearance:none; appearance:none; width:14px; height:14px; background:var(--gold); border-radius:50%; cursor:pointer; border:2px solid var(--bg-surface); }
+.eve-radius-slider::-moz-range-thumb { width:14px; height:14px; background:var(--gold); border-radius:50%; cursor:pointer; border:2px solid var(--bg-surface); }
+.eve-radius-marks { display:flex; justify-content:space-between; font-size:9px; color:var(--text-muted); margin-top:4px; }
+
+.eve-area-stats { display:flex; align-items:baseline; gap:6px; padding:10px 12px; background:rgba(var(--gold-rgb), .08); border:1px solid rgba(var(--gold-rgb), .2); border-radius:9px; margin-bottom:12px; }
+.eve-area-count { font-family:var(--font-display); font-size:1.4rem; font-weight:700; color:var(--gold); line-height:1; }
+.eve-area-msg { font-size:11px; color:var(--text-secondary); }
+
+.eve-area-filters { display:flex; flex-direction:column; gap:8px; }
+.eve-area-check { display:flex; align-items:center; gap:8px; font-size:12px; color:var(--text-secondary); cursor:pointer; }
+.eve-area-check input { accent-color:var(--gold); cursor:pointer; }
+.eve-area-check:hover { color:var(--text-primary); }
+.event-card-meta { display:flex; gap:14px; font-size:12px; color:var(--text-muted); flex-wrap:wrap; }
+.event-card-meta-price { color:var(--gold); }
+
+/* ─── Right rail (RSVPs / Popular / Sterlon tip) ─── */
+.events-rail-col { width:268px; flex-shrink:0; display:flex; flex-direction:column; gap:14px; }
+.events-rsvp-list { display:flex; flex-direction:column; gap:10px; }
+.events-rsvp-item { text-decoration:none; display:flex; align-items:center; gap:10px; padding:10px; background:var(--bg-elevated); border:1px solid var(--bg-border); border-radius:9px; transition:border-color .2s; }
+.events-rsvp-date-block { text-align:center; flex-shrink:0; background:rgba(var(--gold-rgb), .1); border-radius:7px; padding:6px 8px; }
+.events-rsvp-date-month { font-size:9px; font-weight:700; color:var(--gold); text-transform:uppercase; }
+.events-rsvp-date-day { font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:var(--text-primary); line-height:.9; }
+.events-rsvp-title { font-size:12px; font-weight:600; color:var(--text-primary); }
+.events-rsvp-time { font-size:10px; color:var(--text-muted); margin-top:1px; }
+.events-popular-text { font-family:var(--font-body); font-style:italic; font-size:13px; color:var(--text-secondary); line-height:1.6; margin-bottom:12px; }
+.events-popular-cta { display:block; background:var(--burg); color:var(--cream); border-radius:8px; padding:10px; font-family:var(--font-ui); font-size:13px; font-weight:600; text-align:center; text-decoration:none; }
+.events-sterlon-tip { font-family:var(--font-body); font-style:italic; font-size:13px; color:var(--text-secondary); line-height:1.65; }
+
+@media (max-width: 639px) {
+  .events-page-title { font-size: 1.5rem; line-height: 1.15; }
+  .event-card-featured-title { font-size: 1.3rem; line-height: 1.15; }
+}

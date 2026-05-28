@@ -1,0 +1,25 @@
+{
+  "cases": [
+    {
+      "id": "morning-espresso-pair-cigar",
+      "focus": "pairing",
+      "ok": true
+    },
+    {
+      "id": "spirit-only-explicit",
+      "focus": "spirit",
+      "ok": true
+    },
+    {
+      "id": "spirit-anchor-old-forester-maduro",
+      "focus": "pairing",
+      "ok": true
+    },
+    {
+      "id": "cigar-only-under-10",
+      "focus": "cigar",
+      "ok": true
+    }
+  ],
+  "ok": true
+}

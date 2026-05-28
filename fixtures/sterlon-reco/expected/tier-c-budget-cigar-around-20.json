@@ -1,0 +1,24 @@
+{
+  "budgetMode": "around",
+  "budgetMin": 15,
+  "budgetMax": 25,
+  "budgetTarget": 20,
+  "budgetCeiling": null,
+  "categoryFocus": "cigar",
+  "degraded": false,
+  "cigars": [
+    "La Flor Dominicana 30 Years Chisel",
+    "Arturo Fuente Don Carlos Personal Reserve",
+    "E.P. Carrillo Encore Majestic"
+  ],
+  "cigarMsrps": [
+    16,
+    17,
+    16
+  ],
+  "spirit": null,
+  "spiritMsrp": null,
+  "allCigarsWithinBudget": true,
+  "spiritWithinBudget": true,
+  "hasBudgetSignal": true
+}

@@ -1,0 +1,157 @@
+/* ─────────────────────────────────────────────────────────────
+   my-network.css — page-specific styles
+   Extracted from inline <style> block in my-network.html.
+   Shared chrome (sidebar, top-bar, .topbar-actions, mobile-overlay,
+   brand/user typography) lives in lounge.css.
+──────────────────────────────────────────────────────────────── */
+
+.nw-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.nw-stat {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 10px;
+  padding: 18px;
+  text-align: center;
+}
+.nw-stat-n {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.nw-stat-label {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.nw-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--bg-border);
+  margin-bottom: 24px;
+}
+.nw-tab {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.nw-tab.active { color: var(--text-primary); border-bottom-color: var(--gold); }
+.nw-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.nw-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.nw-card-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg-elevated);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--text-secondary);
+  border: 1px solid var(--bg-border);
+}
+.nw-card-body { flex: 1; min-width: 0; }
+.nw-card-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+.nw-card-meta {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+.nw-card-snippet {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-top: 4px;
+}
+.nw-btn {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+.nw-btn:hover { background: var(--gold); color: var(--bg-base); }
+.nw-btn-following {
+  border-color: var(--bg-border);
+  color: var(--text-secondary);
+}
+.nw-btn-following:hover {
+  border-color: var(--burg);
+  color: var(--burg);
+  background: transparent;
+}
+.nw-match {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+.nw-section { margin-bottom: 36px; }
+.nw-section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.nw-section-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--text-primary);
+}
+.nw-section-sub {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+@media (max-width: 767px) { .nw-grid { grid-template-columns: 1fr; } }

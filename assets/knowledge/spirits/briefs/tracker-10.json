@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "shard": "tracker-10",
+  "category": "spirit",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 8,
+  "products": [
+    {
+      "menuLine": "Pikesville Straight Rye · Kentucky · $45 · 110 proof (55.0% ABV) · Journey: Intermediate · Notes: rye spice, dark fruit",
+      "guidance": {
+        "bestFor": "Serious rye drinker, full-bodied cigar, bonded-style strength.",
+        "avoidIf": "Beginner or spice-averse.",
+        "whyRecommend": "Recommend when 110-proof rye should match a full-bodied cigar — spice, dark fruit, and pepper.",
+        "occasion": "After dinner",
+        "flavorFamily": "Spice & fruit",
+        "pairingAffinity": "Full-bodied cigar",
+        "memberBlurb": "Pikesville Rye — 110-proof Kentucky rye with dark fruit and pepper. The rye pour when Sazerac is not enough."
+      },
+      "id": "spi-trk-pikesville",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Plantation O.F.T.D. Overproof Rum · Caribbean blend · $35 · 138 proof (69.0% ABV) · Notes: molasses, dark chocolate",
+      "guidance": {
+        "bestFor": "Member wants maximum rum intensity, bold cigar, tiki-adjacent strength.",
+        "avoidIf": "Low-proof or sweet-only rum drinker.",
+        "whyRecommend": "Recommend when the cigar is full-bodied and the rum must keep up — molasses, chocolate, 138 proof.",
+        "occasion": "Bold night",
+        "flavorFamily": "Molasses & fire",
+        "pairingAffinity": "Full maduro / ligero",
+        "memberBlurb": "Plantation OFTD — molasses and chocolate at 138 proof. The rum that refuses to disappear beside a ligero maduro."
+      },
+      "id": "spi-trk-plant-oftd",
+      "provenance": {
+        "beginnerSafe": "No",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Redbreast 12 Year · Ireland · $65 · 80 proof (40.0% ABV) · Notes: sherry, baked apple",
+      "guidance": {
+        "bestFor": "Irish curious, pot still request, sherry-friendly cigar.",
+        "avoidIf": "User wants Scotch or bourbon only.",
+        "whyRecommend": "Recommend when the member has not tried Irish — sherry, spice, and pot still beside a maduro.",
+        "occasion": "After dinner",
+        "flavorFamily": "Sherry & spice",
+        "pairingAffinity": "Maduro / robusto",
+        "memberBlurb": "Redbreast 12 — sherry and baking spice from Irish pot still. Maybe the best whiskey category you were missing for cigar pairing."
+      },
+      "id": "spi-trk-redbreast-12",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Rémy Martin XO · Cognac, France · $190 · 80 proof (40.0% ABV) · Notes: fig, jasmine",
+      "guidance": {
+        "bestFor": "Member wants elegant cognac for cigar, fruit-forward luxury, Rémy name request.",
+        "avoidIf": "User wants maximum smoke or tequila only.",
+        "whyRecommend": "Recommend when silky cognac beside cigar matters — fig, plum, honey, and fine champagne finesse.",
+        "occasion": "After dinner",
+        "flavorFamily": "Silky fruit",
+        "pairingAffinity": "Medium-full / maduro cigar",
+        "memberBlurb": "Rémy Martin XO — fig, plum, and jasmine over silky oak. The cognac that whispers luxury beside a maduro instead of shouting it."
+      },
+      "id": "spi-trk-remy-xo",
+      "provenance": {
+        "beginnerSafe": "No",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Rittenhouse Straight Rye Bottled-in-Bond · Kentucky · $28 · 100 proof (50.0% ABV) · Journey: Intermediate · Notes: rye spice, dark chocolate",
+      "guidance": {
+        "bestFor": "Rye cocktail order, spice-forward cigar, budget rye with backbone.",
+        "avoidIf": "User dislikes spice heat.",
+        "whyRecommend": "Recommend for bonded rye beside a peppery cigar — spice, mint, and chocolate at 100 proof.",
+        "occasion": "Cocktail / neat",
+        "flavorFamily": "Spice & mint",
+        "pairingAffinity": "Peppery / spicy cigar",
+        "memberBlurb": "Rittenhouse BIB — bonded rye with pepper, mint, and dark chocolate. The bartender's rye that still holds up neat beside a spicy cigar."
+      },
+      "id": "spi-trk-ritt-bib",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Russell's Reserve 10 Year · Kentucky · $45 · 90 proof (45.0% ABV) · Journey: Intermediate · Notes: caramel, vanilla",
+      "guidance": {
+        "bestFor": "Turkey fan, age-stated value, medium-full cigar.",
+        "avoidIf": "User wants rye or Scotch only.",
+        "whyRecommend": "Recommend when the member trusts Wild Turkey DNA but wants refined 10-year oak.",
+        "occasion": "Relaxed evening",
+        "flavorFamily": "Caramel & oak",
+        "pairingAffinity": "Medium-full cigar",
+        "memberBlurb": "Russell's Reserve 10 — caramel and toffee from a decade in oak. Wild Turkey pedigree in a quieter, cigar-friendly register."
+      },
+      "id": "spi-trk-russell-10",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Sazerac Rye · Kentucky · $32 · 90 proof (45% ABV) · Journey: Novice · Notes: rye spice, honey",
+      "guidance": {
+        "bestFor": "Rye curious beginner, Old Fashioned/Sazerac order, budget-friendly rye.",
+        "avoidIf": "User wants 100+ proof or heavy peat.",
+        "whyRecommend": "Recommend as the approachable rye entry — clove, citrus, and licorice without WhistlePig intensity.",
+        "occasion": "Cocktail / neat",
+        "flavorFamily": "Spice & citrus",
+        "pairingAffinity": "Medium cigar",
+        "memberBlurb": "Sazerac Rye — clove, vanilla, and anise over pepper, citrus, and licorice. Distillery-official rye for the namesake cocktail or a neat pour."
+      },
+      "id": "spi-trk-sazerac-rye",
+      "provenance": {
+        "beginnerSafe": "Yes",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Smirnoff No. 21 Vodka · USA (multi-origin) · $16 · 80 proof (40.0% ABV) · Notes: neutral, light citrus",
+      "guidance": {
+        "bestFor": "Budget vodka cocktails, party pours, flavored-margarita base.",
+        "avoidIf": "User wants premium wheat vodka character only.",
+        "whyRecommend": "Recommend for value vodka cocktails — neutral base that will not fight a Connecticut cigar.",
+        "occasion": "Cocktail",
+        "flavorFamily": "Neutral & clean",
+        "pairingAffinity": "Mild cigar",
+        "memberBlurb": "Smirnoff No. 21 — the value vodka America still buys in volume. Neutral, mixable, and honest about what it is."
+      },
+      "id": "spi-trk-smirnoff-21",
+      "provenance": {
+        "beginnerSafe": "Yes",
+        "sourceConfidence": "Industry reference (US retail sales 2025)",
+        "dataGrade": 7
+      }
+    }
+  ]
+}

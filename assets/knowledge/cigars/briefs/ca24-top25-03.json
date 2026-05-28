@@ -1,0 +1,170 @@
+{
+  "version": 1,
+  "shard": "ca24-top25-03",
+  "category": "cigar",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 7,
+  "products": [
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/herrera-esteli-norteno-lonsdale-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Savory",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Mexico wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Nicaragua binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/herrera-esteli-norteno-lonsdale-2024.",
+        "avoidIf": "Beginner nicotine-sensitive, very short time window, or user wants opposite body/wrapper style.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, Norteño, or a medium-full bourbon-friendly smoke at this size."
+      },
+      "menuLine": "Herrera Esteli Norteño · 7 × 44 · Lonsdale · Medium-Full · Nicaragua · $11 · Notes: earth, savory spice, cedar, cocoa",
+      "stickSize": "7 × 44 · Lonsdale",
+      "id": "ca24-19-herrera-norteno"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/cohiba-riviera-robusto-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Celebration",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Connecticut Shade wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Dominican Republic binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Dominican Republic / Nicaragua filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/cohiba-riviera-robusto-2024.",
+        "avoidIf": "Beginner nicotine-sensitive, very short time window, or user wants opposite body/wrapper style.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, Riviera, or a medium coffee-friendly smoke at this size.",
+        "memberBlurb": "U.S. Cohiba Riviera — Connecticut shade cream and approachable Dominican body. Legal shelf Cohiba name, not island Cuban."
+      },
+      "menuLine": "Cohiba Riviera · 5 × 50 · Robusto · Medium · Dominican · $12 · Notes: cream, cedar, nuts, toast",
+      "stickSize": "5 × 50 · Robusto",
+      "id": "ca24-20-cohiba-riviera"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/la-flor-dominicana-double-ligero-chiselito-maduro-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Dark & Heavy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Connecticut Broadleaf wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Dominican Republic binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Dominican Republic filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/la-flor-dominicana-double-ligero-chiselito-maduro-2024.",
+        "avoidIf": "Beginner nicotine-sensitive, very short time window, or user wants opposite body/wrapper style.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, Double Ligero, or a full bourbon-friendly smoke at this size."
+      },
+      "menuLine": "La Flor Dominicana Double Ligero Chiselito Maduro · 5½ × 54 · Chisel · Full · Dominican · $14 · Notes: cocoa, earth, pepper, espresso",
+      "stickSize": "5½ × 54 · Chisel",
+      "id": "ca24-21-lfd-chiselito"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/oneoff-black-tan-robusto-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Savory",
+        "occasion": "Special occasion",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Nicaragua wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Nicaragua binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/oneoff-black-tan-robusto-2024.",
+        "avoidIf": "Beginner nicotine-sensitive, very short time window, or user wants opposite body/wrapper style.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, Black & Tan, or a medium-full bourbon-friendly smoke at this size.",
+        "memberBlurb": "OneOff Black & Tan robusto — layered Aganorsa savory character in a 5×50. Related to OneOff Black toro on 2025 list, different blend."
+      },
+      "menuLine": "OneOff Black & Tan · 5 × 50 · Robusto · Medium-Full · Nicaragua · $12 · Notes: earth, savory spice, cedar, cocoa",
+      "stickSize": "5 × 50 · Robusto",
+      "id": "ca24-22-oneoff-bt"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/warped-corto-x52-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Nicaragua wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Nicaragua binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/warped-corto-x52-2024.",
+        "avoidIf": "Beginner nicotine-sensitive, very short time window, or user wants opposite body/wrapper style.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, Corto, or a medium-full coffee-friendly smoke at this size.",
+        "memberBlurb": "Warped Corto X52 — concentrated Nicaraguan spice in a 4½-inch petit format. Big flavor when time is tight."
+      },
+      "menuLine": "Warped Corto X52 · 4½ × 52 · Petit Toro · Medium-Full · Nicaragua · $11 · Notes: cedar, baking spice, sweet tobacco, toast",
+      "stickSize": "4½ × 52 · Petit Toro",
+      "id": "ca24-23-warped-corto"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/ferio-tego-summa-corona-gorda-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Rum",
+        "wrapperRole": "Nicaragua wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Nicaragua binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/ferio-tego-summa-corona-gorda-2024.",
+        "avoidIf": "Beginner nicotine-sensitive, very short time window, or user wants opposite body/wrapper style.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, Summa, or a medium-full rum-friendly smoke at this size.",
+        "memberBlurb": "Ferio Tego Summa corona gorda — Plasencia-made Nicaraguan wood and polish. Sister brand to Timeless Supreme on the 2025 list."
+      },
+      "menuLine": "Ferio Tego Summa · 5.625 × 46 · Corona Gorda · Medium-Full · Nicaragua · $13 · Notes: cedar, wood, earth, leather",
+      "stickSize": "5.625 × 46 · Corona Gorda",
+      "id": "ca24-24-ferio-summa"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/tatuaje-reserva-a-uno-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Scotch",
+        "wrapperRole": "Nicaragua wrapper sets the top-note character, color, and burn personality for this vitola.",
+        "binderRole": "Nicaragua binder supports structure, combustion, and integration with the filler stack.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the core flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/tatuaje-reserva-a-uno-2024.",
+        "avoidIf": "Beginner nicotine-sensitive, very short time window, or user wants opposite body/wrapper style.",
+        "whyRecommend": "Recommend when the user asks for 2024 Top 25 picks, Reserva, or a medium-full scotch-friendly smoke at this size.",
+        "memberBlurb": "Tatuaje Reserva A Uno lancero — focused Nicaraguan spice and cedar in a 38-ring. Experienced smokers who like precision formats."
+      },
+      "menuLine": "Tatuaje Reserva A Uno · 6¾ × 38 · Lancero · Medium-Full · Nicaragua · $14 · Notes: cedar, wood, earth, leather",
+      "stickSize": "6¾ × 38 · Lancero",
+      "id": "ca24-25-tat-res-a1"
+    }
+  ]
+}

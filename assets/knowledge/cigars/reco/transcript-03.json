@@ -1,0 +1,451 @@
+{
+  "version": 1,
+  "shard": "transcript-03",
+  "category": "cigar",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 9,
+  "products": [
+    {
+      "tracker": {
+        "sku": "VID-12-AGAN-SIG-ROB"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.95
+        },
+        {
+          "id": "wood",
+          "weight": 0.85
+        }
+      ],
+      "spec": {
+        "msrp": 12,
+        "tier": 5,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "60 min",
+        "wrapper": "Nicaragua Corojo",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "vid-12-agan-sig-rob",
+      "sensory": {
+        "body": 7,
+        "sweetness": 5,
+        "pepper": 6,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Aganorsa Leaf Signature Selection Robusto",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "VID-13-AGAN-ANNIV-TORO"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "spice",
+          "weight": 0.95
+        },
+        {
+          "id": "earth",
+          "weight": 0.85
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.75
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.7
+        },
+        {
+          "id": "tobacco",
+          "weight": 0.65
+        }
+      ],
+      "spec": {
+        "msrp": 13,
+        "tier": 5,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "90 min",
+        "wrapper": "Nicaragua Corojo",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "vid-13-agan-anniv-toro",
+      "sensory": {
+        "body": 7,
+        "sweetness": 6,
+        "pepper": 6,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Aganorsa Leaf Aniversario Toro",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "VID-14-BYRON-CH"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "caramel",
+          "weight": 1.0
+        },
+        {
+          "id": "cream",
+          "weight": 0.95
+        },
+        {
+          "id": "oak",
+          "weight": 0.85
+        },
+        {
+          "id": "nut",
+          "weight": 0.75
+        },
+        {
+          "id": "fruit",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 28,
+        "tier": 7,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "90 min",
+        "wrapper": "Ecuador",
+        "binder": "Costa Rica",
+        "filler": "Peru / Nicaragua"
+      },
+      "id": "vid-14-byron-ch",
+      "sensory": {
+        "body": 6,
+        "sweetness": 6,
+        "pepper": 5,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "Byron 19th Century Churchill",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "VID-15-ADVENT-NAV-TORO"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "earth",
+          "weight": 0.95
+        },
+        {
+          "id": "leather",
+          "weight": 0.85
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.75
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.7
+        },
+        {
+          "id": "tobacco",
+          "weight": 0.65
+        }
+      ],
+      "spec": {
+        "msrp": 12,
+        "tier": 5,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "90 min",
+        "wrapper": "Ecuador Habano",
+        "binder": "Dominican Republic",
+        "filler": "Dominican Republic / Nicaragua"
+      },
+      "id": "vid-15-advent-nav-toro",
+      "sensory": {
+        "body": 6,
+        "sweetness": 5,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Adventura Navigator Toro",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "VID-16-ESTEBAN-MOFO-ROB"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.95
+        },
+        {
+          "id": "earth",
+          "weight": 0.85
+        },
+        {
+          "id": "pepper",
+          "weight": 0.75
+        },
+        {
+          "id": "espresso",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 9,
+        "tier": 4,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "60 min",
+        "wrapper": "San Andrés Maduro",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "vid-16-esteban-mofo-rob",
+      "sensory": {
+        "body": 7,
+        "sweetness": 5,
+        "pepper": 6,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "Esteban Carreras Maduro Mofo Robusto",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "VID-17-LBO-ISLAND-GRD"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "earth",
+          "weight": 1.0
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.95
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.85
+        },
+        {
+          "id": "cedar",
+          "weight": 0.75
+        },
+        {
+          "id": "leather",
+          "weight": 0.7
+        },
+        {
+          "id": "tobacco",
+          "weight": 0.65
+        }
+      ],
+      "spec": {
+        "msrp": 10,
+        "tier": 4,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "90 min",
+        "wrapper": "Mexican San Andrés",
+        "binder": "Honduras",
+        "filler": "Honduras / Nicaragua"
+      },
+      "id": "vid-17-lbo-island-grd",
+      "sensory": {
+        "body": 7,
+        "sweetness": 5,
+        "pepper": 6,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Leaf by Oscar Island Maduro Gordo",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "VID-18-ALA-CORO-RES-ROB"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "pepper",
+          "weight": 1.0
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.95
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.85
+        },
+        {
+          "id": "wood",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 9,
+        "tier": 4,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "60 min",
+        "wrapper": "Honduras Corojo",
+        "binder": "Honduras",
+        "filler": "Honduras / Nicaragua"
+      },
+      "id": "vid-18-ala-coro-res-rob",
+      "sensory": {
+        "body": 7,
+        "sweetness": 5,
+        "pepper": 6,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Aladino Corojo Reserva Robusto",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "VID-19-AF-DONCAR-N2"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "caramel",
+          "weight": 1.0
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.95
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.85
+        },
+        {
+          "id": "nut",
+          "weight": 0.75
+        },
+        {
+          "id": "spice",
+          "weight": 0.7
+        },
+        {
+          "id": "cedar",
+          "weight": 0.65
+        }
+      ],
+      "spec": {
+        "msrp": 14,
+        "tier": 5,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "60 min",
+        "wrapper": "Cameroon",
+        "binder": "Dominican Republic",
+        "filler": "Dominican Republic"
+      },
+      "id": "vid-19-af-doncar-n2",
+      "sensory": {
+        "body": 6,
+        "sweetness": 6,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Arturo Fuente Don Carlos No. 2",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "VID-20-DEF-CLASSIC-ROB"
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "earth",
+          "weight": 0.95
+        },
+        {
+          "id": "nut",
+          "weight": 0.85
+        },
+        {
+          "id": "spice",
+          "weight": 0.75
+        },
+        {
+          "id": "cream",
+          "weight": 0.7
+        },
+        {
+          "id": "smoke",
+          "weight": 0.65
+        }
+      ],
+      "spec": {
+        "msrp": 8,
+        "tier": 3,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "60 min",
+        "wrapper": "Nicaragua Habano",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "vid-20-def-classic-rob",
+      "sensory": {
+        "body": 6,
+        "sweetness": 5,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Definition Cigars Classic Robusto",
+      "category": "cigar"
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "version": 1,
+  "shard": "ca24-bestbuy-01",
+  "category": "cigar",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 9,
+  "products": [
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/gran-habano-habano-no-3-lunch-break-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Savory",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Nicaragua wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua / Costa Rica filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/gran-habano-habano-no-3-lunch-break-2024.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $6' requests - cite CA 2024 Best Buy list."
+      },
+      "menuLine": "Gran Habano Habano No. 3 · 4½ × 42 · Petit Corona · Medium · Honduras · $6 · Notes: earth, savory spice, cedar, cocoa, toasted tobacco",
+      "stickSize": "4½ × 42 · Petit Corona",
+      "id": "bb24-01-gran-habano"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/aladino-petit-corona-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "Morning coffee",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Honduras wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Honduras binder supports structure and integration with the filler.",
+        "fillerRole": "Honduras filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/aladino-petit-corona-2024.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $6' requests - cite CA 2024 Best Buy list."
+      },
+      "menuLine": "Aladino Aladino · 4⅛ × 42 · Petit Corona · Medium · Honduras · $6 · Notes: cedar, wood, earth, leather, mineral tobacco",
+      "stickSize": "4⅛ × 42 · Petit Corona",
+      "id": "bb24-02-aladino-pc"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/oliva-serie-g-maduro-special-g-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Dark & Heavy",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Nicaragua wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/oliva-serie-g-maduro-special-g-2024.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $6' requests - cite CA 2024 Best Buy list."
+      },
+      "menuLine": "Oliva Serie G Maduro · 4½ × 60 · Figurado · Medium · Nicaragua · $6 · Notes: cocoa, earth, pepper, espresso, dark sweetness",
+      "stickSize": "4½ × 60 · Figurado",
+      "id": "bb24-04-oliva-sg-sg"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/cain-daytona-no-4-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Morning coffee",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuador Connecticut wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/cain-daytona-no-4-2024.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $6' requests - cite CA 2024 Best Buy list."
+      },
+      "menuLine": "Cain Daytona · 5 × 42 · Corona · Medium-Light · Nicaragua · $6 · Notes: cream, cedar, nuts, toast, light sweetness",
+      "stickSize": "5 × 42 · Corona",
+      "id": "bb24-05-cain-daytona"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/charter-oak-ct-shade-rothschild-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Morning coffee",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuador Connecticut wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/charter-oak-ct-shade-rothschild-2024.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $6' requests - cite CA 2024 Best Buy list."
+      },
+      "menuLine": "Charter Oak Connecticut Shade · 4½ × 50 · Rothschild · Medium-Light · Nicaragua · $6 · Notes: cream, cedar, nuts, toast, light sweetness",
+      "stickSize": "4½ × 50 · Rothschild",
+      "id": "bb24-06-charter-oak"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/flores-y-rodriguez-18th-anniversary-millefleurs-corona-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuador wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Dominican Republic binder supports structure and integration with the filler.",
+        "fillerRole": "Dominican Republic / Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/flores-y-rodriguez-18th-anniversary-millefleurs-corona-2024.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $6' requests - cite CA 2024 Best Buy list."
+      },
+      "menuLine": "Flores y Rodriguez 18th Anniversary Millefleurs · 5½ × 44 · Corona · Medium · Dominican Republic · $6 · Notes: cedar, wood, earth, leather, mineral tobacco",
+      "stickSize": "5½ × 44 · Corona",
+      "id": "bb24-07-fyr-18th"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/punch-dragon-fire-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Savory",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Mexican San Andrés wrapper — dark, rugged leaf; cocoa, earth, and savory spice. Not Connecticut natural, not Nicaraguan puro.",
+        "binderRole": "Nicaraguan binder supports combustion through the thick short-gordo format.",
+        "fillerRole": "Dominican, Honduran, and Nicaraguan filler blend — not a puro. Blended by General Cigar Co., rolled at STG Estelí (Nicaragua).",
+        "bestFor": "After dinner, bourbon pairing, experienced smoker who wants a Best Buy with San Andrés weight — not a morning coffee cigar.",
+        "avoidIf": "Morning coffee or espresso (60-ring gordo outlasts the cup; heavy wrapper coats the palate). Beginner, nicotine-sensitive, user wants mild Connecticut or a true puro story.",
+        "whyRecommend": "Recommend for value seekers citing CA 2024 Best Buy — Lunar New Year Dragon Fire short gordo at ~$7, General Cigar / STG Estelí production.",
+        "memberBlurb": "Punch Dragon Fire — General Cigar blend, STG Estelí. Mexican San Andrés over Nicaraguan binder and a Dominican/Honduran/Nicaraguan filler stack. ~$7 short gordo (5 × 60), flat head. After-dinner strength, not a morning smoke."
+      },
+      "menuLine": "Punch Dragon Fire · 5 × 60 · Short Gordo · Medium-Full · Nicaragua · $7 · Notes: earth, savory spice, cedar, cocoa",
+      "stickSize": "5 × 60 · Short Gordo",
+      "id": "bb24-08-punch-dragon"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/punch-knuckle-buster-shade-robusto-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuador Connecticut wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Honduras binder supports structure and integration with the filler.",
+        "fillerRole": "Honduras / Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/punch-knuckle-buster-shade-robusto-2024.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $5' requests - cite CA 2024 Best Buy list."
+      },
+      "menuLine": "Punch Knuckle Buster Shade · 6 × 52 · Toro · Medium-Light · Honduras · $5 · Notes: cream, cedar, nuts, toast, light sweetness",
+      "stickSize": "6 × 52 · Toro",
+      "id": "bb24-09-punch-kb-rob"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/bolivar-cofradia-petit-corona-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Honduras wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Honduras binder supports structure and integration with the filler.",
+        "fillerRole": "Honduras / Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/bolivar-cofradia-petit-corona-2024.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $5' requests - cite CA 2024 Best Buy list."
+      },
+      "menuLine": "Bolivar Cofradia · 4⅛ × 42 · Petit Corona · Medium · Honduras · $5 · Notes: cedar, wood, earth, leather, mineral tobacco",
+      "stickSize": "4⅛ × 42 · Petit Corona",
+      "id": "bb24-10-bolivar-cof"
+    }
+  ]
+}

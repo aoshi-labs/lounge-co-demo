@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "shard": "tracker-04",
+  "category": "spirit",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 8,
+  "products": [
+    {
+      "menuLine": "El Dorado 12 Year · Guyana · $38 · 80 proof (40.0% ABV) · Notes: molasses, toffee",
+      "guidance": {
+        "bestFor": "Rum explorer, toffee-molasses profile, maduro pairing.",
+        "avoidIf": "User wants light white rum only.",
+        "whyRecommend": "Recommend when demerara depth should meet a maduro — molasses, toffee, and orange peel.",
+        "occasion": "After dinner",
+        "flavorFamily": "Molasses & oak",
+        "pairingAffinity": "Maduro",
+        "memberBlurb": "El Dorado 12 — demerara molasses and toffee from Guyanese stills. Rum with weight for members who found Zacapa too pretty."
+      },
+      "id": "spi-trk-eldorado-12",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Espolòn Reposado · Jalisco, Mexico · $28 · 80 proof (40.0% ABV) · Notes: pepper, vanilla",
+      "guidance": {
+        "bestFor": "Tequila beginner, value pour, medium cigar.",
+        "avoidIf": "User wants only ultra-luxury tequila.",
+        "whyRecommend": "Recommend when the member wants quality reposado without Clase Azul pricing.",
+        "occasion": "Everyday pour",
+        "flavorFamily": "Pepper & vanilla",
+        "pairingAffinity": "Medium cigar",
+        "memberBlurb": "Espolòn Reposado — pepper and vanilla agave without the luxury markup. Honest tequila that still respects a cigar."
+      },
+      "id": "spi-trk-espilon-rep",
+      "provenance": {
+        "beginnerSafe": "Yes",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Fortaleza Reposado · Jalisco, Mexico · $55 · 80 proof (40.0% ABV) · Notes: cooked agave, butter",
+      "guidance": {
+        "bestFor": "Tequila enthusiast, still-strength agave, medium-full cigar.",
+        "avoidIf": "User wants only celebrity tequila.",
+        "whyRecommend": "Recommend when the member wants real agave character — earth, pepper, and cooked agave.",
+        "occasion": "Relaxed evening",
+        "flavorFamily": "Agave & earth",
+        "pairingAffinity": "Medium-full cigar",
+        "memberBlurb": "Fortaleza Reposado — cooked agave and pepper from stone ovens. Tequila for members past ceramic bottles and into flavor."
+      },
+      "id": "spi-trk-fortaleza-rep",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Glenfiddich 12 Year · Speyside, Scotland · $48 · 80 proof (40% ABV) · Notes: pear, green apple",
+      "guidance": {
+        "bestFor": "First Scotch, mild cigar, user intimidated by peat or smoke.",
+        "avoidIf": "User wants heavy peat or cask-strength intensity.",
+        "whyRecommend": "Recommend as beginner Scotch — pear, honey, and gentle oak without smoke.",
+        "occasion": "Afternoon pour",
+        "flavorFamily": "Pear & malt",
+        "pairingAffinity": "Mild / Connecticut cigar",
+        "memberBlurb": "Glenfiddich 12 — pear and butterscotch over cream, malt, and subtle oak. Official Speyside first Scotch without peat."
+      },
+      "id": "spi-trk-glenfid-12",
+      "provenance": {
+        "beginnerSafe": "Yes",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Glenlivet 12 Year · Speyside, Scotland · $48 · 80 proof (40.0% ABV) · Notes: pear, apple",
+      "guidance": {
+        "bestFor": "First Scotch, mild cigar, Speyside flight.",
+        "avoidIf": "User wants peat or bold flavor.",
+        "whyRecommend": "Recommend as friendly Speyside beside a mild cigar — pear, apple, and honey.",
+        "occasion": "Afternoon pour",
+        "flavorFamily": "Pear & floral",
+        "pairingAffinity": "Connecticut / mild",
+        "memberBlurb": "Glenlivet 12 — pear and floral honey in an easy Speyside. The other beginner Scotch every lounge should have next to Glenfiddich."
+      },
+      "id": "spi-trk-glenliv-12",
+      "provenance": {
+        "beginnerSafe": "Yes",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Glenmorangie Original 10 Year · Highland, Scotland · $42 · 86 proof (43.0% ABV) · Notes: citrus, peach",
+      "guidance": {
+        "bestFor": "Delicate pairing, citrus-forward Scotch, Connecticut cigar.",
+        "avoidIf": "User wants smoke or sherry bomb.",
+        "whyRecommend": "Recommend when a delicate cigar needs a delicate Scotch — citrus, cream, and vanilla.",
+        "occasion": "Relaxed evening",
+        "flavorFamily": "Citrus & vanilla",
+        "pairingAffinity": "Connecticut / creamy",
+        "memberBlurb": "Glenmorangie Original — citrus and cream from tall stills. Delicate Highland for a Connecticut wrapper when you want finesse."
+      },
+      "id": "spi-trk-glenmor-10",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Grey Goose Vodka · France · $35 · 80 proof (40.0% ABV) · Notes: smooth, sweet grain",
+      "guidance": {
+        "bestFor": "Vodka prestige, celebration, recognizable bottle.",
+        "avoidIf": "User wants craft funky spirits only.",
+        "whyRecommend": "Recommend when luxury vodka is the ask — smooth, almond, and citrus.",
+        "occasion": "Celebration",
+        "flavorFamily": "Smooth & sweet",
+        "pairingAffinity": "Mild / medium cigar",
+        "memberBlurb": "Grey Goose — smooth winter wheat with almond and citrus. The vodka name guests request when they do not know what else to order."
+      },
+      "id": "spi-trk-grey-goose",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Hakushu 12 Year · Japan · $150 · 86 proof (43.0% ABV) · Notes: green apple, pear",
+      "guidance": {
+        "bestFor": "Japanese malt fan, smoky but elegant, medium-full cigar.",
+        "avoidIf": "User wants unpeated only.",
+        "whyRecommend": "Recommend when the member wants Japanese smoke — mint, green fruit, and forest peat.",
+        "occasion": "Relaxed evening",
+        "flavorFamily": "Forest smoke",
+        "pairingAffinity": "Medium-full cigar",
+        "memberBlurb": "Hakushu 12 — forest smoke and mint over green apple. Japanese peat for members who found Islay too rough."
+      },
+      "id": "spi-trk-hakushu-12",
+      "provenance": {
+        "beginnerSafe": "No",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+  .rank-row{display:flex;align-items:center;gap:14px;padding:12px 16px;background:var(--bg-surface);border:1px solid var(--bg-border);border-radius:12px;transition:border-color .15s;text-decoration:none;}
+  .rank-row:hover{border-color:rgba(var(--gold-rgb), .3);}
+
+
+/* === Sidebar — shared concepts (mirrors checkin.css) === */
+
+/* === Top bar — shared concepts === */
+.topbar-page-title { font-size:15px; font-weight:600; color:var(--text-primary); }
+.topbar-avatar-elite { background:var(--tier-elite); color:var(--tier-elite-ink); width:34px; height:34px; font-size:12px; }
+
+/* === Page frame === */
+.leaderboard-page-frame { display:flex; justify-content:center; padding:24px 20px; gap:20px; }
+.leaderboard-page-stack { width:100%; max-width:680px; display:flex; flex-direction:column; gap:18px; }
+.leaderboard-page-title { font-family:var(--font-display); font-size:2rem; font-weight:700; color:var(--text-primary); line-height:1.1; }
+.leaderboard-page-tagline { font-family:var(--font-body); font-style:italic; font-size:14px; color:var(--text-secondary); margin-top:6px; }
+
+/* === Period filter tabs — full carousel chrome ===
+   Hidden scrollbar, scroll-snap, right-edge mask fade. Arrows are
+   JS-injected and styled via the shared .pro-lib-arrow* rules in
+   lounge.css. */
+.leaderboard-period-tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  min-width: 0;
+  padding: 0 22px 2px 2px;
+  overflow-x: auto;
+  scrollbar-width: none;            /* Firefox */
+  -ms-overflow-style: none;         /* IE/Edge legacy */
+  scroll-snap-type: x proximity;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 0,
+    black calc(100% - 32px),
+    transparent 100%
+  );
+          mask-image: linear-gradient(
+    to right,
+    black 0,
+    black calc(100% - 32px),
+    transparent 100%
+  );
+}
+.leaderboard-period-tabs::-webkit-scrollbar { display: none; }
+.leaderboard-period-tabs > .filter-tab {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+/* JS-injected wrapper inherits the flex-item slot inside
+   .leaderboard-page-stack (flex column). min-width:0 lets the inner
+   track shrink and scroll internally instead of overflowing the page. */
+.leaderboard-page-stack > .pro-lib-carousel {
+  min-width: 0;
+  width: 100%;
+}
+.leaderboard-tabs-carousel .pro-lib-arrow { display: flex; }
+
+/* Mobile-only tabs (Your Progress / Tier Legend / How to). They expose
+   the right-rail widgets from inside the main column where the rail is
+   hidden by the app shell. On desktop the rail itself shows the widgets,
+   so the tabs are redundant — hide them above 700px. */
+@media (min-width: 701px) {
+  .leaderboard-period-tab-rail { display: none; }
+}
+/* Hide the right-rail widgets on mobile too — they're now reachable
+   through the inline .leaderboard-view containers in the main column.
+   The app shell already display:none-s the entire .rail-col at <=1023px,
+   this is defense-in-depth in case a future rail tweak removes that. */
+@media (max-width: 767px) {
+  .leaderboard-rail { display: none !important; }
+}
+
+/* === Podium === */
+.leaderboard-podium { display:grid; grid-template-columns:1fr 1.2fr 1fr; gap:12px; align-items:end; margin-top:8px; }
+.podium-card-runner-up { text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:8px; padding:18px 12px; background:linear-gradient(180deg,rgba(var(--tier-runner-up-rgb), .18),var(--bg-surface)); border:1px solid rgba(var(--tier-runner-up-rgb), .3); border-radius:14px 14px 0 0; height:200px; justify-content:flex-end; }
+.podium-avatar-runner-up { background:var(--tier-runner-up); color:var(--tier-runner-up-ink); width:54px; height:54px; font-size:18px; border:3px solid var(--bg-surface); }
+.podium-rank-runner-up { font-family:var(--font-display); font-size:1.4rem; font-weight:700; color:var(--tier-runner-up); line-height:1; }
+.podium-name { font-size:13px; font-weight:600; color:var(--text-primary); text-align:center; }
+.podium-points { font-size:11px; color:var(--text-muted); }
+.podium-card-champion { text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:8px; padding:24px 12px; background:linear-gradient(180deg,rgba(var(--gold-rgb), .22),var(--bg-surface)); border:1px solid rgba(var(--gold-rgb), .4); border-radius:14px 14px 0 0; height:240px; justify-content:flex-end; position:relative; }
+.podium-crown { position:absolute; top:14px; font-size:1.4rem; }
+.podium-avatar-champion { background:var(--gold); color:var(--bg-base); width:64px; height:64px; font-size:20px; border:3px solid var(--bg-surface); }
+.podium-rank-champion { font-family:var(--font-display); font-size:1.6rem; font-weight:700; color:var(--gold); line-height:1; }
+.podium-name-champion { font-size:14px; font-weight:700; color:var(--text-primary); text-align:center; }
+.podium-points-champion { font-size:12px; color:var(--gold); font-weight:600; }
+.podium-card-bronze { text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:8px; padding:14px 12px; background:linear-gradient(180deg,rgba(var(--tier-bronze-rgb), .15),var(--bg-surface)); border:1px solid rgba(var(--tier-bronze-rgb), .3); border-radius:14px 14px 0 0; height:175px; justify-content:flex-end; }
+.podium-avatar-bronze { background:var(--tier-bronze); color:var(--tier-bronze-ink); width:48px; height:48px; font-size:16px; border:3px solid var(--bg-surface); }
+.podium-rank-bronze { font-family:var(--font-display); font-size:1.3rem; font-weight:700; color:var(--tier-bronze); line-height:1; }
+
+/* === Ranked list === */
+.rank-list { display:flex; flex-direction:column; gap:8px; margin: 24px 0; }
+.is-you { background:linear-gradient(90deg,rgba(var(--tier-elite-rgb), .12),var(--bg-surface)); border-color:rgba(var(--tier-elite-rgb), .35); }
+.rank-number-you { font-family:var(--font-display); font-size:1.5rem; font-weight:700; color:var(--tier-elite); width:26px; text-align:center; flex-shrink:0; }
+.rank-avatar-you { background:rgba(var(--tier-elite-rgb), .2); color:var(--tier-elite); border:1px solid rgba(var(--tier-elite-rgb), .35); }
+.rank-name-you { font-size:14px; font-weight:700; color:var(--tier-elite); }
+.rank-meta { font-size:11px; color:var(--text-muted); margin-top:1px; }
+.rank-points-block { text-align:right; flex-shrink:0; }
+.rank-points-num-you { font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:var(--tier-elite); line-height:1; }
+.rank-points-label { font-size:10px; color:var(--text-muted); margin-top:2px; }
+.rank-number { font-family:var(--font-display); font-size:1.3rem; font-weight:700; color:var(--text-secondary); width:26px; text-align:center; flex-shrink:0; }
+.rank-avatar-member { background:var(--avatar-brown); color:var(--avatar-brown-ink); }
+.rank-name { font-size:14px; font-weight:600; color:var(--text-primary); }
+.rank-points-num { font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:var(--text-primary); line-height:1; }
+.rank-avatar-alan { background:var(--avatar-blue); color:var(--avatar-blue-ink); }
+.rank-avatar-patrick { background:var(--avatar-magenta); color:var(--avatar-magenta-ink); }
+.rank-avatar-sean { background:var(--avatar-green); color:var(--avatar-green-ink); }
+.rank-avatar-ethan { background:var(--avatar-steel); color:var(--avatar-steel-ink); }
+.rank-avatar-vincent { background:var(--avatar-warm); color:var(--avatar-warm-ink); }
+.rank-show-more-btn { background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:10px; padding:12px; font-family:var(--font-ui); font-size:13px; font-weight:500; color:var(--text-secondary); cursor:pointer; transition:border-color .2s,color .2s; }
+
+/* === Right rail === */
+.leaderboard-rail { width:268px; flex-shrink:0; display:flex; flex-direction:column; gap:14px; }
+
+/* === Your-progress widget === */
+.progress-card { background:linear-gradient(135deg,rgba(var(--tier-elite-rgb), .12),var(--bg-surface)); }
+.progress-header { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+.progress-rank { font-family:var(--font-display); font-size:2.4rem; font-weight:700; color:var(--tier-elite); line-height:1; }
+.progress-tier-name { font-size:13px; font-weight:600; color:var(--text-primary); }
+.progress-bar-labels { display:flex; justify-content:space-between; margin-bottom:5px; }
+.progress-bar-label-from { font-size:10px; font-weight:700; letter-spacing:.05em; color:var(--text-muted); text-transform:uppercase; }
+.progress-bar-label-to { font-size:10px; font-weight:700; color:var(--tier-bronze); }
+.progress-bar-track { height:6px; background:var(--bg-elevated); border-radius:99px; overflow:hidden; }
+.progress-bar-fill { height:100%; width:88%; background:linear-gradient(to right,var(--tier-elite),var(--tier-bronze)); }
+
+/* === Tier legend widget === */
+.tier-legend-list { display:flex; flex-direction:column; gap:10px; font-size:12px; }
+.tier-legend-row { display:flex; align-items:center; gap:10px; }
+.tier-legend-dot-champion { width:18px; height:18px; border-radius:50%; background:var(--gold); }
+.tier-legend-name { color:var(--text-primary); font-weight:600; }
+.tier-legend-pts { font-size:10px; color:var(--text-muted); }
+.tier-legend-dot-runner-up { width:18px; height:18px; border-radius:50%; background:var(--tier-runner-up); }
+.tier-legend-dot-bronze { width:18px; height:18px; border-radius:50%; background:var(--tier-bronze); }
+.tier-legend-dot-elite { width:18px; height:18px; border-radius:50%; background:var(--tier-elite); }
+.tier-legend-dot-member { width:18px; height:18px; border-radius:50%; background:var(--text-muted); }
+
+/* === How-to-earn widget === */
+.how-to-earn-list { display:flex; flex-direction:column; gap:8px; font-size:12px; color:var(--text-secondary); line-height:1.5; }
+.how-to-earn-row { display:flex; justify-content:space-between; }
+.how-to-earn-pts { color:var(--gold); font-weight:600; }
+
+/* === Mobile drawer overlay — shared === */
+
+@media (max-width: 639px) {
+  .leaderboard-page-title { font-size: 1.5rem; line-height: 1.15; }
+  .podium-rank-champion { font-size: 1.3rem; line-height: 1.15; }
+  .rank-number-you { font-size: 1.2rem; }
+}

@@ -1,0 +1,78 @@
+
+
+/* === Page-specific styles === */
+.topbar-back-link { display:flex; align-items:center; gap:6px; color:var(--text-secondary); text-decoration:none; font-size:13px; font-weight:500; white-space:nowrap; transition:color .2s; }
+.topbar-notif-wrap { position:relative; }
+.topbar-notif-dot { position:absolute; top:4px; right:4px; }
+.topbar-user-avatar-elite { background:var(--tier-elite); color:var(--tier-elite-ink); width:34px; height:34px; font-size:12px; }
+.post-detail-frame { display:flex; justify-content:center; padding:24px 20px; gap:20px; }
+.post-detail-main { width:100%; max-width:640px; display:flex; flex-direction:column; gap:14px; }
+.post-detail-card { background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:16px; padding:24px; }
+.post-detail-header { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+.post-detail-author-avatar { background:var(--gold); color:var(--bg-base); width:46px; height:46px; font-size:15px; }
+.info-flex { flex:1; }
+.post-detail-author-name { font-size:15px; font-weight:700; color:var(--text-primary); }
+.post-detail-author-tag { font-size:10px; padding:2px 7px; margin-left:4px; }
+.post-detail-meta { font-size:12px; color:var(--text-muted); margin-top:2px; }
+.post-detail-more-btn { border:none; width:30px; height:30px; flex-shrink:0; }
+.post-detail-product-pill { display:inline-flex; align-items:center; gap:6px; background:var(--bg-elevated); border:1px solid rgba(var(--gold-rgb), .2); border-radius:8px; padding:6px 12px; margin-bottom:14px; }
+.post-detail-product-name { font-size:12px; font-weight:600; color:var(--gold); }
+.muted-meta { font-size:11px; color:var(--text-muted); }
+.post-detail-photo { background:var(--bg-elevated); border:1px solid var(--bg-border); border-radius:12px; height:280px; display:flex; align-items:center; justify-content:center; margin-bottom:18px; overflow:hidden; }
+.post-detail-photo > img { width:100%; height:100%; object-fit:cover; display:block; }
+.post-detail-photo-placeholder { text-align:center; opacity:.35; }
+.post-detail-photo-placeholder-icon { display:block; margin:0 auto 8px; }
+.post-detail-photo-placeholder-text { font-size:12px; color:var(--text-muted); }
+.post-detail-body { font-family:var(--font-body); font-style:italic; font-size:15px; line-height:1.8; color:var(--text-secondary); margin-bottom:16px; }
+.post-detail-rating-chips { display:flex; gap:7px; flex-wrap:wrap; margin-bottom:16px; }
+.post-detail-rating-panel { display:flex; align-items:center; justify-content:space-between; padding:14px 16px; background:var(--bg-elevated); border-radius:10px; margin-bottom:16px; }
+.post-detail-rating-label { font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); margin-bottom:4px; }
+.post-detail-rating-score { font-family:var(--font-display); font-size:2.2rem; font-weight:700; color:var(--gold); line-height:1; }
+.post-detail-rating-stars-block { text-align:right; }
+.post-detail-rating-stars { font-family:var(--font-display); font-size:1.4rem; color:var(--gold); margin-bottom:4px; }
+.post-detail-actions { display:flex; align-items:center; gap:16px; padding-top:14px; border-top:1px solid var(--bg-border); }
+.post-detail-view-product { margin-left:auto; font-size:12px; color:var(--text-muted); text-decoration:none; transition:color .2s; }
+.post-detail-comments { background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:16px; overflow:hidden; }
+.post-detail-comments-header { padding:18px 20px; border-bottom:1px solid var(--bg-border); display:flex; align-items:center; justify-content:space-between; }
+.post-detail-comments-title { font-size:14px; font-weight:600; color:var(--text-primary); }
+.post-detail-comments-count { color:var(--text-muted); font-weight:400; }
+.post-detail-comments-sort { background:none; border:none; font-family:var(--font-ui); font-size:12px; color:var(--text-muted); cursor:pointer; }
+.post-comment-input-row { padding:16px 20px; border-bottom:1px solid var(--bg-border); display:flex; gap:10px; align-items:flex-start; }
+.comment-avatar-elite { background:var(--tier-elite); color:var(--tier-elite-ink); flex-shrink:0; }
+.post-comment-input-wrap { flex:1; display:flex; flex-direction:column; gap:8px; }
+.post-comment-input-actions { display:flex; justify-content:flex-end; }
+.post-comment-submit { background:var(--burg); color:var(--cream); border:none; border-radius:8px; padding:8px 18px; font-family:var(--font-ui); font-size:13px; font-weight:600; cursor:pointer; }
+.comment-row { padding:16px 20px; border-bottom:1px solid var(--bg-border); }
+.comment-body-wrap { display:flex; gap:10px; }
+.comment-meta-line { display:flex; align-items:baseline; gap:8px; margin-bottom:5px; flex-wrap:wrap; }
+.comment-author-name { font-size:13px; font-weight:600; color:var(--text-primary); }
+.comment-tag-elite { background:rgba(var(--tier-elite-rgb), .1); border:1px solid rgba(var(--tier-elite-rgb), .25); color:var(--tier-elite); padding:1px 6px; border-radius:99px; font-size:9px; font-weight:600; }
+.comment-body-text { font-family:var(--font-body); font-style:italic; font-size:13px; color:var(--text-secondary); line-height:1.65; }
+.comment-actions { display:flex; gap:12px; margin-top:8px; }
+.comment-action-small { font-size:12px; }
+.comment-avatar-runner-up { background:var(--tier-runner-up); color:var(--tier-runner-up-ink); flex-shrink:0; }
+.comment-avatar-bronze { background:var(--tier-bronze); color:var(--tier-bronze-ink); flex-shrink:0; }
+.comment-tag-bronze { background:rgba(var(--tier-bronze-rgb), .1); border:1px solid rgba(var(--tier-bronze-rgb), .25); color:var(--tier-bronze); padding:1px 6px; border-radius:99px; font-size:9px; font-weight:600; }
+.comment-row-nested { padding:12px 20px 16px 60px; border-bottom:1px solid var(--bg-border); background:var(--bg-elevated); }
+.comment-avatar-nested-champion { background:var(--gold); color:var(--bg-base); width:30px; height:30px; font-size:11px; flex-shrink:0; }
+.comment-meta-line-nested { display:flex; align-items:baseline; gap:8px; margin-bottom:5px; }
+.post-detail-comments-loadmore-wrap { padding:14px 20px; text-align:center; }
+.post-detail-comments-loadmore-btn { background:none; border:none; font-family:var(--font-ui); font-size:13px; color:var(--text-muted); cursor:pointer; transition:color .2s; }
+.post-detail-rail { width:268px; flex-shrink:0; display:flex; flex-direction:column; gap:14px; }
+.reviewer-header { display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+.reviewer-avatar { background:var(--gold); color:var(--bg-base); width:48px; height:48px; font-size:15px; }
+.reviewer-name { font-size:14px; font-weight:700; color:var(--text-primary); }
+.reviewer-tag { font-size:9px; padding:2px 7px; margin-top:4px; }
+.reviewer-stats { display:flex; justify-content:space-around; padding:10px 0; border-top:1px solid var(--bg-border); border-bottom:1px solid var(--bg-border); margin-bottom:12px; }
+.reviewer-stat { text-align:center; }
+.reviewer-stat-num { font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:var(--text-primary); }
+.reviewer-stat-label { font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:.05em; }
+.reviewer-stat-num-gold { font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:var(--gold); }
+.reviewer-follow-btn { width:100%; background:var(--burg); color:var(--cream); border:none; border-radius:8px; padding:9px; font-family:var(--font-ui); font-size:13px; font-weight:600; cursor:pointer; }
+.tagged-product-card { display:flex; flex-direction:column; gap:6px; text-decoration:none; padding:12px; background:var(--bg-elevated); border:1px solid var(--bg-border); border-radius:10px; transition:border-color .2s; }
+.tagged-product-title { font-family:var(--font-display); font-size:1rem; font-weight:600; color:var(--text-primary); }
+.tagged-product-rating { font-family:var(--font-display); font-size:1.2rem; color:var(--gold); }
+.tagged-product-review-count { font-family:var(--font-ui); font-size:11px; color:var(--text-muted); }
+.tagged-product-view-link { display:block; margin-top:10px; font-size:12px; color:var(--text-muted); text-decoration:none; transition:color .2s; }
+.sterlon-quote { background:var(--gold-subtle); border:1px solid rgba(var(--gold-rgb), .2); border-radius:12px; padding:14px; font-family:var(--font-body); font-style:italic; font-size:13px; color:var(--text-secondary); line-height:1.65; margin-bottom:12px; }
+.sterlon-link { font-size:13px; font-weight:600; color:var(--gold); text-decoration:none; }

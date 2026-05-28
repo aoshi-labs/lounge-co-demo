@@ -1,0 +1,7 @@
+{
+  "degraded": true,
+  "runtimeMode": "degraded",
+  "degradedCause": "RecommendationRuntime.generateRecommendationContext-unavailable",
+  "governanceOk": true,
+  "governanceAuthorityOk": true
+}

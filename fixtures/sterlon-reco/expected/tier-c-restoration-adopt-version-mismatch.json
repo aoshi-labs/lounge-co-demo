@@ -1,0 +1,6 @@
+{
+  "staleTurnReturnsNull": true,
+  "matchingVersionAdopts": true,
+  "matchingIsFrozen": true,
+  "currentRuntimeVersion": 1
+}

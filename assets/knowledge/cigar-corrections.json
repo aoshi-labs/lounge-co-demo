@@ -1,0 +1,362 @@
+[
+  {
+    "sku": "L4-LFD-DL",
+    "wrapper": "Ecuadorian Sumatra",
+    "binder": "Dominican Republic",
+    "filler": "Dominican ligero",
+    "wrapperRole": "Ecuadorian Sumatra wrapper (natural or maduro) frames the ligero core with spice, earth, and oily depth without softening the strength.",
+    "binderRole": "Dominican binder supports combustion and structure through a dense double-ligero bunch.",
+    "fillerRole": "Dominican ligero filler drives exceptional nicotine, red pepper, leather, coffee, and experienced-only intensity.",
+    "flavorNotes": "Red pepper, leather, charred oak, earth, coffee, dark spice, mineral tobacco.",
+    "bestFor": "Experienced smoker, after dinner, rum pairing, user wants a Dominican power lesson—not the mild DR stereotype.",
+    "avoidIf": "Beginner, nicotine-sensitive, empty stomach, morning coffee, user wants creamy Connecticut mildness.",
+    "whyRecommend": "Recommend when the user seeks maximum Dominican ligero intensity and understands this is among the strongest profiles in the book."
+  },
+  {
+    "sku": "HTD-01-OPUSX",
+    "wrapper": "Dominican (Fuente estate sun-grown)",
+    "binder": "Dominican Republic",
+    "filler": "Dominican Republic",
+    "wrapperRole": "Dominican sun-grown wrapper delivers OpusX signature spice, sweetness, and the prestige of an estate-grown puro cover leaf.",
+    "binderRole": "Dominican binder integrates the puro structure and supports Fuente's precise, celebration-grade construction.",
+    "fillerRole": "Dominican filler provides cedar, baking spice, dried fruit, and layered complexity without outside tobacco.",
+    "flavorNotes": "Cedar, baking spice, leather, sweet tobacco, dried fruit, subtle cream, oak.",
+    "bestFor": "Collector, Fuente/OpusX fan, experienced smoker, celebration, cognac pairing, Dominican puro prestige.",
+    "avoidIf": "Beginner, nicotine-sensitive, budget-sensitive, user needs easy daily availability or a short smoke window.",
+    "whyRecommend": "Recommend when prestige, rarity, and a refined full-bodied Dominican puro are the goal—not blunt ligero shock."
+  },
+  {
+    "sku": "HTD-02-ASHTON-ESG",
+    "wrapper": "Dominican Sun Grown",
+    "binder": "Dominican Republic",
+    "filler": "Dominican Republic",
+    "wrapperRole": "Dominican sun-grown wrapper adds caramelized sweetness, graham, and restrained spice from Fuente estate leaf.",
+    "binderRole": "Dominican binder keeps the all-Dominican blend coherent and elegantly constructed.",
+    "fillerRole": "Dominican filler supplies cedar, molasses, cocoa, and medium-full body with signature Fuente polish.",
+    "flavorNotes": "Graham cracker, cedar, cocoa, molasses, black pepper, toasted nuts, sweet spice.",
+    "bestFor": "Celebration, port pairing, experienced smoker wanting luxury Dominican richness without OpusX collector pricing.",
+    "avoidIf": "Beginner on empty stomach, user wants mild Connecticut cream only, or lowest nicotine.",
+    "whyRecommend": "Recommend as a top-tier Dominican reserve—rich, smooth, and celebratory (often called the \"velvet hammer\").",
+    "parentCompany": "Ashton"
+  },
+  {
+    "sku": "HTD-03-AF-HEMINGWAY",
+    "wrapper": "Cameroon",
+    "binder": "Dominican Republic",
+    "filler": "Dominican Republic",
+    "wrapperRole": "Cameroon wrapper contributes honeyed sweetness, baking spice, and aromatic texture unique to African leaf.",
+    "binderRole": "Dominican binder supports figurado construction and even burn through shaped formats.",
+    "fillerRole": "Dominican filler keeps the profile medium-bodied with cedar, earth, brown sugar, and approachable Fuente balance.",
+    "flavorNotes": "Cedar, brown sugar, baking spice, toast, nuts, light earth, subtle cream.",
+    "bestFor": "After dinner, rum pairing, craftsmanship/figurado lesson; Short Story for shorter window.",
+    "avoidIf": "User dislikes figurados, wants full ligero power, or needs the lowest nicotine in the book.",
+    "whyRecommend": "Recommend to teach Fuente figurado skill and Cameroon sweetness in a medium, approachable package.",
+    "displayName": "Arturo Fuente Hemingway Short Story"
+  },
+  {
+    "sku": "HTD-04-ASHTON-CLASSIC",
+    "wrapper": "Connecticut Shade",
+    "binder": "Dominican Republic",
+    "filler": "Dominican Republic",
+    "wrapperRole": "Connecticut Shade wrapper delivers cream, cedar, almond, and soft sweetness with premium Dominican polish.",
+    "binderRole": "Dominican binder maintains smooth burn and Fuente-made consistency.",
+    "fillerRole": "Dominican filler provides gentle body, nuts, light spice, and reliable mild-to-medium character.",
+    "flavorNotes": "Cream, cedar, almonds, toast, light spice, faint sweetness.",
+    "bestFor": "Beginner, morning coffee, mild luxury, user wants smooth Dominican Connecticut.",
+    "avoidIf": "User wants pepper-forward power, dark maduro body, or collector scarcity story.",
+    "whyRecommend": "Recommend when the user needs a polished, beginner-safe Dominican Connecticut profile.",
+    "parentCompany": "Ashton"
+  },
+  {
+    "sku": "HTD-07-MONTECRISTO",
+    "wrapper": "Connecticut Shade",
+    "binder": "Dominican Republic",
+    "filler": "Dominican Republic",
+    "wrapperRole": "Connecticut Shade wrapper gives grassy sweetness, cream, and classic Cuban-legacy mildness.",
+    "binderRole": "Dominican binder supports approachable, consistent construction from Tabacalera de García.",
+    "fillerRole": "Dominican filler reinforces cedar, nuts, light coffee, and easy-drinking mild body.",
+    "flavorNotes": "Cream, cedar, nuts, grassy sweetness, light coffee, mild spice.",
+    "bestFor": "Beginner, morning coffee, Cuban-heritage mild profile, first widely known premium classic.",
+    "avoidIf": "User wants bold pepper, dark maduro, or boutique Nicaraguan intensity.",
+    "whyRecommend": "Recommend as a widely available mild Dominican classic with broad beginner appeal."
+  },
+  {
+    "sku": "HTD-09-DAV-ANIV",
+    "wrapper": "Ecuador Connecticut",
+    "binder": "Dominican Republic",
+    "filler": "Dominican Republic",
+    "wrapperRole": "Ecuador Connecticut wrapper adds elegance, cream, and refined aromatic top notes.",
+    "binderRole": "Dominican binder preserves Davidoff's clean construction and balanced mild character.",
+    "fillerRole": "Dominican filler offers subtle nuts, cedar, coffee-with-cream, and low-intensity luxury complexity.",
+    "flavorNotes": "Cedar, nuts, cream, coffee, soft spice, floral notes, light toast.",
+    "bestFor": "Celebration, cognac pairing, luxury gift, user wants prestige without strength.",
+    "avoidIf": "User equates luxury with full strength, wants pepper-heavy body, or is budget-sensitive.",
+    "whyRecommend": "Recommend to show that prestige can be gentle, refined, and low-intensity."
+  },
+  {
+    "sku": "HTD-10-COHIBA",
+    "wrapper": "Cameroon",
+    "binder": "Indonesian Jember",
+    "filler": "Dominican Piloto Cubano",
+    "wrapperRole": "Cameroon wrapper adds wood, leather texture, and classic aromatic sweetness.",
+    "binderRole": "Indonesian Jember binder adds supple body and savory depth under the Cameroon top leaf.",
+    "fillerRole": "Dominican Piloto Cubano filler provides cedar, cream, black pepper, and medium Cuban-legacy character.",
+    "flavorNotes": "Cedar, cream, black pepper, wood, leather, toast, subtle sweetness.",
+    "bestFor": "After dinner, Scotch pairing, medium heritage prestige, recognizable brand without OpusX pricing.",
+    "avoidIf": "User wants creamy mildness only, Cuban island product (clarify: Red Dot is DR-made), or lowest price point.",
+    "whyRecommend": "Recommend for medium-bodied Dominican prestige with Cameroon texture—U.S.-legal alternative to Cuban Cohiba story."
+  },
+  {
+    "sku": "L4-PAD-2000",
+    "wrapper": "Nicaraguan Natural",
+    "binder": "Nicaragua",
+    "filler": "Nicaragua",
+    "wrapperRole": "Nicaraguan Habano natural or maduro wrapper sets cocoa/coffee tone and teaches wrapper-driven sweetness vs depth.",
+    "binderRole": "Nicaraguan binder reinforces puro identity and rustic, honest Padron construction.",
+    "fillerRole": "Nicaraguan filler drives cocoa, earth, coffee, and dependable medium body—the classic daily Padron profile.",
+    "flavorNotes": "Cocoa, coffee, earth, nuts, cedar, light pepper, sweet tobacco.",
+    "bestFor": "Quick lunch break, coffee pairing, Nicaraguan baseline lesson, value-conscious premium smoker.",
+    "avoidIf": "Beginner nicotine-sensitive, user wants Dominican cream or anniversary-line collector rarity.",
+    "whyRecommend": "Recommend as the reference Nicaraguan puro for balanced body without 1964/1926 pricing.",
+    "line": "Thousands Series",
+    "notes": "Padron portfolio — Entry tier (Thousands) — 2000 Robusto natural — aged 2.5–3 years — crisp wood, earth, cocoa, nuts. Natural wrapper sibling to CUR-43 maduro."
+  },
+  {
+    "sku": "L4-OLIVA-SERIEV",
+    "wrapper": "Ecuadorian Habano Sun Grown",
+    "binder": "Nicaragua",
+    "filler": "Nicaraguan ligero",
+    "wrapperRole": "Ecuadorian Habano Sun Grown wrapper adds oily sweetness, spice, and Jalapa/Estelí character on the nose.",
+    "binderRole": "Nicaraguan binder supports full body and ligero-forward structure.",
+    "fillerRole": "Nicaraguan ligero filler delivers espresso, pepper, dark cocoa, and long-finishing strength.",
+    "flavorNotes": "Sweet spice, espresso, dark cocoa, cedar, leather, black pepper, earth.",
+    "bestFor": "Experienced smoker, after dinner, bourbon pairing, user wants full Nicaraguan intensity with sweetness.",
+    "avoidIf": "Beginner, empty stomach, short time window, user avoids high nicotine.",
+    "whyRecommend": "Recommend when the user asks for rich Nicaraguan power with sweetness and structure."
+  },
+  {
+    "sku": "L4-MYF-LEBIJOU",
+    "wrapper": "Nicaraguan Habano Oscuro",
+    "binder": "Nicaragua",
+    "filler": "Nicaragua",
+    "wrapperRole": "Nicaraguan Habano Oscuro wrapper deepens cocoa, leather, and pepper with oily maduro texture.",
+    "binderRole": "Nicaraguan binder (often double-binder bunch) amplifies Garcia-family structure and full-bodied burn.",
+    "fillerRole": "Nicaraguan filler drives espresso, dark cocoa, earth, cherry-dark fruit, and experienced-only intensity.",
+    "flavorNotes": "Dark cocoa, espresso, leather, black pepper, earth, dark fruit, charred wood.",
+    "bestFor": "Experienced smoker, winter smoke, after-dinner Scotch, user wants dark Nicaraguan Garcia body.",
+    "avoidIf": "Beginner, mild preference, morning smoke, user dislikes pepper and heavy body.",
+    "whyRecommend": "Recommend for a serious, dark, full-bodied Nicaraguan profile with My Father blending identity."
+  },
+  {
+    "sku": "L5-FOUND-TABERNACLE",
+    "wrapper": "Connecticut Broadleaf",
+    "binder": "Mexican San Andres",
+    "filler": "Nicaragua / Honduras",
+    "wrapperRole": "Connecticut Broadleaf wrapper brings fermented dark sweetness, cocoa, and dense oily texture.",
+    "binderRole": "Mexican San Andrés binder adds earthy sweetness and savory depth under the broadleaf.",
+    "fillerRole": "Nicaraguan and Honduran filler supply body, spice, espresso, and a broad dark flavor core.",
+    "flavorNotes": "Dark cocoa, espresso, leather, earth, molasses, cedar, warming spice.",
+    "bestFor": "Boutique fan, special occasion, bourbon pairing, user wants broadleaf richness with construction pedigree.",
+    "avoidIf": "User wants mild cream, short smoke, low nicotine, or very simple Connecticut flavors.",
+    "whyRecommend": "Recommend when the user wants boutique broadleaf depth with strong identity and texture."
+  },
+  {
+    "sku": "L5-DTT-SINCOMP",
+    "wrapper": "Mexican San Andres Maduro",
+    "binder": "Ecuador Habano",
+    "filler": "Nicaragua",
+    "wrapperRole": "San Andrés maduro wrapper contributes dark earth, cocoa, chicory, and savory sweetness.",
+    "binderRole": "Ecuador Habano binder adds structure, spice lift, and cohesion for the complex filler stack.",
+    "fillerRole": "Nicaraguan filler provides body, loam, espresso undertones, and evolving savory depth.",
+    "flavorNotes": "Hot cocoa, leather, cream, earth, chicory, cedar, subtle sweetness, espresso.",
+    "bestFor": "Boutique enthusiast, cognac pairing, experienced smoker wanting layered savory-maduro without blunt force.",
+    "avoidIf": "Beginner, user wants mild Connecticut, or needs lowest price-point daily smoke.",
+    "whyRecommend": "Recommend for no-compromise boutique balance—rich, savory, and nuanced rather than one-note strength."
+  },
+  {
+    "sku": "L5-DREW-LIGA9",
+    "wrapper": "Connecticut Broadleaf",
+    "binder": "Brazilian Mata Fina",
+    "filler": "Honduras / Nicaragua",
+    "wrapperRole": "Connecticut Broadleaf wrapper delivers dark chocolate, espresso, and fermented sweetness with oily richness.",
+    "binderRole": "Brazilian Mata Fina binder adds aromatic sweetness and savory depth distinctive to Liga blends.",
+    "fillerRole": "Honduran and Nicaraguan filler provide earth, subtle barnyard, cocoa, and private-blend density.",
+    "flavorNotes": "Dark chocolate, espresso, earth, leather, sweet tobacco, cedar, cocoa powder.",
+    "bestFor": "Celebration, bourbon pairing, private-blend fan, experienced smoker, after-dinner richness.",
+    "avoidIf": "Beginner, mild Connecticut preference, user dislikes earthy private-blend character.",
+    "whyRecommend": "Recommend when the user wants benchmark private-blend dark richness with Liga Privada pedigree."
+  },
+  {
+    "sku": "CA25-09-OPUSX-ANGEL",
+    "body": "Medium",
+    "strength": 4,
+    "avoidIf": "User wants full body, maximum strength, bold espresso pairing, or a powerhouse smoke — Angel's Share is a softer, cream-forward OpusX sub-line, not standard OpusX strength.",
+    "whyRecommend": "Recommend when the user wants OpusX prestige with a sweeter, cream-forward profile — not maximum strength or bold bitter coffee.",
+    "bestFor": "Celebration, cognac, experienced smoker wanting OpusX rarity without standard OpusX pepper bomb.",
+    "lineNote": "Sub-line override: do not inherit Fuente OpusX Full-body rating — lower-priming wrapper, cream/baking-spice forward.",
+    "catalogLine": "Arturo Fuente Fuente Fuente OpusX Angel's Share Reserva d'Chateau · 7 × 48 · Churchill · Medium · Dominican · $35 · Notes: cedar, baking spice, fruit, cream",
+    "displayName": "Arturo Fuente Opus X Angel's Share"
+  },
+  {
+    "sku": "CUR-23-LIGA-H99-ROB",
+    "body": "Medium",
+    "strength": 4,
+    "avoidIf": "User wants full body, maximum strength, or Liga Privada No. 9–class broadleaf power — H99 is the Connecticut-hybrid sub-line, not the maduro flagship.",
+    "whyRecommend": "Recommend when the user wants Drew Estate complexity with Connecticut sweetness — not No. 9 strength.",
+    "bestFor": "Bourbon or coffee pairing, experienced smoker wanting Liga complexity without broadleaf heaviness.",
+    "lineNote": "Sub-line: Liga Privada H99 (CT Corojo hybrid) vs Liga Privada No. 9 (Broadleaf, Full).",
+    "catalogLine": "Drew Estate Liga Privada H99 · 5 × 52 · Robusto · Medium · Nicaragua · $18 · Notes: earth, dark chocolate, espresso, apple pie, raisin",
+    "displayName": "Liga Privada H99"
+  },
+  {
+    "sku": "BB24-08-PUNCH-DRAGON",
+    "brand": "Punch",
+    "line": "Dragon Fire",
+    "vitola": "Short Gordo",
+    "country": "Nicaragua",
+    "wrapper": "Mexico San Andrés",
+    "binder": "Nicaragua",
+    "filler": "Dominican Republic / Honduras / Nicaragua",
+    "wrapperRole": "Mexican San Andrés wrapper — dark, rugged leaf; cocoa, earth, and savory spice. Not Connecticut natural, not Nicaraguan puro.",
+    "binderRole": "Nicaraguan binder supports combustion through the thick short-gordo format.",
+    "fillerRole": "Dominican, Honduran, and Nicaraguan filler blend — not a puro. Blended by General Cigar Co., rolled at STG Estelí (Nicaragua).",
+    "occasion": "After dinner",
+    "smokeTime": "90 min",
+    "pairingAffinity": "Bourbon",
+    "flavorNotes": "earth, savory spice, cedar, cocoa, dark sweetness",
+    "bestFor": "After dinner, bourbon pairing, experienced smoker who wants a Best Buy with San Andrés weight — not a morning coffee cigar.",
+    "avoidIf": "Morning coffee or espresso (60-ring gordo outlasts the cup; heavy wrapper coats the palate). Beginner, nicotine-sensitive, user wants mild Connecticut or a true puro story.",
+    "whyRecommend": "Recommend for value seekers citing CA 2024 Best Buy — Lunar New Year Dragon Fire short gordo at ~$7, General Cigar / STG Estelí production.",
+    "memberBlurb": "Punch Dragon Fire — General Cigar blend, STG Estelí. Mexican San Andrés over Nicaraguan binder and a Dominican/Honduran/Nicaraguan filler stack. ~$7 short gordo (5 × 60), flat head. After-dinner strength, not a morning smoke.",
+    "stickSize": "5 × 60 · Short Gordo",
+    "catalogLine": "Punch Dragon Fire · 5 × 60 · Short Gordo · Medium-Full · Nicaragua · $7 · Notes: earth, savory spice, cedar, cocoa",
+    "lineNote": "Lunar New Year limited Dragon Fire — single vitola 5 × 60 short gordo, flat head, MSRP ~$6.99. General Cigar Co. blend, STG Estelí factory. NOT Plasencia; NOT Nicaraguan puro; NOT natural Connecticut wrapper; NOT offered as Robusto.",
+    "length": 5.0,
+    "ring": 60,
+    "shape": "Short Gordo",
+    "msrp": 6.99
+  },
+  {
+    "sku": "CUR-13-PAD-1964-EX",
+    "wrapper": "Nicaraguan Maduro",
+    "body": "Full",
+    "notes": "Padron portfolio — Premium tier (1964) — Exclusivo maduro — 4-year box-pressed. Intense cocoa, molasses, dark coffee. Natural sibling: CUR-44-PAD-1964-EX-NAT.",
+    "displayName": "Padron 1964 Anniversary Exclusivo"
+  },
+  {
+    "sku": "CUR-53-PAD-DAMASO-ROB",
+    "body": "Medium",
+    "strength": 3,
+    "lineNote": "Sub-line override: only Padron with Connecticut Shade — never inherit 1926/1964 Full-body defaults.",
+    "avoidIf": "User wants full Nicaraguan puro power, 1926 pepper bomb, or maduro sweetness only.",
+    "whyRecommend": "Recommend when user wants Padron prestige with Connecticut mildness — creamy wildcard in Padron-only flights."
+  },
+  {
+    "sku": "CUR-20-ASHTON-VSG-TORP",
+    "parentCompany": "Ashton"
+  },
+  {
+    "sku": "CUR-27-SC-ELEG-ROB",
+    "parentCompany": "Ashton"
+  },
+  {
+    "sku": "CUR-28-LADC-CT-TORO",
+    "parentCompany": "Ashton"
+  },
+  {
+    "sku": "CUR-30-LADC-MI-AMOR-ROB",
+    "parentCompany": "Ashton"
+  },
+  {
+    "sku": "CUR-31-LADC-EE-N2",
+    "parentCompany": "Ashton"
+  },
+  {
+    "sku": "CUR-32-LADC-HAB-RES-MON",
+    "parentCompany": "Ashton"
+  },
+  {
+    "sku": "CUR-33-LADC-RESERVA-DIV",
+    "parentCompany": "Ashton"
+  },
+  {
+    "sku": "CUR-34-LADC-NOBLESSE-REG",
+    "parentCompany": "Ashton"
+  },
+  {
+    "sku": "CUR-35-LADC-SB-TORO",
+    "parentCompany": "Ashton"
+  },
+  {
+    "sku": "CA25-23-LA-AROMA",
+    "parentCompany": "Ashton"
+  },
+  {
+    "sku": "CA24-11-LA-AROMA-PASION",
+    "parentCompany": "Ashton"
+  },
+  {
+    "sku": "CUR-36-ASHTON-CABINET",
+    "parentCompany": "Ashton"
+  },
+  {
+    "sku": "CUR-37-ASHTON-MADURO",
+    "parentCompany": "Ashton"
+  },
+  {
+    "sku": "CUR-38-ASHTON-SYMMETRY",
+    "parentCompany": "Ashton"
+  },
+  {
+    "sku": "CUR-39-SC-CLASICO-ROB",
+    "parentCompany": "Ashton"
+  },
+  {
+    "sku": "CUR-40-SC-QUINT-ROB",
+    "parentCompany": "Ashton"
+  },
+  {
+    "sku": "CUR-22-MONTE-NO2",
+    "displayName": "Montecristo No. 2"
+  },
+  {
+    "sku": "CUR-15-RYJ-RR-CH",
+    "displayName": "Romeo y Julieta Reserva Real Churchill"
+  },
+  {
+    "sku": "CUR-24-AF-DCPR-ROB",
+    "displayName": "Arturo Fuente Don Carlos Personal Reserve"
+  },
+  {
+    "sku": "CUR-18-FERIO-PRESTIGE",
+    "displayName": "Ferio Tego Timeless Prestige"
+  },
+  {
+    "sku": "CA25-01-PADRON-60",
+    "displayName": "Padron 60th Anniversary Perfecto"
+  },
+  {
+    "sku": "CA24-01-MF-JUDGE",
+    "displayName": "My Father The Judge"
+  },
+  {
+    "sku": "CA24-03-EPC-ENCORE",
+    "displayName": "E.P. Carrillo Encore Celestial"
+  },
+  {
+    "sku": "CA24-04-PADRON-1926",
+    "displayName": "Padron 1926 No. 6"
+  },
+  {
+    "sku": "CA25-03-TATUAJE-BLACK",
+    "displayName": "Tatuaje Black"
+  },
+  {
+    "sku": "L3-AF-GRANRES",
+    "displayName": "Arturo Fuente Gran Reserva Rothschild"
+  },
+  {
+    "sku": "BB25-01-DONLINO-KUDU",
+    "displayName": "Don Lino Africa Kudu"
+  }
+]

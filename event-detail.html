@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <!-- Hardcoded for the mockup; production templates this from the event
+       record + LOUNGE config: `${event.name} — ${LOUNGE.name}`. -->
+  <title>Scotch &amp; Smoke Night — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Event details, attendee list, and RSVP for an upcoming lounge gathering." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Scotch &amp; Smoke Night — Lounge & Co." />
+  <meta property="og:description" content="Event details, attendee list, and RSVP for an upcoming lounge gathering." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Scotch &amp; Smoke Night — Lounge & Co." />
+  <meta name="twitter:description" content="Event details, attendee list, and RSVP for an upcoming lounge gathering." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/event-detail.css"/>
+</head>
+<body>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Thomas H.</div><div class="sidebar-user-tier">Elite · 1,744 pts · #4</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area">
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu"><i data-lucide="menu" class="ic-16"></i></button>
+    <div class="topbar-actions">
+      <button type="button" class="icon-btn fee-newpost-btn" title="Share" aria-label="Share">
+        <i data-lucide="share-2" class="ic-15"></i><span>Share</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="page-content">
+
+    <!-- CENTER -->
+    <div class="event-detail-page-stack">
+
+      <!-- Hero -->
+      <div class="event-detail-hero">
+        <div class="event-detail-hero-banner">
+          <div class="event-detail-featured-badge">
+            <i data-lucide="star" class="ic-13"></i>
+            <span class="event-detail-featured-label">Featured Event</span>
+          </div>
+
+        </div>
+
+        <div class="event-detail-hero-body">
+          <h1 class="event-detail-hero-title">Scotch &amp; Smoke Night</h1>
+          <p class="event-detail-hero-description">An intimate evening pairing four Highland and Speyside single malts with hand-rolled premium cigars. Master blender Gerald W. will guide the tasting and share the stories behind each pour.</p>
+
+          <!-- Quick facts -->
+          <div class="event-detail-facts-grid">
+            <div class="event-detail-fact-tile">
+              <div class="event-detail-fact-label">When</div>
+              <div class="event-detail-fact-value">Sat, May 18</div>
+              <div class="event-detail-fact-subvalue">7:00 PM – 10:00 PM</div>
+            </div>
+            <div class="event-detail-fact-tile">
+              <div class="event-detail-fact-label">Where</div>
+              <div class="event-detail-fact-value" data-lounge-name>Lounge & Co.</div>
+              <div class="event-detail-fact-subvalue">Main floor · Atlanta</div>
+            </div>
+            <div class="event-detail-fact-tile">
+              <div class="event-detail-fact-label">Spots</div>
+              <div class="event-detail-fact-value">14 / 30 taken</div>
+              <div class="event-detail-fact-subvalue-gold">16 remaining</div>
+            </div>
+            <div class="event-detail-fact-tile">
+              <div class="event-detail-fact-label">Cost</div>
+              <div class="event-detail-fact-value-gold">$45 per person</div>
+              <div class="event-detail-fact-subvalue">Includes all pours + cigar</div>
+            </div>
+          </div>
+
+          <button id="rsvp-btn" onclick="toggleRSVP()" onmouseover="this.style.background='var(--burg-hover)'" onmouseout="this.style.background='var(--burg)'" class="event-detail-rsvp-primary">RSVP for Scotch &amp; Smoke Night</button>
+        </div>
+      </div>
+
+      <!-- About / Schedule -->
+      <div class="event-detail-section-card">
+        <h3 class="event-detail-section-title">The Evening</h3>
+        <div class="event-detail-schedule-list">
+          <div class="event-detail-schedule-row">
+            <div class="event-detail-schedule-time">7:00 PM</div>
+            <div><div class="event-detail-item-name">Welcome &amp; First Pour</div><div class="event-detail-schedule-description">Aberfeldy 12yr to set the palate. Cigar selection presented.</div></div>
+          </div>
+          <div class="event-detail-schedule-row">
+            <div class="event-detail-schedule-time">7:45 PM</div>
+            <div><div class="event-detail-item-name">Speyside Flight</div><div class="event-detail-schedule-description">Glenfarclas 17 alongside an Ashton VSG. Gerald will share the cask history.</div></div>
+          </div>
+          <div class="event-detail-schedule-row">
+            <div class="event-detail-schedule-time">8:30 PM</div>
+            <div><div class="event-detail-item-name">Highland Power</div><div class="event-detail-schedule-description">Glenmorangie 18 paired with Padron Anniversary.</div></div>
+          </div>
+          <div class="event-detail-schedule-row">
+            <div class="event-detail-schedule-time">9:15 PM</div>
+            <div><div class="event-detail-item-name">Closing Dram</div><div class="event-detail-schedule-description">Lagavulin 16 with an Opus X to send everyone home thinking.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Attendees -->
+      <div class="event-detail-section-card">
+        <div class="event-attendees-header">
+          <h3 class="event-attendees-title">Who's Going</h3>
+          <span class="event-attendees-count">14 attending</span>
+        </div>
+        <div class="event-attendees-list">
+          <div class="event-attendee-chip">
+            <div class="avatar event-attendee-avatar-champion"><img src="assets/images/marcus-r.jpg" alt=""/></div>
+            <div class="event-attendee-info"><div class="event-attendee-name">Marcus R.</div><div class="event-attendee-tier-champion">Champion</div></div>
+          </div>
+          <div class="event-attendee-chip">
+            <div class="avatar event-attendee-avatar-runner-up"><img src="assets/images/james-w.jpg" alt=""/></div>
+            <div class="event-attendee-info"><div class="event-attendee-name">James W.</div><div class="event-attendee-tier-elite">Elite</div></div>
+          </div>
+          <div class="event-attendee-chip">
+            <div class="avatar event-attendee-avatar-bronze"><img src="assets/images/robert-b.jpg" alt=""/></div>
+            <div class="event-attendee-info"><div class="event-attendee-name">Robert B.</div><div class="event-attendee-tier-bronze">Bronze</div></div>
+          </div>
+          <div class="event-attendee-chip">
+            <div class="avatar event-attendee-avatar-member"><img src="assets/images/derick-l.jpg" alt=""/></div>
+            <div class="event-attendee-info"><div class="event-attendee-name">Derek L.</div><div class="event-attendee-tier-member">Member</div></div>
+          </div>
+          <div class="event-attendee-chip">
+            <div class="avatar event-attendee-avatar-member-alt">AK</div>
+            <div class="event-attendee-info"><div class="event-attendee-name">Alan K.</div><div class="event-attendee-tier-member">Member</div></div>
+          </div>
+          <div class="event-attendee-overflow-chip">
+            <div class="avatar event-attendee-avatar-overflow">+9</div>
+            <div class="event-detail-meta-muted">View all</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile-only inline rail. The right .rail-col is hidden by the
+           app shell on ≤900px, so the three rail widgets are duplicated
+           here in the main column. Order: Quick RSVP (primary action) →
+           Hosted By (credibility) → What's Included (specifics). Hidden
+           above 900px via .event-detail-mobile-rail in event-detail.css. -->
+      <div class="event-detail-mobile-rail">
+
+        <div class="widget event-rail-rsvp-card">
+          <div class="widget-title">📍 Quick RSVP</div>
+          <div class="event-rail-date-block">
+            <div class="event-rail-weekday">Saturday</div>
+            <div class="event-rail-day">May 18</div>
+            <div class="event-rail-time">7:00 PM – 10:00 PM</div>
+          </div>
+          <div class="event-rail-capacity">
+            <div class="event-rail-capacity-row">
+              <span>14 going</span><span class="event-rail-spots-left">16 spots left</span>
+            </div>
+            <div class="event-rail-progress-track">
+              <div class="event-rail-progress-fill"></div>
+            </div>
+          </div>
+          <button onclick="toggleRSVP()" id="rsvp-btn-mobile" class="event-rail-rsvp-button">RSVP — $45</button>
+        </div>
+
+        <div class="widget">
+          <div class="widget-title">👤 Hosted By</div>
+          <div class="event-rail-host-row">
+            <div class="avatar event-rail-host-avatar">GW</div>
+            <div><div class="event-detail-item-name">Gerald Whitmore</div><div class="event-detail-meta-muted">Master Blender</div></div>
+          </div>
+          <p class="event-rail-host-bio">30 years in the trade. Former cellar master at Glenfarclas.</p>
+        </div>
+
+        <div class="widget">
+          <div class="widget-title">📦 What's Included</div>
+          <ul class="event-rail-included-list">
+            <li class="event-rail-included-item"><i data-lucide="check" class="event-rail-included-check ic-12"></i>4 single malts (1.5oz each)</li>
+            <li class="event-rail-included-item"><i data-lucide="check" class="event-rail-included-check ic-12"></i>2 premium cigars</li>
+            <li class="event-rail-included-item"><i data-lucide="check" class="event-rail-included-check ic-12"></i>Tasting flight cards</li>
+            <li class="event-rail-included-item"><i data-lucide="check" class="event-rail-included-check ic-12"></i>Light snacks</li>
+            <li class="event-rail-included-item"><i data-lucide="check" class="event-rail-included-check ic-12"></i>+150 leaderboard points</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RAIL -->
+    <aside class="rail-col event-detail-rail">
+
+      <div class="widget event-rail-rsvp-card">
+        <div class="widget-title">📍 Quick RSVP</div>
+        <div class="event-rail-date-block">
+          <div class="event-rail-weekday">Saturday</div>
+          <div class="event-rail-day">May 18</div>
+          <div class="event-rail-time">7:00 PM – 10:00 PM</div>
+        </div>
+        <div class="event-rail-capacity">
+          <div class="event-rail-capacity-row">
+            <span>14 going</span><span class="event-rail-spots-left">16 spots left</span>
+          </div>
+          <div class="event-rail-progress-track">
+            <div class="event-rail-progress-fill"></div>
+          </div>
+        </div>
+        <button onclick="toggleRSVP()" id="rsvp-btn2" class="event-rail-rsvp-button">RSVP — $45</button>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">👤 Hosted By</div>
+        <div class="event-rail-host-row">
+          <div class="avatar event-rail-host-avatar">GW</div>
+          <div><div class="event-detail-item-name">Gerald Whitmore</div><div class="event-detail-meta-muted">Master Blender</div></div>
+        </div>
+        <p class="event-rail-host-bio">30 years in the trade. Former cellar master at Glenfarclas.</p>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">📦 What's Included</div>
+        <ul class="event-rail-included-list">
+          <li class="event-rail-included-item"><i data-lucide="check" class="event-rail-included-check ic-12"></i>4 single malts (1.5oz each)</li>
+          <li class="event-rail-included-item"><i data-lucide="check" class="event-rail-included-check ic-12"></i>2 premium cigars</li>
+          <li class="event-rail-included-item"><i data-lucide="check" class="event-rail-included-check ic-12"></i>Tasting flight cards</li>
+          <li class="event-rail-included-item"><i data-lucide="check" class="event-rail-included-check ic-12"></i>Light snacks</li>
+          <li class="event-rail-included-item"><i data-lucide="check" class="event-rail-included-check ic-12"></i>+150 leaderboard points</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+<nav class="bottom-nav">
+  <a href="feed.html" class="bottom-nav-item"><i data-lucide="newspaper" class="ic-20"></i>Feed</a>
+  <a href="explore.html" class="bottom-nav-item"><i data-lucide="search" class="ic-20"></i>Explore</a>
+  <a href="create-post.html" class="bottom-nav-item"><div class="bottom-nav-create-btn"><i data-lucide="plus" class="ic-20"></i></div></a>
+  <a href="events.html" class="bottom-nav-item active"><i data-lucide="calendar" class="ic-20"></i>Events</a>
+  <a href="profile.html" class="bottom-nav-item"><i data-lucide="user" class="ic-20"></i>Profile</a>
+</nav>
+
+<script>
+  let rsvpd=false;
+  function toggleRSVP(){
+    rsvpd=!rsvpd;
+    ['rsvp-btn','rsvp-btn2','rsvp-btn-mobile'].forEach(id=>{
+      const b=document.getElementById(id);if(!b)return;
+      if(rsvpd){b.textContent='✓ You\'re Going';b.style.background='#4A7C59';}
+      else{b.textContent=id==='rsvp-btn'?'RSVP for Scotch & Smoke Night':'RSVP — $45';b.style.background='var(--burg)';}
+    });
+  }
+</script>
+</body>
+</html>

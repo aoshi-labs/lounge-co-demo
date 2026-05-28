@@ -1,0 +1,43 @@
+{
+  "cases": [
+    {
+      "id": "numeric-body-strength",
+      "expect": {
+        "body": "Medium-Full",
+        "strength": 2,
+        "strengthLabel": "Medium-Light"
+      },
+      "actual": {
+        "body": "Medium-Full",
+        "strength": 2,
+        "strengthLabel": "Medium-Light"
+      },
+      "ok": true
+    },
+    {
+      "id": "string-body-preserved",
+      "expect": {
+        "body": "Medium-Full",
+        "strength": 4,
+        "strengthLabel": "Medium-Full"
+      },
+      "actual": {
+        "body": "Medium-Full",
+        "strength": 4,
+        "strengthLabel": "Medium-Full"
+      },
+      "ok": true
+    },
+    {
+      "id": "spirit-passthrough",
+      "expect": {
+        "unchanged": true
+      },
+      "actual": {
+        "unchanged": true
+      },
+      "ok": true
+    }
+  ],
+  "ok": true
+}

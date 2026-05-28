@@ -1,0 +1,35 @@
+{
+  "snap": {
+    "turns": 0,
+    "affinityOverrides": 0,
+    "suppressions": 0,
+    "curatedWhySignals": 0,
+    "runtimeUtilizationPct": 99,
+    "promptVisibleNote": "Cigar menu uses compact rollup; full guidance via PRODUCT CONTEXT + retrieval.",
+    "deadFieldsNote": "spec.wrapper/binder/filler not yet in scoring — construction via teaching layer.",
+    "trackerCigars": 184,
+    "withPairingAffinity": 178,
+    "affinityCoveragePct": 97,
+    "activeFields": [
+      "pairingAffinity",
+      "whyRecommend",
+      "bestFor",
+      "avoidIf",
+      "beginnerSafe",
+      "smokeTime",
+      "wrapperRole",
+      "binderRole",
+      "fillerRole",
+      "occasion",
+      "flavorFamily"
+    ],
+    "lastDiagnostics": {
+      "affinityInfluencePct": 0,
+      "deckOverride": false,
+      "affinityConflict": false,
+      "suppressedCount": 0,
+      "contextHits": []
+    }
+  },
+  "ok": true
+}

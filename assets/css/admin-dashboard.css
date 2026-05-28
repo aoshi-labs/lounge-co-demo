@@ -1,0 +1,121 @@
+  @media(max-width:1023px){.sidebar{transform:translateX(-100%)}.sidebar.open{transform:translateX(0)}.main-area{margin-left:0;}.stat-grid{grid-template-columns:repeat(2,1fr)!important;}}
+  .stat-card{background:var(--bg-surface);border:1px solid var(--bg-border);border-radius:14px;padding:18px 20px;}
+  .stat-num{font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--text-primary);line-height:1.05;}
+  .stat-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;}
+  .stat-delta{font-size:11px;font-weight:600;margin-top:6px;display:inline-flex;align-items:center;gap:3px;}
+  .delta-up{color:var(--tier-elite);}
+  .delta-down{color:var(--burg);}
+  .widget{background:var(--bg-surface);border:1px solid var(--bg-border);border-radius:14px;padding:20px;}
+  .widget-title{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+
+
+/* === Page-specific styles === */
+.admin-dashboard-section-heading { font-size:15px; font-weight:600; color:var(--text-primary); }
+.admin-dashboard-meta-text { font-size:11px; color:var(--text-muted); }
+.admin-dashboard-page { padding:24px 24px 40px; display:flex; flex-direction:column; gap:18px; max-width:1240px; width:100%; }
+.admin-dashboard-stat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+.admin-dashboard-stat-num-elite { color:var(--tier-elite); }
+.admin-dashboard-charts-row { display:grid; grid-template-columns:2fr 1fr; gap:14px; }
+.admin-dashboard-widget-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; }
+.admin-dashboard-widget-title-inline { margin:0; }
+.admin-dashboard-period-select { background:var(--bg-elevated); border:1px solid var(--bg-border); color:var(--text-secondary); border-radius:6px; padding:5px 8px; font-size:11px; font-family:var(--font-ui); }
+.admin-dashboard-chart-svg { width:100%; height:auto; }
+.admin-dashboard-chart-axis { display:flex; justify-content:space-between; font-size:10px; color:var(--text-muted); margin-top:8px; }
+.admin-dashboard-top-products-list { display:flex; flex-direction:column; gap:12px; }
+.admin-dashboard-top-product-row { display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px; }
+.admin-dashboard-text-primary { color:var(--text-primary); font-weight:600; }
+.admin-dashboard-text-gold { color:var(--gold); }
+.admin-dashboard-progress-bar { height:5px; background:var(--bg-elevated); border-radius:99px; overflow:hidden; }
+.admin-dashboard-progress-fill-90 { height:100%; width:90%; background:var(--gold); }
+.admin-dashboard-progress-fill-73 { height:100%; width:73%; background:var(--gold); }
+.admin-dashboard-progress-fill-60 { height:100%; width:60%; background:var(--gold); }
+.admin-dashboard-progress-fill-47 { height:100%; width:47%; background:var(--gold); }
+.admin-dashboard-progress-fill-34 { height:100%; width:34%; background:var(--gold); }
+.admin-dashboard-activity-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.admin-dashboard-widget-header-flex { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
+.admin-dashboard-widget-link { font-size:12px; color:var(--text-muted); text-decoration:none; }
+.admin-dashboard-list-stack { display:flex; flex-direction:column; gap:10px; }
+.admin-dashboard-request-row-new { display:flex; align-items:center; gap:12px; padding:10px 12px; background:rgba(var(--burg-rgb), .08); border:1px solid rgba(var(--burg-rgb), .2); border-radius:9px; }
+.admin-dashboard-request-status-new { background:rgba(var(--burg-rgb), .2); color:var(--burg); border-radius:99px; padding:3px 9px; font-size:10px; font-weight:700; flex-shrink:0; }
+.admin-dashboard-request-title { font-size:12px; color:var(--text-primary); font-weight:600; }
+.admin-dashboard-request-btn-accept { background:var(--burg); color:var(--cream); border:none; border-radius:7px; padding:6px 12px; font-size:11px; font-weight:700; cursor:pointer; }
+.admin-dashboard-request-row-prep { display:flex; align-items:center; gap:12px; padding:10px 12px; background:rgba(var(--gold-rgb), .08); border:1px solid rgba(var(--gold-rgb), .2); border-radius:9px; }
+.admin-dashboard-request-status-prep { background:rgba(var(--gold-rgb), .2); color:var(--gold); border-radius:99px; padding:3px 9px; font-size:10px; font-weight:700; flex-shrink:0; }
+.admin-dashboard-request-btn-secondary { background:var(--bg-elevated); border:1px solid var(--bg-border); color:var(--text-primary); border-radius:7px; padding:6px 12px; font-size:11px; font-weight:600; cursor:pointer; }
+.admin-dashboard-request-row-ready { display:flex; align-items:center; gap:12px; padding:10px 12px; background:rgba(var(--tier-elite-rgb), .08); border:1px solid rgba(var(--tier-elite-rgb), .2); border-radius:9px; }
+.admin-dashboard-request-status-ready { background:rgba(var(--tier-elite-rgb), .2); color:var(--tier-elite); border-radius:99px; padding:3px 9px; font-size:10px; font-weight:700; flex-shrink:0; }
+.admin-dashboard-request-btn-serve { background:var(--tier-elite); color:var(--cream); border:none; border-radius:7px; padding:6px 12px; font-size:11px; font-weight:700; cursor:pointer; }
+.admin-dashboard-activity-row-item { display:flex; align-items:center; gap:10px; font-size:12px; }
+.admin-dashboard-activity-avatar-gold { background:var(--gold); color:var(--bg-base); width:28px; height:28px; font-size:10px; }
+.admin-dashboard-activity-text { flex:1; }
+.admin-dashboard-activity-action { color:var(--text-muted); }
+.admin-dashboard-activity-time { font-size:10px; color:var(--text-muted); }
+.admin-dashboard-activity-avatar-elite { background:var(--tier-elite); color:var(--tier-elite-ink); width:28px; height:28px; font-size:10px; }
+.admin-dashboard-activity-avatar-runner-up { background:var(--tier-runner-up); color:var(--tier-runner-up-ink); width:28px; height:28px; font-size:10px; }
+.admin-dashboard-activity-avatar-pending { background:var(--bg-elevated); color:var(--gold); width:28px; height:28px; font-size:10px; border:1px solid var(--bg-border); }
+.admin-dashboard-activity-btn-review { background:var(--burg); color:var(--cream); border:none; border-radius:6px; padding:3px 9px; font-size:10px; font-weight:700; cursor:pointer; }
+.admin-dashboard-activity-avatar-bronze { background:var(--tier-bronze); color:var(--tier-bronze-ink); width:28px; height:28px; font-size:10px; }
+/* Upcoming events grid — was a hard 3-col grid that crushed each card
+   to ~80px wide on iPhone SE. auto-fit + minmax(180px, 1fr) lets the
+   grid pack as many columns as fit at >= 180px each, then wrap to a
+   new row when they don't. On phones that means 1 card per row at full
+   width; on tablets 2; on desktop 3+. */
+.admin-dashboard-events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+.admin-dashboard-event-card { padding:14px; background:var(--bg-elevated); border:1px solid var(--bg-border); border-radius:10px; }
+.admin-dashboard-event-card-header { display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:8px; }
+.admin-dashboard-event-name { font-family:var(--font-display); font-size:1.1rem; font-weight:600; color:var(--text-primary); }
+.admin-dashboard-event-rsvp-pill-elite { background:rgba(var(--tier-elite-rgb), .15); color:var(--tier-elite); border-radius:99px; padding:2px 7px; font-size:10px; font-weight:700; white-space:nowrap; }
+.admin-dashboard-event-rsvp-pill-gold { background:rgba(var(--gold-rgb), .15); color:var(--gold); border-radius:99px; padding:2px 7px; font-size:10px; font-weight:700; white-space:nowrap; }
+
+/* === A15 — Sterlon Insights widget === */
+.adm-ins { margin: 18px 0 22px; background: linear-gradient(135deg, rgba(var(--gold-rgb), .04) 0%, var(--bg-surface) 60%); }
+.adm-ins-head { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:14px; flex-wrap:wrap; }
+.adm-ins-sub { font-family:var(--font-body); font-style:italic; font-size:12px; color:var(--text-secondary); margin-top:6px; line-height:1.5; }
+.adm-ins-deep { font-family:var(--font-ui); font-size:12px; font-weight:600; color:var(--gold); text-decoration:none; white-space:nowrap; }
+.adm-ins-deep:hover { text-decoration:underline; }
+
+.adm-ins-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:12px; }
+.adm-ins-stat {
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  border-radius: 11px;
+  padding: 14px;
+}
+.adm-ins-num { font-family:var(--font-display); font-size:1.6rem; font-weight:700; color:var(--text-primary); line-height:1; }
+.adm-ins-num-burg { color: var(--burg); }
+.adm-ins-num-gold { color: var(--gold); }
+.adm-ins-lbl { font-size:10px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:var(--text-muted); margin-top:8px; }
+.adm-ins-delta { font-size:10px; font-weight:600; color:var(--text-secondary); margin-top:6px; }
+
+.adm-ins-topq {
+  margin-top: 14px;
+  padding: 14px 16px;
+  background: var(--bg-elevated);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 10px 10px 0;
+}
+.adm-ins-topq-label { font-family:var(--font-ui); font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); margin-bottom:6px; }
+.adm-ins-topq-text { font-family:var(--font-body); font-style:italic; font-size:14px; color:var(--text-primary); line-height:1.5; }
+.adm-ins-topq-meta { font-size:11px; color:var(--text-muted); margin-top:6px; }
+
+@media (max-width: 1023px) {
+  .adm-ins-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Mobile (≤767px): the dashboard's two main content grids
+   - .admin-dashboard-charts-row (Revenue chart 2fr | Top products 1fr)
+   - .admin-dashboard-activity-row (Active orders 1fr | Members 1fr)
+   each cram two widgets side-by-side. At phone widths the chart is
+   illegible and the right column gets crushed. Collapse both to a single
+   column so each widget reads at full width, and tighten widget padding
+   so the cards don't waste vertical space. */
+@media (max-width: 767px) {
+  .admin-dashboard-charts-row,
+  .admin-dashboard-activity-row { grid-template-columns: 1fr; gap: 12px; }
+  .widget { padding: 16px; }
+  .adm-ins-grid { grid-template-columns: 1fr; }
+}

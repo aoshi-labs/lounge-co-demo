@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In — Lounge & Co.</title>
+
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: sign-in page should not rank. Social previews are still
+       useful when members share invite links, so OG + Twitter remain.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Sign in to Lounge & Co. — your platform-wide account for the cigar and spirits connoisseur network. One identity across every participating venue." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://loungeco.lounge.app/login" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Sign In — Lounge & Co." />
+  <meta property="og:description" content="Sign in to your Lounge & Co. account — one identity across every participating venue." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sign In — Lounge & Co." />
+  <meta name="twitter:description" content="One Lounge & Co. account. Every participating venue." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/login.css"/>
+</head>
+<body>
+
+
+
+<!-- ════════════════════════════════════════════════════════
+     NAVIGATION — desktop links + mobile hamburger drawer
+════════════════════════════════════════════════════════ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="landing.html" class="av-nav-logo">
+      <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+      <div>
+        <div class="logo-text-name" data-lounge-name>Lounge & Co.</div>
+        <div class="logo-text-sub">Connoisseur Network</div>
+      </div>
+    </a>
+    <div id="desktop-links" class="av-nav-desktop">
+      <div class="dynamic-nav-links av-nav-dynamic"></div>
+      <div class="av-nav-divider"></div>
+      <a href="login.html" class="nav-link av-nav-signin">Sign In</a>
+      <a href="age-verify.html" class="nav-cta">Join Now</a>
+    </div>
+    <div class="av-nav-right">
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <i data-lucide="menu" class="ic-22"></i>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="mobile-menu av-mobile-menu">
+    <div class="dynamic-nav-links mobile-nav av-mobile-dynamic"></div>
+    <div class="av-mobile-divider"></div>
+    <a href="login.html" class="nav-link av-mobile-link">Sign In</a>
+    <a href="age-verify.html" class="nav-cta av-mobile-cta">Join Now</a>
+  </div>
+</nav>
+
+  <!-- ── LEFT: Brand panel ── -->
+  <div class="brand-panel">
+    <div class="login-brand-section">
+      <!-- Logo -->
+      <a href="landing.html" class="login-brand-logo">
+        <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+        <div>
+          <div id="lounge-name" class="login-brand-lounge-name">Lounge & Co.</div>
+          <div class="login-brand-lounge-subtitle">Connoisseur Network</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Center content -->
+    <div class="login-brand-section">
+      <div class="ornament-line login-ornament-spacer">
+        <svg width="10" height="10" viewBox="0 0 12 12" fill="var(--gold-dim)"><polygon points="6,0 7.5,4.5 12,4.5 8.25,7.5 9.75,12 6,9 2.25,12 3.75,7.5 0,4.5 4.5,4.5"/></svg>
+      </div>
+      <h2 class="login-brand-heading">Welcome<br><span class="login-brand-heading-accent">back.</span></h2>
+      <p class="login-brand-tagline">One identity. Every participating venue.<br>Your network awaits.</p>
+
+      <!-- Network stats -->
+      <div class="login-brand-stats">
+        <div><div class="login-brand-stat-num">12,400+</div><div class="login-brand-stat-label">Members</div></div>
+        <div class="login-brand-stat-divider"></div>
+        <div><div class="login-brand-stat-num">12</div><div class="login-brand-stat-label">Venues</div></div>
+        <div class="login-brand-stat-divider"></div>
+        <div><div class="login-brand-stat-num">48,000+</div><div class="login-brand-stat-label">Reviews</div></div>
+      </div>
+
+      <!-- Testimonial -->
+      <div class="testimonial">
+        <p class="login-testimonial-quote">"Best pairing I've ever had — the Sterlon recommended the Padron Maduro with Buffalo Trace and I'll never go back."</p>
+        <div class="login-testimonial-footer">
+          <div class="login-testimonial-avatar"><img src="assets/images/marcus-r.jpg" alt=""/></div>
+          <div><div class="login-testimonial-name">Marcus R.</div><div class="login-testimonial-tier">Champion · 2,840 pts</div></div>
+          <div class="login-testimonial-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="login-brand-section">
+      <p class="login-footer-text">Lounge &amp; Co. is for adults 21 and over. Age verified via Token of Trust at signup.</p>
+    </div>
+  </div>
+
+  <!-- ── RIGHT: Form panel ── -->
+  <div class="form-panel">
+    <div class="form-card">
+      <h1 class="login-form-title">Sign in to your Lounge &amp; Co. account</h1>
+      <p class="login-form-subtitle">One account. Every venue on the network.</p>
+
+      <div class="error-msg" id="error-msg">Email or password incorrect. Please try again.</div>
+
+      <form onsubmit="handleLogin(event)">
+        <div class="field">
+          <label for="login-email">Email</label>
+          <input class="lounge-input" type="email" id="login-email" placeholder="your@email.com" required autocomplete="email" />
+        </div>
+
+        <div class="field">
+          <label for="login-pw">Password</label>
+          <div class="pw-wrap">
+            <input class="lounge-input" type="password" id="login-pw" placeholder="••••••••" required autocomplete="current-password" />
+            <button type="button" class="pw-toggle" onclick="togglePw()" title="Show password">
+              <i data-lucide="eye" class="ic-16"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="forgot-row">
+          <a href="#" class="link-gold">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn-burg">Sign In</button>
+      </form>
+
+      <div class="divider"><span>or</span></div>
+
+      <!-- SSO placeholder — will wire to OAuth in backend phase -->
+      <a href="#" class="btn-outline">
+        <i data-lucide="monitor" class="ic-16"></i>
+        Continue with SSO
+      </a>
+
+      <div class="register-cta">
+        <p>Not a member yet? <a href="age-verify.html">Request access →</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.LOUNGE = { name:"Lounge & Co.", initials:"L&C" };
+    const el=document.getElementById('lounge-name'); if(el) el.textContent=LOUNGE.name;
+    ['logo-initials','logo-initials-m'].forEach(id => { const el=document.getElementById(id); if(el) el.textContent=LOUNGE.initials; });
+
+    /* Show mobile logo on small screens */
+    /* Pre-fill email from session storage */
+    const pending = sessionStorage.getItem('lounge-pending-email');
+    if(pending) document.getElementById('login-email').value = pending;
+
+    function togglePw(){
+      const inp=document.getElementById('login-pw');
+      inp.type = inp.type==='password' ? 'text' : 'password';
+    }
+
+    function handleLogin(e){
+      e.preventDefault();
+      /* In production: POST /api/auth/login.
+         Backend should return the count of joined venues; client routes:
+           - 0 venues  →  discover-venues.html (first-run discovery)
+           - 1 venue   →  that workspace's feed.html
+           - 2+ venues →  workspace-picker.html
+         Mock below assumes a 2+ venue case for the demo. */
+      sessionStorage.setItem('lounge-logged-in','1');
+      window.location.href = 'workspace-picker.html';
+    }
+
+    // Platform nav links ( Lounge & Co. consumer-brand chrome,
+    // not per-venue). Mirrors landing.html navigation.
+    const LOUNGE_NAV = [
+      { label: "Discover", href: "discover-venues.html" },
+      { label: "Sterlon",  href: "sterlon.html" },
+      { label: "Pricing",  href: "member-billing.html" },
+    ];
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.dynamic-nav-links').forEach(container => {
+        LOUNGE_NAV.forEach(link => {
+          const a = document.createElement('a');
+          a.href = link.href; a.textContent = link.label; a.className = 'nav-link';
+          if (container.classList.contains('mobile-nav')) a.style.fontSize = '16px';
+          container.appendChild(a);
+        });
+      });
+    });
+
+    function toggleMenu() {
+      document.getElementById('mobile-menu').classList.toggle('open');
+    }
+
+  </script>
+</body>
+</html>

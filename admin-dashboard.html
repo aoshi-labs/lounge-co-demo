@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Admin Dashboard — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Owner dashboard: today's activity, top members, and lounge health at a glance." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Admin Dashboard — Lounge & Co." />
+  <meta property="og:description" content="Owner dashboard: today's activity, top members, and lounge health at a glance." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Admin Dashboard — Lounge & Co." />
+  <meta name="twitter:description" content="Owner dashboard: today's activity, top members, and lounge health at a glance." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/admin-dashboard.css"/>
+</head>
+<body>
+
+<nav class="sidebar admin" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Owner Console</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-owner"><img src="assets/images/gerald-o.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Gerald Owens</div><div class="sidebar-user-role">Owner · Lounge & Co.</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Overview</div>
+    <a href="admin-dashboard.html" class="nav-item active"><i data-lucide="layout-grid" class="ic-17"></i>Dashboard</a>
+    <a href="admin-analytics.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Analytics</a>
+    <div class="nav-section-label">Manage</div>
+    <a href="admin-members.html" class="nav-item"><i data-lucide="users" class="ic-17"></i>Members</a>
+    <a href="admin-catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="admin-orders.html" class="nav-item"><i data-lucide="receipt-text" class="ic-17"></i>Requests<span class="notif-dot">3</span></a>
+    <a href="admin-events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-settings.html" class="nav-item"><i data-lucide="settings" class="ic-17"></i>Lounge Settings</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="chevron-left" class="ic-17"></i>Back to Member View</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area admin">
+  <h1 class="visually-hidden">Admin Dashboard</h1>
+  <header class="top-bar">
+    <button class="icon-btn sup-menu-btn" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+      <i data-lucide="menu" class="ic-16"></i>
+    </button>
+    <div class="topbar-actions">
+    </div>
+  </header>
+
+  <div class="admin-dashboard-page">
+
+    <!-- Stat grid -->
+    <div class="stat-grid admin-dashboard-stat-grid">
+      <div class="stat-card">
+        <div class="stat-label">Active Members</div>
+        <div class="stat-num">247</div>
+        <div class="stat-delta delta-up">▲ +12 this month</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Revenue MTD</div>
+        <div class="stat-num">$18,420</div>
+        <div class="stat-delta delta-up">▲ +18% vs last month</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Tab Items Today</div>
+        <div class="stat-num">47</div>
+        <div class="stat-delta delta-up">▲ Avg $32 / tab</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Members on Site</div>
+        <div class="stat-num admin-dashboard-stat-num-elite">6</div>
+        <div class="stat-delta delta-up">● Live now</div>
+      </div>
+    </div>
+
+    <!-- A15 — Sterlon Insights (owner ROI) -->
+    <div class="widget adm-ins">
+      <div class="adm-ins-head">
+        <div>
+          <div class="widget-title">✨ Sterlon Insights</div>
+          <div class="adm-ins-sub">How the Sterlon is helping your floor this week.</div>
+        </div>
+        <a href="admin-analytics.html" class="adm-ins-deep">Full analytics →</a>
+      </div>
+
+      <div class="adm-ins-grid">
+        <div class="adm-ins-stat">
+          <div class="adm-ins-num">312</div>
+          <div class="adm-ins-lbl">Sterlon sessions this week</div>
+          <div class="adm-ins-delta delta-up">▲ +28% vs last week</div>
+        </div>
+        <div class="adm-ins-stat">
+          <div class="adm-ins-num adm-ins-num-burg">1,184</div>
+          <div class="adm-ins-lbl">Questions handled</div>
+          <div class="adm-ins-delta delta-up">≈ 39 hours of staff time</div>
+        </div>
+        <div class="adm-ins-stat">
+          <div class="adm-ins-num adm-ins-num-gold">38%</div>
+          <div class="adm-ins-lbl">Recommendations → tab adds</div>
+          <div class="adm-ins-delta delta-up">▲ vs 31% last week</div>
+        </div>
+        <div class="adm-ins-stat">
+          <div class="adm-ins-num">$3,420</div>
+          <div class="adm-ins-lbl">Attributed revenue</div>
+          <div class="adm-ins-delta delta-up">From concierge-led tab adds</div>
+        </div>
+      </div>
+
+      <!-- Top question this week — useful for staff training -->
+      <div class="adm-ins-topq">
+        <div class="adm-ins-topq-label">📌 Most asked this week</div>
+        <div class="adm-ins-topq-text">"What should I pair with the Pappy 23 we just got in?"</div>
+        <div class="adm-ins-topq-meta">Asked 47 times · Sterlon surfaced Padron 1926 in 41 of 47 answers</div>
+      </div>
+    </div>
+
+    <!-- Charts row -->
+    <div class="admin-dashboard-charts-row">
+
+      <!-- Revenue chart -->
+      <div class="widget">
+        <div class="admin-dashboard-widget-header">
+          <div class="widget-title admin-dashboard-widget-title-inline">📈 Revenue (Last 30 Days)</div>
+          <select class="admin-dashboard-period-select" aria-label="Stats time period"><option>Last 30 days</option><option>Last 90 days</option></select>
+        </div>
+
+        <!-- Simple SVG chart -->
+        <svg viewBox="0 0 600 180" class="admin-dashboard-chart-svg">
+          <defs>
+            <linearGradient id="rev-grad" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#D4AF37" stop-opacity=".3"/><stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/></linearGradient>
+          </defs>
+          <!-- gridlines -->
+          <line x1="0" y1="40" x2="600" y2="40" stroke="#2E2620" stroke-dasharray="2,4"/>
+          <line x1="0" y1="80" x2="600" y2="80" stroke="#2E2620" stroke-dasharray="2,4"/>
+          <line x1="0" y1="120" x2="600" y2="120" stroke="#2E2620" stroke-dasharray="2,4"/>
+          <!-- area -->
+          <path d="M0,140 L40,120 L80,100 L120,110 L160,80 L200,90 L240,70 L280,60 L320,75 L360,55 L400,65 L440,45 L480,55 L520,40 L560,30 L600,25 L600,180 L0,180 Z" fill="url(#rev-grad)"/>
+          <!-- line -->
+          <path d="M0,140 L40,120 L80,100 L120,110 L160,80 L200,90 L240,70 L280,60 L320,75 L360,55 L400,65 L440,45 L480,55 L520,40 L560,30 L600,25" stroke="#D4AF37" stroke-width="2" fill="none"/>
+          <!-- end dot -->
+          <circle cx="600" cy="25" r="4" fill="#D4AF37"/>
+        </svg>
+        <div class="admin-dashboard-chart-axis">
+          <span>Apr 12</span><span>Apr 26</span><span>May 11</span>
+        </div>
+      </div>
+
+      <!-- Top products -->
+      <div class="widget">
+        <div class="widget-title">⭐ Top Selling This Month</div>
+        <div class="admin-dashboard-top-products-list">
+          <div>
+            <div class="admin-dashboard-top-product-row">
+              <span class="admin-dashboard-text-primary">Padron 1926 No.35</span>
+              <span class="admin-dashboard-text-gold">$1,890</span>
+            </div>
+            <div class="admin-dashboard-progress-bar"><div class="admin-dashboard-progress-fill-90"></div></div>
+          </div>
+          <div>
+            <div class="admin-dashboard-top-product-row">
+              <span class="admin-dashboard-text-primary">Lagavulin 16yr</span>
+              <span class="admin-dashboard-text-gold">$1,540</span>
+            </div>
+            <div class="admin-dashboard-progress-bar"><div class="admin-dashboard-progress-fill-73"></div></div>
+          </div>
+          <div>
+            <div class="admin-dashboard-top-product-row">
+              <span class="admin-dashboard-text-primary">Ashton VSG Torpedo</span>
+              <span class="admin-dashboard-text-gold">$1,260</span>
+            </div>
+            <div class="admin-dashboard-progress-bar"><div class="admin-dashboard-progress-fill-60"></div></div>
+          </div>
+          <div>
+            <div class="admin-dashboard-top-product-row">
+              <span class="admin-dashboard-text-primary">Cohiba Siglo VI</span>
+              <span class="admin-dashboard-text-gold">$990</span>
+            </div>
+            <div class="admin-dashboard-progress-bar"><div class="admin-dashboard-progress-fill-47"></div></div>
+          </div>
+          <div>
+            <div class="admin-dashboard-top-product-row">
+              <span class="admin-dashboard-text-primary">Glenfarclas 17yr</span>
+              <span class="admin-dashboard-text-gold">$720</span>
+            </div>
+            <div class="admin-dashboard-progress-bar"><div class="admin-dashboard-progress-fill-34"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live activity -->
+    <div class="admin-dashboard-activity-row">
+
+      <!-- Active orders -->
+      <div class="widget">
+        <div class="admin-dashboard-widget-header-flex">
+          <div class="widget-title admin-dashboard-widget-title-inline">🛎 Pending Requests</div>
+          <a href="admin-orders.html" class="admin-dashboard-widget-link">View all →</a>
+        </div>
+        <div class="admin-dashboard-list-stack">
+          <div class="admin-dashboard-request-row-new">
+            <span class="admin-dashboard-request-status-new">NEW</span>
+            <div class="sidebar-user-info"><div class="admin-dashboard-request-title">#CR-0044 — Sean O.</div><div class="admin-dashboard-meta-text">Cohiba × 1, Lagavulin × 2 · $99</div></div>
+            <button class="admin-dashboard-request-btn-accept">Accept</button>
+          </div>
+          <div class="admin-dashboard-request-row-prep">
+            <span class="admin-dashboard-request-status-prep">PREP</span>
+            <div class="sidebar-user-info"><div class="admin-dashboard-request-title">#CR-0043 — Robert B.</div><div class="admin-dashboard-meta-text">Padron × 2, Glenfarclas × 1 · $108</div></div>
+            <button class="admin-dashboard-request-btn-secondary">Ready</button>
+          </div>
+          <div class="admin-dashboard-request-row-ready">
+            <span class="admin-dashboard-request-status-ready">READY</span>
+            <div class="sidebar-user-info"><div class="admin-dashboard-request-title">#CR-0042 — Thomas H.</div><div class="admin-dashboard-meta-text">VSG × 2, Lagavulin × 1, Padron × 1 · $120</div></div>
+            <button class="admin-dashboard-request-btn-serve">Serve ✓</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent member activity -->
+      <div class="widget">
+        <div class="admin-dashboard-widget-header-flex">
+          <div class="widget-title admin-dashboard-widget-title-inline">👥 Recent Activity</div>
+          <a href="admin-members.html" class="admin-dashboard-widget-link">All members →</a>
+        </div>
+        <div class="admin-dashboard-list-stack">
+          <div class="admin-dashboard-activity-row-item">
+            <div class="avatar admin-dashboard-activity-avatar-gold"><img src="assets/images/marcus-r.jpg" alt=""/></div>
+            <div class="admin-dashboard-activity-text"><span class="admin-dashboard-text-primary">Marcus R.</span> <span class="admin-dashboard-activity-action">posted a review</span></div>
+            <span class="admin-dashboard-activity-time">20m</span>
+          </div>
+          <div class="admin-dashboard-activity-row-item">
+            <div class="avatar admin-dashboard-activity-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+            <div class="admin-dashboard-activity-text"><span class="admin-dashboard-text-primary">Thomas H.</span> <span class="admin-dashboard-activity-action">checked in</span></div>
+            <span class="admin-dashboard-activity-time">42m</span>
+          </div>
+          <div class="admin-dashboard-activity-row-item">
+            <div class="avatar admin-dashboard-activity-avatar-runner-up"><img src="assets/images/james-w.jpg" alt=""/></div>
+            <div class="admin-dashboard-activity-text"><span class="admin-dashboard-text-primary">James W.</span> <span class="admin-dashboard-activity-action">RSVP'd Scotch &amp; Smoke</span></div>
+            <span class="admin-dashboard-activity-time">1h</span>
+          </div>
+          <div class="admin-dashboard-activity-row-item">
+            <div class="avatar admin-dashboard-activity-avatar-pending">+</div>
+            <div class="admin-dashboard-activity-text"><span class="admin-dashboard-text-primary">Stephen K.</span> <span class="admin-dashboard-activity-action">new member application</span></div>
+            <button class="admin-dashboard-activity-btn-review">Review</button>
+          </div>
+          <div class="admin-dashboard-activity-row-item">
+            <div class="avatar admin-dashboard-activity-avatar-bronze"><img src="assets/images/robert-b.jpg" alt=""/></div>
+            <div class="admin-dashboard-activity-text"><span class="admin-dashboard-text-primary">Robert B.</span> <span class="admin-dashboard-activity-action">sent a request</span></div>
+            <span class="admin-dashboard-activity-time">3h</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upcoming events row -->
+    <div class="widget">
+      <div class="admin-dashboard-widget-header-flex">
+        <div class="widget-title admin-dashboard-widget-title-inline">📅 Upcoming Events</div>
+        <a href="admin-events.html" class="admin-dashboard-widget-link">Manage events →</a>
+      </div>
+      <div class="admin-dashboard-events-grid">
+        <div class="admin-dashboard-event-card">
+          <div class="admin-dashboard-event-card-header">
+            <div class="admin-dashboard-event-name">Scotch &amp; Smoke Night</div>
+            <span class="admin-dashboard-event-rsvp-pill-elite">14/30</span>
+          </div>
+          <div class="admin-dashboard-meta-text">May 18 · 7:00 PM</div>
+        </div>
+        <div class="admin-dashboard-event-card">
+          <div class="admin-dashboard-event-card-header">
+            <div class="admin-dashboard-event-name">Padron Vertical</div>
+            <span class="admin-dashboard-event-rsvp-pill-gold">7/20</span>
+          </div>
+          <div class="admin-dashboard-meta-text">Jun 1 · 7:00 PM</div>
+        </div>
+        <div class="admin-dashboard-event-card">
+          <div class="admin-dashboard-event-card-header">
+            <div class="admin-dashboard-event-name">Father's Day Bourbon</div>
+            <span class="admin-dashboard-event-rsvp-pill-gold">22/40</span>
+          </div>
+          <div class="admin-dashboard-meta-text">Jun 14 · 6:30 PM</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "budgetMode": "ceiling",
+  "budgetMin": null,
+  "budgetMax": 10,
+  "budgetTarget": null,
+  "budgetCeiling": 10,
+  "categoryFocus": "cigar",
+  "degraded": false,
+  "cigars": [
+    "Punch Dragon Fire Short Gordo",
+    "Esteban Carreras Maduro Mofo Robusto",
+    "Alec Bradley Chunk Maduro XL"
+  ],
+  "cigarMsrps": [
+    6.99,
+    9,
+    6
+  ],
+  "spirit": null,
+  "spiritMsrp": null,
+  "allCigarsWithinBudget": true,
+  "spiritWithinBudget": true,
+  "hasBudgetSignal": true
+}

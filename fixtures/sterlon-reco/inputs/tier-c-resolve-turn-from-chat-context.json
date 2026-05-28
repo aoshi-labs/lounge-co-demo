@@ -1,0 +1,5 @@
+{
+  "op": "resolveTurnFromChatContext",
+  "promptText": "I'm new to whiskey, what should I pour?",
+  "session": {}
+}

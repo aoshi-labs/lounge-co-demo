@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Sterlon History — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Your saved conversations and recommendations from Sterlon, your AI concierge." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Sterlon History — Lounge & Co." />
+  <meta property="og:description" content="Your saved conversations and recommendations from Sterlon, your AI concierge." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sterlon History — Lounge & Co." />
+  <meta name="twitter:description" content="Your saved conversations and recommendations from Sterlon, your AI concierge." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/concierge-history.css"/>
+</head>
+<body>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Thomas H.</div><div class="sidebar-user-tier">Elite · 1,744 pts · #4</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area">
+  <h1 class="visually-hidden">Sterlon History</h1>
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu"><i data-lucide="menu" class="ic-16"></i></button>
+    <span class="chh-page-title">Chat History</span>
+    <div class="topbar-actions">
+      <a href="sterlon.html" class="chh-new" title="New chat"><i data-lucide="edit-3" class="ic-15"></i><span>New chat</span></a>
+    </div>
+  </header>
+
+  <div class="chh-page-frame">
+    <div class="chh-main-col">
+
+      <!-- Stats -->
+      <div class="chh-stats">
+        <div class="chh-stat">
+          <div class="chh-stat-num">47</div>
+          <div class="chh-stat-lbl">Total Conversations</div>
+        </div>
+        <div class="chh-stat">
+          <div class="chh-stat-num chh-num-gold">312</div>
+          <div class="chh-stat-lbl">Messages Exchanged</div>
+        </div>
+        <div class="chh-stat">
+          <div class="chh-stat-num">18</div>
+          <div class="chh-stat-lbl">Recommendations Saved</div>
+        </div>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="chh-toolbar">
+        <div class="chh-search">
+          <i data-lucide="search" class="ic-14"></i>
+          <input type="text" placeholder="Search conversations…" aria-label="Search Sterlon chat history" id="history-search"/>
+        </div>
+        <select class="chh-sort" aria-label="Sort conversations">
+          <option>Most Recent</option>
+          <option>Oldest First</option>
+          <option>Longest Conversation</option>
+          <option>Saved Only</option>
+        </select>
+      </div>
+
+      <!-- Today -->
+      <div class="chh-section">
+        <div class="chh-section-label">Today</div>
+        <div class="chh-list">
+          <a href="sterlon.html" class="chh-card">
+            <div class="chh-card-icon"><img src="assets/images/sterlon.jpg" alt=""/></div>
+            <div class="chh-card-body">
+              <div class="chh-card-title">Pappy 23 pairings</div>
+              <div class="chh-card-preview">"It opens with caramel and ripe apples, then cherries, oak and tobacco come forward with a quiet hint of chocolate underneath. My pick: Padron 1926 No. 35 — cocoa and espresso bridge the glass…"</div>
+              <div class="chh-card-meta">
+                <span><i data-lucide="message-square" class="ic-12"></i>4 messages</span>
+                <span><i data-lucide="clock" class="ic-12"></i>Just now</span>
+                <span class="chh-tag-saved"><i data-lucide="bookmark" class="ic-12"></i>Saved</span>
+              </div>
+            </div>
+            <button class="chh-card-action" aria-label="Delete" title="Delete" onclick="event.preventDefault();event.stopPropagation();"><i data-lucide="trash-2" class="ic-14"></i></button>
+          </a>
+          <a href="sterlon.html" class="chh-card">
+            <div class="chh-card-icon"><img src="assets/images/sterlon.jpg" alt=""/></div>
+            <div class="chh-card-body">
+              <div class="chh-card-title">Cigars under $25 with a creamy finish</div>
+              <div class="chh-card-preview">"For a creamy, approachable smoke under $25, I'd point you toward the Ashton Classic or the Macanudo Inspirado White…"</div>
+              <div class="chh-card-meta">
+                <span><i data-lucide="message-square" class="ic-12"></i>2 messages</span>
+                <span><i data-lucide="clock" class="ic-12"></i>1 hr ago</span>
+              </div>
+            </div>
+            <button class="chh-card-action" aria-label="Delete" title="Delete" onclick="event.preventDefault();event.stopPropagation();"><i data-lucide="trash-2" class="ic-14"></i></button>
+          </a>
+          <a href="sterlon.html" class="chh-card">
+            <div class="chh-card-icon"><img src="assets/images/sterlon.jpg" alt=""/></div>
+            <div class="chh-card-body">
+              <div class="chh-card-title">Weekend pairing for guests</div>
+              <div class="chh-card-preview">"With three guests of varied palates, I'd open with a medium-bodied Ashton VSG and the Glenfarclas 12 — broad appeal, easy entry…"</div>
+              <div class="chh-card-meta">
+                <span><i data-lucide="message-square" class="ic-12"></i>6 messages</span>
+                <span><i data-lucide="clock" class="ic-12"></i>3 hr ago</span>
+              </div>
+            </div>
+            <button class="chh-card-action" aria-label="Delete" title="Delete" onclick="event.preventDefault();event.stopPropagation();"><i data-lucide="trash-2" class="ic-14"></i></button>
+          </a>
+        </div>
+      </div>
+
+      <!-- This Week -->
+      <div class="chh-section">
+        <div class="chh-section-label">This Week</div>
+        <div class="chh-list">
+          <a href="sterlon.html" class="chh-card">
+            <div class="chh-card-icon"><img src="assets/images/sterlon.jpg" alt=""/></div>
+            <div class="chh-card-body">
+              <div class="chh-card-title">Cigars for a rainy day</div>
+              <div class="chh-card-preview">"A rainy evening calls for something contemplative — try the Padron 1964 Anniversary Maduro with a peated whisky…"</div>
+              <div class="chh-card-meta">
+                <span><i data-lucide="message-square" class="ic-12"></i>7 messages</span>
+                <span><i data-lucide="clock" class="ic-12"></i>Yesterday</span>
+                <span class="chh-tag-saved"><i data-lucide="bookmark" class="ic-12"></i>Saved</span>
+              </div>
+            </div>
+            <button class="chh-card-action" aria-label="Delete" title="Delete" onclick="event.preventDefault();event.stopPropagation();"><i data-lucide="trash-2" class="ic-14"></i></button>
+          </a>
+          <a href="sterlon.html" class="chh-card">
+            <div class="chh-card-icon"><img src="assets/images/sterlon.jpg" alt=""/></div>
+            <div class="chh-card-body">
+              <div class="chh-card-title">Best mid-tier whisky to gift</div>
+              <div class="chh-card-preview">"For a thoughtful mid-tier gift, the Glenfarclas 17 or the Springbank 10 strike the right balance of character and approachability…"</div>
+              <div class="chh-card-meta">
+                <span><i data-lucide="message-square" class="ic-12"></i>5 messages</span>
+                <span><i data-lucide="clock" class="ic-12"></i>2 days ago</span>
+              </div>
+            </div>
+            <button class="chh-card-action" aria-label="Delete" title="Delete" onclick="event.preventDefault();event.stopPropagation();"><i data-lucide="trash-2" class="ic-14"></i></button>
+          </a>
+          <a href="sterlon.html" class="chh-card">
+            <div class="chh-card-icon"><img src="assets/images/sterlon.jpg" alt=""/></div>
+            <div class="chh-card-body">
+              <div class="chh-card-title">Glenfarclas 17 vs Glenfarclas 21</div>
+              <div class="chh-card-preview">"The 21 has more sherry oak and a richer, drier finish; the 17 is sweeter and rounder. For pairing with full-bodied cigars, I'd lean…"</div>
+              <div class="chh-card-meta">
+                <span><i data-lucide="message-square" class="ic-12"></i>9 messages</span>
+                <span><i data-lucide="clock" class="ic-12"></i>3 days ago</span>
+              </div>
+            </div>
+            <button class="chh-card-action" aria-label="Delete" title="Delete" onclick="event.preventDefault();event.stopPropagation();"><i data-lucide="trash-2" class="ic-14"></i></button>
+          </a>
+        </div>
+      </div>
+
+      <!-- This Month -->
+      <div class="chh-section">
+        <div class="chh-section-label">This Month</div>
+        <div class="chh-list">
+          <a href="sterlon.html" class="chh-card">
+            <div class="chh-card-icon"><img src="assets/images/sterlon.jpg" alt=""/></div>
+            <div class="chh-card-body">
+              <div class="chh-card-title">Cuban Heritage Night pre-game</div>
+              <div class="chh-card-preview">"For Cuban Heritage Night, your palate cleansing pour should be lighter — perhaps a Cuban-style coffee or a Daiquiri before…"</div>
+              <div class="chh-card-meta">
+                <span><i data-lucide="message-square" class="ic-12"></i>4 messages</span>
+                <span><i data-lucide="clock" class="ic-12"></i>1 week ago</span>
+              </div>
+            </div>
+            <button class="chh-card-action" aria-label="Delete" title="Delete" onclick="event.preventDefault();event.stopPropagation();"><i data-lucide="trash-2" class="ic-14"></i></button>
+          </a>
+          <a href="sterlon.html" class="chh-card">
+            <div class="chh-card-icon"><img src="assets/images/sterlon.jpg" alt=""/></div>
+            <div class="chh-card-body">
+              <div class="chh-card-title">Father's Day gift ideas</div>
+              <div class="chh-card-preview">"Knowing your father appreciates structure and craft, a four-cigar sampler with one each of Padron, Ashton, Davidoff, and Arturo Fuente…"</div>
+              <div class="chh-card-meta">
+                <span><i data-lucide="message-square" class="ic-12"></i>8 messages</span>
+                <span><i data-lucide="clock" class="ic-12"></i>2 weeks ago</span>
+                <span class="chh-tag-saved"><i data-lucide="bookmark" class="ic-12"></i>Saved</span>
+              </div>
+            </div>
+            <button class="chh-card-action" aria-label="Delete" title="Delete" onclick="event.preventDefault();event.stopPropagation();"><i data-lucide="trash-2" class="ic-14"></i></button>
+          </a>
+        </div>
+      </div>
+
+      <!-- Older -->
+      <div class="chh-section">
+        <div class="chh-section-label">Older</div>
+        <div class="chh-list">
+          <a href="sterlon.html" class="chh-card">
+            <div class="chh-card-icon"><img src="assets/images/sterlon.jpg" alt=""/></div>
+            <div class="chh-card-body">
+              <div class="chh-card-title">My first cigar — gateway recommendations</div>
+              <div class="chh-card-preview">"For someone new to the leaf, the right gateway is mellow but characterful — a Macanudo Cafe or a Connecticut-wrapped Ashton…"</div>
+              <div class="chh-card-meta">
+                <span><i data-lucide="message-square" class="ic-12"></i>12 messages</span>
+                <span><i data-lucide="clock" class="ic-12"></i>Mar 2026</span>
+              </div>
+            </div>
+            <button class="chh-card-action" aria-label="Delete" title="Delete" onclick="event.preventDefault();event.stopPropagation();"><i data-lucide="trash-2" class="ic-14"></i></button>
+          </a>
+        </div>
+        <div class="chh-loadmore">
+          <button class="chh-loadbtn">Load older conversations</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right rail -->
+    <aside class="rail-col chh-rail-col">
+      <div class="widget">
+        <div class="widget-title">🔖 Saved Recommendations</div>
+        <div class="chh-saved-list">
+          <a href="product-detail.html" class="chh-saved">
+            <div class="chh-saved-thumb"><img src="assets/images/padron-1926-no-35.webp" alt=""/></div>
+            <div class="sidebar-user-info">
+              <div class="chh-saved-name">Padron 1926 No. 35</div>
+              <div class="chh-saved-from">From "Pappy 23 pairings"</div>
+            </div>
+          </a>
+          <a href="product-detail.html" class="chh-saved">
+            <div class="chh-saved-thumb chh-saved-gold"><img src="assets/images/glenfarclas_17yr.jpg" alt=""/></div>
+            <div class="sidebar-user-info">
+              <div class="chh-saved-name">Glenfarclas 17yr</div>
+              <div class="chh-saved-from">From "Best mid-tier whisky"</div>
+            </div>
+          </a>
+          <a href="product-detail.html" class="chh-saved">
+            <div class="chh-saved-thumb"><img src="assets/images/ashton_vsg_torpedo.jpg" alt=""/></div>
+            <div class="sidebar-user-info">
+              <div class="chh-saved-name">Ashton VSG Torpedo</div>
+              <div class="chh-saved-from">From "Cigars for a rainy day"</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">📊 Your Sterlon Style</div>
+        <div class="chh-style">
+          <div class="chh-style-row"><span>Most-discussed</span><span class="chh-style-val">Pairings</span></div>
+          <div class="chh-style-row"><span>Favorite topic</span><span class="chh-style-val">Cigars</span></div>
+          <div class="chh-style-row"><span>Avg conversation</span><span class="chh-style-val">6.6 messages</span></div>
+          <div class="chh-style-row"><span>Saved rate</span><span class="chh-style-val">38%</span></div>
+        </div>
+      </div>
+
+      <div class="widget chh-tips">
+        <div class="widget-title">💡 Tip</div>
+        <p class="chh-tip-text">Star any conversation you want to revisit — saved chats appear in this rail and survive the auto-cleanup after 90 days.</p>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+<nav class="bottom-nav">
+  <a href="feed.html" class="bottom-nav-item"><i data-lucide="newspaper" class="ic-20"></i>Feed</a>
+  <a href="explore.html" class="bottom-nav-item"><i data-lucide="search" class="ic-20"></i>Explore</a>
+  <a href="create-post.html" class="bottom-nav-item"><div class="bottom-nav-create-btn"><i data-lucide="plus" class="ic-20"></i></div></a>
+  <a href="events.html" class="bottom-nav-item"><i data-lucide="calendar" class="ic-20"></i>Events</a>
+  <a href="profile.html" class="bottom-nav-item"><i data-lucide="user" class="ic-20"></i>Profile</a>
+</nav>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "op": "validateCards",
+  "cards": [{ "spirit": "Pappy Van Winkle 23yr" }],
+  "promptText": "override attempt",
+  "options": { "journeyLevel": "novice", "enforceRuntimeAuthority": true }
+}

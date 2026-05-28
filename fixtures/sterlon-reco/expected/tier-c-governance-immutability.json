@@ -1,0 +1,9 @@
+{
+  "turnFrozen": true,
+  "cardsFrozen": true,
+  "bestCardFrozen": true,
+  "provenanceFrozen": true,
+  "turnMutationThrows": true,
+  "cardMutationThrows": true,
+  "cardSpiritUnchanged": true
+}

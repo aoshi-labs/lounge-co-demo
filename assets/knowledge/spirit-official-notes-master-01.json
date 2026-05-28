@@ -1,0 +1,255 @@
+{
+  "_meta": {
+    "rubric": "notes = comma-separated chips from official nose/palate/finish only; W=Manufacturer official; AE=10 when verified",
+    "chip_max": 12
+  },
+  "SPI-CUR-PAPPY-23": {
+    "notes": "caramel, ripe apple, cherry, oak, tobacco, chocolate",
+    "article": "https://www.buffalotracedistillery.com/our-brands/van-winkle/pappy-van-winkle-23-year/",
+    "proof": 95.6,
+    "source": "Manufacturer official"
+  },
+  "SPI-CUR-BLANTONS": {
+    "notes": "maple, honey, vanilla, orange citrus, stewed berries, caramel, toffee, baking spice",
+    "article": "https://www.blantonsbourbon.com/",
+    "proof": 93,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-BT-BUFFALO": {
+    "notes": "vanilla, mint, molasses, brown sugar, spice, oak, toffee, dark fruit, anise",
+    "article": "https://www.buffalotracedistillery.com/our-brands/buffalo-trace/buffalo-trace-bourbon/",
+    "proof": 90,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-WOODFORD": {
+    "notes": "dried fruit, mint, orange, cocoa, vanilla, tobacco spice, citrus, cinnamon, toffee, caramel, chocolate",
+    "article": "https://www.woodfordreserve.com/whiskey/straight-bourbon-whiskey/",
+    "proof": 90.4,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-OF-1920": {
+    "notes": "cherry preserves, caramel, dark chocolate, maple syrup, spiced nuts, malt, nougat, rye spice, cedar, toasted coconut, charred marshmallow, oak spice",
+    "article": "https://www.oldforester.com/bourbons/1920-prohibition-style/",
+    "proof": 115,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-EAGLE-RARE": {
+    "notes": "toffee, orange peel, herbs, honey, leather, oak, candied almonds, cocoa",
+    "article": "https://www.buffalotracedistillery.com/our-brands/eagle-rare/eagle-rare-10/",
+    "proof": 90,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-WP-10": {
+    "notes": "allspice, orange peel, anise, oak, char, caramel, vanilla, rye spice, mint, butterscotch",
+    "article": "https://www.whistlepigwhiskey.com/whiskeys/10-year",
+    "proof": 100,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-SAZERAC-RYE": {
+    "notes": "clove, vanilla, anise, pepper, candied spice, citrus, licorice",
+    "article": "http://www.sazerac.com/our-brands/sazerac-rye-whiskey.html",
+    "proof": 90,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-GLENFID-12": {
+    "notes": "pear, butterscotch, cream, malt, subtle oak, fresh fruit",
+    "article": "https://www.glenfiddich.com/12-year-old",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-DIPLO-RE": {
+    "notes": "orange peel, toffee, licorice, fudge, dark chocolate, dried fruit, molasses",
+    "article": "https://www.diplomaticorums.com/",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-ZACAPA-23": {
+    "notes": "caramel, vanilla, cacao, butterscotch, toasted hazelnut, toffee, dried pineapple, apricot, nutmeg, leather, tobacco, coffee, cinnamon, ginger",
+    "article": "https://www.zacaparum.com/en-us/rums/zacapa-23-centenario",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-MACALLAN-12": {
+    "notes": "vanilla, dried fruit, oak, spice, wood smoke, sherry sweetness",
+    "article": "https://usshop.themacallan.com/products/the-macallan-sherry-oak-12-years-old",
+    "proof": 86,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-LAG-16": {
+    "notes": "peat smoke, iodine, seaweed, sweetness, sea salt, wood",
+    "article": "https://www.malts.com/en-us/products/lagavulin-16-year-old-single-malt-scotch-whisky-750ml",
+    "proof": 86,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-JW-BLUE": {
+    "notes": "smoke, raisins, dried fruit, citrus, honey, sweet spice, vanilla, chocolate",
+    "article": "https://www.malts.com/en-gb/products/johnnie-walker-blue-label",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-HIBIKI-HARMONY": {
+    "notes": "rose, lychee, rosemary, sandalwood, honey, candied orange peel, white chocolate, mizunara",
+    "article": "https://house.suntory.com/hibiki-whisky/hibiki-japanese-harmony",
+    "proof": 86,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-YAMAZAKI-12": {
+    "notes": "peach, pineapple, grapefruit, clove, candied orange, vanilla, mizunara, coconut, cinnamon",
+    "article": "https://house.suntory.com/yamazaki-whisky/yamazaki-12-years-old",
+    "proof": 86,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-HENNESSY-XO": {
+    "notes": "candied fruit, pepper, chocolate, oak, vanilla",
+    "article": "https://www.hennessy.com/en-us/collection/hennessy-xo",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-REMY-XO": {
+    "notes": "white flowers, candied fruit, ripe plum, candied orange, nutmeg, hazelnut, roasted cocoa, honeyed gingerbread",
+    "article": "https://www.remymartin.com/en-us/collection/xo/",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-CLASE-AZUL-REP": {
+    "notes": "vanilla, caramel, sweet agave, dried fruit, spicy oak",
+    "article": "https://claseazul.com/clase-azul-family/clase-azul-reposado",
+    "proof": 80,
+    "source": "Manufacturer official",
+    "research": "Reposado profile per Clase Azul product family page; confirm against bottle if CA copy differs."
+  },
+  "SPI-TRK-DJ-1942": {
+    "notes": "caramel, chocolate, oak, vanilla, roasted agave",
+    "article": "https://www.donjulio.com/our-tequilas/don-julio-1942-tequila",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-WELLER-SR": {
+    "notes": "caramel, honey, butterscotch, honeysuckle, woodiness",
+    "article": "https://www.buffalotracedistillery.com/our-brands/w-l-weller/w-l-weller-special-reserve/",
+    "proof": 90,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-4R-SB": {
+    "notes": "dried spice, pear, cocoa, vanilla, maple syrup, ripe plum, cherries",
+    "article": "https://www.fourrosesbourbon.com/bourbon/single-barrel",
+    "proof": 100,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-BOOKERS": {
+    "notes": "vanilla, spice, oak, caramel",
+    "article": "https://www.bookersbourbon.com/",
+    "proof": 125,
+    "source": "Manufacturer official",
+    "research": "Batch proof varies by batch; 125 proof typical. Official Booker's profile vanilla and spice."
+  },
+  "SPI-TRK-WT-101": {
+    "notes": "vanilla, cinnamon, oak, caramel, baking spices, orange peel, rye spice",
+    "article": "https://www.wildturkeybourbon.com/en-us/products/wild-turkey-101/",
+    "proof": 101,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-RITT-BIB": {
+    "notes": "dried fruits, toffee, sweet peppers, cocoa, citrus, cinnamon, nutmeg, vanilla, maple spice",
+    "article": "https://heavenhilldistillery.com/rittenhouse-rye.php",
+    "proof": 100,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-ANGELS-ENVY": {
+    "notes": "vanilla, raisins, maple syrup, toasted nuts, ripe fruit, toast, bitter chocolate, madeira",
+    "article": "https://www.angelsenvy.com/us/en/whiskeys/signature-series/port-wine-finished-bourbon/",
+    "proof": 86.6,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-BASIL-HAYDEN": {
+    "notes": "spice, tea, peppermint, honey, pepper",
+    "article": "https://www.beamdistilling.com/our-brands/basil-haydens-bourbon",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-BULLEIT-BBN": {
+    "notes": "spice, sweet oak, maple, nutmeg, toffee",
+    "article": "https://www.bulleit.com/whiskeys/bulleit-bourbon",
+    "proof": 90,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-MAKERS-46": {
+    "notes": "toasty french oak, caramel, baking spices, vanilla",
+    "article": "https://www.makersmark.com/our-bourbon/makers-46",
+    "proof": 94,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-WOODFORD-DO": {
+    "notes": "dark fruit, caramel, honey, chocolate, marzipan, toasted oak, vanilla, hazelnut, apple, spice",
+    "article": "https://www.woodfordreserve.com/whiskey/double-oaked/",
+    "proof": 90.4,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-MICH-BBN": {
+    "notes": "caramel, vanilla, stone fruit, smoky depth, oak",
+    "article": "https://michters.com/kentucky-straight-bourbon/",
+    "proof": 91.4,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-EC-SB": {
+    "notes": "vanilla bean, sweet fruit, fresh mint, spice, smoke, nutmeg, toast",
+    "article": "https://heavenhilldistillery.com/elijah-craig-small-batch.php",
+    "proof": 94,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-KNOB-9": {
+    "notes": "toasted nuts, grain, oak, vanilla, caramel, fruity",
+    "article": "https://www.knobcreek.com/whiskies/9-year-old-bourbon-whiskey",
+    "proof": 100,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-RUSSELL-10": {
+    "notes": "orange peel, citrus, butterscotch, maple, oak, vanilla, caramel, spice, toffee",
+    "article": "https://www.russellsreserve.com/whiskeys/10-year-old-bourbon",
+    "proof": 90,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-1792-SB": {
+    "notes": "spice, caramel, vanilla, oak",
+    "article": "https://www.1792bourbon.com/our-bourbon/",
+    "proof": 93.7,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-PENELOPE": {
+    "notes": "corn sweetness, caramel, light oak, fruit, berry, citrus, vanilla, buttercream, corn bread",
+    "article": "https://www.penelopebourbon.com/",
+    "proof": 80,
+    "source": "Manufacturer official",
+    "research": "Official site describes four-grain bourbon profile; lounge SKU Penelope Bourbon."
+  },
+  "SPI-TRK-JEFF-OCEAN": {
+    "notes": "sea salt, brine, caramel, sweetness, vanilla, oak",
+    "article": "https://jeffersonsbourbon.com/whiskeys/jeffersons-ocean-bourbon/",
+    "proof": 90,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-JD-SB": {
+    "notes": "oak, caramel, vanilla, fruit, floral",
+    "article": "https://www.jackdaniels.com/en-us/our-process/single-barrel",
+    "proof": 94,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-PIKESVILLE": {
+    "notes": "cocoa, oaky smoke, honeyed rye, cloves, vanilla, baking spices",
+    "article": "https://heavenhilldistillery.com/pikesville-straight-rye.php",
+    "proof": 110,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-MICH-RYE": {
+    "notes": "spice, pepper, citrus, butterscotch, oak",
+    "article": "https://michters.com/whiskey/us1-kentucky-straight-rye/",
+    "proof": 84.8,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-LAPH-10": {
+    "notes": "peat smoke, seaweed, sweetness, salt, medicinal, vanilla",
+    "article": "https://www.laphroaig.com/whiskies/10-year-old",
+    "proof": 86,
+    "source": "Manufacturer official"
+  }
+}

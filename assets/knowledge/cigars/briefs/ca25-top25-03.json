@@ -1,0 +1,167 @@
+{
+  "version": 1,
+  "shard": "ca25-top25-03",
+  "category": "cigar",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 7,
+  "products": [
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/sancho-panza-belicoso-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Scotch",
+        "wrapperRole": "Cuban wrapper brings cedar, earth, and rustic Cuban aroma.",
+        "binderRole": "Cuban binder keeps the puro profile traditional and firm.",
+        "fillerRole": "Cuban filler drives assertive Cuban strength, spice, and wood.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/sancho-panza-belicoso-2025.",
+        "avoidIf": "Beginner, user wants easy U.S. access, or user wants creamy mildness.",
+        "whyRecommend": "Recommend when the user wants a less obvious Cuban with assertive character."
+      },
+      "menuLine": "Sancho Panza Belicoso · 6 × 52 · Belicoso · Full · Cuban · — · Notes: cedar, wood, earth, spice",
+      "stickSize": "6 × 52 · Belicoso",
+      "id": "ca25-19-sancho-panza"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/oneoff-black-toro-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Savory",
+        "occasion": "Special occasion",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Nicaraguan wrapper gives savory spice, earth, and cult-brand character.",
+        "binderRole": "Nicaraguan binder supports the restored Black blend with structure.",
+        "fillerRole": "Nicaraguan filler provides rich Aganorsa-style sweetness, body, and earth.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/oneoff-black-toro-2025.",
+        "avoidIf": "User wants beginner mildness or mainstream easygoing profile.",
+        "whyRecommend": "Recommend for boutique/cult history with Nicaraguan depth and modern execution."
+      },
+      "menuLine": "OneOff Black · 6 × 52 · Toro · Medium-Full · Nicaragua · $14 · Notes: savory spice, earth, cocoa, cedar",
+      "stickSize": "6 × 52 · Toro",
+      "id": "ca25-20-oneoff-black"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/c-l-e-maduro-50x5-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Dark & Heavy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Mexican Maduro wrapper adds dark sweetness, cocoa, and heavier palate weight.",
+        "binderRole": "Honduran binder gives structure and Christian Eiroa regional identity.",
+        "fillerRole": "Colombian and Honduran filler create full strength, earth, and savory depth.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/c-l-e-maduro-50x5-2025.",
+        "avoidIf": "Beginner, nicotine-sensitive user, or user wants light cream.",
+        "whyRecommend": "Recommend when the user wants full-bodied maduro intensity with Honduran identity."
+      },
+      "menuLine": "C.L.E. Maduro 50x5 · 5 × 50 · Robusto · Full · Honduras · $10 · Notes: dark cocoa, earth, spice, roasted nuts",
+      "stickSize": "5 × 50 · Robusto",
+      "id": "ca25-21-cle-maduro"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/olmec-maduro-grande-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Dark & Heavy",
+        "occasion": "Winter smoke",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Mexican San Andres Maduro wrapper adds cocoa, earth, dark sweetness, and dense texture.",
+        "binderRole": "Nicaraguan binder supports the broad 60-ring format and strong maduro profile.",
+        "fillerRole": "Nicaraguan filler provides strength, spice, and long-format body.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/olmec-maduro-grande-2025.",
+        "avoidIf": "User has only 30-60 minutes, beginner, or dislikes large ring gauges.",
+        "whyRecommend": "Recommend when the user wants a long, dark, full-bodied San Andres experience."
+      },
+      "menuLine": "Foundation Cigar Company Olmec Maduro · 6 × 60 · Grande · Full · Nicaragua · $14 · Notes: cocoa, earth, espresso, molasses",
+      "stickSize": "6 × 60 · Grande",
+      "id": "ca25-22-olmec-maduro"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/la-aroma-de-cuba-robusto-2025"
+      },
+      "parentCompany": "Ashton",
+      "guidance": {
+        "flavorFamily": "Coffee",
+        "occasion": "After dinner",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Connecticut Broadleaf wrapper brings roasted sweetness, dark body, and old-school richness.",
+        "binderRole": "Nicaraguan binder supports strength and My Father burn structure.",
+        "fillerRole": "Nicaraguan filler delivers full strength, roasted nuts, and complex spice.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/la-aroma-de-cuba-robusto-2025.",
+        "avoidIf": "Beginner, mild smoker, or user dislikes roasted/nutty dark flavors.",
+        "whyRecommend": "Recommend for a strong, complex broadleaf robusto with classic value appeal."
+      },
+      "menuLine": "La Aroma de Cuba Original · 5 × 52 · Robusto · Full · Nicaragua · $9 · Notes: roasted peanut, toasted chestnut, coffee, cocoa",
+      "stickSize": "5 × 52 · Robusto",
+      "id": "ca25-23-la-aroma"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/la-aurora-family-creed-series-fuerte-sol-robusto-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Savory",
+        "occasion": "After dinner",
+        "pairingAffinity": "Rum",
+        "wrapperRole": "Mexican wrapper adds dark sweetness, earth, and modern richness.",
+        "binderRole": "Nicaraguan binder adds spice and structure to the multinational filler blend.",
+        "fillerRole": "Dominican, Nicaraguan, and Pennsylvania Broadleaf filler create savory depth and body.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/la-aurora-family-creed-series-fuerte-sol-robusto-2025.",
+        "avoidIf": "Beginner, user wants mild traditional La Aurora, or avoids dark/savory flavors.",
+        "whyRecommend": "Recommend when the user wants heritage plus modern strength and complexity.",
+        "memberBlurb": "Modern La Aurora — Mexican wrapper richness over a multinational filler stack. Heritage brand with rum-friendly savory depth."
+      },
+      "menuLine": "La Aurora Family Creed Series Fuerte Sol · 5 × 50 · Robusto · Medium-Full · Dominican · $12 · Notes: savory spice, earth, cocoa, leather",
+      "stickSize": "5 × 50 · Robusto",
+      "id": "ca25-24-la-aurora-fuerte"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/aladino-85-aniversario-reserva-toro-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "Celebration",
+        "pairingAffinity": "Scotch",
+        "wrapperRole": "Honduran wrapper showcases Corojo-seed heritage, wood, spice, and classic aroma.",
+        "binderRole": "Honduran binder keeps the puro structure direct and regional.",
+        "fillerRole": "Honduran filler provides cedar, wood, spice, and medium-bodied reserve depth.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/aladino-85-aniversario-reserva-toro-2025.",
+        "avoidIf": "User wants dark maduro, full strength, or creamy Connecticut mildness.",
+        "whyRecommend": "Recommend when the user wants to understand Honduran puro character and Eiroa heritage."
+      },
+      "menuLine": "Aladino 85 Aniversario Reserva · 6 × 50 · Toro · Medium · Honduras · $15 · Notes: cedar, wood, spice, earth",
+      "stickSize": "6 × 50 · Toro",
+      "id": "ca25-25-aladino-85"
+    }
+  ]
+}

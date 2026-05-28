@@ -1,0 +1,67 @@
+  @media(max-width:1023px){.sidebar{transform:translateX(-100%)}.sidebar.open{transform:translateX(0)}.main-area{margin-left:0;padding-bottom:70px}.settings-nav{display:none!important}.bottom-nav{display:flex;position:fixed;bottom:0;left:0;right:0;background:var(--bg-surface);border-top:1px solid var(--bg-border);z-index:100;padding:8px 0 12px}}
+  .input{width:100%;background:var(--bg-elevated);border:1px solid var(--bg-border);border-radius:8px;padding:10px 14px;font-size:14px;font-family:var(--font-ui);color:var(--text-primary);outline:none;transition:border-color .2s;}
+  .section{background:var(--bg-surface);border:1px solid var(--bg-border);border-radius:14px;padding:24px 26px;}
+  .section h3{font-family:var(--font-display);font-size:1.3rem;font-weight:600;color:var(--text-primary);margin-bottom:18px;}
+  .field-label{font-size:11px;font-weight:600;color:var(--text-secondary);margin-bottom:6px;display:block;}
+  .toggle{position:relative;display:inline-block;width:42px;height:24px;flex-shrink:0;}
+  .toggle input{opacity:0;width:0;height:0;}
+  .toggle .slider{position:absolute;inset:0;background:var(--bg-border);border-radius:99px;cursor:pointer;transition:.2s;}
+  .toggle .slider::before{position:absolute;content:"";height:18px;width:18px;left:3px;top:3px;background:var(--text-secondary);border-radius:50%;transition:.2s;}
+  .toggle input:checked+.slider{background:rgba(var(--tier-elite-rgb), .35);}
+  .toggle input:checked+.slider::before{transform:translateX(18px);background:var(--tier-elite);}
+  .row{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--bg-border);}
+  .row:last-child{border-bottom:none;}
+  .settings-nav-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:9px;font-size:13px;font-weight:500;color:var(--text-secondary);cursor:pointer;transition:background .15s,color .15s;text-decoration:none;}
+  .settings-nav-item.active{background:var(--gold-subtle);color:var(--gold);font-weight:600;}
+  .settings-nav-item:hover:not(.active){background:var(--bg-elevated);color:var(--text-primary);}
+
+
+/* === Settings page — semantic classes === */
+.settings-page-title { font-size:15px; font-weight:600; color:var(--text-primary); }
+.settings-page-frame { display:flex; justify-content:center; padding:24px 20px; gap:24px; }
+.settings-section-nav { width:200px; flex-shrink:0; display:flex; flex-direction:column; gap:2px; position:sticky; top:76px; align-self:flex-start; }
+.is-danger { color:var(--burg); }
+.settings-page-stack { flex:1; max-width:620px; display:flex; flex-direction:column; gap:18px; }
+.settings-avatar-row { display:flex; align-items:center; gap:16px; margin-bottom:18px; }
+.settings-avatar-elite { background:var(--tier-elite); color:var(--tier-elite-ink); width:64px; height:64px; font-size:20px; }
+.settings-media-actions { flex:1; }
+.settings-btn-primary { background:var(--bg-elevated); border:1px solid var(--bg-border); color:var(--text-primary); border-radius:7px; padding:7px 14px; font-family:var(--font-ui); font-size:12px; font-weight:600; cursor:pointer; margin-right:8px; }
+.settings-btn-ghost { background:none; border:1px solid var(--bg-border); border-radius:7px; padding:7px 14px; color:var(--text-muted); font-family:var(--font-ui); font-size:12px; font-weight:600; cursor:pointer; transition: border-color .15s, color .15s; }
+.settings-btn-ghost:hover { border-color: var(--burg); color: var(--burg); }
+.settings-two-col-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
+.settings-field-row { margin-bottom:14px; }
+.settings-bio-textarea { resize:vertical; font-family:var(--font-body); font-style:italic; }
+.settings-field-row-wide { margin-bottom:18px; }
+.settings-save-btn { background:var(--burg); color:var(--cream); border:none; border-radius:8px; padding:10px 22px; font-family:var(--font-ui); font-size:13px; font-weight:700; cursor:pointer; }
+.settings-stack-flush { display:flex; flex-direction:column; gap:0; }
+.settings-two-col-grid-bordered { display:grid; grid-template-columns:1fr 1fr; gap:14px; padding-bottom:14px; border-bottom:1px solid var(--bg-border); }
+.setting-name { font-size:13px; font-weight:600; color:var(--text-primary); }
+.setting-sub { font-size:11px; color:var(--text-muted); margin-top:2px; }
+.setting-action-btn { background:var(--bg-elevated); border:1px solid var(--bg-border); color:var(--text-secondary); border-radius:7px; padding:7px 14px; font-family:var(--font-ui); font-size:12px; font-weight:600; cursor:pointer; }
+.setting-sub-gold { font-size:11px; color:var(--gold); margin-top:2px; }
+.setting-action-btn-ghost { background:none; border:1px solid var(--bg-border); color:var(--text-secondary); border-radius:7px; padding:7px 14px; font-family:var(--font-ui); font-size:12px; font-weight:500; cursor:pointer; }
+.settings-row-top-border { border-top:1px solid var(--bg-border); padding-top:14px; }
+.settings-section-danger { border-color:rgba(var(--burg-rgb), .25); }
+.settings-btn-danger { background:transparent; border:1px solid var(--burg); color:var(--burg); border-radius:7px; padding:7px 14px; font-family:var(--font-ui); font-size:12px; font-weight:600; cursor:pointer; }
+
+/* Background section — preview thumbnail (wider, rectangle) + the
+   Upload/Remove button stack to its right. Mirrors the Profile photo
+   row's layout but with a landscape preview instead of a circular avatar. */
+.settings-bg-preview-row { display:flex; align-items:flex-start; gap:16px; margin-bottom:18px; flex-wrap:wrap; }
+.settings-bg-preview-img {
+  width: 220px;
+  height: 88px;
+  border-radius: 10px;
+  border: 1px solid var(--bg-border);
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--bg-elevated);
+}
+
+/* Mobile — collapse the two-column input rows (Display name + Username,
+   and the second pair-row below) to a single column so each field gets
+   full width on narrow viewports. */
+@media (max-width: 767px) {
+  .settings-two-col-grid, .settings-two-col-grid-bordered { grid-template-columns: 1fr; }
+  .settings-bg-preview-img { width: 100%; height: 120px; }
+}

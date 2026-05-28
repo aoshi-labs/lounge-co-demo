@@ -1,0 +1,250 @@
+{
+  "SPI-TRK-TALISKER-10": {
+    "notes": "peat smoke, sea salt, citrus, dried fruit, barley malt, pepper, honey",
+    "article": "https://www.malts.com/en-us/products/talisker-10-year-old-single-malt-scotch-whisky-750ml",
+    "proof": 91.6,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-DALMORE-12": {
+    "notes": "citrus, chocolate, aromatic spices, seville orange, dried fruit, vanilla, roasted coffee, dark chocolate",
+    "article": "https://www.thedalmore.com/en-us/our-collections/the-principal-collection/the-12/",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-JW-BLACK": {
+    "notes": "dark fruit, sweet vanilla, creamy toffee, smooth smoke",
+    "article": "https://www.malts.com/en-gb/products/johnnie-walker-black-label-blended-scotch-whisky-70cl",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-HP-12": {
+    "notes": "heather honey, citrus, burnt orange, jasmine, fruitcake, pepper, woody smoke",
+    "article": "https://www.highlandparkwhisky.com/en/single-malt-whisky/12-year-old",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-ARDBEG-10": {
+    "notes": "peat smoke, lemon, lime, dark chocolate, menthol, black pepper, tar, espresso, aniseed, almond",
+    "article": "https://www.ardbeg.com/en-us/whisky/ardbeg-ten/",
+    "proof": 92,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-GLENLIV-12": {
+    "notes": "banana, pineapple, peaches, pears, vanilla, toffee",
+    "article": "https://www.theglenlivet.com/en-us/whisky/12-year-old-single-malt-scotch/",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-GLENMOR-10": {
+    "notes": "citrus, peach, vanilla, almond, coconut, maple syrup, floral fruit",
+    "article": "https://www.glenmorangie.com/en-us/products/the-original-12-years-old",
+    "proof": 86,
+    "source": "Manufacturer official",
+    "research": "US Original line is 12yr on glenmorangie.com; chips match official Original profile (tracker vitola 10 Year legacy name)."
+  },
+  "SPI-TRK-OBAN-14": {
+    "notes": "honey, orchard fruit, almond fruitcake, orange, brine, smoke, menthol, dark chocolate, apple",
+    "article": "https://www.malts.com/en-us/products/oban-14-year-old-single-malt-scotch-whisky-750ml",
+    "proof": 86,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-ABERLOUR-12": {
+    "notes": "golden honey, pear, vanilla toffee, orange, red apple, liquorice, almond, spice",
+    "article": "https://www.aberlour.com/en-us/our-whisky/12-year-old-scotch-whisky/",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-BALVENIE-14": {
+    "notes": "toffee, fresh fruit, vanilla, sweet oak, ginger, candied fruit",
+    "article": "https://shop.us.thebalvenie.com/products/the-balvenie-caribbean-cask-14",
+    "proof": 86,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-CHIVAS-12": {
+    "notes": "wild herbs, heather, honey, orchard fruit, vanilla, hazelnut, butterscotch",
+    "article": "https://www.chivas.com/en-gb/collection/chivas-12",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-MONKEY-SHOULDER": {
+    "notes": "rich, vibrant, fruity, mellow vanilla, floral",
+    "article": "https://www.williamgrant.com/gb/brands/monkey-shoulder/",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-JW-GREEN": {
+    "notes": "garden fruit, floral, oak, cedar, peat smoke",
+    "article": "https://www.johnniewalker.com/en-us/our-whisky/johnnie-walker-green-label-14-year-old",
+    "proof": 86,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-LAG-8": {
+    "notes": "milk chocolate, lemon, tea smoke, barley malt, peat, pepper, dark chocolate, mint",
+    "article": "https://www.malts.com/en-gb/products/lagavulin-8-year-old-single-malt-scotch-whisky-70cl",
+    "proof": 96,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-MACALLAN-18": {
+    "notes": "treacle tart, stem ginger, raisins, sultanas, orange, cinnamon, dark chocolate, dried apricot, vanilla",
+    "article": "https://usshop.themacallan.com/products/sherry-oak-18-years-old",
+    "proof": 86,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-REDBREAST-12": {
+    "notes": "spicy fruit, sherry, toasted wood, silky, harmonious",
+    "article": "https://www.redbreastwhiskey.com/en/whiskey-collections/redbreast-12-year-old-whiskey/",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-JAMESON-BB": {
+    "notes": "butterscotch, fudge, creamy toffee, nutty, spice, vanilla, toasted wood",
+    "article": "https://www.jamesonwhiskey.com/en-us/our-whiskey/jameson-black-barrel/",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-NIKKA-FTB": {
+    "notes": "oak, vanilla, chocolate, orange peel, grain, astringency",
+    "article": "https://www.nikka.com/en/brands/fromthebarrel/",
+    "proof": 102.8,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-HAKUSHU-12": {
+    "notes": "basil, pine, green apple, pear, mint, kiwi, green tea, smoke",
+    "article": "https://house.suntory.com/hakushu-whisky/hakushu-12-years-old",
+    "proof": 86,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-NIKKA-COFFEY": {
+    "notes": "pear, cherry, citrus, coconut, vanilla, banana, caramel, liquorice, star anise",
+    "article": "https://www.nikka.com/en/brands/coffeygrain/",
+    "proof": 90,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-MARS-IWAI": {
+    "notes": "gentle aroma, soft texture, solid body, sherry, plum, cherry, spice",
+    "article": "https://www.hombo.co.jp/en/product/iwai-tradition/",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-MTGAY-XO": {
+    "notes": "vanilla, oak, dry spice, salted caramel, baked fig, clove, dark chocolate",
+    "article": "https://www.mountgayrum.com/rum/xo/",
+    "proof": 86,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-PLANT-OFTD": {
+    "notes": "molasses, dark chocolate, banana, spice, coffee, oak",
+    "article": "https://planterayrum.com/product/oftd/",
+    "proof": 138,
+    "source": "Manufacturer official",
+    "research": "Planteray OFTD official blend description; overproof navy-style."
+  },
+  "SPI-TRK-ELDORADO-12": {
+    "notes": "tropical fruit, spice, honey, dark sugar, dried fruit, elegant dry finish",
+    "article": "https://theeldoradorum.com/12-our-collection/blended-rums",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-APPLETON-21": {
+    "notes": "floral, vanilla, orange peel, nutmeg, coffee, cocoa, dry finish",
+    "article": "https://www.appletonestate.com/en-us/rums/21-year-old-nassau-valley-casks/",
+    "proof": 86,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-FORTALEZA-REP": {
+    "notes": "citrus, caramel, butter, cooked agave, sage, vanilla, apple, earth, cinnamon",
+    "article": "https://tequilafortaleza.com/tequila-fortaleza-reposado/",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-DM-VIDA": {
+    "notes": "smoke, earthy agave, citrus, pepper, honey",
+    "article": "https://delmaguey.com/vida-clasico/",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-CASAMIGOS-REP": {
+    "notes": "caramel, cocoa, dried fruit, spicy oak, sweet agave",
+    "article": "https://www.casamigos.com/en-us/our-tequilas/reposado",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-ESPILON-REP": {
+    "notes": "caramel fudge, roasted agave, tropical fruit, vanilla, brown spices",
+    "article": "https://www.espolontequila.com/en-us/our-tequilas/tequila-reposado/",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-PATRON-SILVER": {
+    "notes": "agave, citrus, honeydew, lemongrass, pepper",
+    "article": "https://www.patrontequila.com/products/patron-silver",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-CASA-DRAGONES": {
+    "notes": "floral, citrus, sweet roasted agave, vanilla, spice, pear, hazelnut",
+    "article": "https://casadragones.com/us/sipping-tequila/casa-dragones-joven/",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-MONTELOBO": {
+    "notes": "damp earth, grass, honey, citrus, asparagus, smoke, cooked agave, herbs",
+    "article": "https://www.montelobos.com/en-us/our-mezcals/montelobos-espadin/",
+    "proof": 86.4,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-DUSSE-VSOP": {
+    "notes": "woody notes, cinnamon, floral, spices, almonds, dried fruit, honey",
+    "article": "https://www.dusse.com/product/dusse-vsop-flask/",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-COURVOISIER-VSOP": {
+    "notes": "stone fruit, jasmine, gingerbread, silky finish",
+    "article": "https://www.courvoisier.com/en-us/cognac-collection/vsop/",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-MARTELL-BS": {
+    "notes": "banana, caramelised pear, vanilla, coconut, spices, ginger, candied fruit, toasted oak",
+    "article": "https://www.martell.com/en-ww/collection/blue-swift/",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-MARTELL-CB": {
+    "notes": "candied plum, apple, orchard fruit, spice, fruit, long finish",
+    "article": "https://www.martell.com/en-us/collection/cordon-bleu/",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-HENNESSY-VSOP": {
+    "notes": "apricot, vanilla, mellow oak",
+    "article": "https://www.hennessy.com/en-int/collection/hennessy-vsop-privilege",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-HENDRICKS": {
+    "notes": "rose, cucumber, juniper, citrus, floral",
+    "article": "https://www.hendricksgin.com/",
+    "proof": 88,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-TANQUERAY-10": {
+    "notes": "grapefruit, citrus, juniper, chamomile, angelica",
+    "article": "https://www.tanqueray.com/our-gins/tanqueray-no-ten",
+    "proof": 94.6,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-KETEL-ONE": {
+    "notes": "citrus, honey, crisp, smooth, long finish",
+    "article": "https://www.ketelone.com/vodkas/ketel-one-vodka",
+    "proof": 80,
+    "source": "Manufacturer official"
+  },
+  "SPI-TRK-GREY-GOOSE": {
+    "notes": "floral, sweet, round, toffee finish",
+    "article": "https://www.greygoose.com/en-gb/products/grey-goose-vodka.html",
+    "proof": 80,
+    "source": "Manufacturer official"
+  }
+}

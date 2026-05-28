@@ -1,0 +1,101 @@
+  .order-card{background:var(--bg-surface);border:1px solid var(--bg-border);border-radius:14px;overflow:hidden;}
+  .status-pill{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:700;}
+
+
+@keyframes pulse { 0%,100% { opacity: 1 } 50% { opacity: .4 } }
+
+
+/* === Page-specific styles === */
+.topbar-title { font-size:15px; font-weight:600; color:var(--text-primary); }
+.topbar-new-request-btn { background:var(--burg); color:var(--cream); border:none; border-radius:8px; padding:8px 14px; font-family:var(--font-ui); font-size:13px; font-weight:600; cursor:pointer; text-decoration:none; }
+.activity-page-frame { display:flex; justify-content:center; padding:28px 20px; }
+.activity-page-stack { width:100%; max-width:700px; display:flex; flex-direction:column; gap:16px; }
+.visit-card-current { border-color:rgba(var(--tier-elite-rgb), .35); }
+.visit-card-header { background:rgba(var(--tier-elite-rgb), .07); border-bottom:1px solid rgba(var(--tier-elite-rgb), .2); padding:14px 20px; display:flex; align-items:center; justify-content:space-between; }
+.visit-status-group { display:flex; align-items:center; gap:10px; }
+.status-pill-ready { background:rgba(var(--tier-elite-rgb), .15); color:var(--tier-elite); border:1px solid rgba(var(--tier-elite-rgb), .3); }
+.status-pulse-dot { width:6px; height:6px; background:var(--tier-elite); border-radius:50%; animation:pulse 1.5s infinite; display:inline-block; }
+.visit-meta-text { font-size:12px; color:var(--text-muted); }
+.visit-progress-section { padding:18px 20px; border-bottom:1px solid var(--bg-border); }
+.visit-progress-track { display:flex; align-items:center; gap:0; margin-bottom:8px; }
+.visit-progress-step { display:flex; flex-direction:column; align-items:center; gap:4px; flex:1; }
+.visit-progress-marker-done { width:28px; height:28px; border-radius:50%; background:var(--tier-elite); border:2px solid var(--tier-elite); display:flex; align-items:center; justify-content:center; }
+.visit-progress-label-done { font-size:9px; font-weight:600; text-transform:uppercase; letter-spacing:.05em; color:var(--tier-elite); }
+.visit-progress-connector-done { flex:1; height:2px; background:var(--tier-elite); margin-top:-16px; }
+.visit-progress-connector-pending { flex:1; height:2px; background:var(--bg-border); margin-top:-16px; }
+.visit-progress-marker-pending { width:28px; height:28px; border-radius:50%; background:var(--bg-elevated); border:2px solid var(--bg-border); display:flex; align-items:center; justify-content:center; }
+.visit-progress-label-pending { font-size:9px; font-weight:600; text-transform:uppercase; letter-spacing:.05em; color:var(--text-muted); }
+.visit-progress-status-message { font-size:12px; color:var(--tier-elite); font-weight:600; text-align:center; margin-top:4px; }
+.visit-items-list { padding:16px 20px; display:flex; flex-direction:column; gap:8px; }
+.visit-item-row { display:flex; justify-content:space-between; font-size:13px; color:var(--text-secondary); }
+.visit-items-divider { height:1px; background:var(--bg-border); margin:4px 0; }
+.visit-items-total { display:flex; justify-content:space-between; font-size:14px; font-weight:700; color:var(--text-primary); }
+.activity-section-label { font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted); padding:4px 0; }
+.visit-history-header { padding:14px 20px; border-bottom:1px solid var(--bg-border); display:flex; align-items:center; justify-content:space-between; }
+.status-pill-served { background:var(--bg-elevated); color:var(--text-muted); border:1px solid var(--bg-border); }
+.visit-history-body { padding:14px 20px; display:flex; justify-content:space-between; align-items:center; }
+.visit-history-items-summary { font-size:13px; color:var(--text-secondary); }
+.visit-history-price { color:var(--text-muted); }
+.visit-history-actions { display:flex; gap:8px; }
+.visit-history-review-btn { background:var(--gold-subtle); border:1px solid rgba(var(--gold-rgb), .2); color:var(--gold); border-radius:7px; padding:6px 12px; font-family:var(--font-ui); font-size:12px; font-weight:600; text-decoration:none; white-space:nowrap; }
+.visit-history-repeat-btn { background:var(--bg-elevated); border:1px solid var(--bg-border); color:var(--text-secondary); border-radius:7px; padding:6px 12px; font-family:var(--font-ui); font-size:12px; font-weight:500; cursor:pointer; }
+
+/* Mobile (<=767px): Visit cards cram a status pill, request #, timestamp,
+   item list, and action buttons into tight rows that don't fit on phone
+   widths. Stack the header strip (.visit-card-header / .visit-history-header)
+   and body row (.visit-history-body) vertically with breathing room
+   between segments. */
+@media (max-width: 767px) {
+  /* Current-visit header AND past-visit header — same column-stack +
+     pill/request#/time layout. .visit-history-header mirrors
+     .visit-card-header's structure with the same .visit-status-group child,
+     so they share the rule. */
+  .visit-card-header,
+  .visit-history-header {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 14px;
+    padding: 14px 16px;
+  }
+  .visit-status-group {
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+    /* Status pill (left) and request # (right) split to the row's edges
+       instead of bunching together on the left. */
+    justify-content: space-between;
+  }
+  .visit-card-header > .visit-meta-text,
+  .visit-history-header > .visit-meta-text {
+    /* Trailing timestamp goes to its own row beneath the pill + request #. */
+    width: 100%;
+  }
+  /* Allow long status labels / request numbers to break gracefully. */
+  .status-pill,
+  .visit-meta-text { overflow-wrap: anywhere; word-break: break-word; }
+
+  /* Past-tab body — items list on top, action buttons stacked under it
+     on its own row. Buttons span full width so they're easy tap targets. */
+  .visit-history-body {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+  .visit-history-actions {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .visit-history-actions > .visit-history-review-btn,
+  .visit-history-actions > .visit-history-repeat-btn {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 9px 12px;
+  }
+
+  /* Bump the inter-card gap so adjacent Visit cards have visible breathing
+     room rather than feeling glued together. */
+  .activity-page-stack { gap: 20px; }
+}

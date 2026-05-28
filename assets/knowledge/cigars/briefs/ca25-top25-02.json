@@ -1,0 +1,212 @@
+{
+  "version": 1,
+  "shard": "ca25-top25-02",
+  "category": "cigar",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 9,
+  "products": [
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/ferio-tego-timeless-supreme-650-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "Special occasion",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Nicaraguan wrapper adds spice, sweetness, and unified puro character.",
+        "binderRole": "Nicaraguan binder supports body and clean combustion.",
+        "fillerRole": "Nicaraguan filler provides rich regional backbone and modern boutique balance.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/ferio-tego-timeless-supreme-650-2025.",
+        "avoidIf": "User wants classic mild Dominican or very low intensity.",
+        "whyRecommend": "Recommend as a newer-brand premium Nicaraguan puro with proven critical acclaim."
+      },
+      "menuLine": "Ferio Tego Timeless Supreme 650 · 6 × 50 · Toro · Medium-Full · Nicaragua · $14 · Notes: sweet spice, cedar, cocoa, earth",
+      "stickSize": "6 × 50 · Toro",
+      "id": "ca25-10-ferio-timeless"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/liga-privada-t52-corona-viva-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Dark & Heavy",
+        "occasion": "Special occasion",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Stalk-cut Connecticut Habano wrapper adds dark spice, strength, and oily texture.",
+        "binderRole": "Brazilian binder adds sweetness, aroma, and savory depth.",
+        "fillerRole": "Honduran and Nicaraguan filler deliver power, earth, and Liga Privada density.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/liga-privada-t52-corona-viva-2025.",
+        "avoidIf": "Beginner, user wants mildness, or user dislikes heavy dark profiles.",
+        "whyRecommend": "Recommend when the user wants concentrated Liga power without a huge cigar."
+      },
+      "menuLine": "Drew Estate Liga Privada T52 · 5½ × 42 · Corona Viva · Full · Nicaragua · $12 · Notes: dark spice, leather, earth, espresso",
+      "stickSize": "5½ × 42 · Corona Viva",
+      "id": "ca25-11-liga-t52"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/macanudo-emissary-france-churchill-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Savory",
+        "occasion": "Winter smoke",
+        "pairingAffinity": "Cognac",
+        "wrapperRole": "Ecuadorian wrapper adds polish, aroma, and smooth top notes.",
+        "binderRole": "Connecticut Broadleaf binder adds dark sweetness and structure around the uncommon filler blend.",
+        "fillerRole": "Brazilian, Dominican, French, and U.S. filler create unusual savory complexity.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/macanudo-emissary-france-churchill-2025.",
+        "avoidIf": "User assumes all Macanudo is mild Cafe-style or needs a short smoke.",
+        "whyRecommend": "Recommend when the user wants to explore Macanudo's modern, richer side.",
+        "memberBlurb": "Macanudo beyond Cafe — French filler twist, broadleaf binder, and savory depth in a Churchill. Proof the brand can do medium-full."
+      },
+      "menuLine": "Macanudo Emissary France · 7 × 48 · Churchill · Medium-Full · Honduras · $13 · Notes: savory tobacco, dark sweetness, spice, wood",
+      "stickSize": "7 × 48 · Churchill",
+      "id": "ca25-12-mac-emissary-fr"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/la-flor-dominicana-30-years-chisel-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Peppery",
+        "occasion": "Special occasion",
+        "pairingAffinity": "Rum",
+        "wrapperRole": "Ecuadorian wrapper adds spice, sheen, and balance to the anniversary blend.",
+        "binderRole": "Dominican binder supports the Chisel format and estate-tobacco identity.",
+        "fillerRole": "Dominican filler provides LFD depth, earth, spice, and signature body.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/la-flor-dominicana-30-years-chisel-2025.",
+        "avoidIf": "Beginner, user wants creamy mildness, or dislikes chisel/figurado shapes.",
+        "whyRecommend": "Recommend for LFD identity and anniversary prestige without going all the way to Double Ligero strength."
+      },
+      "menuLine": "La Flor Dominicana 30 Years · 6 × 54 · Chisel · Medium-Full · Dominican · $16 · Notes: pepper, earth, cedar, dark spice",
+      "stickSize": "6 × 54 · Chisel",
+      "id": "ca25-13-lfd-30years"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/aging-room-quattro-nicaragua-concerto-impromptu-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Nicaraguan hybrid wrapper adds pepper, cinnamon, nutmeg, and citrus lift.",
+        "binderRole": "Nicaraguan binder keeps the box-pressed puro firm and structured.",
+        "fillerRole": "Nicaraguan filler supplies body, spice, and the A.J. Fernandez regional core.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/aging-room-quattro-nicaragua-concerto-impromptu-2025.",
+        "avoidIf": "User wants mild cream or low spice.",
+        "whyRecommend": "Recommend for a spice-focused Nicaraguan puro with modern critical credibility."
+      },
+      "menuLine": "Aging Room Quattro Nicaragua Concerto Impromptu · 6 × 54 · Toro · Medium-Full · Nicaragua · $12 · Notes: pepper, cinnamon, nutmeg, orange peel",
+      "stickSize": "6 × 54 · Toro",
+      "id": "ca25-14-aging-quattro"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/davidoff-millennium-blend-series-piramides-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Celebration",
+        "pairingAffinity": "Cognac",
+        "wrapperRole": "Proprietary Ecuador wrapper adds cream, spice, and elegant Davidoff polish.",
+        "binderRole": "Dominican binder preserves clean construction and balance.",
+        "fillerRole": "Dominican filler offers refined body, cream, coffee, spice, and luxury restraint.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/davidoff-millennium-blend-series-piramides-2025.",
+        "avoidIf": "Budget-sensitive user or someone seeking raw power over elegance.",
+        "whyRecommend": "Recommend when the user wants polished luxury with more body than a mild Davidoff.",
+        "memberBlurb": "Davidoff Millennium elegance with more body — cream, coffee, and floral spice in a piramide. Luxury that still drinks refined."
+      },
+      "menuLine": "Davidoff Millennium Blend Series · 6½ × 52 · Piramide · Medium-Full · Dominican · $24 · Notes: cream, cedar, coffee, soft pepper",
+      "stickSize": "6½ × 52 · Piramide",
+      "id": "ca25-15-dav-millennium"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/gellis-family-cigars-saunter-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Special occasion",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuador Connecticut-seed wrapper gives cream, elegance, and aromatic softness.",
+        "binderRole": "Ecuadorian binder adds structure and subtle spice under the creamy wrapper.",
+        "fillerRole": "Dominican and Nicaraguan filler provide medium body, sweetness, and boutique balance.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/gellis-family-cigars-saunter-2025.",
+        "avoidIf": "User wants full strength, dark maduro, or collector rarity.",
+        "whyRecommend": "Recommend as a boutique medium cigar with polish and approachability."
+      },
+      "menuLine": "Gellis Family Cigars Saunter · 5 × 50 · Robusto · Medium · Dominican · $12 · Notes: cream, cedar, light spice, nuts",
+      "stickSize": "5 × 50 · Robusto",
+      "id": "ca25-16-gellis-saunter"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/viaje-fifteen-plus-two-and-a-half-anniversary-silver-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "Celebration",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Nicaraguan Criollo wrapper contributes spice, sweetness, and celebratory aroma.",
+        "binderRole": "Nicaraguan binder supports box-pressed structure and puro identity.",
+        "fillerRole": "Nicaraguan filler brings Aganorsa-style sweetness, spice, and medium-full body.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/viaje-fifteen-plus-two-and-a-half-anniversary-silver-2025.",
+        "avoidIf": "User wants mild Connecticut or low-flavor intensity.",
+        "whyRecommend": "Recommend when the user wants a festive boutique Nicaraguan with strong annual-list credibility.",
+        "memberBlurb": "Viaje anniversary Aganorsa puro — festive sweet spice and citrus over cedar. Celebration cigar with boutique energy."
+      },
+      "menuLine": "Viaje Fifteen Plus Two And A Half Anniversary Silver · 6 × 52 · Toro · Medium-Full · Nicaragua · $14 · Notes: sweet spice, cedar, citrus, earth",
+      "stickSize": "6 × 52 · Toro",
+      "id": "ca25-17-viaje-anniv-silver"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado 2025 Top 25 review tasting prose",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/oliva-serie-v-melanio-maduro-robusto-2025"
+      },
+      "guidance": {
+        "flavorFamily": "Dark & Heavy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Mexican Maduro wrapper adds dark sweetness, cocoa, and polished depth.",
+        "binderRole": "Nicaraguan binder supports Serie V structure without overwhelming the profile.",
+        "fillerRole": "Nicaraguan filler gives strength, sweetness, and Melanio complexity.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/top25cigar/oliva-serie-v-melanio-maduro-robusto-2025.",
+        "avoidIf": "User wants very mild Connecticut or maximum Serie V strength.",
+        "whyRecommend": "Recommend for a rich but controlled Maduro version of a respected Nicaraguan line."
+      },
+      "menuLine": "Oliva Serie V Melanio Maduro · 5 × 50 · Robusto · Medium-Full · Nicaragua · $11 · Notes: cocoa, dark sweetness, coffee, earth",
+      "stickSize": "5 × 50 · Robusto",
+      "id": "ca25-18-oliva-mel-mad"
+    }
+  ]
+}

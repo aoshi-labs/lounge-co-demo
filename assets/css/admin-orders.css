@@ -1,0 +1,129 @@
+  @media(max-width:1023px){.sidebar{transform:translateX(-100%)}.sidebar.open{transform:translateX(0)}.main-area{margin-left:0;}.kanban{flex-direction:column!important}}
+  .kanban-col{flex:1;display:flex;flex-direction:column;gap:10px;min-width:240px;}
+  .col-header{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-radius:9px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+  .order-card{background:var(--bg-surface);border:1px solid var(--bg-border);border-radius:11px;padding:14px;cursor:grab;transition:border-color .15s,transform .15s;}
+  .order-card:hover{border-color:rgba(var(--gold-rgb), .3);transform:translateY(-1px);}
+
+
+/* === Page-specific styles === */
+.admin-orders-badge-burg-aux { background:var(--burg); color:var(--cream); border-radius:99px; padding:1px 7px; font-size:10px; font-weight:700; margin-left:auto; }
+.admin-orders-stat-num-aux { font-size:15px; font-weight:600; color:var(--text-primary); }
+.admin-orders-stat-label-aux { font-size:11px; color:var(--text-muted); }
+.admin-orders-content { padding:24px 24px 40px; max-width:1400px; width:100%; }
+
+/* Header row above the kanban — stats sub-text on the left, time-period
+   select on the right. The wrapper claims the bottom margin so the stats
+   line no longer needs its own. */
+.adm-orders-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.adm-orders-header > .adm-stats-summary { margin-bottom: 0; }
+
+/* Time-period select — small unobtrusive control, matches the style used
+   on admin-analytics so the two admin surfaces feel consistent. */
+.adm-orders-header > .period-select {
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  color: var(--text-secondary);
+  border-radius: 6px;
+  padding: 5px 28px 5px 10px;
+  font-size: 12px;
+  font-family: var(--font-ui);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%239A8E82' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  transition: border-color .15s, color .15s;
+}
+.adm-orders-header > .period-select:hover,
+.adm-orders-header > .period-select:focus {
+  border-color: var(--gold);
+  color: var(--text-primary);
+  outline: none;
+}
+.admin-orders-kanban { display:flex; gap:14px; align-items:flex-start; }
+.admin-orders-col-header-new { background:rgba(var(--burg-rgb), .12); color:var(--burg); border:1px solid rgba(var(--burg-rgb), .25); }
+.admin-orders-col-count-new { margin-left:5px; background:var(--burg); color:var(--cream); border-radius:99px; padding:1px 7px; font-size:10px; }
+.admin-orders-card-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px; }
+.admin-orders-card-id { font-size:13px; font-weight:700; color:var(--text-primary); }
+.admin-orders-card-time { font-size:11px; color:var(--text-muted); margin-top:2px; }
+.admin-orders-card-avatar-green { background:var(--avatar-green); color:var(--avatar-green-ink); width:30px; height:30px; font-size:11px; }
+.admin-orders-card-body { font-size:12px; color:var(--text-secondary); line-height:1.5; margin-bottom:10px; }
+.admin-orders-card-items { color:var(--text-muted); }
+.admin-orders-card-footer { display:flex; justify-content:space-between; align-items:center; padding-top:10px; border-top:1px solid var(--bg-border); }
+.admin-orders-card-price { font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:var(--gold); }
+.admin-orders-card-btn-primary { background:var(--burg); color:var(--cream); border:none; border-radius:6px; padding:5px 11px; font-size:11px; font-weight:700; cursor:pointer; }
+.admin-orders-col-header-preparing { background:rgba(var(--gold-rgb), .12); color:var(--gold); border:1px solid rgba(var(--gold-rgb), .25); }
+.admin-orders-col-count-preparing { margin-left:5px; background:var(--gold); color:var(--bg-base); border-radius:99px; padding:1px 7px; font-size:10px; }
+.admin-orders-card-avatar-bronze { background:var(--tier-bronze); color:var(--tier-bronze-ink); width:30px; height:30px; font-size:11px; }
+.admin-orders-card-btn-secondary { background:var(--bg-elevated); border:1px solid var(--bg-border); color:var(--text-primary); border-radius:6px; padding:5px 11px; font-size:11px; font-weight:600; cursor:pointer; }
+.admin-orders-col-header-ready { background:rgba(var(--tier-elite-rgb), .12); color:var(--tier-elite); border:1px solid rgba(var(--tier-elite-rgb), .25); }
+.admin-orders-col-count-ready { margin-left:5px; background:var(--tier-elite); color:var(--cream); border-radius:99px; padding:1px 7px; font-size:10px; }
+.admin-orders-card-avatar-elite { background:var(--tier-elite); color:var(--tier-elite-ink); width:30px; height:30px; font-size:11px; }
+.admin-orders-card-btn-success { background:var(--tier-elite); color:var(--cream); border:none; border-radius:6px; padding:5px 11px; font-size:11px; font-weight:700; cursor:pointer; }
+.admin-orders-col-header-completed { background:var(--bg-elevated); color:var(--text-muted); border:1px solid var(--bg-border); }
+.admin-orders-col-count-completed { margin-left:5px; background:var(--bg-border); color:var(--text-secondary); border-radius:99px; padding:1px 7px; font-size:10px; }
+.admin-orders-card-completed { opacity:.75; }
+.admin-orders-card-id-completed { font-size:13px; font-weight:600; color:var(--text-secondary); }
+.admin-orders-card-avatar-gold { background:var(--gold); color:var(--bg-base); width:30px; height:30px; font-size:11px; }
+.admin-orders-card-body-completed { font-size:12px; color:var(--text-muted); line-height:1.5; margin-bottom:10px; }
+.admin-orders-card-served-tag { font-size:10px; color:var(--tier-elite); }
+.admin-orders-card-avatar-silver { background:var(--tier-runner-up); color:var(--tier-runner-up-ink); width:30px; height:30px; font-size:11px; }
+/* Load-more link — full-width surface card with gold border + text on
+   hover, mirroring the feed page's load-more button so paginated
+   surfaces feel consistent across the app. */
+.admin-orders-load-more {
+  display: block;
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 10px;
+  padding: 13px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+  transition: border-color .2s, color .2s;
+}
+.admin-orders-load-more:hover { border-color: var(--gold); color: var(--gold); }
+
+/* Collapsible kanban column — JS toggles `.collapsed` on .kanban-col,
+   which hides everything beneath the header. The header chevron rotates
+   from down (expanded) to right (collapsed). */
+.col-header { user-select: none; }
+.col-header-chev {
+  transition: transform .2s ease;
+  opacity: .65;
+  flex-shrink: 0;
+}
+.col-header:hover .col-header-chev { opacity: 1; }
+.kanban-col.collapsed > .col-header .col-header-chev {
+  transform: rotate(-90deg);
+}
+.kanban-col.collapsed > *:not(.col-header) { display: none; }
+
+/* Mobile (≤1023px): kanban already stacks vertically via the inline
+   media rule at the top. Boost the gap between stacked columns so the
+   transition from "Preparing" to "Ready" etc. reads as a section break,
+   not a continuation of one long list. Center the stack and let each
+   column (and its cards) span the full content width. */
+@media (max-width: 1023px) {
+  .admin-orders-kanban {
+    gap: 32px;
+    align-items: center;
+  }
+  .kanban-col {
+    width: 100%;
+    min-width: 0;
+  }
+}

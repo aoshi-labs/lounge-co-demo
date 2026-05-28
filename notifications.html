@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Notifications — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Recent activity affecting you — mentions, comments, follows, and event reminders." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Notifications — Lounge & Co." />
+  <meta property="og:description" content="Recent activity affecting you — mentions, comments, follows, and event reminders." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Notifications — Lounge & Co." />
+  <meta name="twitter:description" content="Recent activity affecting you — mentions, comments, follows, and event reminders." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/notifications.css"/>
+</head>
+<body>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Thomas H.</div><div class="sidebar-user-tier">Elite · 1,744 pts · #4</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area">
+  <h1 class="visually-hidden">Notifications</h1>
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu"><i data-lucide="menu" class="ic-16"></i></button>
+    <div class="topbar-actions">
+      <button type="button" onclick="markAll()" class="notifications-mark-all-btn" title="Mark all read">
+        <i data-lucide="check-check" class="ic-14"></i><span>Mark all read</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="notifications-page-frame">
+    <div class="notifications-page-stack">
+
+      <!-- Filter tabs -->
+      <div class="notifications-filter-tabs">
+        <button class="filter-tab active" onclick="setTab(this)">All <span class="notifications-tab-count-pill">5</span></button>
+        <button class="filter-tab" onclick="setTab(this)">Mentions</button>
+        <button class="filter-tab" onclick="setTab(this)">Likes</button>
+        <button class="filter-tab" onclick="setTab(this)">Events</button>
+        <button class="filter-tab" onclick="setTab(this)">My Visit</button>
+        <button class="filter-tab" onclick="setTab(this)">System</button>
+      </div>
+
+      <!-- Today -->
+      <div class="notifications-section-label-first">Today</div>
+
+      <a href="post-detail.html" class="notif-row unread">
+        <div class="avatar notif-avatar-champion"><img src="assets/images/marcus-r.jpg" alt=""/></div>
+        <div class="notif-row-body">
+          <div class="notif-row-text"><strong>Marcus R.</strong> tagged you in their review of the <span class="notif-highlight">Ashton VSG Torpedo</span></div>
+          <div class="notif-row-time">20 min ago</div>
+        </div>
+        <span class="notif-unread-dot"></span>
+      </a>
+
+      <a href="orders.html" class="notif-row unread">
+        <div class="notif-icon-elite">
+          <i data-lucide="check" class="ic-16"></i>
+        </div>
+        <div class="notif-row-body">
+          <div class="notif-row-text">Your request <strong>#CR-0042</strong> is ready — staff is bringing it to your seat</div>
+          <div class="notif-row-time">42 min ago</div>
+        </div>
+        <span class="notif-unread-dot"></span>
+      </a>
+
+      <a href="post-detail.html" class="notif-row unread">
+        <div class="avatar notif-avatar-runner-up"><img src="assets/images/james-w.jpg" alt=""/></div>
+        <div class="notif-row-body">
+          <div class="notif-row-text"><strong>James W.</strong> and <strong>3 others</strong> liked your review of the <span class="notif-highlight">Padron 1926</span></div>
+          <div class="notif-row-time">1 hour ago</div>
+        </div>
+        <span class="notif-unread-dot"></span>
+      </a>
+
+      <a href="leaderboard.html" class="notif-row unread">
+        <div class="notif-icon-trophy">🏆</div>
+        <div class="notif-row-body">
+          <div class="notif-row-text">You climbed to <strong class="notif-text-elite">#4 on the leaderboard</strong> — 236 points from Bronze tier</div>
+          <div class="notif-row-time">3 hours ago</div>
+        </div>
+        <span class="notif-unread-dot"></span>
+      </a>
+
+      <a href="event-detail.html" class="notif-row unread">
+        <div class="notif-icon-burg">
+          <i data-lucide="calendar" class="ic-16"></i>
+        </div>
+        <div class="notif-row-body">
+          <div class="notif-row-text"><strong>Scotch &amp; Smoke Night</strong> is filling up — only 16 spots remaining</div>
+          <div class="notif-row-time">5 hours ago</div>
+        </div>
+        <span class="notif-unread-dot"></span>
+      </a>
+
+      <!-- Earlier -->
+      <div class="notif-section-label">Earlier This Week</div>
+
+      <a href="post-detail.html" class="notif-row">
+        <div class="avatar notif-avatar-bronze"><img src="assets/images/robert-b.jpg" alt=""/></div>
+        <div class="notif-row-body">
+          <div class="notif-row-text-read"><strong class="notif-text-primary">Robert B.</strong> commented on your post: "Need to try this pairing soon…"</div>
+          <div class="notif-row-time">2 days ago</div>
+        </div>
+      </a>
+
+      <a href="profile.html" class="notif-row">
+        <div class="avatar notif-avatar-member"><img src="assets/images/derick-l.jpg" alt=""/></div>
+        <div class="notif-row-body">
+          <div class="notif-row-text-read"><strong class="notif-text-primary">Derek L.</strong> started following you</div>
+          <div class="notif-row-time">3 days ago</div>
+        </div>
+        <button onclick="event.preventDefault()" class="notif-follow-back-btn">Follow Back</button>
+      </a>
+
+      <a href="profile.html" class="notif-row">
+        <div class="notif-icon-gold">🎖️</div>
+        <div class="notif-row-body">
+          <div class="notif-row-text-read">You earned the <strong class="notif-highlight">"Local Legend"</strong> badge for 25 check-ins</div>
+          <div class="notif-row-time">4 days ago</div>
+        </div>
+      </a>
+
+      <a href="event-detail.html" class="notif-row">
+        <div class="notif-icon-burg">
+          <i data-lucide="calendar" class="ic-16"></i>
+        </div>
+        <div class="notif-row-body">
+          <div class="notif-row-text-read">Reminder: <strong class="notif-text-primary">Padron Vertical Tasting</strong> on June 1 at 7:00 PM</div>
+          <div class="notif-row-time">5 days ago</div>
+        </div>
+      </a>
+
+      <a href="orders.html" class="notif-row">
+        <div class="notif-icon-muted">
+          <i data-lucide="notebook-pen" class="ic-16"></i></div><div class="notif-row-body"><div class="notif-row-text-read">Don't forget to review your activity from <strong>#CR-0039</strong> — earn +150 points</div>
+          <div class="notif-row-time">6 days ago</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</main>
+
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+<nav class="bottom-nav">
+  <a href="feed.html" class="bottom-nav-item"><i data-lucide="newspaper" class="ic-20"></i>Feed</a>
+  <a href="explore.html" class="bottom-nav-item"><i data-lucide="search" class="ic-20"></i>Explore</a>
+  <a href="create-post.html" class="bottom-nav-item"><div class="bottom-nav-create-btn"><i data-lucide="plus" class="ic-20"></i></div></a>
+  <a href="events.html" class="bottom-nav-item"><i data-lucide="calendar" class="ic-20"></i>Events</a>
+  <a href="profile.html" class="bottom-nav-item"><i data-lucide="user" class="ic-20"></i>Profile</a>
+</nav>
+
+<script>
+  function setTab(btn){
+    document.querySelectorAll('.filter-tab').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    if (btn.scrollIntoView) {
+      btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  }
+  function markAll(){document.querySelectorAll('.notif-row.unread').forEach(r=>{r.classList.remove('unread');const dot=r.querySelector('span[style*="background:var(--gold)"]');if(dot)dot.remove();});}
+
+  /* Carousel arrows for the filter-tabs row — same pattern as the
+     profile / library / streak / sterlon carousels. Wraps
+     .notifications-filter-tabs in a .pro-lib-carousel +
+     .notifications-tabs-carousel container and injects left / right
+     chevron buttons. Shared button/wrapper styles live in lounge.css;
+     .notifications-tabs-carousel is registered in the symmetric-track
+     arrow-position list there. */
+  (function setupNotTabsArrows(){
+    const track = document.querySelector('.notifications-filter-tabs');
+    if (!track || track.dataset.carouselWired === '1') return;
+    track.dataset.carouselWired = '1';
+
+    const wrap = document.createElement('div');
+    wrap.className = 'pro-lib-carousel notifications-tabs-carousel';
+    track.parentNode.insertBefore(wrap, track);
+    wrap.appendChild(track);
+
+    const mkArrow = (dir, glyph, label) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'pro-lib-arrow pro-lib-arrow-' + dir;
+      b.setAttribute('aria-label', label);
+      b.innerHTML = glyph;
+      return b;
+    };
+    const left  = mkArrow('left',  '‹', 'Scroll left');
+    const right = mkArrow('right', '›', 'Scroll right');
+    wrap.appendChild(left);
+    wrap.appendChild(right);
+
+    const step = (mult) => {
+      track.scrollBy({ left: track.clientWidth * 0.7 * mult, behavior: 'smooth' });
+    };
+    left.addEventListener('click',  () => step(-1));
+    right.addEventListener('click', () => step( 1));
+
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      const x = track.scrollLeft;
+      const overflow = max > 4;
+      const atEnd = x >= max - 1;
+      left.classList.toggle('pro-lib-arrow-hidden',  !(overflow && atEnd));
+      right.classList.toggle('pro-lib-arrow-hidden', !(overflow && !atEnd));
+    };
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    setTimeout(update, 80);
+    setTimeout(update, 500);
+  })();
+</script>
+</body>
+</html>

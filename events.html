@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Events — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Upcoming tastings, pairings, and member events at your lounge." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Events — Lounge & Co." />
+  <meta property="og:description" content="Upcoming tastings, pairings, and member events at your lounge." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Events — Lounge & Co." />
+  <meta name="twitter:description" content="Upcoming tastings, pairings, and member events at your lounge." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/events.css"/>
+</head>
+<body>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Thomas H.</div><div class="sidebar-user-tier">Elite · 1,744 pts · #4</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area">
+  <h1 class="visually-hidden">Events</h1>
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu"><i data-lucide="menu" class="ic-16"></i></button>
+    <div class="topbar-actions">
+    </div>
+  </header>
+
+  <div class="page-content">
+
+    <!-- CENTER -->
+    <div class="events-center-col">
+
+      <!-- Header H1 + tagline removed; the auto-injected .top-bar-logo
+           (calendar icon + "Events" label) serves as the page title. -->
+
+      <!-- Filter tabs -->
+      <div class="events-filter-row">
+        <button class="filter-tab active" onclick="setFilter(this,'upcoming')">Upcoming</button>
+        <button class="filter-tab" onclick="setFilter(this,'rsvp')">My RSVPs <span class="events-filter-badge">2</span></button>
+        <button class="filter-tab" onclick="setFilter(this,'area')"><span class="eve-area-label">In My Area</span> <span class="events-filter-badge events-filter-badge-area">3</span></button>
+        <button class="filter-tab eve-tab-mobile" onclick="setFilter(this,'popular')">Popular</button>
+        <button class="filter-tab" onclick="setFilter(this,'past')">Past</button>
+      </div>
+
+      <!-- Featured event -->
+      <a href="event-detail.html" class="event-card event-card-featured">
+        <div class="event-card-featured-hero">
+          <div class="event-card-featured-header">
+            <div>
+              <span class="event-card-featured-eyebrow">✦ Featured Event</span>
+              <h2 class="event-card-featured-title">Scotch &amp; Smoke Night</h2>
+              <p class="event-card-featured-description">An evening pairing rare Highland malts with hand-rolled cigars. Hosted by master blender Gerald W.</p>
+            </div>
+            <div class="event-card-featured-date">
+              <div class="event-card-featured-date-month">May</div>
+              <div class="event-card-featured-date-day">18</div>
+            </div>
+          </div>
+
+          <div class="event-card-featured-meta">
+            <span class="event-card-featured-meta-item"><i data-lucide="clock" class="ic-13"></i>7:00 PM – 10:00 PM</span>
+            <span class="event-card-featured-meta-item"><i data-lucide="map-pin" class="ic-13"></i>Lounge & Co.</span>
+            <span class="event-card-featured-meta-item"><i data-lucide="users" class="ic-13"></i>14 / 30 attending</span>
+            <span class="event-card-featured-meta-price"><i data-lucide="dollar-sign" class="ic-13"></i>$45</span>
+          </div>
+        </div>
+        <div class="event-card-featured-footer">
+          <div class="event-card-featured-avatars">
+            <div class="avatar event-card-featured-avatar-champion"><img src="assets/images/marcus-r.jpg" alt=""/></div>
+            <div class="avatar event-card-featured-avatar-runner-up"><img src="assets/images/james-w.jpg" alt=""/></div>
+            <div class="avatar event-card-featured-avatar-bronze"><img src="assets/images/robert-b.jpg" alt=""/></div>
+            <div class="avatar event-card-featured-avatar-overflow">+11</div>
+          </div>
+          <span class="event-card-featured-cta">RSVP Now</span>
+        </div>
+      </a>
+
+      <!-- Event 2 -->
+      <a href="event-detail.html" class="event-card">
+        <div class="date-block">
+          <div class="event-card-date-month">June</div>
+          <div class="event-card-date-day">01</div>
+          <div class="event-card-date-weekday">Saturday</div>
+        </div>
+        <div class="event-card-body">
+          <div class="event-card-header">
+            <div>
+              <h3 class="event-card-title">Padron Vertical Tasting</h3>
+              <p class="event-card-description">Side-by-side tasting of the Anniversary, Family Reserve, and 1926 series.</p>
+            </div>
+            <span class="event-card-rsvp-pill">RSVP'd</span>
+          </div>
+          <div class="event-card-meta">
+            <span>7:00 PM</span><span>7 / 20 attending</span><span class="event-card-meta-price">$65</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Event 3 -->
+      <a href="event-detail.html" class="event-card">
+        <div class="date-block">
+          <div class="event-card-date-month">June</div>
+          <div class="event-card-date-day">14</div>
+          <div class="event-card-date-weekday">Friday</div>
+        </div>
+        <div class="event-card-body">
+          <div class="event-card-header">
+            <div>
+              <h3 class="event-card-title">Father's Day Bourbon Flight</h3>
+              <p class="event-card-description">Bring your father, your son, or both. Four flights from Kentucky's finest distilleries.</p>
+            </div>
+            <span class="eve-area">In Your Area</span>
+          </div>
+          <div class="event-card-meta">
+            <span>6:30 PM</span><span>22 / 40 attending</span><span class="event-card-meta-price">$85</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Event 4 -->
+      <a href="event-detail.html" class="event-card">
+        <div class="date-block">
+          <div class="event-card-date-month">June</div>
+          <div class="event-card-date-day">22</div>
+          <div class="event-card-date-weekday">Saturday</div>
+        </div>
+        <div class="event-card-body">
+          <div class="event-card-header">
+            <div>
+              <h3 class="event-card-title">Cuban Heritage Night</h3>
+              <p class="event-card-description">Cohiba, Montecristo, and Partagás with paired rum &amp; live jazz.</p>
+            </div>
+            <div class="eve-badges">
+              <span class="event-card-rsvp-pill">RSVP'd</span>
+              <span class="eve-area">In Your Area</span>
+            </div>
+          </div>
+          <div class="event-card-meta">
+            <span>8:00 PM</span><span>18 / 35 attending</span><span class="event-card-meta-price">$75</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Event 5 -->
+      <a href="event-detail.html" class="event-card">
+        <div class="date-block">
+          <div class="event-card-date-month">July</div>
+          <div class="event-card-date-day">04</div>
+          <div class="event-card-date-weekday">Thursday</div>
+        </div>
+        <div class="event-card-body">
+          <div class="event-card-header">
+            <div>
+              <h3 class="event-card-title">Independence Day Rooftop</h3>
+              <p class="event-card-description">Open-air evening with American spirits and the city skyline.</p>
+            </div>
+            <span class="eve-area">In Your Area</span>
+          </div>
+          <div class="event-card-meta">
+            <span>6:00 PM</span><span>9 / 50 attending</span><span class="event-card-meta-price">Members Free</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Event 6 -->
+      <a href="event-detail.html" class="event-card">
+        <div class="date-block">
+          <div class="event-card-date-month">July</div>
+          <div class="event-card-date-day">19</div>
+          <div class="event-card-date-weekday">Friday</div>
+        </div>
+        <div class="event-card-body">
+          <div>
+            <h3 class="event-card-title">Members-Only Cognac Class</h3>
+            <p class="event-card-description">A guided introduction to VS, VSOP, and XO cognac with a master sommelier.</p>
+          </div>
+          <div class="event-card-meta">
+            <span>7:30 PM</span><span>4 / 15 attending</span><span class="event-card-meta-price">$120</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- RAIL -->
+    <aside class="rail-col events-rail-col">
+
+      <!-- Nearby events widget -->
+      <div class="widget">
+        <div class="widget-title">📍 Nearby Events</div>
+        <div class="eve-loc">
+          <i data-lucide="map-pin" class="ic-13"></i>
+          <span class="eve-loc-name">Atlanta, GA</span>
+          <a href="#" class="eve-loc-edit" onclick="event.preventDefault()">Change</a>
+        </div>
+
+        <div class="eve-radius">
+          <div class="eve-radius-row">
+            <label>Search radius</label>
+            <span class="eve-radius-val" id="events-radius-val">25 mi</span>
+          </div>
+          <input type="range" min="5" max="100" step="5" value="25" class="eve-radius-slider" aria-label="Search radius in miles" oninput="document.getElementById('events-radius-val').textContent=this.value+' mi'"/>
+          <div class="eve-radius-marks">
+            <span>5</span><span>25</span><span>50</span><span>75</span><span>100+</span>
+          </div>
+        </div>
+
+        <div class="eve-area-stats">
+          <span class="eve-area-count">3</span>
+          <span class="eve-area-msg">events within radius</span>
+        </div>
+
+        <div class="eve-area-filters">
+          <label class="eve-area-check"><input type="checkbox" checked/><span>Sister lounges</span></label>
+          <label class="eve-area-check"><input type="checkbox" checked/><span>Public community events</span></label>
+          <label class="eve-area-check"><input type="checkbox"/><span>Members-only events</span></label>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">📅 Your RSVPs</div>
+        <div class="events-rsvp-list">
+          <a href="event-detail.html" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--bg-border)'" class="events-rsvp-item">
+            <div class="events-rsvp-date-block"><div class="events-rsvp-date-month">Jun</div><div class="events-rsvp-date-day">01</div></div>
+            <div><div class="events-rsvp-title">Padron Vertical Tasting</div><div class="events-rsvp-time">7:00 PM</div></div>
+          </a>
+          <a href="event-detail.html" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--bg-border)'" class="events-rsvp-item">
+            <div class="events-rsvp-date-block"><div class="events-rsvp-date-month">Jun</div><div class="events-rsvp-date-day">22</div></div>
+            <div><div class="events-rsvp-title">Cuban Heritage Night</div><div class="events-rsvp-time">8:00 PM</div></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">⭐ Popular Right Now</div>
+        <p class="events-popular-text">"Scotch &amp; Smoke Night" is filling up fast — only 16 spots remaining.</p>
+        <a href="event-detail.html" class="events-popular-cta">Grab a spot →</a>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">✦ Sterlon Tip</div>
+        <p class="events-sterlon-tip">"Based on your taste profile, you'd likely love the Padron Vertical and the Cognac Class — both lean toward your full-bodied preferences."</p>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+<nav class="bottom-nav">
+  <a href="feed.html" class="bottom-nav-item"><i data-lucide="newspaper" class="ic-20"></i>Feed</a>
+  <a href="explore.html" class="bottom-nav-item"><i data-lucide="search" class="ic-20"></i>Explore</a>
+  <a href="create-post.html" class="bottom-nav-item"><div class="bottom-nav-create-btn"><i data-lucide="plus" class="ic-20"></i></div></a>
+  <a href="events.html" class="bottom-nav-item active"><i data-lucide="calendar" class="ic-20"></i>Events</a>
+  <a href="profile.html" class="bottom-nav-item"><i data-lucide="user" class="ic-20"></i>Profile</a>
+</nav>
+
+<script>
+  function setFilter(btn,f){
+    document.querySelectorAll('.events-filter-row .filter-tab').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    if (btn.scrollIntoView) {
+      btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  }
+
+  /* Carousel arrows for the filter row (.events-filter-row) — same pattern as every
+     other carousel in the app. Shared button/wrapper styles live in
+     lounge.css; .eve-tabs-carousel is registered there for symmetric-row
+     arrow positioning. */
+  (function setupEveTabsArrows(){
+    const track = document.querySelector('.events-filter-row');
+    if (!track || track.dataset.carouselWired === '1') return;
+    track.dataset.carouselWired = '1';
+
+    const wrap = document.createElement('div');
+    wrap.className = 'pro-lib-carousel eve-tabs-carousel';
+    track.parentNode.insertBefore(wrap, track);
+    wrap.appendChild(track);
+
+    const mkArrow = (dir, glyph, label) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'pro-lib-arrow pro-lib-arrow-' + dir;
+      b.setAttribute('aria-label', label);
+      b.innerHTML = glyph;
+      return b;
+    };
+    const left  = mkArrow('left',  '‹', 'Scroll left');
+    const right = mkArrow('right', '›', 'Scroll right');
+    wrap.appendChild(left);
+    wrap.appendChild(right);
+
+    const step = (mult) => {
+      track.scrollBy({ left: track.clientWidth * 0.7 * mult, behavior: 'smooth' });
+    };
+    left.addEventListener('click',  () => step(-1));
+    right.addEventListener('click', () => step( 1));
+
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      const x = track.scrollLeft;
+      const overflow = max > 4;
+      const atEnd = x >= max - 1;
+      left.classList.toggle('pro-lib-arrow-hidden',  !(overflow && atEnd));
+      right.classList.toggle('pro-lib-arrow-hidden', !(overflow && !atEnd));
+    };
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    setTimeout(update, 80);
+    setTimeout(update, 500);
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       Platform-level page.
+       First-time member onboarding flow per N9.
+       Steps: (1) Welcome + age-verified confirmation (TOT already passed at
+       age-verify.html before reaching this page), (2) Tier select via Stripe
+       Checkout, (3) Multi-category palate intake (B30 — cigar + bourbon +
+       whiskey + rum + tequila + mezcal), (4) Optional first venue join prompt.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Welcome to Lounge & Co. — finish setting up your account." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/member-onboarding.css"/>
+</head>
+<body>
+
+<div class="mo-shell">
+
+  <div class="mo-topbar">
+    <div class="mo-brand">
+      <img src="assets/images/logo-favicon.png" alt="Lounge & Co." />
+      <span class="mo-brand-name">Lounge <span class="amp">&amp;</span> Co.</span>
+    </div>
+    <a href="#" class="mo-skip">Skip for now</a>
+  </div>
+
+  <main class="mo-main">
+
+    <!-- Stepper -->
+    <div class="mo-stepper">
+      <span class="mo-step-dot done">✓</span>
+      <span class="mo-step-label">Verified</span>
+      <span class="mo-step-line"></span>
+      <span class="mo-step-dot active">2</span>
+      <span class="mo-step-label active">Palate</span>
+      <span class="mo-step-line"></span>
+      <span class="mo-step-dot">3</span>
+      <span class="mo-step-label">Tier</span>
+      <span class="mo-step-line"></span>
+      <span class="mo-step-dot">4</span>
+      <span class="mo-step-label">Venues</span>
+    </div>
+
+    <!-- Current step: Palate intake -->
+    <div class="mo-verify-badge">
+      <i data-lucide="shield-check" class="ic-15"></i>
+      Age verified · 21+
+    </div>
+
+    <h1 class="mo-step-title">What do you drink and smoke?</h1>
+    <p class="mo-step-sub">Pick the categories you enjoy. We'll use this to tune Sterlon's recommendations to your palate. You can adjust anything later in Settings.</p>
+
+    <div class="mo-categories">
+
+      <div class="mo-cat">
+        <div class="mo-cat-head">
+          <span class="mo-cat-name">Cigars</span>
+          <span class="mo-cat-toggle">✓ Selected</span>
+        </div>
+        <div class="mo-cat-chips">
+          <span class="mo-cat-chip selected">Maduro</span>
+          <span class="mo-cat-chip selected">Full-bodied</span>
+          <span class="mo-cat-chip">Connecticut shade</span>
+          <span class="mo-cat-chip selected">Earthy</span>
+          <span class="mo-cat-chip">Floral</span>
+          <span class="mo-cat-chip">Spicy</span>
+        </div>
+      </div>
+
+      <div class="mo-cat">
+        <div class="mo-cat-head">
+          <span class="mo-cat-name">Bourbon</span>
+          <span class="mo-cat-toggle">✓ Selected</span>
+        </div>
+        <div class="mo-cat-chips">
+          <span class="mo-cat-chip selected">High rye</span>
+          <span class="mo-cat-chip selected">Wheated</span>
+          <span class="mo-cat-chip">Allocated</span>
+          <span class="mo-cat-chip">Cask-strength</span>
+          <span class="mo-cat-chip selected">Sherry-finished</span>
+        </div>
+      </div>
+
+      <div class="mo-cat">
+        <div class="mo-cat-head">
+          <span class="mo-cat-name">Scotch / Whiskey</span>
+          <span class="mo-cat-toggle">+ Add</span>
+        </div>
+        <div class="mo-cat-chips">
+          <span class="mo-cat-chip">Islay peat</span>
+          <span class="mo-cat-chip">Highland</span>
+          <span class="mo-cat-chip">Speyside</span>
+          <span class="mo-cat-chip">Japanese</span>
+          <span class="mo-cat-chip">Sherry-cask</span>
+        </div>
+      </div>
+
+      <div class="mo-cat">
+        <div class="mo-cat-head">
+          <span class="mo-cat-name">Rum</span>
+          <span class="mo-cat-toggle">+ Add</span>
+        </div>
+        <div class="mo-cat-chips">
+          <span class="mo-cat-chip">Aged Cuban-style</span>
+          <span class="mo-cat-chip">Jamaican funk</span>
+          <span class="mo-cat-chip">Demerara</span>
+          <span class="mo-cat-chip">Spanish-style</span>
+        </div>
+      </div>
+
+      <div class="mo-cat">
+        <div class="mo-cat-head">
+          <span class="mo-cat-name">Tequila / Mezcal</span>
+          <span class="mo-cat-toggle">+ Add</span>
+        </div>
+        <div class="mo-cat-chips">
+          <span class="mo-cat-chip">Blanco</span>
+          <span class="mo-cat-chip">Reposado</span>
+          <span class="mo-cat-chip">Añejo</span>
+          <span class="mo-cat-chip">Mezcal — smoky</span>
+        </div>
+      </div>
+
+      <div class="mo-cat">
+        <div class="mo-cat-head">
+          <span class="mo-cat-name">Pipe / loose-leaf</span>
+          <span class="mo-cat-toggle">+ Add</span>
+        </div>
+        <div class="mo-cat-chips">
+          <span class="mo-cat-chip">English blends</span>
+          <span class="mo-cat-chip">Latakia</span>
+          <span class="mo-cat-chip">Virginia</span>
+          <span class="mo-cat-chip">Aromatic</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mo-actions">
+      <button class="mo-btn mo-btn-back" type="button">← Back</button>
+      <button class="mo-btn" type="button">Continue →</button>
+    </div>
+
+  </main>
+
+</div>
+
+</body>
+</html>

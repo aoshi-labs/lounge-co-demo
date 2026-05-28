@@ -1,0 +1,654 @@
+/* === Admin: Curated List editor (B6 owner-side) ====================
+   Split-screen workspace: form on left, live preview on right.
+   Same design system as the rest of admin; preview reuses the
+   editorial typography from lists.css so what you see is what publishes.
+==================================================================== */
+
+/* Sidebar header / user row (admin variant) */
+
+/* Top bar */
+.ale-back {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 10px;
+  font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: 7px;
+  transition: background .15s, color .15s;
+}
+.ale-back:hover { background: var(--bg-elevated); color: var(--gold); }
+.ale-page-title {
+  font-family: var(--font-ui); font-size: 15px; font-weight: 600;
+  color: var(--text-primary);
+}
+.ale-status-pill {
+  font-family: var(--font-ui); font-size: 10px; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--gold);
+  background: var(--gold-subtle);
+  border: 1px solid rgba(var(--gold-rgb), .3);
+  border-radius: 99px;
+  padding: 3px 9px;
+}
+.ale-status-pill-pub {
+  color: var(--tier-elite);
+  background: rgba(var(--tier-elite-rgb), .12);
+  border-color: rgba(var(--tier-elite-rgb), .3);
+}
+.ale-actions {
+  margin-left: auto;
+  display: flex; align-items: center; gap: 8px;
+}
+.ale-btn-secondary,
+.ale-btn-outline,
+.ale-btn-primary {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background .15s, border-color .15s, color .15s;
+}
+.ale-btn-secondary {
+  background: transparent;
+  border: 1px solid var(--bg-border);
+  color: var(--text-secondary);
+}
+.ale-btn-secondary:hover { color: var(--text-primary); border-color: var(--text-secondary); }
+.ale-btn-outline {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+}
+.ale-btn-outline:hover { background: var(--gold-subtle); }
+.ale-btn-primary {
+  background: var(--burg);
+  border: 1px solid var(--burg);
+  color: var(--cream);
+}
+.ale-btn-primary:hover { background: var(--burg-hover); border-color: var(--burg-hover); }
+
+/* Red "Back to Catalog" pill — pushed to the right of the top bar via
+   margin-left:auto. Burgundy fill mirrors the shared top-bar CTA pattern.
+   Replaces the old left-side `.ale-back` ghost link which lived next to
+   the page-title text (both removed now that the auto-injected
+   .top-bar-logo serves as identity). */
+.ale-back-cta {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--burg);
+  color: var(--cream);
+  border: 1px solid var(--burg);
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .15s, border-color .15s;
+}
+.ale-back-cta:hover { background: var(--burg-hover); border-color: var(--burg-hover); }
+.ale-back-cta svg, .ale-back-cta [data-lucide] { flex-shrink: 0; }
+
+/* Bottom actions widget — Discard / Save Draft / Publish moved out of
+   the top bar. Card-style band that sits beneath the form + preview
+   columns, anchored to the editing flow rather than the page chrome. */
+.ale-actions-widget {
+  margin: 0 24px 32px;
+  padding: 18px 22px;
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.ale-actions-widget-info { flex: 1; min-width: 0; }
+.ale-actions-widget-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.ale-actions-widget-sub {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.ale-actions-widget-btns {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+  .ale-actions-widget {
+    margin: 0 16px 28px;
+    padding: 14px 16px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .ale-actions-widget-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .ale-actions-widget-btns > .ale-btn-primary { grid-column: 1 / -1; }
+  .ale-back-cta { font-size: 11px; padding: 6px 10px; }
+}
+
+/* Body — two columns */
+.ale-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 24px;
+  padding: 24px 28px 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* Form column */
+.ale-form { display: flex; flex-direction: column; gap: 24px; }
+
+.ale-section {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+
+.ale-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.ale-help-inline {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text-muted);
+}
+.ale-help {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-top: 8px;
+}
+
+/* Inputs */
+.ale-input {
+  width: 100%;
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  border-radius: 9px;
+  padding: 10px 14px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color .15s;
+}
+.ale-input:focus { border-color: var(--gold); }
+.ale-input::placeholder { color: var(--text-muted); }
+.ale-input-textarea {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.65;
+  resize: vertical;
+  min-height: 140px;
+}
+.ale-input-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--text-muted) 50%), linear-gradient(135deg, var(--text-muted) 50%, transparent 50%);
+  background-position: calc(100% - 18px) 18px, calc(100% - 12px) 18px;
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 32px;
+}
+
+/* List Type grid */
+.ale-type-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 8px;
+}
+.ale-type {
+  cursor: pointer;
+}
+.ale-type input { position: absolute; opacity: 0; pointer-events: none; }
+.ale-type-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 14px 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  border-radius: 10px;
+  transition: border-color .15s, background .15s, transform .15s;
+}
+.ale-type:hover .ale-type-card {
+  border-color: var(--gold-dim);
+  transform: translateY(-1px);
+}
+.ale-type input:checked + .ale-type-card {
+  border-color: var(--gold);
+  background: var(--gold-subtle);
+}
+.ale-type-card [data-lucide], .ale-type-card svg { color: var(--gold); }
+.ale-type-name {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.ale-type-sub {
+  font-size: 10px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Author picker */
+.ale-author-pick {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.ale-author-avatar {
+  background: var(--tier-elite);
+  color: var(--tier-elite-ink);
+  width: 36px; height: 36px;
+}
+.ale-author-pick .ale-input-select { flex: 1; }
+
+/* Date range */
+.ale-date-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ale-date-row .ale-input { flex: 1; }
+.ale-date-sep {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--gold);
+}
+
+/* Products picker */
+.ale-products {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.ale-product-row {
+  display: grid;
+  grid-template-columns: 26px 32px 1.1fr 1.5fr 30px;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  border-radius: 9px;
+}
+.ale-product-rank {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-align: center;
+}
+.ale-product-thumb {
+  font-size: 22px;
+  text-align: center;
+}
+.ale-product-thumb img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+.ale-search-thumb {
+  width: 22px;
+  height: 22px;
+  object-fit: cover;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.ale-product-info { min-width: 0; }
+.ale-product-name {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ale-product-meta {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.ale-product-note {
+  font-family: var(--font-body) !important;
+  font-style: italic;
+  font-size: 12px !important;
+  padding: 7px 10px !important;
+}
+.ale-product-remove {
+  background: transparent;
+  border: 1px solid var(--bg-border);
+  color: var(--text-muted);
+  border-radius: 6px;
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: border-color .15s, color .15s;
+}
+.ale-product-remove:hover {
+  border-color: var(--burg);
+  color: var(--burg);
+}
+
+/* Add-product search */
+.ale-add-product { position: relative; }
+.ale-search-results {
+  margin-top: 6px;
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 9px;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.ale-search-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 10px;
+  background: transparent;
+  border: none;
+  border-radius: 7px;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-primary);
+  transition: background .12s;
+}
+.ale-search-row:hover { background: var(--bg-elevated); }
+.ale-search-row em {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 11px;
+  margin-left: auto;
+}
+
+/* Publish toggle */
+.ale-publish-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.ale-publish-opt { cursor: pointer; }
+.ale-publish-opt input { position: absolute; opacity: 0; pointer-events: none; }
+.ale-publish-card {
+  padding: 14px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  border-radius: 10px;
+  transition: border-color .15s, background .15s;
+}
+.ale-publish-opt:hover .ale-publish-card { border-color: var(--gold-dim); }
+.ale-publish-opt input:checked + .ale-publish-card {
+  border-color: var(--gold);
+  background: var(--gold-subtle);
+}
+.ale-publish-title {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.ale-publish-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+/* ========== RIGHT: live preview ========== */
+.ale-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ale-preview-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0 4px;
+}
+.ale-preview-head [data-lucide],
+.ale-preview-head svg { color: var(--gold); }
+
+.ale-preview-frame {
+  background: var(--bg-base);
+  border: 1px dashed var(--bg-border);
+  border-radius: 12px;
+  padding: 18px;
+}
+
+/* Preview card — mirrors lists.css `.lst-card` so what you see is what gets published */
+.ale-prev-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 14px;
+  padding: 22px 24px;
+}
+.ale-prev-tag {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 99px;
+  margin-bottom: 12px;
+  background: var(--gold-subtle);
+  color: var(--gold);
+  border: 1px solid rgba(var(--gold-rgb), .3);
+}
+.ale-prev-tag-tonight {
+  background: var(--gold-subtle); color: var(--gold);
+  border-color: rgba(var(--gold-rgb), .4);
+}
+.ale-prev-tag-seasonal {
+  background: rgba(var(--tier-bronze-rgb), .12); color: var(--tier-bronze);
+  border-color: rgba(var(--tier-bronze-rgb), .3);
+}
+.ale-prev-tag-event {
+  background: rgba(var(--burg-rgb), .12); color: var(--burg);
+  border-color: rgba(var(--burg-rgb), .3);
+}
+.ale-prev-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.ale-prev-byline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.ale-prev-avatar {
+  width: 24px; height: 24px;
+  background: var(--tier-elite);
+  color: var(--tier-elite-ink);
+  font-size: 10px;
+}
+.ale-prev-avatar-burg { background: var(--burg); color: var(--cream); }
+.ale-prev-intro {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.ale-prev-products {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-top: 1px solid var(--bg-border);
+  padding-top: 12px;
+}
+.ale-prev-product {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 7px 0;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  border-bottom: 1px dashed var(--bg-border);
+}
+.ale-prev-product:last-child { border-bottom: none; }
+.ale-prev-rank {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--gold);
+  width: 18px;
+  flex-shrink: 0;
+}
+.ale-prev-name { font-weight: 600; color: var(--text-primary); }
+.ale-prev-note {
+  flex: 1;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.ale-prev-price {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+/* Phone (≤767px): the preview product row jams rank + name + italic
+   note + price onto one cramped flexbox baseline. Restack as a small
+   grid: rank · name · price on top, italic note indented underneath. */
+@media (max-width: 767px) {
+  .ale-prev-product {
+    display: grid;
+    grid-template-columns: 18px 1fr auto;
+    grid-template-areas:
+      "rank name  price"
+      ".    note  note";
+    column-gap: 8px;
+    row-gap: 3px;
+    align-items: baseline;
+    padding: 9px 0;
+  }
+  .ale-prev-rank  { grid-area: rank; }
+  .ale-prev-name  { grid-area: name; line-height: 1.3; }
+  .ale-prev-note  { grid-area: note; font-size: 11.5px; line-height: 1.45; }
+  .ale-prev-price { grid-area: price; }
+}
+
+/* Mobile / narrow */
+@media (max-width: 1279px) {
+  .ale-body { grid-template-columns: 1fr; }
+}
+@media (max-width: 1023px) {
+  .ale-body { padding: 18px 16px 60px; gap: 18px; }
+  .ale-page-title { font-size: 13px; }
+  .ale-status-pill { display: none; }
+  .ale-product-row {
+    grid-template-columns: 26px 32px 1fr 30px;
+    grid-template-rows: auto auto;
+  }
+  .ale-product-note {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Phone (≤767px): keep all 5 row items but pin them with explicit
+   grid-template-areas so remove sits at the top-right (not auto-placed
+   to a third row after the full-width note). Thumb stays visible as
+   the image placeholder. Name allowed to wrap (no ellipsis truncation). */
+@media (max-width: 767px) {
+  .ale-product-row {
+    grid-template-columns: 22px 28px 1fr auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "rank thumb info   remove"
+      "note note  note   note";
+    column-gap: 10px;
+    row-gap: 8px;
+    padding: 12px;
+    align-items: start;
+  }
+  .ale-product-rank   { grid-area: rank;   font-size: 1rem; text-align: left; padding-top: 1px; }
+  .ale-product-thumb  { grid-area: thumb;  font-size: 20px; }
+  .ale-product-info   { grid-area: info;   align-self: center; }
+  .ale-product-note   { grid-area: note;   margin-top: 2px; }
+  .ale-product-remove { grid-area: remove; width: 26px; height: 26px; align-self: center; justify-self: end; }
+
+  .ale-product-name {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    line-height: 1.3;
+  }
+  .ale-product-meta {
+    font-size: 10.5px;
+    margin-top: 3px;
+  }
+}

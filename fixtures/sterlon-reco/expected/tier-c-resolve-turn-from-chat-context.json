@@ -1,0 +1,69 @@
+{
+  "contractVersion": 1,
+  "productIdAuthority": 2,
+  "cardsProductIds": [
+    {
+      "slot": "best",
+      "cigarId": null,
+      "spiritId": "spi-trk-wt-101",
+      "foodId": null
+    },
+    {
+      "slot": "safe",
+      "cigarId": null,
+      "spiritId": "spi-trk-diplo-re",
+      "foodId": null
+    },
+    {
+      "slot": "wildcard",
+      "cigarId": null,
+      "spiritId": "spi-trk-woodford",
+      "foodId": null
+    }
+  ],
+  "runtimeMode": "normal",
+  "degraded": false,
+  "journeyLevel": "novice",
+  "provenance": {
+    "source": "recommendation-runtime",
+    "module": "build-set",
+    "signals": [
+      "catalog-shell",
+      "context-runtime",
+      "open-pairing",
+      "novice-cap",
+      "category-spirit",
+      "pairing-strategy-complementary",
+      "flight-philosophy",
+      "flight-philosophy-repair-spirit",
+      "ontology-suppressed"
+    ],
+    "hasTurnId": true,
+    "scoringVersion": 1,
+    "runtimeVersion": 1
+  },
+  "degradedCause": null,
+  "cardsLen": 3,
+  "slotKeys": [
+    "best",
+    "safe",
+    "wildcard"
+  ],
+  "bestContextPresent": true,
+  "safeContextPresent": true,
+  "wildcardContextPresent": true,
+  "bestRationaleLen": 0,
+  "safeRationaleLen": 0,
+  "wildcardRationaleLen": 0,
+  "bestCompatibilityPresent": true,
+  "safeCompatibilityPresent": true,
+  "wildcardCompatibilityPresent": true,
+  "bestConfidence": "low",
+  "safeConfidence": "low",
+  "wildcardConfidence": "low",
+  "allowlistVerified": true,
+  "allowlistViolationCount": 0,
+  "validateOk": true,
+  "governanceOk": true,
+  "governanceAuthorityOk": true
+}

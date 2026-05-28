@@ -1,0 +1,463 @@
+{
+  "version": 1,
+  "shard": "tracker-03",
+  "category": "spirit",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 8,
+  "products": [
+    {
+      "deckKey": "scotch",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-dalmore-12",
+      "sensory": {
+        "body": 5,
+        "sweetness": 6,
+        "pepper": 2,
+        "cocoa": 7,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-DALMORE-12",
+        "article": "https://www.thedalmore.com/en-us/our-collections/the-principal-collection/the-12/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 43,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "100% malted barley",
+        "style": "Single malt Scotch",
+        "origin": "Highland, Scotland",
+        "msrp": 75
+      },
+      "name": "Dalmore 12",
+      "tags": [
+        {
+          "id": "citrus",
+          "weight": 1.0
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.95
+        },
+        {
+          "id": "spice",
+          "weight": 0.85
+        },
+        {
+          "id": "dried_fruit",
+          "weight": 0.75
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.7
+        },
+        {
+          "id": "coffee",
+          "weight": 0.65
+        },
+        {
+          "id": "dark_chocolate",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "rum",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-diplo-re",
+      "sensory": {
+        "body": 5,
+        "sweetness": 8,
+        "pepper": 2,
+        "cocoa": 7,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-DIPLO-RE",
+        "article": "https://www.diplomaticorums.com/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 9,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Sugar cane honey (column + pot still blend)",
+        "style": "Dark rum",
+        "origin": "Venezuela",
+        "msrp": 42
+      },
+      "name": "Diplomatico Reserva Exclusiva",
+      "tags": [
+        {
+          "id": "citrus",
+          "weight": 1.0
+        },
+        {
+          "id": "orange_peel",
+          "weight": 0.95
+        },
+        {
+          "id": "toffee",
+          "weight": 0.85
+        },
+        {
+          "id": "anise",
+          "weight": 0.75
+        },
+        {
+          "id": "dark_chocolate",
+          "weight": 0.7
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.65
+        },
+        {
+          "id": "dried_fruit",
+          "weight": 0.6
+        },
+        {
+          "id": "molasses",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "agave",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-dj-1942",
+      "sensory": {
+        "body": 6,
+        "sweetness": 8,
+        "pepper": 2,
+        "cocoa": 7,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-DJ-1942",
+        "article": "https://www.donjulio.com/our-tequilas/don-julio-1942-tequila",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 20,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "100% Blue Weber agave",
+        "style": "100% agave añejo",
+        "origin": "Jalisco, Mexico",
+        "msrp": 175
+      },
+      "name": "Don Julio 1942",
+      "tags": [
+        {
+          "id": "caramel",
+          "weight": 1.0
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.95
+        },
+        {
+          "id": "oak",
+          "weight": 0.85
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.75
+        },
+        {
+          "id": "agave",
+          "weight": 0.7
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "agave",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-dm-vida",
+      "sensory": {
+        "body": 5,
+        "sweetness": 6,
+        "pepper": 7,
+        "cocoa": 4,
+        "earthiness": 7
+      },
+      "tracker": {
+        "sku": "SPI-TRK-DM-VIDA",
+        "article": "https://delmaguey.com/vida-clasico/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 68,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "100% espadín agave",
+        "style": "Espadín mezcal",
+        "origin": "Oaxaca, Mexico",
+        "msrp": 38
+      },
+      "name": "Del Maguey Vida Mezcal",
+      "tags": [
+        {
+          "id": "smoke",
+          "weight": 1.0
+        },
+        {
+          "id": "earth",
+          "weight": 0.95
+        },
+        {
+          "id": "agave",
+          "weight": 0.85
+        },
+        {
+          "id": "citrus",
+          "weight": 0.75
+        },
+        {
+          "id": "pepper",
+          "weight": 0.7
+        },
+        {
+          "id": "honey",
+          "weight": 0.65
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "agave",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-donjulio-rep",
+      "sensory": {
+        "body": 5,
+        "sweetness": 7,
+        "pepper": 6,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-DONJULIO-REP",
+        "article": "https://www.royalbatch.com/blog-detail/best-selling-alcohol-in-the-usa-in-2025-what-americans-actually-chose",
+        "source": "Industry reference (US retail sales 2025)"
+      },
+      "journeyRank": 87,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "100% Blue Weber agave",
+        "style": "100% agave reposado",
+        "origin": "Jalisco, Mexico",
+        "msrp": 55
+      },
+      "name": "Don Julio Reposado",
+      "tags": [
+        {
+          "id": "agave",
+          "weight": 1.0
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.95
+        },
+        {
+          "id": "caramel",
+          "weight": 0.85
+        },
+        {
+          "id": "oak",
+          "weight": 0.75
+        },
+        {
+          "id": "pepper",
+          "weight": 0.7
+        },
+        {
+          "id": "honey",
+          "weight": 0.65
+        },
+        {
+          "id": "dried_fruit",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "cognac",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-dusse-vsop",
+      "sensory": {
+        "body": 5,
+        "sweetness": 7,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-DUSSE-VSOP",
+        "article": "https://www.dusse.com/product/dusse-vsop-flask/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 74,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Ugni Blanc distillate",
+        "style": "Cognac VSOP",
+        "origin": "Cognac, France",
+        "msrp": 50
+      },
+      "name": "D'USSÉ VSOP Cognac",
+      "tags": [
+        {
+          "id": "wood",
+          "weight": 1.0
+        },
+        {
+          "id": "cinnamon",
+          "weight": 0.95
+        },
+        {
+          "id": "floral",
+          "weight": 0.85
+        },
+        {
+          "id": "spice",
+          "weight": 0.75
+        },
+        {
+          "id": "dried_fruit",
+          "weight": 0.7
+        },
+        {
+          "id": "honey",
+          "weight": 0.65
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-eagle-rare",
+      "sensory": {
+        "body": 5,
+        "sweetness": 6,
+        "pepper": 3,
+        "cocoa": 7,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-EAGLE-RARE",
+        "article": "https://www.buffalotracedistillery.com/our-brands/eagle-rare/eagle-rare-10/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 4,
+      "spec": {
+        "proof": 90.0,
+        "abvPercent": 45.0,
+        "mash": "Corn, rye, malted barley (BT mash bill)",
+        "style": "Kentucky Straight Bourbon",
+        "origin": "Kentucky",
+        "msrp": 35
+      },
+      "name": "Eagle Rare 10yr",
+      "tags": [
+        {
+          "id": "toffee",
+          "weight": 1.0
+        },
+        {
+          "id": "citrus",
+          "weight": 0.95
+        },
+        {
+          "id": "orange_peel",
+          "weight": 0.85
+        },
+        {
+          "id": "herbal",
+          "weight": 0.75
+        },
+        {
+          "id": "honey",
+          "weight": 0.7
+        },
+        {
+          "id": "leather",
+          "weight": 0.65
+        },
+        {
+          "id": "oak",
+          "weight": 0.6
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-ec-sb",
+      "sensory": {
+        "body": 5,
+        "sweetness": 7,
+        "pepper": 7,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-EC-SB",
+        "article": "https://heavenhilldistillery.com/elijah-craig-small-batch.php",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 32,
+      "spec": {
+        "proof": 94.0,
+        "abvPercent": 47.0,
+        "mash": "Corn, rye, malt (heaven Hill)",
+        "style": "Kentucky Straight Bourbon",
+        "origin": "Kentucky",
+        "msrp": 30
+      },
+      "name": "Elijah Craig Small Batch",
+      "tags": [
+        {
+          "id": "vanilla",
+          "weight": 1.0
+        },
+        {
+          "id": "fresh",
+          "weight": 0.95
+        },
+        {
+          "id": "mint",
+          "weight": 0.85
+        },
+        {
+          "id": "spice",
+          "weight": 0.75
+        },
+        {
+          "id": "smoke",
+          "weight": 0.7
+        },
+        {
+          "id": "nutmeg",
+          "weight": 0.65
+        }
+      ],
+      "category": "spirit"
+    }
+  ]
+}

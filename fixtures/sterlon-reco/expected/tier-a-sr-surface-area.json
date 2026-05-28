@@ -1,0 +1,23 @@
+{
+  "hasValidateCards": true,
+  "hasVerifyOnly": true,
+  "hasMatchMenu": true,
+  "exportsRefinementGetter": true,
+  "refinementPivotsOwnsData": true,
+  "publicFnKeys": [
+    "MENU_CIGARS",
+    "containsCompetingRecommendationSignal",
+    "enrichCardsForPresentation",
+    "getMenuCigars",
+    "getMenuFoods",
+    "getMenuSpirits",
+    "inventoryTagForCard",
+    "matchMenuProductInText",
+    "normalizeRecoLabel",
+    "normalizeWhyBullets",
+    "pickWildcardDescriptor",
+    "promptExplicitlyNamesMenuSpirit",
+    "validateCards",
+    "verifyRecommendationCards"
+  ]
+}

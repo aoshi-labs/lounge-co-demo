@@ -1,0 +1,691 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Sterlon — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Sterlon, your AI concierge across every Lounge & Co. venue — personalized cigar and spirits recommendations from your unified palate profile, powered by Anthropic Claude under an enterprise DPA." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Sterlon — Lounge & Co." />
+  <meta property="og:description" content="Sterlon, your AI concierge across every Lounge & Co. venue — personalized cigar and spirits recommendations from your unified palate profile." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sterlon — Lounge & Co." />
+  <meta name="twitter:description" content="Sterlon, your AI concierge across every Lounge & Co. venue — personalized cigar and spirits recommendations from your unified palate profile." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/sterlon.css?v=chat-scroll-v1"/>
+  <!-- Sterlon chat engine: app-owned gateway config. Provider keys stay on the server. -->
+  <script src="assets/javascript/sterlon-gateway.config.js"></script>
+  <script src="assets/javascript/sterlon-telemetry.js"></script>
+  <script src="assets/javascript/sterlon-runtime-state.js"></script>
+  <script src="assets/knowledge/products/cigars.js"></script>
+  <script src="assets/knowledge/products/spirits.js"></script>
+  <script src="assets/knowledge/products/foods.js"></script>
+  <script src="assets/knowledge/products/catalog-client.js"></script>
+  <script src="assets/knowledge/products/index.js"></script>
+  <script src="assets/knowledge/sensory/profiles.js"></script>
+  <script src="assets/knowledge/sensory/relationships.js"></script>
+  <script src="assets/knowledge/sensory/index.js"></script>
+  <script src="assets/javascript/recommendation-runtime/recommendation-entropy.js"></script>
+  <script src="assets/javascript/recommendation-runtime/contrast-pairing.js"></script>
+  <script src="assets/javascript/pairing-engine/iconic-pairs.js"></script>
+  <script src="assets/javascript/pairing-engine/score.js"></script>
+  <script src="assets/javascript/recommendation-runtime/cigar-smoke-estimate.js"></script>
+  <script src="assets/javascript/recommendation-runtime/comfort-calibration.js"></script>
+  <script src="assets/javascript/recommendation-runtime/ontology-policy-core.js"></script>
+  <script src="assets/javascript/recommendation-runtime/ontology-policy-scoring.js"></script>
+  <script src="assets/javascript/recommendation-runtime/ontology-cigar-context.js"></script>
+  <script src="assets/javascript/recommendation-runtime/ontology-spirit-context.js"></script>
+  <script src="assets/javascript/recommendation-runtime/ontology-retrieval.js"></script>
+  <script src="assets/javascript/recommendation-runtime/ontology-policy.js"></script>
+  <script src="assets/javascript/recommendation-runtime/rationale.js"></script>
+  <script src="assets/javascript/recommendation-runtime/coffee-espresso-prose.js"></script>
+  <script src="assets/javascript/recommendation-runtime/selectors.js"></script>
+  <script src="assets/javascript/recommendation-runtime/parse-budget.js"></script>
+  <script src="assets/javascript/recommendation-runtime/product-ids.js"></script>
+  <script src="assets/javascript/recommendation-runtime/product-id-policy-filters.js"></script>
+  <script src="assets/javascript/recommendation-runtime/intent-match.js"></script>
+  <script src="assets/javascript/recommendation-runtime/presentation-cards.js"></script>
+  <script src="assets/javascript/recommendation-runtime/context.js"></script>
+  <script src="assets/javascript/recommendation-runtime/index.js"></script>
+  <script src="assets/javascript/recommendation-runtime/recommendation-turn.js"></script>
+  <script src="assets/javascript/recommendation-runtime/recommendation-turn-validate.js"></script>
+  <script src="assets/javascript/recommendation-runtime/cigar-subline-body.js"></script>
+  <script src="assets/javascript/recommendation-runtime/flight-brand-policy.js"></script>
+  <script src="assets/javascript/recommendation-runtime/flight-philosophy-policy.js"></script>
+  <script src="assets/javascript/recommendation-runtime/flight-philosophy-diversify.js"></script>
+  <script src="assets/javascript/recommendation-runtime/flight-philosophy-metadata.js"></script>
+  <script src="assets/javascript/recommendation-runtime/generate.js?v=reco-catalog-v1"></script>
+  <script src="assets/knowledge/spirit-deck-key.js"></script>
+  <script src="assets/knowledge/menu-flavor-catalog.js"></script>
+  <script src="assets/knowledge/refinement-pivots.js"></script>
+  <script src="assets/javascript/recommendation-runtime/deck-template.js"></script>
+  <script src="assets/javascript/recommendation-runtime/diversity.js"></script>
+  <script src="assets/javascript/recommendation-runtime/spirit-anchor.js"></script>
+  <script src="assets/javascript/recommendation-runtime/build-set.js?v=spirit-integrity-v1"></script>
+  <script src="assets/javascript/recommendation-runtime/build-set-helpers.js"></script>
+  <script src="assets/javascript/recommendation-runtime/resolve-chat-context.js"></script>
+  <script src="assets/javascript/recommendation-runtime/persist-turn.js"></script>
+  <script src="assets/javascript/recommendation-runtime/resolve-refinement.js"></script>
+  <script src="assets/knowledge/whiskey-journey.js"></script>
+  <script src="assets/knowledge/pairing-skills-data.js?v=cat-focus-v1"></script>
+  <script src="assets/knowledge/pairing-skills.js?v=cat-focus-v1"></script>
+  <script src="assets/knowledge/product-knowledge.js"></script>
+  <script src="assets/javascript/sterlon-catalog-retrieval.js"></script>
+  <script src="assets/javascript/sterlon-flavor-match.js"></script>
+  <script src="assets/javascript/sterlon-recommendations.js?v=cat-focus-v1"></script>
+  <script src="assets/javascript/sterlon-product-match.js"></script>
+ <script src="assets/javascript/sterlon-gateway-client.js"></script>
+ <script src="assets/javascript/sterlon-presentation-overlays.js"></script>
+ <script src="assets/javascript/sterlon-prose-pipeline.js"></script>
+<script src="assets/javascript/sterlon-card-renderers.js"></script>
+<script src="assets/javascript/sterlon-chat-router.js"></script>
+<script src="assets/javascript/sterlon-session-routing.js"></script>
+<script src="assets/javascript/sterlon-session-lifecycle.js"></script>
+<script src="assets/javascript/sterlon-gateway-lifecycle.js"></script>
+<script src="assets/javascript/sterlon-gateway-prose.js"></script>
+<script src="assets/javascript/sterlon-concierge-prose-shared.js"></script>
+<script src="assets/javascript/sterlon-concierge-expertise.js"></script>
+<script src="assets/javascript/hospitality-prose-compose.js"></script>
+<script src="assets/javascript/sterlon-concierge-recommendation-prose.js"></script>
+<script src="assets/javascript/sterlon-concierge-reco-prose-deep.js"></script>
+<script src="assets/javascript/sterlon-concierge-prose.js"></script>
+<script src="assets/javascript/sterlon-presentation-lifecycle.js"></script>
+<script src="assets/javascript/sterlon-presentation-render.js"></script>
+<script src="assets/javascript/sterlon-scroll-anchor.js"></script>
+<script src="assets/javascript/sterlon-chat-prompts.js"></script>
+<script src="assets/javascript/sterlon-turn-handlers.js"></script>
+  <script src="assets/javascript/sterlon-stack-validate.js"></script>
+  <script src="assets/javascript/sterlon-reco-diagnostics.js"></script>
+  <script src="assets/javascript/sterlon-ontology-diagnostics.js"></script>
+  <script src="assets/javascript/pairing-evaluation/score.js"></script>
+  <script src="assets/javascript/sterlon-pairing-diagnostics.js"></script>
+  <script src="assets/javascript/sterlon-chat.js?v=shrink4-v1" defer></script>
+</head>
+<body>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Thomas H.</div><div class="sidebar-user-tier">Elite · 1,744 pts · #4</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area">
+  <h1 class="visually-hidden">Sterlon</h1>
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu"><i data-lucide="menu" class="ic-16"></i></button>
+    <div class="sterlon-topbar-identity">
+      <div class="sterlon-topbar-avatar" aria-hidden="true">
+        <img src="assets/images/sterlon.jpg" alt="" class="sterlon-avatar-img"/>
+      </div>
+      <div><div class="sterlon-topbar-name">Sterlon</div><div class="sterlon-topbar-status">● Online · your AI concierge across every Lounge &amp; Co. venue</div></div>
+    </div>
+    <div class="topbar-actions">
+      <button class="icon-btn sterlon-newchat-btn" onclick="newChat()" title="New chat"><i data-lucide="edit-3" class="ic-15"></i><span>New chat</span></button>
+    </div>
+  </header>
+
+  <div class="page-content">
+
+    <!-- CHAT -->
+    <div class="sterlon-chat-col">
+
+      <!-- Scrollable transcript (welcome + messages). Composer stays pinned below. -->
+      <div id="sterlon-chat-scroll" class="sterlon-chat-scroll" tabindex="-1">
+      <div class="sterlon-welcome">
+        <div class="sterlon-welcome-title">Welcome to Sterlon.</div>
+      </div>
+
+      <!-- Conversation (populated by sterlon-chat.js — no static demo transcript) -->
+      <div id="chat" class="sterlon-chat-log" role="log" aria-live="polite" aria-atomic="false" aria-label="Sterlon conversation"></div>
+      </div>
+
+      <!-- Quick-action chip row — sandwiched between transcript and composer.
+           Conversation follow-ups + evergreen quick actions share one carousel.
+           .sterlon-quick-actions is the positioning wrapper; .sterlon-quick-actions-track
+           scrolls when chips overflow. data-quick-actions stays on the track
+           since lounge.js's renderQuickActions replaces innerHTML there for
+           per-venue config. -->
+      <div id="quick-actions" class="sterlon-quick-actions" hidden aria-hidden="true">
+        <div class="sterlon-quick-actions-track" data-quick-actions></div>
+      </div>
+      <!-- Free-tier rate-limit hint. Tier 1 (Connoisseur) lifts to 50/day,
+           Tier 2 (Cellar Club) is unlimited. Anthropic Claude is disclosed
+           as a sub-processor in the Member ToS. -->
+      <div class="sterlon-rate-hint" role="status" aria-live="polite">
+        <i data-lucide="info" class="ic-13"></i>
+        <span>Free plan: 8 of 12 Sterlon turns left today. <a href="member-billing.html">Upgrade for unlimited</a>.</span>
+      </div>
+
+      <!-- Composer (lives at the end of the chat column) -->
+      <div class="sterlon-composer-wrap">
+        <div class="sterlon-composer-row">
+          <div class="sterlon-composer-input-wrap sterlon-composer-input-wrap--tools">
+            <button type="button" class="input-action" id="composer-tools-btn" title="Tools" aria-label="Sterlon tools" aria-haspopup="menu" aria-expanded="false" aria-controls="composer-tools-menu" onclick="toggleComposerTools(event)">
+              <i data-lucide="plus" class="ic-15"></i>
+            </button>
+            <div id="composer-tools-menu" class="sterlon-composer-tools-menu" role="menu" hidden>
+              <button type="button" class="sterlon-composer-tools-item" role="menuitem" onclick="quickAction(this,'research')">Research a cigar</button>
+              <button type="button" class="sterlon-composer-tools-item" role="menuitem" onclick="quickAction(this,'log')">Log a whisky tasting</button>
+              <button type="button" class="sterlon-composer-tools-item" role="menuitem" onclick="attachImage()">Upload menu or photo</button>
+              <button type="button" class="sterlon-composer-tools-item" role="menuitem" onclick="quickAction(this,'wildcard')">Wildcard suggestion</button>
+              <button type="button" class="sterlon-composer-tools-item" role="menuitem" onclick="quickAction(this,'recommend')">Suggest something I might like</button>
+            </div>
+            <button type="button" class="input-action" title="Voice input" aria-label="Voice input" onclick="voiceInput()">
+              <i data-lucide="mic" class="ic-15"></i>
+            </button>
+            <button type="button" class="input-action" title="Attach image" aria-label="Attach image" onclick="attachImage()">
+              <i data-lucide="image" class="ic-15"></i>
+            </button>
+            <button type="button" class="input-action" title="Regenerate last response" aria-label="Replay" onclick="replayLast()">
+              <i data-lucide="rotate-ccw" class="ic-15"></i>
+            </button>
+            <textarea id="composer" rows="1" placeholder="Ask Sterlon…" aria-label="Message Sterlon" class="sterlon-composer-textarea"></textarea>
+            <button onclick="send()" class="sterlon-send-btn" title="Send" aria-label="Send">
+              <i data-lucide="send" class="ic-15"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RAIL: prompts & history -->
+    <aside class="rail-col sterlon-rail">
+
+      <!-- Context widget — glanceable house status. Default HTML is the
+           fallback; lounge.js overwrites this from LOUNGE.contextStrip
+           for per-venue white-label. -->
+      <div class="widget">
+        <div class="widget-title">✦ Tonight at the Lounge</div>
+        <div class="sterlon-context-strip" data-context-strip>
+          <div class="sterlon-context-card">
+            <span class="sterlon-context-dot sterlon-context-dot-live"></span>
+            <div class="sterlon-context-body">
+              <div class="sterlon-context-label">Open</div>
+              <div class="sterlon-context-text">Until 1am · last call 12:30</div>
+            </div>
+          </div>
+          <a href="product-detail.html" class="sterlon-context-card sterlon-context-clickable">
+            <i data-lucide="flame" class="ic-15 sterlon-context-icon-gold"></i>
+            <div class="sterlon-context-body">
+              <div class="sterlon-context-label">Tonight's Pick</div>
+              <div class="sterlon-context-text">Staff pick rotates nightly</div>
+            </div>
+          </a>
+          <a href="checkin.html" class="sterlon-context-card sterlon-context-clickable sterlon-context-card-burg">
+            <i data-lucide="map-pin" class="ic-15"></i>
+            <div class="sterlon-context-body">
+              <div class="sterlon-context-label">Check in</div>
+              <div class="sterlon-context-text">Earn 25 points tonight</div>
+            </div>
+          </a>
+          <div class="sterlon-context-card">
+            <i data-lucide="users" class="ic-15 sterlon-context-icon-muted"></i>
+            <div class="sterlon-context-body">
+              <div class="sterlon-context-label">In the room</div>
+              <div class="sterlon-context-text">12 members checked in tonight</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">💡 More Ideas</div>
+        <p class="sterlon-rail-sub">Deeper prompts when the quick-action chips don't fit what you're after.</p>
+        <div class="sterlon-rail-list">
+          <button class="prompt-chip sterlon-prompt-chip" onclick="ask(this)">What should I smoke tonight to celebrate the promotion?</button>
+          <button class="prompt-chip sterlon-prompt-chip" onclick="ask(this)">Surprise me with something new from tonight's list</button>
+          <button class="prompt-chip sterlon-prompt-chip" onclick="ask(this)">What's a good gateway whisky for a guest?</button>
+          <button class="prompt-chip sterlon-prompt-chip" onclick="ask(this)">Find me cigars under $25 with a creamy finish</button>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">📜 Recent Conversations</div>
+        <div class="sterlon-rail-list">
+          <a href="#" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--bg-border)'" class="sterlon-history-item-current">
+            <div class="sterlon-history-title-current">Pappy 23 pairings</div>
+            <div class="sterlon-history-time">Just now</div>
+          </a>
+          <a href="#" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background='transparent'" class="sterlon-history-item">
+            <div class="sterlon-history-title">Cigars for a rainy day</div>
+            <div class="sterlon-history-time">Yesterday</div>
+          </a>
+          <a href="#" onmouseover="this.style.background='var(--bg-elevated)'" onmouseout="this.style.background='transparent'" class="sterlon-history-item">
+            <div class="sterlon-history-title">Father's Day gift ideas</div>
+            <div class="sterlon-history-time">3 days ago</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="widget sterlon-about-card">
+        <div class="widget-title">✦ About Sterlon</div>
+        <p class="sterlon-about-text">Trained on your reviews, ratings, and tab activity. Knows the full Lounge & Co. catalog and pairs based on real member tastings — not guesswork.</p>
+      </div>
+    </aside>
+  </div>
+
+</main>
+
+<!-- A6 — Log-a-tasting sheet. Slides up from the bottom; thread context preserved. -->
+<div id="log-sheet" class="log-sheet" hidden>
+  <div class="log-sheet-backdrop" onclick="closeLogSheet()"></div>
+  <div class="log-sheet-panel" role="dialog" aria-modal="true" aria-label="Log this tasting">
+    <div class="log-sheet-handle"></div>
+    <button class="log-sheet-close" onclick="closeLogSheet()" aria-label="Close">×</button>
+
+    <!-- Header -->
+    <div class="log-sheet-header">
+      <div class="log-sheet-thumb" id="log-product-thumb">🚬</div>
+      <div>
+        <div class="log-sheet-label">Log this tasting</div>
+        <div class="log-sheet-product" id="log-product-name">Tonight's cigar</div>
+      </div>
+    </div>
+
+    <!-- Rating slider -->
+    <div class="log-section">
+      <div class="log-section-label">Rating</div>
+      <div class="log-rating-row">
+        <input type="range" min="1" max="10" value="7" class="log-slider" id="log-rating-slider" aria-label="Rating from 1 to 10" oninput="document.getElementById('log-rating-val').textContent=this.value">
+        <span class="log-rating-val" id="log-rating-val">7</span>
+        <span class="log-rating-max">/ 10</span>
+      </div>
+    </div>
+
+    <!-- Flavor chips (multi-select) -->
+    <div class="log-section">
+      <div class="log-section-label">Flavor notes</div>
+      <div class="log-chips">
+        <button class="log-chip" type="button" onclick="this.classList.toggle('active')">Cocoa</button>
+        <button class="log-chip" type="button" onclick="this.classList.toggle('active')">Cedar</button>
+        <button class="log-chip" type="button" onclick="this.classList.toggle('active')">Leather</button>
+        <button class="log-chip" type="button" onclick="this.classList.toggle('active')">Caramel</button>
+        <button class="log-chip" type="button" onclick="this.classList.toggle('active')">Smoky</button>
+        <button class="log-chip" type="button" onclick="this.classList.toggle('active')">Spicy</button>
+        <button class="log-chip" type="button" onclick="this.classList.toggle('active')">Floral</button>
+        <button class="log-chip" type="button" onclick="this.classList.toggle('active')">Citrus</button>
+        <button class="log-chip" type="button" onclick="this.classList.toggle('active')">Vanilla</button>
+        <button class="log-chip" type="button" onclick="this.classList.toggle('active')">Black pepper</button>
+        <button class="log-chip" type="button" onclick="this.classList.toggle('active')">Stone fruit</button>
+        <button class="log-chip" type="button" onclick="this.classList.toggle('active')">Salt</button>
+      </div>
+    </div>
+
+    <!-- One-line note -->
+    <div class="log-section">
+      <div class="log-section-label">Note (optional)</div>
+      <input class="log-note" type="text" placeholder="How was it?" id="log-note">
+    </div>
+
+    <!-- B4 — Paired with (builds the pairing graph) -->
+    <div class="log-section">
+      <div class="log-section-label">Paired with <span class="log-section-opt">optional</span></div>
+      <div class="log-pair-wrap">
+        <input class="log-note log-pair-input" type="text" placeholder="Search your library — e.g. Glenfarclas 17yr…" aria-label="Search your library for a pairing" id="log-pair-input" oninput="filterPairSuggestions(this.value)">
+        <div class="log-pair-suggestions" id="log-pair-suggestions" hidden>
+          <button type="button" class="log-pair-suggestion" onclick="selectPair(this,'Glenfarclas 17yr','🥃')">🥃 <span>Glenfarclas 17yr</span> · <em>your library</em></button>
+          <button type="button" class="log-pair-suggestion" onclick="selectPair(this,'Lagavulin 16yr','🥃')">🥃 <span>Lagavulin 16yr</span> · <em>your library</em></button>
+          <button type="button" class="log-pair-suggestion" onclick="selectPair(this,'Aberfeldy 12yr','🥃')">🥃 <span>Aberfeldy 12yr</span> · <em>catalog</em></button>
+          <button type="button" class="log-pair-suggestion" onclick="selectPair(this,'Single Origin Espresso','☕')">☕ <span>Single Origin Espresso</span> · <em>catalog</em></button>
+        </div>
+        <div class="log-pair-selected" id="log-pair-selected" hidden>
+          <span class="log-pair-chip" id="log-pair-chip"></span>
+          <button type="button" class="log-pair-clear" onclick="clearPair()" aria-label="Remove pairing">×</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Privacy (A8 hook) -->
+    <div class="log-privacy">
+      <label class="log-privacy-row">
+        <input type="checkbox" checked id="log-public">
+        <span>Show on profile (rating + flavor chips)</span>
+      </label>
+      <label class="log-privacy-row">
+        <input type="checkbox" id="log-public-note">
+        <span>Show my note too</span>
+      </label>
+    </div>
+
+    <button class="log-save" onclick="saveLog()">Save to Library</button>
+  </div>
+</div>
+
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+<nav class="bottom-nav">
+  <a href="feed.html" class="bottom-nav-item"><i data-lucide="newspaper" class="ic-20"></i>Feed</a>
+  <a href="explore.html" class="bottom-nav-item"><i data-lucide="search" class="ic-20"></i>Explore</a>
+  <a href="create-post.html" class="bottom-nav-item"><div class="bottom-nav-create-btn"><i data-lucide="plus" class="ic-20"></i></div></a>
+  <a href="events.html" class="bottom-nav-item"><i data-lucide="calendar" class="ic-20"></i>Events</a>
+  <a href="profile.html" class="bottom-nav-item"><i data-lucide="user" class="ic-20"></i>Profile</a>
+</nav>
+
+<script>
+  /* send(), ask(), newChat(), and quickAction() are now exposed globally by
+     assets/javascript/sterlon-chat.js. The inline stubs that used to live here
+     were removed when PR 1 extracted the chat engine. The product-card
+     "Log this" buttons still call openLogSheet() (below) which opens the modal
+     log-sheet — only the "Log a whisky tasting" quick-action chip routes to
+     beginTastingDemo() (the in-chat 5-step flow), per the locked Q15 decision. */
+
+  /* B2 — Wishlist toggle on Sterlon product cards */
+  function toggleAiWishlist(btn, name){
+    const wasActive = btn.classList.contains('active');
+    btn.classList.toggle('active');
+    btn.title = wasActive ? 'Add to Want to try' : 'Remove from wishlist';
+    if (window.toast) {
+      toast(wasActive
+        ? '↺ Removed ' + name + ' from your wishlist'
+        : '🔖 Added ' + name + ' to Want to try', { variant: wasActive ? '' : 'success', duration: 2800 });
+    }
+  }
+
+  function voiceInput(){ if (window.toast) toast('🎤 Voice input — coming soon'); }
+  function attachImage(){ if (window.toast) toast('📷 Image attachment — coming soon'); }
+
+  /* quickAction() moved to sterlon-chat.js. The 'log' branch there calls
+     beginTastingDemo('') (the in-chat 5-step capture flow). */
+  function replayLast(){
+    const chat = document.getElementById('chat');
+    const userMsgs = chat.querySelectorAll('.user-bubble');
+    if (!userMsgs.length) { if (window.toast) toast('Nothing to replay yet'); return; }
+    const last = userMsgs[userMsgs.length - 1].textContent;
+    document.getElementById('composer').value = last;
+    if (window.toast) toast('↻ Replayed your last message');
+  }
+
+  /* Source citation drawer — shows what specifically grounded an AI answer.
+     In v2 this content comes from a `sources` array on each response; for the
+     demo we hardcode per-source-key strings. */
+  const sourceDetails = {
+    menu:
+      '<strong>From Lounge & Co. menu</strong>' +
+      '<div class="src-row"><span>Venue catalog — body, wrapper, and price tiers</span><span></span></div>' +
+      '<div class="src-row"><span>Spirits rail — journey level and deck family</span><span></span></div>',
+    library:
+      '<strong>From your recent ratings</strong>' +
+      '<div class="src-row"><span>Recent cigar ratings (last 30 days)</span><span></span></div>' +
+      '<div class="src-row"><span>Recent spirit ratings (last 30 days)</span><span></span></div>' +
+      '<div class="src-row"><span>Tagged flavors: cocoa, cedar, cream, spice</span><span></span></div>',
+    consensus:
+      '<strong>From members at Lounge & Co.</strong>' +
+      '<div class="src-row"><span>Member flavor tags aggregated this month</span><span></span></div>' +
+      '<div class="src-row"><span>Retrohale notes from recent check-ins</span><span></span></div>',
+    reference:
+      '<strong>From the house pairing guide</strong>' +
+      '<div class="src-row"><span>Match body to pour weight first</span><span></span></div>' +
+      '<div class="src-row"><span>Bridge one shared flavor family (cocoa, oak, cream, spice)</span><span></span></div>',
+    playbook:
+      '<strong>From staff playbook</strong>' +
+      '<div class="src-row"><span>Weekly pairing note — rotates with inventory</span><span></span></div>'
+  };
+  /* A6 — Log-a-tasting sheet. Slides up from bottom; preserves the chat thread
+     beneath via a backdrop scrim. Closing always returns to the same scroll
+     position in the same conversation. */
+  function openLogSheet(productName, thumb){
+    const sheet = document.getElementById('log-sheet');
+    if (!sheet) return;
+    if (productName) document.getElementById('log-product-name').textContent = productName;
+    if (thumb)       document.getElementById('log-product-thumb').textContent = thumb;
+    sheet.hidden = false;
+    // Force reflow so the open-class transition is animated, not skipped
+    void sheet.offsetWidth;
+    sheet.classList.add('open');
+    if (window.Lounge && Lounge.modal) Lounge.modal.open(sheet);
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLogSheet(){
+    const sheet = document.getElementById('log-sheet');
+    if (!sheet) return;
+    if (window.Lounge && Lounge.modal) Lounge.modal.close(sheet);
+    sheet.classList.remove('open');
+    setTimeout(() => {
+      sheet.hidden = true;
+      document.body.style.overflow = '';
+    }, 280);
+  }
+  function saveLog(){
+    const rating  = document.getElementById('log-rating-slider').value;
+    const product = document.getElementById('log-product-name').textContent;
+    const flavors = Array.from(document.querySelectorAll('.log-chip.active')).map(c => c.textContent);
+    const noteEl  = document.getElementById('log-note');
+    const isPublic = document.getElementById('log-public').checked;
+    const pairChip = document.getElementById('log-pair-chip');
+    const paired  = (pairChip && pairChip.dataset.name) ? pairChip.dataset.name : '';
+    closeLogSheet();
+    if (window.toast) {
+      const fb = flavors.length ? ' · ' + flavors.length + ' flavor' + (flavors.length === 1 ? '' : 's') : '';
+      const pb = paired ? ' · paired w/ ' + paired : '';
+      const vb = isPublic ? '' : ' (private)';
+      toast('✓ Logged ' + product + ' · ★ ' + rating + fb + pb + vb, { variant: 'success', duration: 3500 });
+    }
+    // Reset for next time
+    document.getElementById('log-rating-slider').value = 7;
+    document.getElementById('log-rating-val').textContent = '7';
+    document.querySelectorAll('.log-chip.active').forEach(c => c.classList.remove('active'));
+    if (noteEl) noteEl.value = '';
+    clearPair();
+  }
+
+  /* B4 — Pairing autocomplete inside the log-this sheet */
+  function filterPairSuggestions(value){
+    const list = document.getElementById('log-pair-suggestions');
+    if (!list) return;
+    if (!value || !value.trim()) { list.hidden = true; return; }
+    list.hidden = false;
+    const needle = value.toLowerCase();
+    list.querySelectorAll('.log-pair-suggestion').forEach(s => {
+      s.style.display = s.textContent.toLowerCase().includes(needle) ? '' : 'none';
+    });
+  }
+  function selectPair(btn, name, icon){
+    const input = document.getElementById('log-pair-input');
+    const list  = document.getElementById('log-pair-suggestions');
+    const sel   = document.getElementById('log-pair-selected');
+    const chip  = document.getElementById('log-pair-chip');
+    if (input) input.value = '';
+    if (list)  list.hidden = true;
+    if (chip)  { chip.textContent = icon + ' ' + name; chip.dataset.name = name; }
+    if (sel)   sel.hidden = false;
+  }
+  function clearPair(){
+    const sel  = document.getElementById('log-pair-selected');
+    const chip = document.getElementById('log-pair-chip');
+    if (sel)  sel.hidden = true;
+    if (chip) { chip.textContent = ''; chip.dataset.name = ''; }
+  }
+  // ESC closes the sheet
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      const sheet = document.getElementById('log-sheet');
+      if (sheet && !sheet.hidden) closeLogSheet();
+    }
+  });
+
+  function toggleSourceDetail(btn, sourceKey){
+    const row = btn.closest('.sterlon-bubble-stack, .sterlon-bubble-row');
+    if (!row) return;
+    const detail = row.querySelector('.sterlon-source-detail');
+    if (!detail) return;
+    const wasActive = btn.classList.contains('active');
+    // Reset chip states in this message
+    row.querySelectorAll('.sterlon-source-chip').forEach(c => c.classList.remove('active'));
+    if (wasActive) {
+      detail.hidden = true;
+      return;
+    }
+    btn.classList.add('active');
+    detail.innerHTML = sourceDetails[sourceKey] || 'No citation details for this source.';
+    detail.hidden = false;
+  }
+
+  /* Chip carousels: toggle .sterlon-has-overflow on each wrapper when its inner
+     track actually exceeds the visible width. Drives the right-edge fade +
+     chevron affordances — they only render when scrolling is meaningful.
+     Re-checks on resize and after a delay so font loading / Lucide-icon
+     swap-in / lounge.js's per-venue chip rewrite don't leave it stale. */
+  function updateChipCarousels(){
+    const pairs = [
+      { wrap: '.sterlon-sources',        track: '.sterlon-source-track'         },
+      { wrap: '.sterlon-quick-actions',  track: '.sterlon-quick-actions-track'  }
+    ];
+    pairs.forEach(({ wrap, track }) => {
+      document.querySelectorAll(wrap).forEach(group => {
+        const t = group.querySelector(track);
+        if (!t) return;
+        group.classList.toggle('sterlon-has-overflow', t.scrollWidth > t.clientWidth + 1);
+      });
+    });
+  }
+  document.addEventListener('DOMContentLoaded', updateChipCarousels);
+  window.addEventListener('load', updateChipCarousels);
+  window.addEventListener('resize', updateChipCarousels);
+  setTimeout(updateChipCarousels, 600);   // after fonts + Lucide + renderQuickActions settle
+
+  /* Generic carousel-arrow wiring — used by both .sterlon-source-track and
+     .sterlon-quick-actions-track. Wraps the given track in a
+     .pro-lib-carousel + variant-class container and injects left/right
+     chevron buttons. Shared chrome lives in lounge.css. Same right-lenient
+     / left-strict show logic the profile carousels use. */
+  function wireCarousel(track, variantClass){
+    if (!track || track.dataset.carouselWired === '1') return;
+    track.dataset.carouselWired = '1';
+
+    const wrap = document.createElement('div');
+    wrap.className = 'pro-lib-carousel ' + variantClass;
+    track.parentNode.insertBefore(wrap, track);
+    wrap.appendChild(track);
+
+    const mkArrow = (dir, glyph, label) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'pro-lib-arrow pro-lib-arrow-' + dir;
+      b.setAttribute('aria-label', label);
+      b.innerHTML = glyph;
+      return b;
+    };
+    const left  = mkArrow('left',  '‹', 'Scroll left');
+    const right = mkArrow('right', '›', 'Scroll right');
+    wrap.appendChild(left);
+    wrap.appendChild(right);
+
+    const step = (mult) => {
+      track.scrollBy({ left: track.clientWidth * 0.7 * mult, behavior: 'smooth' });
+    };
+    left.addEventListener('click',  () => step(-1));
+    right.addEventListener('click', () => step( 1));
+
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      const x = track.scrollLeft;
+      const overflow = max > 4;
+      const atEnd = x >= max - 1;
+      left.classList.toggle('pro-lib-arrow-hidden',  !(overflow && atEnd));
+      right.classList.toggle('pro-lib-arrow-hidden', !(overflow && !atEnd));
+    };
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    setTimeout(update, 80);
+    setTimeout(update, 600);
+  }
+
+  function setupSterlonCarousels(){
+    document.querySelectorAll('.sterlon-sources .sterlon-source-track')
+      .forEach(t => wireCarousel(t, 'sterlon-source-carousel'));
+    document.querySelectorAll('.sterlon-quick-actions .sterlon-quick-actions-track')
+      .forEach(t => wireCarousel(t, 'sterlon-quick-carousel'));
+  }
+  document.addEventListener('DOMContentLoaded', setupSterlonCarousels);
+  window.addEventListener('load', setupSterlonCarousels);
+  /* Re-check after fonts + Lucide + lounge.js's renderQuickActions
+     (per-venue rewrite of the track's innerHTML) settle. The arrows are
+     siblings of the track inside the wrapper, so they survive the
+     innerHTML reset; this just re-runs the overflow detection. */
+  setTimeout(setupSterlonCarousels, 700);
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var composer = document.getElementById('composer');
+    var sendBtn = document.querySelector('.sterlon-send-btn');
+    if (composer) composer.disabled = true;
+    if (sendBtn) sendBtn.disabled = true;
+    if (!window.LoungeCatalog || typeof window.LoungeCatalog.init !== 'function') {
+      if (composer) composer.disabled = false;
+      if (sendBtn) sendBtn.disabled = false;
+      return;
+    }
+    window.LoungeCatalog.init()
+      .then(function () {
+        document.documentElement.dataset.catalogReady = 'true';
+        if (composer) composer.disabled = false;
+        if (sendBtn) sendBtn.disabled = false;
+      })
+      .catch(function (err) {
+        console.error('Catalog load failed:', err);
+        if (window.toast) {
+          window.toast('Could not load venue catalog. Serve via scripts/serve.mjs.', {
+            duration: 5000,
+            variant: 'burg'
+          });
+        }
+      });
+  });
+</script>
+</body>
+</html>

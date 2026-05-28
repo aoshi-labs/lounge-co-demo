@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Catalog Manager — Admin</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Manage your humidor and bottle list — add, edit, and promote items in Sterlon recommendations." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Catalog Manager — Admin" />
+  <meta property="og:description" content="Manage your humidor and bottle list — add, edit, and promote items in Sterlon recommendations." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Catalog Manager — Admin" />
+  <meta name="twitter:description" content="Manage your humidor and bottle list — add, edit, and promote items in Sterlon recommendations." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/admin-catalog.css"/>
+</head>
+<body>
+
+<nav class="sidebar admin" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Owner Console</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row"><div class="avatar sidebar-user-avatar-owner"><img src="assets/images/gerald-o.jpg" alt=""/></div><div class="sidebar-user-info"><div class="sidebar-user-name">Gerald Owens</div><div class="sidebar-user-tier">Owner</div></div></div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Overview</div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Dashboard</a>
+    <a href="admin-analytics.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Analytics</a>
+    <div class="nav-section-label">Manage</div>
+    <a href="admin-members.html" class="nav-item"><i data-lucide="users" class="ic-17"></i>Members</a>
+    <a href="admin-catalog.html" class="nav-item active"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="admin-orders.html" class="nav-item"><i data-lucide="receipt-text" class="ic-17"></i>Requests<span class="notif-dot">3</span></a>
+    <a href="admin-events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-settings.html" class="nav-item"><i data-lucide="settings" class="ic-17"></i>Lounge Settings</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="chevron-left" class="ic-17"></i>Back to Member View</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area admin">
+  <h1 class="visually-hidden">Catalog Manager</h1>
+  <header class="top-bar">
+    <button class="icon-btn sup-menu-btn" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+      <i data-lucide="menu" class="ic-16"></i>
+    </button>
+    <div class="topbar-actions">
+      <button class="admin-catalog-add-product-btn">+ Add Product</button>
+    </div>
+  </header>
+
+  <div class="admin-catalog-page">
+
+    <!-- Search row — the filter tabs split out of this container so they
+         can sit beneath the stats sub text and run as their own carousel. -->
+    <div class="admin-catalog-search-row">
+      <input class="input admin-catalog-search-input" type="text" placeholder="Search products…" aria-label="Search products"/>
+    </div>
+
+    <!-- Stats summary — moved out of the top bar, sits between the search
+         input and the filter row. Same small/muted treatment as on
+         admin-members and superadmin-venues. -->
+    <div class="adm-stats-summary">12 products · 2 low stock</div>
+
+    <!-- Filter row — wrapped at runtime in shared .pro-lib-carousel chrome
+         so it scrolls cleanly when the filter set overflows horizontally
+         (especially on mobile). Same pattern as the filter rows on
+         catalog and events. -->
+    <div class="admin-catalog-filter-row">
+      <button class="filter-tab active">All</button>
+      <button class="filter-tab">Cigars</button>
+      <button class="filter-tab">Spirits</button>
+      <button class="filter-tab">Accessories</button>
+      <button class="filter-tab">Low Stock <span class="admin-catalog-low-stock-count">2</span></button>
+      <button class="filter-tab">Promoted <span class="adm-promo-count">2</span></button>
+    </div>
+
+    <!-- B6 — Curated Lists management -->
+    <div class="adm-lists-panel">
+      <div class="adm-lists-head">
+        <div>
+          <div class="widget-title adm-lists-title">🍷 Curated Lists</div>
+          <p class="adm-lists-sub">Editorial picks published to the Lists page. Standing lists evergreen; Tonight's Flight refreshes daily; event lists tie to RSVPs.</p>
+        </div>
+        <a class="adm-lists-add" href="admin-list-edit.html"><i data-lucide="plus" class="ic-13"></i>New list</a>
+      </div>
+      <div class="adm-lists-rows">
+        <div class="adm-lists-row">
+          <div class="adm-lists-info">
+            <span class="adm-lists-tag adm-lists-tag-featured">● Featured · Tonight</span>
+            <div class="adm-lists-name">Maya's Friday Flight</div>
+            <div class="adm-lists-meta">Maya V. · 4 products · 18 RSVPs · refreshes at midnight</div>
+          </div>
+          <div class="adm-lists-stats"><strong>1,247</strong> views</div>
+          <a class="adm-lists-edit" title="Edit list" href="admin-list-edit.html"><i data-lucide="edit-2" class="ic-13"></i></a>
+        </div>
+        <div class="adm-lists-row">
+          <div class="adm-lists-info">
+            <span class="adm-lists-tag adm-lists-tag-standing">Standing</span>
+            <div class="adm-lists-name">Three Sub-$50 Cigars Worth Your Evening</div>
+            <div class="adm-lists-meta">David H. · 3 products · published 2 weeks ago</div>
+          </div>
+          <div class="adm-lists-stats"><strong>3,820</strong> views</div>
+          <a class="adm-lists-edit" title="Edit list" href="admin-list-edit.html"><i data-lucide="edit-2" class="ic-13"></i></a>
+        </div>
+        <div class="adm-lists-row">
+          <div class="adm-lists-info">
+            <span class="adm-lists-tag adm-lists-tag-standing">Standing</span>
+            <div class="adm-lists-name">Best Whisky for a First-Timer</div>
+            <div class="adm-lists-meta">Maya V. · 3 products · published 1 month ago</div>
+          </div>
+          <div class="adm-lists-stats"><strong>5,140</strong> views</div>
+          <a class="adm-lists-edit" title="Edit list" href="admin-list-edit.html"><i data-lucide="edit-2" class="ic-13"></i></a>
+        </div>
+        <div class="adm-lists-row">
+          <div class="adm-lists-info">
+            <span class="adm-lists-tag adm-lists-tag-seasonal">Seasonal</span>
+            <div class="adm-lists-name">Autumn Warmers — Five for the First Cold Snap</div>
+            <div class="adm-lists-meta">Gerald O. · 3 products · published 6 days ago</div>
+          </div>
+          <div class="adm-lists-stats"><strong>892</strong> views</div>
+          <a class="adm-lists-edit" title="Edit list" href="admin-list-edit.html"><i data-lucide="edit-2" class="ic-13"></i></a>
+        </div>
+        <div class="adm-lists-row">
+          <div class="adm-lists-info">
+            <span class="adm-lists-tag adm-lists-tag-event">Event · Sat May 17</span>
+            <div class="adm-lists-name">What to Order at the Padron Vertical</div>
+            <div class="adm-lists-meta">Maya V. · 3 products · auto-expires after event</div>
+          </div>
+          <div class="adm-lists-stats"><strong>412</strong> views</div>
+          <a class="adm-lists-edit" title="Edit list" href="admin-list-edit.html"><i data-lucide="edit-2" class="ic-13"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- B4 — Staff-curated pairings (bootstrap the pairing graph) -->
+    <div class="adm-pair-panel">
+      <div class="adm-pair-head">
+        <div>
+          <div class="widget-title adm-pair-title">Curated Pairings</div>
+          <p class="adm-pair-sub">Staff-curated pairings seed the graph before members log enough data. Tagged "Maya's pick" in Sterlon.</p>
+        </div>
+        <button class="adm-pair-add" onclick="if(window.toast)toast('Opens pair builder — coming soon')"><i data-lucide="plus" class="ic-13"></i>Add pairing</button>
+      </div>
+      <div class="adm-pair-list">
+        <div class="adm-pair-row">
+          <span class="adm-pair-a"><strong>Ashton VSG Torpedo</strong></span>
+          <i data-lucide="repeat" class="ic-13 adm-pair-arrow"></i>
+          <span class="adm-pair-b"><strong>Glenfarclas 17yr</strong></span>
+          <span class="adm-pair-stat">★ 4.9 · 12 members</span>
+          <button class="adm-pair-edit" aria-label="Edit pairing" title="Edit pairing"><i data-lucide="edit-2" class="ic-13"></i></button>
+        </div>
+        <div class="adm-pair-row">
+          <span class="adm-pair-a"><strong>Padron 1926 No. 35</strong></span>
+          <i data-lucide="repeat" class="ic-13 adm-pair-arrow"></i>
+          <span class="adm-pair-b"><strong>Pappy Van Winkle 23yr</strong></span>
+          <span class="adm-pair-stat">★ 5.0 · 8 members</span>
+          <button class="adm-pair-edit" aria-label="Edit pairing" title="Edit pairing"><i data-lucide="edit-2" class="ic-13"></i></button>
+        </div>
+        <div class="adm-pair-row">
+          <span class="adm-pair-a"><strong>Cohiba Siglo VI</strong></span>
+          <i data-lucide="repeat" class="ic-13 adm-pair-arrow"></i>
+          <span class="adm-pair-b"><strong>Single Origin Espresso</strong></span>
+          <span class="adm-pair-stat">★ 4.5 · 5 members</span>
+          <button class="adm-pair-edit" aria-label="Edit pairing" title="Edit pairing"><i data-lucide="edit-2" class="ic-13"></i></button>
+        </div>
+        <div class="adm-pair-row">
+          <span class="adm-pair-a"><strong>Lagavulin 16yr</strong></span>
+          <i data-lucide="repeat" class="ic-13 adm-pair-arrow"></i>
+          <span class="adm-pair-b"><strong>Liga Privada No. 9</strong></span>
+          <span class="adm-pair-stat">★ 4.7 · 6 members</span>
+          <button class="adm-pair-edit" aria-label="Edit pairing" title="Edit pairing"><i data-lucide="edit-2" class="ic-13"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- B2 — Top Wishlisted (Not In Stock) — demand signal -->
+    <div class="adm-wish-panel">
+      <div class="adm-wish-head">
+        <div>
+          <div class="widget-title adm-wish-title">🔖 Top Wishlisted · Not In Stock</div>
+          <p class="adm-wish-sub">Members put these on their "Want to try" lists but you don't carry them. The number = how many members are waiting.</p>
+        </div>
+        <a href="#" class="adm-wish-export" onclick="event.preventDefault();if(window.toast)toast('Export coming soon — backend phase')">⤓ Export</a>
+      </div>
+      <div class="adm-wish-list">
+        <div class="adm-wish-row">
+          <div class="adm-wish-product">
+            <span class="adm-wish-thumb"><img src="assets/images/yamazaki 18yr.jpg" alt=""/></span>
+            <div>
+              <div class="adm-wish-name">Yamazaki 18yr</div>
+              <div class="adm-wish-meta">Suntory · Japanese · Sherried · Avg ★ 4.8</div>
+            </div>
+          </div>
+          <span class="adm-wish-count">37 members</span>
+          <button class="adm-wish-add">+ Add to catalog</button>
+        </div>
+        <div class="adm-wish-row">
+          <div class="adm-wish-product">
+            <span class="adm-wish-thumb"><img src="assets/images/fuente-opus.jpg" alt=""/></span>
+            <div>
+              <div class="adm-wish-name">Fuente Fuente OpusX BBMF</div>
+              <div class="adm-wish-meta">Arturo Fuente · Cigar · Full · Avg ★ 4.9</div>
+            </div>
+          </div>
+          <span class="adm-wish-count">22 members</span>
+          <button class="adm-wish-add">+ Add to catalog</button>
+        </div>
+        <div class="adm-wish-row">
+          <div class="adm-wish-product">
+            <span class="adm-wish-thumb"><img src="assets/images/yamazaki 18yr.jpg" alt=""/></span>
+            <div>
+              <div class="adm-wish-name">Hibiki 21yr</div>
+              <div class="adm-wish-meta">Suntory · Japanese · Aged · Avg ★ 4.9</div>
+            </div>
+          </div>
+          <span class="adm-wish-count">19 members</span>
+          <button class="adm-wish-add">+ Add to catalog</button>
+        </div>
+        <div class="adm-wish-row">
+          <div class="adm-wish-product">
+            <span class="adm-wish-thumb"><img src="assets/images/padron-1926-no-35.webp" alt=""/></span>
+            <div>
+              <div class="adm-wish-name">Padrón 1926 Maduro 90th</div>
+              <div class="adm-wish-meta">Padron · Cigar · Full · Anniversary</div>
+            </div>
+          </div>
+          <span class="adm-wish-count">14 members</span>
+          <button class="adm-wish-add">+ Add to catalog</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- A15 — Promoted Pours summary banner -->
+    <div class="adm-promo-banner">
+      <div class="adm-promo-banner-left">
+        <i data-lucide="star" class="ic-15"></i>
+        <div>
+          <div class="adm-promo-banner-title">2 products promoted in Sterlon</div>
+          <div class="adm-promo-banner-sub">Padron 1926 · Pappy Van Winkle 23yr — expires in 4 days · 47 impressions today</div>
+        </div>
+      </div>
+      <button class="adm-promo-banner-btn" onclick="if(window.toast)toast('Opens promotion settings (placeholder)')">Manage</button>
+    </div>
+
+    <div class="admin-catalog-table-card">
+      <table>
+        <thead><tr><th>Product</th><th>Category</th><th>Stock</th><th>Price</th><th>Sold MTD</th><th>Revenue</th><th>Rating</th><th>Promote</th><th></th></tr></thead>
+        <tbody>
+          <tr><td><div class="admin-catalog-product-cell"><div class="admin-catalog-product-thumb"><img src="assets/images/padron-1926-no-35.webp" alt=""/></div><div><div class="admin-catalog-product-name">Padron 1926 No. 35</div><div class="admin-catalog-text-muted">SKU: CIG-PD1926-35</div></div></div></td><td>Cigar</td><td><span class="stock-pill admin-catalog-stock-ok">● 24</span></td><td class="admin-catalog-product-name">$42</td><td>45</td><td class="admin-catalog-revenue">$1,890</td><td>★ 4.9</td><td><button class="adm-promo-toggle active" onclick="togglePromote(this,'Padron 1926 No. 35')" aria-label="Promoted — tap to remove" title="Promoted — tap to remove"><i data-lucide="star" class="ic-14"></i></button></td><td><button class="icon-btn admin-catalog-edit-btn" aria-label="Edit"><i data-lucide="edit-2" class="ic-14"></i></button></td></tr>
+          <tr><td><div class="admin-catalog-product-cell"><div class="admin-catalog-product-thumb"><img src="assets/images/lagavulin_16yr.jpg" alt=""/></div><div><div class="admin-catalog-product-name">Lagavulin 16yr</div><div class="admin-catalog-text-muted">SKU: SPR-LGV-16</div></div></div></td><td>Spirit</td><td><span class="stock-pill admin-catalog-stock-ok">● 8 bottles</span></td><td class="admin-catalog-product-name">$22</td><td>70</td><td class="admin-catalog-revenue">$1,540</td><td>★ 4.9</td><td><button class="adm-promo-toggle" onclick="togglePromote(this,'Lagavulin 16yr')" aria-label="Promote in Sterlon" title="Promote in Sterlon"><i data-lucide="star" class="ic-14"></i></button></td><td><button class="icon-btn admin-catalog-edit-btn" aria-label="Edit"><i data-lucide="edit" class="ic-14"></i></button></td></tr>
+          <tr><td><div class="admin-catalog-product-cell"><div class="admin-catalog-product-thumb"><img src="assets/images/ashton_vsg_torpedo.jpg" alt=""/></div><div><div class="admin-catalog-product-name">Ashton VSG Torpedo</div><div class="admin-catalog-text-muted">SKU: CIG-ASH-VSG</div></div></div></td><td>Cigar</td><td><span class="stock-pill admin-catalog-stock-ok">● 32</span></td><td class="admin-catalog-product-name">$28</td><td>45</td><td class="admin-catalog-revenue">$1,260</td><td>★ 4.8</td><td><button class="adm-promo-toggle" onclick="togglePromote(this,'Ashton VSG Torpedo')" aria-label="Promote in Sterlon" title="Promote in Sterlon"><i data-lucide="star" class="ic-14"></i></button></td><td><button class="icon-btn admin-catalog-edit-btn" aria-label="Edit"><i data-lucide="edit" class="ic-14"></i></button></td></tr>
+          <tr><td><div class="admin-catalog-product-cell"><div class="admin-catalog-product-thumb"><img src="assets/images/cohiba_stick.webp" alt=""/></div><div><div class="admin-catalog-product-name">Cohiba Siglo VI</div><div class="admin-catalog-text-muted">SKU: CIG-COH-SVI</div></div></div></td><td>Cigar</td><td><span class="stock-pill admin-catalog-stock-low">● 4 — low</span></td><td class="admin-catalog-product-name">$55</td><td>18</td><td class="admin-catalog-revenue">$990</td><td>★ 4.9</td><td><button class="adm-promo-toggle" onclick="togglePromote(this,'Cohiba Siglo VI')" aria-label="Promote in Sterlon" title="Promote in Sterlon"><i data-lucide="star" class="ic-14"></i></button></td><td><button class="icon-btn admin-catalog-edit-btn" aria-label="Edit"><i data-lucide="edit" class="ic-14"></i></button></td></tr>
+          <tr><td><div class="admin-catalog-product-cell"><div class="admin-catalog-product-thumb"><img src="assets/images/glenfarclas_17yr.jpg" alt=""/></div><div><div class="admin-catalog-product-name">Glenfarclas 17yr</div><div class="admin-catalog-text-muted">SKU: SPR-GLN-17</div></div></div></td><td>Spirit</td><td><span class="stock-pill admin-catalog-stock-ok">● 6 bottles</span></td><td class="admin-catalog-product-name">$24</td><td>30</td><td class="admin-catalog-revenue">$720</td><td>★ 4.8</td><td><button class="adm-promo-toggle" onclick="togglePromote(this,'Glenfarclas 17yr')" aria-label="Promote in Sterlon" title="Promote in Sterlon"><i data-lucide="star" class="ic-14"></i></button></td><td><button class="icon-btn admin-catalog-edit-btn" aria-label="Edit"><i data-lucide="edit" class="ic-14"></i></button></td></tr>
+          <tr><td><div class="admin-catalog-product-cell"><div class="admin-catalog-product-thumb"><img src="assets/images/pappy_van_winkle_23yr.jpg" alt=""/></div><div><div class="admin-catalog-product-name">Pappy Van Winkle 23yr</div><div class="admin-catalog-text-muted">SKU: SPR-PVW-23</div></div></div></td><td>Spirit</td><td><span class="stock-pill admin-catalog-stock-critical">● 1 bottle — critical</span></td><td class="admin-catalog-product-name">$85</td><td>8</td><td class="admin-catalog-revenue">$680</td><td>★ 5.0</td><td><button class="adm-promo-toggle active" onclick="togglePromote(this,'Pappy Van Winkle 23yr')" aria-label="Promoted — tap to remove" title="Promoted — tap to remove"><i data-lucide="star" class="ic-14"></i></button></td><td><button class="icon-btn admin-catalog-edit-btn" aria-label="Edit"><i data-lucide="edit" class="ic-14"></i></button></td></tr>
+          <tr><td><div class="admin-catalog-product-cell"><div class="admin-catalog-product-thumb"><img src="assets/images/fuente-opus.jpg" alt=""/></div><div><div class="admin-catalog-product-name">Arturo Fuente Opus X</div><div class="admin-catalog-text-muted">SKU: CIG-AF-OPX</div></div></div></td><td>Cigar</td><td><span class="stock-pill admin-catalog-stock-ok">● 18</span></td><td class="admin-catalog-product-name">$38</td><td>14</td><td class="admin-catalog-revenue">$532</td><td>★ 4.7</td><td><button class="adm-promo-toggle" onclick="togglePromote(this,'Arturo Fuente Opus X')" aria-label="Promote in Sterlon" title="Promote in Sterlon"><i data-lucide="star" class="ic-14"></i></button></td><td><button class="icon-btn admin-catalog-edit-btn" aria-label="Edit"><i data-lucide="edit" class="ic-14"></i></button></td></tr>
+          <tr><td><div class="admin-catalog-product-cell"><div class="admin-catalog-product-thumb"><img src="assets/images/xikar_vx2.jpg" alt=""/></div><div><div class="admin-catalog-product-name">Xikar Xi3 Cutter</div><div class="admin-catalog-text-muted">SKU: ACC-XIK-XI3</div></div></div></td><td>Accessory</td><td><span class="stock-pill admin-catalog-stock-ok">● 12</span></td><td class="admin-catalog-product-name">$45</td><td>4</td><td class="admin-catalog-revenue">$180</td><td>★ 4.6</td><td><button class="adm-promo-toggle" onclick="togglePromote(this,'Xikar Xi3 Cutter')" aria-label="Promote in Sterlon" title="Promote in Sterlon"><i data-lucide="star" class="ic-14"></i></button></td><td><button class="icon-btn admin-catalog-edit-btn" aria-label="Edit"><i data-lucide="edit" class="ic-14"></i></button></td></tr>
+        </tbody>
+      </table>
+      <div class="admin-catalog-pagination">
+        <span class="admin-catalog-pagination-summary">Showing 8 of 12 products</span>
+        <div class="admin-catalog-filter-row">
+          <button class="icon-btn admin-catalog-page-btn is-active">1</button>
+          <button class="icon-btn admin-catalog-page-btn">2</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+  /* A15 — Toggle a product into/out of Sterlon "Promoted Pours" pool.
+     Updates star state + the count badge in the filter row. Real impl writes
+     to the product's `promoted` flag + `promoteUntil` expiry. */
+  function togglePromote(btn, name){
+    const wasActive = btn.classList.contains('active');
+    btn.classList.toggle('active');
+    btn.title = wasActive ? 'Promote in Sterlon' : 'Promoted — tap to remove';
+    const badge = document.querySelector('.adm-promo-count');
+    if (badge) {
+      const n = document.querySelectorAll('.adm-promo-toggle.active').length;
+      badge.textContent = n;
+    }
+    if (window.toast) {
+      toast(wasActive
+        ? '↺ Removed ' + name + ' from Sterlon promotions'
+        : '★ Promoting ' + name + ' for 7 days', { variant: wasActive ? '' : 'success', duration: 3000 });
+    }
+  }
+
+  /* Carousel arrows for the filter row. Same shared pattern used across the app —
+     wraps the filter track in a .pro-lib-carousel + .adm-cat-filters-carousel
+     container and injects left / right chevron buttons. Scoped to the direct-child
+     .admin-catalog-filter-row under .admin-catalog-page so the pagination row's
+     reused .admin-catalog-filter-row inside .admin-catalog-pagination is unaffected. */
+  (function setupAdmCatFiltersArrows(){
+    const track = document.querySelector('.admin-catalog-page > .admin-catalog-filter-row');
+    if (!track || track.dataset.carouselWired === '1') return;
+    track.dataset.carouselWired = '1';
+
+    const wrap = document.createElement('div');
+    wrap.className = 'pro-lib-carousel adm-cat-filters-carousel';
+    track.parentNode.insertBefore(wrap, track);
+    wrap.appendChild(track);
+
+    const mkArrow = (dir, glyph, label) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'pro-lib-arrow pro-lib-arrow-' + dir;
+      b.setAttribute('aria-label', label);
+      b.innerHTML = glyph;
+      return b;
+    };
+    const left  = mkArrow('left',  '‹', 'Scroll left');
+    const right = mkArrow('right', '›', 'Scroll right');
+    wrap.appendChild(left);
+    wrap.appendChild(right);
+
+    const step = (mult) => {
+      track.scrollBy({ left: track.clientWidth * 0.7 * mult, behavior: 'smooth' });
+    };
+    left.addEventListener('click',  () => step(-1));
+    right.addEventListener('click', () => step( 1));
+
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      const x = track.scrollLeft;
+      const overflow = max > 4;
+      const atEnd = x >= max - 1;
+      left.classList.toggle('pro-lib-arrow-hidden',  !(overflow && atEnd));
+      right.classList.toggle('pro-lib-arrow-hidden', !(overflow && !atEnd));
+    };
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    setTimeout(update, 80);
+    setTimeout(update, 500);
+  })();
+</script>
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+</body>
+</html>

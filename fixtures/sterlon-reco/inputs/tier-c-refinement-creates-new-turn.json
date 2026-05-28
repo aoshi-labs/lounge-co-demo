@@ -1,0 +1,7 @@
+{
+  "op": "refinementCreatesNewTurn",
+  "parentPromptText": "recommend a pairing for tonight",
+  "parentJourneyLevel": "advanced",
+  "refinementAxis": "lighter",
+  "description": "P0.6: refinement must produce a NEW RecommendationTurn with a different turnId from the parent turn"
+}

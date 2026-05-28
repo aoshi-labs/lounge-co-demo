@@ -1,0 +1,25 @@
+{
+  "op": "categoryIntegrityTurns",
+  "cases": [
+    {
+      "prompt": "bold bourbon pairing tonight",
+      "expectedDeck": "bourbon",
+      "forbiddenDecks": ["cognac", "vodka", "irish", "agave", "rum"]
+    },
+    {
+      "prompt": "tequila reposado recommendation",
+      "expectedDeck": "agave",
+      "forbiddenDecks": ["bourbon", "cognac", "vodka", "scotch"]
+    },
+    {
+      "prompt": "peated islay scotch pour",
+      "expectedDeck": "peated",
+      "forbiddenDecks": ["bourbon", "cognac", "vodka"]
+    },
+    {
+      "prompt": "cognac with a cigar",
+      "expectedDeck": "cognac",
+      "forbiddenDecks": ["bourbon", "vodka", "agave"]
+    }
+  ]
+}

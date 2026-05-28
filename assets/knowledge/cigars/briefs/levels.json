@@ -1,0 +1,188 @@
+{
+  "version": 1,
+  "shard": "levels",
+  "category": "cigar",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 8,
+  "products": [
+    {
+      "provenance": {
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://arturofuente.com/our-cigars/gran2/"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "Golf course",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Wrapper varies, so it teaches how Natural, Maduro, or Cameroon wrappers can change the same Fuente core.",
+        "binderRole": "Dominican binder supports Fuente's smooth construction and balanced burn.",
+        "fillerRole": "Dominican filler provides classic cedar, mild spice, and approachable premium structure.",
+        "bestFor": "Verified against https://arturofuente.com/our-cigars/gran2/.",
+        "avoidIf": "User needs a single fixed flavor profile or wants strong nicotine intensity.",
+        "whyRecommend": "Recommend as a classic Dominican premium that teaches construction and balance."
+      },
+      "menuLine": "Arturo Fuente Gran Reserva Rothschild · 4½ × 50 · Rothschild · Medium-Light · Dominican · $7 · Notes: cedar, baking spice, wood, light sweetness",
+      "stickSize": "4½ × 50 · Rothschild",
+      "id": "l3-af-granres"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/ratings/14291/name/macanudo-cafe-hyde-park-toro"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Morning coffee",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Connecticut Shade wrapper softens the profile with cream, light cedar, and a clean mild finish.",
+        "binderRole": "Mexican binder adds structure and a quiet savory base without making the cigar aggressive.",
+        "fillerRole": "Dominican and Mexican filler keep the smoke mild, consistent, and easy to read.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/14291/name/macanudo-cafe-hyde-park-toro.",
+        "avoidIf": "User wants bold pepper, heavy body, high nicotine, or collector rarity.",
+        "whyRecommend": "Recommend when the user needs a gentle, reliable, beginner-safe Connecticut profile."
+      },
+      "menuLine": "Macanudo Cafe Hyde Park · 5½ × 50 · Robusto · Light · Dominican · $8 · Notes: cream, cedar, light nuts, toast",
+      "stickSize": "5½ × 50 · Robusto",
+      "id": "l3-mac-cafe"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/ratings/15552/name/montecristo-white-toro-toro"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Morning coffee",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuadorian Connecticut Shade wrapper delivers cream, smoothness, and light sweetness.",
+        "binderRole": "Nicaraguan binder adds savory structure and keeps the mild profile from feeling thin.",
+        "fillerRole": "Dominican and Nicaraguan long-fillers provide a creamy core with gentle spice and enough body for pairing.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/15552/name/montecristo-white-toro-toro.",
+        "avoidIf": "User wants strong pepper, dark flavors, or short smoke.",
+        "whyRecommend": "Recommend for a smooth, creamy premium cigar where the binder adds quiet savory depth."
+      },
+      "menuLine": "Montecristo White Series Toro · 6 × 54 · Toro · Medium-Light · Dominican · $11 · Notes: cream, cedar, light spice, toast",
+      "stickSize": "6 × 54 · Toro",
+      "id": "l3-mont-white"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/ratings/4547/name/romeo-y-julieta-1875-bully"
+      },
+      "guidance": {
+        "flavorFamily": "Earthy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Rum",
+        "wrapperRole": "Indonesian Shade wrapper brings approachable earth, toast, and a soft spice edge.",
+        "binderRole": "Dominican binder keeps the blend steady and traditional rather than sharp.",
+        "fillerRole": "Dominican filler gives cedar, earth, nuts, and mild-to-medium Cuban-heritage character.",
+        "bestFor": "Verified against https://www.cigaraficionado.com/ratings/4547/name/romeo-y-julieta-1875-bully.",
+        "avoidIf": "User dislikes earthy profiles or wants creamy Connecticut sweetness.",
+        "whyRecommend": "Recommend when the user wants a classic, familiar Dominican profile with more character than ultra-mild cigars."
+      },
+      "menuLine": "Romeo y Julieta 1875 Churchill · 7 × 47 · Churchill · Medium · Dominican · $9 · Notes: cedar, earth, toasted nuts, light pepper",
+      "stickSize": "7 × 47 · Churchill",
+      "id": "l3-ryj-1875"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/ratings/20952/name/la-flor-dominicana-double-ligero-chisel"
+      },
+      "guidance": {
+        "flavorFamily": "Peppery",
+        "occasion": "After dinner",
+        "pairingAffinity": "Rum",
+        "wrapperRole": "Ecuadorian Sumatra wrapper (natural or maduro) frames the ligero core with spice, earth, and oily depth without softening the strength.",
+        "binderRole": "Dominican binder supports combustion and structure through a dense double-ligero bunch.",
+        "fillerRole": "Dominican ligero filler drives exceptional nicotine, red pepper, leather, coffee, and experienced-only intensity.",
+        "bestFor": "Experienced smoker, after dinner, rum pairing, user wants a Dominican power lesson—not the mild DR stereotype.",
+        "avoidIf": "Beginner, nicotine-sensitive, empty stomach, morning coffee, user wants creamy Connecticut mildness.",
+        "whyRecommend": "Recommend when the user seeks maximum Dominican ligero intensity and understands this is among the strongest profiles in the book."
+      },
+      "menuLine": "La Flor Dominicana Double Ligero Chisel · 6 × 54 · Chisel · Full · Dominican · $13 · Notes: red pepper, leather, charred oak, earth",
+      "stickSize": "6 × 54 · Chisel",
+      "id": "l4-lfd-dl"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/ratings/23080/name/my-father-le-bijou-1922-toro-toro"
+      },
+      "guidance": {
+        "flavorFamily": "Dark & Heavy",
+        "occasion": "Winter smoke",
+        "pairingAffinity": "Scotch",
+        "wrapperRole": "Nicaraguan Habano Oscuro wrapper deepens cocoa, leather, and pepper with oily maduro texture.",
+        "binderRole": "Nicaraguan binder (often double-binder bunch) amplifies Garcia-family structure and full-bodied burn.",
+        "fillerRole": "Nicaraguan filler drives espresso, dark cocoa, earth, cherry-dark fruit, and experienced-only intensity.",
+        "bestFor": "Experienced smoker, winter smoke, after-dinner Scotch, user wants dark Nicaraguan Garcia body.",
+        "avoidIf": "Beginner, mild preference, morning smoke, user dislikes pepper and heavy body.",
+        "whyRecommend": "Recommend for a serious, dark, full-bodied Nicaraguan profile with My Father blending identity."
+      },
+      "menuLine": "My Father Le Bijou 1922 Toro · 6 × 52 · Toro · Full · Nicaragua · $13 · Notes: dark cocoa, espresso, leather, black pepper",
+      "stickSize": "6 × 52 · Toro",
+      "id": "l4-myf-lebijou"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "No",
+        "articleSource": "https://www.cigaraficionado.com/ratings/22697/name/oliva-serie-v-double-robusto"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Ecuadorian Habano Sun Grown wrapper adds oily sweetness, spice, and Jalapa/Estelí character on the nose.",
+        "binderRole": "Nicaraguan binder supports full body and ligero-forward structure.",
+        "fillerRole": "Nicaraguan ligero filler delivers espresso, pepper, dark cocoa, and long-finishing strength.",
+        "bestFor": "Experienced smoker, after dinner, bourbon pairing, user wants full Nicaraguan intensity with sweetness.",
+        "avoidIf": "Beginner, empty stomach, short time window, user avoids high nicotine.",
+        "whyRecommend": "Recommend when the user asks for rich Nicaraguan power with sweetness and structure."
+      },
+      "menuLine": "Oliva Serie V Double Robusto · 6 × 54 · Double Robusto · Full · Nicaragua · $11 · Notes: sweet spice, espresso, dark cocoa, cedar",
+      "stickSize": "6 × 54 · Double Robusto",
+      "id": "l4-oliva-seriev"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/ratings/25984/name/padron-2000-robusto"
+      },
+      "guidance": {
+        "flavorFamily": "Coffee",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Nicaraguan Habano natural or maduro wrapper sets cocoa/coffee tone and teaches wrapper-driven sweetness vs depth.",
+        "binderRole": "Nicaraguan binder reinforces puro identity and rustic, honest Padron construction.",
+        "fillerRole": "Nicaraguan filler drives cocoa, earth, coffee, and dependable medium body—the classic daily Padron profile.",
+        "bestFor": "Quick lunch break, coffee pairing, Nicaraguan baseline lesson, value-conscious premium smoker.",
+        "avoidIf": "Beginner nicotine-sensitive, user wants Dominican cream or anniversary-line collector rarity.",
+        "whyRecommend": "Recommend as the reference Nicaraguan puro for balanced body without 1964/1926 pricing.",
+        "memberBlurb": "The daily Padron lesson — all-Nicaraguan cocoa, coffee, and earth in honest construction. Natural vs maduro is your sweetness dial."
+      },
+      "menuLine": "Padron Thousands Series · 5½ × 50 · Robusto · Medium · Nicaragua · $9 · Notes: Cocoa, coffee, earth, nuts, cedar, light pepper, sweet tobacco.",
+      "stickSize": "5½ × 50 · Robusto",
+      "id": "l4-pad-2000"
+    }
+  ]
+}

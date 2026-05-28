@@ -1,0 +1,479 @@
+{
+  "version": 1,
+  "shard": "ca25-bestbuy-02",
+  "category": "cigar",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 9,
+  "products": [
+    {
+      "tracker": {
+        "sku": "BB25-10-PUNCH-RARE-RAP",
+        "caList": "Best Buy",
+        "caListYear": 2025,
+        "caRank": "",
+        "caRating": 90
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "spice",
+          "weight": 0.95
+        },
+        {
+          "id": "tobacco",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.7
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.65
+        }
+      ],
+      "spec": {
+        "msrp": 5,
+        "tier": 3,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "45 min",
+        "wrapper": "Ecuador Habano",
+        "binder": "Honduras",
+        "filler": "Honduras / Nicaragua"
+      },
+      "id": "bb25-10-punch-rare-rap",
+      "sensory": {
+        "body": 7,
+        "sweetness": 6,
+        "pepper": 6,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Punch Rare Corojo Rapido",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "BB25-11-HVC-HOTCAKE-HC",
+        "caList": "Best Buy",
+        "caListYear": 2025,
+        "caRank": "",
+        "caRating": 90
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cream",
+          "weight": 1.0
+        },
+        {
+          "id": "cedar",
+          "weight": 0.95
+        },
+        {
+          "id": "nut",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 5,
+        "tier": 3,
+        "strength": 2,
+        "body": "Medium-Light",
+        "smokeTime": "30 min",
+        "wrapper": "Ecuador Connecticut",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "bb25-11-hvc-hotcake-hc",
+      "sensory": {
+        "body": 4,
+        "sweetness": 6,
+        "pepper": 4,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "HVC Hot Cake Golden Line Connecticut Half Corona",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "BB25-12-DPG-DEMI",
+        "caList": "Best Buy",
+        "caListYear": 2025,
+        "caRank": "",
+        "caRating": 90
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "earth",
+          "weight": 1.0
+        },
+        {
+          "id": "spice",
+          "weight": 0.95
+        },
+        {
+          "id": "cedar",
+          "weight": 0.85
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.75
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.7
+        },
+        {
+          "id": "toast",
+          "weight": 0.65
+        }
+      ],
+      "spec": {
+        "msrp": 3,
+        "tier": 2,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "30 min",
+        "wrapper": "Nicaragua",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "bb25-12-dpg-demi",
+      "sensory": {
+        "body": 7,
+        "sweetness": 5,
+        "pepper": 6,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Don Pepin Garcia Original Demi Tasse",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "BB25-13-LG-IMP-JADE",
+        "caList": "Best Buy",
+        "caListYear": 2025,
+        "caRank": "",
+        "caRating": 89
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "wood",
+          "weight": 0.95
+        },
+        {
+          "id": "leather",
+          "weight": 0.85
+        },
+        {
+          "id": "earth",
+          "weight": 0.75
+        },
+        {
+          "id": "tobacco",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 7,
+        "tier": 3,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "45 min",
+        "wrapper": "Ecuador",
+        "binder": "Dominican Republic",
+        "filler": "Dominican Republic / Nicaragua"
+      },
+      "id": "bb25-13-lg-imp-jade",
+      "sensory": {
+        "body": 6,
+        "sweetness": 5,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "La Galera Imperial Jade Chiquito Perfecto",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "BB25-14-LG-CT-HC",
+        "caList": "Best Buy",
+        "caListYear": 2025,
+        "caRank": "",
+        "caRating": 89
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cream",
+          "weight": 1.0
+        },
+        {
+          "id": "cedar",
+          "weight": 0.95
+        },
+        {
+          "id": "nut",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 7,
+        "tier": 3,
+        "strength": 2,
+        "body": "Medium-Light",
+        "smokeTime": "30 min",
+        "wrapper": "Ecuador Connecticut",
+        "binder": "Dominican Republic",
+        "filler": "Dominican Republic"
+      },
+      "id": "bb25-14-lg-ct-hc",
+      "sensory": {
+        "body": 4,
+        "sweetness": 6,
+        "pepper": 4,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "La Galera Connecticut Half Corona",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "BB25-15-DONLINO-GT",
+        "caList": "Best Buy",
+        "caListYear": 2025,
+        "caRank": "",
+        "caRating": 89
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "chocolate",
+          "weight": 1.0
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.95
+        },
+        {
+          "id": "coffee",
+          "weight": 0.85
+        },
+        {
+          "id": "earth",
+          "weight": 0.75
+        },
+        {
+          "id": "cedar",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 7,
+        "tier": 3,
+        "strength": 4,
+        "body": "Medium-Full",
+        "smokeTime": "90 min",
+        "wrapper": "Broadleaf Maduro",
+        "binder": "Dominican Republic",
+        "filler": "Dominican Republic / Nicaragua"
+      },
+      "id": "bb25-15-donlino-gt",
+      "sensory": {
+        "body": 7,
+        "sweetness": 5,
+        "pepper": 6,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "name": "Don Lino Maduro Gran Toro",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "BB25-16-CURI-NAT-60",
+        "caList": "Best Buy",
+        "caListYear": 2025,
+        "caRank": "",
+        "caRating": 89
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cedar",
+          "weight": 1.0
+        },
+        {
+          "id": "wood",
+          "weight": 0.95
+        },
+        {
+          "id": "leather",
+          "weight": 0.85
+        },
+        {
+          "id": "earth",
+          "weight": 0.75
+        },
+        {
+          "id": "tobacco",
+          "weight": 0.7
+        }
+      ],
+      "spec": {
+        "msrp": 6,
+        "tier": 3,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "90 min",
+        "wrapper": "Nicaragua",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "bb25-16-curi-nat-60",
+      "sensory": {
+        "body": 6,
+        "sweetness": 5,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "Curivari Buenaventura Favoritos Natural Natural 60",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "BB25-17-CURI-CT-50",
+        "caList": "Best Buy",
+        "caListYear": 2025,
+        "caRank": "",
+        "caRating": 88
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "cream",
+          "weight": 1.0
+        },
+        {
+          "id": "cedar",
+          "weight": 0.95
+        },
+        {
+          "id": "nut",
+          "weight": 0.85
+        },
+        {
+          "id": "toast",
+          "weight": 0.75
+        }
+      ],
+      "spec": {
+        "msrp": 5,
+        "tier": 3,
+        "strength": 2,
+        "body": "Medium-Light",
+        "smokeTime": "60 min",
+        "wrapper": "Ecuador Connecticut",
+        "binder": "Nicaragua",
+        "filler": "Nicaragua"
+      },
+      "id": "bb25-17-curi-ct-50",
+      "sensory": {
+        "body": 4,
+        "sweetness": 6,
+        "pepper": 4,
+        "cocoa": 5,
+        "earthiness": 4
+      },
+      "name": "Curivari Buenaventura Favoritos Connecticut Connecticut 50",
+      "category": "cigar"
+    },
+    {
+      "tracker": {
+        "sku": "BB25-18-LAUR-CAZ-ROB",
+        "caList": "Best Buy",
+        "caListYear": 2025,
+        "caRank": "",
+        "caRating": 89
+      },
+      "deckKey": "bourbon",
+      "tags": [
+        {
+          "id": "earth",
+          "weight": 1.0
+        },
+        {
+          "id": "spice",
+          "weight": 0.95
+        },
+        {
+          "id": "cedar",
+          "weight": 0.85
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.75
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.7
+        },
+        {
+          "id": "toast",
+          "weight": 0.65
+        }
+      ],
+      "spec": {
+        "msrp": 5,
+        "tier": 3,
+        "strength": 3,
+        "body": "Medium",
+        "smokeTime": "60 min",
+        "wrapper": "Nicaragua",
+        "binder": "Dominican Republic",
+        "filler": "Nicaragua / Dominican Republic"
+      },
+      "id": "bb25-18-laur-caz-rob",
+      "sensory": {
+        "body": 6,
+        "sweetness": 5,
+        "pepper": 5,
+        "cocoa": 5,
+        "earthiness": 7
+      },
+      "name": "La Aurora Cazadores Nicaragua Robusto",
+      "category": "cigar"
+    }
+  ]
+}

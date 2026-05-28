@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Private Rooms — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Private rooms — book the humidor or VIP lounge for a curated gathering." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Private Rooms — Lounge & Co." />
+  <meta property="og:description" content="Private rooms — book the humidor or VIP lounge for a curated gathering." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Private Rooms — Lounge & Co." />
+  <meta name="twitter:description" content="Private rooms — book the humidor or VIP lounge for a curated gathering." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/rooms.css"/>
+</head>
+<body>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Thomas H.</div><div class="sidebar-user-tier">Elite · 1,744 pts · #4</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area">
+  <h1 class="visually-hidden">Private Rooms</h1>
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu"><i data-lucide="menu" class="ic-16"></i></button>
+    <div class="topbar-actions">
+      <button class="rooms-create-button">+ Create Room</button>
+    </div>
+  </header>
+
+  <div class="page-content">
+
+    <!-- CENTER -->
+    <div class="rooms-page-stack">
+
+      <!-- Page header H1 + tagline removed; the auto-injected .top-bar-logo
+           (door-open icon + "Rooms" label) serves as the page title. -->
+
+      <!-- My rooms -->
+      <div class="rooms-section-label">Your Rooms</div>
+
+      <div class="rooms-grid">
+
+        <a href="room-detail.html" class="room-card">
+          <div class="rooms-card-header-single-malts"></div>
+          <div class="rooms-card-body">
+            <div class="rooms-card-title-row">
+              <h3 class="rooms-card-title">The Single Malts Society</h3>
+            </div>
+            <p class="rooms-card-description">Scotch nerds, neat. Sherry casks, peat bombs, and the occasional rare Japanese pour.</p>
+            <div class="rooms-card-footer">
+              <div class="rooms-card-members">
+                <div class="avatar rooms-avatar-champion"><img src="assets/images/marcus-r.jpg" alt=""/></div>
+                <div class="avatar rooms-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+                <div class="avatar rooms-avatar-runner-up"><img src="assets/images/james-w.jpg" alt=""/></div>
+                <span class="rooms-member-count">12 members</span>
+              </div>
+              <span class="rooms-new-badge">3 new</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="room-detail.html" class="room-card room-card-public">
+          <div class="rooms-card-header-cuban"></div>
+          <div class="rooms-card-body">
+            <div class="rooms-card-title-row">
+              <h3 class="rooms-card-title">Cuban Aficionados</h3>
+            </div>
+            <p class="rooms-card-description">Cohiba, Montecristo, Partagás — sharing finds, vintages, and post-aging reviews.</p>
+            <div class="rooms-card-footer">
+              <div class="rooms-card-members">
+                <div class="avatar rooms-avatar-burgundy"><img src="assets/images/robert-b.jpg" alt=""/></div>
+                <div class="avatar rooms-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+                <span class="rooms-member-count">8 members</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="room-detail.html" class="room-card">
+          <div class="rooms-card-header-bourbon"></div>
+          <div class="rooms-card-body">
+            <div class="rooms-card-title-row">
+              <h3 class="rooms-card-title">Bourbon Hunters</h3>
+            </div>
+            <p class="rooms-card-description">Pappy lottery tips, Weller drops, and dusty-bottle pursuits.</p>
+            <div class="rooms-card-footer">
+              <div class="rooms-card-members">
+                <div class="avatar rooms-avatar-bronze"><img src="assets/images/robert-b.jpg" alt=""/></div>
+                <div class="avatar rooms-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+                <span class="rooms-member-count">15 members</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="room-detail.html" class="room-card">
+          <div class="rooms-card-header-founders"></div>
+          <div class="rooms-card-body">
+            <div class="rooms-card-title-row">
+              <h3 class="rooms-card-title">Founders' Circle</h3>
+            </div>
+            <p class="rooms-card-description">Charter members only. Big-decision conversations, first looks at limited releases.</p>
+            <div class="rooms-card-footer">
+              <div class="rooms-card-members">
+                <div class="avatar rooms-avatar-champion"><img src="assets/images/marcus-r.jpg" alt=""/></div>
+                <div class="avatar rooms-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+                <span class="rooms-member-count">6 members</span>
+              </div>
+              <span class="rooms-elite-pill">★ Elite</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Discover -->
+      <div class="rooms-section-label-discover">Discover Rooms</div>
+
+      <div class="rooms-grid">
+
+        <div class="discover-card discover-card-private">
+          <div class="discover-card-header">
+            <div class="discover-card-emoji">🍷</div>
+            <h3 class="discover-card-title">Port &amp; Pairings</h3>
+          </div>
+          <p class="discover-card-description">Vintage port, tawny pairings, and dessert smoke combinations.</p>
+          <div class="rooms-card-footer">
+            <span class="discover-card-member-count">9 members</span>
+            <button class="discover-request-button">Request to Join</button>
+          </div>
+        </div>
+
+        <div class="discover-card">
+          <div class="discover-card-header">
+            <div class="discover-card-emoji">☕</div>
+            <h3 class="discover-card-title">Smoke &amp; Espresso</h3>
+          </div>
+          <p class="discover-card-description">Coffee pairings, morning smokes, and single-origin obsessions.</p>
+          <div class="rooms-card-footer">
+            <span class="discover-card-member-count">21 members</span>
+            <button class="discover-join-button">Join</button>
+          </div>
+        </div>
+
+        <div class="discover-card discover-card-private">
+          <div class="discover-card-header">
+            <div class="discover-card-emoji">🔍</div>
+            <h3 class="discover-card-title">The Cellar Vault</h3>
+          </div>
+          <p class="discover-card-description">Aged cigar discussion, humidor builds, and long-term storage.</p>
+          <div class="rooms-card-footer">
+            <span class="discover-card-member-count">14 members</span>
+            <button class="discover-request-button">Request to Join</button>
+          </div>
+        </div>
+
+        <div class="discover-card">
+          <div class="discover-card-header">
+            <div class="discover-card-emoji">🌿</div>
+            <h3 class="discover-card-title">Nicaragua Only</h3>
+          </div>
+          <p class="discover-card-description">Padron, My Father, Drew Estate — all-Nicaragua, all the time.</p>
+          <div class="rooms-card-footer">
+            <span class="discover-card-member-count">18 members</span>
+            <button class="discover-join-button">Join</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RAIL -->
+    <aside class="rail-col rooms-rail">
+
+      <div class="widget">
+        <div class="widget-title">✦ About Rooms</div>
+        <p class="rooms-rail-text">Private rooms are invite-only or request-to-join. Posts stay inside the room — they don't show up in the main feed.</p>
+        <p class="rooms-rail-text-last">Elite-tier members can create up to 3 rooms.</p>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">🎯 Recommended for You</div>
+        <p class="rooms-recommend-text">"Port &amp; Pairings" matches your taste profile — your sherry cask preference fits the discussion there."</p>
+        <button class="rooms-recommend-button">Request to Join →</button>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+<nav class="bottom-nav">
+  <a href="feed.html" class="bottom-nav-item"><i data-lucide="newspaper" class="ic-20"></i>Feed</a>
+  <a href="explore.html" class="bottom-nav-item"><i data-lucide="search" class="ic-20"></i>Explore</a>
+  <a href="create-post.html" class="bottom-nav-item"><div class="bottom-nav-create-btn"><i data-lucide="plus" class="ic-20"></i></div></a>
+  <a href="events.html" class="bottom-nav-item"><i data-lucide="calendar" class="ic-20"></i>Events</a>
+  <a href="profile.html" class="bottom-nav-item"><i data-lucide="user" class="ic-20"></i>Profile</a>
+</nav>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "op": "refinementPersistRoundTrip",
+  "parentPromptText": "recommend a pairing for tonight",
+  "refinementAxis": "lighter",
+  "description": "RR-E2: refined turn persists via saveLastRecommendationTurn and reloads with lineage"
+}

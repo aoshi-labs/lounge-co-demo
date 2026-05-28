@@ -1,0 +1,87 @@
+  .post-card{background:var(--bg-surface);border:1px solid var(--bg-border);border-radius:14px;padding:18px;}
+
+
+/* === Page-specific styles === */
+.topbar-back-link { display:flex; align-items:center; gap:6px; color:var(--text-secondary); text-decoration:none; font-size:13px; font-weight:500; transition:color .2s; }
+.topbar-user-avatar-elite { background:var(--tier-elite); color:var(--tier-elite-ink); width:34px; height:34px; font-size:12px; }
+.room-detail-page-frame { display:flex; justify-content:center; padding:24px 20px; gap:20px; }
+.room-detail-page-stack { width:100%; max-width:640px; display:flex; flex-direction:column; gap:14px; }
+.room-detail-header { background:linear-gradient(90deg,rgba(var(--bg-base-rgb), .88) 0%,rgba(var(--bg-base-rgb), .6) 55%,rgba(var(--bg-base-rgb), .25) 100%), url("../images/single-malt-society-background.png") center/cover no-repeat; border:1px solid var(--bg-border); border-radius:16px; padding:24px 28px; }
+.room-detail-header-row { display:flex; align-items:flex-start; gap:16px; flex-wrap:wrap; }
+.room-detail-header-icon { font-size:3rem; line-height:1; }
+.room-detail-header-info { flex:1; min-width:200px; }
+.room-detail-title-row { display:flex; align-items:center; gap:8px; margin-bottom:4px; }
+.room-detail-title { font-family:var(--font-display); font-size:1.7rem; font-weight:700; color:var(--text-primary); line-height:1.1; }
+.room-detail-tagline { font-family:var(--font-body); font-style:italic; font-size:13px; color:var(--text-secondary); line-height:1.6; }
+.room-detail-settings-btn { background:var(--bg-elevated); border:1px solid var(--bg-border); color:var(--text-secondary); border-radius:8px; padding:8px 14px; font-family:var(--font-ui); font-size:12px; font-weight:600; cursor:pointer; transition:border-color .2s; }
+.room-detail-meta-row { display:flex; gap:24px; margin-top:18px; padding-top:16px; border-top:1px solid var(--bg-border); flex-wrap:wrap; font-size:12px; color:var(--text-secondary); }
+.room-detail-meta-strong { color:var(--text-primary); }
+.room-detail-meta-muted { color:var(--text-muted); }
+.room-detail-meta-gold { color:var(--gold); }
+.room-detail-compose { background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:14px; padding:14px 18px; display:flex; align-items:center; gap:12px; }
+.room-detail-compose-input { flex:1; background:var(--bg-elevated); border:1px solid var(--bg-border); border-radius:8px; padding:10px 14px; font-family:var(--font-body); font-style:italic; color:var(--text-muted); text-decoration:none; font-size:14px; }
+.room-detail-compose-btn { background:var(--burg); color:var(--cream); border:none; border-radius:8px; padding:8px 16px; font-family:var(--font-ui); font-size:13px; font-weight:600; text-decoration:none; }
+.room-detail-post-header { display:flex; align-items:center; gap:12px; margin-bottom:8px; }
+.room-detail-post-avatar-champion { background:var(--gold); color:var(--bg-base); }
+.room-detail-post-author-info { flex:1; }
+.room-detail-post-author-name { font-size:14px; font-weight:600; color:var(--text-primary); }
+.room-detail-post-meta { font-size:11px; color:var(--text-muted); }
+.room-detail-post-meta-link { color:var(--gold); text-decoration:none; }
+.room-detail-post-body { font-family:var(--font-body); font-style:italic; font-size:14px; color:var(--text-secondary); line-height:1.7; margin-bottom:12px; }
+.room-detail-post-chips { display:flex; gap:7px; flex-wrap:wrap; margin-bottom:12px; }
+.room-detail-post-actions { display:flex; gap:14px; padding-top:12px; border-top:1px solid var(--bg-border); }
+.room-detail-post-avatar-runner-up { background:var(--tier-runner-up); color:var(--tier-runner-up-ink); }
+.room-detail-load-more-btn { background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:10px; padding:12px; font-family:var(--font-ui); font-size:13px; font-weight:500; color:var(--text-secondary); cursor:pointer; width:100%; transition:border-color .2s,color .2s; }
+.room-detail-rail { width:268px; flex-shrink:0; display:flex; flex-direction:column; gap:14px; }
+.members-list { display:flex; flex-direction:column; gap:8px; }
+.members-row { display:flex; align-items:center; gap:9px; }
+.members-avatar-champion { background:var(--gold); color:var(--bg-base); width:30px; height:30px; font-size:11px; }
+.members-name { font-size:12px; color:var(--text-primary); }
+.members-role { font-size:10px; color:var(--gold); }
+.members-avatar-elite { background:var(--tier-elite); color:var(--tier-elite-ink); width:30px; height:30px; font-size:11px; }
+.members-you-tag { font-size:10px; color:var(--text-muted); }
+.members-avatar-runner-up { background:var(--tier-runner-up); color:var(--tier-runner-up-ink); width:30px; height:30px; font-size:11px; }
+.members-avatar-bronze { background:var(--tier-bronze); color:var(--tier-bronze-ink); width:30px; height:30px; font-size:11px; }
+.members-avatar-member { background:var(--avatar-brown); color:var(--avatar-brown-ink); width:30px; height:30px; font-size:11px; }
+.members-show-more { width:100%; margin-top:10px; background:none; border:none; font-size:12px; color:var(--text-muted); cursor:pointer; transition:color .2s; }
+.room-rules-list { margin-left:18px; display:flex; flex-direction:column; gap:6px; font-family:var(--font-body); font-style:italic; font-size:12px; color:var(--text-secondary); line-height:1.55; }
+.room-action-description { font-family:var(--font-body); font-style:italic; font-size:12px; color:var(--text-secondary); line-height:1.55; margin-bottom:10px; }
+.room-mute-btn { width:100%; background:var(--bg-elevated); border:1px solid var(--bg-border); color:var(--text-secondary); border-radius:7px; padding:7px; font-family:var(--font-ui); font-size:12px; font-weight:500; cursor:pointer; }
+
+/* Mobile inline rail — duplicate of the right-rail widgets surfaced in
+   the main column right below the room header (.room-detail-header) where the rail
+   itself is hidden by the app shell. Hidden on desktop (the real rail
+   shows there). */
+.room-detail-mobile-rail { display: none; }
+@media (max-width: 1023px) {
+  .room-detail-mobile-rail {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 14px 0 4px;
+  }
+}
+
+/* Leave Room CTA — burgundy outlined button so it reads as the
+   destructive option (vs the muted .room-mute-btn "Mute Room" pill). */
+.room-leave-btn {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--burg);
+  color: var(--burg);
+  border-radius: 7px;
+  padding: 7px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.room-leave-btn:hover {
+  background: var(--burg);
+  color: var(--cream);
+}
+
+@media (max-width: 639px) {
+  .room-detail-title { font-size: 1.3rem; line-height: 1.15; }
+}

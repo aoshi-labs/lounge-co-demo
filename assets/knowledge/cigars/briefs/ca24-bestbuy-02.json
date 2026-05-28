@@ -1,0 +1,209 @@
+{
+  "version": 1,
+  "shard": "ca24-bestbuy-02",
+  "category": "cigar",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T04:01:18Z",
+  "generator": "cigar_catalog_cli.py build",
+  "productCount": 9,
+  "products": [
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/la-flor-dominicana-cameroon-cabinet-no-3-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Sweet Spice",
+        "occasion": "Morning coffee",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Cameroon wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Dominican Republic binder supports structure and integration with the filler.",
+        "fillerRole": "Dominican Republic filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/la-flor-dominicana-cameroon-cabinet-no-3-2024.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $6' requests - cite CA 2024 Best Buy list."
+      },
+      "menuLine": "La Flor Dominicana Cameroon Cabinet · 4¼ × 42 · Petit Corona · Medium · Dominican Republic · $6 · Notes: cedar, baking spice, sweet tobacco, toast, light cocoa",
+      "stickSize": "4¼ × 42 · Petit Corona",
+      "id": "bb24-11-lfd-cam-3"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/oliva-connecticut-reserve-petit-corona-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Morning coffee",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuador Connecticut wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/oliva-connecticut-reserve-petit-corona-2024.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $7' requests - cite CA 2024 Best Buy list."
+      },
+      "menuLine": "Oliva Connecticut Reserve · 4 × 42 · Petit Corona · Medium-Light · Nicaragua · $7 · Notes: cream, cedar, nuts, toast, light sweetness",
+      "stickSize": "4 × 42 · Petit Corona",
+      "id": "bb24-12-oliva-ct-pc"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/punch-knuckle-buster-shade-gordo-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "After dinner",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuador Connecticut wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Honduras binder supports structure and integration with the filler.",
+        "fillerRole": "Honduras / Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/punch-knuckle-buster-shade-gordo-2024.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $7' requests - cite CA 2024 Best Buy list."
+      },
+      "menuLine": "Punch Knuckle Buster Shade · 6 × 52 · Toro · Medium-Light · Honduras · $5 · Notes: cream, cedar, nuts, toast",
+      "stickSize": "6 × 60 · Gordo",
+      "id": "bb24-13-punch-kb-gordo"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/punch-knuckle-buster-shade-stubby-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuador Connecticut wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Honduras binder supports structure and integration with the filler.",
+        "fillerRole": "Honduras / Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/punch-knuckle-buster-shade-stubby-2024.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $5' requests - cite CA 2024 Best Buy list."
+      },
+      "menuLine": "Punch Knuckle Buster Shade · 4 × 50 · Robusto · Medium-Light · Honduras · $5 · Notes: cream, cedar, nuts, toast, light sweetness",
+      "stickSize": "4 × 50 · Robusto",
+      "id": "bb24-14-punch-kb-stub"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/punch-knuckle-buster-shade-toro-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Creamy",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuador Connecticut wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Honduras binder supports structure and integration with the filler.",
+        "fillerRole": "Honduras / Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/punch-knuckle-buster-shade-toro-2024.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $6' requests - cite CA 2024 Best Buy list."
+      },
+      "menuLine": "Punch Knuckle Buster Shade · 6 × 52 · Toro · Medium-Light · Honduras · $6 · Notes: cream, cedar, nuts, toast, light sweetness",
+      "stickSize": "6 × 52 · Toro",
+      "id": "bb24-15-punch-kb-toro"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/rocky-patel-vintage-1990-juniors-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Honduras wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua / Dominican Republic filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/rocky-patel-vintage-1990-juniors-2024.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $4' requests - cite CA 2024 Best Buy list."
+      },
+      "menuLine": "Rocky Patel Vintage 1990 · 4 × 38 · Petit Corona · Medium · Honduras · $4 · Notes: cedar, wood, earth, leather, mineral tobacco",
+      "stickSize": "4 × 38 · Petit Corona",
+      "id": "bb24-16-rp-v90-jr"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/7-20-4-factory-57-dog-walker-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Savory",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Honduras wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Honduras binder supports structure and integration with the filler.",
+        "fillerRole": "Honduras / Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/7-20-4-factory-57-dog-walker-2024.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $7' requests - cite CA 2024 Best Buy list."
+      },
+      "menuLine": "7-20-4 Factory 57 · 4 × 40 · Petit Corona · Medium · Honduras · $7 · Notes: earth, savory spice, cedar, cocoa, toasted tobacco",
+      "stickSize": "4 × 40 · Petit Corona",
+      "id": "bb24-17-7204-dog"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Maybe",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/nica-rustica-belly-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Savory",
+        "occasion": "After dinner",
+        "pairingAffinity": "Bourbon",
+        "wrapperRole": "Nicaragua wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Nicaragua binder supports structure and integration with the filler.",
+        "fillerRole": "Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/nica-rustica-belly-2024.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $7' requests - cite CA 2024 Best Buy list."
+      },
+      "menuLine": "Nica Rustica Nica Rustica · 7½ × 54 · Figurado · Medium-Full · Nicaragua · $7 · Notes: earth, savory spice, cedar, cocoa, toasted tobacco",
+      "stickSize": "7½ × 54 · Figurado",
+      "id": "bb24-18-nica-belly"
+    },
+    {
+      "provenance": {
+        "sourceConfidence": "Cigar Aficionado official review",
+        "dataGrade": 10,
+        "beginnerSafe": "Yes",
+        "articleSource": "https://www.cigaraficionado.com/top25cigar/saga-short-tales-tomo-iii-2024"
+      },
+      "guidance": {
+        "flavorFamily": "Woodsy",
+        "occasion": "Quick lunch break",
+        "pairingAffinity": "Coffee",
+        "wrapperRole": "Ecuador wrapper sets top-note, color, and burn for this vitola.",
+        "binderRole": "Dominican Republic binder supports structure and integration with the filler.",
+        "fillerRole": "Dominican Republic / Nicaragua filler drives body, strength, and the flavor arc Sterlon should echo.",
+        "bestFor": "Flavor chips from CA article https://www.cigaraficionado.com/top25cigar/saga-short-tales-tomo-iii-2024.",
+        "avoidIf": "User wants ultra-premium collector rarity or maximum strength regardless of price.",
+        "whyRecommend": "Recommend for value seekers, humidor fillers, or 'something good under $7' requests - cite CA 2024 Best Buy list."
+      },
+      "menuLine": "Saga Short Tales · 4½ × 42 · Petit Corona · Medium · Dominican Republic · $7 · Notes: cedar, wood, earth, leather, mineral tobacco",
+      "stickSize": "4½ × 42 · Petit Corona",
+      "id": "bb24-20-saga-tomo3"
+    }
+  ]
+}

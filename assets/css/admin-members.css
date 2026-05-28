@@ -1,0 +1,118 @@
+  table{width:100%;border-collapse:separate;border-spacing:0;}
+  th{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);text-align:left;padding:10px 14px;border-bottom:1px solid var(--bg-border);}
+  td{padding:14px;border-bottom:1px solid var(--bg-border);font-size:13px;color:var(--text-secondary);}
+  tbody tr{transition:background .15s;}
+  tbody tr:hover{background:var(--bg-elevated);}
+  .tier-pill{display:inline-flex;padding:2px 8px;border-radius:99px;font-size:10px;font-weight:700;}
+
+
+/* === Page styles === */
+.admin-members-pending-pill { background:var(--burg); color:var(--cream); border-radius:99px; padding:1px 7px; font-size:10px; font-weight:700; margin-left:auto; }
+.admin-members-pending-banner-title { font-size:13px; font-weight:600; color:var(--text-primary); }
+.admin-members-section-heading { font-size:15px; font-weight:600; color:var(--text-primary); }
+.admin-members-table-email { font-size:11px; color:var(--text-muted); }
+.admin-members-invite-btn { background:var(--burg); color:var(--cream); border:none; border-radius:8px; padding:8px 14px; font-family:var(--font-ui); font-size:13px; font-weight:600; cursor:pointer; }
+.admin-members-content { padding:24px 24px 40px; display:flex; flex-direction:column; gap:16px; max-width:1240px; width:100%; }
+.admin-members-filters-row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+.admin-members-search-input { flex:1; min-width:240px; }
+.admin-members-button-row { display:flex; gap:6px; }
+.admin-members-filter-count-badge { background:var(--burg); color:var(--cream); border-radius:99px; padding:1px 5px; font-size:9px; margin-left:3px; }
+.admin-members-pending-banner { background:linear-gradient(90deg,rgba(var(--burg-rgb), .15),var(--bg-surface)); border:1px solid rgba(var(--burg-rgb), .3); border-radius:12px; padding:14px 18px; display:flex; align-items:center; gap:14px; }
+.admin-members-pending-banner-body { flex:1; }
+.admin-members-pending-banner-subtext { font-size:11px; color:var(--text-muted); margin-top:2px; }
+.admin-members-pending-banner-cta { background:var(--burg); color:var(--cream); border:none; border-radius:7px; padding:7px 14px; font-family:var(--font-ui); font-size:12px; font-weight:700; cursor:pointer; }
+.admin-members-table { background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:14px; overflow:hidden; }
+.admin-members-table-member-cell { display:flex; align-items:center; gap:10px; }
+.admin-members-avatar-champion { background:var(--gold); color:var(--bg-base); }
+.admin-members-table-name { color:var(--text-primary); font-weight:600; }
+.admin-members-tier-pill-champion { background:var(--gold-subtle); color:var(--gold); border:1px solid rgba(var(--gold-rgb), .3); }
+.admin-members-table-points-gold { color:var(--gold); font-weight:600; }
+.admin-members-table-spend { color:var(--text-primary); }
+.admin-members-table-more-btn { width:28px; height:28px; border:none; }
+.admin-members-avatar-runner-up { background:var(--tier-runner-up); color:var(--tier-runner-up-ink); }
+.admin-members-tier-pill-runner-up { background:rgba(var(--tier-runner-up-rgb), .15); color:var(--tier-runner-up); border:1px solid rgba(var(--tier-runner-up-rgb), .3); }
+.admin-members-avatar-bronze { background:var(--tier-bronze); color:var(--tier-bronze-ink); }
+.admin-members-tier-pill-bronze { background:rgba(var(--tier-bronze-rgb), .15); color:var(--tier-bronze); border:1px solid rgba(var(--tier-bronze-rgb), .3); }
+.admin-members-avatar-elite { background:var(--tier-elite); color:var(--tier-elite-ink); }
+.admin-members-tier-pill-elite { background:rgba(var(--tier-elite-rgb), .15); color:var(--tier-elite); border:1px solid rgba(var(--tier-elite-rgb), .3); }
+.admin-members-avatar-brown { background:var(--avatar-brown); color:var(--avatar-brown-ink); }
+.admin-members-tier-pill-member { background:var(--bg-elevated); color:var(--text-muted); border:1px solid var(--bg-border); }
+.admin-members-avatar-blue { background:var(--avatar-blue); color:var(--avatar-blue-ink); }
+.admin-members-avatar-pending { background:var(--bg-elevated); color:var(--burg); border:1px dashed var(--burg); }
+.admin-members-pending-badge { background:rgba(var(--burg-rgb), .15); color:var(--burg); border-radius:99px; padding:1px 6px; font-size:9px; font-weight:700; margin-left:5px; }
+.admin-members-pending-row-actions { display:flex; gap:5px; }
+.admin-members-approve-btn { background:var(--tier-elite); color:var(--cream); border:none; border-radius:6px; padding:5px 9px; font-size:11px; font-weight:700; cursor:pointer; }
+.admin-members-deny-btn { background:transparent; border:1px solid var(--bg-border); color:var(--text-muted); border-radius:6px; padding:5px 9px; font-size:11px; cursor:pointer; }
+.admin-members-pagination { padding:14px 18px; display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--bg-border); }
+.admin-members-pagination-count { font-size:12px; color:var(--text-muted); }
+.admin-members-pagination-btn { width:30px; height:30px; }
+.admin-members-pagination-btn-active { width:30px; height:30px; border-color:var(--gold); color:var(--gold); }
+
+/* Stats summary — moved out of the top bar, sits between the filter row
+   and the members table. Same small/muted treatment as the old email cell. */
+.adm-stats-summary { font-size:11px; color:var(--text-muted); letter-spacing:.02em; padding:0 2px; }
+
+/* Mobile (≤767px): the members table reads more naturally as a stack of
+   per-member cards. Mirrors the pattern used on superadmin-venues — hide
+   thead, turn each tr into a grid card with named areas. The pending row
+   (Stephen Knight) keeps its Approve/Deny buttons in the actions slot. */
+@media (max-width: 767px) {
+  .admin-members-table { overflow: visible; background: transparent; border: none; }
+  .admin-members-table > table { display: block; min-width: 0; width: 100%; }
+  .admin-members-table thead { display: none; }
+  .admin-members-table tbody { display: flex; flex-direction: column; gap: 12px; }
+  .admin-members-table tr {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    grid-template-areas:
+      "name    name   actions"
+      "tier    last   last"
+      "points  points spend"
+      "joined  joined joined";
+    column-gap: 12px;
+    row-gap: 8px;
+    padding: 14px;
+    background: var(--bg-surface);
+    border: 1px solid var(--bg-border);
+    border-radius: 12px;
+  }
+  .admin-members-table td {
+    display: block;
+    border: none;
+    padding: 0;
+    font-size: 13px;
+  }
+  .admin-members-table tr > td:nth-child(1) { grid-area: name; }
+  .admin-members-table tr > td:nth-child(2) {
+    grid-area: joined;
+    font-size: 11px;
+    color: var(--text-muted);
+    padding-top: 6px;
+    border-top: 1px solid var(--bg-border);
+  }
+  .admin-members-table tr > td:nth-child(3) { grid-area: tier; align-self: center; }
+  .admin-members-table tr > td:nth-child(4) { grid-area: points; align-self: center; }
+  .admin-members-table tr > td:nth-child(5) { grid-area: last; justify-self: end; align-self: center; }
+  .admin-members-table tr > td:nth-child(6) { grid-area: spend; justify-self: end; align-self: center; }
+  .admin-members-table tr > td:nth-child(7) { grid-area: actions; justify-self: end; align-self: start; }
+
+  /* Inline labels via ::before so numbers aren't ambiguous without a header. */
+  .admin-members-table tr > td:nth-child(2)::before { content: 'Joined ';    color: var(--text-muted); }
+  .admin-members-table tr > td:nth-child(4)::before { content: 'Points · ';  color: var(--text-muted); font-size: 11px; }
+  .admin-members-table tr > td:nth-child(5)::before { content: 'Last · ';    color: var(--text-muted); font-size: 11px; }
+  .admin-members-table tr > td:nth-child(6)::before { content: 'Spend · ';   color: var(--text-muted); font-size: 11px; }
+
+  /* Pending row: dashes look terrible — collapse the empty cells so only the
+     name (with PENDING badge) and the Approve/Deny actions remain visible. */
+  .admin-members-table tr > td:nth-child(2):empty,
+  .admin-members-table tr > td:nth-child(3):empty,
+  .admin-members-table tr > td:nth-child(4):empty,
+  .admin-members-table tr > td:nth-child(5):empty,
+  .admin-members-table tr > td:nth-child(6):empty { display: none; }
+
+  /* Approve/Deny pair stays compact and right-aligned. */
+  .admin-members-pending-row-actions { flex-wrap: wrap; justify-content: flex-end; }
+
+  /* Pagination row tightens to match the card stack. */
+  .admin-members-pagination { padding: 12px 14px; flex-wrap: wrap; gap: 8px; }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Lounge & Co.",
+  "short_name": "Lounge",
+  "description": "A private members community for 21+ cigar and spirits enthusiasts.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0E0C0A",
+  "theme_color": "#0E0C0A",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/images/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ]
+}

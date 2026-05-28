@@ -1,0 +1,83 @@
+{
+  "comfortAskDetected": false,
+  "targetSmokeMinutes": 60,
+  "connecticutWrapperCount": 0,
+  "minTierInFlight": 0,
+  "maxStrengthInFlight": 0,
+  "cardsProductIds": [
+    {
+      "slot": "best",
+      "cigarId": null,
+      "spiritId": "spi-trk-bulleit-bbn"
+    },
+    {
+      "slot": "safe",
+      "cigarId": null,
+      "spiritId": "spi-trk-bulleit-bbn"
+    },
+    {
+      "slot": "wildcard",
+      "cigarId": null,
+      "spiritId": "spi-trk-bulleit-bbn"
+    }
+  ],
+  "cigarIdsDistinct": true,
+  "spiritIdsDistinct": false,
+  "spiritBestIsAnchor": true,
+  "spiritRelativesDistinctWhenPoolAllows": false,
+  "bestPreservesLockedId": false,
+  "slotRoleMetadata": [
+    {
+      "manufacturerKey": "",
+      "lineKey": "",
+      "tier": 0,
+      "strength": 0,
+      "pepper": 0,
+      "wrapper": "",
+      "contrastVsBest": 0
+    },
+    {
+      "manufacturerKey": "",
+      "lineKey": "",
+      "tier": 0,
+      "strength": 0,
+      "pepper": 0,
+      "wrapper": "",
+      "contrastVsBest": 0
+    },
+    {
+      "manufacturerKey": "",
+      "lineKey": "",
+      "tier": 0,
+      "strength": 0,
+      "pepper": 0,
+      "wrapper": "",
+      "contrastVsBest": 0
+    }
+  ],
+  "wildcardContrastMeaningful": "",
+  "refinedElevatedVsBest": true,
+  "repairFired": [],
+  "progressionIntent": true,
+  "provenanceSignals": [
+    "catalog-shell",
+    "context-runtime",
+    "named-spirit",
+    "novice-cap",
+    "category-spirit",
+    "pairing-strategy-complementary",
+    "progression-intent",
+    "flight-philosophy",
+    "ontology-suppressed"
+  ],
+  "generatePipelineOrder": [
+    "pickSlotIds",
+    "applyFlightSlotDiversityIds",
+    "reconcileBestPickBodyIntentIds",
+    "reconcileWildcardBodyIntentIds",
+    "applyCigarFlightPhilosophy",
+    "applySpiritFlightPhilosophy"
+  ],
+  "rankedPoolSize": 68,
+  "governanceOk": true
+}

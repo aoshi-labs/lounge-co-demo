@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "shard": "tracker-09",
+  "category": "spirit",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 8,
+  "products": [
+    {
+      "menuLine": "Mount Gay XO · Barbados · $45 · 80 proof (40.0% ABV) · Notes: banana, vanilla",
+      "guidance": {
+        "bestFor": "Rum curious beyond Diplomatico, elegant cigar, tropical fruit.",
+        "avoidIf": "User wants overproof or agricole only.",
+        "whyRecommend": "Recommend when rum should be elegant not syrupy — banana, vanilla, and polished oak.",
+        "occasion": "After dinner",
+        "flavorFamily": "Elegant oak",
+        "pairingAffinity": "Medium / refined cigar",
+        "memberBlurb": "Mount Gay XO — banana and vanilla from Barbados in an elegant rum. Refined where Diplomatico is decadent."
+      },
+      "id": "spi-trk-mtgay-xo",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "New Amsterdam Vodka · California · $15 · 80 proof (40.0% ABV) · Notes: citrus, clean grain",
+      "guidance": {
+        "bestFor": "House vodka, citrus cocktails, budget-conscious member.",
+        "avoidIf": "User wants single-estate craft character.",
+        "whyRecommend": "Recommend when the lounge needs an approachable house vodka — citrus lift without Grey Goose pricing.",
+        "occasion": "Cocktail",
+        "flavorFamily": "Citrus & clean",
+        "pairingAffinity": "Mild cigar",
+        "memberBlurb": "New Amsterdam — citrus-leaning grain vodka in the value tier America actually buys. Fine for highballs beside a mild smoke."
+      },
+      "id": "spi-trk-new-amsterdam",
+      "provenance": {
+        "beginnerSafe": "Yes",
+        "sourceConfidence": "Industry reference (US retail sales 2025)",
+        "dataGrade": 7
+      }
+    },
+    {
+      "menuLine": "Nikka Coffey Grain Whisky · Japan · $65 · 90 proof (45.0% ABV) · Notes: tropical fruit, caramel",
+      "guidance": {
+        "bestFor": "Sweet whisky fan, Japanese curious, mild cigar.",
+        "avoidIf": "User wants heavy smoke only.",
+        "whyRecommend": "Recommend when approachable Japanese sweetness matters — tropical fruit and caramel.",
+        "occasion": "Cocktail / neat",
+        "flavorFamily": "Sweet & tropical",
+        "pairingAffinity": "Mild / Connecticut",
+        "memberBlurb": "Nikka Coffey Grain — tropical sweetness from a column still. Japanese whisky that is easy to love when malts are impossible to find."
+      },
+      "id": "spi-trk-nikka-coffey",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Nikka From the Barrel · Japan · $55 · 102.8 proof (51.4% ABV) · Notes: citrus, spice",
+      "guidance": {
+        "bestFor": "Japanese whisky fan, cask strength, bold cigar.",
+        "avoidIf": "Low-proof preference only.",
+        "whyRecommend": "Recommend when Japanese whisky should hit hard — citrus, spice, and 100+ proof balance.",
+        "occasion": "After dinner",
+        "flavorFamily": "Spice & fruit",
+        "pairingAffinity": "Full-bodied cigar",
+        "memberBlurb": "Nikka From the Barrel — Japanese whisky at cask strength. Citrus and pepper in a pour enthusiasts hunt when Yamazaki is gone."
+      },
+      "id": "spi-trk-nikka-ftb",
+      "provenance": {
+        "beginnerSafe": "No",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Oban 14 Year · West Highland, Scotland · $85 · 86 proof (43.0% ABV) · Notes: orange peel, honey",
+      "guidance": {
+        "bestFor": "Balanced Scotch, medium-full cigar, coastal character.",
+        "avoidIf": "User wants full Islay only.",
+        "whyRecommend": "Recommend when the member wants one Scotch that does fruit and light smoke — orange, honey, sea salt.",
+        "occasion": "After dinner",
+        "flavorFamily": "Orange & light peat",
+        "pairingAffinity": "Medium-full cigar",
+        "memberBlurb": "Oban 14 — orange and honey with a touch of West Highland smoke and sea. One glass that covers fruit and peat without extremes."
+      },
+      "id": "spi-trk-oban-14",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Old Forester 1920 Prohibition Style · Kentucky · $65 · 115 proof (57.5% ABV) · Journey: Intermediate · Notes: dark cherry, chocolate",
+      "guidance": {
+        "bestFor": "Experienced bourbon drinker, maduro pairing, user wants proof and dark fruit.",
+        "avoidIf": "Beginner, empty stomach, or user wants mild Connecticut-only pairing.",
+        "whyRecommend": "Recommend when the member wants a stronger bourbon for maduro — dark cherry, chocolate, and controlled heat.",
+        "occasion": "After dinner",
+        "flavorFamily": "Dark fruit & chocolate",
+        "pairingAffinity": "Maduro / stronger cigar",
+        "memberBlurb": "Old Forester 1920 — cherry preserves and caramel over dark chocolate, maple, and toasted coconut at 115 proof. Distillery-official maduro partner."
+      },
+      "id": "spi-trk-of-1920",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Patrón Silver · Jalisco, Mexico · $45 · 80 proof (40.0% ABV) · Notes: fresh agave, citrus",
+      "guidance": {
+        "bestFor": "Blanco request, margarita, clean pairing with mild cigar.",
+        "avoidIf": "User wants only añejo sweetness.",
+        "whyRecommend": "Recommend when the member wants crisp agave — citrus, pepper, and mineral.",
+        "occasion": "Cocktail / neat",
+        "flavorFamily": "Clean agave",
+        "pairingAffinity": "Mild / Connecticut",
+        "memberBlurb": "Patrón Silver — clean agave and citrus in a blanco everyone recognizes. The tequila pour for margaritas and mild cigars alike."
+      },
+      "id": "spi-trk-patron-silver",
+      "provenance": {
+        "beginnerSafe": "Yes",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Penelope Bourbon · Kentucky / Indiana · $42 · 80 proof (40.0% ABV) · Journey: Intermediate · Notes: caramel, vanilla",
+      "guidance": {
+        "bestFor": "Younger member, trendy bourbon ask, medium cigar.",
+        "avoidIf": "Purist who rejects sourced whiskey only.",
+        "whyRecommend": "Recommend when the member asks for Penelope or wants modern approachable bourbon.",
+        "occasion": "Everyday pour",
+        "flavorFamily": "Caramel & fruit",
+        "pairingAffinity": "Medium cigar",
+        "memberBlurb": "Penelope Bourbon — caramel and orchard fruit in a modern pour lounges actually stock. Approachable premium without the allocated chase."
+      },
+      "id": "spi-trk-penelope",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    }
+  ]
+}

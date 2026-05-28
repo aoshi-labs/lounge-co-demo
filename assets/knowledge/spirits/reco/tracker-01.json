@@ -1,0 +1,443 @@
+{
+  "version": 1,
+  "shard": "tracker-01",
+  "category": "spirit",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 8,
+  "products": [
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-1792-sb",
+      "sensory": {
+        "body": 5,
+        "sweetness": 7,
+        "pepper": 3,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-1792-SB",
+        "article": "https://www.1792bourbon.com/our-bourbon/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 35,
+      "spec": {
+        "proof": 93.7,
+        "abvPercent": 46.9,
+        "mash": "High-rye bourbon mash",
+        "style": "Kentucky Straight Bourbon",
+        "origin": "Kentucky",
+        "msrp": 32
+      },
+      "name": "1792 Small Batch Bourbon",
+      "tags": [
+        {
+          "id": "spice",
+          "weight": 1.0
+        },
+        {
+          "id": "caramel",
+          "weight": 0.95
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.85
+        },
+        {
+          "id": "oak",
+          "weight": 0.75
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-4r-sb",
+      "sensory": {
+        "body": 6,
+        "sweetness": 6,
+        "pepper": 4,
+        "cocoa": 7,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-4R-SB",
+        "article": "https://www.fourrosesbourbon.com/bourbon/single-barrel",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 22,
+      "spec": {
+        "proof": 100.0,
+        "abvPercent": 50.0,
+        "mash": "High-rye bourbon (OBSV/OESK recipes vary by barrel)",
+        "style": "Kentucky Straight Bourbon",
+        "origin": "Kentucky",
+        "msrp": 45
+      },
+      "name": "Four Roses Single Barrel",
+      "tags": [
+        {
+          "id": "spice",
+          "weight": 1.0
+        },
+        {
+          "id": "pear",
+          "weight": 0.95
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.85
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.75
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.7
+        },
+        {
+          "id": "maple",
+          "weight": 0.65
+        },
+        {
+          "id": "plum",
+          "weight": 0.6
+        },
+        {
+          "id": "cherry",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "scotch",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-aberlour-12",
+      "sensory": {
+        "body": 5,
+        "sweetness": 6,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-ABERLOUR-12",
+        "article": "https://www.aberlour.com/en-us/our-whisky/12-year-old-scotch-whisky/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 50,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "100% malted barley",
+        "style": "Single malt Scotch",
+        "origin": "Speyside, Scotland",
+        "msrp": 55
+      },
+      "name": "Aberlour 12 Year",
+      "tags": [
+        {
+          "id": "honey",
+          "weight": 1.0
+        },
+        {
+          "id": "pear",
+          "weight": 0.95
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.85
+        },
+        {
+          "id": "toffee",
+          "weight": 0.75
+        },
+        {
+          "id": "citrus",
+          "weight": 0.7
+        },
+        {
+          "id": "apple",
+          "weight": 0.65
+        },
+        {
+          "id": "spice",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-angels-envy",
+      "sensory": {
+        "body": 5,
+        "sweetness": 6,
+        "pepper": 2,
+        "cocoa": 8,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-ANGELS-ENVY",
+        "article": "https://www.angelsenvy.com/us/en/whiskeys/signature-series/port-wine-finished-bourbon/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 26,
+      "spec": {
+        "proof": 86.6,
+        "abvPercent": 43.3,
+        "mash": "Corn, rye, malt; port pipe finish",
+        "style": "Port barrel-finished bourbon",
+        "origin": "Kentucky",
+        "msrp": 55
+      },
+      "name": "Angel's Envy Kentucky Straight Bourbon",
+      "tags": [
+        {
+          "id": "vanilla",
+          "weight": 1.0
+        },
+        {
+          "id": "maple",
+          "weight": 0.95
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.85
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "rum",
+      "journeyLevel": "advanced",
+      "id": "spi-trk-appleton-21",
+      "sensory": {
+        "body": 6,
+        "sweetness": 7,
+        "pepper": 2,
+        "cocoa": 7,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-APPLETON-21",
+        "article": "https://www.appletonestate.com/en-us/rums/21-year-old-nassau-valley-casks/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 66,
+      "spec": {
+        "proof": 86.0,
+        "abvPercent": 43.0,
+        "mash": "Molasses (pot still character)",
+        "style": "Jamaican aged rum",
+        "origin": "Jamaica",
+        "msrp": 120
+      },
+      "name": "Appleton Estate 21 Year",
+      "tags": [
+        {
+          "id": "floral",
+          "weight": 1.0
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.95
+        },
+        {
+          "id": "citrus",
+          "weight": 0.85
+        },
+        {
+          "id": "orange_peel",
+          "weight": 0.75
+        },
+        {
+          "id": "nutmeg",
+          "weight": 0.7
+        },
+        {
+          "id": "coffee",
+          "weight": 0.65
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.6
+        },
+        {
+          "id": "cocoa",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "peated",
+      "journeyLevel": "advanced",
+      "id": "spi-trk-ardbeg-10",
+      "sensory": {
+        "body": 6,
+        "sweetness": 6,
+        "pepper": 7,
+        "cocoa": 7,
+        "earthiness": 8
+      },
+      "tracker": {
+        "sku": "SPI-TRK-ARDBEG-10",
+        "article": "https://www.ardbeg.com/en-us/whisky/ardbeg-ten/",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 46,
+      "spec": {
+        "proof": 92.0,
+        "abvPercent": 46.0,
+        "mash": "100% malted barley",
+        "style": "Single malt Scotch",
+        "origin": "Islay, Scotland",
+        "msrp": 55
+      },
+      "name": "Ardbeg 10",
+      "tags": [
+        {
+          "id": "peat",
+          "weight": 1.0
+        },
+        {
+          "id": "smoke",
+          "weight": 0.95
+        },
+        {
+          "id": "citrus",
+          "weight": 0.85
+        },
+        {
+          "id": "dark_chocolate",
+          "weight": 0.75
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.7
+        },
+        {
+          "id": "mint",
+          "weight": 0.65
+        },
+        {
+          "id": "pepper",
+          "weight": 0.6
+        },
+        {
+          "id": "espresso",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "scotch",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-balvenie-14",
+      "sensory": {
+        "body": 5,
+        "sweetness": 6,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-BALVENIE-14",
+        "article": "https://shop.us.thebalvenie.com/products/the-balvenie-caribbean-cask-14",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 51,
+      "spec": {
+        "proof": 86.0,
+        "abvPercent": 43.0,
+        "mash": "100% malted barley; rum cask finish",
+        "style": "Single malt Scotch",
+        "origin": "Speyside, Scotland",
+        "msrp": 75
+      },
+      "name": "Balvenie 14 Year Caribbean Cask",
+      "tags": [
+        {
+          "id": "toffee",
+          "weight": 1.0
+        },
+        {
+          "id": "fresh",
+          "weight": 0.95
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.85
+        },
+        {
+          "id": "oak",
+          "weight": 0.75
+        },
+        {
+          "id": "cinnamon",
+          "weight": 0.7
+        },
+        {
+          "id": "ginger",
+          "weight": 0.65
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "bourbon",
+      "journeyLevel": "novice",
+      "id": "spi-trk-basil-hayden",
+      "sensory": {
+        "body": 4,
+        "sweetness": 6,
+        "pepper": 6,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-BASIL-HAYDEN",
+        "article": "https://www.beamdistilling.com/our-brands/basil-haydens-bourbon",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 27,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "High-rye bourbon mash",
+        "style": "High-rye bourbon",
+        "origin": "Kentucky",
+        "msrp": 45
+      },
+      "name": "Basil Hayden's",
+      "tags": [
+        {
+          "id": "spice",
+          "weight": 1.0
+        },
+        {
+          "id": "pepper",
+          "weight": 0.95
+        },
+        {
+          "id": "mint",
+          "weight": 0.85
+        },
+        {
+          "id": "honey",
+          "weight": 0.75
+        }
+      ],
+      "category": "spirit"
+    }
+  ]
+}

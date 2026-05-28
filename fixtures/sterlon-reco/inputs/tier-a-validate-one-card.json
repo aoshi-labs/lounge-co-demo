@@ -1,0 +1,6 @@
+{
+  "op": "validateCards",
+  "cards": [{ "label": "Best Pick", "tier": "Classic", "cigar": "Padron 1926 No. 35" }],
+  "promptText": "test",
+  "options": { "journeyLevel": "advanced" }
+}

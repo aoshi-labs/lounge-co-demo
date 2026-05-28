@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Curated Lists — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Curated lists from members — favorites, must-tries, and themed pairings." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Curated Lists — Lounge & Co." />
+  <meta property="og:description" content="Curated lists from members — favorites, must-tries, and themed pairings." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Curated Lists — Lounge & Co." />
+  <meta name="twitter:description" content="Curated lists from members — favorites, must-tries, and themed pairings." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/lists.css"/>
+</head>
+<body>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Thomas H.</div><div class="sidebar-user-tier">Elite · 1,744 pts · #4</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<main class="main-area">
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu"><i data-lucide="menu" class="ic-16"></i></button>
+    <div class="topbar-actions">
+    </div>
+  </header>
+
+  <div class="lists-container">
+
+    <!-- Editorial intro -->
+    <div class="lists-intro">
+      <h1 class="lists-intro-title">Curated by the Venue.</h1>
+      <p class="lists-intro-subtitle">Lists from Maya, the cigar buyer, and the venue itself — what's worth your evening, picked by the people who know the shelves. Updated weekly.</p>
+    </div>
+
+    <!-- ============ FEATURED — Tonight's Flight (refreshes daily) ============ -->
+    <div class="lists-featured">
+      <div class="lists-featured-tag">
+        <span class="lists-featured-dot"></span>
+        Tonight only · Refreshes daily
+      </div>
+      <h2 class="lists-featured-title">Maya's Friday Flight</h2>
+      <div class="lists-featured-byline">
+        <div class="avatar lists-byline-avatar"><img src="assets/images/maya-v.jpg" alt=""/></div>
+        <div>
+          <div class="lists-byline-name">Maya V. · General Manager</div>
+          <div class="lists-byline-meta">Published 4h ago · 18 members already RSVPed</div>
+        </div>
+      </div>
+      <p class="lists-featured-intro">"It's been raining all week and Robert just brought in the new humidor cuts. I'm building the night around them — start mellow, finish smoky. Walk in any time before midnight; the flight is set up at the rail."</p>
+
+      <div class="lists-featured-products">
+        <a href="product-detail.html" class="lists-featured-product">
+          <div class="lists-featured-thumb"><img src="assets/images/davidoff winston churchill belicoso.jpg" alt=""/></div>
+          <div class="lists-featured-product-body">
+            <div class="lists-featured-product-name">1. Davidoff Winston Churchill — Belicoso</div>
+            <div class="lists-featured-product-note">Cedar and butter — the opener. 35 min if you don't rush.</div>
+          </div>
+          <div class="lists-featured-product-meta">$32</div>
+        </a>
+        <a href="product-detail.html" class="lists-featured-product">
+          <div class="lists-featured-thumb"><img src="assets/images/glenfiddich 18yr.webp" alt=""/></div>
+          <div class="lists-featured-product-body">
+            <div class="lists-featured-product-name">2. Glenfiddich 18yr — neat</div>
+            <div class="lists-featured-product-note">Sherried but not too sweet. Bridges into the Padron without fighting it.</div>
+          </div>
+          <div class="lists-featured-product-meta">$24 / pour</div>
+        </a>
+        <a href="product-detail.html" class="lists-featured-product">
+          <div class="lists-featured-thumb"><img src="assets/images/padron 1964 anniversary maduro.jpg" alt=""/></div>
+          <div class="lists-featured-product-body">
+            <div class="lists-featured-product-name">3. Padron 1964 Anniversary Maduro</div>
+            <div class="lists-featured-product-note">The center of the flight. Take your time — coffee and cocoa for an hour.</div>
+          </div>
+          <div class="lists-featured-product-meta">$28</div>
+        </a>
+        <a href="product-detail.html" class="lists-featured-product">
+          <div class="lists-featured-thumb"><img src="assets/images/lagavulin_16yr.jpg" alt=""/></div>
+          <div class="lists-featured-product-body">
+            <div class="lists-featured-product-name">4. Lagavulin 16yr — close</div>
+            <div class="lists-featured-product-note">Smoke into smoke. End it here; nothing else needed.</div>
+          </div>
+          <div class="lists-featured-product-meta">$22 / pour</div>
+        </a>
+      </div>
+
+      <div class="lists-featured-foot">
+        <button class="lists-featured-rsvp">RSVP to the flight</button>
+        <span class="lists-featured-foot-meta">7 of 25 spots remaining tonight</span>
+      </div>
+    </div>
+
+    <!-- ============ STANDING LISTS GRID ============ -->
+    <div class="lists-section-head">
+      <h2 class="lists-section-title">Standing Picks</h2>
+      <p class="lists-section-subtitle">Long-lived lists — the room's evergreen recommendations.</p>
+    </div>
+
+    <div class="lists-grid">
+
+      <!-- List 1: Sub-$50 cigars -->
+      <article class="curated-list-card">
+        <div class="curated-list-card-tag curated-list-card-tag-standing">Standing</div>
+        <h3 class="curated-list-card-title">Three Sub-$50 Cigars Worth Your Evening</h3>
+        <div class="curated-list-card-byline">
+          <div class="avatar curated-list-card-avatar"><img src="assets/images/david-h.jpg" alt=""/></div>
+          <span>David H. · Cigar buyer · Updated 2 weeks ago</span>
+        </div>
+        <p class="curated-list-card-intro">"Don't let the price fool you — these three punch well above weight. Two Dominicans and one Honduran, all under $50, all worth a serious member's time."</p>
+        <div class="curated-list-card-products">
+          <a href="product-detail.html" class="curated-list-card-product">
+            <span class="curated-list-card-product-rank">1</span>
+            <span class="curated-list-card-product-name">Ashton Classic Magnum</span>
+            <span class="curated-list-card-product-note">— "Better than its price for the past 30 years."</span>
+            <span class="curated-list-card-product-price">$18</span>
+          </a>
+          <a href="product-detail.html" class="curated-list-card-product">
+            <span class="curated-list-card-product-rank">2</span>
+            <span class="curated-list-card-product-name">Arturo Fuente Hemingway Short Story</span>
+            <span class="curated-list-card-product-note">— "Perfect length, classic flavor profile."</span>
+            <span class="curated-list-card-product-price">$11</span>
+          </a>
+          <a href="product-detail.html" class="curated-list-card-product">
+            <span class="curated-list-card-product-rank">3</span>
+            <span class="curated-list-card-product-name">Padron 3000 Maduro</span>
+            <span class="curated-list-card-product-note">— "Crowd-pleaser for any palate."</span>
+            <span class="curated-list-card-product-price">$9</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- List 2: Best Whisky for a First-Timer -->
+      <article class="curated-list-card">
+        <div class="curated-list-card-tag curated-list-card-tag-standing">Standing</div>
+        <h3 class="curated-list-card-title">Best Whisky for a First-Timer</h3>
+        <div class="curated-list-card-byline">
+          <div class="avatar curated-list-card-avatar curated-list-card-avatar-burg"><img src="assets/images/maya-v.jpg" alt=""/></div>
+          <span>Maya V. · GM · Updated 1 month ago</span>
+        </div>
+        <p class="curated-list-card-intro">"You brought a friend who's never had Scotch. Don't lead with Laphroaig — that's how you make a non-drinker out of them. Start here."</p>
+        <div class="curated-list-card-products">
+          <a href="product-detail.html" class="curated-list-card-product">
+            <span class="curated-list-card-product-rank">1</span>
+            <span class="curated-list-card-product-name">Glenfiddich 12yr</span>
+            <span class="curated-list-card-product-note">— "Pear, honey, almost no smoke."</span>
+            <span class="curated-list-card-product-price">$14</span>
+          </a>
+          <a href="product-detail.html" class="curated-list-card-product">
+            <span class="curated-list-card-product-rank">2</span>
+            <span class="curated-list-card-product-name">Aberfeldy 12yr</span>
+            <span class="curated-list-card-product-note">— "Honey and toffee — the gateway."</span>
+            <span class="curated-list-card-product-price">$16</span>
+          </a>
+          <a href="product-detail.html" class="curated-list-card-product">
+            <span class="curated-list-card-product-rank">3</span>
+            <span class="curated-list-card-product-name">The Balvenie DoubleWood 12yr</span>
+            <span class="curated-list-card-product-note">— "Sherry-finished — soft, no edge."</span>
+            <span class="curated-list-card-product-price">$18</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- List 3: Seasonal — Autumn warmers -->
+      <article class="curated-list-card">
+        <div class="curated-list-card-tag curated-list-card-tag-seasonal">Seasonal · Autumn</div>
+        <h3 class="curated-list-card-title">Autumn Warmers — Five for the First Cold Snap</h3>
+        <div class="curated-list-card-byline">
+          <div class="avatar curated-list-card-avatar"><img src="assets/images/gerald-o.jpg" alt=""/></div>
+          <span>Gerald O. · Owner · Updated 6 days ago</span>
+        </div>
+        <p class="curated-list-card-intro">"When the night drops below 55, we change the playlist and the pour list. These are the five I keep coming back to from October through Thanksgiving."</p>
+        <div class="curated-list-card-products">
+          <a href="product-detail.html" class="curated-list-card-product">
+            <span class="curated-list-card-product-rank">1</span>
+            <span class="curated-list-card-product-name">Macallan 18 Sherry Oak</span>
+            <span class="curated-list-card-product-note">— "Dried fruit, Christmas cake. Two fingers, no ice."</span>
+            <span class="curated-list-card-product-price">$48</span>
+          </a>
+          <a href="product-detail.html" class="curated-list-card-product">
+            <span class="curated-list-card-product-rank">2</span>
+            <span class="curated-list-card-product-name">Liga Privada No. 9 Belicoso</span>
+            <span class="curated-list-card-product-note">— "Dark chocolate-coffee. Earth and weight."</span>
+            <span class="curated-list-card-product-price">$26</span>
+          </a>
+          <a href="product-detail.html" class="curated-list-card-product">
+            <span class="curated-list-card-product-rank">3</span>
+            <span class="curated-list-card-product-name">Glenfarclas 21yr</span>
+            <span class="curated-list-card-product-note">— "The big sherried one. Splurge night."</span>
+            <span class="curated-list-card-product-price">$42 / pour</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- List 4: Event-tied — Saturday's Padron Vertical -->
+      <article class="curated-list-card">
+        <div class="curated-list-card-tag curated-list-card-tag-event">Event · Sat May 17</div>
+        <h3 class="curated-list-card-title">What to Order at the Padron Vertical</h3>
+        <div class="curated-list-card-byline">
+          <div class="avatar curated-list-card-avatar curated-list-card-avatar-burg"><img src="assets/images/maya-v.jpg" alt=""/></div>
+          <span>Maya V. · GM · Tied to upcoming event</span>
+        </div>
+        <p class="curated-list-card-intro">"Three Padrons — 1964, 1926, Family Reserve — back to back. If you're coming, drink in this order and pace yourself. Water between each."</p>
+        <div class="curated-list-card-products">
+          <a href="product-detail.html" class="curated-list-card-product">
+            <span class="curated-list-card-product-rank">1</span>
+            <span class="curated-list-card-product-name">Padron 1964 Anniversary Maduro</span>
+            <span class="curated-list-card-product-note">— "Open with this. Honey, baking spice. Calibrates the palate."</span>
+            <span class="curated-list-card-product-price">$28</span>
+          </a>
+          <a href="product-detail.html" class="curated-list-card-product">
+            <span class="curated-list-card-product-rank">2</span>
+            <span class="curated-list-card-product-name">Padron 1926 No. 35</span>
+            <span class="curated-list-card-product-note">— "The middle. Cocoa-espresso. Take your time."</span>
+            <span class="curated-list-card-product-price">$42</span>
+          </a>
+          <a href="product-detail.html" class="curated-list-card-product">
+            <span class="curated-list-card-product-rank">3</span>
+            <span class="curated-list-card-product-name">Padron Family Reserve 50</span>
+            <span class="curated-list-card-product-note">— "Closer. The one to remember it by."</span>
+            <span class="curated-list-card-product-price">$65</span>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Suggest a list CTA -->
+    <div class="lists-suggest">
+      <i data-lucide="message-square" class="ic-14"></i>
+      Want to see a list on a topic? <a href="sterlon.html">Tell Sterlon</a> — Maya reviews member requests every Monday.
+    </div>
+
+  </div>
+</main>
+
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+
+<nav class="bottom-nav">
+  <a href="feed.html" class="bottom-nav-item"><i data-lucide="star" class="ic-20"></i>Feed</a>
+  <a href="explore.html" class="bottom-nav-item"><i data-lucide="search" class="ic-20"></i>Explore</a>
+  <a href="create-post.html" class="bottom-nav-item"><div class="bottom-nav-create-btn"><i data-lucide="plus" class="ic-20"></i></div></a>
+  <a href="events.html" class="bottom-nav-item"><i data-lucide="calendar" class="ic-20"></i>Events</a>
+  <a href="profile.html" class="bottom-nav-item"><i data-lucide="user" class="ic-20"></i>Profile</a>
+</nav>
+
+</body>
+</html>

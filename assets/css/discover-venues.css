@@ -1,0 +1,215 @@
+/* ─────────────────────────────────────────────────────────────
+   discover-venues.css — page-specific styles
+   Extracted from inline <style> block in discover-venues.html.
+   Shared chrome (sidebar, top-bar, .topbar-actions, mobile-overlay,
+   brand/user typography) lives in lounge.css.
+──────────────────────────────────────────────────────────────── */
+
+/* ────────────────────────────────────────
+   discover-venues — page-specific styles
+──────────────────────────────────────── */
+.dv-search-wrap {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+.dv-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+.dv-search input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+  font-size: 15px;
+}
+.dv-search input::placeholder {
+  color: var(--text-muted);
+}
+.dv-filters {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.dv-chip {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--bg-border);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.dv-chip:hover {
+  border-color: var(--gold-dim);
+  color: var(--text-primary);
+}
+.dv-chip.active {
+  background: var(--gold-subtle);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.dv-section {
+  margin-bottom: 40px;
+}
+.dv-section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.dv-section-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--text-primary);
+}
+.dv-section-sub {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.dv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.dv-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 12px;
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+.dv-card:hover {
+  border-color: var(--gold-dim);
+}
+.dv-card-header {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+.dv-card-mark {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg-elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--gold);
+  flex-shrink: 0;
+  border: 1px solid var(--gold-dim);
+}
+.dv-card-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 19px;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+.dv-card-meta {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.dv-card-snippet {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+.dv-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid var(--bg-border-dim);
+}
+.dv-badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.dv-badge {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: var(--gold-subtle);
+  color: var(--gold);
+}
+.dv-badge-private {
+  background: rgba(var(--burg-rgb), 0.15);
+  color: var(--burg);
+}
+.dv-badge-verified {
+  background: rgba(var(--tier-elite-rgb), 0.15);
+  color: var(--tier-elite);
+}
+.dv-cta {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+.dv-cta:hover {
+  background: var(--gold);
+  color: var(--bg-base);
+}
+.dv-cta-burg {
+  border-color: var(--burg);
+  color: var(--burg);
+}
+.dv-cta-burg:hover {
+  background: var(--burg);
+  color: var(--text-primary);
+}
+.dv-sterlon-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+@media (max-width: 1023px) {
+  .dv-grid {
+    grid-template-columns: 1fr;
+  }
+}

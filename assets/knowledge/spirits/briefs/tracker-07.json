@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "shard": "tracker-07",
+  "category": "spirit",
+  "slice": "briefs",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 8,
+  "products": [
+    {
+      "menuLine": "Knob Creek Kentucky Straight Bourbon · Kentucky · $40 · 100 proof (50.0% ABV) · Journey: Intermediate · Notes: peanut, vanilla",
+      "guidance": {
+        "bestFor": "Member wants age and proof without Booker's extremes.",
+        "avoidIf": "Beginner or low-proof only.",
+        "whyRecommend": "Recommend when 9-year oak and 100 proof should stand up to a robusto — peanut, caramel, leather.",
+        "occasion": "After dinner",
+        "flavorFamily": "Nutty & oak",
+        "pairingAffinity": "Maduro / robusto",
+        "memberBlurb": "Knob Creek 9 Year — peanut and oak at 100 proof. Age and strength in a pour that respects a robusto without going full cask strength."
+      },
+      "id": "spi-trk-knob-9",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Lagavulin 16 Year · Islay, Scotland · $110 · 86 proof (43% ABV) · Notes: campfire, sea salt",
+      "guidance": {
+        "bestFor": "Member asks for smoky Scotch, peat, or bold cigar needs maritime smoke.",
+        "avoidIf": "Peat-averse beginner or user wants light Speyside only.",
+        "whyRecommend": "Recommend when the member wants to understand peat — campfire, sea salt, and smoke done with balance.",
+        "occasion": "After dinner",
+        "flavorFamily": "Peat & smoke",
+        "pairingAffinity": "Full-bodied / maduro cigar",
+        "memberBlurb": "Lagavulin 16 — campfire, sea salt, and Islay smoke in a legendary 16-year pour. The Scotch that teaches peat without apology."
+      },
+      "id": "spi-trk-lag-16",
+      "provenance": {
+        "beginnerSafe": "No",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Lagavulin 8 Year · Islay, Scotland · $75 · 96 proof (48.0% ABV) · Notes: peat, smoke",
+      "guidance": {
+        "bestFor": "Peat lover, wants intensity below 16 price, bold cigar.",
+        "avoidIf": "Peat-averse.",
+        "whyRecommend": "Recommend when Lagavulin character is right but the member wants more punch — pepper, peat, 96 proof.",
+        "occasion": "After dinner",
+        "flavorFamily": "Intense peat",
+        "pairingAffinity": "Full-bodied maduro",
+        "memberBlurb": "Lagavulin 8 — younger Islay at 96 proof. Peat and pepper for nights when the 16-year feels too gentle."
+      },
+      "id": "spi-trk-lag-8",
+      "provenance": {
+        "beginnerSafe": "No",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Laphroaig 10 Year · Islay, Scotland · $55 · 86 proof (43.0% ABV) · Notes: iodine, peat smoke",
+      "guidance": {
+        "bestFor": "Member asks how smoky, peat comparison, bold cigar.",
+        "avoidIf": "Peat-averse or beginner.",
+        "whyRecommend": "Recommend when the member wants to understand Islay intensity — iodine, peat, and sea beside Lagavulin.",
+        "occasion": "After dinner",
+        "flavorFamily": "Medicinal peat",
+        "pairingAffinity": "Full-bodied / maduro",
+        "memberBlurb": "Laphroaig 10 — medicinal peat and iodine on Islay. The smoke lesson for members who found Lagavulin almost too polite."
+      },
+      "id": "spi-trk-laph-10",
+      "provenance": {
+        "beginnerSafe": "No",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Lunazul Blanco Tequila · Jalisco, Mexico · $22 · 80 proof (40.0% ABV) · Notes: cooked agave, citrus",
+      "guidance": {
+        "bestFor": "Tequila beginner, margarita night, authentic agave without premium price.",
+        "avoidIf": "User wants only luxury añejo sweetness.",
+        "whyRecommend": "Recommend when the member wants real blanco agave on a budget — pepper, citrus, and cooked agave.",
+        "occasion": "Cocktail / neat",
+        "flavorFamily": "Fresh agave",
+        "pairingAffinity": "Mild / medium cigar",
+        "memberBlurb": "Lunazul Blanco — 100% agave authenticity without the premium sticker. The tequila Americans bought when they were not splurging on Patrón."
+      },
+      "id": "spi-trk-lunazul-blanco",
+      "provenance": {
+        "beginnerSafe": "Yes",
+        "sourceConfidence": "Industry reference (US retail sales 2025)",
+        "dataGrade": 7
+      }
+    },
+    {
+      "menuLine": "The Macallan 12 Year Sherry Oak · Speyside, Scotland · $70 · 86 proof (43% ABV) · Notes: sherry, dried fruit",
+      "guidance": {
+        "bestFor": "Member wants recognizable luxury Scotch, sherry sweetness, special occasion.",
+        "avoidIf": "User wants peat smoke or lowest price Scotch.",
+        "whyRecommend": "Recommend when luxury Scotch perception matters — sherry, dried fruit, and chocolate beside a premium cigar.",
+        "occasion": "Celebration",
+        "flavorFamily": "Sherry & fruit",
+        "pairingAffinity": "Medium-full / maduro cigar",
+        "memberBlurb": "Macallan 12 Sherry Oak — the luxury Scotch name everyone recognizes. Dried fruit, chocolate, and sherried depth without peat."
+      },
+      "id": "spi-trk-macallan-12",
+      "provenance": {
+        "beginnerSafe": "No",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "The Macallan 18 Year Sherry Oak · Speyside, Scotland · $350 · 86 proof (43.0% ABV) · Notes: sherry, dried fig",
+      "guidance": {
+        "bestFor": "Special occasion, Macallan loyalist, premium cigar celebration.",
+        "avoidIf": "Budget constraint or peat-only.",
+        "whyRecommend": "Recommend when Macallan 12 is not enough — sherry depth, fig, and chocolate for a milestone night.",
+        "occasion": "Collector",
+        "flavorFamily": "Sherry luxury",
+        "pairingAffinity": "Premium maduro",
+        "memberBlurb": "Macallan 18 Sherry Oak — fig, ginger, and chocolate in deep sherried oak. The Speyside milestone pour beside a celebration cigar."
+      },
+      "id": "spi-trk-macallan-18",
+      "provenance": {
+        "beginnerSafe": "No",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    },
+    {
+      "menuLine": "Maker's 46 · Kentucky · $42 · 94 proof (47.0% ABV) · Journey: Intermediate · Notes: vanilla, caramel",
+      "guidance": {
+        "bestFor": "Wheated fan ready for more oak, medium-full cigar night.",
+        "avoidIf": "User wants high-rye spice bomb.",
+        "whyRecommend": "Recommend when wheated sweetness needs more oak and spice for a medium-full cigar.",
+        "occasion": "After dinner",
+        "flavorFamily": "Vanilla & spice",
+        "pairingAffinity": "Medium-full cigar",
+        "memberBlurb": "Maker's 46 — wheated bourbon with seared oak staves adding cocoa and spice. More structure than red wax without leaving wheated character."
+      },
+      "id": "spi-trk-makers-46",
+      "provenance": {
+        "beginnerSafe": "Maybe",
+        "sourceConfidence": "Manufacturer official",
+        "dataGrade": 10
+      }
+    }
+  ]
+}

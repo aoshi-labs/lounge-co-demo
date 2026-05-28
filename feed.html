@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feed — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Your home Activity feed — Visits, reviews, and conversations from connoisseurs you follow across every Lounge & Co. venue." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Home Feed — Lounge & Co." />
+  <meta property="og:description" content="Your home Activity feed — Visits, reviews, and conversations from connoisseurs you follow across every Lounge & Co. venue." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Home Feed — Lounge & Co." />
+  <meta name="twitter:description" content="Your home Activity feed — Visits, reviews, and conversations from connoisseurs you follow across every Lounge & Co. venue." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/feed.css"/>
+</head>
+<body>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">Member Community</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row">
+      <div class="avatar sidebar-user-avatar-elite"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+      <div class="sidebar-user-info"><div class="sidebar-user-name">Thomas H.</div><div class="sidebar-user-tier">Elite · 1,744 pts · #4</div></div>
+    </div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Community</div>
+    <a href="sterlon.html" class="nav-item"><i data-lucide="sparkles" class="ic-17"></i>Sterlon</a>
+    <a href="feed.html" class="nav-item"><i data-lucide="newspaper" class="ic-17"></i>Feed</a>
+    <a href="explore.html" class="nav-item"><i data-lucide="search" class="ic-17"></i>Explore</a>
+    <a href="events.html" class="nav-item"><i data-lucide="calendar" class="ic-17"></i>Events</a>
+    <a href="checkin.html" class="nav-item"><i data-lucide="map-pin" class="ic-17"></i>Check in</a>
+    <a href="rooms.html" class="nav-item"><i data-lucide="door-open" class="ic-17"></i>Rooms</a>
+    <a href="leaderboard.html" class="nav-item"><i data-lucide="bar-chart-3" class="ic-17"></i>Leaderboard</a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Shop</div>
+    <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="concierge-history.html" class="nav-item"><i data-lucide="history" class="ic-17"></i>Chat history</a>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <div class="nav-divider"></div>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Platform Admin</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     MAIN AREA
+═══════════════════════════════════════ -->
+<main class="main-area">
+  <h1 class="visually-hidden">Feed</h1>
+
+  <!-- Top bar (platform-context) — page identity badge auto-injected by lounge.js -->
+  <header class="top-bar">
+    <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+      <i data-lucide="menu" class="ic-16"></i>
+    </button>
+    <div class="topbar-actions">
+      <a href="create-post.html" class="icon-btn fee-newpost-btn" title="New post" aria-label="New post">
+        <i data-lucide="plus" class="ic-16"></i><span>New post</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <div class="page-content">
+
+    <!-- ── CENTER: Feed ── -->
+    <div class="feed-col-stack">
+
+
+      <!-- Feed filters ( cross-venue Activity feed)
+           Primary axis: scope (All / Followed / Venues you're in).
+           Secondary axis still available via the type tags below. -->
+      <div class="feed-filter-row">
+        <button onclick="setFilter(this,'all')"      class="tag tag-gold"                           data-filter="all">All</button>
+        <button onclick="setFilter(this,'followed')" class="tag tag-gold feed-filter-inactive"      data-filter="followed">Followed</button>
+        <button onclick="setFilter(this,'venues')"   class="tag tag-gold feed-filter-inactive"      data-filter="venues">Venues you're in</button>
+        <button onclick="setFilter(this,'reviews')"  class="tag tag-gold feed-filter-inactive"      data-filter="reviews">Reviews</button>
+        <button onclick="setFilter(this,'visits')"   class="tag tag-gold feed-filter-inactive"      data-filter="visits">Check-ins</button>
+        <button onclick="setFilter(this,'events')"   class="tag tag-gold feed-filter-inactive"      data-filter="events">Events</button>
+      </div>
+
+      <!-- Post 1: Review (from Casa de Montecristo) -->
+      <div class="post-card" data-href="post-detail.html">
+        <div class="post-card-header">
+          <a href="profile.html"><div class="avatar post-author-avatar-gold"><img src="assets/images/marcus-r.jpg" alt=""/></div></a>
+          <div class="post-author-info">
+            <div class="post-author">Marcus R. <span class="tag tag-gold post-author-tag">Champion</span></div>
+            <div class="post-meta">30 min ago · Visit at <a href="discover-venues.html" class="post-meta-venue">Casa de Montecristo</a> · <span class="post-meta-product">Ashton VSG Torpedo</span></div>
+          </div>
+          <button class="icon-btn post-more-btn" aria-label="More options"><i data-lucide="more-horizontal" class="ic-14"></i></button>
+        </div>
+        <img src="assets/images/finally-tried-the-ashton-vsg-.webp" alt="" class="post-photo" />
+        <p class="post-body">"Finally tried the VSG Torpedo with Glenfarclas 17 — cedar on the draw paired with that sherry sweetness. Best pairing I've had all year. Highly recommend if you haven't tried it."</p>
+        <div class="post-ratings-row">
+          <span class="rating-chip">Draw 9/10</span><span class="rating-chip">Burn 8/10</span><span class="rating-chip">Medium</span><span class="rating-chip">Paired: Glenfarclas 17</span>
+        </div>
+        <div class="post-actions">
+          <button class="post-action" onclick="toggleLike(this)"><i data-lucide="heart" class="ic-14"></i><span>24</span></button>
+          <button class="post-action"><i data-lucide="message-square" class="ic-14"></i>7</button>
+          <button class="post-action"><i data-lucide="share-2" class="ic-14"></i>Share</button>
+          <span class="post-star-rating">★ 4.8</span>
+        </div>
+      </div>
+
+      <!-- Post 2: Event -->
+      <div class="post-card" data-href="post-detail.html">
+        <div class="post-card-header">
+          <div class="avatar post-author-avatar-official"><img src="assets/images/logo-favicon.png" alt=""/></div>
+          <div class="post-author-info">
+            <div class="post-author">Lounge & Co. <span class="tag tag-burg post-author-tag">Official</span></div>
+            <div class="post-meta">2 hours ago</div>
+          </div>
+        </div>
+        <div class="event-embed">
+          <div class="event-embed-eyebrow">Upcoming Event</div>
+          <div class="event-embed-title">Scotch &amp; Smoke Night</div>
+          <div class="event-embed-meta">Saturday, May 18 · 7:00 PM · 14 of 30 spots taken</div>
+          <div class="event-embed-actions">
+            <a href="event-detail.html" class="event-embed-rsvp-btn">RSVP Now</a>
+            <a href="event-detail.html" class="event-embed-details-link">View details →</a>
+          </div>
+        </div>
+        <div class="post-actions post-actions-event">
+          <button class="post-action" onclick="toggleLike(this)"><i data-lucide="heart" class="ic-14"></i><span>38</span></button>
+          <button class="post-action"><i data-lucide="message-square" class="ic-14"></i>12</button>
+        </div>
+      </div>
+
+      <!-- Post 3: Spirit review (from The Cellar Club — private venue) -->
+      <div class="post-card" data-href="post-detail.html">
+        <div class="post-card-header">
+          <a href="profile.html"><div class="avatar sidebar-user-avatar-elite"><img src="assets/images/james-w.jpg" alt=""/></div></a>
+          <div class="post-author-info">
+            <div class="post-author">James W. <span class="tag post-author-tag-elite">Elite</span></div>
+            <div class="post-meta">Yesterday · Visit at <a href="discover-venues.html" class="post-meta-venue">The Cellar Club</a> · <span class="post-meta-product-bronze">Pappy Van Winkle 23yr</span></div>
+          </div>
+        </div>
+        <img src="assets/images/tried_pappy_van.jpg" alt="" class="post-photo" />
+        <p class="post-body">"Worth every penny. Vanilla, caramel, toasted oak with an impossibly long finish. Paired with a Liga Privada No. 9 for the full hour — genuinely one for the books."</p>
+        <div class="post-ratings-row">
+          <span class="rating-chip">Nose 10/10</span><span class="rating-chip">Finish 10/10</span><span class="rating-chip">Neat</span>
+        </div>
+        <div class="post-actions">
+          <button class="post-action" onclick="toggleLike(this)"><i data-lucide="heart" class="ic-14"></i><span>61</span></button>
+          <button class="post-action"><i data-lucide="message-square" class="ic-14"></i>18</button>
+          <button class="post-action"><i data-lucide="share-2" class="ic-14"></i>Share</button>
+          <span class="post-star-rating">★ 5.0</span>
+        </div>
+      </div>
+
+      <!-- Load more -->
+      <button onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--bg-border)';this.style.color='var(--text-secondary)'" class="load-more-btn">Load more posts</button>
+    </div>
+
+    <!-- ── RIGHT RAIL (platform-context) ── -->
+    <aside class="rail-col right-rail">
+
+      <!-- Sterlon: cross-venue palate, content-neutral signals only (Pattern A) -->
+      <div class="widget">
+        <div class="widget-title">✦ Sterlon</div>
+        <div class="ai-bubble">"Across the three venues you've visited this month, your peated-Scotch posts are trending bolder. The Arturo Fuente Opus X just hit Casa de Montecristo's catalog — natural pairing tonight."</div>
+        <a href="sterlon.html" class="sterlon-widget-link">Ask Sterlon →</a>
+      </div>
+
+      <!-- Suggested venues (Sterlon Pattern A: taste similarity + recency).
+           Sterlon never recommends private venues here — that boundary is
+           load-bearing per the public/private gating. -->
+      <div class="widget">
+        <div class="widget-title">✦ Suggested for you</div>
+        <div class="events-widget-list">
+          <a href="discover-venues.html" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--bg-border)'" class="events-widget-row">
+            <div class="events-widget-row-title">Highland House</div>
+            <div class="events-widget-row-meta">Public · Whiskey-forward · 14 mi</div>
+          </a>
+          <a href="discover-venues.html" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--bg-border)'" class="events-widget-row">
+            <div class="events-widget-row-title">Mahogany Room</div>
+            <div class="events-widget-row-meta">Public · Cigar lounge · 8 mi</div>
+          </a>
+          <a href="discover-venues.html" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--bg-border)'" class="events-widget-row">
+            <div class="events-widget-row-title">Bourbon &amp; Cedar</div>
+            <div class="events-widget-row-meta">Public · Bourbon · 22 mi</div>
+          </a>
+        </div>
+        <a href="discover-venues.html" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'" class="widget-view-all-link">Browse all venues →</a>
+      </div>
+
+      <!-- Network highlights — recent activity from members the user follows -->
+      <div class="widget">
+        <div class="widget-title">✦ Network highlights</div>
+        <div class="events-widget-list">
+          <a href="profile.html" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--bg-border)'" class="events-widget-row">
+            <div class="events-widget-row-title">Marcus R. rated ★ 4.9</div>
+            <div class="events-widget-row-meta">Padron 1964 Anniversary · Casa de Montecristo</div>
+          </a>
+          <a href="profile.html" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--bg-border)'" class="events-widget-row">
+            <div class="events-widget-row-title">James W. joined a new venue</div>
+            <div class="events-widget-row-meta">The Cellar Club · Private</div>
+          </a>
+        </div>
+        <a href="my-network.html" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'" class="widget-view-all-link">View My Network →</a>
+      </div>
+
+      <!-- Top members + You -->
+      <div class="widget">
+        <div class="widget-title">🏆 Top This Month</div>
+        <div class="leaderboard-widget-list">
+
+          <!-- #1 Gold -->
+          <div class="leaderboard-widget-row">
+            <div class="leaderboard-widget-rank-champion">1</div>
+            <div class="avatar leaderboard-widget-avatar-champion"><img src="assets/images/marcus-r.jpg" alt=""/></div>
+            <div class="leaderboard-widget-row-name">Marcus R.</div>
+            <div class="leaderboard-widget-row-points">2,840</div>
+          </div>
+
+          <!-- #2 Silver -->
+          <div class="leaderboard-widget-row">
+            <div class="leaderboard-widget-rank-runner-up">2</div>
+            <div class="avatar leaderboard-widget-avatar-runner-up"><img src="assets/images/james-w.jpg" alt=""/></div>
+            <div class="leaderboard-widget-row-name">James W.</div>
+            <div class="leaderboard-widget-row-points">2,415</div>
+          </div>
+
+          <!-- #3 Bronze -->
+          <div class="leaderboard-widget-row">
+            <div class="leaderboard-widget-rank-bronze">3</div>
+            <div class="avatar leaderboard-widget-avatar-bronze"><img src="assets/images/robert-b.jpg" alt=""/></div>
+            <div class="leaderboard-widget-row-name">Robert B.</div>
+            <div class="leaderboard-widget-row-points">1,980</div>
+          </div>
+
+          <!-- Spacer dots -->
+          <div class="leaderboard-widget-spacer">· · ·</div>
+
+          <!-- YOU — #4 -->
+          <div class="leaderboard-widget-you-card">
+            <div class="leaderboard-widget-you-row">
+              <div class="leaderboard-widget-rank-you">4</div>
+              <div class="avatar leaderboard-widget-avatar-you"><img src="assets/images/thomas-portrait.jpg" alt=""/></div>
+              <div class="sidebar-user-info">
+                <div class="leaderboard-widget-you-label">You</div>
+                <div class="leaderboard-widget-you-name">Thomas H.</div>
+              </div>
+              <div class="leaderboard-widget-you-points">1,744</div>
+            </div>
+
+            <!-- Progress to #3 -->
+            <div class="leaderboard-widget-progress">
+              <div class="leaderboard-widget-progress-labels">
+                <span class="leaderboard-widget-progress-target">To #3 Bronze</span>
+                <span class="leaderboard-widget-progress-needed">236 pts needed</span>
+              </div>
+              <!-- Progress bar: 1744 / 1980 = 88% -->
+              <div class="leaderboard-widget-progress-track">
+                <div class="leaderboard-widget-progress-fill"></div>
+              </div>
+              <div class="leaderboard-widget-progress-endpoints">
+                <span class="leaderboard-widget-progress-current">1,744</span>
+                <span class="leaderboard-widget-progress-target-value">1,980</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <a href="leaderboard.html" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'" class="widget-view-all-link">Full leaderboard →</a>
+      </div>
+
+    </aside>
+  </div>
+</main>
+
+<!-- Mobile overlay -->
+<div id="overlay" onclick="toggleSidebar()" class="mobile-overlay"></div>
+
+<!-- ─── BOTTOM NAV (mobile · platform-context) ─── -->
+<nav class="bottom-nav">
+  <a href="feed.html"           class="bottom-nav-item active"><i data-lucide="newspaper" class="ic-20"></i>Feed</a>
+  <a href="discover-venues.html" class="bottom-nav-item"><i data-lucide="map" class="ic-20"></i>Discover</a>
+  <a href="sterlon.html"        class="bottom-nav-item"><div class="bottom-nav-create-btn"><i data-lucide="sparkles" class="ic-20"></i></div></a>
+  <a href="my-network.html"     class="bottom-nav-item"><i data-lucide="users" class="ic-20"></i>Network</a>
+  <a href="profile.html"        class="bottom-nav-item"><i data-lucide="user" class="ic-20"></i>Profile</a>
+</nav>
+</body>
+</html>

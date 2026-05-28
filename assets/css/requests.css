@@ -1,0 +1,138 @@
+/* ─────────────────────────────────────────────────────────────
+   requests.css — page-specific styles
+   Extracted from inline <style> block in requests.html.
+   Shared chrome (sidebar, top-bar, .topbar-actions, mobile-overlay,
+   brand/user typography) lives in lounge.css.
+──────────────────────────────────────────────────────────────── */
+
+.rq-banner {
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.rq-banner-icon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.rq-banner-body {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.rq-banner-body strong { color: var(--text-primary); }
+.rq-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--bg-border);
+  margin-bottom: 20px;
+}
+.rq-tab {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.rq-tab.active {
+  color: var(--text-primary);
+  border-bottom-color: var(--gold);
+}
+.rq-tab .rq-count {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 7px;
+  border-radius: 10px;
+  background: var(--bg-elevated);
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+.rq-list { display: flex; flex-direction: column; gap: 12px; }
+.rq-item {
+  background: var(--bg-surface);
+  border: 1px solid var(--bg-border);
+  border-radius: 10px;
+  padding: 18px;
+  display: flex;
+  gap: 14px;
+}
+.rq-item-avatar {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg-elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 16px;
+  border: 1px solid var(--bg-border);
+}
+.rq-item-body { flex: 1; min-width: 0; }
+.rq-item-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.rq-item-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-primary);
+}
+.rq-item-meta {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+.rq-item-msg {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.rq-item-actions {
+  display: flex;
+  gap: 8px;
+}
+.rq-btn {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid var(--bg-border);
+  background: transparent;
+  color: var(--text-secondary);
+  transition: all 0.15s;
+}
+.rq-btn:hover { color: var(--text-primary); border-color: var(--text-secondary); }
+.rq-btn-accept { border-color: var(--gold); color: var(--gold); }
+.rq-btn-accept:hover { background: var(--gold); color: var(--bg-base); }
+.rq-btn-block { border-color: var(--burg); color: var(--burg); }
+.rq-btn-block:hover { background: var(--burg); color: var(--text-primary); }
+.rq-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-style: italic;
+}

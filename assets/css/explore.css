@@ -1,0 +1,216 @@
+
+  /* ── Explore search bar (hero-sized) ── */
+  .explore-search-wrap{padding:28px 28px 20px;background:var(--bg-surface);border-bottom:1px solid var(--bg-border);}
+  .explore-search-bar{display:flex;align-items:center;background:var(--bg-elevated);border:1px solid var(--bg-border);border-radius:12px;padding:0 16px;gap:12px;transition:border-color .2s;}
+  .explore-search-bar:focus-within{border-color:var(--gold);}
+  .explore-search-input{flex:1;background:none;border:none;outline:none;font-family:var(--font-ui);font-size:16px;color:var(--text-primary);padding:14px 0;}
+  .explore-search-input::placeholder{color:var(--text-muted);}
+
+  /* ── Category tabs ── */
+  .cat-tabs{display:flex;gap:6px;overflow-x:auto;padding:16px 28px 0;scrollbar-width:none;}
+  .cat-tabs::-webkit-scrollbar{display:none;}
+  .cat-tab{padding:8px 18px;border-radius:99px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;border:1px solid var(--bg-border);background:none;color:var(--text-muted);transition:all .2s;font-family:var(--font-ui);}
+  .cat-tab.active{background:var(--gold-subtle);border-color:rgba(var(--gold-rgb), .3);color:var(--gold);}
+  .cat-tab:hover:not(.active){color:var(--text-secondary);border-color:var(--text-muted);}
+
+  /* ── Section headers ── */
+  .section-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+  .section-hd h2{font-family:var(--font-display);font-size:1.2rem;font-weight:600;color:var(--text-primary);}
+  .section-hd a{font-family:var(--font-ui);font-size:12px;color:var(--text-muted);text-decoration:none;}
+  .section-hd a:hover{color:var(--gold);}
+
+  /* ── Trending hashtag pills — two-row horizontal carousel.
+       Pills lay into two rows (top + bottom) with grid-auto-flow:column
+       creating new columns rightward as content runs over. Scrolls
+       horizontally with the same hidden-scrollbar / scroll-snap / mask
+       fade chrome as the other carousels. Arrows are JS-injected via
+       setupExploreCarousels in explore.html. */
+  .hashtag-grid {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 8px 6px;                     /* row-gap col-gap */
+    min-width: 0;
+    padding: 2px 24px 4px 2px;
+    overflow-x: auto;
+    scrollbar-width: none;            /* Firefox */
+    -ms-overflow-style: none;         /* IE/Edge legacy */
+    scroll-snap-type: x proximity;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      black 0,
+      black calc(100% - 32px),
+      transparent 100%
+    );
+            mask-image: linear-gradient(
+      to right,
+      black 0,
+      black calc(100% - 32px),
+      transparent 100%
+    );
+  }
+  .hashtag-grid::-webkit-scrollbar { display: none; }
+  .hashtag-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 11px;
+    background: var(--bg-surface);
+    border: 1px solid var(--bg-border);
+    border-radius: 99px;
+    cursor: pointer;
+    transition: border-color .2s, background .2s;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    white-space: nowrap;
+  }
+  .hashtag-pill:hover { border-color: var(--gold-dim); background: var(--gold-subtle); }
+  .hashtag-name { font-family: var(--font-ui); font-size: 11px; font-weight: 600; color: var(--gold); }
+  .hashtag-count { font-size: 9px; color: var(--text-muted); }
+  /* JS-injected wrapper takes full block width inside its parent. */
+  .explore-tags-carousel { width: 100%; }
+  .explore-tags-carousel .pro-lib-arrow { display: flex; }
+
+  /* ── Member card (horizontal) ── */
+  .member-card{display:flex;align-items:center;gap:12px;background:var(--bg-surface);border:1px solid var(--bg-border);border-radius:12px;padding:14px 16px;transition:border-color .2s;}
+  .member-card:hover{border-color:var(--gold-dim);}
+
+  /* ── Product discovery card ── */
+  .product-card{background:var(--bg-surface);border:1px solid var(--bg-border);border-radius:14px;overflow:hidden;transition:border-color .2s;cursor:pointer;}
+  .product-card:hover{border-color:var(--gold-dim);}
+  .product-img{height:110px;background:linear-gradient(135deg,rgba(var(--burg-rgb), .3) 0%,rgba(30,24,16,1) 100%);display:flex;align-items:center;justify-content:center;font-size:32px;overflow:hidden;}
+  .product-img > img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+  .product-body{padding:12px;}
+  .product-name{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--text-primary);margin-bottom:2px;}
+  .product-meta{font-size:11px;color:var(--text-muted);margin-bottom:8px;}
+  .product-rating{font-family:var(--font-display);font-size:1rem;color:var(--gold);}
+
+  /* ── Recent activity card ── */
+  .activity-card{background:var(--bg-surface);border:1px solid var(--bg-border);border-radius:12px;padding:14px 16px;display:flex;align-items:flex-start;gap:12px;}
+
+  /* ── Widget (right rail) ── */
+  .widget-title{font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+
+  /* ── Bottom nav ── */
+
+  .tag-elite{background:rgba(var(--tier-elite-rgb), .1);border:1px solid rgba(var(--tier-elite-rgb), .25);color:var(--tier-elite);}
+
+
+/* === Page-specific styles === */
+.topbar-notif-wrap { position:relative; }
+.info-col { flex:1; min-width:0; }
+.topbar-page-title { font-family:var(--font-display); font-size:1.1rem; font-weight:600; color:var(--text-primary); letter-spacing:.02em; }
+.topbar-notif-link { position:relative; text-decoration:none; }
+.topbar-notif-dot { position:absolute; top:4px; right:4px; }
+.topbar-avatar-elite { background:var(--tier-elite); color:var(--tier-elite-ink); width:34px; height:34px; font-size:12px; }
+.explore-content-wrap { display:flex; justify-content:center; gap:20px; }
+.explore-center-col { width:100%; max-width:720px; padding-bottom:40px; }
+.explore-search-clear-btn { display:none; background:none; border:none; cursor:pointer; color:var(--text-muted); padding:4px; }
+.explore-cat-tabs-wrap { padding:14px 0 0; }
+.explore-discover-stack { padding:24px 28px; display:flex; flex-direction:column; gap:32px; }
+.card-stack { display:flex; flex-direction:column; gap:10px; }
+.card-link { text-decoration:none; }
+.member-avatar-champion { background:var(--gold); color:var(--bg-base); width:44px; height:44px; font-size:14px; }
+.member-card-name { font-size:14px; font-weight:600; color:var(--text-primary); }
+.member-tier-pill-champion { display:inline-flex; align-items:center; padding:2px 7px; border-radius:99px; font-size:10px; font-weight:700; background:var(--gold-subtle); border:1px solid rgba(var(--gold-rgb), .2); color:var(--gold); margin-left:4px; }
+.member-card-rank { font-size:12px; color:var(--text-muted); margin-top:2px; }
+.member-card-bio { font-family:var(--font-body); font-style:italic; font-size:12px; color:var(--text-secondary); margin-top:4px; }
+.member-follow-btn { background:var(--burg); color:var(--cream); border:none; border-radius:8px; padding:8px 16px; font-family:var(--font-ui); font-size:12px; font-weight:700; cursor:pointer; flex-shrink:0; transition:background .2s; }
+.member-avatar-runner-up { background:var(--tier-runner-up); color:var(--tier-runner-up-ink); width:44px; height:44px; font-size:14px; }
+.member-tier-pill-elite { display:inline-flex; align-items:center; padding:2px 7px; border-radius:99px; font-size:10px; font-weight:700; background:rgba(var(--tier-elite-rgb), .1); border:1px solid rgba(var(--tier-elite-rgb), .25); color:var(--tier-elite); margin-left:4px; }
+.member-avatar-bronze { background:var(--avatar-brown); color:var(--avatar-brown-ink); width:44px; height:44px; font-size:14px; }
+.member-tier-pill-bronze { display:inline-flex; align-items:center; padding:2px 7px; border-radius:99px; font-size:10px; font-weight:700; background:rgba(var(--tier-bronze-rgb), .1); border:1px solid rgba(var(--tier-bronze-rgb), .25); color:var(--tier-bronze); margin-left:4px; }
+.explore-product-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.product-img-padron { background:linear-gradient(135deg,rgba(var(--burg-rgb), .4),rgba(20,12,6,1)); }
+.product-rating-row { display:flex; align-items:center; justify-content:space-between; }
+.product-rating-count { font-size:11px; color:var(--text-muted); }
+.product-img-fuente { background:linear-gradient(135deg,rgba(var(--tier-bronze-rgb), .3),rgba(20,12,6,1)); }
+.product-img-liga { background:linear-gradient(135deg,rgba(var(--tier-elite-rgb), .3),rgba(20,12,6,1)); }
+.product-img-pappy { background:linear-gradient(135deg,rgba(var(--gold-rgb), .2),rgba(20,12,6,1)); }
+.product-img-lagavulin { background:linear-gradient(135deg,rgba(160,120,80,.25),rgba(20,12,6,1)); }
+.product-img-macallan { background:linear-gradient(135deg,rgba(var(--burg-rgb), .25),rgba(20,12,6,1)); }
+.activity-avatar-warm { background:var(--avatar-brown); color:var(--avatar-brown-ink); width:38px; height:38px; font-size:12px; }
+.activity-text { font-size:13px; color:var(--text-primary); }
+.activity-actor-name { font-weight:600; }
+.activity-product-link { color:var(--gold); }
+.activity-quote { font-family:var(--font-body); font-style:italic; font-size:12px; color:var(--text-secondary); margin-top:4px; line-height:1.5; }
+.activity-meta-row { display:flex; align-items:center; gap:10px; margin-top:8px; }
+.activity-rating { font-family:var(--font-display); font-size:14px; color:var(--gold); }
+.activity-avatar-blue { background:var(--avatar-deep-blue); color:var(--avatar-deep-blue-ink); width:38px; height:38px; font-size:12px; }
+.activity-timestamp { font-size:11px; color:var(--text-muted); margin-top:6px; }
+.explore-search-results { display:none; padding:24px 28px; }
+.explore-search-results-label { font-size:13px; color:var(--text-muted); margin-bottom:16px; }
+.explore-search-query-text { color:var(--text-primary); font-weight:600; }
+.explore-rail-col { width:268px; flex-shrink:0; display:flex; flex-direction:column; gap:14px; padding:24px 20px 24px 0; }
+.sterlon-pick-quote { background:var(--gold-subtle); border:1px solid rgba(var(--gold-rgb), .2); border-radius:10px; padding:12px 14px; font-family:var(--font-body); font-style:italic; font-size:13px; color:var(--text-secondary); line-height:1.65; margin-bottom:12px; }
+.sterlon-pick-link { font-family:var(--font-ui); font-size:13px; color:var(--gold); font-weight:600; text-decoration:none; }
+.popular-row { display:flex; align-items:center; gap:10px; }
+.popular-rank-num { font-family:var(--font-display); font-size:.85rem; font-weight:700; color:var(--text-muted); width:16px; flex-shrink:0; }
+.popular-product-name { font-size:12px; font-weight:600; color:var(--text-primary); }
+.popular-product-meta { font-size:10px; color:var(--text-muted); }
+.popular-rating { font-family:var(--font-display); font-size:.9rem; color:var(--gold); }
+.upcoming-event-card { text-decoration:none; display:flex; flex-direction:column; gap:3px; padding:10px 12px; background:var(--bg-elevated); border-radius:9px; border:1px solid var(--bg-border); transition:border-color .2s; }
+.upcoming-event-name { font-family:var(--font-display); font-size:14px; font-weight:600; color:var(--text-primary); }
+.upcoming-event-meta { font-family:var(--font-ui); font-size:11px; color:var(--text-muted); }
+.upcoming-event-view-all { display:block; margin-top:12px; font-family:var(--font-ui); font-size:12px; color:var(--text-muted); text-decoration:none; }
+.search-result-row { background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:12px; padding:14px 16px; display:flex; align-items:center; gap:12px; }
+.search-result-avatar { width:38px; height:38px; border-radius:50%; background:var(--gold); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:var(--bg-base); flex-shrink:0; }
+.search-result-name { font-size:13px; font-weight:600; color:var(--text-primary); }
+.search-result-icon-box { width:38px; height:38px; border-radius:8px; background:rgba(var(--gold-rgb), .1); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+
+/* Mobile-only section helper — used by the "Most Reviewed This Month"
+   block beneath the two Highly Rated grids. Desktop already exposes
+   similar activity in the right rail, so the section only renders below
+   the 700px breakpoint. */
+.explore-mobile-only { display: none; }
+
+/* ──────────── Mobile (≤767px) ────────────
+   The two "Highly Rated" grids (.explore-product-grid) hold the cigar and spirit product
+   cards. On mobile they convert to a horizontal-scroll carousel (same
+   shared chrome as the hashtag row + every other in-app carousel) so the
+   cards keep an honest landscape aspect ratio and the section reads as a
+   discovery feed instead of a tall list. Arrows are JS-injected via
+   setupExploreCarousels and styled by the shared .pro-lib-arrow* rules
+   in lounge.css; .explore-products-carousel is registered for symmetric arrow
+   positioning. */
+@media (max-width: 767px) {
+  .explore-mobile-only { display: block; }
+
+  .explore-product-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    min-width: 0;
+    padding: 2px 24px 4px 2px;
+    overflow-x: auto;
+    scrollbar-width: none;            /* Firefox */
+    -ms-overflow-style: none;         /* IE/Edge legacy */
+    scroll-snap-type: x proximity;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      black 0,
+      black calc(100% - 32px),
+      transparent 100%
+    );
+            mask-image: linear-gradient(
+      to right,
+      black 0,
+      black calc(100% - 32px),
+      transparent 100%
+    );
+  }
+  .explore-product-grid::-webkit-scrollbar { display: none; }
+  .explore-product-grid > .card-link {
+    flex: 0 0 62%;            /* ~1.5 cards visible at iPhone SE width */
+    flex-shrink: 0;
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+  .product-img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+  .explore-products-carousel { width: 100%; }
+  .explore-products-carousel .pro-lib-arrow { display: flex; }
+}

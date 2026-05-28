@@ -1,0 +1,396 @@
+{
+  "productCount": 92,
+  "fixes": [
+    {
+      "name": "Johnnie Walker Green Label",
+      "field": "deckKey",
+      "from": "peated",
+      "to": "scotch"
+    },
+    {
+      "name": "Jim Beam Kentucky Straight Bourbon",
+      "field": "journeyRank",
+      "from": 89,
+      "to": 2
+    },
+    {
+      "name": "Maker's Mark Kentucky Straight Bourbon",
+      "field": "journeyRank",
+      "from": 90,
+      "to": 6
+    },
+    {
+      "name": "Jack Daniel's Old No. 7",
+      "field": "journeyRank",
+      "from": 88,
+      "to": 3
+    },
+    {
+      "name": "1792 Small Batch Bourbon",
+      "field": "journeyRank",
+      "from": 35,
+      "to": 5
+    },
+    {
+      "name": "Elijah Craig Small Batch",
+      "field": "journeyRank",
+      "from": 32,
+      "to": 7
+    },
+    {
+      "name": "Jack Daniel's Single Barrel Select",
+      "field": "journeyRank",
+      "from": 38,
+      "to": 4
+    },
+    {
+      "name": "Jefferson's Ocean Aged at Sea",
+      "field": "journeyRank",
+      "from": 37,
+      "to": 5
+    },
+    {
+      "name": "Knob Creek Kentucky Straight Bourbon",
+      "field": "journeyRank",
+      "from": 33,
+      "to": 6
+    },
+    {
+      "name": "Michter's US*1 Kentucky Straight Bourbon",
+      "field": "journeyRank",
+      "from": 31,
+      "to": 4
+    },
+    {
+      "name": "Penelope Bourbon",
+      "field": "journeyRank",
+      "from": 36,
+      "to": 6
+    },
+    {
+      "name": "Russell's Reserve 10 Year",
+      "field": "journeyRank",
+      "from": 34,
+      "to": 7
+    },
+    {
+      "name": "Aberlour 12 Year",
+      "field": "journeyRank",
+      "from": 50,
+      "to": 4
+    },
+    {
+      "name": "Balvenie 14 Year Caribbean Cask",
+      "field": "journeyRank",
+      "from": 51,
+      "to": 5
+    },
+    {
+      "name": "Chivas Regal 12",
+      "field": "journeyRank",
+      "from": 52,
+      "to": 3
+    },
+    {
+      "name": "Dalmore 12",
+      "field": "journeyRank",
+      "from": 43,
+      "to": 7
+    },
+    {
+      "name": "Glenlivet 12 Year",
+      "field": "journeyRank",
+      "from": 47,
+      "to": 3
+    },
+    {
+      "name": "Glenmorangie Original 10 Year",
+      "field": "journeyRank",
+      "from": 48,
+      "to": 6
+    },
+    {
+      "name": "Highland Park 12 Year",
+      "field": "journeyRank",
+      "from": 45,
+      "to": 7
+    },
+    {
+      "name": "Johnnie Walker Black Label",
+      "field": "journeyRank",
+      "from": 44,
+      "to": 4
+    },
+    {
+      "name": "Johnnie Walker Green Label",
+      "field": "journeyRank",
+      "from": 54,
+      "to": 6
+    },
+    {
+      "name": "Monkey Shoulder Blended Malt Scotch",
+      "field": "journeyRank",
+      "from": 53,
+      "to": 1
+    },
+    {
+      "name": "Oban 14 Year",
+      "field": "journeyRank",
+      "from": 49,
+      "to": 5
+    },
+    {
+      "name": "The Macallan 18 Year Sherry Oak",
+      "field": "journeyRank",
+      "from": 56,
+      "to": 10
+    },
+    {
+      "name": "Appleton Estate 21 Year",
+      "field": "journeyRank",
+      "from": 66,
+      "to": 8
+    },
+    {
+      "name": "El Dorado 12 Year",
+      "field": "journeyRank",
+      "from": 65,
+      "to": 6
+    },
+    {
+      "name": "Mount Gay XO",
+      "field": "journeyRank",
+      "from": 63,
+      "to": 7
+    },
+    {
+      "name": "Plantation O.F.T.D. Overproof Rum",
+      "field": "journeyRank",
+      "from": 64,
+      "to": 9
+    },
+    {
+      "name": "Ardbeg 10",
+      "field": "journeyRank",
+      "from": 46,
+      "to": 8
+    },
+    {
+      "name": "Lagavulin 8 Year",
+      "field": "journeyRank",
+      "from": 55,
+      "to": 10
+    },
+    {
+      "name": "Laphroaig 10 Year",
+      "field": "journeyRank",
+      "from": 41,
+      "to": 8
+    },
+    {
+      "name": "Talisker 10 Year",
+      "field": "journeyRank",
+      "from": 42,
+      "to": 9
+    },
+    {
+      "name": "Casa Dragones Joven",
+      "field": "journeyRank",
+      "from": 72,
+      "to": 8
+    },
+    {
+      "name": "Casamigos Reposado",
+      "field": "journeyRank",
+      "from": 69,
+      "to": 5
+    },
+    {
+      "name": "Del Maguey Vida Mezcal",
+      "field": "journeyRank",
+      "from": 68,
+      "to": 7
+    },
+    {
+      "name": "Don Julio Reposado",
+      "field": "journeyRank",
+      "from": 87,
+      "to": 5
+    },
+    {
+      "name": "Espol\u00f2n Reposado",
+      "field": "journeyRank",
+      "from": 70,
+      "to": 1
+    },
+    {
+      "name": "Fortaleza Reposado",
+      "field": "journeyRank",
+      "from": 67,
+      "to": 7
+    },
+    {
+      "name": "Lunazul Blanco",
+      "field": "journeyRank",
+      "from": 86,
+      "to": 3
+    },
+    {
+      "name": "Montelobos Espad\u00edn Mezcal",
+      "field": "journeyRank",
+      "from": 73,
+      "to": 5
+    },
+    {
+      "name": "Patr\u00f3n Silver",
+      "field": "journeyRank",
+      "from": 71,
+      "to": 2
+    },
+    {
+      "name": "Courvoisier VSOP Exclusif",
+      "field": "journeyRank",
+      "from": 75,
+      "to": 4
+    },
+    {
+      "name": "D'USS\u00c9 VSOP Cognac",
+      "field": "journeyRank",
+      "from": 74,
+      "to": 5
+    },
+    {
+      "name": "Hennessy VS",
+      "field": "journeyRank",
+      "from": 92,
+      "to": 6
+    },
+    {
+      "name": "Hennessy VSOP Privil\u00e8ge",
+      "field": "journeyRank",
+      "from": 78,
+      "to": 7
+    },
+    {
+      "name": "Martell Blue Swift",
+      "field": "journeyRank",
+      "from": 76,
+      "to": 5
+    },
+    {
+      "name": "Martell Cordon Bleu",
+      "field": "journeyRank",
+      "from": 77,
+      "to": 8
+    },
+    {
+      "name": "Grey Goose Vodka",
+      "field": "journeyRank",
+      "from": 82,
+      "to": 4
+    },
+    {
+      "name": "Hendrick's Gin",
+      "field": "journeyRank",
+      "from": 79,
+      "to": 5
+    },
+    {
+      "name": "Ketel One Vodka",
+      "field": "journeyRank",
+      "from": 81,
+      "to": 3
+    },
+    {
+      "name": "New Amsterdam Vodka",
+      "field": "journeyRank",
+      "from": 85,
+      "to": 1
+    },
+    {
+      "name": "Smirnoff No. 21 Vodka",
+      "field": "journeyRank",
+      "from": 84,
+      "to": 2
+    },
+    {
+      "name": "Tanqueray No. Ten",
+      "field": "journeyRank",
+      "from": 80,
+      "to": 5
+    },
+    {
+      "name": "Tito's Handmade Vodka",
+      "field": "journeyRank",
+      "from": 83,
+      "to": 1
+    },
+    {
+      "name": "Hakushu 12 Year",
+      "field": "journeyRank",
+      "from": 60,
+      "to": 8
+    },
+    {
+      "name": "Mars Iwai Tradition",
+      "field": "journeyRank",
+      "from": 62,
+      "to": 6
+    },
+    {
+      "name": "Nikka Coffey Grain Whisky",
+      "field": "journeyRank",
+      "from": 61,
+      "to": 7
+    },
+    {
+      "name": "Nikka From the Barrel",
+      "field": "journeyRank",
+      "from": 59,
+      "to": 9
+    },
+    {
+      "name": "Jameson Black Barrel",
+      "field": "journeyRank",
+      "from": 58,
+      "to": 1
+    },
+    {
+      "name": "Jameson Irish Whiskey",
+      "field": "journeyRank",
+      "from": 91,
+      "to": 2
+    },
+    {
+      "name": "Redbreast 12 Year",
+      "field": "journeyRank",
+      "from": 57,
+      "to": 6
+    },
+    {
+      "name": "Michter's US*1 Straight Rye",
+      "field": "journeyRank",
+      "from": 40,
+      "to": 4
+    },
+    {
+      "name": "Pikesville Straight Rye",
+      "field": "journeyRank",
+      "from": 39,
+      "to": 5
+    }
+  ],
+  "violations": [],
+  "deckCounts": {
+    "bourbon": 26,
+    "scotch": 15,
+    "rum": 6,
+    "peated": 5,
+    "agave": 11,
+    "cognac": 8,
+    "vodka": 7,
+    "japanese": 6,
+    "irish": 3,
+    "rye": 5
+  }
+}

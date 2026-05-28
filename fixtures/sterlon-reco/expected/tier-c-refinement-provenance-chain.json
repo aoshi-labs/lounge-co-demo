@@ -1,0 +1,15 @@
+{
+  "parentTurnIdSet": true,
+  "refinedCarriesParentId": true,
+  "refinedHasParentTurnId": true,
+  "refinedParentTurnIdNonEmpty": true,
+  "refinementType": "lighter",
+  "refinementReason": "chat-refinement-lighter",
+  "refinementSource": "chat-refinement-chip",
+  "hasRefinementSignal": true,
+  "sourceIsRuntime": true,
+  "parentSourceIsRuntime": true,
+  "moduleIsResolveRefinement": true,
+  "structValidOk": true,
+  "governanceOk": true
+}

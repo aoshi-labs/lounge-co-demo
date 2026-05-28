@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "shard": "tracker-12",
+  "category": "spirit",
+  "slice": "reco",
+  "generatedAt": "2026-05-25T00:37:58Z",
+  "generator": "build-tracker-spirits-to-ontology.py",
+  "productCount": 2,
+  "products": [
+    {
+      "deckKey": "japanese",
+      "journeyLevel": "advanced",
+      "id": "spi-trk-yamazaki-12",
+      "sensory": {
+        "body": 6,
+        "sweetness": 6,
+        "pepper": 2,
+        "cocoa": 4,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-YAMAZAKI-12",
+        "article": "https://house.suntory.com/yamazaki-whisky/yamazaki-12-years-old",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 16,
+      "spec": {
+        "proof": 86.0,
+        "abvPercent": 43.0,
+        "mash": "100% malted barley",
+        "style": "Single malt Japanese whisky",
+        "origin": "Japan",
+        "msrp": 150
+      },
+      "name": "Yamazaki 12",
+      "tags": [
+        {
+          "id": "peach",
+          "weight": 1.0
+        },
+        {
+          "id": "pineapple",
+          "weight": 0.95
+        },
+        {
+          "id": "apple",
+          "weight": 0.85
+        },
+        {
+          "id": "citrus",
+          "weight": 0.75
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.7
+        },
+        {
+          "id": "coconut",
+          "weight": 0.65
+        },
+        {
+          "id": "cinnamon",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    },
+    {
+      "deckKey": "rum",
+      "journeyLevel": "intermediate",
+      "id": "spi-trk-zacapa-23",
+      "sensory": {
+        "body": 5,
+        "sweetness": 8,
+        "pepper": 2,
+        "cocoa": 7,
+        "earthiness": 4
+      },
+      "tracker": {
+        "sku": "SPI-TRK-ZACAPA-23",
+        "article": "https://www.zacaparum.com/en-us/rums/zacapa-23-centenario",
+        "source": "Manufacturer official"
+      },
+      "journeyRank": 11,
+      "spec": {
+        "proof": 80.0,
+        "abvPercent": 40.0,
+        "mash": "Virgin sugar cane honey",
+        "style": "Premium rum",
+        "origin": "Guatemala",
+        "msrp": 55
+      },
+      "name": "Zacapa 23",
+      "tags": [
+        {
+          "id": "caramel",
+          "weight": 1.0
+        },
+        {
+          "id": "vanilla",
+          "weight": 0.95
+        },
+        {
+          "id": "chocolate",
+          "weight": 0.85
+        },
+        {
+          "id": "toffee",
+          "weight": 0.75
+        },
+        {
+          "id": "hazelnut",
+          "weight": 0.7
+        },
+        {
+          "id": "peach",
+          "weight": 0.65
+        },
+        {
+          "id": "pineapple",
+          "weight": 0.6
+        },
+        {
+          "id": "apple",
+          "weight": 0.6
+        }
+      ],
+      "category": "spirit"
+    }
+  ]
+}

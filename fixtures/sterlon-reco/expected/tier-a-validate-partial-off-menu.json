@@ -1,0 +1,17 @@
+[
+  {
+    "label": "BEST PICK",
+    "tier": "Ultra",
+    "cigar": "Off Menu Cigar",
+    "spirit": "Lagavulin",
+    "food": null,
+    "why": [
+      "a very long why line that should be truncated because it exceeds ninety two characters ea..."
+    ],
+    "cigarId": null,
+    "spiritId": null,
+    "foodId": null,
+    "stock": "On the menu tonight",
+    "descriptor": ""
+  }
+]

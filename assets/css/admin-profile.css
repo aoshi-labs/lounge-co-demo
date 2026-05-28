@@ -1,0 +1,248 @@
+/* === Admin profile — mirrors profile.html for the owner role === */
+
+/* ── Profile shell, banner, avatar (admin-themed) ── */
+.profile-banner {
+  height: 160px;
+  background: linear-gradient(135deg, rgba(var(--burg-rgb), .55) 0%, rgba(30,24,16,.85) 45%, rgba(var(--gold-rgb), .10) 100%);
+  position: relative;
+  overflow: hidden;
+}
+.profile-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23800020' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.profile-avatar-wrap { position: relative; display: inline-block; margin-top: -52px; }
+.profile-avatar {
+  width: 100px; height: 100px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-ui); font-size: 28px; font-weight: 700;
+  border: 4px solid var(--bg-surface);
+  background: var(--burg); color: var(--cream);
+}
+.profile-avatar-admin { background: var(--burg); color: var(--cream); }
+.tier-badge-ring {
+  position: absolute; bottom: 4px; right: 4px;
+  width: 26px; height: 26px; border-radius: 50%;
+  border: 2px solid var(--bg-surface);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--burg); color: var(--cream);
+}
+.admin-badge-ring { background: var(--burg); color: var(--cream); }
+.admin-badge-ring svg { stroke: var(--cream); }
+
+/* ── Profile tabs ── */
+.profile-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--bg-border);
+  padding: 0 28px;
+  gap: 0;
+}
+.profile-tab {
+  padding: 14px 20px;
+  font-family: var(--font-ui); font-size: 13px; font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  border: none; background: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color .2s, border-color .2s;
+}
+.profile-tab.active { color: var(--burg); border-bottom-color: var(--burg); }
+.profile-tab:hover:not(.active) { color: var(--text-secondary); }
+
+/* ── Stat pills (shared shape) ── */
+.stat-pill { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.stat-num  { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--text-primary); line-height: 1; }
+.stat-lbl  { font-size: 10px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); }
+
+/* ── Widget shell (right rail) ── */
+.widget { background: var(--bg-surface); border: 1px solid var(--bg-border); border-radius: 14px; padding: 18px; }
+.widget-title { font-family: var(--font-ui); font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+
+/* === Page-specific (admin-profile-* prefix) === */
+
+/* Sidebar header text + user-row */
+
+/* Top bar */
+.topbar-title  { font-family: var(--font-ui); font-size: 15px; font-weight: 600; color: var(--text-primary); }
+
+/* Layout */
+.admin-profile-frame { display: flex; justify-content: center; padding: 0 20px 40px; gap: 20px; }
+.admin-profile-stack { width: 100%; max-width: 680px; display: flex; flex-direction: column; gap: 0; }
+
+/* Header card */
+.admin-profile-header-card { padding: 0 24px 20px; background: var(--bg-surface); border-left: 1px solid var(--bg-border); border-right: 1px solid var(--bg-border); }
+.admin-profile-header-top-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.admin-profile-header-actions { display: flex; gap: 10px; margin-bottom: 8px; }
+.admin-profile-edit-btn { display: flex; align-items: center; gap: 7px; background: var(--bg-elevated); border: 1px solid var(--bg-border); border-radius: 9px; padding: 9px 18px; font-family: var(--font-ui); font-size: 13px; font-weight: 600; color: var(--text-primary); text-decoration: none; transition: border-color .2s; }
+.admin-profile-edit-btn:hover { border-color: var(--burg); }
+.admin-profile-icon-btn { background: none; border: 1px solid var(--bg-border); border-radius: 9px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text-secondary); transition: border-color .2s, color .2s; }
+.admin-profile-icon-btn:hover { border-color: var(--burg); color: var(--burg); }
+
+/* Identity block */
+.admin-profile-identity { margin-top: 8px; }
+.admin-profile-name-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.admin-profile-name { font-family: var(--font-display); font-size: 1.7rem; font-weight: 700; color: var(--text-primary); line-height: 1; }
+.admin-profile-handle { font-family: var(--font-ui); font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+.admin-profile-bio { font-family: var(--font-body); font-style: italic; font-size: 14px; color: var(--text-secondary); margin-top: 10px; line-height: 1.65; }
+.admin-profile-location { display: flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 12px; color: var(--text-muted); }
+
+/* Stats row — single-row carousel like other filter/chip tracks across
+   the app. Hidden scrollbar, mask-fade on the right edge; JS injects
+   the .pro-lib-carousel + .apr-stats-carousel wrapper with left/right
+   arrows that follow the same right-lenient / left-strict show logic. */
+.admin-profile-stats-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 28px;
+  margin-top: 20px;
+  padding: 18px 22px 2px 2px;
+  border-top: 1px solid var(--bg-border);
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x proximity;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 0,
+    black calc(100% - 32px),
+    transparent 100%
+  );
+          mask-image: linear-gradient(
+    to right,
+    black 0,
+    black calc(100% - 32px),
+    transparent 100%
+  );
+}
+.admin-profile-stats-row::-webkit-scrollbar { display: none; }
+.admin-profile-stats-row > .stat-pill { flex-shrink: 0; scroll-snap-align: start; }
+.apr-stats-carousel { min-width: 0; width: 100%; }
+.apr-stats-carousel .pro-lib-arrow { display: flex; }
+.admin-profile-stat-revenue { color: var(--burg); }
+.admin-profile-stat-rating { color: var(--gold); }
+
+/* Tabs container background */
+.admin-profile-tabs-bar { background: var(--bg-surface); border-left: 1px solid var(--bg-border); border-right: 1px solid var(--bg-border); }
+/* Profile tabs need positioning context for the .admin-profile-tab-count badge below,
+   which floats out of inline flow into the tab's top-right corner. */
+.profile-tab { position: relative; }
+.admin-profile-tab-count {
+  position: absolute;
+  top: 2px;
+  right: 1px;
+  background: var(--burg);
+  color: var(--cream);
+  border-radius: 99px;
+  padding: 0 5px;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-left: 0;
+}
+.admin-profile-tab-body { background: var(--bg-base); padding: 20px 0; display: flex; flex-direction: column; gap: 14px; }
+
+/* Overview cards */
+.admin-profile-overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 0 24px; }
+.admin-profile-overview-card { background: var(--bg-surface); border: 1px solid var(--bg-border); border-radius: 12px; padding: 16px; }
+.admin-profile-overview-card-label { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--burg); margin-bottom: 10px; }
+.admin-profile-overview-card-value { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--text-primary); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.admin-profile-plan-tag { font-family: var(--font-ui); font-size: 10px; }
+.admin-profile-overview-card-meta { font-size: 11px; color: var(--text-muted); margin-top: 5px; }
+.admin-profile-value-positive { color: var(--tier-elite); }
+.admin-profile-champion-label { font-family: var(--font-ui); font-size: 11px; color: var(--gold); }
+
+/* Pending approvals panel */
+.admin-profile-approvals { padding: 0 24px; margin-top: 8px; }
+.admin-profile-approvals-title { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; }
+.admin-profile-approvals-list { display: flex; flex-direction: column; gap: 8px; }
+.admin-profile-approval-row { display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: var(--bg-surface); border: 1px solid var(--bg-border); border-radius: 11px; }
+.admin-profile-approval-avatar-burg { background: var(--burg); color: var(--cream); }
+.admin-profile-row-info { flex: 1; min-width: 0; }
+.admin-profile-row-meta { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+.admin-profile-approve-btn { background: var(--burg); color: var(--cream); border: none; border-radius: 7px; padding: 7px 14px; font-family: var(--font-ui); font-size: 11px; font-weight: 700; cursor: pointer; transition: background .15s; }
+.admin-profile-approve-btn:hover { background: var(--burg-hover); }
+
+/* Activity timeline */
+.admin-profile-tab-pane { display: none; padding: 0 24px; }
+.admin-profile-list-stack { display: flex; flex-direction: column; gap: 10px; }
+.admin-profile-activity-row { display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; background: var(--bg-surface); border: 1px solid var(--bg-border); border-radius: 11px; }
+.admin-profile-activity-icon { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.admin-profile-activity-icon-burg { background: rgba(var(--burg-rgb), .12); color: var(--burg); }
+.admin-profile-activity-icon-gold { background: rgba(var(--gold-rgb), .12); color: var(--gold); }
+.admin-profile-activity-icon-elite { background: rgba(var(--tier-elite-rgb), .12); color: var(--tier-elite); }
+
+/* Team list */
+.admin-profile-section-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; }
+.admin-profile-team-avatar-gold { background: var(--gold); color: var(--bg-base); }
+.admin-profile-team-avatar-elite { background: var(--tier-elite); color: var(--tier-elite-ink); }
+.admin-profile-team-avatar-bronze { background: var(--avatar-brown); color: var(--avatar-brown-ink); }
+
+/* About blocks */
+.admin-profile-about-stack { display: flex; flex-direction: column; gap: 12px; }
+.admin-profile-about-text { font-family: var(--font-body); font-style: italic; font-size: 14px; line-height: 1.7; color: var(--text-secondary); }
+.admin-profile-favorites-list { display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--text-secondary); }
+.admin-profile-favorite-row { display: flex; justify-content: space-between; gap: 12px; }
+.admin-profile-favorite-note { color: var(--text-muted); font-size: 12px; }
+
+/* Right rail */
+.admin-profile-rail { width: 268px; flex-shrink: 0; display: flex; flex-direction: column; gap: 14px; padding-top: 20px; }
+.admin-profile-widget-title-burg { color: var(--burg); }
+.admin-profile-quick-actions { display: flex; flex-direction: column; gap: 8px; }
+.admin-profile-quick-action-link { display: flex; align-items: center; justify-content: space-between; padding: 9px 12px; background: var(--bg-elevated); border: 1px solid var(--bg-border); border-radius: 9px; font-family: var(--font-ui); font-size: 13px; color: var(--text-primary); text-decoration: none; transition: border-color .15s, color .15s; }
+.admin-profile-quick-action-link:hover { border-color: var(--burg); color: var(--burg); }
+.admin-profile-quick-action-count-burg { background: var(--burg); color: var(--cream); border-radius: 99px; padding: 2px 8px; font-size: 10px; font-weight: 700; }
+.admin-profile-quick-action-count-muted { background: var(--bg-border); color: var(--text-secondary); border-radius: 99px; padding: 2px 8px; font-size: 10px; font-weight: 700; }
+
+/* Lounge health bars */
+.admin-profile-health-row { margin-bottom: 10px; }
+.admin-profile-health-row-head { display: flex; justify-content: space-between; margin-bottom: 5px; }
+.admin-profile-health-label { font-size: 11px; font-weight: 600; color: var(--text-secondary); }
+.admin-profile-health-value { font-size: 11px; font-weight: 700; color: var(--burg); }
+.admin-profile-health-track { height: 6px; background: var(--bg-elevated); border-radius: 99px; overflow: hidden; }
+.admin-profile-health-bar { height: 100%; border-radius: 99px; background: linear-gradient(to right, var(--burg), var(--gold)); }
+.admin-profile-health-bar-94 { width: 94%; }
+.admin-profile-health-bar-87 { width: 87%; }
+.admin-profile-health-bar-99 { width: 99%; }
+.admin-profile-analytics-link { display: block; margin-top: 6px; font-family: var(--font-ui); font-size: 12px; color: var(--text-muted); text-decoration: none; }
+.admin-profile-analytics-link:hover { color: var(--burg); }
+
+/* Subscription widget */
+.admin-profile-subscription-plan { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--text-primary); }
+.admin-profile-subscription-meta { font-size: 11px; color: var(--text-muted); margin-top: 4px; margin-bottom: 12px; }
+.admin-profile-subscription-actions { display: flex; gap: 8px; }
+.admin-profile-subscription-btn { flex: 1; text-align: center; background: var(--bg-elevated); border: 1px solid var(--bg-border); border-radius: 7px; padding: 8px 12px; font-family: var(--font-ui); font-size: 11px; font-weight: 700; color: var(--text-primary); text-decoration: none; transition: border-color .15s; }
+.admin-profile-subscription-btn:hover { border-color: var(--burg); }
+
+/* Mobile overlay */
+
+/* Mobile */
+@media (max-width: 1023px) {
+  .hamburger-button  { display: flex; }
+  .admin-profile-frame { flex-direction: column; padding: 0 0 24px; gap: 0; }
+  .admin-profile-stack { max-width: 100%; }
+  .admin-profile-overview-grid { grid-template-columns: 1fr; }
+  .admin-profile-rail { display: none; }
+}
+
+/* Mobile (≤767px): overview / about cards (.admin-profile-overview-card) feel cramped — the
+   header line + inline tag + meta line all jam into a 16px-padded box.
+   Give them more padding, drop the header font size a notch, force the
+   inline tag onto its own line via the existing flex-wrap, and put
+   bigger gaps between label, header, and meta. */
+@media (max-width: 767px) {
+  .admin-profile-overview-card { padding: 18px 16px; }
+  .admin-profile-overview-card-label { margin-bottom: 8px; }
+  .admin-profile-overview-card-value {
+    font-size: 1rem;
+    line-height: 1.3;
+    gap: 6px;
+    align-items: flex-start;
+  }
+  .admin-profile-plan-tag, .admin-profile-champion-label { flex-basis: 100%; }
+  .admin-profile-overview-card-meta { margin-top: 8px; line-height: 1.45; }
+}

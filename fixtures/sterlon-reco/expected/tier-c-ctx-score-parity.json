@@ -1,0 +1,14 @@
+{
+  "cigarSpiritMatches": true,
+  "spiritFoodMatches": true,
+  "ctxCigarSpirit": {
+    "score": 0.2,
+    "intensityMatch": false,
+    "bridges": []
+  },
+  "directCigarSpirit": {
+    "score": 0.2,
+    "intensityMatch": false,
+    "bridges": []
+  }
+}

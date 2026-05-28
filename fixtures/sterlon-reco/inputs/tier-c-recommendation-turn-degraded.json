@@ -1,0 +1,6 @@
+{
+  "op": "recommendationTurnDegraded",
+  "promptText": "I'm new to whiskey, what should I pour?",
+  "journeyLevel": "novice",
+  "reason": "sterlon-reco-freeze-degraded-snapshot"
+}

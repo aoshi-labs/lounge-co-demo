@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Platform Dashboard — Lounge & Co.</title>
+  <!-- ════════════════════════════════════════
+       SEO + social meta — Phase 6
+       noindex: member/admin pages are behind auth and should not rank.
+       Venue-templated when the backend lands — see applyLoungeConfig()
+       in lounge.js for the data-binding contract.
+  ════════════════════════════════════════ -->
+  <meta name="description" content="Platform admin dashboard: venue health, revenue, and system metrics across all lounges." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0E0C0A" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lounge & Co." />
+  <meta property="og:title" content="Platform Dashboard — Lounge & Co." />
+  <meta property="og:description" content="Platform admin dashboard: venue health, revenue, and system metrics across all lounges." />
+  <meta property="og:image" content="https://loungeco.lounge.app/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Platform Dashboard — Lounge & Co." />
+  <meta name="twitter:description" content="Platform admin dashboard: venue health, revenue, and system metrics across all lounges." />
+  <meta name="twitter:image" content="https://loungeco.lounge.app/og-image.jpg" />
+  <link rel="icon" href="assets/images/logo-favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/lounge.css"/>
+  <script src="assets/javascript/lounge.js" defer></script>
+  <link rel="stylesheet" href="assets/css/superadmin-dashboard.css"/>
+</head>
+<body>
+
+<nav class="sidebar super" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark logo-favicon"><img src="assets/images/logo-favicon.png" alt="Lounge & Co." /></div>
+    <div>
+      <div class="sidebar-brand-name" data-lounge-name>Lounge & Co.</div>
+      <div class="sidebar-brand-subtitle">★ Platform Admin</div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-row"><div class="avatar sidebar-user-avatar-super">CJ</div><div class="sidebar-user-info"><div class="sidebar-user-name">Christian J.</div><div class="sidebar-user-role">★ Super Admin</div></div></div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section-label">Platform</div>
+    <a href="superadmin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Overview</a>
+    <a href="superadmin-venues.html" class="nav-item"><i data-lucide="building" class="ic-17"></i>Venues</a>
+    <a href="#" class="nav-item"><i data-lucide="bar-chart-2" class="ic-17"></i>Revenue</a>
+    <a href="#" class="nav-item"><i data-lucide="layers" class="ic-17"></i>Infrastructure</a>
+    <div class="nav-section-label">Operations</div>
+    <a href="#" class="nav-item"><i data-lucide="message-circle" class="ic-17"></i>Support Inbox</a>
+    <a href="#" class="nav-item"><i data-lucide="file" class="ic-17"></i>Audit Log</a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-label">Personal</div>
+    <a href="notifications.html" class="nav-item"><i data-lucide="bell" class="ic-17"></i>Notifications<span class="notif-dot">5</span></a>
+    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+    <div class="nav-divider"></div>
+    <a href="feed.html" class="nav-item"><i data-lucide="chevron-left" class="ic-17"></i>Exit to Member View</a>
+    <a href="admin-dashboard.html" class="nav-item"><i data-lucide="layout-grid" class="ic-17"></i>Admin Console</a>
+    <a href="landing.html" class="nav-item"><i data-lucide="globe" class="ic-17"></i>View Public Page</a>
+  </div>
+</nav>
+
+<main class="main-area super">
+  <h1 class="visually-hidden">Platform Dashboard</h1>
+  <header class="top-bar">
+    <button class="icon-btn sup-menu-btn" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+      <i data-lucide="menu" class="ic-16"></i>
+    </button>
+    <span class="topbar-status-pill">●<span class="sup-status-label"> All systems operational</span></span>
+    <div class="topbar-actions">
+    </div>
+  </header>
+
+  <div class="superadmin-dashboard-frame">
+
+    <!-- Stat strip -->
+    <div class="superadmin-dashboard-stat-grid">
+      <div class="stat-card">
+        <div class="superadmin-dashboard-stat-label">MRR</div>
+        <div class="superadmin-dashboard-stat-value-gold">$3,887</div>
+        <div class="superadmin-dashboard-stat-delta-positive">▲ +$598 this month</div>
+      </div>
+      <div class="stat-card">
+        <div class="superadmin-dashboard-stat-label">Active Venues</div>
+        <div class="superadmin-dashboard-stat-value">13</div>
+        <div class="superadmin-dashboard-stat-delta-positive">▲ +2 lounges this month</div>
+      </div>
+      <div class="stat-card">
+        <div class="superadmin-dashboard-stat-label">Platform Members</div>
+        <div class="superadmin-dashboard-stat-value">2,184</div>
+        <div class="superadmin-dashboard-stat-delta-positive">▲ +94 across venues</div>
+      </div>
+      <div class="stat-card">
+        <div class="superadmin-dashboard-stat-label">Avg Member / Lounge</div>
+        <div class="superadmin-dashboard-stat-value">168</div>
+        <div class="superadmin-dashboard-stat-meta">Range: 38 – 412</div>
+      </div>
+    </div>
+
+    <!-- MRR chart + top venues -->
+    <div class="grid-2 superadmin-dashboard-mrr-grid">
+      <div class="widget">
+        <div class="widget-title">📈 Platform MRR (Last 12 Months)</div>
+        <svg viewBox="0 0 700 220" class="superadmin-dashboard-mrr-chart">
+          <defs><linearGradient id="mrr-g" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#D4AF37" stop-opacity=".4"/><stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/></linearGradient></defs>
+          <line x1="0" y1="50" x2="700" y2="50" stroke="#2E2620" stroke-dasharray="2,4"/>
+          <line x1="0" y1="110" x2="700" y2="110" stroke="#2E2620" stroke-dasharray="2,4"/>
+          <line x1="0" y1="170" x2="700" y2="170" stroke="#2E2620" stroke-dasharray="2,4"/>
+          <path d="M0,200 L60,195 L120,180 L180,170 L240,155 L300,140 L360,125 L420,110 L480,95 L540,80 L600,65 L660,45 L700,30 L700,220 L0,220 Z" fill="url(#mrr-g)"/>
+          <path d="M0,200 L60,195 L120,180 L180,170 L240,155 L300,140 L360,125 L420,110 L480,95 L540,80 L600,65 L660,45 L700,30" stroke="#D4AF37" stroke-width="2.5" fill="none"/>
+          <circle cx="700" cy="30" r="5" fill="#D4AF37"/>
+        </svg>
+        <div class="superadmin-dashboard-mrr-axis">
+          <span>Jun '25</span><span>Sep</span><span>Dec</span><span>Mar '26</span><span class="superadmin-dashboard-value-gold">May</span>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">🏆 Top Venues by Revenue</div>
+        <div class="superadmin-dashboard-top-venues-list">
+          <div class="superadmin-dashboard-top-venues-row"><span class="superadmin-dashboard-text-primary">Lounge & Co.</span><span class="superadmin-dashboard-value-gold">$299</span></div>
+          <div class="superadmin-dashboard-top-venues-row"><span class="superadmin-dashboard-text-primary">Havana &amp; Highland</span><span class="superadmin-dashboard-value-gold">$299</span></div>
+          <div class="superadmin-dashboard-top-venues-row"><span class="superadmin-dashboard-text-primary">The Brass Drum</span><span class="superadmin-dashboard-value-gold">$299</span></div>
+          <div class="superadmin-dashboard-top-venues-row"><span class="superadmin-dashboard-text-primary">Cigar &amp; Sons NYC</span><span class="superadmin-dashboard-value-gold">$299</span></div>
+          <div class="superadmin-dashboard-top-venues-row"><span class="superadmin-dashboard-text-primary">The Library Lounge</span><span class="superadmin-dashboard-value-gold">$299</span></div>
+        </div>
+        <a href="superadmin-venues.html" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'" class="superadmin-dashboard-link-muted">All 13 venues →</a>
+      </div>
+    </div>
+
+    <!-- Recent + infrastructure -->
+    <div class="grid-2 superadmin-dashboard-activity-grid">
+
+      <div class="widget">
+        <div class="superadmin-dashboard-widget-header">
+          <div class="widget-title superadmin-dashboard-widget-header-title">🆕 Recent Venue Activity</div>
+          <a href="superadmin-venues.html" class="superadmin-dashboard-widget-header-link">View all →</a>
+        </div>
+        <div class="superadmin-dashboard-activity-list">
+          <div class="superadmin-dashboard-activity-row">
+            <div class="superadmin-dashboard-activity-icon-elite">+</div>
+            <div class="superadmin-dashboard-activity-body"><span class="superadmin-dashboard-text-primary">The Brass Drum</span> <span class="superadmin-dashboard-text-muted">created venue · Houston, TX</span></div>
+            <span class="superadmin-dashboard-text-muted">2 days ago</span>
+          </div>
+          <div class="superadmin-dashboard-activity-row">
+            <div class="superadmin-dashboard-activity-icon-gold">$</div>
+            <div class="superadmin-dashboard-activity-body"><span class="superadmin-dashboard-text-primary">Havana &amp; Highland</span> <span class="superadmin-dashboard-text-muted">payment cleared · $299</span></div>
+            <span class="superadmin-dashboard-text-muted">3 days ago</span>
+          </div>
+          <div class="superadmin-dashboard-activity-row">
+            <div class="superadmin-dashboard-activity-icon-burg">!</div>
+            <div class="superadmin-dashboard-activity-body"><span class="superadmin-dashboard-text-primary">Smoke Ring Co</span> <span class="superadmin-dashboard-text-muted">trial ending in 4 days</span></div>
+            <span class="superadmin-dashboard-text-muted">4 days ago</span>
+          </div>
+          <div class="superadmin-dashboard-activity-row">
+            <div class="superadmin-dashboard-activity-icon-elite">+</div>
+            <div class="superadmin-dashboard-activity-body"><span class="superadmin-dashboard-text-primary">The Library Lounge</span> <span class="superadmin-dashboard-text-muted">created venue · Boston, MA</span></div>
+            <span class="superadmin-dashboard-text-muted">1 week ago</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">⚡ Infrastructure</div>
+        <div class="superadmin-dashboard-infra-list">
+          <div>
+            <div class="superadmin-dashboard-infra-row-header"><span class="superadmin-dashboard-text-primary">API Latency (p95)</span><span class="superadmin-dashboard-infra-value-elite">84ms</span></div>
+            <div class="superadmin-dashboard-infra-bar-track"><div class="superadmin-dashboard-infra-bar-fill-30"></div></div>
+            <div class="superadmin-dashboard-infra-meta">Target: under 200ms</div>
+          </div>
+          <div>
+            <div class="superadmin-dashboard-infra-row-header"><span class="superadmin-dashboard-text-primary">Database</span><span class="superadmin-dashboard-infra-value-elite">62% used</span></div>
+            <div class="superadmin-dashboard-infra-bar-track"><div class="superadmin-dashboard-infra-bar-fill-62"></div></div>
+            <div class="superadmin-dashboard-infra-meta">PostgreSQL 16 · 124 GB / 200 GB</div>
+          </div>
+          <div>
+            <div class="superadmin-dashboard-infra-row-header"><span class="superadmin-dashboard-text-primary">Storage (MinIO)</span><span class="superadmin-dashboard-infra-value-gold">47%</span></div>
+            <div class="superadmin-dashboard-infra-bar-track"><div class="superadmin-dashboard-infra-bar-fill-47-gold"></div></div>
+            <div class="superadmin-dashboard-infra-meta">470 GB / 1 TB</div>
+          </div>
+          <div>
+            <div class="superadmin-dashboard-infra-row-header"><span class="superadmin-dashboard-text-primary">Groq Gateway (AI)</span><span class="superadmin-dashboard-infra-value-elite">Healthy</span></div>
+            <div class="superadmin-dashboard-infra-bar-track"><div class="superadmin-dashboard-infra-bar-fill-22"></div></div>
+            <div class="superadmin-dashboard-infra-meta">1,840 inferences today · 22% GPU</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- shared behaviors loaded via assets/javascript/lounge.js -->
+</body>
+</html>
