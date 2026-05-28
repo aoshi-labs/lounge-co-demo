@@ -1,14 +1,14 @@
-/**
- * Sterlon → Groq dev gateway (OpenAI-compatible chat completions).
- * POST /api/sterlon/chat — same JSON body the visionboard sends today.
+﻿/**
+ * Sterlon â†’ Groq dev gateway (OpenAI-compatible chat completions).
+ * POST /api/sterlon/chat â€” same JSON body the visionboard sends today.
  *
  * Env vars (all optional except GROQ_API_KEY):
- *   GROQ_API_KEY          — required (unless GROQ_MOCK=true)
- *   PORT                  — default 8787
- *   GROQ_MODEL            — default openai/gpt-oss-120b
- *   GROQ_MAX_RETRIES      — retry attempts on 429/502/503 (default 3, max 5)
- *   GROQ_REQUEST_INTERVAL_MS — minimum ms between outgoing Groq calls (default 0)
- *   GROQ_MOCK             — if "true", skip Groq entirely; return synthetic response
+ *   GROQ_API_KEY          â€” required (unless GROQ_MOCK=true)
+ *   PORT                  â€” default 8787
+ *   GROQ_MODEL            â€” default llama-3.3-70b-versatile
+ *   GROQ_MAX_RETRIES      â€” retry attempts on 429/502/503 (default 3, max 5)
+ *   GROQ_REQUEST_INTERVAL_MS â€” minimum ms between outgoing Groq calls (default 0)
+ *   GROQ_MOCK             â€” if "true", skip Groq entirely; return synthetic response
  *
  * Optional .env in this directory (simple KEY=value lines), e.g.:
  *   GROQ_MAX_RETRIES=3
@@ -53,13 +53,13 @@ const PORT = parseInt(process.env.PORT || '8787', 10) || 8787;
 const HOST = process.env.HOST || '127.0.0.1';
 const STATIC_ROOT = path.resolve(process.env.STATIC_ROOT || path.join(__dirname, '..', '..'));
 const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
-const DEFAULT_GROQ_MODEL = process.env.GROQ_MODEL || 'openai/gpt-oss-120b';
+const DEFAULT_GROQ_MODEL = process.env.GROQ_MODEL || 'llama-3.3-70b-versatile';
 const GROQ_MAX_RETRIES = Math.min(5, Math.max(0, parseInt(process.env.GROQ_MAX_RETRIES || '3', 10) || 3));
 const GROQ_REQUEST_INTERVAL_MS = Math.max(0, parseInt(process.env.GROQ_REQUEST_INTERVAL_MS || '0', 10) || 0);
 const GROQ_MOCK = process.env.GROQ_MOCK === 'true';
 const LLM_BACKEND = GROQ_MOCK ? 'mock' : 'groq';
 
-// Timestamp of the last outgoing Groq call — used for GROQ_REQUEST_INTERVAL_MS throttle.
+// Timestamp of the last outgoing Groq call â€” used for GROQ_REQUEST_INTERVAL_MS throttle.
 let lastGroqCallAt = 0;
 
 function sleep(ms) {
@@ -118,7 +118,7 @@ async function callGroqWithRetry(groqBody, apiKey) {
     attempt++;
     console.warn(
       'Groq ' + groqRes.status + ' on attempt ' + attempt + '/' + (GROQ_MAX_RETRIES + 1) +
-      ' — retrying in ' + waitMs + ' ms'
+      ' â€” retrying in ' + waitMs + ' ms'
     );
     await sleep(waitMs);
     // Drain the response body to avoid connection leaks before retrying.
@@ -286,7 +286,7 @@ const server = http.createServer(async (req, res) => {
   if (GROQ_MOCK) {
     if (stream) {
       // For streaming, emit a single data chunk then done.
-      const mockText = '[MOCK] Sterlon gateway mock mode — model: ' + groqBody.model;
+      const mockText = '[MOCK] Sterlon gateway mock mode â€” model: ' + groqBody.model;
       const chunk = JSON.stringify({
         id: 'mock-' + Date.now(),
         object: 'chat.completion.chunk',
@@ -362,5 +362,6 @@ server.listen(PORT, HOST, () => {
   console.log('  Default model:', DEFAULT_GROQ_MODEL);
   console.log('  Max retries on 429/5xx:', GROQ_MAX_RETRIES);
   if (GROQ_REQUEST_INTERVAL_MS > 0) console.log('  Request interval throttle:', GROQ_REQUEST_INTERVAL_MS + ' ms');
-  if (GROQ_MOCK) console.log('  *** MOCK MODE — Groq will not be called ***');
+  if (GROQ_MOCK) console.log('  *** MOCK MODE â€” Groq will not be called ***');
 });
+

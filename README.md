@@ -1,20 +1,15 @@
 # lounge-co-demo (deploy only)
 
-Generated from `lounge-co-demo/dist/`. **CTO steps:** `CTO_RUNBOOK.md` at the monorepo root.
+Generated from `lounge-co-demo/dist/`.
 
-## Quick start (after git pull)
+## Runtime
 
-```bash
-export GROQ_API_KEY=gsk_xxxx
-export GROQ_MODEL=openai/gpt-oss-120b
-docker compose down
-docker compose up --build
-```
+Docker web service on port `8080`.
 
-Open http://127.0.0.1:8080/ (homepage) and http://127.0.0.1:8080/health
+- `/` opens the Lounge & Co. animation-lab homepage.
+- `/sterlon.html?fresh=1` opens the Sterlon demo.
+- `/api/sterlon/chat` proxies Sterlon chat to Groq.
+- `/health` reports gateway status.
 
-## Push to DigitalOcean
-
-Connect this repo to App Platform — Docker, port 8080, health /health, secrets GROQ_API_KEY + GROQ_MODEL.
-
-Regenerate from monorepo: `node lounge-co-demo/scripts/package-for-digitalocean.mjs`
+Required DigitalOcean secret: `GROQ_API_KEY`.
+Recommended model: `llama-3.3-70b-versatile`.

@@ -1,6 +1,6 @@
-# Upload this folder to DigitalOcean
+﻿# Upload this folder to DigitalOcean
 
-**Upload the entire `lounge-co-demo/dist/` directory** — not individual pages from your machine. Nothing in this bundle should reference `C:\`, `file://`, or `127.0.0.1` for production assets or navigation.
+**Upload the entire `lounge-co-demo/dist/` directory** â€” not individual pages from your machine. Nothing in this bundle should reference `C:\`, `file://`, or `127.0.0.1` for production assets or navigation.
 
 Deploy as a **Docker Web Service** (see `DEPLOYMENT.md`). A static-site-only upload will break Sterlon chat (`/api/sterlon/chat`).
 
@@ -25,7 +25,7 @@ Deploy as a **Docker Web Service** (see `DEPLOYMENT.md`). A static-site-only upl
 | Legacy marketing scroll site | `https://YOUR-APP.ondigitalocean.app/marketing.html` |
 | Gateway health | `https://YOUR-APP.ondigitalocean.app/health` |
 
-## Animation lab → Demo button
+## Animation lab â†’ Demo button
 
 The **Demo** CTA links to Sterlon on the same host:
 
@@ -46,7 +46,7 @@ Do **not** set `GROQ_MOCK=true` for live AI.
 Optional:
 
 ```txt
-GROQ_MODEL=openai/gpt-oss-120b
+GROQ_MODEL=llama-3.3-70b-versatile
 GROQ_MAX_RETRIES=3
 GROQ_REQUEST_INTERVAL_MS=1200
 PORT=8080
@@ -59,8 +59,8 @@ STATIC_ROOT=/app
 - [ ] Docker build context = this folder (`lounge-co-demo/dist`)
 - [ ] `GROQ_API_KEY` set in DO (secret), `GROQ_MOCK` unset
 - [ ] `/health` returns `"mock": false`, `"groqKeyConfigured": true`
-- [ ] Open `/animation-lab/` — no broken images in Private Rooms section
-- [ ] Click **Demo** — lands on Sterlon with live gateway (not `[MOCK]` text)
+- [ ] Open `/animation-lab/` â€” no broken images in Private Rooms section
+- [ ] Click **Demo** â€” lands on Sterlon with live gateway (not `[MOCK]` text)
 
 ## Local smoke test before upload
 
@@ -76,3 +76,4 @@ Then:
 - http://127.0.0.1:8080/animation-lab/
 - http://127.0.0.1:8080/sterlon.html?fresh=1
 - http://127.0.0.1:8080/health
+

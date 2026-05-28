@@ -1,4 +1,4 @@
-services:
+﻿services:
   visionboard:
     build:
       context: .
@@ -10,7 +10,8 @@ services:
       HOST: 0.0.0.0
       STATIC_ROOT: /app
       GROQ_API_KEY: ${GROQ_API_KEY:?Set GROQ_API_KEY in your shell or deployment secrets}
-      GROQ_MODEL: ${GROQ_MODEL:-openai/gpt-oss-120b}
+      GROQ_MODEL: ${GROQ_MODEL:-llama-3.3-70b-versatile}
       GROQ_MAX_RETRIES: ${GROQ_MAX_RETRIES:-3}
       GROQ_REQUEST_INTERVAL_MS: ${GROQ_REQUEST_INTERVAL_MS:-1200}
     restart: unless-stopped
+
