@@ -71,6 +71,22 @@
     return map[style] || map.deep || '';
   }
 
+  function proseVariationPrompt() {
+    const lanes = [
+      'Open like a sharp lounge host who has already read the room. Vary sentence length and avoid the same answer skeleton as the last turn.',
+      'Lead with the guest moment first, then move into the product. Keep the language warm, specific, and less catalog-like.',
+      'Write with a little rhythm: one confident recommendation, one sensory beat, one reason it fits. Avoid robotic labels.',
+      'Sound human and conversational. Use precise product facts, but let the phrasing breathe like a premium host speaking tableside.'
+    ];
+    const lane = lanes[Math.floor(Math.random() * lanes.length)];
+    return [
+      'Voice variation:',
+      lane,
+      'Do not loosen product eligibility, menu grounding, budget, origin, smoke-time, or avoidance rules.',
+      'Vary prose only: opener, rhythm, transition, and closing question.'
+    ].join('\n');
+  }
+
   const gatewayContext = () => ({
     currentResponseStyle,
     sessionRuntime
@@ -1140,6 +1156,7 @@
           content: chpCall('getSystemPrompt') + chpCall('getProductTeachingPromptExtra', text) +
             chpCall('getProseTurnModeInstruction', runtimeMode) +
             '\n\n' + responseStylePrompt(currentResponseStyle) +
+            '\n\n' + proseVariationPrompt() +
             '\n\n' + ((CHP && CHP.CONCIERGE_VOICE_RULES) || '') +
             '\n\n' + ((CHP && CHP.CONCIERGE_LIVE_PROSE_RULES) || '')
         },
@@ -1148,7 +1165,7 @@
         stream: false,
         responseMode: 'prose',
         maxTokens: currentResponseStyle === 'luxury' ? 220 : 160,
-        temperature: 0.72,
+        temperature: 0.84,
         signal
       }, gatewayContext());
 
@@ -1332,6 +1349,8 @@
             '\n\n' +
             responseStylePrompt(currentResponseStyle) +
             '\n\n' +
+            proseVariationPrompt() +
+            '\n\n' +
             ((CHP && CHP.CONCIERGE_VOICE_RULES) || '') +
             '\n\n' +
             ((CHP && CHP.RECOMMENDATION_LIVE_PROSE_RULES) || '') +
@@ -1342,7 +1361,7 @@
         stream: false,
         responseMode: 'recommendation',
         maxTokens: currentResponseStyle === 'quick' ? 380 : currentResponseStyle === 'luxury' ? 620 : 500,
-        temperature: currentResponseStyle === 'luxury' ? 0.8 : 0.7,
+        temperature: currentResponseStyle === 'luxury' ? 0.92 : 0.86,
         signal
       }, gatewayContext());
 
