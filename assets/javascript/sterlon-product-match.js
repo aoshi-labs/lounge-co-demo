@@ -157,6 +157,26 @@
     return null;
   }
 
+  function resolveNamedCigarId(text) {
+    var IM = g.RecommendationIntentMatch;
+    if (IM && typeof IM.resolveNamedCigarId === 'function') {
+      return IM.resolveNamedCigarId(text);
+    }
+    return null;
+  }
+
+  function resolveNamedCigar(text) {
+    var id = resolveNamedCigarId(text);
+    var LP = g.LoungeProducts;
+    var PIDs = g.RecommendationProductIds;
+    if (id && PIDs) return PIDs.displayNameForId('cigar', id) || null;
+    if (id && LP && typeof LP.getCigarById === 'function') {
+      var p = LP.getCigarById(id);
+      return p && p.name ? p.name : null;
+    }
+    return null;
+  }
+
   function inferCategoryBias(text) {
     var t = (text || '').toLowerCase();
     var pairingIntent = /\b(pair|pairs|pairing|goes with|works with|what to pair)\b/.test(t);
@@ -191,6 +211,8 @@
     matchAliasInText: matchAliasInText,
     matchOffMenuProductInText: matchOffMenuProductInText,
     inferCategoryBias: inferCategoryBias,
+    resolveNamedCigar: resolveNamedCigar,
+    resolveNamedCigarId: resolveNamedCigarId,
     resolveNamedSpirit: resolveNamedSpirit,
     resolveNamedSpiritId: resolveNamedSpiritId
   };

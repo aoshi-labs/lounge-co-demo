@@ -122,8 +122,24 @@
         explorationOpts: explorationOpts(o)
       });
 
-      var spiritSlotIds = pid.pickSlotIds('cigar', anchorCigarId, spiritIds, explorationOpts(o));
-      var spiritForSlot = [spiritSlotIds.best, spiritSlotIds.safe, spiritSlotIds.wildcard];
+      var lockedSpiritId = null;
+      if (anchorSpiritId) {
+        for (var lsi = 0; lsi < spiritIds.length; lsi += 1) {
+          if (String(spiritIds[lsi]) === String(anchorSpiritId)) {
+            lockedSpiritId = spiritIds[lsi];
+            break;
+          }
+        }
+      }
+      var spiritPoolForOpenSlots = lockedSpiritId
+        ? spiritIds.filter(function (id) { return String(id) !== String(lockedSpiritId); })
+        : spiritIds;
+      var spiritSlotIds = pid.pickSlotIds('cigar', anchorCigarId, spiritPoolForOpenSlots, explorationOpts(o));
+      var spiritForSlot = [
+        lockedSpiritId || spiritSlotIds.best,
+        spiritSlotIds.safe || spiritSlotIds.best,
+        spiritSlotIds.wildcard || spiritSlotIds.safe
+      ];
 
       return SLOT_NAMES.map(function (slot, idx) {
         var spiritId = spiritForSlot[idx] || null;

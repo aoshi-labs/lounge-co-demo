@@ -815,7 +815,7 @@
     }
     const SPM = typeof window !== 'undefined' ? window.SterlonProductMatch : null;
     if (SPM && typeof SPM.resolveNamedSpiritId === 'function' && SPM.resolveNamedSpiritId(text)) {
-      return /\b(want|need|looking for|recommend|suggest|pair|maduro|connecticut|wrapper)\b/.test(t);
+      return /\b(want|need|looking for|recommend|suggest|pair|go well|goes well|work with|works with|maduro|connecticut|wrapper)\b/.test(t);
     }
     return false;
   }
@@ -844,6 +844,10 @@
     if (isSpiritOnlyRequest(text)) return 'spirit';
     if (hasSpiritAnchoredCigarAsk(text)) return 'pairing';
     if (isCigarOnlyRequest(text)) return 'cigar';
+    if (/\b(go well|goes well|work with|works with|pair(?:ing|)?)\b/.test(t) && /\bcigar|padron|cohiba|liga|opus|ashton|montecristo\b/.test(t)) {
+      const SPM = typeof window !== 'undefined' ? window.SterlonProductMatch : null;
+      if (SPM && typeof SPM.resolveNamedSpiritId === 'function' && SPM.resolveNamedSpiritId(text)) return 'pairing';
+    }
     if (/\bpair(?:ing|)\b/.test(t) && /\bcigar\b/.test(t)) return 'pairing';
     if (/\bcigar|padron|cohiba|liga|opus|ashton|montecristo\b/.test(t)) return 'cigar';
     const SFM = _SFM();

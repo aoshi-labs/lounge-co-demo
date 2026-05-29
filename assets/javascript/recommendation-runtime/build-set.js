@@ -423,7 +423,8 @@
           promptText: promptText,
           journeyLevel: journeyLevel,
           session: session,
-          lockedBestCigarId: lockedBestCigarId
+          lockedBestCigarId: lockedBestCigarId,
+          lockedBestSpiritId: anchorCigarId && usedNamedSpirit ? anchorSpiritId : null
         })
       : { cards: cards, reranked: false, skipped: false };
     cards = rerankResult.cards;
@@ -496,6 +497,7 @@
       deckKey: deckKey, lockedBestCigarId: lockedBestCigarId, rankedPoolSize: rankedPoolSize,
       rankedCigars: rankedCigars, rankedSpirits: rankedSpirits,
       generatePipelineOrder: generatePipelineOrder, anchorCigarId: anchorCigarId,
+      anchorSpiritId: anchorSpiritId,
       hardEligibility: hardEligibility,
       SCORING_VERSION: SCORING_VERSION, promptText: promptText
     });

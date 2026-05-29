@@ -151,10 +151,31 @@
     return null;
   }
 
+  function resolveNamedCigarId(text) {
+    if (!text) return null;
+    var hit = matchMenuProductIntent(text);
+    if (hit && hit.category === 'cigar' && hit.productId) return hit.productId;
+
+    var SPM = global.SterlonProductMatch;
+    var pid = PIDs();
+    if (!SPM || !pid) return null;
+    var tl = text.toLowerCase();
+    var aliases = SPM.PRODUCT_NAME_ALIASES || [];
+    for (var i = 0; i < aliases.length; i++) {
+      var a = aliases[i];
+      if (a.category !== 'cigar') continue;
+      if (!a.pattern.test(tl)) continue;
+      var id = pid.resolveCigarId(a.name);
+      if (id) return id;
+    }
+    return null;
+  }
+
   var api = {
     matchMenuProductIntent: matchMenuProductIntent,
     promptExplicitlyNamesMenuSpiritIntent: promptExplicitlyNamesMenuSpiritIntent,
-    resolveNamedSpiritId: resolveNamedSpiritId
+    resolveNamedSpiritId: resolveNamedSpiritId,
+    resolveNamedCigarId: resolveNamedCigarId
   };
 
   global.RecommendationIntentMatch = api;
