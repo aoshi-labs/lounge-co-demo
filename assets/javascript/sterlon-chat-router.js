@@ -208,6 +208,10 @@
   }
 
   function matchOffMenuCigarInText(text) {
+    const SPM = _SPM();
+    if (SPM && typeof SPM.matchOffMenuCigarInText === 'function') {
+      return SPM.matchOffMenuCigarInText(text);
+    }
     const t = (text || '').toLowerCase();
     if (/\bla gloria\b|\bgloria cubana\b/.test(t)) {
       return { name: /\bestel[i?]\b/.test(t) ? 'La Gloria Cubana Estel\u00ed' : 'La Gloria Cubana', category: 'cigar' };

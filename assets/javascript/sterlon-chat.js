@@ -1262,6 +1262,16 @@
       return;
     }
     const runtimeTurn = buildRecommendationTurnForPrompt(text);
+    const unavailableProduct = runtimeTurn &&
+      runtimeTurn.provenance &&
+      runtimeTurn.provenance.degradedCause === 'product-not-in-demo'
+        ? runtimeTurn.provenance.unavailableProduct
+        : null;
+    if (unavailableProduct) {
+      renderProseOnlyTurn(cpCall('buildUnavailableDemoProductProse', unavailableProduct), 'clarification');
+      finalizeConversationalTurn(text);
+      return;
+    }
     await executeGatewayRecommendationTurn(text, runtimeMode, runtimeTurn);
   }
 

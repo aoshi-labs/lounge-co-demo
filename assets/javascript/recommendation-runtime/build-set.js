@@ -161,6 +161,7 @@
     var brandHint = o.brandHint || null;
 
     var SR = global.SterlonRecommendations;
+    var SPM = global.SterlonProductMatch;
     var SFM = global.SterlonFlavorMatch;
     var WJ = global.WhiskeyJourney;
     var TH = global.RecommendationTurnHelpers;
@@ -215,6 +216,28 @@
     }
 
     var usedNoviceCap = false;
+
+    var unavailableProduct =
+      SPM && typeof SPM.detectUnavailableDemoProduct === 'function'
+        ? SPM.detectUnavailableDemoProduct(promptText)
+        : null;
+    if (unavailableProduct) {
+      return TH.createRecommendationTurn({
+        cards: [],
+        journeyLevel: journeyLevel,
+        degraded: true,
+        degradedCause: 'product-not-in-demo',
+        provenance: {
+          source: 'degraded',
+          reason: 'product-not-in-demo',
+          degradedCause: 'product-not-in-demo',
+          module: 'build-set',
+          scoringVersion: SCORING_VERSION,
+          runtimeVersion: (global.RecommendationRuntime && global.RecommendationRuntime.version) || 1,
+          unavailableProduct: unavailableProduct
+        }
+      });
+    }
 
     var explicitFn = o.promptExplicitlyNamesMenuSpirit;
     var explicitSpirit =

@@ -84,6 +84,36 @@
     return null;
   }
 
+  function matchOffMenuCigarInText(text) {
+    var t = (text || '').toLowerCase();
+    if (/\bla gloria\b|\bgloria cubana\b/.test(t)) {
+      return { name: /\bestel[ií]\b/.test(t) ? 'La Gloria Cubana Esteli' : 'La Gloria Cubana', category: 'cigar' };
+    }
+    if (/\bromeo y julieta\b|\bryj\b/.test(t)) return { name: 'Romeo y Julieta', category: 'cigar' };
+    if (/\bpartagas\b/.test(t)) return { name: 'Partagas', category: 'cigar' };
+    return null;
+  }
+
+  function productExists(category, name) {
+    var LP = g.LoungeProducts;
+    if (!LP || !name) return false;
+    if (category === 'spirit' && typeof LP.findSpiritByName === 'function') return !!LP.findSpiritByName(name);
+    if (category === 'cigar' && typeof LP.findCigarByName === 'function') return !!LP.findCigarByName(name);
+    return false;
+  }
+
+  function detectUnavailableDemoProduct(text) {
+    var spirit = matchOffMenuProductInText(text);
+    if (spirit && !productExists('spirit', spirit.name)) return spirit;
+    var cigar = matchOffMenuCigarInText(text);
+    if (cigar && !productExists('cigar', cigar.name)) return cigar;
+    var alias = resolveAlias(text);
+    if (alias && !productExists(alias.category, alias.name)) {
+      return { name: alias.name, category: alias.category };
+    }
+    return null;
+  }
+
   function matchAliasInText(text) {
     return resolveAlias(text);
   }
@@ -210,6 +240,8 @@
     resolveAlias: resolveAlias,
     matchAliasInText: matchAliasInText,
     matchOffMenuProductInText: matchOffMenuProductInText,
+    matchOffMenuCigarInText: matchOffMenuCigarInText,
+    detectUnavailableDemoProduct: detectUnavailableDemoProduct,
     inferCategoryBias: inferCategoryBias,
     resolveNamedCigar: resolveNamedCigar,
     resolveNamedCigarId: resolveNamedCigarId,
