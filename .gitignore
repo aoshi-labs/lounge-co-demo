@@ -1,6 +1,8 @@
 # Local-only / secret-bearing files — never commit
 assets/javascript/demo-config.local.js
+assets/javascript/sterlon-gateway.local.js
 **/demo-config.local.js
+**/sterlon-gateway.local.js
 .env
 **/.env
 node_modules/

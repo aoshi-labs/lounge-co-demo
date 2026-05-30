@@ -538,6 +538,10 @@ const server = http.createServer(async (req, res) => {
 
   if (!groqRes.ok) {
     const errText = await groqRes.text();
+    console.error(
+      ACTIVE_PROVIDER + ' upstream error ' + groqRes.status + ' model=' + groqBody.model +
+      ' body=' + errText.slice(0, 400)
+    );
     res.writeHead(groqRes.status, { ...base, 'Content-Type': 'application/json; charset=utf-8' });
     res.end(errText.slice(0, 8000));
     return;
