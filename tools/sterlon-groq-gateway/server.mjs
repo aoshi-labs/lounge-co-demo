@@ -106,7 +106,9 @@ function passwordPageHtml(showError) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lounge &amp; Co.</title>
+  <meta name="description" content="Password-protected product demo for Lounge &amp; Co. This page is not a member login.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Lounge &amp; Co. — Private Product Demo</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -114,34 +116,71 @@ function passwordPageHtml(showError) {
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(rgba(13,13,13,0.72), rgba(13,13,13,0.86)), #0d0d0d url('/gate-bg.png') center center / cover no-repeat fixed;
+      padding: 24px 16px;
+      background: linear-gradient(rgba(13,13,13,0.78), rgba(13,13,13,0.88)), #0d0d0d url('/gate-bg.png') center center / cover no-repeat fixed;
       font-family: 'Inter', system-ui, sans-serif;
       color: #e8e0d0;
     }
     .card {
       width: 100%;
-      max-width: 360px;
-      padding: 52px 40px 44px;
-      background: #141414;
+      max-width: 440px;
+      padding: 36px 32px 28px;
+      background: rgba(20,20,20,0.96);
       border: 1px solid rgba(212,175,55,0.18);
-      border-radius: 4px;
-      text-align: center;
+      border-radius: 6px;
+      text-align: left;
+    }
+    .badge {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 4px 10px;
+      border: 1px solid rgba(212,175,55,0.35);
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #d4af37;
     }
     .wordmark {
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: 21px;
-      letter-spacing: 0.09em;
+      font-size: 22px;
+      letter-spacing: 0.06em;
       color: #d4af37;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
-    .sub {
+    .lead {
+      font-size: 14px;
+      line-height: 1.55;
+      color: rgba(232,224,208,0.82);
+      margin-bottom: 14px;
+    }
+    .notice {
+      margin-bottom: 22px;
+      padding: 12px 14px;
+      border-left: 3px solid rgba(212,175,55,0.55);
+      background: rgba(212,175,55,0.06);
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: rgba(232,224,208,0.72);
+    }
+    .host {
+      display: block;
+      margin-top: 8px;
+      font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
       font-size: 11px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(232,224,208,0.38);
-      margin-bottom: 40px;
+      color: rgba(232,224,208,0.55);
+      word-break: break-all;
     }
-    input[type="password"] {
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: rgba(232,224,208,0.78);
+    }
+    input[type="text"] {
       width: 100%;
       padding: 11px 14px;
       background: #0d0d0d;
@@ -154,8 +193,8 @@ function passwordPageHtml(showError) {
       margin-bottom: 12px;
       transition: border-color 0.15s;
     }
-    input[type="password"]:focus { border-color: rgba(212,175,55,0.55); }
-    input[type="password"]::placeholder { color: rgba(232,224,208,0.3); }
+    input[type="text"]:focus { border-color: rgba(212,175,55,0.55); }
+    input[type="text"]::placeholder { color: rgba(232,224,208,0.3); }
     button {
       width: 100%;
       padding: 11px;
@@ -165,25 +204,48 @@ function passwordPageHtml(showError) {
       color: #0d0d0d;
       font-size: 12px;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       cursor: pointer;
       transition: opacity 0.15s;
     }
     button:hover { opacity: 0.86; }
-    .error { margin-top: 14px; font-size: 12px; color: #c0392b; }
+    .error { margin-top: 12px; font-size: 12px; color: #c0392b; }
+    .footer {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(212,175,55,0.12);
+      font-size: 11px;
+      line-height: 1.45;
+      color: rgba(232,224,208,0.42);
+    }
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="wordmark">Lounge &amp; Co.</div>
-    <div class="sub">Private Demo</div>
-    <form method="POST" action="/api/auth">
-      <input type="password" name="password" placeholder="Access code" autofocus autocomplete="current-password">
-      <button type="submit">Enter</button>
-      ${showError ? '<p class="error">Incorrect access code.</p>' : ''}
+  <main class="card" role="main" aria-labelledby="demo-title">
+    <div class="badge">Private product demo</div>
+    <h1 class="wordmark" id="demo-title">Lounge &amp; Co.</h1>
+    <p class="lead">You are viewing a hosted preview of the Lounge &amp; Co. member experience. Enter the demo access code you received from the team.</p>
+    <p class="notice">
+      <strong>This is not a member login.</strong> Do not enter your Lounge account password, email password, or any personal credentials.
+      <span class="host" id="demo-host"></span>
+    </p>
+    <form method="POST" action="/api/auth" autocomplete="off">
+      <label for="demo_code">Demo access code</label>
+      <input type="text" id="demo_code" name="demo_code" placeholder="Code from your invite" autofocus autocomplete="off" autocapitalize="off" spellcheck="false" inputmode="text">
+      <button type="submit">Continue to demo</button>
+      ${showError ? '<p class="error" role="alert">That demo code did not match. Check your invite and try again.</p>' : ''}
     </form>
-  </div>
+    <p class="footer">Lounge &amp; Co. product preview · Hosted demo environment · Not indexed by search engines</p>
+  </main>
+  <script>
+    (function () {
+      var el = document.getElementById('demo-host');
+      if (el && window.location && window.location.host) {
+        el.textContent = 'Site: ' + window.location.protocol + '//' + window.location.host;
+      }
+    })();
+  </script>
 </body>
 </html>`;
 }
@@ -420,7 +482,12 @@ const server = http.createServer(async (req, res) => {
   try { reqPathname = new URL(req.url, 'http://localhost').pathname; } catch { /* ignore */ }
 
   if (req.method === 'GET' && reqPathname === '/password') {
-    res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' });
+    res.writeHead(200, {
+      'Content-Type': 'text/html; charset=utf-8',
+      'Cache-Control': 'no-store',
+      'X-Robots-Tag': 'noindex, nofollow',
+      'Referrer-Policy': 'no-referrer'
+    });
     res.end(passwordPageHtml(false));
     return;
   }
@@ -429,7 +496,7 @@ const server = http.createServer(async (req, res) => {
   if (req.method === 'POST' && reqPathname === '/api/auth') {
     const body = await readRequestBody(req);
     const params = new URLSearchParams(body);
-    const submitted = params.get('password') || '';
+    const submitted = params.get('demo_code') || params.get('password') || '';
     if (AUTH_ENABLED && submitted === DEMO_PASSWORD) {
       const token = makeAuthToken(DEMO_PASSWORD);
       res.writeHead(302, {
@@ -438,7 +505,12 @@ const server = http.createServer(async (req, res) => {
       });
       res.end();
     } else {
-      res.writeHead(401, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' });
+      res.writeHead(401, {
+        'Content-Type': 'text/html; charset=utf-8',
+        'Cache-Control': 'no-store',
+        'X-Robots-Tag': 'noindex, nofollow',
+        'Referrer-Policy': 'no-referrer'
+      });
       res.end(passwordPageHtml(true));
     }
     return;
