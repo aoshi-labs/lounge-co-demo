@@ -1,0 +1,6 @@
+# Local-only / secret-bearing files — never commit
+assets/javascript/demo-config.local.js
+**/demo-config.local.js
+.env
+**/.env
+node_modules/

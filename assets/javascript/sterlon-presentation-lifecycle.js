@@ -76,6 +76,9 @@
       return [{ role: 'lead', text: PP.GENERIC_LEAD_FALLBACK }];
     }
     const blocks = PP.splitConciergeProseBlocks ? PP.splitConciergeProseBlocks(cleaned) : null;
+    if (blocks && blocks.length && PP.expandProseBlocksToLines) {
+      return PP.expandProseBlocksToLines(blocks);
+    }
     if (blocks && blocks.length) {
       return blocks.map(function (part, idx) {
         return { role: idx === 0 ? 'lead' : 'mood', text: part.trim() };
@@ -125,6 +128,7 @@
     if (!bubble || !lineSpec) return;
     const p = document.createElement('p');
     p.className = 'sterlon-pace-line' + (lineSpec.role === 'lead' ? ' is-lead' : ' is-mood');
+    if (lineSpec.bullet) p.classList.add('sterlon-prose-bullet');
     p.classList.add('sterlon-stream-line');
     bubble.appendChild(p);
     const h = _host();
@@ -385,12 +389,12 @@
       global.SterlonPresentationRender.paintSettledProseBubble(bubble, validated, opts.highlightCard || null);
       if (h.scrollChat) h.scrollChat({ smooth: false });
     }
+    _hist().push({ role: 'assistant', content: validated });
+    _persist();
     if (!GL.isStreamActive || !GL.isStreamActive(gen)) return;
     if (opts.followupChips && opts.followupChips.length && wrap && h.renderGrokFollowupActions) {
       h.renderGrokFollowupActions(wrap, opts.followupChips);
     }
-    _hist().push({ role: 'assistant', content: validated });
-    _persist();
     if (h.scrollChat) h.scrollChat({ smooth: true });
   }
 

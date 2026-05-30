@@ -34,7 +34,18 @@
   }
 
   /**
-   * @param {{ userText: string, gen: *, signal: AbortSignal, getGatewayContext: function, getHistory: function }} opts
+   * Stream a gateway turn into a live bubble, then finalize with formatted prose.
+   * Defaults reproduce the Grok sommelier behavior; callers can override the system
+   * prompt, sampling, presentation profile, response parser, and a prose transform.
+   *
+   * @param {{
+   *   userText: string, gen: *, signal: AbortSignal,
+   *   getGatewayContext?: function, getHistory?: function,
+   *   systemPrompt?: string, responseMode?: string,
+   *   maxTokens?: number, temperature?: number, profileKey?: string,
+   *   parse?: function(string, string): {prose: string, chips: Array},
+   *   transformProse?: function(string): string
+   * }} opts
    */
   async function executeTurn(opts) {
     var userText = opts.userText;
@@ -52,6 +63,8 @@
     var wrap = null;
     var bubble = null;
     var rafPending = false;
+    var rafId = 0;
+    var streamSettled = false;
     var lastFull = '';
 
     function ensureBubble() {
@@ -67,30 +80,44 @@
       }
     }
 
+    // Stop the raw token-stream painter from repainting once the formatted,
+    // finalized bubble has been written — otherwise a trailing animation frame
+    // can overwrite the formatted prose with raw markdown (race exposed by fast models).
+    function settleStream() {
+      streamSettled = true;
+      if (rafId && global.cancelAnimationFrame) global.cancelAnimationFrame(rafId);
+      rafId = 0;
+      rafPending = false;
+    }
+
     function onDelta(fullText) {
-      if (!fullText || !useStream) return;
+      if (!fullText || !useStream || streamSettled) return;
       ensureBubble();
       lastFull = fullText;
       if (rafPending) return;
       rafPending = true;
-      global.requestAnimationFrame(function () {
+      rafId = global.requestAnimationFrame(function () {
         rafPending = false;
+        if (streamSettled) return;
         paintTokenStreamBubble(bubble, lastFull, PP, h.scrollChat);
       });
     }
 
     try {
-      var systemPrompt = (GSM && GSM.buildGrokSystemPrompt)
-        ? GSM.buildGrokSystemPrompt(userText)
-        : ((GSM && GSM.GROK_SOMMELIER_SYSTEM_PROMPT) || '');
+      var profileKey = opts.profileKey || 'recommendation_gateway';
+      var systemPrompt = opts.systemPrompt != null
+        ? opts.systemPrompt
+        : ((GSM && GSM.buildGrokSystemPrompt)
+          ? GSM.buildGrokSystemPrompt(userText)
+          : ((GSM && GSM.GROK_SOMMELIER_SYSTEM_PROMPT) || ''));
       var response = await SG.callSterlonGateway([
         { role: 'system', content: systemPrompt },
         ...(opts.getHistory ? opts.getHistory() : [])
       ], {
         stream: useStream,
-        responseMode: 'prose',
-        maxTokens: 720,
-        temperature: 0.94,
+        responseMode: opts.responseMode || 'prose',
+        maxTokens: opts.maxTokens || 720,
+        temperature: typeof opts.temperature === 'number' ? opts.temperature : 0.94,
         signal: signal
       }, opts.getGatewayContext ? opts.getGatewayContext() : {});
 
@@ -98,25 +125,32 @@
         ? await SG.readGatewayStreamText(response, PP.repairMojibake, { signal: signal, onDelta: onDelta })
         : await SG.readGatewayText(response, PP.repairMojibake);
 
+      settleStream();
       if (typingRow && typingRow.remove) typingRow.remove();
-      if (!GL.isStreamActive || !GL.isStreamActive(gen)) return;
 
-      var parsed = (GSM && GSM.parseGrokSommelierResponse)
-        ? GSM.parseGrokSommelierResponse(content || '', userText)
-        : { prose: content || '', chips: [] };
+      var parseFn = typeof opts.parse === 'function'
+        ? opts.parse
+        : ((GSM && GSM.parseGrokSommelierResponse)
+          ? function (c, u) { return GSM.parseGrokSommelierResponse(c, u); }
+          : function (c) { return { prose: c || '', chips: [] }; });
+      var parsed = parseFn(content || '', userText) || { prose: content || '', chips: [] };
       var prose = PP.humanizePresentationProse(parsed.prose || '');
+      if (typeof opts.transformProse === 'function') prose = opts.transformProse(prose);
       var beatOpts = {
         promptText: userText,
         followupChips: parsed.chips || []
       };
+      var streamStillActive = GL.isStreamActive && GL.isStreamActive(gen);
 
       if (useStream && bubble && SPL && SPL.finalizeStreamedProseBeat) {
-        await SPL.finalizeStreamedProseBeat(wrap, bubble, prose, 'recommendation_gateway', gen, beatOpts);
+        await SPL.finalizeStreamedProseBeat(wrap, bubble, prose, profileKey, gen, beatOpts);
         return;
       }
 
+      if (!streamStillActive) return;
+
       if (SPL && SPL.presentProseBeat) {
-        await SPL.presentProseBeat(prose, 'recommendation_gateway', gen, Object.assign({}, beatOpts, {
+        await SPL.presentProseBeat(prose, profileKey, gen, Object.assign({}, beatOpts, {
           proseDelivery: 'settled'
         }));
       }

@@ -48,8 +48,11 @@
   }
 
   function removeListicleScaffolding(text) {
+    // Strip numbered-list markers (the concierge voice enumerates in prose), but
+    // preserve genuine bullet markers (-, *, •) so intentional bullet lists can
+    // survive governance and render with the styled gold marker downstream.
     return repairMojibake(text)
-      .replace(/^\s*(?:[-*•]|\d+[.)])\s+/gm, '')
+      .replace(/^\s*\d+[.)]\s+/gm, '')
       .replace(/\b(?:option|choice|recommendation)\s+\d+\s*[:.-]\s*/gi, '')
       .replace(/\b(?:here are|here's)\s+(?:some|a few|three|3)\s+(?:options|recommendations|choices)[^.?!]*[.?!]?\s*/gi, '')
       .replace(/\b(?:first|second|third),\s+(?=(?:I|the|a|an)\b)/gi, '');
@@ -350,6 +353,47 @@
     return null;
   }
 
+  // ── Bullet-line detection (markdown-ish list rows in concierge prose) ──
+
+  var BULLET_PREFIX_RE = /^\s*(?:[-*]|\u2022|\u2023|\u25E6|\u00B7)\s+/;
+
+  function isBulletLine(text) {
+    return BULLET_PREFIX_RE.test(String(text || ''));
+  }
+
+  function stripBulletMarker(text) {
+    return String(text || '').replace(BULLET_PREFIX_RE, '').trim();
+  }
+
+  /**
+   * Flatten concierge prose blocks into renderable lines, splitting any block
+   * that contains bullet rows so each bullet becomes its own line. Returns
+   * [{ text, bullet, role }] where the first non-bullet paragraph is the lead.
+   */
+  function expandProseBlocksToLines(blocks) {
+    var out = [];
+    (blocks || []).forEach(function (block) {
+      var raw = String(block || '').trim();
+      if (!raw) return;
+      var sub = raw.split('\n').map(function (s) { return s.trim(); }).filter(Boolean);
+      if (sub.length > 1 && sub.some(isBulletLine)) {
+        sub.forEach(function (line) {
+          var bullet = isBulletLine(line);
+          out.push({ text: bullet ? stripBulletMarker(line) : line, bullet: bullet });
+        });
+        return;
+      }
+      var bulletOne = isBulletLine(raw);
+      out.push({ text: bulletOne ? stripBulletMarker(raw) : raw, bullet: bulletOne });
+    });
+    var leadAssigned = false;
+    out.forEach(function (line) {
+      if (!line.bullet && !leadAssigned) { line.role = 'lead'; leadAssigned = true; }
+      else line.role = 'mood';
+    });
+    return out;
+  }
+
   // ── Why-bullet humanisation ───────────────────────────────────────
 
   function humanizeWhyBullet(line) {
@@ -440,6 +484,9 @@
     isGenericLeadProse: isGenericLeadProse,
     humanizeWhyBullet: humanizeWhyBullet,
     splitConciergeProseBlocks: splitConciergeProseBlocks,
+    isBulletLine: isBulletLine,
+    stripBulletMarker: stripBulletMarker,
+    expandProseBlocksToLines: expandProseBlocksToLines,
     parseFlightSlotProse: parseFlightSlotProse,
     hasSommelierTemplateLabels: hasSommelierTemplateLabels,
     normalizeSommelierTemplate: normalizeSommelierTemplate

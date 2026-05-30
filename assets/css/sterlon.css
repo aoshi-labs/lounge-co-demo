@@ -5,6 +5,35 @@
   .ai-bubble.ai-bubble--plain .sterlon-pace-line.is-lead{color:var(--text-secondary);}
   .ai-bubble.ai-bubble--plain .sterlon-reco-emphasis { color: var(--gold); font-weight: 600; font-style: normal; }
   .sterlon-stream-bubble .sterlon-reco-emphasis { color: var(--gold); font-weight: 600; font-style: normal; }
+
+  /* Bullet rows inside Sterlon replies — gold marker, upright body voice. */
+  .ai-bubble .sterlon-pace-line.sterlon-prose-bullet,
+  .sterlon-stream-bubble .sterlon-pace-line.sterlon-prose-bullet {
+    position: relative;
+    margin: 0;
+    padding-left: 22px;
+    font-family: var(--font-body);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+  .sterlon-pace-line.sterlon-prose-bullet::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 0.62em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 0 3px rgba(var(--gold-rgb), 0.14);
+  }
+  /* Tight list rhythm between consecutive bullets; a touch more air before the first. */
+  .sterlon-pace-line.sterlon-prose-bullet + .sterlon-pace-line.sterlon-prose-bullet { margin-top: 6px; }
+  .sterlon-pace-line:not(.sterlon-prose-bullet) + .sterlon-pace-line.sterlon-prose-bullet { margin-top: 11px; }
+  .sterlon-pace-line.sterlon-prose-bullet + .sterlon-pace-line:not(.sterlon-prose-bullet) { margin-top: 11px; }
   .user-bubble{background:var(--burg);color:var(--cream);border-radius:14px 14px 4px 14px;padding:12px 16px;font-family:var(--font-ui);font-size:14px;line-height:1.6;max-width:75%;margin-left:auto;}
   .prompt-chip{background:var(--bg-elevated);border:1px solid var(--bg-border);border-radius:99px;padding:6px 14px;font-family:var(--font-ui);font-size:12px;color:var(--text-secondary);cursor:pointer;transition:all .15s;white-space:nowrap;}
   .prompt-chip:hover{border-color:var(--gold);color:var(--gold);}

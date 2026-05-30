@@ -30,7 +30,8 @@
       const p = document.createElement('p');
       p.className =
         'sterlon-pace-line is-settled sterlon-reco-slot-prose' +
-        (lineSpec.role === 'lead' ? ' is-lead' : ' is-mood');
+        (lineSpec.role === 'lead' ? ' is-lead' : ' is-mood') +
+        (lineSpec.bullet ? ' sterlon-prose-bullet' : '');
       const html = PP.applyInlineBold(PP.escapeHtml(PP.repairMojibake(lineSpec.text)));
       p.innerHTML = CR && CR.emphasizeProductNamesFromPlain
         ? CR.emphasizeProductNamesFromPlain(lineSpec.text, card, text)

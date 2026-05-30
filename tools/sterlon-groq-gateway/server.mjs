@@ -96,7 +96,8 @@ function isAuthenticated(req) {
 }
 
 function isPublicPath(pathname) {
-  return pathname === '/password' || pathname === '/api/auth' || pathname === '/health';
+  return pathname === '/password' || pathname === '/api/auth' || pathname === '/health' ||
+    pathname === '/gate-bg.png';
 }
 
 function passwordPageHtml(showError) {
@@ -113,7 +114,7 @@ function passwordPageHtml(showError) {
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #0d0d0d;
+      background: linear-gradient(rgba(13,13,13,0.72), rgba(13,13,13,0.86)), #0d0d0d url('/gate-bg.png') center center / cover no-repeat fixed;
       font-family: 'Inter', system-ui, sans-serif;
       color: #e8e0d0;
     }

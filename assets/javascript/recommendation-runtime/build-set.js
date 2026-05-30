@@ -161,7 +161,6 @@
     var brandHint = o.brandHint || null;
 
     var SR = global.SterlonRecommendations;
-    var SPM = global.SterlonProductMatch;
     var SFM = global.SterlonFlavorMatch;
     var WJ = global.WhiskeyJourney;
     var TH = global.RecommendationTurnHelpers;
@@ -216,28 +215,6 @@
     }
 
     var usedNoviceCap = false;
-
-    var unavailableProduct =
-      SPM && typeof SPM.detectUnavailableDemoProduct === 'function'
-        ? SPM.detectUnavailableDemoProduct(promptText)
-        : null;
-    if (unavailableProduct) {
-      return TH.createRecommendationTurn({
-        cards: [],
-        journeyLevel: journeyLevel,
-        degraded: true,
-        degradedCause: 'product-not-in-demo',
-        provenance: {
-          source: 'degraded',
-          reason: 'product-not-in-demo',
-          degradedCause: 'product-not-in-demo',
-          module: 'build-set',
-          scoringVersion: SCORING_VERSION,
-          runtimeVersion: (global.RecommendationRuntime && global.RecommendationRuntime.version) || 1,
-          unavailableProduct: unavailableProduct
-        }
-      });
-    }
 
     var explicitFn = o.promptExplicitlyNamesMenuSpirit;
     var explicitSpirit =
@@ -446,8 +423,7 @@
           promptText: promptText,
           journeyLevel: journeyLevel,
           session: session,
-          lockedBestCigarId: lockedBestCigarId,
-          lockedBestSpiritId: anchorCigarId && usedNamedSpirit ? anchorSpiritId : null
+          lockedBestCigarId: lockedBestCigarId
         })
       : { cards: cards, reranked: false, skipped: false };
     cards = rerankResult.cards;
@@ -520,7 +496,6 @@
       deckKey: deckKey, lockedBestCigarId: lockedBestCigarId, rankedPoolSize: rankedPoolSize,
       rankedCigars: rankedCigars, rankedSpirits: rankedSpirits,
       generatePipelineOrder: generatePipelineOrder, anchorCigarId: anchorCigarId,
-      anchorSpiritId: anchorSpiritId,
       hardEligibility: hardEligibility,
       SCORING_VERSION: SCORING_VERSION, promptText: promptText
     });

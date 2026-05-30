@@ -46,7 +46,6 @@
     for (var ri = 0; ri < cardList.length; ri += 1) {
       var rc = cardList[ri];
       if (!rc) continue;
-      if (ro.lockedBestSpiritId && String(rc.spiritId || '') !== String(ro.lockedBestSpiritId)) continue;
       var cigarName =
         rc.cigar || (pid && rc.cigarId ? pid.displayNameForId('cigar', rc.cigarId) : null);
       var spiritName =
@@ -101,21 +100,9 @@
     var catalogAnchorSignal = null;
 
     var SPM = global.SterlonProductMatch;
-    var namedCigarAnchorId =
-      !opts.anchorCigar &&
-      SPM &&
-      typeof SPM.resolveNamedCigarId === 'function'
-        ? SPM.resolveNamedCigarId(promptText)
-        : null;
-    var namedCigarAnchor =
-      namedCigarAnchorId && PIDsMod
-        ? PIDsMod.displayNameForId('cigar', namedCigarAnchorId)
-        : !opts.anchorCigar &&
-            SPM &&
-            typeof SPM.resolveNamedCigar === 'function'
-          ? SPM.resolveNamedCigar(promptText)
-          : null;
     var namedSpiritAnchorId =
+      !opts.anchorCigar &&
+      !(route && route.category === 'cigar') &&
       SPM &&
       typeof SPM.resolveNamedSpiritId === 'function'
         ? SPM.resolveNamedSpiritId(promptText)
@@ -123,35 +110,15 @@
     var namedSpiritAnchor =
       namedSpiritAnchorId && PIDsMod
         ? PIDsMod.displayNameForId('spirit', namedSpiritAnchorId)
-        : SPM &&
+        : !opts.anchorCigar &&
+            !(route && route.category === 'cigar') &&
+            SPM &&
             typeof SPM.resolveNamedSpirit === 'function'
           ? SPM.resolveNamedSpirit(promptText)
           : null;
 
     if (opts.anchorCigar) {
       anchorCigar = opts.anchorCigar;
-      if (namedSpiritAnchorId || namedSpiritAnchor) {
-        usedNamedSpirit = true;
-        anchorSpirit =
-          namedSpiritAnchor ||
-          (PIDsMod && namedSpiritAnchorId
-            ? PIDsMod.displayNameForId('spirit', namedSpiritAnchorId)
-            : null);
-      }
-    } else if (namedCigarAnchorId || namedCigarAnchor) {
-      anchorCigar =
-        namedCigarAnchor ||
-        (PIDsMod && namedCigarAnchorId
-          ? PIDsMod.displayNameForId('cigar', namedCigarAnchorId)
-          : null);
-      if (namedSpiritAnchorId || namedSpiritAnchor) {
-        usedNamedSpirit = true;
-        anchorSpirit =
-          namedSpiritAnchor ||
-          (PIDsMod && namedSpiritAnchorId
-            ? PIDsMod.displayNameForId('spirit', namedSpiritAnchorId)
-            : null);
-      }
     } else if (route && route.category === 'cigar' && route.product && route.product.name) {
       usedFlavorRoute = true;
       anchorCigar = route.product.name;
@@ -222,7 +189,7 @@
     }
 
     var anchorSpiritId = namedSpiritAnchorId || null;
-    var anchorCigarId = namedCigarAnchorId || null;
+    var anchorCigarId = null;
     if (PIDsMod) {
       if (anchorSpirit && !anchorSpiritId) {
         anchorSpiritId =
@@ -230,7 +197,7 @@
             ? route.product.id
             : PIDsMod.resolveSpiritId(anchorSpirit);
       }
-      if (anchorCigar && !anchorCigarId) {
+      if (anchorCigar) {
         anchorCigarId =
           route && route.category === 'cigar' && route.product && route.product.id
             ? route.product.id
@@ -306,8 +273,6 @@
       runtimeVersion: (global.RecommendationRuntime && global.RecommendationRuntime.version) || 1,
       promptText: p.promptText || null,
       flightMode: p.anchorCigarId ? 'cigar-anchor' : 'pairing',
-      anchorCigarId: p.anchorCigarId || null,
-      anchorSpiritId: p.anchorSpiritId || null,
       lockedBestCigarId: p.lockedBestCigarId,
       rankedPoolSize: p.rankedPoolSize,
       rankedCigars: p.rankedCigars,

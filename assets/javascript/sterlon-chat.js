@@ -501,18 +501,20 @@
     if (PP.normalizeSommelierTemplate) cleaned = PP.normalizeSommelierTemplate(cleaned);
     if (!cleaned) return '<p class="sterlon-pace-line is-lead">Tonight I would start with something composed and balanced.</p>';
 
-    function renderBlock(part, idx) {
-      const cls = idx === 0 ? ' is-lead' : ' is-mood';
-      const plain = part.trim();
-      const lineHtml = CR.emphasizeProductNamesFromPlain
-        ? CR.emphasizeProductNamesFromPlain(plain, highlightCard, cleaned)
-        : CR.emphasizeProductNames(PP.applyInlineBold(PP.escapeHtml(plain)), highlightCard, plain, cleaned);
-      return '<p class="sterlon-pace-line' + cls + '">' + lineHtml + '</p>';
+    const emphasize = (plain) => CR.emphasizeProductNamesFromPlain
+      ? CR.emphasizeProductNamesFromPlain(plain, highlightCard, cleaned)
+      : CR.emphasizeProductNames(PP.applyInlineBold(PP.escapeHtml(plain)), highlightCard, plain, cleaned);
+
+    function renderLine(line) {
+      const cls = line.bullet
+        ? ' sterlon-prose-bullet'
+        : (line.role === 'lead' ? ' is-lead' : ' is-mood');
+      return '<p class="sterlon-pace-line' + cls + '">' + emphasize(line.text) + '</p>';
     }
 
     const blocks = PP.splitConciergeProseBlocks ? PP.splitConciergeProseBlocks(cleaned) : null;
-    if (blocks && blocks.length) {
-      return blocks.slice(0, 8).map(renderBlock).join('');
+    if (blocks && blocks.length && PP.expandProseBlocksToLines) {
+      return PP.expandProseBlocksToLines(blocks).slice(0, 10).map(renderLine).join('');
     }
 
     const sentences = cleaned.match(/[^.!?]+[.!?]?/g) || [cleaned];
@@ -528,7 +530,9 @@
         if (line) chunks.push(line);
       }
     }
-    return chunks.map(renderBlock).join('');
+    return chunks
+      .map((text, idx) => renderLine({ text: text, bullet: false, role: idx === 0 ? 'lead' : 'mood' }))
+      .join('');
   }
 
   function validateVisibleText(rawText, promptTextForFallback, profileKey, opts) {
@@ -1174,41 +1178,41 @@
    * Gateway prose path for greeting/clarification turns (PL cadence).
    */
   async function callGatewayProseTurn(text, runtimeMode) {
-    const typingRow = addTypingIndicator();
     const gen = GL.captureStreamGeneration();
     const signal = GL.acquireGatewayFetchSignal();
+    const profile = runtimeMode === RuntimeMode.GREETING || runtimeMode === RuntimeMode.CLARIFICATION
+      ? 'clarification'
+      : 'prose';
+    const systemPrompt = chpCall('getSystemPrompt') + chpCall('getProductTeachingPromptExtra', text) +
+      chpCall('getProseTurnModeInstruction', runtimeMode) +
+      '\n\n' + responseStylePrompt(currentResponseStyle) +
+      '\n\n' + proseVariationPrompt() +
+      '\n\n' + ((CHP && CHP.CONCIERGE_VOICE_RULES) || '') +
+      '\n\n' + ((CHP && CHP.CONCIERGE_LIVE_PROSE_RULES) || '');
+    const GXS = window.SterlonGrokStream;
     try {
-      const response = await SG.callSterlonGateway([
-        {
-          role: 'system',
-          content: chpCall('getSystemPrompt') + chpCall('getProductTeachingPromptExtra', text) +
-            chpCall('getProseTurnModeInstruction', runtimeMode) +
-            '\n\n' + responseStylePrompt(currentResponseStyle) +
-            '\n\n' + proseVariationPrompt() +
-            '\n\n' + ((CHP && CHP.CONCIERGE_VOICE_RULES) || '') +
-            '\n\n' + ((CHP && CHP.CONCIERGE_LIVE_PROSE_RULES) || '')
-        },
-        ...buildGatewayHistory()
-      ], {
-        stream: false,
+      if (!(GXS && typeof GXS.executeTurn === 'function')) {
+        throw new Error('SterlonGrokStream module not loaded');
+      }
+      await GXS.executeTurn({
+        userText: text,
+        gen,
+        signal,
+        getGatewayContext: gatewayContext,
+        getHistory: buildGatewayHistory,
+        systemPrompt,
         responseMode: 'prose',
         maxTokens: currentResponseStyle === 'luxury' ? 220 : 160,
         temperature: 0.84,
-        signal
-      }, gatewayContext());
-
-      const content = await SG.readGatewayText(response, PP.repairMojibake);
-      if (typingRow && typingRow.remove) typingRow.remove();
-      const profile = runtimeMode === RuntimeMode.GREETING || runtimeMode === RuntimeMode.CLARIFICATION
-        ? 'clarification'
-        : 'prose';
-      const prose = GP.governGeneratedProse(PP.humanizePresentationProse(content || ''), profile);
-      if (!GL.isStreamActive(gen)) { unlockComposer(); return; }
-      await PL.presentProseBeat(prose, profile, gen, { promptText: text, proseDelivery: 'settled' });
+        profileKey: profile,
+        parse: function (content) { return { prose: content || '', chips: [] }; },
+        transformProse: function (humanized) { return GP.governGeneratedProse(humanized, profile); }
+      });
+      if (GL.isStreamActive(gen)) {
+        SL.updateSessionStateForContinuity(runtimeMode || RuntimeMode.CLARIFICATION, text);
+      }
       unlockComposer();
-      SL.updateSessionStateForContinuity(runtimeMode || RuntimeMode.CLARIFICATION, text);
     } catch (err) {
-      if (typingRow && typingRow.remove) typingRow.remove();
       if (GL.isGatewayAbortError(err) || !GL.isStreamActive(gen)) { unlockComposer(); return; }
       console.error('Sterlon gateway prose error:', err);
       ST.emit('gateway_error', { phase: 'prose', message: String(err && err.message ? err.message : err) });
