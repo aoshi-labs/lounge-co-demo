@@ -13,7 +13,7 @@
 
 /* ─── Page frame + header ─── */
 .events-page-frame { display:flex; justify-content:center; padding:24px 20px; gap:20px; }
-.events-center-col { width:100%; max-width:660px; display:flex; flex-direction:column; gap:18px; }
+.events-center-col { width:100%; max-width:var(--feed-col-max); display:flex; flex-direction:column; gap:18px; }
 .events-page-title { font-family:var(--font-display); font-size:2rem; font-weight:700; color:var(--text-primary); line-height:1.1; }
 .events-page-tagline { font-family:var(--font-body); font-style:italic; font-size:14px; color:var(--text-secondary); margin-top:6px; }
 /* Filter tabs row — full carousel chrome (hidden scrollbar, scroll-snap,
@@ -144,7 +144,7 @@
 .event-card-meta-price { color:var(--gold); }
 
 /* ─── Right rail (RSVPs / Popular / Sterlon tip) ─── */
-.events-rail-col { width:268px; flex-shrink:0; display:flex; flex-direction:column; gap:14px; }
+.events-rail-col { width:var(--rail-w); flex-shrink:0; display:flex; flex-direction:column; gap:14px; }
 .events-rsvp-list { display:flex; flex-direction:column; gap:10px; }
 .events-rsvp-item { text-decoration:none; display:flex; align-items:center; gap:10px; padding:10px; background:var(--bg-elevated); border:1px solid var(--bg-border); border-radius:9px; transition:border-color .2s; }
 .events-rsvp-date-block { text-align:center; flex-shrink:0; background:rgba(var(--gold-rgb), .1); border-radius:7px; padding:6px 8px; }

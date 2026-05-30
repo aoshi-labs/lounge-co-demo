@@ -95,6 +95,23 @@
 
   /* Layout */
   --sidebar-w:      240px;
+  --sidebar-collapsed-w: 64px;
+  --rail-w:         268px;
+  --feed-col-max:   600px;
+  --wide-col-max:   780px;
+  /* Alias — standard member center column (feed, Sterlon, most rail pages). */
+  --main-col-max:   var(--feed-col-max);
+  --shell-column-gap: 20px;
+  /* Main column + gap + right rail (widest standard member page: 780 + 20 + 268). */
+  --shell-inner-max: calc(780px + var(--shell-column-gap) + var(--rail-w));
+  /* Sidebar + 20px + content zone + outer breathing room on ultra-wide. */
+  --shell-max: calc(var(--sidebar-w) + var(--shell-column-gap) + var(--shell-inner-max));
+  --shell-gutter:   24px;
+  /* Activate centered shell when viewport exceeds shell width + edge breathing room. */
+  --shell-center-min: 1528px;
+  --topbar-h:         56px;
+  /* Horizontal inset of the centered shell; 0 on laptop, gutter+ on ultra-wide. */
+  --shell-edge:       0px;
 
   /* Typography */
   --font-display:   'Cormorant Garamond', Georgia, serif;
@@ -158,9 +175,18 @@
 .ic-32 { width: 32px; height: 32px; }
 .ic-48 { width: 48px; height: 48px; }
 
-/* Lucide-rendered SVGs inside nav items inherit the active gold/burg colour */
-.nav-item [data-lucide], .nav-item svg { stroke: currentColor; opacity: .7; }
-.nav-item.active [data-lucide], .nav-item.active svg { opacity: 1; }
+/* Lucide-rendered SVGs inside nav items inherit the active gold colour */
+.nav-item [data-lucide],
+.nav-item [data-icon],
+.nav-item svg { stroke: currentColor; color: currentColor; opacity: .7; }
+.nav-item.active,
+.nav-item.active [data-lucide],
+.nav-item.active [data-icon],
+.nav-item.active svg {
+  color: var(--gold);
+  stroke: var(--gold);
+  opacity: 1;
+}
 
 /* Avatar-as-icon (e.g. Sterlon photo in the sidebar nav) */
 .nav-item .nav-avatar { border-radius: 50%; object-fit: cover; opacity: .85; flex-shrink: 0; }
@@ -239,10 +265,24 @@ html.theme-transitions body { transition: background-color .25s ease, color .25s
 .page-content {
   flex: 1;
   display: flex;
-  justify-content: center;
-  padding: 24px 20px;
-  gap: 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 24px 0;
+  gap: var(--shell-column-gap);
   width: 100%;
+  box-sizing: border-box;
+}
+
+/* Standard center column beside a .rail-col (600px) or wide grid pages (780px). */
+.main-col {
+  width: 100%;
+  max-width: var(--feed-col-max);
+  min-width: 0;
+  flex: 1 1 auto;
+  box-sizing: border-box;
+}
+.main-col--wide {
+  max-width: var(--wide-col-max);
 }
 
 /* ───────── App shell ───────── */
@@ -345,6 +385,129 @@ html.sidebar-collapsed .nav-item[data-tooltip]:hover::after {
   z-index: 200;
   box-shadow: 0 4px 14px rgba(0,0,0,.35);
 }
+
+/* ───────── Large viewport — centered app shell ─────────
+   Desktop+: sidebar + main travel as one centered block below the full-width
+   top bar. Matches ARCHITECTURE §2 (240 + 720 + 268). */
+@media (min-width: 1024px) {
+  :root {
+    --shell-edge: max(
+      var(--shell-gutter),
+      calc((100vw - min(var(--shell-max), 100vw - var(--shell-gutter) * 2)) / 2)
+    );
+  }
+
+  body {
+    justify-content: center;
+    gap: var(--shell-column-gap);
+    padding: 0;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: var(--topbar-h);
+    left: auto;
+    bottom: auto;
+    align-self: flex-start;
+    flex: 0 0 var(--sidebar-w);
+    height: calc(100vh - var(--topbar-h));
+    border-right: none;
+  }
+
+  .main-area {
+    margin-left: 0 !important;
+    flex: 0 0 var(--shell-inner-max);
+    width: var(--shell-inner-max);
+    min-width: 0;
+    max-width: min(
+      var(--shell-inner-max),
+      calc(100vw - var(--sidebar-w) - var(--shell-column-gap) - var(--shell-edge) * 2)
+    );
+  }
+
+  html.sidebar-collapsed .main-area {
+    margin-left: 0 !important;
+    flex: 0 0 var(--shell-inner-max);
+    width: var(--shell-inner-max);
+    max-width: min(
+      var(--shell-inner-max),
+      calc(100vw - var(--sidebar-collapsed-w) - var(--shell-column-gap) - var(--shell-edge) * 2)
+    );
+  }
+
+  /* Main column + rail — flush row, no extra inset inside .main-area. */
+  .page-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 24px 0;
+    gap: var(--shell-column-gap);
+  }
+
+  /* Pages that skip .page-content still share the same content band width. */
+  .main-area > :not(.top-bar):not(h1):not(.content-area):not(.lists-container) {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .main-area > .content-area {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .main-area > .content-area--narrow {
+    max-width: var(--feed-col-max);
+  }
+
+  .main-area > .lists-container {
+    width: 100%;
+    max-width: var(--feed-col-max);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Prevent `width:100%` main columns from swallowing the row and shoving the rail right. */
+  .page-content > :is(.rail-col, [class*="-rail"], aside) {
+    flex-shrink: 0;
+    width: var(--rail-w);
+  }
+
+  .page-content > :not(.top-bar):not(.rail-col):not([class*="-rail"]):not(aside):not(.main-col):not(.feed-col-stack):not(.sterlon-chat-col) {
+    flex: 0 1 auto;
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .page-content > :is(.main-col, .feed-col-stack, .sterlon-chat-col) {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: var(--feed-col-max);
+    min-width: 0;
+  }
+
+  .page-content > .main-col--wide {
+    max-width: var(--wide-col-max);
+  }
+
+  /* Legacy row wrappers not yet on .page-content — same center-column band. */
+  :is(.profile-content-row, .library-page-frame) > :is(.main-col, .profile-main-col, .library-page-stack) {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: var(--feed-col-max);
+    min-width: 0;
+  }
+
+  html.sidebar-collapsed .sidebar {
+    flex: 0 0 var(--sidebar-collapsed-w);
+  }
+
+  .lounge-scroll-btn {
+    right: max(var(--shell-gutter), calc((100vw - var(--shell-max)) / 2 + var(--shell-gutter)));
+  }
+}
+
 .top-bar {
   height: 56px;
   background: var(--bg-surface);
@@ -363,6 +526,73 @@ html.sidebar-collapsed .nav-item[data-tooltip]:hover::after {
    900px) block — without it, those reactivate the bar per-page. */
 .bottom-nav { display: none !important; }
 
+/* ───────── Desktop — full-width top bar (Facebook-style) ─────────
+   Top bar spans the viewport; sidebar + page content sit below it.
+   Controls align with the main column via --shell-edge + --sidebar-w. */
+@media (min-width: 1024px) {
+  .top-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 110;
+    padding-left: calc(var(--shell-edge) + 16px);
+    padding-right: calc(var(--shell-edge) + 20px);
+    gap: 16px;
+  }
+
+  html.sidebar-collapsed .top-bar {
+    padding-left: calc(var(--shell-edge) + 16px);
+  }
+
+  .sidebar {
+    top: var(--topbar-h);
+    height: calc(100vh - var(--topbar-h));
+    bottom: auto;
+  }
+
+  .main-area {
+    padding-top: var(--topbar-h);
+  }
+
+  /* Brand block hoisted from sidebar by lounge.js mountTopBarBrand() */
+  .top-bar .sidebar-logo--topbar {
+    border-bottom: none;
+    padding: 0;
+    margin: 0;
+    flex-shrink: 0;
+    max-width: min(340px, 30vw);
+    min-width: 0;
+  }
+
+  .top-bar .sidebar-logo--topbar .logo-mark {
+    width: 36px;
+    height: 36px;
+  }
+
+  .top-bar .sidebar-logo--topbar .logo-mark img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .top-bar .sidebar-logo--topbar .sidebar-brand-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  html.sidebar-collapsed .top-bar .sidebar-logo--topbar {
+    gap: 0;
+    max-width: none;
+  }
+
+  html.sidebar-collapsed .top-bar .sidebar-logo--topbar > *:not(.logo-mark) {
+    display: none !important;
+  }
+}
+
 /* Mobile (<1023px): hide sidebar/rail. Bottom nav stays hidden (see above). */
 @media (max-width: 1023px) {
   .sidebar { transform: translateX(-100%); }
@@ -371,13 +601,51 @@ html.sidebar-collapsed .nav-item[data-tooltip]:hover::after {
      .main-area inside their own @media (max-width: 1023px) with a
      `padding-bottom: 70px` (legacy clearance for the now-removed bottom
      nav). They'd otherwise win by source order. */
-  .main-area { margin-left: 0; padding-bottom: 0 !important; }
+  .main-area { margin-left: 0; padding-bottom: 0 !important; padding-top: 0 !important; }
   .rail-col { display: none !important; }
+
+  .sidebar {
+    top: 0;
+    height: 100vh;
+    bottom: 0;
+  }
 
   /* Tighten top-bar horizontal padding on mobile. !important because page
      CSS files redeclare `.top-bar { padding: 0 20px }` outside media queries
      and load after lounge.css — they'd otherwise win by source order. */
-  .top-bar { padding: 0 12px !important; gap: 10px; }
+  .top-bar {
+    position: sticky !important;
+    top: 0;
+    padding: 0 12px !important;
+    gap: 10px;
+  }
+
+  .top-bar .sidebar-logo--topbar {
+    border-bottom: none;
+    padding: 0;
+    flex: 1;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .top-bar .sidebar-logo--topbar .logo-mark {
+    width: 32px;
+    height: 32px;
+  }
+
+  .top-bar .sidebar-logo--topbar .sidebar-brand-name {
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .top-bar .sidebar-logo--topbar .sidebar-brand-subtitle {
+    font-size: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
   /* Breathing room between the hamburger and the page title on mobile.
      Every page's top-bar starts with `<button id="menu-btn">`, so the next
@@ -547,9 +815,11 @@ html.sidebar-collapsed .nav-item[data-tooltip]:hover::after {
   transition: background .15s, color .15s;
   text-decoration: none;
 }
-.nav-item:hover { background: var(--bg-elevated); color: var(--text-primary); }
+.nav-item:hover:not(.active) { background: var(--bg-elevated); color: var(--text-primary); }
 .nav-item.active { background: var(--gold-subtle); color: var(--gold); font-weight: 600; }
-.nav-item.active svg { stroke: var(--gold); opacity: 1; }
+.nav-item.active svg,
+.nav-item.active [data-lucide],
+.nav-item.active [data-icon] { stroke: var(--gold); color: var(--gold); opacity: 1; }
 .nav-item svg { flex-shrink: 0; opacity: .7; }
 .nav-section-label {
   font-size: 9px;
@@ -711,7 +981,7 @@ html.sidebar-collapsed .nav-item[data-tooltip]:hover::after {
    label (15px) — different concept, kept separate by name (.page-heading). */
 .content-area { max-width: 860px; margin: 0 auto; padding: 32px; }
 .content-area--wide   { max-width: 980px; }
-.content-area--narrow { max-width: 720px; }
+.content-area--narrow { max-width: var(--feed-col-max); }
 
 .page-heading {
   font-family: var(--font-display);
@@ -962,6 +1232,9 @@ html.sidebar-collapsed .nav-item[data-tooltip]:hover::after {
   transition: color .2s;
 }
 .bottom-nav-item.active { color: var(--gold); }
+.bottom-nav-item.active svg,
+.bottom-nav-item.active [data-lucide],
+.bottom-nav-item.active [data-icon] { stroke: var(--gold); color: var(--gold); }
 .bottom-nav-create-btn {
   width: 44px;
   height: 44px;

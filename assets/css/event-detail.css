@@ -4,7 +4,7 @@
 .topbar-back-link { display:flex; align-items:center; gap:6px; color:var(--text-secondary); text-decoration:none; font-size:13px; font-weight:500; transition:color .2s; }
 .topbar-user-avatar-elite { background:var(--tier-elite); color:var(--tier-elite-ink); width:34px; height:34px; font-size:12px; }
 .event-detail-page-frame { display:flex; justify-content:center; padding:24px 20px; gap:20px; }
-.event-detail-page-stack { width:100%; max-width:680px; display:flex; flex-direction:column; gap:14px; }
+.event-detail-page-stack { width:100%; max-width:var(--feed-col-max); display:flex; flex-direction:column; gap:14px; }
 .event-detail-hero { background:linear-gradient(135deg,rgba(var(--burg-rgb), .3),rgba(var(--gold-rgb), .12),var(--bg-surface)); border:1px solid var(--bg-border); border-radius:16px; overflow:hidden; }
 .event-detail-hero-banner { height:200px; background:linear-gradient(135deg,rgba(var(--burg-rgb), .55),rgba(60,30,40,.45),rgba(20,12,6,.65)),url('../images/whiskey_on_rocks.jpg') center/cover no-repeat; position:relative; display:flex; align-items:flex-end; padding:24px; }
 .event-detail-featured-badge { position:absolute; top:18px; left:18px; background:rgba(20,12,6,.7); backdrop-filter:blur(4px); border:1px solid rgba(var(--gold-rgb), .3); border-radius:8px; padding:8px 12px; display:flex; align-items:center; gap:6px; }
@@ -47,7 +47,7 @@
 .event-attendee-overflow-chip { display:flex; align-items:center; gap:10px; padding:8px; background:var(--bg-elevated); border-radius:9px; border:1px dashed var(--bg-border); }
 .event-attendee-avatar-overflow { background:var(--bg-base); color:var(--text-muted); }
 .event-detail-meta-muted { font-size:11px; color:var(--text-muted); }
-.event-detail-rail { width:268px; flex-shrink:0; display:flex; flex-direction:column; gap:14px; }
+.event-detail-rail { width:var(--rail-w); flex-shrink:0; display:flex; flex-direction:column; gap:14px; }
 .event-rail-rsvp-card { background:linear-gradient(135deg,rgba(var(--burg-rgb), .18),var(--bg-surface)); }
 .event-rail-date-block { text-align:center; padding:6px 0; margin-bottom:14px; }
 .event-rail-weekday { font-family:var(--font-display); font-size:.85rem; font-weight:600; color:var(--gold); letter-spacing:.1em; text-transform:uppercase; }

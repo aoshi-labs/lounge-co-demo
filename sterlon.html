@@ -95,24 +95,24 @@
   <script src="assets/javascript/sterlon-catalog-retrieval.js"></script>
   <script src="assets/javascript/sterlon-flavor-match.js"></script>
   <script src="assets/javascript/sterlon-recommendations.js?v=cat-focus-v1"></script>
-  <script src="assets/javascript/sterlon-product-match.js"></script>
- <script src="assets/javascript/sterlon-gateway-client.js"></script>
+  <script src="assets/javascript/sterlon-product-match.js?v=product-emphasis-v5"></script>
+ <script src="assets/javascript/sterlon-gateway-client.js?v=grok-stream-v1"></script>
  <script src="assets/javascript/sterlon-presentation-overlays.js"></script>
- <script src="assets/javascript/sterlon-prose-pipeline.js"></script>
-<script src="assets/javascript/sterlon-card-renderers.js"></script>
+ <script src="assets/javascript/sterlon-prose-pipeline.js?v=sommelier-fmt-v4"></script>
+<script src="assets/javascript/sterlon-card-renderers.js?v=product-emphasis-v5"></script>
 <script src="assets/javascript/sterlon-chat-router.js"></script>
 <script src="assets/javascript/sterlon-session-routing.js"></script>
 <script src="assets/javascript/sterlon-session-lifecycle.js"></script>
 <script src="assets/javascript/sterlon-gateway-lifecycle.js"></script>
-<script src="assets/javascript/sterlon-gateway-prose.js"></script>
+<script src="assets/javascript/sterlon-gateway-prose.js?v=sommelier-fmt-v1"></script>
 <script src="assets/javascript/sterlon-concierge-prose-shared.js"></script>
 <script src="assets/javascript/sterlon-concierge-expertise.js"></script>
 <script src="assets/javascript/hospitality-prose-compose.js"></script>
 <script src="assets/javascript/sterlon-concierge-recommendation-prose.js"></script>
 <script src="assets/javascript/sterlon-concierge-reco-prose-deep.js"></script>
 <script src="assets/javascript/sterlon-concierge-prose.js"></script>
-<script src="assets/javascript/sterlon-presentation-lifecycle.js"></script>
-<script src="assets/javascript/sterlon-presentation-render.js"></script>
+<script src="assets/javascript/sterlon-presentation-lifecycle.js?v=grok-stream-v1"></script>
+<script src="assets/javascript/sterlon-presentation-render.js?v=sommelier-fmt-v1"></script>
 <script src="assets/javascript/sterlon-scroll-anchor.js"></script>
 <script src="assets/javascript/sterlon-chat-prompts.js"></script>
 <script src="assets/javascript/sterlon-turn-handlers.js"></script>
@@ -121,7 +121,10 @@
   <script src="assets/javascript/sterlon-ontology-diagnostics.js"></script>
   <script src="assets/javascript/pairing-evaluation/score.js"></script>
   <script src="assets/javascript/sterlon-pairing-diagnostics.js"></script>
-  <script src="assets/javascript/sterlon-chat.js?v=shrink4-v1" defer></script>
+  <script src="assets/javascript/sterlon-grok-followups.js?v=grok-chips-v3"></script>
+  <script src="assets/javascript/sterlon-grok-sommelier.js?v=free-voice-v4"></script>
+  <script src="assets/javascript/sterlon-grok-stream.js?v=grok-stream-v1"></script>
+  <script src="assets/javascript/sterlon-chat.js?v=grok-som-v9" defer></script>
 </head>
 <body>
 
@@ -152,7 +155,7 @@
     <div class="nav-divider"></div>
     <div class="nav-section-label">Shop</div>
     <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
-    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+    <a href="/my-visits" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
 
     <div class="nav-divider"></div>
     <div class="nav-section-label">Personal</div>
@@ -169,12 +172,6 @@
   <h1 class="visually-hidden">Sterlon</h1>
   <header class="top-bar">
     <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu"><i data-lucide="menu" class="ic-16"></i></button>
-    <div class="sterlon-topbar-identity">
-      <div class="sterlon-topbar-avatar" aria-hidden="true">
-        <img src="assets/images/sterlon.jpg" alt="" class="sterlon-avatar-img"/>
-      </div>
-      <div><div class="sterlon-topbar-name">Sterlon</div><div class="sterlon-topbar-status">● Online · your AI concierge across every Lounge &amp; Co. venue</div></div>
-    </div>
     <div class="topbar-actions">
       <button class="icon-btn sterlon-newchat-btn" onclick="newChat()" title="New chat"><i data-lucide="edit-3" class="ic-15"></i><span>New chat</span></button>
     </div>
@@ -183,12 +180,20 @@
   <div class="page-content">
 
     <!-- CHAT -->
-    <div class="sterlon-chat-col">
+    <div class="sterlon-chat-col main-col">
 
       <!-- Scrollable transcript (welcome + messages). Composer stays pinned below. -->
       <div id="sterlon-chat-scroll" class="sterlon-chat-scroll" tabindex="-1">
       <div class="sterlon-welcome">
-        <div class="sterlon-welcome-title">Welcome to Sterlon.</div>
+        <div class="sterlon-chat-identity">
+          <div class="sterlon-topbar-avatar" aria-hidden="true">
+            <img src="assets/images/sterlon.jpg" alt="" class="sterlon-avatar-img"/>
+          </div>
+          <div>
+            <div class="sterlon-topbar-name">Sterlon</div>
+            <div class="sterlon-topbar-status">● Online · your AI concierge across every Lounge &amp; Co. venue</div>
+          </div>
+        </div>
       </div>
 
       <!-- Conversation (populated by sterlon-chat.js — no static demo transcript) -->

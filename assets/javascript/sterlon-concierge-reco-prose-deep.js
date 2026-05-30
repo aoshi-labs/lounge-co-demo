@@ -283,12 +283,6 @@
     return 'The room is moving a little slower than usual right now. Give me another moment and I will get this right.';
   }
 
-  function buildUnavailableDemoProductProse(product) {
-    var category = product && product.category === 'spirit' ? 'spirit' : 'cigar';
-    var name = product && product.name ? product.name : (category === 'spirit' ? 'that spirit' : 'that cigar');
-    return name + ' is not in this demo version of the app yet, so I do not want to fake a pairing card for it. Ask me for something similar in the demo catalog and I will keep it honest.';
-  }
-
   function buildRefinementLeadProse(axis, targetKey, newBest, priorBest, refinementTail) {
     var PP = S._PP();
     var sr = S._session();
@@ -352,7 +346,6 @@
     buildSensoryPreludeProse: buildSensoryPreludeProse,
     buildSommelierRecommendationProse: buildSommelierRecommendationProse,
     buildGracefulDegradationProse: buildGracefulDegradationProse,
-    buildUnavailableDemoProductProse: buildUnavailableDemoProductProse,
     buildRefinementLeadProse: buildRefinementLeadProse
   });
 })(typeof window !== 'undefined' ? window : global);

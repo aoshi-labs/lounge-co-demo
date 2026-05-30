@@ -70,9 +70,16 @@
   function splitProseIntoStreamLines(displayProse) {
     const PP = _PP();
     const h = _host();
-    const cleaned = PP.humanizePresentationProse(displayProse).trim();
+    let cleaned = PP.humanizePresentationProse(displayProse).trim();
+    if (PP.normalizeSommelierTemplate) cleaned = PP.normalizeSommelierTemplate(cleaned);
     if (!cleaned) {
       return [{ role: 'lead', text: PP.GENERIC_LEAD_FALLBACK }];
+    }
+    const blocks = PP.splitConciergeProseBlocks ? PP.splitConciergeProseBlocks(cleaned) : null;
+    if (blocks && blocks.length) {
+      return blocks.map(function (part, idx) {
+        return { role: idx === 0 ? 'lead' : 'mood', text: part.trim() };
+      });
     }
     if (/\n\n/.test(cleaned)) {
       return cleaned.split(/\n\n+/).filter(Boolean).map(function (part, idx) {
@@ -111,7 +118,7 @@
     return true;
   }
 
-  async function streamPaceLine(bubble, lineSpec, card, profile, gen) {
+  async function streamPaceLine(bubble, lineSpec, card, profile, gen, mentionSource) {
     const PP = _PP();
     const CR = _CR();
     const GL = _GL();
@@ -129,17 +136,25 @@
     for (let i = 0; i < words.length; i += step) {
       if (!GL.isStreamActive || !GL.isStreamActive(gen)) return;
       visible = visible.concat(words.slice(i, i + step));
-      p.innerHTML = CR.emphasizeProductNames(
-        PP.applyInlineBold(PP.escapeHtml(PP.repairMojibake(visible.join(' ')))),
-        card
-      );
+      p.innerHTML = CR.emphasizeProductNamesFromPlain
+        ? CR.emphasizeProductNamesFromPlain(visible.join(' '), card, mentionSource || lineSpec.text)
+        : CR.emphasizeProductNames(
+          PP.applyInlineBold(PP.escapeHtml(PP.repairMojibake(visible.join(' ')))),
+          card,
+          visible.join(' '),
+          mentionSource
+        );
       if (h.scrollChat) h.scrollChat({ smooth: false });
       if (i + step < words.length) await delay(profile.wordMs);
     }
-    p.innerHTML = CR.emphasizeProductNames(
-      PP.applyInlineBold(PP.escapeHtml(PP.repairMojibake(lineSpec.text))),
-      card
-    );
+    p.innerHTML = CR.emphasizeProductNamesFromPlain
+      ? CR.emphasizeProductNamesFromPlain(lineSpec.text, card, mentionSource || lineSpec.text)
+      : CR.emphasizeProductNames(
+        PP.applyInlineBold(PP.escapeHtml(PP.repairMojibake(lineSpec.text))),
+        card,
+        lineSpec.text,
+        mentionSource
+      );
     p.classList.add('is-settled');
   }
 
@@ -153,7 +168,7 @@
       if (!GL.isStreamActive || !GL.isStreamActive(gen)) return;
       if (i === 1) await delay(profile.leadPauseMs);
       else if (i > 1) await delay(profile.segmentPauseMs);
-      await streamPaceLine(bubble, lines[i], card, profile, gen);
+      await streamPaceLine(bubble, lines[i], card, profile, gen, displayProse);
     }
   }
 
@@ -322,7 +337,13 @@
         : prose);
 
     if (prefersReducedMotion()) {
-      if (h.appendAssistantBubble) h.appendAssistantBubble(validated);
+      if (h.appendAssistantBubble) {
+        const row = h.appendAssistantBubble(validated);
+        if (opts.followupChips && opts.followupChips.length && row) {
+          const wrap = row.querySelector('.sterlon-bubble-stack');
+          if (wrap && h.renderGrokFollowupActions) h.renderGrokFollowupActions(wrap, opts.followupChips);
+        }
+      }
       _hist().push({ role: 'assistant', content: validated });
       _persist();
       if (h.scrollChat) h.scrollChat({ smooth: true });
@@ -339,6 +360,35 @@
       await streamProseIntoBubble(bubble, validated, opts.highlightCard || null, profile, gen);
     }
     if (!GL.isStreamActive || !GL.isStreamActive(gen)) return;
+    if (opts.followupChips && opts.followupChips.length && created.wrap && h.renderGrokFollowupActions) {
+      h.renderGrokFollowupActions(created.wrap, opts.followupChips);
+    }
+    _hist().push({ role: 'assistant', content: validated });
+    _persist();
+    if (h.scrollChat) h.scrollChat({ smooth: true });
+  }
+
+  async function finalizeStreamedProseBeat(wrap, bubble, prose, profileKey, gen, options) {
+    const opts = options || {};
+    const GP = _GP();
+    const GL = _GL();
+    const h = _host();
+    const profile = profileKey || 'recommendation_gateway';
+    const validated = opts.validateExpertise
+      ? GP.validateExpertiseProse(prose)
+      : (h.validateVisibleText
+        ? h.validateVisibleText(prose, opts.promptText, profile)
+        : prose);
+
+    if (bubble && global.SterlonPresentationRender && global.SterlonPresentationRender.paintSettledProseBubble) {
+      bubble.classList.remove('sterlon-token-streaming');
+      global.SterlonPresentationRender.paintSettledProseBubble(bubble, validated, opts.highlightCard || null);
+      if (h.scrollChat) h.scrollChat({ smooth: false });
+    }
+    if (!GL.isStreamActive || !GL.isStreamActive(gen)) return;
+    if (opts.followupChips && opts.followupChips.length && wrap && h.renderGrokFollowupActions) {
+      h.renderGrokFollowupActions(wrap, opts.followupChips);
+    }
     _hist().push({ role: 'assistant', content: validated });
     _persist();
     if (h.scrollChat) h.scrollChat({ smooth: true });
@@ -419,6 +469,7 @@
     conversationalThinkPause: conversationalThinkPause,
     presentStagedRecommendation: presentStagedRecommendation,
     presentProseBeat: presentProseBeat,
+    finalizeStreamedProseBeat: finalizeStreamedProseBeat,
     renderStagedRecommendationPresentation: renderStagedRecommendationPresentation
   };
 })(typeof window !== 'undefined' ? window : global);

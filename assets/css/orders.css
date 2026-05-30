@@ -9,7 +9,7 @@
 .topbar-title { font-size:15px; font-weight:600; color:var(--text-primary); }
 .topbar-new-request-btn { background:var(--burg); color:var(--cream); border:none; border-radius:8px; padding:8px 14px; font-family:var(--font-ui); font-size:13px; font-weight:600; cursor:pointer; text-decoration:none; }
 .activity-page-frame { display:flex; justify-content:center; padding:28px 20px; }
-.activity-page-stack { width:100%; max-width:700px; display:flex; flex-direction:column; gap:16px; }
+.activity-page-stack { width:100%; max-width:var(--feed-col-max); display:flex; flex-direction:column; gap:16px; }
 .visit-card-current { border-color:rgba(var(--tier-elite-rgb), .35); }
 .visit-card-header { background:rgba(var(--tier-elite-rgb), .07); border-bottom:1px solid rgba(var(--tier-elite-rgb), .2); padding:14px 20px; display:flex; align-items:center; justify-content:space-between; }
 .visit-status-group { display:flex; align-items:center; gap:10px; }

@@ -207,18 +207,56 @@
     return null;
   }
 
+  // Brands not in LoungeProducts/LoungeCatalog \u2014 usable as pairing anchors only.
+  // Do NOT add brands confirmed to be in the catalog (Davidoff, AJ Fernandez, La Flor Dominicana, etc.)
+  // \u2014 those are found by matchMenuProductInText and carry real catalog IDs.
+  var OFF_MENU_CIGAR_PATTERNS = [
+    {
+      pattern: /\bpadr[o\u00f3]n\b/,
+      resolve: function (t) {
+        return /\b1926\b/.test(t) ? 'Padron 1926' : /\b1964\b/.test(t) ? 'Padron 1964' : 'Padron';
+      }
+    },
+    {
+      pattern: /\boliva\b/,
+      resolve: function (t) { return /\bserie\s+v\b/.test(t) ? 'Oliva Serie V' : 'Oliva'; }
+    },
+    {
+      pattern: /\barturo\s+fuente\b|\bfuente\b/,
+      resolve: function (t) { return /\bopus\s+x\b/.test(t) ? 'Arturo Fuente Opus X' : 'Arturo Fuente'; }
+    },
+    { pattern: /\bmy\s+father\b/,   name: 'My Father'    },
+    { pattern: /\brocky\s+patel\b/, name: 'Rocky Patel'  },
+    { pattern: /\bperdomo\b/,       name: 'Perdomo'      },
+    { pattern: /\bmacanudo\b/,      name: 'Macanudo'     },
+    { pattern: /\btatuaje\b/,       name: 'Tatuaje'      },
+    { pattern: /\bplasencia\b/,     name: 'Plasencia'    },
+    { pattern: /\bcohiba\b/,        name: 'Cohiba'       },
+    {
+      pattern: /\bla gloria\b|\bgloria cubana\b/,
+      resolve: function (t) {
+        return /\bestel[i\u00ed]/.test(t) ? 'La Gloria Cubana Estel\u00ed' : 'La Gloria Cubana';
+      }
+    },
+    { pattern: /\bmontecristo\b/,               name: 'Montecristo'    },
+    { pattern: /\bromeo y julieta\b|\bryj\b/,   name: 'Romeo y Julieta' },
+    { pattern: /\bpartagas\b/,                  name: 'Partag\u00e1s'  }
+  ];
+
   function matchOffMenuCigarInText(text) {
-    const SPM = _SPM();
-    if (SPM && typeof SPM.matchOffMenuCigarInText === 'function') {
-      return SPM.matchOffMenuCigarInText(text);
-    }
     const t = (text || '').toLowerCase();
-    if (/\bla gloria\b|\bgloria cubana\b/.test(t)) {
-      return { name: /\bestel[i?]\b/.test(t) ? 'La Gloria Cubana Estel\u00ed' : 'La Gloria Cubana', category: 'cigar' };
+    for (var i = 0; i < OFF_MENU_CIGAR_PATTERNS.length; i++) {
+      var entry = OFF_MENU_CIGAR_PATTERNS[i];
+      if (entry.pattern.test(t)) {
+        return {
+          name: entry.resolve ? entry.resolve(t) : entry.name,
+          category: 'cigar',
+          catalogStatus: 'external',
+          usableAsPairingAnchor: true,
+          eligibleForRecommendationCard: false
+        };
+      }
     }
-    if (/\bmontecristo\b/.test(t)) return { name: 'Montecristo', category: 'cigar' };
-    if (/\bromeo y julieta\b|\bryj\b/.test(t)) return { name: 'Romeo y Julieta', category: 'cigar' };
-    if (/\bpartagas\b/.test(t)) return { name: 'Partag\u00e1s', category: 'cigar' };
     return null;
   }
 
@@ -294,8 +332,11 @@
     return /\b(what|which)\s+.+\b(pairs?|pair|goes|work)s?\s+(well\s+)?with\b/.test(t) ||
       /\b(pairs?|pair)\s+(well\s+)?with\b/.test(t) ||
       /\bwhat\s+(spirit|whisky|whiskey|bourbon|scotch|pour)\s+.+\bwith\b/.test(t) ||
-      /\bwhat\s+(goes|works)\s+with\b/.test(t) ||
-      /\bwhat\s+to\s+pair\s+with\b/.test(t);
+      /\bwhat\s+(goes|works)\s+(well\s+)?with\b/.test(t) ||
+      /\bwhat\s+to\s+pair\s+with\b/.test(t) ||
+      /\bwould\s+.+\b(go|work)\s+(well\s+)?with\b/.test(t) ||
+      /\b(is|are)\s+.+\b(good|great|well)\s+with\b/.test(t) ||
+      /\b(what should i|can i|should i)\s+(drink|have|sip|pour)\b.*\bwith\b/.test(t);
   }
 
   function isHesitantOpenerIntent(text) {
@@ -819,7 +860,7 @@
     }
     const SPM = typeof window !== 'undefined' ? window.SterlonProductMatch : null;
     if (SPM && typeof SPM.resolveNamedSpiritId === 'function' && SPM.resolveNamedSpiritId(text)) {
-      return /\b(want|need|looking for|recommend|suggest|pair|go well|goes well|work with|works with|maduro|connecticut|wrapper)\b/.test(t);
+      return /\b(want|need|looking for|recommend|suggest|pair|maduro|connecticut|wrapper)\b/.test(t);
     }
     return false;
   }
@@ -848,10 +889,6 @@
     if (isSpiritOnlyRequest(text)) return 'spirit';
     if (hasSpiritAnchoredCigarAsk(text)) return 'pairing';
     if (isCigarOnlyRequest(text)) return 'cigar';
-    if (/\b(go well|goes well|work with|works with|pair(?:ing|)?)\b/.test(t) && /\bcigar|padron|cohiba|liga|opus|ashton|montecristo\b/.test(t)) {
-      const SPM = typeof window !== 'undefined' ? window.SterlonProductMatch : null;
-      if (SPM && typeof SPM.resolveNamedSpiritId === 'function' && SPM.resolveNamedSpiritId(text)) return 'pairing';
-    }
     if (/\bpair(?:ing|)\b/.test(t) && /\bcigar\b/.test(t)) return 'pairing';
     if (/\bcigar|padron|cohiba|liga|opus|ashton|montecristo\b/.test(t)) return 'cigar';
     const SFM = _SFM();

@@ -64,7 +64,7 @@
     <div class="nav-divider"></div>
     <div class="nav-section-label">Shop</div>
     <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
-    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+    <a href="/my-visits" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
 
     <div class="nav-divider"></div>
     <div class="nav-section-label">Personal</div>
@@ -89,7 +89,7 @@
   <div class="page-content">
 
     <!-- CENTER -->
-    <div class="rooms-page-stack">
+    <div class="rooms-page-stack main-col main-col--wide">
 
       <!-- Page header H1 + tagline removed; the auto-injected .top-bar-logo
            (door-open icon + "Rooms" label) serves as the page title. -->
@@ -100,7 +100,9 @@
       <div class="rooms-grid">
 
         <a href="room-detail.html" class="room-card">
-          <div class="rooms-card-header-single-malts"></div>
+          <div class="rooms-card-media rooms-card-media-single-malts" aria-hidden="true">
+            <img class="rooms-card-photo" src="assets/images/single-malt-society-background.png" alt="" />
+          </div>
           <div class="rooms-card-body">
             <div class="rooms-card-title-row">
               <h3 class="rooms-card-title">The Single Malts Society</h3>
@@ -119,7 +121,9 @@
         </a>
 
         <a href="room-detail.html" class="room-card room-card-public">
-          <div class="rooms-card-header-cuban"></div>
+          <div class="rooms-card-media rooms-card-media-cuban" aria-hidden="true">
+            <img class="rooms-card-photo" src="assets/images/cuban-aficionados-background.webp" alt="" />
+          </div>
           <div class="rooms-card-body">
             <div class="rooms-card-title-row">
               <h3 class="rooms-card-title">Cuban Aficionados</h3>
@@ -136,7 +140,9 @@
         </a>
 
         <a href="room-detail.html" class="room-card">
-          <div class="rooms-card-header-bourbon"></div>
+          <div class="rooms-card-media rooms-card-media-bourbon" aria-hidden="true">
+            <img class="rooms-card-photo" src="assets/images/bourbon-hunters-background.webp" alt="" />
+          </div>
           <div class="rooms-card-body">
             <div class="rooms-card-title-row">
               <h3 class="rooms-card-title">Bourbon Hunters</h3>
@@ -153,7 +159,9 @@
         </a>
 
         <a href="room-detail.html" class="room-card">
-          <div class="rooms-card-header-founders"></div>
+          <div class="rooms-card-media rooms-card-media-founders" aria-hidden="true">
+            <img class="rooms-card-photo" src="assets/images/founders-circle-background.png" alt="" />
+          </div>
           <div class="rooms-card-body">
             <div class="rooms-card-title-row">
               <h3 class="rooms-card-title">Founders' Circle</h3>
@@ -177,51 +185,47 @@
 
       <div class="rooms-grid">
 
-        <div class="discover-card discover-card-private">
-          <div class="discover-card-header">
-            <div class="discover-card-emoji">🍷</div>
+        <div class="discover-card discover-card-photo-bg discover-card-photo-bg-port discover-card-private">
+          <div class="discover-card-photo-bg-inner">
             <h3 class="discover-card-title">Port &amp; Pairings</h3>
-          </div>
-          <p class="discover-card-description">Vintage port, tawny pairings, and dessert smoke combinations.</p>
-          <div class="rooms-card-footer">
-            <span class="discover-card-member-count">9 members</span>
-            <button class="discover-request-button">Request to Join</button>
+            <p class="discover-card-description">Vintage port, tawny pairings, and dessert smoke combinations.</p>
+            <div class="discover-card-photo-bg-actions">
+              <span class="discover-card-member-count">9 members</span>
+              <button type="button" class="discover-request-button">Request to Join</button>
+            </div>
           </div>
         </div>
 
-        <div class="discover-card">
-          <div class="discover-card-header">
-            <div class="discover-card-emoji">☕</div>
+        <div class="discover-card discover-card-photo-bg discover-card-photo-bg-smoke">
+          <div class="discover-card-photo-bg-inner">
             <h3 class="discover-card-title">Smoke &amp; Espresso</h3>
-          </div>
-          <p class="discover-card-description">Coffee pairings, morning smokes, and single-origin obsessions.</p>
-          <div class="rooms-card-footer">
-            <span class="discover-card-member-count">21 members</span>
-            <button class="discover-join-button">Join</button>
+            <p class="discover-card-description">Coffee pairings, morning smokes, and single-origin obsessions.</p>
+            <div class="discover-card-photo-bg-actions">
+              <span class="discover-card-member-count">21 members</span>
+              <button type="button" class="discover-join-button">Join</button>
+            </div>
           </div>
         </div>
 
-        <div class="discover-card discover-card-private">
-          <div class="discover-card-header">
-            <div class="discover-card-emoji">🔍</div>
+        <div class="discover-card discover-card-photo-bg discover-card-photo-bg-cellar discover-card-private">
+          <div class="discover-card-photo-bg-inner">
             <h3 class="discover-card-title">The Cellar Vault</h3>
-          </div>
-          <p class="discover-card-description">Aged cigar discussion, humidor builds, and long-term storage.</p>
-          <div class="rooms-card-footer">
-            <span class="discover-card-member-count">14 members</span>
-            <button class="discover-request-button">Request to Join</button>
+            <p class="discover-card-description">Aged cigar discussion, humidor builds, and long-term storage.</p>
+            <div class="discover-card-photo-bg-actions">
+              <span class="discover-card-member-count">14 members</span>
+              <button type="button" class="discover-request-button">Request to Join</button>
+            </div>
           </div>
         </div>
 
-        <div class="discover-card">
-          <div class="discover-card-header">
-            <div class="discover-card-emoji">🌿</div>
+        <div class="discover-card discover-card-photo-bg discover-card-photo-bg-nicaragua">
+          <div class="discover-card-photo-bg-inner">
             <h3 class="discover-card-title">Nicaragua Only</h3>
-          </div>
-          <p class="discover-card-description">Padron, My Father, Drew Estate — all-Nicaragua, all the time.</p>
-          <div class="rooms-card-footer">
-            <span class="discover-card-member-count">18 members</span>
-            <button class="discover-join-button">Join</button>
+            <p class="discover-card-description">Padron, My Father, Drew Estate — all-Nicaragua, all the time.</p>
+            <div class="discover-card-photo-bg-actions">
+              <span class="discover-card-member-count">18 members</span>
+              <button type="button" class="discover-join-button">Join</button>
+            </div>
           </div>
         </div>
 

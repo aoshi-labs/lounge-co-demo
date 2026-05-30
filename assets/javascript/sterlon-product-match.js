@@ -13,6 +13,13 @@
   var PRODUCT_NAME_ALIASES = [
     { pattern: /\bpappy\b|\bvan winkle\b/, name: 'Pappy Van Winkle 23yr', category: 'spirit' },
     { pattern: /\bblanton'?s?\b/, name: "Blanton's Single Barrel", category: 'spirit' },
+    { pattern: /\b(?:george t\.?\s*)?stagg\b|\bgt stagg\b/i, name: "George T. Stagg", category: 'spirit' },
+    { pattern: /\bbooker'?s?\b/, name: "Booker's Bourbon", category: 'spirit' },
+    { pattern: /\bmichter'?s?\b/, name: "Michter's US*1 Bourbon", category: 'spirit' },
+    { pattern: /\bmaker'?s?\s*mark\b/, name: "Maker's Mark", category: 'spirit' },
+    { pattern: /\bfour\s*roses\b/, name: 'Four Roses Single Barrel', category: 'spirit' },
+    { pattern: /\bknob\s*reek\b/, name: 'Knob Creek 9yr', category: 'spirit' },
+    { pattern: /\brussell'?s?\s*reserve\b/, name: "Russell's Reserve Single Barrel", category: 'spirit' },
     { pattern: /\bbuffalo trace\b/, name: 'Buffalo Trace', category: 'spirit' },
     { pattern: /\bwoodford\b/, name: 'Woodford Reserve', category: 'spirit' },
     { pattern: /\beagle rare\b/, name: 'Eagle Rare 10yr', category: 'spirit' },
@@ -28,10 +35,13 @@
     { pattern: /\bdiplomatico\b/, name: 'Diplomatico Reserva Exclusiva', category: 'spirit' },
     { pattern: /\bzacapa\b/, name: 'Zacapa 23', category: 'spirit' },
     { pattern: /\bhennessy\s*xo\b/i, name: 'Hennessy XO', category: 'spirit' },
+    { pattern: /\bhennessy\s*vsop\b/i, name: 'Hennessy VSOP', category: 'spirit' },
     { pattern: /\bhennessy\b/, name: 'Hennessy VS', category: 'spirit' },
+    { pattern: /\br[eé]my\s+martin\b/i, name: 'Rémy Martin VSOP', category: 'spirit' },
     { pattern: /\bfuente\s+hemingway\b|\bhemingway\s+(short\s+story|perfecto)\b/i, name: 'Arturo Fuente Hemingway Short Story', category: 'cigar' },
     { pattern: /\bopus\s*x\b|\bopusx\b/, name: 'Arturo Fuente Opus X', category: 'cigar' },
     { pattern: /\barturo fuente\b|\bfuente\b/, name: 'Arturo Fuente Don Carlos Personal Reserve', category: 'cigar' },
+    { pattern: /\bpadron\b/i, name: 'Padron 1964 Anniversary Exclusivo', category: 'cigar', _broad: true },
     { pattern: /\bpadron\s*1926\s*no\.?\s*35\b/i, name: 'Padron 1926 No. 35', category: 'cigar' },
     { pattern: /\bpadron\s*1964\b|\bpadron\s*64\b/, name: 'Padron 1964 Anniversary Exclusivo', category: 'cigar' },
     { pattern: /\bpadron\s*1926\b|\bpadron\s*26\b|\bpadron\s*35\b/, name: 'Padron 1926 Series No. 35', category: 'cigar' },
@@ -81,36 +91,6 @@
     if (/\bhibiki\s*(21|30)\b/.test(t)) return { name: 'Hibiki 30', category: 'spirit' };
     if (/\bjohnnie walker blue\b|\bblue label\b/.test(t)) return { name: 'Johnnie Walker Blue', category: 'spirit' };
     if (/\bcrown royal\b/.test(t)) return { name: 'Crown Royal', category: 'spirit' };
-    return null;
-  }
-
-  function matchOffMenuCigarInText(text) {
-    var t = (text || '').toLowerCase();
-    if (/\bla gloria\b|\bgloria cubana\b/.test(t)) {
-      return { name: /\bestel[ií]\b/.test(t) ? 'La Gloria Cubana Esteli' : 'La Gloria Cubana', category: 'cigar' };
-    }
-    if (/\bromeo y julieta\b|\bryj\b/.test(t)) return { name: 'Romeo y Julieta', category: 'cigar' };
-    if (/\bpartagas\b/.test(t)) return { name: 'Partagas', category: 'cigar' };
-    return null;
-  }
-
-  function productExists(category, name) {
-    var LP = g.LoungeProducts;
-    if (!LP || !name) return false;
-    if (category === 'spirit' && typeof LP.findSpiritByName === 'function') return !!LP.findSpiritByName(name);
-    if (category === 'cigar' && typeof LP.findCigarByName === 'function') return !!LP.findCigarByName(name);
-    return false;
-  }
-
-  function detectUnavailableDemoProduct(text) {
-    var spirit = matchOffMenuProductInText(text);
-    if (spirit && !productExists('spirit', spirit.name)) return spirit;
-    var cigar = matchOffMenuCigarInText(text);
-    if (cigar && !productExists('cigar', cigar.name)) return cigar;
-    var alias = resolveAlias(text);
-    if (alias && !productExists(alias.category, alias.name)) {
-      return { name: alias.name, category: alias.category };
-    }
     return null;
   }
 
@@ -187,24 +167,148 @@
     return null;
   }
 
-  function resolveNamedCigarId(text) {
-    var IM = g.RecommendationIntentMatch;
-    if (IM && typeof IM.resolveNamedCigarId === 'function') {
-      return IM.resolveNamedCigarId(text);
-    }
-    return null;
+  function findActualSubstring(haystack, needle) {
+    var idx = String(haystack || '').toLowerCase().indexOf(String(needle || '').toLowerCase());
+    if (idx === -1) return null;
+    return haystack.slice(idx, idx + needle.length);
   }
 
-  function resolveNamedCigar(text) {
-    var id = resolveNamedCigarId(text);
-    var LP = g.LoungeProducts;
-    var PIDs = g.RecommendationProductIds;
-    if (id && PIDs) return PIDs.displayNameForId('cigar', id) || null;
-    if (id && LP && typeof LP.getCigarById === 'function') {
-      var p = LP.getCigarById(id);
-      return p && p.name ? p.name : null;
+  function isSommelierLabelFragment(fragment) {
+    return /^(?:Direct Pick|The Core Flavor|The Strategy|What to Avoid|Serving)\s*:?\s*$/i.test(
+      String(fragment || '').trim()
+    );
+  }
+
+  function addProductMentionStems(product, add) {
+    var full = String(product || '').trim();
+    if (!full || !isLikelyProductName(full)) return;
+    add(full);
+    var words = full.split(/\s+/).filter(Boolean);
+    var stemStop = /^(?:single|double|small|batch|reserve|select|that|this|those|these|standard|suggest|lower|more|zero|version|how|proof|spirit|pairing|mellowness|everything|changes|nature|smoother|mellowed|compared|younger|punchier)$/i;
+    if (words[0] && words[0].length >= 5 && !stemStop.test(words[0])) {
+      add(words[0]);
     }
-    return null;
+    if (words.length >= 2 && isLikelyProductName(words.slice(0, 2).join(' '))) {
+      add(words.slice(0, 2).join(' '));
+    }
+    if (words.length >= 3 && isLikelyProductName(words.slice(0, 3).join(' '))) {
+      add(words.slice(0, 3).join(' '));
+    }
+  }
+
+  /** Pull explicit picks from labeled lines or numbered option lists. */
+  function extractDirectPickProducts(text) {
+    var source = String(text || '');
+    var found = [];
+
+    var directPick = source.match(/(?:^|\n)\s*Direct Pick:\s*(.+?)(?:\n|$)/i);
+    if (directPick) {
+      found = found.concat(
+        directPick[1]
+          .split(/\s*(?:\+|&|\band\b|,|;|\bwith\b)\s*/i)
+          .map(function (part) {
+            return part.replace(/^[\s\-–—]+|[\s\-–—]+$/g, '').trim();
+          })
+          .filter(function (part) {
+            return part.length >= 3 && !isSommelierLabelFragment(part) && !/^(a|an|the|neat|rocks glass)$/i.test(part);
+          })
+      );
+    }
+
+    var optionRe = /(?:^|\n)\s*(?:Option\s*\d+|#\d+\.?|\d+[.)])\s*[:.\-–—]?\s*([^\n]{3,120})/gi;
+    var match;
+    while ((match = optionRe.exec(source)) !== null) {
+      var body = String(match[1] || '').trim();
+      body.split(/\s*(?:\+|&|\band\b|,|;|\bwith\b|\s—\s|\s-\s)\s*/i).forEach(function (part) {
+        var cleaned = part.replace(/^[\s\-–—]+|[\s\-–—]+$/g, '').trim();
+        if (cleaned.length >= 3 && !isSommelierLabelFragment(cleaned)) found.push(cleaned);
+      });
+    }
+
+    return found;
+  }
+
+  function isLikelyProductName(fragment) {
+    var f = String(fragment || '').trim();
+    if (f.length < 3 || f.length > 72) return false;
+    if (isSommelierLabelFragment(f)) return false;
+    if (/^(?:that|this|these|those|how|what|why|when|standard version|suggest|compared|everything|mellowness|nature|smoother|mellowed|strategy|changes|proof strategy|proof|high proof|lower proof|high-proof|lower-proof|neat|rocks|dram|pour|sip|finish|palate|smoke|body|bold|rich|warm|mellow|smooth|intense|contrast|complement|version|standard|suggest a)\b/i.test(f)) {
+      return false;
+    }
+    if (/\b(?:everything|changes|strategy|compared|nature|mellowed|smoother|standard version|how does|suggest a|lower-proof|high-proof)\b/i.test(f) &&
+        !/\b(?:padron|booker|stagg|blanton|macallan|lagavulin|opus|davidoff|cohiba|fuente|liga|oliva|pappy|michter|woodford|buffalo|eagle|knob|four roses|hemingway|montecristo|partagas|ashton|macanudo)\b/i.test(f)) {
+      return false;
+    }
+    if (f.split(/\s+/).length > 7) return false;
+    if (!/[A-Z0-9"']/.test(f) &&
+        !/\b(?:padron|booker|stagg|blanton|macallan|lagavulin|opus|davidoff|cohiba|fuente|liga|oliva|pappy|michter|woodford|buffalo|knob|four roses|hemingway|montecristo|partagas|ashton|macanudo|hennessy|diplomatico|zacapa|yamazaki|hibiki|casamigos|whistlepig|sazerac|glenfiddich)\b/i.test(f)) {
+      return false;
+    }
+    return true;
+  }
+
+  /** Product-like phrases in free-form prose (Grok sommelier mode — no sealed cards). */
+  function findProductMentionsInText(text) {
+    var source = String(text || '');
+    if (!source.trim()) return [];
+    var found = [];
+    var seen = Object.create(null);
+
+    function add(fragment) {
+      var f = String(fragment || '').trim();
+      if (!isLikelyProductName(f)) return;
+      var key = f.toLowerCase();
+      if (seen[key]) return;
+      seen[key] = true;
+      found.push(f);
+    }
+
+    extractDirectPickProducts(source).forEach(function (product) {
+      addProductMentionStems(product, add);
+    });
+
+    var boldRe = /\*\*([^*]{2,80})\*\*/g;
+    var m;
+    while ((m = boldRe.exec(source)) !== null) add(m[1]);
+
+    var quoteRe = /"([^"]{3,80})"/g;
+    while ((m = quoteRe.exec(source)) !== null) add(m[1]);
+
+    for (var j = 0; j < PRODUCT_NAME_ALIASES.length; j += 1) {
+      var alias = PRODUCT_NAME_ALIASES[j];
+      var aliasRe = new RegExp(
+        alias.pattern.source,
+        alias.pattern.flags.indexOf('g') >= 0 ? alias.pattern.flags : alias.pattern.flags + 'g'
+      );
+      while ((m = aliasRe.exec(source)) !== null) {
+        if (m[0]) add(m[0]);
+      }
+      if (alias.name) {
+        var actual = findActualSubstring(source, alias.name);
+        if (actual) add(actual);
+      }
+    }
+
+    var offMenu = matchOffMenuProductInText(source);
+    if (offMenu && offMenu.name) {
+      var offActual = findActualSubstring(source, offMenu.name);
+      if (offActual) add(offActual);
+    }
+
+    var LP = g.LoungeProducts;
+    if (LP) {
+      var catalogNames = [];
+      (LP.spirits || []).forEach(function (s) { if (s && s.name) catalogNames.push(s.name); });
+      (LP.cigars || []).forEach(function (c) { if (c && c.name) catalogNames.push(c.name); });
+      catalogNames.sort(function (a, b) { return b.length - a.length; });
+      catalogNames.forEach(function (name) {
+        var hit = findActualSubstring(source, name);
+        if (hit) add(hit);
+      });
+    }
+
+    found.sort(function (a, b) { return b.length - a.length; });
+    return found;
   }
 
   function inferCategoryBias(text) {
@@ -240,12 +344,11 @@
     resolveAlias: resolveAlias,
     matchAliasInText: matchAliasInText,
     matchOffMenuProductInText: matchOffMenuProductInText,
-    matchOffMenuCigarInText: matchOffMenuCigarInText,
-    detectUnavailableDemoProduct: detectUnavailableDemoProduct,
     inferCategoryBias: inferCategoryBias,
-    resolveNamedCigar: resolveNamedCigar,
-    resolveNamedCigarId: resolveNamedCigarId,
     resolveNamedSpirit: resolveNamedSpirit,
-    resolveNamedSpiritId: resolveNamedSpiritId
+    resolveNamedSpiritId: resolveNamedSpiritId,
+    findProductMentionsInText: findProductMentionsInText,
+    extractDirectPickProducts: extractDirectPickProducts,
+    isLikelyProductName: isLikelyProductName
   };
 })(typeof window !== 'undefined' ? window : global);

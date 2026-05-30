@@ -1,7 +1,7 @@
 
   /* ── Explore search bar (hero-sized) ── */
-  .explore-search-wrap{padding:28px 28px 20px;background:var(--bg-surface);border-bottom:1px solid var(--bg-border);}
-  .explore-search-bar{display:flex;align-items:center;background:var(--bg-elevated);border:1px solid var(--bg-border);border-radius:12px;padding:0 16px;gap:12px;transition:border-color .2s;}
+  .explore-search-wrap{padding:0 0 16px;background:transparent;border-bottom:none;}
+  .explore-search-bar{display:flex;align-items:center;background:transparent;border:1px solid var(--bg-border);border-radius:12px;padding:0 16px;gap:12px;transition:border-color .2s;}
   .explore-search-bar:focus-within{border-color:var(--gold);}
   .explore-search-input{flex:1;background:none;border:none;outline:none;font-family:var(--font-ui);font-size:16px;color:var(--text-primary);padding:14px 0;}
   .explore-search-input::placeholder{color:var(--text-muted);}
@@ -104,11 +104,11 @@
 .topbar-notif-link { position:relative; text-decoration:none; }
 .topbar-notif-dot { position:absolute; top:4px; right:4px; }
 .topbar-avatar-elite { background:var(--tier-elite); color:var(--tier-elite-ink); width:34px; height:34px; font-size:12px; }
-.explore-content-wrap { display:flex; justify-content:center; gap:20px; }
-.explore-center-col { width:100%; max-width:720px; padding-bottom:40px; }
+.explore-content-wrap { display:flex; justify-content:flex-start; gap:var(--shell-column-gap); width:100%; }
+.explore-center-col { width:100%; max-width:var(--feed-col-max); padding-bottom:40px; min-width:0; }
 .explore-search-clear-btn { display:none; background:none; border:none; cursor:pointer; color:var(--text-muted); padding:4px; }
 .explore-cat-tabs-wrap { padding:14px 0 0; }
-.explore-discover-stack { padding:24px 28px; display:flex; flex-direction:column; gap:32px; }
+.explore-discover-stack { padding:8px 0 24px; display:flex; flex-direction:column; gap:32px; }
 .card-stack { display:flex; flex-direction:column; gap:10px; }
 .card-link { text-decoration:none; }
 .member-avatar-champion { background:var(--gold); color:var(--bg-base); width:44px; height:44px; font-size:14px; }
@@ -139,10 +139,45 @@
 .activity-rating { font-family:var(--font-display); font-size:14px; color:var(--gold); }
 .activity-avatar-blue { background:var(--avatar-deep-blue); color:var(--avatar-deep-blue-ink); width:38px; height:38px; font-size:12px; }
 .activity-timestamp { font-size:11px; color:var(--text-muted); margin-top:6px; }
-.explore-search-results { display:none; padding:24px 28px; }
+.explore-search-results { display:none; padding:8px 0 24px; }
 .explore-search-results-label { font-size:13px; color:var(--text-muted); margin-bottom:16px; }
 .explore-search-query-text { color:var(--text-primary); font-weight:600; }
-.explore-rail-col { width:268px; flex-shrink:0; display:flex; flex-direction:column; gap:14px; padding:24px 20px 24px 0; }
+.explore-rail-col { width:var(--rail-w); flex-shrink:0; display:flex; flex-direction:column; gap:14px; padding-top:0; }
+
+/* Trending panel — right rail */
+.explore-trending-panel-hd {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.explore-trending-panel-hd .widget-title {
+  margin-bottom: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.explore-trending-icon { color: var(--gold); flex-shrink: 0; }
+.explore-trending-see-all {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-decoration: none;
+  flex-shrink: 0;
+  padding-top: 1px;
+}
+.explore-trending-see-all:hover { color: var(--gold); }
+.explore-trending-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.explore-trending-list .hashtag-pill {
+  width: 100%;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
 .sterlon-pick-quote { background:var(--gold-subtle); border:1px solid rgba(var(--gold-rgb), .2); border-radius:10px; padding:12px 14px; font-family:var(--font-body); font-style:italic; font-size:13px; color:var(--text-secondary); line-height:1.65; margin-bottom:12px; }
 .sterlon-pick-link { font-family:var(--font-ui); font-size:13px; color:var(--gold); font-weight:600; text-decoration:none; }
 .popular-row { display:flex; align-items:center; gap:10px; }

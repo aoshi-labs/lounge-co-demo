@@ -20,10 +20,9 @@
 }
 .chh-new:hover { background: var(--burg-hover); }
 
-/* Layout */
-.chh-page-frame { display: flex; justify-content: center; padding: 24px 20px 40px; gap: 20px; }
-.chh-main-col { width: 100%; max-width: 720px; display: flex; flex-direction: column; gap: 18px; }
-.chh-rail-col { width: 268px; flex-shrink: 0; display: flex; flex-direction: column; gap: 14px; }
+/* Layout — column width/padding from lounge.css (.page-content + .main-col) */
+.chh-main-col { display: flex; flex-direction: column; gap: 18px; padding-bottom: 24px; }
+.chh-rail-col { width: var(--rail-w); flex-shrink: 0; display: flex; flex-direction: column; gap: 14px; }
 
 /* Stats row */
 .chh-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
@@ -151,8 +150,6 @@
 @media (max-width: 1023px) {
   .hamburger-button  { display: flex; }
   .chh-back { display: none; }
-  .chh-page-frame { flex-direction: column; padding: 16px; gap: 16px; }
-  .chh-main-col { max-width: 100%; }
   .chh-rail-col { display: none; }
   .chh-stats { grid-template-columns: 1fr; }
   .chh-toolbar { flex-direction: column; align-items: stretch; }

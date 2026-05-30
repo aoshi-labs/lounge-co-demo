@@ -25,8 +25,14 @@
 }
 .notifications-mark-all-btn:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-subtle); }
 .notifications-mark-all-btn [data-lucide], .notifications-mark-all-btn svg { display: block; }
-.notifications-page-frame { display:flex; justify-content:center; padding:24px 20px; }
-.notifications-page-stack { width:100%; max-width:680px; display:flex; flex-direction:column; gap:14px; }
+/* Column width/padding from lounge.css (.page-content + .main-col) */
+.notifications-page-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  padding-bottom: 24px;
+}
 
 /* ─── Filter tabs carousel ─── */
 /* Filter tabs row — full carousel chrome (hidden scrollbar, scroll-snap,

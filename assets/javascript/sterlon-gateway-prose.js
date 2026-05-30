@@ -349,6 +349,9 @@
     text = PP.removeAssistantDrift(text);
     text = PP.removeListicleScaffolding(text);
     text = PP.normalizeSentenceSpacing(text);
+    if (PP.normalizeSommelierTemplate && PP.hasSommelierTemplateLabels(text)) {
+      text = PP.normalizeSommelierTemplate(text);
+    }
     text = text.replace(/\b(robust|elevated|curated|bespoke|premium experience|unlock|delve|journey)\b/gi, function (m) {
       const map = {
         robust: 'steady',
@@ -371,6 +374,9 @@
     text = text.replace(/\b(expensive|pricey)\b/gi, 'premium');
     text = PP.limitSentenceCount(text, profile.sentences);
     text = PP.limitWordCount(text, profile.words);
+    if (PP.normalizeSommelierTemplate && PP.hasSommelierTemplateLabels(text)) {
+      text = PP.normalizeSommelierTemplate(text);
+    }
     text = PP.normalizeSentenceSpacing(text).replace(/\n{3,}/g, '\n\n').trim();
     if (o.bindSealedSlots && o.sealedCards && o.sealedCards.length >= 2) {
       return bindProseToSealedSlots(text, o.sealedCards, o);

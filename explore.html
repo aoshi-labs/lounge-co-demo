@@ -71,7 +71,7 @@
     <div class="nav-divider"></div>
     <div class="nav-section-label">Shop</div>
     <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
-    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+    <a href="/my-visits" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
 
     <div class="nav-divider"></div>
     <div class="nav-section-label">Personal</div>
@@ -102,31 +102,11 @@
     </div>
   </header>
 
-  <!-- ══════════════════════════════════════════════════════
-       DEPRECATION BANNER
-       the venue-discovery surface lives at
-       discover-venues.html (platform-scoped, public/private venue gating,
-       Sterlon-recommended section under Pattern A). The per-venue
-       "trending posts / hashtags / top members" explore framing is
-       superseded — the TR1 lock retired trending surfaces, and member
-       discovery happens in my-network.html under the follow-graph model.
-       Internal links should point to discover-venues.html.
-  ══════════════════════════════════════════════════════ -->
-  <div class="deprecation-banner" role="status">
-    <div class="deprecation-banner-inner">
-      <i data-lucide="info" class="ic-15"></i>
-      <div>
-        <strong>This page is deprecated.</strong>
-        <span> Venue discovery moved to <a href="discover-venues.html">Discover Venues</a> (platform-scoped, public/private venue gating). Member discovery is now in <a href="my-network.html">My Network</a> (palate-similarity suggestions for Cellar Club members).</span>
-      </div>
-    </div>
-  </div>
-
   <!-- Content -->
-  <div class="explore-content-wrap">
+  <div class="explore-content-wrap page-content">
 
     <!-- ── CENTER ── -->
-    <div class="explore-center-col">
+    <div class="explore-center-col main-col">
 
       <!-- Big search bar -->
       <div class="explore-search-wrap">
@@ -151,48 +131,6 @@
 
       <!-- ── Discover content ── -->
       <div id="explore-discover-content" class="explore-discover-stack">
-
-        <!-- Trending hashtags -->
-        <div>
-          <div class="section-hd">
-            <h2>🔥 Trending This Week</h2>
-            <a href="#">See all</a>
-          </div>
-          <div class="hashtag-grid">
-            <div class="hashtag-pill">
-              <span class="hashtag-name">#Padron1926</span>
-              <span class="hashtag-count">47 posts</span>
-            </div>
-            <div class="hashtag-pill">
-              <span class="hashtag-name">#ScotchAndSmoke</span>
-              <span class="hashtag-count">38 posts</span>
-            </div>
-            <div class="hashtag-pill">
-              <span class="hashtag-name">#PappyVanWinkle</span>
-              <span class="hashtag-count">29 posts</span>
-            </div>
-            <div class="hashtag-pill">
-              <span class="hashtag-name">#OpusX</span>
-              <span class="hashtag-count">24 posts</span>
-            </div>
-            <div class="hashtag-pill">
-              <span class="hashtag-name">#LoungeCoVibes</span>
-              <span class="hashtag-count">21 posts</span>
-            </div>
-            <div class="hashtag-pill">
-              <span class="hashtag-name">#LigaPrivada</span>
-              <span class="hashtag-count">18 posts</span>
-            </div>
-            <div class="hashtag-pill">
-              <span class="hashtag-name">#FullBodyFriday</span>
-              <span class="hashtag-count">15 posts</span>
-            </div>
-            <div class="hashtag-pill">
-              <span class="hashtag-name">#MacallanMoments</span>
-              <span class="hashtag-count">12 posts</span>
-            </div>
-          </div>
-        </div>
 
         <!-- Featured members -->
         <div>
@@ -490,6 +428,48 @@
     <!-- ── RIGHT RAIL ── -->
     <aside class="rail-col explore-rail-col">
 
+      <!-- Trending hashtags -->
+      <div class="widget explore-trending-panel">
+        <div class="explore-trending-panel-hd">
+          <div class="widget-title"><i data-lucide="flame" class="ic-14 explore-trending-icon"></i> Trending This Week</div>
+          <a href="#" class="explore-trending-see-all">See all</a>
+        </div>
+        <div class="explore-trending-list">
+          <div class="hashtag-pill">
+            <span class="hashtag-name">#Padron1926</span>
+            <span class="hashtag-count">47 posts</span>
+          </div>
+          <div class="hashtag-pill">
+            <span class="hashtag-name">#ScotchAndSmoke</span>
+            <span class="hashtag-count">38 posts</span>
+          </div>
+          <div class="hashtag-pill">
+            <span class="hashtag-name">#PappyVanWinkle</span>
+            <span class="hashtag-count">29 posts</span>
+          </div>
+          <div class="hashtag-pill">
+            <span class="hashtag-name">#OpusX</span>
+            <span class="hashtag-count">24 posts</span>
+          </div>
+          <div class="hashtag-pill">
+            <span class="hashtag-name">#LoungeCoVibes</span>
+            <span class="hashtag-count">21 posts</span>
+          </div>
+          <div class="hashtag-pill">
+            <span class="hashtag-name">#LigaPrivada</span>
+            <span class="hashtag-count">18 posts</span>
+          </div>
+          <div class="hashtag-pill">
+            <span class="hashtag-name">#FullBodyFriday</span>
+            <span class="hashtag-count">15 posts</span>
+          </div>
+          <div class="hashtag-pill">
+            <span class="hashtag-name">#MacallanMoments</span>
+            <span class="hashtag-count">12 posts</span>
+          </div>
+        </div>
+      </div>
+
       <!-- AI recommendation -->
       <div class="widget">
         <div class="widget-title">✦ Sterlon Pick</div>
@@ -650,8 +630,6 @@
   }
 
   (function setupExploreCarousels(){
-    document.querySelectorAll('.hashtag-grid')
-      .forEach(t => wireCarousel(t, 'explore-tags-carousel'));
     document.querySelectorAll('.explore-product-grid')
       .forEach(t => wireCarousel(t, 'explore-products-carousel'));
   })();

@@ -1,10 +1,12 @@
   .room-card{
     position:relative;
-    background:var(--bg-surface);border:1px solid var(--bg-border);border-radius:14px;overflow:hidden;
-    transition:border-color .2s,transform .15s;
+    aspect-ratio:6 / 5;
+    background:var(--bg-base);
+    border:1px solid var(--bg-border);border-radius:14px;overflow:hidden;
+    transition:border-color .45s ease-in-out, transform .45s ease-in-out;
     text-decoration:none;
-    color:var(--text-primary);   /* explicit so the lock + title don't inherit the default link blue */
-    display:flex;flex-direction:column;
+    color:var(--text-primary);
+    display:flex;flex-direction:column;justify-content:flex-end;
   }
   .room-card:hover{border-color:rgba(var(--gold-rgb), .3);transform:translateY(-1px);}
   /* Public rooms don't get the lock watermark. Add `.room-card-public`
@@ -34,13 +36,71 @@
 .topbar-title { font-size:15px; font-weight:600; color:var(--text-primary); }
 .rooms-create-button { background:var(--burg); color:var(--cream); border:none; border-radius:8px; padding:8px 14px; font-family:var(--font-ui); font-size:13px; font-weight:600; cursor:pointer; }
 .rooms-page-frame { display:flex; justify-content:center; padding:24px 20px; gap:20px; }
-.rooms-page-stack { width:100%; max-width:780px; display:flex; flex-direction:column; gap:18px; }
+.rooms-page-stack { flex: 0 1 var(--wide-col-max); width: auto; max-width: var(--wide-col-max); display:flex; flex-direction:column; gap:18px; }
 .rooms-page-title { font-family:var(--font-display); font-size:2rem; font-weight:700; color:var(--text-primary); line-height:1.1; }
 .rooms-page-tagline { font-family:var(--font-body); font-style:italic; font-size:14px; color:var(--text-secondary); margin-top:6px; }
 .rooms-section-label { font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted); }
 .rooms-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
-.rooms-card-header-single-malts { height:90px; background:linear-gradient(135deg,rgba(var(--bg-base-rgb), .55),rgba(20,12,6,.35)), url("../images/single-malt-society-background.png") center/cover no-repeat; display:flex; align-items:center; justify-content:center; font-size:2.4rem; }
-.rooms-card-body { padding:16px 18px; }
+/* Full-bleed photo — img + overflow clip; transform pans focal point reliably. */
+.rooms-card-media {
+  position:absolute;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
+}
+.rooms-card-media::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:linear-gradient(180deg,rgba(0,0,0,.28) 0%,rgba(0,0,0,.08) 45%,rgba(0,0,0,.35) 100%);
+}
+.rooms-card-photo {
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:130%;
+  height:130%;
+  max-width:none;
+  object-fit:cover;
+  transform:translate(var(--rooms-photo-x, -50%), var(--rooms-photo-y, -50%)) scale(1);
+  transition:transform .45s ease-in-out;
+  will-change:transform;
+}
+.room-card:hover .rooms-card-photo {
+  transform:translate(var(--rooms-photo-x, -50%), var(--rooms-photo-y, -50%)) scale(1.08);
+}
+.rooms-card-media-single-malts { --rooms-photo-x:-64%; --rooms-photo-y:-68%; }
+.rooms-card-media-cuban { --rooms-photo-x:-50%; --rooms-photo-y:-50%; }
+.rooms-card-media-cuban .rooms-card-photo { width:100%; height:100%; }
+.rooms-card-media-bourbon { --rooms-photo-x:-50%; --rooms-photo-y:-50%; }
+.rooms-card-media-bourbon .rooms-card-photo { width:100%; height:100%; }
+.rooms-card-media-founders { --rooms-photo-x:-50%; --rooms-photo-y:-54%; }
+.rooms-card-body {
+  position:relative;
+  z-index:1;
+  padding:28px 18px 14px;
+  background:linear-gradient(to top,rgba(10,7,5,.94) 0%,rgba(10,7,5,.76) 32%,rgba(10,7,5,.38) 58%,rgba(10,7,5,.1) 82%,transparent 100%);
+}
+.rooms-card-body::before {
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  top:-70%;
+  z-index:-1;
+  pointer-events:none;
+  background:linear-gradient(to top,rgba(8,5,4,.97) 0%,rgba(8,5,4,.9) 18%,rgba(8,5,4,.62) 38%,rgba(8,5,4,.32) 58%,rgba(8,5,4,.12) 76%,transparent 100%);
+  opacity:0;
+  transition:opacity .45s ease-in-out;
+}
+.room-card:hover .rooms-card-body::before { opacity:1; }
+.room-card .rooms-card-title { color:var(--cream); }
+.room-card .rooms-card-description { color:rgba(var(--cream-rgb), .82); }
+.room-card .rooms-member-count { color:rgba(var(--cream-rgb), .62); }
+.room-card .avatar { border-color:rgba(10,7,5,.75); }
 .rooms-card-title-row { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
 .rooms-card-title { font-family:var(--font-display); font-size:1.2rem; font-weight:600; color:var(--text-primary); }
 .rooms-card-description { font-family:var(--font-body); font-style:italic; font-size:12px; color:var(--text-secondary); line-height:1.5; margin-bottom:12px; }
@@ -51,14 +111,105 @@
 .rooms-avatar-runner-up { background:var(--tier-runner-up); color:var(--tier-runner-up-ink); width:24px; height:24px; font-size:9px; margin-left:-6px; border:2px solid var(--bg-surface); }
 .rooms-member-count { font-size:11px; color:var(--text-muted); margin-left:8px; }
 .rooms-new-badge { background:var(--burg); color:var(--cream); border-radius:99px; padding:2px 7px; font-size:10px; font-weight:700; }
-.rooms-card-header-cuban { height:90px; background:linear-gradient(135deg,rgba(var(--bg-base-rgb), .55),rgba(20,12,6,.35)), url("../images/cigar-event-background.png") center/cover no-repeat; display:flex; align-items:center; justify-content:center; font-size:2.4rem; }
 .rooms-avatar-burgundy { background:var(--burg); color:var(--cream); width:24px; height:24px; font-size:9px; border:2px solid var(--bg-surface); }
-.rooms-card-header-bourbon { height:90px; background:linear-gradient(135deg,rgba(var(--bg-base-rgb), .55),rgba(20,12,6,.35)), url("../images/bourbon-hunters-background.png") center/cover no-repeat; display:flex; align-items:center; justify-content:center; font-size:2.4rem; }
 .rooms-avatar-bronze { background:var(--tier-bronze); color:var(--tier-bronze-ink); width:24px; height:24px; font-size:9px; border:2px solid var(--bg-surface); }
-.rooms-card-header-founders { height:90px; background:linear-gradient(135deg,rgba(var(--bg-base-rgb), .55),rgba(20,12,6,.35)), url("../images/founders-circle-background.png") center/cover no-repeat; display:flex; align-items:center; justify-content:center; font-size:2.4rem; }
 .rooms-elite-pill { background:var(--gold-subtle); border:1px solid rgba(var(--gold-rgb), .2); color:var(--gold); border-radius:99px; padding:2px 7px; font-size:10px; font-weight:700; }
 .rooms-section-label-discover { font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted); margin-top:8px; }
 .discover-card { background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:14px; padding:18px; position:relative; }
+.discover-card-photo-bg {
+  overflow:hidden;
+  padding:0;
+  min-height:168px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  border-color:rgba(var(--gold-rgb), .22);
+  transition:border-color .45s ease-in-out;
+}
+.discover-card-photo-bg:hover { border-color:rgba(var(--gold-rgb), .38); }
+.discover-card-photo-bg::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background:
+    linear-gradient(to top,rgba(8,5,4,.97) 0%,rgba(8,5,4,.9) 22%,rgba(8,5,4,.55) 46%,rgba(8,5,4,.14) 72%,transparent 100%),
+    var(--discover-card-photo) var(--discover-card-photo-position, center) / cover no-repeat;
+  transition:transform .45s ease-in-out;
+}
+.discover-card-photo-bg-port {
+  --discover-card-photo:url("../images/port-pairings-background.webp");
+  --discover-card-photo-position:58% 38%;
+}
+.discover-card-photo-bg-smoke {
+  --discover-card-photo:url("../images/smoke-espresso-background.webp");
+  --discover-card-photo-position:center 42%;
+}
+.discover-card-photo-bg-cellar {
+  --discover-card-photo:url("../images/cellar-vault-background.webp");
+  --discover-card-photo-position:44% 40%;
+}
+.discover-card-photo-bg-nicaragua {
+  --discover-card-photo:url("../images/nicaragua-only-background.webp");
+  --discover-card-photo-position:center 46%;
+}
+.discover-card-photo-bg:hover::after { transform:scale(1.06); }
+.discover-card-photo-bg-inner {
+  position:relative;
+  z-index:1;
+  padding:12px 16px 15px;
+}
+.discover-card-photo-bg .discover-card-title {
+  margin:0;
+  font-size:1.28rem;
+  font-weight:600;
+  line-height:1.12;
+  color:var(--cream);
+  letter-spacing:.01em;
+}
+.discover-card-photo-bg .discover-card-description {
+  margin:5px 0 0;
+  max-width:92%;
+  font-size:11.5px;
+  line-height:1.5;
+  color:rgba(var(--cream-rgb), .84);
+}
+.discover-card-photo-bg-actions {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:11px;
+}
+.discover-card-photo-bg .discover-card-member-count {
+  font-family:var(--font-ui);
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.03em;
+  color:rgba(var(--cream-rgb), .58);
+  white-space:nowrap;
+}
+.discover-card-photo-bg .discover-request-button {
+  flex-shrink:0;
+  padding:6px 13px;
+  border-radius:8px;
+  background:rgba(8,5,4,.62);
+  border:1px solid rgba(var(--gold-rgb), .42);
+  backdrop-filter:blur(6px);
+  transition:background .2s ease, border-color .2s ease, color .2s ease;
+}
+.discover-card-photo-bg .discover-request-button:hover {
+  background:rgba(var(--gold-rgb), .16);
+  border-color:rgba(var(--gold-rgb), .62);
+  color:var(--cream);
+}
+.discover-card-photo-bg .discover-join-button {
+  flex-shrink:0;
+  padding:6px 14px;
+  border-radius:8px;
+  font-size:11px;
+  box-shadow:0 2px 10px rgba(0,0,0,.28);
+}
 
 /* Discover-room private indicator — same gold lock watermark used on
    .room-card, sized slightly smaller for these simpler cards. Add the
@@ -101,7 +252,7 @@
 .discover-card-description { font-family:var(--font-body); font-style:italic; font-size:12px; color:var(--text-secondary); line-height:1.55; margin-bottom:12px; }
 .discover-card-member-count { font-size:11px; color:var(--text-muted); }
 .discover-request-button { background:var(--gold-subtle); border:1px solid rgba(var(--gold-rgb), .2); color:var(--gold); border-radius:7px; padding:5px 12px; font-family:var(--font-ui); font-size:11px; font-weight:700; cursor:pointer; }
-.rooms-rail { width:268px; flex-shrink:0; display:flex; flex-direction:column; gap:14px; }
+.rooms-rail { width:var(--rail-w); flex-shrink:0; display:flex; flex-direction:column; gap:14px; }
 .rooms-rail-text { font-family:var(--font-body); font-style:italic; font-size:13px; color:var(--text-secondary); line-height:1.65; margin-bottom:12px; }
 .rooms-rail-text-last { font-family:var(--font-body); font-style:italic; font-size:13px; color:var(--text-secondary); line-height:1.65; }
 .rooms-recommend-text { font-family:var(--font-body); font-style:italic; font-size:13px; color:var(--text-secondary); line-height:1.65; margin-bottom:10px; }
@@ -114,13 +265,21 @@
    to a single column so each card spans the full content width. */
 @media (max-width: 767px) {
   .rooms-grid { grid-template-columns: 1fr; gap: 12px; }
-  .rooms-card-body { padding: 14px 16px; }
+  .room-card { aspect-ratio: 6 / 5; }
+  .rooms-card-body { padding: 24px 16px 12px; }
   .rooms-card-description { margin-bottom: 10px; }
-  /* Header band is roomy at full-width — tighten the height a hair so
-     the emoji + lock watermark sit more compactly. */
-  .rooms-card-header-single-malts, .rooms-card-header-cuban, .rooms-card-header-bourbon, .rooms-card-header-founders { height: 76px; font-size: 2.1rem; }
 }
 
 @media (max-width: 639px) {
   .rooms-page-title { font-size: 1.5rem; line-height: 1.15; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .room-card,
+  .rooms-card-photo,
+  .rooms-card-body::before,
+  .discover-card-photo-bg::after { transition:none; }
+  .room-card:hover .rooms-card-photo { transform:translate(var(--rooms-photo-x, -50%), var(--rooms-photo-y, -50%)) scale(1); }
+  .room-card:hover .rooms-card-body::before { opacity:0; }
+  .discover-card-photo-bg:hover::after { transform:none; }
 }

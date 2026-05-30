@@ -47,22 +47,163 @@
   var FLIGHT_SLOT_LABELS = ['BEST PICK', 'REFINED OPTION', 'CONTRAST WILDCARD'];
   var FLIGHT_SLOT_ICONS = ['compass', 'crown', 'sparkles'];
 
-  function emphasizeProductNames(html, cardOrCards) {
-    if (!cardOrCards) return html;
-    var cards = Array.isArray(cardOrCards) ? cardOrCards : [cardOrCards];
-    var RP = window.RecommendationPresentation;
-    var names =
-      RP && typeof RP.displayNamesForEmphasis === 'function'
-        ? RP.displayNamesForEmphasis(cards)
-        : [];
-    if (!names.length) {
-      cards.forEach(function (card) {
-        if (!card) return;
-        if (card.cigar) names.push(card.cigar);
-        if (card.spirit) names.push(card.spirit);
-      });
+  function collectEmphasisNames(cardOrCards, plainText) {
+    var names = [];
+    var cards = cardOrCards ? (Array.isArray(cardOrCards) ? cardOrCards : [cardOrCards]) : [];
+    if (cards.length) {
+      var RP = window.RecommendationPresentation;
+      if (RP && typeof RP.displayNamesForEmphasis === 'function') {
+        names = RP.displayNamesForEmphasis(cards);
+      }
+      if (!names.length) {
+        cards.forEach(function (card) {
+          if (!card) return;
+          if (card.cigar) names.push(card.cigar);
+          if (card.spirit) names.push(card.spirit);
+        });
+      }
     }
-    names.filter(Boolean).forEach(function (name) {
+    if (plainText) {
+      var SPM = window.SterlonProductMatch;
+      if (SPM && typeof SPM.findProductMentionsInText === 'function') {
+        names = names.concat(SPM.findProductMentionsInText(plainText));
+      }
+    }
+    var seen = Object.create(null);
+    return names
+      .filter(Boolean)
+      .filter(function (name) {
+        var key = String(name).toLowerCase();
+        if (seen[key]) return false;
+        seen[key] = true;
+        return true;
+      })
+      .sort(function (a, b) { return String(b).length - String(a).length; });
+  }
+
+  function foldProductApostrophes(text) {
+    return String(text || '').replace(/[\u2018\u2019\u2032`´]/g, "'");
+  }
+
+  function namePattern(name) {
+    var escaped = escapeRegExp(foldProductApostrophes(name)).replace(/'/g, "[''\u2018\u2019\u2032]");
+    if (escaped.length <= 5) return '\\b' + escaped + '\\b';
+    return escaped;
+  }
+
+  function unwrapProductBoldMarkdown(plain) {
+    var names = [];
+    var text = String(plain || '').replace(/\*\*([^*]{2,80})\*\*/g, function (_, inner) {
+      var name = String(inner || '').trim();
+      if (name) names.push(name);
+      return name;
+    });
+    return { text: text, markdownNames: names };
+  }
+
+  function collectNamesInPlain(plain, cardOrCards, mentionSource) {
+    var normalizedPlain = foldProductApostrophes(plain);
+    var allNames = collectEmphasisNames(cardOrCards, mentionSource || normalizedPlain);
+    var inBlock = [];
+    var seen = Object.create(null);
+    allNames.forEach(function (name) {
+      var re = new RegExp(namePattern(name), 'gi');
+      var match;
+      while ((match = re.exec(normalizedPlain)) !== null) {
+        var hit = match[0];
+        var key = hit.toLowerCase();
+        if (seen[key]) continue;
+        seen[key] = true;
+        inBlock.push(hit);
+      }
+    });
+    return inBlock.sort(function (a, b) { return b.length - a.length; });
+  }
+
+  function escapeRegExp(text) {
+    return String(text || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  function buildEmphasisRanges(plainText, names) {
+    var plain = foldProductApostrophes(plainText);
+    var candidates = [];
+    names.forEach(function (name) {
+      var re = new RegExp(namePattern(name), 'gi');
+      var match;
+      while ((match = re.exec(plain)) !== null) {
+        candidates.push({
+          start: match.index,
+          end: match.index + match[0].length,
+          len: match[0].length
+        });
+      }
+    });
+    candidates.sort(function (a, b) {
+      if (b.len !== a.len) return b.len - a.len;
+      return a.start - b.start;
+    });
+    var accepted = [];
+    candidates.forEach(function (candidate) {
+      var overlaps = accepted.some(function (slot) {
+        return !(candidate.end <= slot.start || candidate.start >= slot.end);
+      });
+      if (!overlaps) accepted.push(candidate);
+    });
+    accepted.sort(function (a, b) { return a.start - b.start; });
+    return accepted;
+  }
+
+  function renderPlainWithEmphasisRanges(plainText, ranges) {
+    var plain = foldProductApostrophes(plainText);
+    if (!ranges.length) {
+      return PP.escapeHtml(PP.repairMojibake(plain));
+    }
+    var html = '';
+    var cursor = 0;
+    ranges.forEach(function (range) {
+      if (range.start > cursor) {
+        html += PP.escapeHtml(PP.repairMojibake(plain.slice(cursor, range.start)));
+      }
+      html += '<span class="sterlon-reco-emphasis">' +
+        PP.escapeHtml(PP.repairMojibake(plain.slice(range.start, range.end))) +
+        '</span>';
+      cursor = range.end;
+    });
+    if (cursor < plain.length) {
+      html += PP.escapeHtml(PP.repairMojibake(plain.slice(cursor)));
+    }
+    return html;
+  }
+
+  function emphasizeProductNamesFromPlain(plainText, cardOrCards, mentionSource) {
+    var plain = foldProductApostrophes(PP.repairMojibake(String(plainText || '')));
+    if (!plain) return '';
+    var unwrapped = unwrapProductBoldMarkdown(plain);
+    plain = unwrapped.text;
+    var SPM = window.SterlonProductMatch;
+    var isProduct = SPM && typeof SPM.isLikelyProductName === 'function'
+      ? SPM.isLikelyProductName.bind(SPM)
+      : function () { return true; };
+    var names = collectNamesInPlain(plain, cardOrCards, mentionSource || plain);
+    unwrapped.markdownNames.forEach(function (name) {
+      if (!isProduct(name)) return;
+      if (names.some(function (hit) { return hit.toLowerCase() === name.toLowerCase(); })) return;
+      if (new RegExp(namePattern(name), 'i').test(plain)) names.push(name);
+    });
+    names = names.sort(function (a, b) { return String(b).length - String(a).length; });
+    if (!names.length) {
+      return PP.escapeHtml(plain);
+    }
+    return renderPlainWithEmphasisRanges(plain, buildEmphasisRanges(plain, names));
+  }
+
+  function emphasizeProductNames(html, cardOrCards, plainText, mentionSource) {
+    if (plainText) {
+      return emphasizeProductNamesFromPlain(plainText, cardOrCards, mentionSource || plainText);
+    }
+    var names = collectEmphasisNames(cardOrCards, mentionSource);
+    if (!names.length) return html;
+    names.forEach(function (name) {
       var escaped = PP.escapeHtml(name);
       if (!escaped) return;
       html = html.split(escaped).join('<span class="sterlon-reco-emphasis">' + escaped + '</span>');
@@ -223,6 +364,7 @@
   window.SterlonCardRenderers = {
     recommendationMoodLine: recommendationMoodLine,
     emphasizeProductNames: emphasizeProductNames,
+    emphasizeProductNamesFromPlain: emphasizeProductNamesFromPlain,
     renderUnifiedFlightCard: renderUnifiedFlightCard,
     renderConversationalPrimaryCard: renderConversationalPrimaryCard,
     renderConversationalBackupCard: renderConversationalBackupCard,

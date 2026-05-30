@@ -71,7 +71,7 @@
 
 /* Layout */
 .admin-profile-frame { display: flex; justify-content: center; padding: 0 20px 40px; gap: 20px; }
-.admin-profile-stack { width: 100%; max-width: 680px; display: flex; flex-direction: column; gap: 0; }
+.admin-profile-stack { width: 100%; max-width: var(--feed-col-max); display: flex; flex-direction: column; gap: 0; }
 
 /* Header card */
 .admin-profile-header-card { padding: 0 24px 20px; background: var(--bg-surface); border-left: 1px solid var(--bg-border); border-right: 1px solid var(--bg-border); }
@@ -190,7 +190,7 @@
 .admin-profile-favorite-note { color: var(--text-muted); font-size: 12px; }
 
 /* Right rail */
-.admin-profile-rail { width: 268px; flex-shrink: 0; display: flex; flex-direction: column; gap: 14px; padding-top: 20px; }
+.admin-profile-rail { width: var(--rail-w); flex-shrink: 0; display: flex; flex-direction: column; gap: 14px; padding-top: 20px; }
 .admin-profile-widget-title-burg { color: var(--burg); }
 .admin-profile-quick-actions { display: flex; flex-direction: column; gap: 8px; }
 .admin-profile-quick-action-link { display: flex; align-items: center; justify-content: space-between; padding: 9px 12px; background: var(--bg-elevated); border: 1px solid var(--bg-border); border-radius: 9px; font-family: var(--font-ui); font-size: 13px; color: var(--text-primary); text-decoration: none; transition: border-color .15s, color .15s; }

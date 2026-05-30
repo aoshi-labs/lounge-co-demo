@@ -10,7 +10,7 @@
 
 /* Container */
 .lists-container {
-  max-width: 880px;
+  max-width: var(--feed-col-max);
   margin: 0 auto;
   padding: 28px 28px 60px;
 }
@@ -34,7 +34,7 @@
   font-size: 15px;
   color: var(--text-secondary);
   line-height: 1.6;
-  max-width: 600px;
+  max-width: var(--feed-col-max);
   margin: 0 auto;
 }
 

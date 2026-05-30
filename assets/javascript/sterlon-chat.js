@@ -34,6 +34,7 @@
   const CHP = window.SterlonChatPrompts;           // CS-4 — system prompts + style extras
   const SA = window.SterlonScrollAnchor;           // CS-4 — scroll anchoring
   const TH = window.SterlonTurnHandlers;         // CS-4 — expertise/continuity/closing handlers
+  const GSM = window.SterlonGrokSommelier;       // Grok sommelier bypass (STERLON_GROK_SOMMELIER_ONLY)
   /**
    * RecommendationRuntime is loaded with the Sterlon stack before this file.
    * Normal recommendation authority requires RR.resolveRecommendationTurn (or transitional RR.buildRecommendationSet); if both are missing,
@@ -496,30 +497,38 @@
   }
 
   function formatConciergeText(rawText, highlightCard) {
-    const cleaned = PP.humanizePresentationProse(rawText).trim();
+    let cleaned = PP.humanizePresentationProse(rawText).trim();
+    if (PP.normalizeSommelierTemplate) cleaned = PP.normalizeSommelierTemplate(cleaned);
     if (!cleaned) return '<p class="sterlon-pace-line is-lead">Tonight I would start with something composed and balanced.</p>';
-    if (/\n\n/.test(cleaned)) {
-      return cleaned.split(/\n\n+/).filter(Boolean).slice(0, 3).map((part, idx) => {
-        const cls = idx === 0 ? ' is-lead' : ' is-mood';
-        return '<p class="sterlon-pace-line' + cls + '">' + CR.emphasizeProductNames(PP.escapeHtml(part.trim()), highlightCard) + '</p>';
-      }).join('');
+
+    function renderBlock(part, idx) {
+      const cls = idx === 0 ? ' is-lead' : ' is-mood';
+      const plain = part.trim();
+      const lineHtml = CR.emphasizeProductNamesFromPlain
+        ? CR.emphasizeProductNamesFromPlain(plain, highlightCard, cleaned)
+        : CR.emphasizeProductNames(PP.applyInlineBold(PP.escapeHtml(plain)), highlightCard, plain, cleaned);
+      return '<p class="sterlon-pace-line' + cls + '">' + lineHtml + '</p>';
     }
+
+    const blocks = PP.splitConciergeProseBlocks ? PP.splitConciergeProseBlocks(cleaned) : null;
+    if (blocks && blocks.length) {
+      return blocks.slice(0, 8).map(renderBlock).join('');
+    }
+
     const sentences = cleaned.match(/[^.!?]+[.!?]?/g) || [cleaned];
     const chunks = [];
+    const listLike = /(?:^|\n)\s*(?:Option\s*\d+|#\d+\.?|\d+[.)])\s/i.test(cleaned) ||
+      /\b(\d+|three|3|two|2)\s+(?:options?|picks?|choices?)\b/i.test(cleaned);
+    const maxChunks = listLike ? 6 : (currentResponseStyle === 'quick' ? 3 : 4);
     if (currentResponseStyle === 'quick') {
-      sentences.slice(0, 3).forEach(s => chunks.push(s.trim()));
+      sentences.slice(0, maxChunks).forEach(s => chunks.push(s.trim()));
     } else {
-      for (let i = 0; i < sentences.length && chunks.length < 3; i += 1) {
+      for (let i = 0; i < sentences.length && chunks.length < maxChunks; i += 1) {
         const line = sentences[i].trim();
         if (line) chunks.push(line);
       }
     }
-    return chunks
-      .map((line, idx) => {
-        const cls = idx === 0 ? ' is-lead' : (idx === 1 ? ' is-mood' : '');
-        return '<p class="sterlon-pace-line' + cls + '">' + CR.emphasizeProductNames(PP.escapeHtml(line), highlightCard) + '</p>';
-      })
-      .join('');
+    return chunks.map(renderBlock).join('');
   }
 
   function validateVisibleText(rawText, promptTextForFallback, profileKey, opts) {
@@ -551,11 +560,30 @@
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'sterlon-follow-chip';
-    btn.innerHTML = CR.followChipIconHtml(cfg) + '<span>' + PP.escapeHtml(cfg.label) + '</span>';
+    const iconHtml = cfg.icon
+      ? '<i data-lucide="' + PP.escapeHtml(cfg.icon) + '" class="ic-12"></i>'
+      : CR.followChipIconHtml(cfg);
+    btn.innerHTML = iconHtml + '<span>' + PP.escapeHtml(cfg.label) + '</span>';
     if (cfg.refinement) btn.setAttribute('data-refinement', cfg.refinement);
     if (cfg.comparison) btn.setAttribute('data-comparison', 'side-by-side');
     if (cfg.prompt) btn.setAttribute('data-prompt', cfg.prompt);
     return btn;
+  }
+
+  function renderGrokFollowupActions(wrap, chips) {
+    if (!wrap || !chips || !chips.length) return;
+    wrap.classList.add('sterlon-grok-thread');
+    const existing = wrap.querySelector('.sterlon-grok-followups');
+    if (existing) existing.remove();
+    const block = document.createElement('div');
+    block.className = 'sterlon-reco-actions sterlon-grok-followups';
+    const row = document.createElement('div');
+    row.className = 'sterlon-followups sterlon-followups-primary';
+    chips.slice(0, 3).forEach(cfg => row.appendChild(buildFollowChipButton(cfg)));
+    block.appendChild(row);
+    wrap.appendChild(block);
+    if (window.Lounge && window.Lounge.renderIcons) window.Lounge.renderIcons();
+    scrollChat({ smooth: true });
   }
 
   function renderRecommendationActions(recoWrap) {
@@ -1279,16 +1307,6 @@
       return;
     }
     const runtimeTurn = buildRecommendationTurnForPrompt(text);
-    const unavailableProduct = runtimeTurn &&
-      runtimeTurn.provenance &&
-      runtimeTurn.provenance.degradedCause === 'product-not-in-demo'
-        ? runtimeTurn.provenance.unavailableProduct
-        : null;
-    if (unavailableProduct) {
-      renderProseOnlyTurn(cpCall('buildUnavailableDemoProductProse', unavailableProduct), 'clarification');
-      finalizeConversationalTurn(text);
-      return;
-    }
     await executeGatewayRecommendationTurn(text, runtimeMode, runtimeTurn);
   }
 
@@ -1405,6 +1423,44 @@
     }
   }
 
+  /**
+   * Grok sommelier turn — active only when window.STERLON_GROK_SOMMELIER_ONLY === true.
+   *
+   * Sends the current user message + conversation history to the configured gateway
+   * using the Grok sommelier system prompt. Renders the response as a plain prose
+   * assistant bubble. Never calls RecommendationRuntime, never creates recommendation
+   * cards, flight UI, or an active RecommendationTurn.
+   *
+   * Telemetry: emits { mode: 'grok_sommelier_only', runtimeBypassed: true, cardsRendered: false }.
+   */
+  async function executeGrokSommelierTurn(text) {
+    const gen = GL.captureStreamGeneration();
+    const signal = GL.acquireGatewayFetchSignal();
+    ST.emit('grok_sommelier_turn', { mode: 'grok_sommelier_only', runtimeBypassed: true, cardsRendered: false });
+    const GXS = window.SterlonGrokStream;
+    try {
+      if (GXS && typeof GXS.executeTurn === 'function') {
+        await GXS.executeTurn({
+          userText: text,
+          gen: gen,
+          signal: signal,
+          getGatewayContext: gatewayContext,
+          getHistory: buildGatewayHistory
+        });
+        unlockComposer();
+        return;
+      }
+      throw new Error('SterlonGrokStream module not loaded');
+    } catch (err) {
+      if (GL.isGatewayAbortError(err) || !GL.isStreamActive(gen)) { unlockComposer(); return; }
+      console.error('Sterlon Grok sommelier error:', err);
+      ST.emit('gateway_error', { phase: 'grok_sommelier', message: String(err && err.message ? err.message : err) });
+      if (window.toast) toast('Sterlon is moving a little slowly right now.', { duration: 2200, variant: 'burg' });
+      renderProseOnlyTurn(cpCall('buildGracefulDegradationProse', text, RuntimeMode.CLARIFICATION));
+      unlockComposer();
+    }
+  }
+
   async function send() {
     if (_sendLocked) return;
     const composer = document.getElementById('composer');
@@ -1439,6 +1495,24 @@
     }
 
     applyTurnSessionIntake(text);
+
+    // Grok sommelier bypass — routes pairing/recommendation turns to Grok.
+    // Greetings and clarification stay on the prose-only path (no product picks).
+    // To restore governed runtime: set window.STERLON_GROK_SOMMELIER_ONLY = false.
+    if (window.STERLON_GROK_SOMMELIER_ONLY === true) {
+      if (handleClosingIntentTurn(text)) return;
+      const { runtimeMode, outputShape } = resolveTurnMode(text);
+      if (outputShape === OutputShape.PROSE_ONLY) {
+        if (runtimeMode === RuntimeMode.GREETING) {
+          renderProseOnlyTurn(cpCall('buildGreetingProse', text), 'clarification');
+          return;
+        }
+        await coordinateProseOnlyConversationalFlow(text, runtimeMode);
+        return;
+      }
+      await executeGrokSommelierTurn(text);
+      return;
+    }
 
     if (handleAnchoredPairingTurn(text)) {
       finalizeConversationalTurn(text);
@@ -1547,6 +1621,9 @@
           e.preventDefault();
           send();
         }
+      });
+      composer.addEventListener('focus', () => {
+        scrollChat({ force: true, smooth: false });
       });
     }
     const chat = document.getElementById('chat');
@@ -1740,6 +1817,7 @@
       buildSommelierRecommendationProse: CP && CP.buildSommelierRecommendationProse,
       validateVisibleText: validateVisibleText,
       renderRecommendationActions: renderRecommendationActions,
+      renderGrokFollowupActions: renderGrokFollowupActions,
       formatConciergeText: formatConciergeText,
       syncGlobalQuickActionsBar: syncGlobalQuickActionsBar
     });

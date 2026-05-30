@@ -3,6 +3,8 @@
   .ai-bubble.ai-bubble--plain .sterlon-pace-line{margin:0;font-family:var(--font-body);font-style:italic;font-weight:400;color:var(--text-secondary);}
   .ai-bubble.ai-bubble--plain .sterlon-pace-line + .sterlon-pace-line{margin-top:10px;}
   .ai-bubble.ai-bubble--plain .sterlon-pace-line.is-lead{color:var(--text-secondary);}
+  .ai-bubble.ai-bubble--plain .sterlon-reco-emphasis { color: var(--gold); font-weight: 600; font-style: normal; }
+  .sterlon-stream-bubble .sterlon-reco-emphasis { color: var(--gold); font-weight: 600; font-style: normal; }
   .user-bubble{background:var(--burg);color:var(--cream);border-radius:14px 14px 4px 14px;padding:12px 16px;font-family:var(--font-ui);font-size:14px;line-height:1.6;max-width:75%;margin-left:auto;}
   .prompt-chip{background:var(--bg-elevated);border:1px solid var(--bg-border);border-radius:99px;padding:6px 14px;font-family:var(--font-ui);font-size:12px;color:var(--text-secondary);cursor:pointer;transition:all .15s;white-space:nowrap;}
   .prompt-chip:hover{border-color:var(--gold);color:var(--gold);}
@@ -10,20 +12,34 @@
 
 /* === Page-specific styles === */
 .sterlon-product-body { flex:1; min-width:0; }
-.sterlon-topbar-identity { display:flex; align-items:center; gap:10px; }
+.sterlon-chat-identity { display:flex; align-items:center; gap:10px; }
 .sterlon-topbar-avatar { width:34px; height:34px; background:linear-gradient(135deg,var(--gold),var(--burg)); border-radius:50%; display:flex; align-items:center; justify-content:center; }
 .sterlon-topbar-name { font-size:14px; font-weight:600; color:var(--text-primary); line-height:1; }
 .sterlon-topbar-status { font-size: 10px; color: var(--tier-elite); font-weight: 600; margin-top: 2px; }
 .topbar-actions { margin-left:auto; display:flex; align-items:center; gap:8px; }
 .sterlon-chat-col {
   width: 100%;
-  max-width: 620px;
+  max-width: var(--feed-col-max);
   flex: 1;
   min-height: 0;
   display: flex;
   flex-direction: column;
   gap: 12px;
   padding-bottom: 0;
+}
+/* lounge.css sets page-content children to width:auto — match feed column width. */
+.page-content > .sterlon-chat-col {
+  width: 100%;
+  max-width: var(--feed-col-max);
+}
+.sterlon-composer-wrap {
+  width: 100%;
+  max-width: var(--feed-col-max);
+  padding: 10px 0 4px;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--bg-border);
+  background: var(--bg-base);
 }
 .sterlon-chat-scroll {
   flex: 1;
@@ -38,36 +54,46 @@
   overscroll-behavior: contain;
 }
 .sterlon-chat-scroll .sterlon-welcome { flex-shrink: 0; }
+/* Global lounge.js scroll FAB overlaps the composer send button on mobile. */
+body:has(.sterlon-chat-col) .lounge-scroll-btn { display: none !important; }
 .sterlon-chat-col > .sterlon-quick-actions,
 .sterlon-chat-col > .sterlon-rate-hint,
 .sterlon-chat-col > .sterlon-composer-wrap {
   flex-shrink: 0;
 }
-.sterlon-composer-wrap {
-  padding: 10px 0 4px;
-  display: flex;
-  border-top: 1px solid var(--bg-border);
-  background: var(--bg-base);
+html:has(.sterlon-chat-col) {
+  height: 100%;
+  overflow: hidden;
 }
 html:has(.sterlon-chat-col),
 body:has(.sterlon-chat-col) {
   overflow: hidden;
-  height: 100%;
+  height: 100vh;
+  height: 100dvh;
 }
 .main-area:has(.sterlon-chat-col) {
+  flex: 1;
+  min-height: 0;
   height: 100vh;
-  min-height: 100vh;
+  height: 100dvh;
+  max-height: 100vh;
+  max-height: 100dvh;
   overflow: hidden;
 }
 .main-area:has(.sterlon-chat-col) .page-content {
-  flex: 1;
+  flex: 1 1 0;
   min-height: 0;
   overflow: hidden;
   align-items: stretch;
+  padding-top: 0;
+  padding-bottom: 0;
 }
-.sterlon-welcome { text-align:center; padding:8px 0 18px; }
-.sterlon-welcome-title { font-family:var(--font-display); font-size:1.6rem; font-weight:600; color:var(--text-primary); margin-bottom:4px; }
-.sterlon-welcome-sub { font-family:var(--font-body); font-style:italic; font-size:13px; color:var(--text-secondary); }
+.main-area:has(.sterlon-chat-col) .sterlon-chat-col {
+  flex: 1 1 0;
+  min-height: 0;
+  align-self: stretch;
+}
+.sterlon-welcome { padding:4px 0 16px; }
 .sterlon-chat-log { display:flex; flex-direction:column; gap:14px; }
 .sterlon-bubble-row { display:flex; align-items:flex-start; gap:10px; }
 .sterlon-bubble-avatar { width:32px; height:32px; background:linear-gradient(135deg,var(--gold),var(--burg)); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
@@ -84,7 +110,7 @@ body:has(.sterlon-chat-col) {
 .sterlon-product-price { font-size:13px; font-weight:700; color:var(--text-primary); }
 .sterlon-add-btn { background:var(--burg); color:var(--cream); border:none; border-radius:7px; padding:7px 12px; font-family:var(--font-ui); font-size:11px; font-weight:700; cursor:pointer; flex-shrink:0; }
 .sterlon-followups-row { display:flex; gap:8px; flex-wrap:wrap; margin-top:4px; }
-.sterlon-rail { width:268px; flex-shrink:0; display:flex; flex-direction:column; gap:14px; padding-top:8px; }
+.sterlon-rail { width:var(--rail-w); flex-shrink:0; display:flex; flex-direction:column; gap:14px; padding-top:8px; }
 .sterlon-rail-list { display:flex; flex-direction:column; gap:8px; }
 .sterlon-prompt-chip { text-align:left; display:block; width:100%; border-radius:9px; padding:10px 12px; line-height:1.4; white-space:normal; }
 .sterlon-history-item-current { display:block; padding:9px 10px; background:var(--bg-elevated); border-radius:8px; border:1px solid var(--bg-border); text-decoration:none; transition:border-color .2s; }
@@ -94,8 +120,14 @@ body:has(.sterlon-chat-col) {
 .sterlon-history-title { font-size:12px; color:var(--text-secondary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .sterlon-about-card { background:linear-gradient(135deg,var(--gold-subtle),var(--bg-surface)); }
 .sterlon-about-text { font-family:var(--font-body); font-style:italic; font-size:12px; color:var(--text-secondary); line-height:1.6; }
-@media (max-width: 900px) {
-  .main-area:has(.sterlon-chat-col) { padding-bottom: 70px; }
+/* Phone + tablet: pin composer to the visible viewport bottom (chat apps pattern). */
+@media (max-width: 1023px) {
+  .main-area:has(.sterlon-chat-col) {
+    padding-bottom: 0 !important;
+  }
+  .sterlon-composer-wrap {
+    padding-bottom: max(6px, env(safe-area-inset-bottom, 0px));
+  }
 }
 .sterlon-rate-hint { display:flex; align-items:center; gap:8px; padding:8px 14px; margin:4px 0 0; border:1px solid var(--bg-border); border-radius:8px; background:var(--bg-elevated); font-family:var(--font-ui); font-size:11px; color:var(--text-secondary); }
 .sterlon-rate-hint i { color:var(--gold-dim); flex-shrink:0; }
@@ -763,8 +795,8 @@ body:has(.sterlon-chat-col) {
 .sterlon-composer-input-wrap .input-action:hover { background: var(--bg-elevated); color: var(--gold); }
 .sterlon-composer-input-wrap .input-action:active { transform: scale(.95); }
 
-.sterlon-composer-row { width:100%; max-width:620px; display:flex; gap:10px; align-items:flex-end; }
-.sterlon-composer-input-wrap { flex:1; background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:14px; padding:8px 8px 8px 10px; display:flex; align-items:flex-end; gap:6px; }
+.sterlon-composer-row { width:100%; max-width:var(--feed-col-max); display:flex; gap:10px; align-items:flex-end; }
+.sterlon-composer-input-wrap { flex:1; width:100%; min-width:0; background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:14px; padding:8px 8px 8px 10px; display:flex; align-items:flex-end; gap:6px; box-sizing:border-box; }
 .sterlon-composer-input-wrap--tools { position: relative; }
 .sterlon-composer-tools-menu {
   position: absolute;
@@ -910,6 +942,7 @@ body:has(.sterlon-chat-col) {
 .sterlon-reco-emphasis {
   color: var(--gold);
   font-weight: 600;
+  font-style: normal;
 }
 
 /* "Why this works" — inset rationale block under the lead paragraph. */
@@ -1576,6 +1609,12 @@ body:has(.sterlon-chat-col) {
   margin-top: 18px;
   padding-top: 4px;
 }
+.sterlon-grok-followups {
+  margin-top: 14px;
+}
+.sterlon-grok-thread .sterlon-grok-followups .sterlon-follow-chip {
+  max-width: 100%;
+}
 .sterlon-followups-primary {
   max-width: 100%;
 }
@@ -1688,9 +1727,7 @@ body:has(.sterlon-chat-col) {
   }
   .sterlon-log-btn { flex: 1; min-width: 0; }
 
-  /* Sterlon top bar: hide the Sterlon subtitle on iPhone-SE-class viewports
-     — the title alone fits, and freeing this row keeps the action group from
-     wrapping. (Decorative only; not a feature.) */
+  /* Sterlon chat identity: hide the subtitle on iPhone-SE-class viewports. */
   .sterlon-topbar-status { display: none; }
 
   /* Composer at 375px: keep the voice / image / replay input-actions visible
@@ -1702,8 +1739,6 @@ body:has(.sterlon-chat-col) {
      visually heavy on a 375px viewport — content fits but feels chunky.
      Step each role down one notch so more conversation is visible per
      screen without losing the editorial serif identity. */
-  .sterlon-welcome-title    { font-size: 1.25rem; }   /* welcome heading 25.6 → 20px */
-  .sterlon-welcome-sub      { font-size: 12px; }      /* welcome sub-text */
   .ai-bubble                { font-size: 13px; padding: 12px 14px; }
   .user-bubble              { font-size: 13px; padding: 10px 14px; }
   .sterlon-product-name     { font-size: 0.9rem; }    /* product name 16 → 14.4px */
@@ -1715,7 +1750,7 @@ body:has(.sterlon-chat-col) {
   .sterlon-source-chip          { font-size: 9px;  padding: 2px 8px; }
   .sterlon-source-label         { font-size: 9px; }
   .sterlon-source-detail        { font-size: 11px; padding: 8px 12px; }
-  .sterlon-topbar-name      { font-size: 13px; }      /* top-bar title */
+  .sterlon-topbar-name      { font-size: 13px; }      /* chat identity title */
   .sterlon-composer-textarea { font-size: 13px; }      /* composer textarea */
 
   /* Sterlon structured output — collapse to a single column so cards aren't

@@ -5,7 +5,7 @@
 .topbar-back-link { display:flex; align-items:center; gap:6px; color:var(--text-secondary); text-decoration:none; font-size:13px; font-weight:500; transition:color .2s; }
 .topbar-user-avatar-elite { background:var(--tier-elite); color:var(--tier-elite-ink); width:34px; height:34px; font-size:12px; }
 .visit-page-frame { display:flex; justify-content:center; padding:32px 20px; gap:24px; }
-.visit-items-column { width:100%; max-width:580px; display:flex; flex-direction:column; gap:14px; }
+.visit-items-column { width:100%; max-width:var(--feed-col-max); display:flex; flex-direction:column; gap:14px; }
 .visit-page-header { display:flex; align-items:baseline; justify-content:space-between; }
 .visit-page-title { font-family:var(--font-display); font-size:2rem; font-weight:700; color:var(--text-primary); }
 .visit-item-count { font-size:13px; color:var(--text-muted); }

@@ -4,7 +4,7 @@
 /* === Page-specific styles === */
 .topbar-back-link { display:flex; align-items:center; gap:6px; color:var(--text-secondary); text-decoration:none; font-size:13px; font-weight:500; transition:color .2s; }
 .checkin-page-frame { display:flex; justify-content:center; padding:40px 20px; }
-.checkin-page-stack { width:100%; max-width:520px; display:flex; flex-direction:column; gap:16px; }
+.checkin-page-stack { width:100%; max-width:var(--feed-col-max); display:flex; flex-direction:column; gap:16px; }
 .checkin-hero-card { background:linear-gradient(180deg,rgba(var(--tier-elite-rgb), .18),var(--bg-surface)); border:1px solid var(--bg-border); border-radius:20px; padding:32px; text-align:center; }
 .checkin-pulse-wrap { position:relative; width:80px; height:80px; margin:0 auto 18px; display:flex; align-items:center; justify-content:center; }
 .checkin-pulse-ring { position:absolute; inset:0; border-radius:50%; background:rgba(var(--tier-elite-rgb), .3); animation:pulse-ring 2s infinite; }

@@ -69,6 +69,63 @@
       .replace(/\bit depends on your preferences\b[.?!]?/gi, 'we can narrow it from the room you want.');
   }
 
+  // ── Grok sommelier labeled template ───────────────────────────────
+
+  var SOMMELIER_SECTION_LABELS = [
+    'Direct Pick',
+    'The Core Flavor',
+    'The Strategy',
+    'What to Avoid',
+    'Serving'
+  ];
+
+  function sommelierLabelPattern(label) {
+    return String(label || '').replace(/ /g, '\\s+');
+  }
+
+  function hasSommelierTemplateLabels(text) {
+    var alt = SOMMELIER_SECTION_LABELS.map(sommelierLabelPattern).join('|');
+    return new RegExp(
+      '(?:\\*\\*(' + alt + '):\\*\\*|(?:^|[ \\t])(' + alt + ')[ \\t]*:)',
+      'im'
+    ).test(String(text || ''));
+  }
+
+  /** Normalize markdown labels and restore one-section-per-line layout after governance. */
+  function normalizeSommelierTemplate(text) {
+    var t = String(text || '');
+    if (!hasSommelierTemplateLabels(t)) return t.trim();
+
+    var alt = SOMMELIER_SECTION_LABELS.map(sommelierLabelPattern).join('|');
+    t = t.replace(
+      new RegExp('\\*\\*(' + alt + '):\\*\\*', 'gi'),
+      function (_, captured) {
+        for (var k = 0; k < SOMMELIER_SECTION_LABELS.length; k += 1) {
+          if (new RegExp('^' + sommelierLabelPattern(SOMMELIER_SECTION_LABELS[k]) + '$', 'i').test(String(captured || '').trim())) {
+            return SOMMELIER_SECTION_LABELS[k] + ':';
+          }
+        }
+        return String(captured || '').trim() + ':';
+      }
+    );
+
+    for (var i = 0; i < SOMMELIER_SECTION_LABELS.length; i += 1) {
+      var label = SOMMELIER_SECTION_LABELS[i];
+      var plainRe = new RegExp('(^|[ \\t])' + sommelierLabelPattern(label) + '[ \\t]*:', 'gm');
+      t = t.replace(plainRe, '$1' + label + ':');
+    }
+
+    for (var j = 1; j < SOMMELIER_SECTION_LABELS.length; j += 1) {
+      var breakRe = new RegExp(
+        '([^\\n])[ \\t]+(?=' + sommelierLabelPattern(SOMMELIER_SECTION_LABELS[j]) + '[ \\t]*:)',
+        'gi'
+      );
+      t = t.replace(breakRe, '$1\n');
+    }
+
+    return t.replace(/\n{3,}/g, '\n\n').trim();
+  }
+
   // ── Sentence and word limiters ────────────────────────────────────
 
   function splitSentences(text) {
@@ -78,6 +135,14 @@
   function limitSentenceCount(text, maxSentences) {
     var raw = String(text || '').trim();
     if (!maxSentences || maxSentences < 1) return raw;
+    if (hasSommelierTemplateLabels(raw)) {
+      return normalizeSommelierTemplate(raw)
+        .split('\n')
+        .map(function (s) { return s.trim(); })
+        .filter(Boolean)
+        .slice(0, maxSentences)
+        .join('\n') || raw;
+    }
     var paragraphs = raw.split(/\n\n+/).filter(Boolean);
     var kept = [];
     var remaining = maxSentences;
@@ -97,6 +162,18 @@
   function limitWordCount(text, maxWords) {
     var raw = repairMojibake(text).trim();
     if (!maxWords || wordCount(raw) <= maxWords) return raw;
+    if (hasSommelierTemplateLabels(raw)) {
+      var lines = normalizeSommelierTemplate(raw).split('\n').map(function (s) { return s.trim(); }).filter(Boolean);
+      var keptLines = [];
+      var usedWords = 0;
+      for (var i = 0; i < lines.length; i += 1) {
+        var lineWords = wordCount(lines[i]);
+        if (keptLines.length && usedWords + lineWords > maxWords) break;
+        keptLines.push(lines[i]);
+        usedWords += lineWords;
+      }
+      return keptLines.join('\n') || raw;
+    }
     var words = raw.split(/\s+/).slice(0, maxWords);
     var trimmed = words.join(' ');
     if (!/[.!?]$/.test(trimmed)) trimmed = trimmed.replace(/[,:;\-]?$/, '.');
@@ -158,6 +235,14 @@
     t = t.replace(/\b(body alignment|flavor architecture|member sentiment|balanced framework|pairing optimization|recommendation lane|pairing logic|pairing frame|same pairing logic|adjusted flight|washout|palate fatigue)\b/gi, '');
     t = t.replace(/\b(i do not have that in my database|not in (?:my|the) database|according to (?:my|the) data)\b/gi, '');
     t = t.replace(/\b(inventory system|catalog lookup|parameter|filter setting)\b/gi, '');
+    t = t.replace(/\\confidence\{[^}]*\}/gi, '');
+    t = t.replace(/\\[a-zA-Z]+\{[^}]*\}/g, '');
+    t = t.replace(/\[\[FOLLOW\]\][\s\S]*?\[\[\/FOLLOW\]\]/gi, '');
+    t = t.replace(/\[\[FOLLOW\]\][\s\S]*$/i, '');
+    t = t.replace(/\[\[\/FOLLOW\]\]/gi, '');
+    t = t.replace(/\[\[FOLLOW\]\]/gi, '');
+    t = t.replace(/\n(?:Lower the Proof|More Contrast|Zero Alcohol|Budget Friendly|Daily Smoker Match|Lighter & Brighter|Morning Smoke|Amp the Spice|Top Tier Luxury|Three Options|Swap the Cigar|Swap the Pour)\|[^\n]*/gi, '');
+    t = t.replace(/\b[A-Z][A-Za-z0-9&' ]{2,48}\|[^\n.]{8,}/g, '');
     t = t.replace(/\b(interlock|interlock\.|bridges? the .+ profile)\b/gi, function (m) {
       return /interlock/i.test(m) ? 'echo each other' : m;
     });
@@ -227,6 +312,42 @@
     if (!text) return true;
     if (text === GENERIC_LEAD_FALLBACK) return true;
     return /tonight'?s strongest route remains balanced/i.test(text);
+  }
+
+  /** Split visible concierge prose into paragraph / section blocks for pace-line rendering. */
+  function splitConciergeProseBlocks(text) {
+    var cleaned = normalizeSommelierTemplate(String(text || '').trim());
+    if (!cleaned) return [];
+    if (hasSommelierTemplateLabels(cleaned)) {
+      return cleaned
+        .split('\n')
+        .map(function (s) { return s.trim(); })
+        .filter(Boolean);
+    }
+    var sommelierLabelRe = /(?=(?:^|\n|\s)(?:Direct Pick|The Core Flavor|The Strategy|What to Avoid|Serving)\s*:)/i;
+    if (sommelierLabelRe.test(cleaned)) {
+      return cleaned
+        .split(sommelierLabelRe)
+        .map(function (s) { return s.trim(); })
+        .filter(Boolean);
+    }
+    if (/\n\n/.test(cleaned)) {
+      return cleaned.split(/\n\n+/).map(function (s) { return s.trim(); }).filter(Boolean);
+    }
+    if (/(?:^|\n)\d+\.\s/.test(cleaned)) {
+      return cleaned.split(/\n(?=\d+\.\s)/).map(function (s) { return s.trim(); }).filter(Boolean);
+    }
+    if (/(?:^|\n)\s*(?:Option\s*\d+|#\d+\.?|\d+[.)])\s/i.test(cleaned)) {
+      return cleaned
+        .split(/\n(?=\s*(?:Option\s*\d+|#\d+\.?|\d+[.)])\s)/i)
+        .map(function (s) { return s.trim(); })
+        .filter(Boolean);
+    }
+    var lines = cleaned.split('\n').map(function (s) { return s.trim(); }).filter(Boolean);
+    if (lines.length > 1 && lines.every(function (l) { return l.length <= 280; })) {
+      return lines;
+    }
+    return null;
   }
 
   // ── Why-bullet humanisation ───────────────────────────────────────
@@ -318,6 +439,9 @@
     isFrameworkLeadProse: isFrameworkLeadProse,
     isGenericLeadProse: isGenericLeadProse,
     humanizeWhyBullet: humanizeWhyBullet,
-    parseFlightSlotProse: parseFlightSlotProse
+    splitConciergeProseBlocks: splitConciergeProseBlocks,
+    parseFlightSlotProse: parseFlightSlotProse,
+    hasSommelierTemplateLabels: hasSommelierTemplateLabels,
+    normalizeSommelierTemplate: normalizeSommelierTemplate
   };
 })();

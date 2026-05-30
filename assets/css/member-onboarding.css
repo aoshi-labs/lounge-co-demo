@@ -45,7 +45,7 @@
 .mo-skip:hover { color: var(--text-secondary); }
 .mo-main {
   flex: 1;
-  max-width: 720px;
+  max-width: var(--feed-col-max);
   margin: 0 auto;
   width: 100%;
   padding: 48px 28px 60px;

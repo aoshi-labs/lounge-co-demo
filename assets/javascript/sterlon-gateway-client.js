@@ -115,15 +115,33 @@
     });
   }
 
-  /** @deprecated Use readGatewayText unless production token-level streaming is wired in PL. */
+  /**
+   * Read a streaming gateway completion (SSE). Calls streamOpts.onDelta(fullText, delta)
+   * as tokens arrive. Falls back to JSON body when the response is not event-stream.
+   * @param {Response} response
+   * @param {function(string): string} [repairText]
+   * @param {{ signal?: AbortSignal, onDelta?: function(string, string) }} [streamOpts]
+   */
   function readGatewayStreamText(response, repairText, streamOpts) {
     var repair = typeof repairText === 'function' ? repairText : function (s) { return s; };
     var signal = streamOpts && streamOpts.signal;
+    var onDelta = streamOpts && streamOpts.onDelta;
     var contentType = response.headers && response.headers.get
       ? response.headers.get('content-type') || ''
       : '';
+
+    function emitDelta(delta) {
+      if (!delta) return;
+      fullText += repair(delta);
+      if (typeof onDelta === 'function') onDelta(fullText, delta);
+    }
+
     if (!/text\/event-stream/i.test(contentType) || !response.body || !response.body.getReader) {
-      return readGatewayCompletionText(response);
+      return readGatewayCompletionText(response).then(function (text) {
+        var repaired = repair(text || '');
+        if (typeof onDelta === 'function' && repaired) onDelta(repaired, repaired);
+        return repaired;
+      });
     }
 
     var reader = response.body.getReader();
@@ -151,7 +169,7 @@
       try {
         var parsed = JSON.parse(data);
         var delta = parsed.choices && parsed.choices[0] && parsed.choices[0].delta && parsed.choices[0].delta.content;
-        if (delta) fullText += repair(delta);
+        if (delta) emitDelta(delta);
       } catch (_) {}
     }
 

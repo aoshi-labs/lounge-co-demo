@@ -75,7 +75,7 @@
 
 /* === Profile page layout === */
 .profile-content-row { display:flex; justify-content:center; padding:0 20px 40px; gap:20px; }
-.profile-main-col { width:100%; max-width:680px; display:flex; flex-direction:column; gap:0; }
+.profile-main-col { width:100%; max-width:var(--feed-col-max); display:flex; flex-direction:column; gap:0; }
 .profile-header-card { padding:0 24px 20px; background:var(--bg-surface); border-left:1px solid var(--bg-border); border-right:1px solid var(--bg-border); }
 .profile-header-row { display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap; }
 .profile-header-actions { display:flex; gap:10px; margin-bottom:8px; }
@@ -136,7 +136,7 @@
 .reviews-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
 
 /* === Right rail (profile) === */
-.profile-rail { width:268px; flex-shrink:0; display:flex; flex-direction:column; gap:14px; padding-top:20px; }
+.profile-rail { width:var(--rail-w); flex-shrink:0; display:flex; flex-direction:column; gap:14px; padding-top:20px; }
 
 /* People You May Know widget */
 .pym-list { display:flex; flex-direction:column; gap:12px; }

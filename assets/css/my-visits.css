@@ -8,6 +8,12 @@
 /* ────────────────────────────────────────
    my-visits — page-specific styles
 ──────────────────────────────────────── */
+.my-visits-stack {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 24px;
+}
 .mv-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

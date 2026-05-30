@@ -33,8 +33,10 @@
 
   function init() {
     setupMobileMenu();
+    mountTopBarBrand();
     setupSidebarCollapse();
     setupAutoActive();
+    setupNavActiveClicks();
     setupTabIcon();
     setupUserRowLink();
     setupTopBarLogo();
@@ -58,12 +60,48 @@
   }
 
   /* ───── Top-bar brand mark ─────
-     Mirrors the sterlon .sterlon-topbar-avatar identity badge across every page. Skips
-     top-bars that already carry their own identity element (e.g. .sterlon-topbar-avatar on
-     sterlon). Routes home based on which sidebar variant is loaded. */
+     Hoist .sidebar-logo into the top bar on desktop (Facebook-style).
+     Falls back to the legacy page-identity badge only when no sidebar brand exists. */
+  function mountTopBarBrand() {
+    const sidebar = document.querySelector('.sidebar');
+    const topBar = document.querySelector('.top-bar');
+    const logo = document.querySelector('.sidebar-logo');
+    if (!sidebar || !topBar || !logo) return;
+
+    const isDesktop = window.innerWidth >= 1024;
+    const inTopBar = topBar.contains(logo);
+
+    if (!inTopBar) {
+      if (isDesktop) {
+        topBar.insertBefore(logo, topBar.firstChild);
+      } else {
+        const menuBtn = topBar.querySelector('#menu-btn');
+        if (menuBtn) menuBtn.insertAdjacentElement('afterend', logo);
+        else topBar.insertBefore(logo, topBar.firstChild);
+      }
+    } else if (isDesktop && topBar.firstChild !== logo) {
+      topBar.insertBefore(logo, topBar.firstChild);
+    } else if (!isDesktop) {
+      const menuBtn = topBar.querySelector('#menu-btn');
+      if (menuBtn && logo.previousElementSibling !== menuBtn) {
+        menuBtn.insertAdjacentElement('afterend', logo);
+      }
+    }
+
+    logo.classList.add('sidebar-logo--topbar');
+  }
+
+  if (!window._loungeTopBarBrandResize) {
+    window._loungeTopBarBrandResize = true;
+    window.addEventListener('resize', mountTopBarBrand);
+  }
+
+  /* ───── Legacy page-identity badge (icon + page label) ─────
+     Skipped when a sidebar brand is present — mountTopBarBrand owns the chrome. */
   function setupTopBarLogo() {
     const topBar = document.querySelector('.top-bar');
     if (!topBar) return;
+    if (document.querySelector('.sidebar-logo')) return;
     if (topBar.querySelector('.top-bar-logo, .sterlon-topbar-avatar')) return;
 
     const sidebar = document.querySelector('.sidebar');
@@ -71,7 +109,7 @@
     const isConcierge     = page.indexOf('concierge') !== -1;
     const isFeed              = page === 'feed.html';
     const isMyNetwork         = page === 'my-network.html';
-    const isMyVisits          = page === 'my-visits.html';
+    const isMyVisits          = page === 'my-visits.html' || page === 'my-visits';
     const isDiscoverVenues    = page === 'discover-venues.html';
     const isRequests          = page === 'requests.html';
     const isMemberBilling     = page === 'member-billing.html';
@@ -285,6 +323,10 @@
      viewport; flips chevron direction once the user has scrolled past 80px. */
   function setupScrollButton() {
     if (document.getElementById('scroll-btn')) return;
+    /* Sterlon pins the in-column transcript (#sterlon-chat-scroll) via
+       sterlon-scroll-anchor.js; the global FAB overlaps the composer send
+       button on mobile and is redundant there. */
+    if (document.querySelector('.sterlon-chat-col')) return;
 
     const btn = document.createElement('button');
     btn.id = 'scroll-btn';
@@ -399,6 +441,7 @@
         try { window.lucide.createIcons(); } catch (e) {}
       }
       renderCustomIcons();
+      setupAutoActive();
     }
     if (window.lucide) { renderAll(); return; }
 
@@ -483,8 +526,9 @@
     });
 
     // Wire the entire sidebar-logo as the collapse toggle — single click, no delay.
-    const logo = sidebar.querySelector('.sidebar-logo');
-    if (logo) {
+    const logo = document.querySelector('.sidebar-logo');
+    if (logo && !logo.dataset.collapseWired) {
+      logo.dataset.collapseWired = '1';
       logo.setAttribute('role', 'button');
       logo.setAttribute('tabindex', '0');
       logo.setAttribute('aria-label', 'Toggle sidebar');
@@ -520,24 +564,73 @@
 
   /* ───── Auto-highlight active sidebar/bottom-nav item ───── */
   function setupAutoActive() {
-    const page = (location.pathname.split('/').pop() || 'feed.html').toLowerCase();
-    const matches = (href) => {
-      if (!href) return false;
-      const h = href.toLowerCase();
-      return h === page || ((page === '' || page === 'index.html') && h === 'feed.html');
+    const navSlug = (name) => (name || '').replace(/\.html$/i, '').toLowerCase();
+
+    const pageFile = (location.pathname.split('/').pop() || 'sterlon.html')
+      .split('?')[0]
+      .split('#')[0]
+      .toLowerCase();
+
+    const normalizeHref = (href) => {
+      if (!href || href.startsWith('#')) return '';
+      try {
+        return new URL(href, location.href).pathname.split('/').pop()
+          .split('?')[0].split('#')[0].toLowerCase();
+      } catch (e) {
+        return href.split('?')[0].split('#')[0].toLowerCase();
+      }
     };
+
+    /* Child/detail pages highlight their parent nav item. */
+    const NAV_ALIASES = {
+      '': 'sterlon',
+      'index.html': 'sterlon',
+      'post-detail.html': 'feed',
+      'create-post.html': 'feed',
+      'room-detail.html': 'rooms',
+      'product-detail.html': 'catalog',
+      'event-detail.html': 'events',
+      'cart.html': 'my-visits',
+    };
+
+    const target = navSlug(NAV_ALIASES[pageFile] || pageFile);
+
+    const markActive = (links, activeClass) => {
+      links.forEach((a) => {
+        a.classList.remove(activeClass);
+        a.removeAttribute('aria-current');
+        if (navSlug(normalizeHref(a.getAttribute('href'))) === target) {
+          a.classList.add(activeClass);
+          a.setAttribute('aria-current', 'page');
+        }
+      });
+    };
+
     const sidebar = document.querySelector('.sidebar');
-    if (sidebar && !sidebar.querySelector('.nav-item.active')) {
-      sidebar.querySelectorAll('.nav-item').forEach(a => {
-        if (matches(a.getAttribute('href'))) a.classList.add('active');
-      });
+    if (sidebar) {
+      markActive(sidebar.querySelectorAll('.nav-item'), 'active');
     }
+
     const bnav = document.querySelector('.bottom-nav');
-    if (bnav && !bnav.querySelector('.bottom-nav-item.active')) {
-      bnav.querySelectorAll('.bottom-nav-item').forEach(a => {
-        if (matches(a.getAttribute('href'))) a.classList.add('active');
-      });
+    if (bnav) {
+      markActive(bnav.querySelectorAll('.bottom-nav-item'), 'active');
     }
+  }
+
+  function setupNavActiveClicks() {
+    const sidebar = document.querySelector('.sidebar');
+    if (!sidebar || sidebar.dataset.navActiveClicks === '1') return;
+    sidebar.dataset.navActiveClicks = '1';
+    sidebar.addEventListener('click', (e) => {
+      const link = e.target.closest('.nav-item');
+      if (!link || !sidebar.contains(link)) return;
+      sidebar.querySelectorAll('.nav-item').forEach((a) => {
+        a.classList.remove('active');
+        a.removeAttribute('aria-current');
+      });
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+    });
   }
 
   /* ───── Like button (works on .post-action with span counter) ───── */
@@ -718,7 +811,7 @@
           n: 'my-network.html',                            // NEW — follow graph + suggested follows
           a: 'sterlon.html',                               // Sterlon
           r: 'requests.html',                              // NEW — DM Requests inbox (silent)
-          v: 'my-visits.html',                             // NEW — lifetime Visit history
+          v: '/my-visits',                                 // lifetime Visit history
           p: 'profile.html',                               // member profile
           s: 'settings.html',                              // settings
           // Backward-compat (legacy mockup pages — still present until visionboard refactor lands)
@@ -804,8 +897,7 @@
     // Note: VENUE does not carry color overrides — Lounge & Co. design tokens are constant
     // across every surface. Venue identity is name + logo + tagline + stats only.
     const bindings = {
-      // Legacy (preserved)
-      'data-lounge-name':     VENUE.name,
+      // Legacy (preserved) — data-lounge-name handled below (sidebar chrome vs venue fields)
       'data-lounge-short':    VENUE.shortName,
       'data-lounge-initials': VENUE.initials,
       'data-lounge-tagline':  VENUE.tagline,
@@ -832,6 +924,13 @@
       if (v == null) continue;
       document.querySelectorAll('[' + attr + ']').forEach(el => el.textContent = v);
     }
+    // App chrome (sidebar / top bar) is always Lounge & Co.; venue name binds elsewhere.
+    document.querySelectorAll('.sidebar-brand-name[data-lounge-name]').forEach(el => {
+      el.textContent = PLATFORM.name;
+    });
+    document.querySelectorAll('[data-lounge-name]:not(.sidebar-brand-name)').forEach(el => {
+      el.textContent = VENUE.name;
+    });
     applyVenueSEO();
     renderQuickActions();
     renderContextStrip();

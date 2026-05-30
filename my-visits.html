@@ -65,7 +65,7 @@
     <div class="nav-divider"></div>
     <div class="nav-section-label">Shop</div>
     <a href="catalog.html" class="nav-item"><i data-lucide="book-open" class="ic-17"></i>Catalog</a>
-    <a href="cart.html" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
+    <a href="/my-visits" class="nav-item"><i data-lucide="notebook-pen" class="ic-17"></i>My Visit<span class="cart-badge" data-cart-count></span></a>
 
     <div class="nav-divider"></div>
     <div class="nav-section-label">Personal</div>
@@ -79,6 +79,7 @@
 </nav>
 
 <main class="main-area">
+  <h1 class="visually-hidden">My Visits</h1>
   <header class="top-bar">
     <button class="icon-btn hamburger-button" id="menu-btn" onclick="toggleSidebar()" aria-label="Menu">
       <i data-lucide="menu" class="ic-16"></i>
@@ -86,9 +87,10 @@
     <div class="topbar-actions"></div>
   </header>
 
-  <div class="content-area">
+  <div class="page-content">
+    <div class="main-col my-visits-stack">
 
-    <h1 class="page-heading">My Visits</h1>
+    <h2 class="page-heading">My Visits</h2>
     <p class="page-lede">Every evening you've spent at a Lounge &amp; Co. venue, kept for you.</p>
 
     <!-- Stats strip -->
@@ -257,6 +259,8 @@
     <div class="mv-retention-hint">
       <i data-lucide="info" class="ic-13"></i>
       <span>As a Cellar Club member, your Visit history is kept for life. <a href="member-billing.html">View plan</a>.</span>
+    </div>
+
     </div>
 
   </div>

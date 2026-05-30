@@ -32,7 +32,11 @@
         'sterlon-pace-line is-settled sterlon-reco-slot-prose' +
         (lineSpec.role === 'lead' ? ' is-lead' : ' is-mood');
       const html = PP.applyInlineBold(PP.escapeHtml(PP.repairMojibake(lineSpec.text)));
-      p.innerHTML = CR && CR.emphasizeProductNames ? CR.emphasizeProductNames(html, card) : html;
+      p.innerHTML = CR && CR.emphasizeProductNamesFromPlain
+        ? CR.emphasizeProductNamesFromPlain(lineSpec.text, card, text)
+        : (CR && CR.emphasizeProductNames
+          ? CR.emphasizeProductNames(html, card, lineSpec.text, text)
+          : html);
       bubble.appendChild(p);
     });
   }
@@ -120,13 +124,24 @@
   function paintSettledProseBubble(bubble, proseText, highlightCard) {
     const PP = _PP();
     const CR = _CR();
+    const SPL = _SPL();
+    const h = SPL.getHost ? SPL.getHost() : {};
     if (!bubble || !proseText) return;
+    bubble.innerHTML = '';
+    if (h.formatConciergeText) {
+      bubble.innerHTML = h.formatConciergeText(proseText, highlightCard);
+      bubble.querySelectorAll('.sterlon-pace-line').forEach(function (p) {
+        p.classList.add('is-settled', 'sterlon-stream-line');
+      });
+      return;
+    }
     const p = document.createElement('p');
     p.className = 'sterlon-pace-line is-lead is-settled sterlon-stream-line';
     p.innerHTML = CR.emphasizeProductNames
       ? CR.emphasizeProductNames(
         PP.applyInlineBold(PP.escapeHtml(PP.repairMojibake(proseText))),
-        highlightCard
+        highlightCard,
+        proseText
       )
       : PP.applyInlineBold(PP.escapeHtml(PP.repairMojibake(proseText)));
     bubble.appendChild(p);

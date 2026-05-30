@@ -34,7 +34,7 @@
 .topbar-icon-btn-badge { position:absolute; top:-4px; right:-4px; width:16px; height:16px; background:var(--burg); border-radius:50%; font-size:9px; font-weight:700; color:var(--cream); display:flex; align-items:center; justify-content:center; }
 .topbar-avatar-elite { background:var(--tier-elite); color:var(--tier-elite-ink); width:34px; height:34px; font-size:12px; }
 .product-detail-page-frame { display:flex; justify-content:center; padding:24px 20px; gap:20px; }
-.product-detail-page-stack { width:100%; max-width:720px; display:flex; flex-direction:column; gap:0; }
+.product-detail-page-stack { width:100%; max-width:var(--feed-col-max); display:flex; flex-direction:column; gap:0; }
 .product-hero-card { background:var(--bg-surface); border:1px solid var(--bg-border); border-radius:16px 16px 0 0; padding:28px; display:flex; gap:28px; flex-wrap:wrap; }
 .product-hero-image { width:220px; flex-shrink:0; background:linear-gradient(135deg,rgba(139,90,43,.3),rgba(30,20,10,.9)); border:1px solid var(--bg-border); border-radius:12px; height:260px; display:flex; align-items:center; justify-content:center; font-size:4rem; overflow:hidden; }
 .product-hero-image > img { width:100%; height:100%; object-fit:cover; display:block; }
@@ -99,7 +99,7 @@
 .product-sterlon-card { margin-top:16px; padding:14px 16px; background:var(--gold-subtle); border:1px solid rgba(var(--gold-rgb), .2); border-radius:10px; }
 .product-sterlon-label { font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); margin-bottom:6px; }
 .product-sterlon-quote { font-family:var(--font-body); font-style:italic; font-size:13px; color:var(--text-secondary); line-height:1.65; }
-.product-rail { width:268px; flex-shrink:0; display:flex; flex-direction:column; gap:14px; padding-top:0; }
+.product-rail { width:var(--rail-w); flex-shrink:0; display:flex; flex-direction:column; gap:14px; padding-top:0; }
 .product-rail-rating-block { text-align:center; padding:10px 0; }
 .product-rail-rating-num { font-family:var(--font-display); font-size:2.4rem; font-weight:700; color:var(--text-primary); line-height:1; }
 .product-rail-rating-label { font-size:11px; color:var(--text-muted); margin-top:2px; }
